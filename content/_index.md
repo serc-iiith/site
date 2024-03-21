@@ -8,8 +8,8 @@ sections:
   - block: hero
     content:
       title: |
-        Wowchemy
-        Research Group
+       Software Engineering
+        Research Center
       image:
         filename: welcome.jpg
       text: |
