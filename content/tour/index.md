@@ -8,32 +8,32 @@ sections:
   - block: slider
     content:
       slides:
-      - title: 👋 Welcome to the group
+      - title: 👋 Welcome to Software Engineering Research Center
         content: Take a look at what we're working on...
         align: center
         background:
           image:
-            filename: coders.jpg
+            filename: serc_center.png
             filters:
-              brightness: 0.7
+              brightness: 0.5
           position: right
           color: '#666'
-      - title: Lunch & Learn ☕️
+      - title: Collaborate and Learn ☕️
         content: 'Share your knowledge with the group and explore exciting new topics together!'
         align: left
         background:
           image:
-            filename: contact.jpg
+            filename: serc_isec.jpeg
             filters:
-              brightness: 0.7
+              brightness: 0.5
           position: center
           color: '#555'
-      - title: World-Class Semiconductor Lab
-        content: 'Just opened last month!'
+      - title: World-Class Facilities
+        content: 'Talk to know more!'
         align: right
         background:
           image:
-            filename: welcome.jpg
+            filename: rnd.jpeg
             filters:
               brightness: 0.5
           position: center

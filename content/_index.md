@@ -8,14 +8,11 @@ sections:
   - block: hero
     content:
       title: |
-       Software Engineering
-        Research Center
+        Software Engineering Research Center
       image:
-        filename: welcome.jpg
+        filename: serc.jpg
       text: |
-        <br>
-        
-        The **Wowchemy Research Group** has been a center of excellence for Artificial Intelligence research, teaching, and practice since its founding in 2016.
+          Software Engineering Research Center (SERC) aims to research and develop state of art techniques, methods and tools in various areas of software engineering and programming languages. SERC has faculty with vast teaching and research experience in and outside India.
   
   - block: collection
     content:
@@ -45,9 +42,9 @@ sections:
       columns: '1'
       background:
         image: 
-          filename: coders.jpg
+          filename: rnd.jpeg
           filters:
-            brightness: 1
+            brightness: 0.7
           parallax: false
           position: center
           size: cover
