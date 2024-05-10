@@ -48,16 +48,16 @@ education:
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'mailto:test@example.org'
-  - icon: twitter
-    icon_pack: fab
-    link: https://twitter.com/GeorgeCushen
+    link: 'mailto:vv@iiit.ac.in'
   - icon: google-scholar
     icon_pack: ai
-    link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
+    link: https://scholar.google.co.in/citations?user=9OFvbfcAAAAJ
+  - icon: linkedin
+    icon_pack: fab
+    link: https://www.linkedin.com/in/vasuvarma/
   - icon: github
     icon_pack: fab
-    link: https://github.com/gcushen
+    link: https://github.com/devvarma
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 # - icon: cv
@@ -72,8 +72,10 @@ email: ''
 user_groups:
   - Faculty
 ---
-Venkatesh Choppella is Associate Professor of Software Engineering at the International Institute of Information Technology Hyderabad, India. He was also associated with Indian Institute of Information Technology and Management – Kerala, Trivandrum (2003-2009) and the IIIT Bangalore (2009-2010).
+Dr. Vasudeva Varma is a Professor at the International Institute of Information Technology, Hyderabad (IIIT-H), currently serving as the Head of Language Technologies Research Centre (LTRC) and the Head of Information Retrieval and Extraction Lab (iREL). His research interests are in the broad areas of Information Retrieval, Extraction & Access, more specifically ~ Social Media Analysis, Summarization, Semantic Search, Text Generation, and Cloud Computing.
 
-Venkatesh holds a PhD. degree in Computer Science from Indiana University, Bloomington, USA, and Bachelors and Masters degrees from the Indian Institutes of Technology, Kanpur and Madras, respectively. He has held research and engineering positions in Hewlett Packard, Xerox Palo Alto Research Centre, Oak Ridge National Laboratory, and the Ohio State University in the United States.
+He has previously served as CEO of IIIT Hyderabad Foundation, which runs one of the largest technology incubators in India, and the Dean (Research & Development), IIIT-H.
 
-Venkatesh's current research interests are in formal methods and software architectures. In addition, he has an interest in computer science education and FOSS-based educational technology. He has published over 75 research papers and technical reports in the areas of computer science, software engineering, educational technology and computer science pedagogy.
+Prof. Varma has over 300 publications which have been cited over 4800 times. In 2020, he received Google India’s Research Award for his works in the area of Artificial Intelligence for Social Good (AI4SG). He published a book on Software Architecture (Pearson Education) and close to two hundred technical papers in journals and conferences. In 2004, he obtained young scientist award and grant from Department of Science and Technology, Government of India, for his proposal on personalized search engines. In 2007, he was given Research Faculty Award by AOL Labs.
+
+He co-founded SETU Software Systems Pvt Ltd, a technology start-up along with Dr. Prasad Pingali (Vasu’s first PhD student) which is focused on solving information access problems using unstructured data analytics.
