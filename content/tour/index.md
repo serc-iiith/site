@@ -19,6 +19,11 @@ sections:
               brightness: 0.5
           position: right
           color: '#666'
+        link:
+          icon: diagram-project
+          icon_pack: fas
+          text: Projects
+          url: ../projects/
       - title: Collaborate and Learn ☕️
         content: 'Share your knowledge with the group and explore exciting new topics together!'
         align: left
@@ -29,6 +34,11 @@ sections:
               brightness: 0.5
           position: center
           color: '#555'
+        link:
+          icon: book-bookmark
+          icon_pack: fas
+          text: Research Areas
+          url: ../research/
       - title: World-Class Facilities
         content: 'Talk to know more!'
         align: right

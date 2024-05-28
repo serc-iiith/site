@@ -16,7 +16,7 @@ sections:
   
   - block: collection
     content:
-      title: Latest News
+      title: Latest Events
       subtitle:
       text:
       count: 5
@@ -28,7 +28,7 @@ sections:
         tag: ''
       offset: 0
       order: desc
-      page_type: post
+      page_type: event
     design:
       view: card
       columns: '1'
