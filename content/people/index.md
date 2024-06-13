@@ -18,7 +18,7 @@ sections:
           - BTP Students
           - Research Interns
           - Alumni
-      sort_by: Params.last_name
+      sort_by: Params.sort_order
       sort_ascending: true
     design:
       show_interests: false

@@ -6,6 +6,8 @@ title: Karthik Vaidhyanathan
 first_name: Karthik
 last_name: Vaidhyanathan
 
+sort_order: 3
+
 # Username (this should match the folder name)
 authors:
   - karthik

@@ -6,6 +6,8 @@ title: Venkatesh Choppella
 first_name: Venkatesh
 last_name: Choppella
 
+sort_order: 2
+
 # Username (this should match the folder name)
 authors:
   - venkatesh

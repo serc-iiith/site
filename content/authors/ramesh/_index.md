@@ -6,6 +6,8 @@ title: Ramesh Loganathan
 first_name: Ramesh
 last_name: Loganathan
 
+sort_order: 7
+
 # Username (this should match the folder name)
 authors:
   - ramesh

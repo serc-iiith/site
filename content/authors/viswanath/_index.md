@@ -6,6 +6,8 @@ title: Viswanath Kasturi
 first_name: Viswanath
 last_name: Kasturi
 
+sort_order: 6
+
 # Username (this should match the folder name)
 authors:
   - viswanath

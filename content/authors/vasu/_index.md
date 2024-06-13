@@ -6,6 +6,8 @@ title: Vasudeva Varma
 first_name: Vasudeva
 last_name: Varma
 
+sort_order: 5
+
 # Username (this should match the folder name)
 authors:
   - vasu

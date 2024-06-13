@@ -6,6 +6,8 @@ title: Raman Saxena
 first_name: Raman
 last_name: Saxena
 
+sort_order: 4
+
 # Username (this should match the folder name)
 authors:
   - raman

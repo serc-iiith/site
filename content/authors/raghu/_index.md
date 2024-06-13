@@ -6,6 +6,8 @@ title: Raghu Reddy
 first_name: Raghu
 last_name: Reddy
 
+sort_order: 1
+
 # Username (this should match the folder name)
 authors:
   - raghu
