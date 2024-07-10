@@ -9,7 +9,7 @@ authors:
 - Venkatesh Choppella
 - Gangadhar Chalapakay
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*2010 International Conference on Technology for Education, T4E 2010,

@@ -10,7 +10,7 @@ authors:
 - Lalit Mohan S.
 - Y. Raghu Reddy
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Joint Proceedings of SEED 2021 & QuASoQ 2021 co-located with 28th Asia

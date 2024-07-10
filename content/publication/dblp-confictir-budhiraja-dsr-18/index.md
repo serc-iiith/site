@@ -10,7 +10,7 @@ authors:
 - Manish Shrivastava
 - Raghu Reddy
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Proceedings of the 2018 ACM SIGIR International Conference on Theory

@@ -9,7 +9,7 @@ authors:
 - Raghav Mittal
 - Raghu Reddy
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*37th IEEE/ACM International Conference on Automated Software Engineering,

@@ -10,7 +10,7 @@ authors:
 - Y. Raghu Reddy
 - Venkatesh Choppella
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*The 29th International Conference on Software Engineering and Knowledge

@@ -26,25 +26,52 @@ sections:
       office_hours:
         - 'Monday - Saturday, 09:00 to 17:00'
       # appointment_url: 'https://calendly.com'
-      #contact_links:
-      #  - icon: comments
-      #    icon_pack: fas
-      #    name: Discuss on Forum
-      #    link: 'https://discourse.gohugo.io'
+      contact_links:
+        - icon: linkedin
+          icon_pack: fab
+          name: LinkedIn
+          link: 'https://www.linkedin.com/company/serciiith/'
+        - icon: youtube
+          icon_pack: fab
+          name: YouTube
+          link: 'https://www.youtube.com/@serc-iiith8746'
+        - icon: facebook
+          icon_pack: fab
+          name: Facebook
+          link: 'https://www.facebook.com/SERC.IIITH/'
+        - icon: twitter
+          icon_pack: fab
+          name: Twitter
+          link: 'https://x.com/SERC_IIITH'
     
       # Automatically link email and phone or display as text?
       autolink: true
     
       # Email form provider
-      form:
-        provider: netlify
-        formspree:
-          id:
-        netlify:
-          # Enable CAPTCHA challenge to reduce spam?
-          captcha: false
+      # form:
+      #   provider: netlify
+      #   formspree:
+      #     id:
+      #   netlify:
+      #     # Enable CAPTCHA challenge to reduce spam?
+      #     captcha: false
     design:
       columns: '1'
+
+  - block: people
+    content:
+      title: Website Maintainers
+      # Choose which groups/teams of users to display.
+      #   Edit `user_groups` in each user's profile to add them to one or more of these groups.
+      user_groups:
+          - Website Maintainer
+      sort_by: Params.sort_order
+      sort_ascending: true
+    design:
+      show_interests: false
+      show_role: true
+      show_social: true
+      show_profile: false
 
   # - block: markdown
   #   content:

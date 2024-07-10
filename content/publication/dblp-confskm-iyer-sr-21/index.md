@@ -8,7 +8,7 @@ authors:
 - Lalit Mohan Sanagavarapu
 - Y. Raghu Reddy
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Secure Knowledge Management In The Artificial Intelligence Era - 9th

@@ -7,7 +7,7 @@ authors:
 - Mrityunjay Kumar
 - Venkatesh Choppella
 publication_types:
-- '2'
+- 'other'
 abstract: ''
 featured: false
 publication: '*CoRR*'

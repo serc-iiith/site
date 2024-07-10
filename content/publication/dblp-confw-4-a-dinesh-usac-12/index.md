@@ -10,7 +10,7 @@ authors:
 - Deepti Aggarwal
 - Venkatesh Choppella
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: "*International Cross-Disciplinary Conference on Web Accessibility, W4A\

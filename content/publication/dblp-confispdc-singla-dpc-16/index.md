@@ -9,7 +9,7 @@ authors:
 - Suresh Purini
 - Venkatesh Choppella
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*15th International Symposium on Parallel and Distributed Computing,

@@ -1,6 +1,6 @@
 ---
 title: Virtual Labs
-date: 2024-05-27
+# date: 2024-05-27
 # image:
 #   focal_point: 'top'
 ---
@@ -8,6 +8,8 @@ date: 2024-05-27
 Online simulations of various science and engineering laboratory experiments available free and 24x7 to anyone and everyone.
 
 Funded by Ministry of Human Resource Development (MHRD).
+
+Website: [www.vlab.co.in](https://www.vlab.co.in)
 
 <!--more-->
 

@@ -10,7 +10,7 @@ authors:
 - Randall Bramley
 - Dennis Gannon
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Proceedings Supercomputing 2000, November 4-10, 2000, Dallas, Texas,

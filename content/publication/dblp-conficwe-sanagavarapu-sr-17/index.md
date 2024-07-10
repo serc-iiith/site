@@ -8,7 +8,7 @@ authors:
 - Sourav Sarangi
 - Y. Raghu Reddy
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Current Trends in Web Engineering - ICWE 2017 International Workshops,

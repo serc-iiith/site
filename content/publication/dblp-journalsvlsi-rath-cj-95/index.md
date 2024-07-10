@@ -8,7 +8,7 @@ authors:
 - Venkatesh Choppella
 - Steven D. Johnson
 publication_types:
-- '2'
+- 'other'
 abstract: ''
 featured: false
 publication: '*VLSI Design*'

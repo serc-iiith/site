@@ -7,7 +7,7 @@ authors:
 - Ankur Goel
 - Venkatesh Choppella
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: "*7th International Conference on Theory and Practice of Electronic Governance,\

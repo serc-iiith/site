@@ -8,7 +8,7 @@ authors:
 - T. B. Dinesh
 - Venkatesh Choppella
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: "*International Web for All Conference, W4A '14, Seoul, Republic of Korea,\

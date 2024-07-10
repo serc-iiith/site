@@ -10,7 +10,7 @@ authors:
 - Andrew Luxton-Reilly
 - Michelle Craig
 publication_types:
-- '0'
+- 'proceedings'
 abstract: ''
 featured: false
 publication: '*ACM*'

@@ -11,7 +11,7 @@ authors:
 - Y. Raghu Reddy
 - Priya Raman
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*32nd IEEE Conference on Software Engineering Education and Training,

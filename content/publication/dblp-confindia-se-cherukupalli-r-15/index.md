@@ -7,7 +7,7 @@ authors:
 - Prabhakar Cherukupalli
 - Y. Raghu Reddy
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Proceedings of the 8th India Software Engineering Conference, ISEC

@@ -8,7 +8,7 @@ authors:
 - Venkatesh Choppella
 - Bruhadeshwar Bezawada
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Information Systems Security - 10th International Conference, ICISS

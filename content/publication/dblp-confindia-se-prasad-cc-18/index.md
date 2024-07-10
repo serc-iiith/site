@@ -8,7 +8,7 @@ authors:
 - Sridhar Chimalakonda
 - Venkatesh Choppella
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Proceedings of the 11th Innovations in Software Engineering Conference,

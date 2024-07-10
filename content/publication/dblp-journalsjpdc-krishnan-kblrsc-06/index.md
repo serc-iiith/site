@@ -13,7 +13,7 @@ authors:
 - P. Sadayappan
 - Venkatesh Choppella
 publication_types:
-- '2'
+- 'other'
 abstract: ''
 featured: false
 publication: '*J. Parallel Distributed Comput.*'

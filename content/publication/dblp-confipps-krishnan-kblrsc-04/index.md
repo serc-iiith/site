@@ -13,7 +13,7 @@ authors:
 - P. Sadayappan
 - Venkatesh Choppella
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*18th International Parallel and Distributed Processing Symposium (IPDPS

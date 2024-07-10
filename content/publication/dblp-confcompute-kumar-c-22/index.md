@@ -7,7 +7,7 @@ authors:
 - Mrityunjay Kumar
 - Venkatesh Choppella
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*COMPUTE 2022, Jaipur, India, November 9-11, 2022*'

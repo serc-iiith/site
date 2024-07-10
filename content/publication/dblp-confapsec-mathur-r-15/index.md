@@ -7,7 +7,7 @@ authors:
 - Neeraj Mathur
 - Y. Raghu Reddy
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Joint Proceedings of the 3rd International Workshop on Quantitative

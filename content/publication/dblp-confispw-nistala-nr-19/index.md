@@ -8,7 +8,7 @@ authors:
 - Kesav Vithal Nori
 - Raghu Reddy
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Proceedings of the International Conference on Software and System

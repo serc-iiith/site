@@ -61,4 +61,33 @@ sections:
         {{% cta cta_link="./people/" cta_text="Meet the team →" %}}
     design:
       columns: '1'
+
+  - block: contact
+    id: social-media
+    content:
+      title: Social Media
+      subtitle: ''
+      text: ''
+      contact_links:
+        - icon: linkedin
+          icon_pack: fab
+          name: LinkedIn
+          link: 'https://www.linkedin.com/company/serciiith/'
+        - icon: youtube
+          icon_pack: fab
+          name: YouTube
+          link: 'https://www.youtube.com/@serc-iiith8746'
+        - icon: facebook
+          icon_pack: fab
+          name: Facebook
+          link: 'https://www.facebook.com/SERC.IIITH/'
+        - icon: twitter
+          icon_pack: fab
+          name: Twitter
+          link: 'https://x.com/SERC_IIITH'
+      # Automatically link email and phone or display them just as text?
+      autolink: true
+    design:
+      # Choose how many columns the section has. Valid values: '1' or '2'.
+      columns: '2'
 ---

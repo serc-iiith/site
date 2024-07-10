@@ -8,7 +8,7 @@ authors:
 - Anon Ray
 - Venkatesh Choppella
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*15th IEEE International Conference on Advanced Learning Technologies,

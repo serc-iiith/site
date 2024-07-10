@@ -10,7 +10,7 @@ authors:
 - Suresh Purini
 - Venkatesh Choppella
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*27th IEEE International Conference on High Performance Computing, Data,

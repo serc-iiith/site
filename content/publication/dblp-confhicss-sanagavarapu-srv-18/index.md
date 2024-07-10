@@ -9,7 +9,7 @@ authors:
 - Y. Raghu Reddy
 - Vasudeva Varma
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*51st Hawaii International Conference on System Sciences, HICSS 2018,

@@ -8,7 +8,7 @@ authors:
 - Y. Raghu Reddy
 - Shivam Khandelwal
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Proceedings of the 9th India Software Engineering Conference, Goa,

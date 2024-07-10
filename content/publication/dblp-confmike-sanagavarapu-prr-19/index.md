@@ -10,7 +10,7 @@ authors:
 - Y. Raghu Reddy
 - Dipti Sharma
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Mining Intelligence and Knowledge Exploration - 7th International Conference,

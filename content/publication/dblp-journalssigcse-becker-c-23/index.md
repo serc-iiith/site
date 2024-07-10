@@ -7,7 +7,7 @@ authors:
 - Brett A. Becker
 - Venkatesh Choppella
 publication_types:
-- '2'
+- 'other'
 abstract: ''
 featured: false
 publication: '*ACM SIGCSE Bull.*'

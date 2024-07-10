@@ -9,7 +9,7 @@ authors:
 - Tejaswinee Kelkar
 - Venkatesh Choppella
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Seventh IEEE International Conference on Technology for Education,

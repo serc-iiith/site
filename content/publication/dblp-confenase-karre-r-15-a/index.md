@@ -8,7 +8,7 @@ authors:
 - Sai Anirudh Karre
 - Y. Raghu Reddy
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Evaluation of Novel Approaches to Software Engineering - 10th International

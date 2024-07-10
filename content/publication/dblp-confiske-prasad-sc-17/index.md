@@ -8,7 +8,7 @@ authors:
 - Maddala Saraswati Soumya
 - Venkatesh Choppella
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*12th International Conference on Intelligent Systems and Knowledge

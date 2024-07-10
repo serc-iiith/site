@@ -8,7 +8,7 @@ authors:
 - Lalit Mohan S.
 - Y. Raghu Reddy
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Big Data Analytics - 6th International Conference, BDA 2018, Warangal,

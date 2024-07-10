@@ -9,7 +9,7 @@ authors:
 - Henry Muccini
 - Karthik Vaidhyanathan
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Software Architecture - 15th European Conference, ECSA 2021, Virtual

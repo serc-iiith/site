@@ -8,7 +8,7 @@ authors:
 - Sai Anirudh Karre
 - Y. Raghu Reddy
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Virtual, Augmented and Mixed Reality - 13th International Conference,

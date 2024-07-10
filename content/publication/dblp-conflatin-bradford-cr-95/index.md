@@ -8,7 +8,7 @@ authors:
 - Venkatesh Choppella
 - Gregory J. E. Rawlins
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: "*LATIN '95: Theoretical Informatics, Second Latin American Symposium,\

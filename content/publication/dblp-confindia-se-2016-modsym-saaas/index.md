@@ -14,7 +14,7 @@ authors:
 - Swarup Mohalik
 - Mahesh Babu Jayaraman
 publication_types:
-- '0'
+- 'proceedings'
 abstract: ''
 featured: false
 publication: '*CEUR-WS.org*'

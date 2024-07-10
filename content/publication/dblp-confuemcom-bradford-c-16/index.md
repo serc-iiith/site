@@ -7,7 +7,7 @@ authors:
 - Phillip G. Bradford
 - Venkatesh Choppella
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*7th IEEE Annual Ubiquitous Computing, Electronics & Mobile Communication

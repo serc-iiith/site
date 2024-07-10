@@ -7,7 +7,7 @@ authors:
 - Henry Muccini
 - Karthik Vaidhyanathan
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*IEEE International Conference on Smart Computing, SMARTCOMP 2020, Bologna,

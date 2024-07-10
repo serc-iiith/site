@@ -8,7 +8,7 @@ authors:
 - Amar Banerjee
 - Venkatesh Choppella
 publication_types:
-- '2'
+- 'other'
 abstract: ''
 featured: false
 publication: '*IEEE Access*'

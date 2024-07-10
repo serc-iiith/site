@@ -13,7 +13,7 @@ authors:
 - Rahul Purandare
 - Amey Karkare
 publication_types:
-- '2'
+- 'other'
 abstract: ''
 featured: false
 publication: '*ACM SIGSOFT Softw. Eng. Notes*'

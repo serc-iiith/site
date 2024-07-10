@@ -8,7 +8,7 @@ authors:
 - Venkatesh Choppella
 - Y. Raghu Reddy
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*18th IEEE International Conference on Advanced Learning Technologies,

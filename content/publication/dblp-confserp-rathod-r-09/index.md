@@ -7,7 +7,7 @@ authors:
 - Varsha Rathod
 - Y. Raghu Reddy
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Proceedings of the 2009 International Conference on Software Engineering

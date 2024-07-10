@@ -8,7 +8,7 @@ authors:
 - Sai Anirudh Karre
 - Raghu Reddy
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Proceedings of the 17th Innovations in Software Engineering Conference,

@@ -8,7 +8,7 @@ authors:
 - Henry Muccini
 - Karthik Vaidhyanathan
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Proceedings of the 13th European Conference on Software Architecture,

@@ -11,7 +11,7 @@ authors:
 - Y. Raghu Reddy
 - Syed Azeemuddin
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*35th International Conference on VLSI Design and 2022 21st International

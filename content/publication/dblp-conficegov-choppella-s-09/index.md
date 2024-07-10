@@ -7,7 +7,7 @@ authors:
 - Venkatesh Choppella
 - K. R. Srivathsan
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*ICEGOV 2009, Proceedings of the 3rd International Conference on Theory

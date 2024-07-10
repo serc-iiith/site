@@ -12,7 +12,7 @@ authors:
 - Fabrizio Rossi
 - Karthik Vaidhyanathan
 publication_types:
-- '2'
+- 'other'
 abstract: ''
 featured: false
 publication: '*CoRR*'

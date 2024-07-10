@@ -1,11 +1,15 @@
 ---
 title: Smart Contracts for Open Source Software License Management
-date: 2024-05-27
+# date: 2024-05-27
+# image:
+#   focal_point: 'top'
 ---
 
 Study the usage of smart contracts for open source software license management and create a prototype implementation using RIPPLE or Ether.
 
 This project is funded by IIIT via RIPPLE.
+
+Demo: [YouTube Video](https://www.youtube.com/watch?v=NlqTsSvGoLY)
 
 <!--more-->
 

@@ -10,7 +10,7 @@ authors:
 - Tobias Kristensen
 - Nicolai Krogager Asmussen
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Artificial Intelligence in HCI - 4th International Conference, AI-HCI

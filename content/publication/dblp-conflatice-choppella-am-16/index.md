@@ -9,7 +9,7 @@ authors:
 - Garima Ahuja
 - Aditi Mavalankar
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*International Conference on Learning and Teaching in Computing and

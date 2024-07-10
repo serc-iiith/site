@@ -12,7 +12,7 @@ authors:
 - Sachin Chaudhari
 - Venkatesh Choppella
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*9th International Conference on Future Internet of Things and Cloud,

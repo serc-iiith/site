@@ -9,7 +9,7 @@ authors:
 - Y. Raghu Reddy
 - Bipin Indurkhya
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: "*Proceedings of the 2014 European Conference on Cognitive Ergonomics,\

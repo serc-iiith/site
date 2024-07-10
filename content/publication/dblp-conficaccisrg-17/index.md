@@ -8,7 +8,7 @@ authors:
 - Y. Raghu Reddy
 - G. R. Gangadharan
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*2017 International Conference on Advances in Computing, Communications

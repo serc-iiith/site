@@ -8,7 +8,7 @@ authors:
 - Raghu Reddy
 - Manish Shrivastava
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Proceedings of the 40th International Conference on Software Engineering:

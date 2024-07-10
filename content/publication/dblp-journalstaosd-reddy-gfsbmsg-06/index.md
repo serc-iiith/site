@@ -13,7 +13,7 @@ authors:
 - Eunjee Song
 - Geri Georg
 publication_types:
-- '2'
+- 'other'
 abstract: ''
 featured: false
 publication: '*LNCS Trans. Aspect Oriented Softw. Dev.*'

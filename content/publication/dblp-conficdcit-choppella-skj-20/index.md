@@ -9,7 +9,7 @@ authors:
 - Viswanath Kasturi
 - Bharat Jayaraman
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Distributed Computing and Internet Technology - 16th International

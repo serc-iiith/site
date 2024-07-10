@@ -11,7 +11,7 @@ authors:
 - Venkatesh Choppella
 - Raghu Reddy
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Sixth IEEE International Conference on Technology for Education, T4E

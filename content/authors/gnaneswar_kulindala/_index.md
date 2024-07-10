@@ -38,6 +38,7 @@ social:
 
 user_groups:
   - MS by Research Students
+  - Website Maintainer
 
 # Advisor
 advisor: "Dr. Venkatesh Choppella"

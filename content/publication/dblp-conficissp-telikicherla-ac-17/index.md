@@ -9,7 +9,7 @@ authors:
 - Akash Agrawall
 - Venkatesh Choppella
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Proceedings of the 3rd International Conference on Information Systems

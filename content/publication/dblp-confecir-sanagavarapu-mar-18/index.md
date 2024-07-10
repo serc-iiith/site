@@ -9,7 +9,7 @@ authors:
 - Shriyansh Agrawal
 - Y. Raghu Reddy
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Advances in Information Retrieval - 40th European Conference on IR

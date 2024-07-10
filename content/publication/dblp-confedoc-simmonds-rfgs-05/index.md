@@ -10,7 +10,7 @@ authors:
 - Sudipto Ghosh
 - Arnor Solberg
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Ninth IEEE International Enterprise Distributed Object Computing Conference

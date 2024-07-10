@@ -11,7 +11,7 @@ authors:
 - Y. Raghu Reddy
 - Syed Azeemuddin
 publication_types:
-- '2'
+- 'other'
 abstract: ''
 featured: false
 publication: '*CoRR*'

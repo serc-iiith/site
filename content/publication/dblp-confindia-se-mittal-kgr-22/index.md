@@ -9,7 +9,7 @@ authors:
 - Y. Pawan Kumar Gururaj
 - Y. Raghu Reddy
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*ISEC 2022: 15th Innovations in Software Engineering Conference, Gandhinagar,

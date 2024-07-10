@@ -7,7 +7,7 @@ authors:
 - Pranav Vats
 - Venkatesh Choppella
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Proceedings of the ACM Conference on Global Computing Education Vol

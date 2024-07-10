@@ -10,7 +10,7 @@ authors:
 - Arun Bahulkar
 - Anjaneyulu Pasala
 publication_types:
-- '0'
+- 'proceedings'
 abstract: ''
 featured: false
 publication: '*IEEE Computer Society*'

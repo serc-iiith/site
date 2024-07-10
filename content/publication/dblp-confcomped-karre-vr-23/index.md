@@ -9,7 +9,7 @@ authors:
 - Karthik Vaidhyanathan
 - Y. Raghu Reddy
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Proceedings of the ACM Conference on Global Computing Education Vol

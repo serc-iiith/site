@@ -7,7 +7,7 @@ authors:
 - Y. Raghu Reddy
 - Kesav V. Nori
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*27th IEEE Conference on Software Engineering Education and Training,

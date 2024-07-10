@@ -8,7 +8,7 @@ authors:
 - John Heffner
 - Raghu Reddy
 publication_types:
-- '2'
+- 'other'
 abstract: ''
 featured: false
 publication: '*Comput. Commun. Rev.*'

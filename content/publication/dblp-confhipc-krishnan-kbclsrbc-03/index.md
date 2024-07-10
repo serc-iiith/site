@@ -14,7 +14,7 @@ authors:
 - David E. Bernholdt
 - Venkatesh Choppella
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*High Performance Computing - HiPC 2003, 10th International Conference,

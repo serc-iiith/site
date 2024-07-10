@@ -11,7 +11,7 @@ authors:
 - Raghu Reddy
 - Syed Azeemuddin
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*2022 IEEE Sensors, Dallas, TX, USA, October 30 - Nov. 2, 2022*'

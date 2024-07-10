@@ -9,7 +9,7 @@ authors:
 - Karthik Vaidhyanathan
 - Mikkel Baun Kjærgaard
 publication_types:
-- '2'
+- 'other'
 abstract: ''
 featured: false
 publication: '*Proc. ACM Hum. Comput. Interact.*'

@@ -10,7 +10,7 @@ authors:
 - Projit Bandyopadhyay
 - Venkatesh Choppella
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Information Systems Security - 13th International Conference, ICISS

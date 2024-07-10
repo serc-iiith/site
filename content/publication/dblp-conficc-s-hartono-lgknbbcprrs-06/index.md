@@ -18,7 +18,7 @@ authors:
 - Atanas Rountev
 - P. Sadayappan
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Computational Science - ICCS 2006, 6th International Conference, Reading,

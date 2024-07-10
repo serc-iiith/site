@@ -9,7 +9,7 @@ authors:
 - Amar Banerjee
 - Venkatesh Choppella
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Proceedings of the 17th ACM SIGPLAN International Workshop on Domain-Specific

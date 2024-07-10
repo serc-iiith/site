@@ -8,7 +8,7 @@ authors:
 - Viswanath Kasturi
 - Arjun Sanjeev
 publication_types:
-- '2'
+- 'other'
 abstract: ''
 featured: false
 publication: '*CoRR*'

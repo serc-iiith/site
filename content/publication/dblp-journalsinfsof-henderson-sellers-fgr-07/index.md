@@ -10,7 +10,7 @@ authors:
 - Geri Georg
 - Raghu Reddy
 publication_types:
-- '2'
+- 'other'
 abstract: ''
 featured: false
 publication: '*Inf. Softw. Technol.*'

@@ -7,7 +7,7 @@ authors:
 - Venkatesh Choppella
 - Christopher T. Haynes
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Automated Deduction - CADE-19, 19th International Conference on Automated

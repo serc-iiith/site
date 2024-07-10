@@ -1,11 +1,13 @@
 ---
 title: Design Innovation Center
-date: 2024-05-27
+# date: 2024-05-27
 # image:
 #   focal_point: 'top'
 ---
 
 Ministry of Human Resource Development has proposed a National Initiative for Design Innovation in the Twelfth Plan. Under this initiative, 20 new Design Innovation Centers (DIC), one Open Design school (ODS) and a National Design Innovation Network (NDIN), linking together all these schools and other allied bodies such as leading institutions of Industry and academics, NGOs and government were set up.
+
+Website: [serc.iiit.ac.in/dic.html](https://serc.iiit.ac.in/dic.html)
 
 <!--more-->
 

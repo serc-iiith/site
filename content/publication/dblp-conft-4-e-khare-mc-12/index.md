@@ -9,7 +9,7 @@ authors:
 - Yishan Misra
 - Venkatesh Choppella
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*2012 IEEE Fourth International Conference on Technology for Education,

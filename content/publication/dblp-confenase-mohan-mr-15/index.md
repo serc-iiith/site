@@ -8,7 +8,7 @@ authors:
 - Neeraj Mathur
 - Y. Raghu Reddy
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*ENASE 2015 - Proceedings of the 10th International Conference on Evaluation

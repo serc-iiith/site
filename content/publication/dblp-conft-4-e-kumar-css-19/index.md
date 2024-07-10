@@ -10,7 +10,7 @@ authors:
 - Sanjana Sunil
 - Sumaid Syed
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Tenth IEEE International Conference on Technology for Education, T4E

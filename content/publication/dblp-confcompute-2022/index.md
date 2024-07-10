@@ -9,7 +9,7 @@ authors:
 - Chitra Babu
 - Sridhar Chimalakonda
 publication_types:
-- '0'
+- 'proceedings'
 abstract: ''
 featured: false
 publication: '*ACM*'

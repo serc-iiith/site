@@ -11,7 +11,7 @@ authors:
 - Sudipto Ghosh
 - Jan Øyvind Aagedal
 publication_types:
-- '2'
+- 'other'
 abstract: ''
 featured: false
 publication: '*Int. J. Cooperative Inf. Syst.*'

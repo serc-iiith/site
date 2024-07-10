@@ -11,7 +11,7 @@ authors:
 - Padmalata V. Nistala
 - Kesav V. Nori
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Proceedings of the 11th Innovations in Software Engineering Conference,

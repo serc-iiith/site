@@ -8,7 +8,7 @@ authors:
 - Saikrishna Sripada
 - Y. Raghu Reddy
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Proceedings of the 10th Innovations in Software Engineering Conference,

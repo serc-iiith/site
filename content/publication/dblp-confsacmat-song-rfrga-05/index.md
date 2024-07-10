@@ -11,7 +11,7 @@ authors:
 - Geri Georg
 - Roger T. Alexander
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*10th ACM Symposium on Access Control Models and Technologies, SACMAT

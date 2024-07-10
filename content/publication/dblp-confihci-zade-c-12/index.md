@@ -7,7 +7,7 @@ authors:
 - Himanshu Zade
 - Venkatesh Choppella
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*4th International Conference on Intelligent Human Computer Interaction,

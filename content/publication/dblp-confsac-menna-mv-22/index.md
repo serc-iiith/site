@@ -9,7 +9,7 @@ authors:
 - Henry Muccini
 - Karthik Vaidhyanathan
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: "*SAC '22: The 37th ACM/SIGAPP Symposium on Applied Computing, Virtual\

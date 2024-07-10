@@ -8,7 +8,7 @@ authors:
 - M. Esen Tuna
 - Venkatesh Choppella
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: "*Formal Methods in Computer-Aided Design, First International Conference,\

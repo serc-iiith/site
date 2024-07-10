@@ -9,7 +9,7 @@ authors:
 - Neeraj Mathur
 - Y. Raghu Reddy
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Proceedings of the 12th Innovations on Software Engineering Conference

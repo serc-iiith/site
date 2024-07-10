@@ -8,7 +8,7 @@ authors:
 - Lalit Mohan Sanagavarapu
 - Y. Raghu Reddy
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*TENCON 2019 - 2019 IEEE Region 10 Conference (TENCON), Kochi, India,

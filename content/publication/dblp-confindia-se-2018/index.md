@@ -15,7 +15,7 @@ authors:
 - Richa Sharma
 - Santonu Sarkar
 publication_types:
-- '0'
+- 'proceedings'
 abstract: ''
 featured: false
 publication: '*ACM*'

@@ -11,7 +11,7 @@ authors:
 - Rajesh N.
 - Venkatesh Choppella
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Proceedings of the CIKM 2021 Workshops co-located with 30th ACM International

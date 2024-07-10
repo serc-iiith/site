@@ -8,7 +8,7 @@ authors:
 - Rohit Ashok Khot
 - Venkatesh Choppella
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: "*2013 ACM SIGCHI Conference on Human Factors in Computing Systems, CHI\

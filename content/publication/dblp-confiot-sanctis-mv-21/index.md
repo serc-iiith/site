@@ -8,7 +8,7 @@ authors:
 - Henry Muccini
 - Karthik Vaidhyanathan
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: "*IoT '21: 11th International Conference on the Internet of Things, St.\

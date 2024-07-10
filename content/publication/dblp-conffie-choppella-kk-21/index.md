@@ -8,7 +8,7 @@ authors:
 - Viswanath Kasturi
 - Mrityunjay Kumar
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*IEEE Frontiers in Education Conference, FIE 2021, Lincoln, NE, USA,

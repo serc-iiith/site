@@ -7,7 +7,7 @@ authors:
 - Mrityunjay Kumar
 - Venkatesh Choppella
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*16th Innovations in Software Engineering Conference, ISEC2023, Allahabad,

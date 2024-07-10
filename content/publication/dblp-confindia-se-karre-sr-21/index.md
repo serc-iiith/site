@@ -8,7 +8,7 @@ authors:
 - Lalit Mohan Sanagavarapu
 - Y. Raghu Reddy
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*ISEC 2021: 14th Innovations in Software Engineering Conference, Bhubaneswar,

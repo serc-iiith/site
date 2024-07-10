@@ -8,7 +8,7 @@ authors:
 - Henry Muccini
 - Karthik Vaidhyanathan
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*2020 IEEE International Conference on Software Architecture Companion,

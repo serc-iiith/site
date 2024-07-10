@@ -6,7 +6,7 @@ publishDate: '2024-03-23T15:49:11.006104Z'
 authors:
 - Venkatesh Choppella
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Implementation of Functional Languages, 15th International Workshop,

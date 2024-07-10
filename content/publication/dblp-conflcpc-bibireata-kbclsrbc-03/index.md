@@ -14,7 +14,7 @@ authors:
 - David E. Bernholdt
 - Venkatesh Choppella
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Languages and Compilers for Parallel Computing, 16th International

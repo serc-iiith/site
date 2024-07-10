@@ -8,7 +8,7 @@ authors:
 - Venkatesh Choppella
 - Sridhar Chimalakonda
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Distributed Computing and Internet Technology - 14th International

@@ -9,7 +9,7 @@ authors:
 - Rajarshi Pal
 - Y. Raghu Reddy
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*2018 International Conference on Advances in Computing, Communications

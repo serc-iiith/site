@@ -7,7 +7,7 @@ authors:
 - Mohammad Asif
 - Y. Raghu Reddy
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*8th International Workshop on Automation of Software Test, AST 2013,

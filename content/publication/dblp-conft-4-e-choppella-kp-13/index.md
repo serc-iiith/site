@@ -8,7 +8,7 @@ authors:
 - Viswanath Kasturi
 - Manjula Pidaparty
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*2013 IEEE Fifth International Conference on Technology for Education,

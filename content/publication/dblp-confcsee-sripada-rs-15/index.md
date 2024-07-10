@@ -9,7 +9,7 @@ authors:
 - Y. Raghu Reddy
 - Ashish Sureka
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*28th IEEE Conference on Software Engineering Education and Training,

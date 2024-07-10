@@ -8,7 +8,7 @@ authors:
 - Sai Anirudh Karre
 - Y. Raghu Reddy
 publication_types:
-- '2'
+- 'other'
 abstract: ''
 featured: false
 publication: '*CoRR*'

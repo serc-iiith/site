@@ -11,7 +11,7 @@ authors:
 - Sudipto Ghosh
 - Robert B. France
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*29th Annual International Computer Software and Applications Conference,

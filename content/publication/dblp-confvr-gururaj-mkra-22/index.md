@@ -11,7 +11,7 @@ authors:
 - Y. Raghu Reddy
 - Syed Azeemuddin
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*2022 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts

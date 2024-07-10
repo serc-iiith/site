@@ -7,7 +7,7 @@ authors:
 - Henry Muccini
 - Karthik Vaidhyanathan
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*1st IEEE/ACM Workshop on AI Engineering - Software Engineering for

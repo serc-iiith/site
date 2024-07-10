@@ -8,7 +8,7 @@ authors:
 - Raghu Reddy
 - Robert B. France
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*«UML» 2004 - The Unified Modelling Language: Modelling Languages and

@@ -8,7 +8,7 @@ authors:
 - Saikrishna Sripada
 - Y. Raghu Reddy
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*24th Australasian Software Engineering Conference, ASWEC 2015, Adelaide,

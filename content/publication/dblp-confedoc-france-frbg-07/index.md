@@ -10,7 +10,7 @@ authors:
 - Benoit Baudry
 - Sudipto Ghosh
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*11th IEEE International Enterprise Distributed Object Computing Conference

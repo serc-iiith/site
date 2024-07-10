@@ -8,7 +8,7 @@ authors:
 - G. R. Gangadharan
 - Y. Raghu Reddy
 publication_types:
-- '2'
+- 'other'
 abstract: ''
 featured: false
 publication: '*Int. J. Cloud Appl. Comput.*'

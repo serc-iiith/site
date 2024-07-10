@@ -9,7 +9,7 @@ authors:
 - Venkatesh Choppella
 - BD Phatak
 publication_types:
-- '2'
+- 'other'
 abstract: ''
 featured: false
 publication: '*ACM SIGCSE Bull.*'

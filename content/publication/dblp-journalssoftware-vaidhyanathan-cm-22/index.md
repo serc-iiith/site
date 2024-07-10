@@ -10,7 +10,7 @@ authors:
 - Henry Muccini
 - Regi Roy
 publication_types:
-- '2'
+- 'other'
 abstract: ''
 featured: false
 publication: '*IEEE Softw.*'

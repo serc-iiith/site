@@ -9,7 +9,7 @@ authors:
 - Sameer Goel
 - Raghu Reddy
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*8th International Conference on Engineering of Complex Computer Systems

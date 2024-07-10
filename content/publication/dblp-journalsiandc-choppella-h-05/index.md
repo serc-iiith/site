@@ -7,7 +7,7 @@ authors:
 - Venkatesh Choppella
 - Christopher T. Haynes
 publication_types:
-- '2'
+- 'other'
 abstract: ''
 featured: false
 publication: '*Inf. Comput.*'

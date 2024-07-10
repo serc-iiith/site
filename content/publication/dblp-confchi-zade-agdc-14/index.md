@@ -11,7 +11,7 @@ authors:
 - Anind K. Dey
 - Venkatesh Choppella
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: "*CHI Conference on Human Factors in Computing Systems, CHI'14, Toronto,\

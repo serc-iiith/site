@@ -12,7 +12,7 @@ authors:
 - Kesav V. Nori
 - Raghu Reddy
 publication_types:
-- '2'
+- 'other'
 abstract: ''
 featured: false
 publication: '*Autom. Softw. Eng.*'

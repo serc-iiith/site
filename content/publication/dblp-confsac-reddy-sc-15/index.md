@@ -8,7 +8,7 @@ authors:
 - Anish Shankar
 - Madhavan Chetlur
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Proceedings of the 30th Annual ACM Symposium on Applied Computing,

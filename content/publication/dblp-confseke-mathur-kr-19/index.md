@@ -9,7 +9,7 @@ authors:
 - Sai Anirudh Karre
 - Y. Raghu Reddy
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*The 31st International Conference on Software Engineering and Knowledge

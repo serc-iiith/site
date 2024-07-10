@@ -24,7 +24,7 @@ authors:
 - P. Sadayappan
 - Alexander Sibiryakov
 publication_types:
-- '2'
+- 'other'
 abstract: ''
 featured: false
 publication: '*Proc. IEEE*'

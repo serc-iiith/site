@@ -7,7 +7,7 @@ authors:
 - Yogesh Maheshwari
 - Y. Raghu Reddy
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Proceedings of the 24th Australasian Software Engineering Conference,

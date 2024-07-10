@@ -7,7 +7,7 @@ authors:
 - Krishna Chaitanya Telikicherla
 - Venkatesh Choppella
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*Proceedings of the 1st International Workshop on Inclusive Web Programming

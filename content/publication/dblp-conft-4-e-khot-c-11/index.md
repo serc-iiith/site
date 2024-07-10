@@ -8,7 +8,7 @@ authors:
 - Rohit Ashok Khot
 - Venkatesh Choppella
 publication_types:
-- '1'
+- 'conference'
 abstract: ''
 featured: false
 publication: '*2011 IEEE International Conference on Technology for Education, T4E
