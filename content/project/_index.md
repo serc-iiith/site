@@ -3,7 +3,7 @@ title: Projects
 type: landing
 
 # Listing view
-sections:
+# sections:
   # - block: collection
   #   id: curent-projects
   #   content:
