@@ -13,6 +13,8 @@ sections:
       # Set count to 0 to view all.
       count: 0
       filters:
+        folders:
+          - project
         category: "ongoing"
     design:
       view: compact
@@ -27,6 +29,8 @@ sections:
       # Set count to 0 to view all.
       count: 4
       filters:
+        folders:
+          - project
         category: "completed"
     design:
       view: compact
