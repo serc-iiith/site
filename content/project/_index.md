@@ -1,25 +1,26 @@
 ---
 title: Projects
-type: landing
+view: compact
+# type: landing
 
 # Listing view
-sections:
-  - block: collection
-    id: ongoing
-    content:
-      title: Ongoing
-      subtitle: 'Currently ongoing projects at SERC'
-      text: 
-      # Set count to 0 to view all.
-      count: 0
-      filters:
-      #   folders:
-      #     - project
-        category: "ongoing"
-      page_type: project
-    design:
-      view: compact
-      columns: '1'
+# sections:
+#   - block: collection
+#     id: ongoing
+#     content:
+#       title: Ongoing
+#       subtitle: 'Currently ongoing projects at SERC'
+#       text: 
+#       # Set count to 0 to view all.
+#       count: 0
+#       filters:
+#       #   folders:
+#       #     - project
+#         category: "ongoing"
+#       page_type: project
+#     design:
+#       view: compact
+#       columns: '1'
 
   # - block: collection
   #   id: completed
