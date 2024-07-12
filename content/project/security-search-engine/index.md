@@ -1,5 +1,7 @@
 ---
 title: Development of Security Search Engine
+authors: []
+categories: ['Ongoing Projects']
 date: 2024-07-10
 # image:
 #   focal_point: 'top'

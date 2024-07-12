@@ -1,10 +1,10 @@
 ---
 title: UMETRIX - Usability Evaluation for Mobile Apps
+authors: []
+categories: ['Completed Projects']
 date: 2024-07-10
 # image:
 #   focal_point: 'top'
-publication_types:
-  - Completed
 ---
 
 UMETRIX to identify functional usability issues specific to mobile applications.

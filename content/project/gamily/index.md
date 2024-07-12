@@ -1,5 +1,7 @@
 ---
 title: Gamily - Gamification Platform For All
+authors: []
+categories: ['Completed Projects']
 date: 2024-07-10
 # image:
 #   focal_point: 'top'
