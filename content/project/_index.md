@@ -35,7 +35,7 @@ type: landing
   #       category: "completed"
   #     page_type: project
   #   design:
-      view: compact
+view: compact
   #     columns: '1'
 
 # Optional banner image (relative to `assets/media/` folder).
