@@ -12,10 +12,10 @@ sections:
       text: 
       # Set count to 0 to view all.
       count: 0
-      # filters:
+      filters:
       #   folders:
       #     - project
-      #   category: "ongoing"
+        category: "ongoing"
       page_type: project
     design:
       view: compact
