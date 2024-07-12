@@ -1,5 +1,6 @@
 ---
 title: Design Innovation Center
+type: project
 authors: []
 categories: ["ongoing"]
 date: 2024-07-10

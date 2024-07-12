@@ -16,6 +16,7 @@ sections:
         folders:
           - project
         category: "ongoing"
+      page_type: project
     design:
       view: compact
       columns: '1'
@@ -32,6 +33,7 @@ sections:
         folders:
           - project
         category: "completed"
+      page_type: project
     design:
       view: compact
       columns: '1'

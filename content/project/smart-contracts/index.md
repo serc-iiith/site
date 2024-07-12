@@ -1,5 +1,6 @@
 ---
 title: Smart Contracts for Open Source Software License Management
+type: project
 authors: []
 categories: ["ongoing"]
 date: 2024-07-10

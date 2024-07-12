@@ -1,5 +1,6 @@
 ---
 title: Virtual Labs
+type: project
 authors: []
 categories: ["ongoing"]
 date: 2024-07-10

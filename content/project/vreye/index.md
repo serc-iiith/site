@@ -1,5 +1,6 @@
 ---
 title: Visual Acuity Testing using VR
+type: project
 authors: []
 categories: ["ongoing"]
 date: 2024-07-10
