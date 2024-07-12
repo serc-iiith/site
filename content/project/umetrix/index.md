@@ -1,7 +1,7 @@
 ---
 title: UMETRIX - Usability Evaluation for Mobile Apps
 authors: []
-categories: ['completed']
+categories: ["completed"]
 date: 2024-07-10
 # image:
 #   focal_point: 'top'
