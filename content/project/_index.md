@@ -13,13 +13,13 @@ sections:
       # Set count to 0 to view all.
       count: 0
       filters:
-        category: "ongoing-projects"
+        category: "ongoing"
     design:
       view: compact
       columns: '1'
 
   - block: collection
-    id: completed-projects
+    id: completed
     content:
       title: Completed
       subtitle: 'Previously completed projects of SERC'
@@ -27,7 +27,7 @@ sections:
       # Set count to 0 to view all.
       count: 4
       filters:
-        category: "completed-projects"
+        category: "completed"
     design:
       view: compact
       columns: '1'
