@@ -1,6 +1,6 @@
 ---
 title: Smart Contracts for Open Source Software License Management
-# date: 2024-05-27
+date: 2024-07-10
 # image:
 #   focal_point: 'top'
 ---

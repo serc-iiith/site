@@ -83,7 +83,7 @@ sections:
           link: 'https://www.facebook.com/SERC.IIITH/'
         - icon: twitter
           icon_pack: fab
-          name: Twitter
+          name: X (Twitter)
           link: 'https://x.com/SERC_IIITH'
       # Automatically link email and phone or display them just as text?
       autolink: true

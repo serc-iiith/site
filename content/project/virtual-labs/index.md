@@ -1,6 +1,6 @@
 ---
 title: Virtual Labs
-# date: 2024-05-27
+date: 2024-07-10
 # image:
 #   focal_point: 'top'
 ---
