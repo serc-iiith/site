@@ -13,7 +13,7 @@ sections:
       # Set count to 0 to view all.
       count: 0
       filters:
-        category: "Ongoing Projects"
+        category: "ongoing-projects"
     design:
       view: compact
       columns: '1'
@@ -27,7 +27,7 @@ sections:
       # Set count to 0 to view all.
       count: 4
       filters:
-        category: "Completed Projects"
+        category: "completed-projects"
     design:
       view: compact
       columns: '1'

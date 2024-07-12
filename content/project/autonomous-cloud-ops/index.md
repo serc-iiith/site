@@ -1,7 +1,7 @@
 ---
 title: Autonomous CloudOps using GenAI
 authors: []
-categories: ['Ongoing Projects']
+categories: ['ongoing-projects']
 date: 2024-07-10
 # image:
 #   focal_point: 'top'
