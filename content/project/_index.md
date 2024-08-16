@@ -31,8 +31,8 @@ sections:
       # Set count to 0 to view all.
       count: 4
       filters:
-        folders:
-          - project
+      #   folders:
+      #     - project
         tag: "completed"
       page_type: project
     design:
