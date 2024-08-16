@@ -1,8 +1,8 @@
 ---
-title: yashaswinee  Dharmineni sree 
+title: Yashaswinee  Dharmineni sree 
 
 # Full name (for SEO)
-first_name: yashaswinee 
+first_name: Yashaswinee 
 last_name: Dharmineni sree 
 
 # Username (this should match the folder name)
@@ -44,6 +44,5 @@ advisor: "Dr. Y. Raghu Reddy"
 
 ---
 Undergrad Researcher under Prof Raghu Reddy
-Field of work -- VR and Digital Twin 
+Field of work -- VR and Digital Twin
 I love watching anime :]
-
