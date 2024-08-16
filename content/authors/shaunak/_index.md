@@ -30,7 +30,7 @@ interests:
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'shaunak.biswas@research.iiit.ac.in'
+    link: 'mailto:shaunak.biswas@research.iiit.ac.in'
   - icon: github
     icon_pack: fab
     link: 'https://github.com/StarryBadger'
@@ -42,5 +42,4 @@ user_groups:
 advisor: "Dr. Karthik Vaidhyanathan"
 
 ---
-Im dedicated to developing ML systems that are both self-adaptive and eco-friendly. I love music, art and challenging myself.
-
+I'm dedicated to developing ML systems that are both self-adaptive and eco-friendly. I love music, art and challenging myself.

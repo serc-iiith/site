@@ -3,7 +3,7 @@ title: Divij
 
 # Full name (for SEO)
 first_name: Divij
-last_name: Divij
+last_name: D
 
 # Username (this should match the folder name)
 authors:

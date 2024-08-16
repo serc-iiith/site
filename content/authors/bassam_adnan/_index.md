@@ -7,7 +7,7 @@ last_name: Adnan
 
 # Username (this should match the folder name)
 authors:
-  - bassamadnan
+  - bassam_adnan
 
 superuser: false
 
@@ -33,7 +33,7 @@ interests:
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'bassam.adnan@research.iiit.ac.in'
+    link: 'mailto:bassam.adnan@research.iiit.ac.in'
   - icon: github
     icon_pack: fab
     link: 'https://github.com/bassamadnan/'
@@ -46,4 +46,3 @@ advisor: "Dr. Karthik Vaidhyanathan"
 
 ---
 Hey everyone Im currently in my 3rd year, learning things as I go along on my time here at SERC. My research interests include software architectures, particularly for IoT systems, making them autonomous. Do come by and meet me at SERC!
-

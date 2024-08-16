@@ -1,13 +1,13 @@
 ---
-title: Yashaswinee  Dharmineni sree 
+title: Yashaswinee Dharmineni Sree 
 
 # Full name (for SEO)
-first_name: Yashaswinee 
-last_name: Dharmineni sree 
+first_name: Yashaswinee
+last_name: Dharmineni Sree
 
 # Username (this should match the folder name)
 authors:
-  - Yashaswinee
+  - yashaswinee
 
 superuser: false
 
@@ -23,15 +23,15 @@ organizations:
 bio: CSD Junior @ IIITH
 
 interests:
-  - Software engineering
-  - digital twin
-  - mixed reality 
+  - Software Engineering
+  - Digital Twin
+  - Mixed Reality 
 
 # Social/Academic Networking
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'sreeyashaswinee@gmail.com'
+    link: 'mailto:dharmineni.y@research.iiit.ac.in'
   - icon: github
     icon_pack: fab
     link: 'https://github.com/yashaswinee'
@@ -43,6 +43,8 @@ user_groups:
 advisor: "Dr. Y. Raghu Reddy"
 
 ---
-Undergrad Researcher under Prof Raghu Reddy
+Undergrad Researcher under Prof Raghu Reddy.
+
 Field of work -- VR and Digital Twin
+
 I love watching anime :]

@@ -7,12 +7,12 @@ last_name: Korraprolu
 
 # Username (this should match the folder name)
 authors:
-  - Brahma
+  - brahma
 
 superuser: false
 
 # Role/position
-role: CSE
+role: PhD CSE
 
 # Organizations/Affiliations
 organizations:
@@ -20,7 +20,7 @@ organizations:
     url: ''
 
 # Short bio (displayed in user profile at end of posts)
-bio: PhD student in SERC . Senior Lead Engineer in Collins Aerospace
+bio: PhD student in SERC. Senior Lead Engineer in Collins Aerospace
 
 interests:
   - System Engineering 
@@ -32,7 +32,7 @@ interests:
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'brahma.reddy@researc.iiit.ac.in'
+    link: 'mailto:brahma.reddy@researc.iiit.ac.in'
   - icon: github
     icon_pack: fab
     link: 'https://github.com/k-brahma-reddy'
@@ -44,6 +44,5 @@ user_groups:
 advisor: "Dr. Y. Raghu Reddy"
 
 ---
-10 Years experience in Designing and developing Safety Critical Embedded systems. Experience in Automotive and Aerospace industry. 
-Masters in VLSI design , Bachelors in ECE.
-
+10 Years experience in Designing and developing Safety Critical Embedded systems. Experience in Automotive and Aerospace industry.
+Masters in VLSI design, Bachelors in ECE.

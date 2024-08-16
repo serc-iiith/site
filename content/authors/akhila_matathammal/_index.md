@@ -12,7 +12,7 @@ authors:
 superuser: false
 
 # Role/position
-role: CSE
+role: PhD CSE
 
 # Organizations/Affiliations
 organizations:
@@ -34,7 +34,7 @@ interests:
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'akhila.matathammal@research.iiit.ac.in'
+    link: 'mailto:akhila.matathammal@research.iiit.ac.in'
   - icon: github
     icon_pack: fab
     link: 'https://github.com/akhiha'

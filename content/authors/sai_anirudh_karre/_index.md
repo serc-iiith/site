@@ -29,15 +29,15 @@ interests:
 
 # Social/Academic Networking
 social:
-  - icon: envelope
-    icon_pack: fas
-    link: 'mailto:saianirudh.karri@research.iiit.ac.in'
+  # - icon: envelope
+  #   icon_pack: fas
+  #   link: 'mailto:saianirudh.karri@research.iiit.ac.in'
   - icon: github
     icon_pack: fab
     link: 'https://github.com/sai11101989'
 
 user_groups:
-  - PhD Students
+  - Alumni
 
 # Advisor
 advisor: "Dr. Y. Raghu Reddy"

@@ -29,7 +29,7 @@ interests:
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'moida.praneeth@students.iiit.ac.in'
+    link: 'mailto:moida.praneeth@students.iiit.ac.in'
   - icon: github
     icon_pack: fab
     link: 'https://github.com/PraneethJain/'

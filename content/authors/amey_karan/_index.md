@@ -1,14 +1,14 @@
 ---
-title: Shambhavi Jahagirdar
+title: Amey Karan
 
 # Full name (for SEO)
-first_name: Shambhavi
-last_name: Jahagirdar
+first_name: Amey
+last_name: Karan
 
 # Username (this should match the folder name)
 authors:
-  - shambhavi_jahagirdar
-  
+  - amey_karan
+
 superuser: false
 
 # Role/position
@@ -20,21 +20,26 @@ organizations:
     url: ''
 
 # Short bio (displayed in user profile at end of posts)
-# bio: My research interests include nan
+bio: Cheen tapak dum dum
+
+interests:
+  - 
 
 # Social/Academic Networking
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'mailto:shambhavi.jahagirdar@research.iiit.ac.in'
+    link: 'mailto:amey.karan@research.iiit.ac.in'
   - icon: github
     icon_pack: fab
-    link: 'https://github.com/Shambhaviiiit'
+    link: 'https://github.com/ameykaran'
 
 user_groups:
   - MS by Research Students
 
 # Advisor
-advisor: "Dr. Y. Raghu Reddy"
+advisor: "Dr. Karthik Vaidhyanathan"
 
 ---
+
+

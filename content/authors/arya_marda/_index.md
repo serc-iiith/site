@@ -7,7 +7,7 @@ last_name: Marda
 
 # Username (this should match the folder name)
 authors:
-  - Arya-Ayra
+  - arya_marda
 
 superuser: false
 
@@ -30,7 +30,7 @@ interests:
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'arya.marda@students.iiit.ac.in'
+    link: 'mailto:arya.marda@students.iiit.ac.in'
   - icon: github
     icon_pack: fab
     link: 'https://github.com/Arya-Ayra'

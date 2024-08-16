@@ -29,7 +29,7 @@ interests:
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'agrim.mittal@students.iiit.ac.in'
+    link: 'mailto:agrim.mittal@students.iiit.ac.in'
   - icon: github
     icon_pack: fab
     link: 'https://github.com/agrimmmm'

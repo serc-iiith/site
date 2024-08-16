@@ -29,7 +29,7 @@ interests:
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'sambu.aneesh@research.iiit.ac.in'
+    link: 'mailto:sambu.aneesh@research.iiit.ac.in'
   - icon: github
     icon_pack: fab
     link: 'github.com/sambuaneesh'

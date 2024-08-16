@@ -7,7 +7,7 @@ last_name: Tedla
 
 # Username (this should match the folder name)
 authors:
-  - meghana_tedla_
+  - meghana_tedla
   
 superuser: false
 

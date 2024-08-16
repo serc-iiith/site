@@ -7,7 +7,7 @@ last_name: Goyal
 
 # Username (this should match the folder name)
 authors:
-  - ShailenderGoyal
+  - shailender_goyal
 
 superuser: false
 
@@ -29,13 +29,13 @@ interests:
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'shailender.goyal@research.iiit.ac.in'
+    link: 'mailto:shailender.goyal@research.iiit.ac.in'
   - icon: github
     icon_pack: fab
     link: 'https://github.com/ShailenderGoyal'
 
 user_groups:
-  - Honors Students
+  - MS by Research Students
 
 # Advisor
 advisor: "Dr. Karthik Vaidhyanathan"

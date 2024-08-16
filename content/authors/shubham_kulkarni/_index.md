@@ -1,18 +1,18 @@
 ---
-title: Amey Karan
+title: Shubham Kulkarni
 
 # Full name (for SEO)
-first_name: Amey
-last_name: Karan
+first_name: Shubham
+last_name: Kulkarni
 
 # Username (this should match the folder name)
 authors:
-  - amey.karan
-
+  - shubham_kulkarni
+  
 superuser: false
 
 # Role/position
-role: CSD
+role: MS (CSE)
 
 # Organizations/Affiliations
 organizations:
@@ -20,26 +20,21 @@ organizations:
     url: ''
 
 # Short bio (displayed in user profile at end of posts)
-bio: Cheen tapak dum dum
-
-interests:
-  - 
+# bio: My research interests include nan
 
 # Social/Academic Networking
 social:
-  - icon: envelope
-    icon_pack: fas
-    link: 'amey.karan@research.iiit.ac.in'
-  - icon: github
+  # - icon: envelope
+  #   icon_pack: fas
+  #   link: 'mailto:shubham.kulkarni@research.iiit.ac.in'
+  - icon: linkedin
     icon_pack: fab
-    link: 'https://github.com/ameykaran'
+    link: 'https://www.linkedin.com/in/shubham-kulkarni-061732123/'
 
 user_groups:
-  - MS by Research Students
+  - Alumni
 
 # Advisor
 advisor: "Dr. Karthik Vaidhyanathan"
 
 ---
-
-

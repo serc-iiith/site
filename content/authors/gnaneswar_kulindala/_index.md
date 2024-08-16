@@ -20,12 +20,13 @@ organizations:
     url: ''
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include Algorithm Exploration and Modelling, Computer Science Education, Compilers
+bio: My research interests include Algorithm Exploration and Modelling, Computer Science Education, Compilers, Digital Electronics
 
 interests:
   - Algorithm Exploration and Modelling
   - Computer Science Education
   - Compilers
+  - Digital Electronics
 
 # Social/Academic Networking
 social:
@@ -35,6 +36,9 @@ social:
   - icon: github
     icon_pack: fab
     link: 'https://github.com/gnaneswar-k'
+  - icon: linkedin
+    icon_pack: fab
+    link: 'https://linkedin.com/in/gnaneswar-kulindala/'
 
 user_groups:
   - MS by Research Students
@@ -46,4 +50,4 @@ advisor: "Dr. Venkatesh Choppella"
 ---
 Gnaneswar Kulindala is an undergraduate dual-degree student studying in the Electronics and Communications stream at the International Institute of Information Technology, Hyderabad. He is pursuing research at the Software Engineering Research Center under Dr. Venkatesh Choppella. His main academic interests are Digital Electronics, Computer Architecture, Hardware-Software Interface, System Modelling and Algorithm Exploration.
 
-Gnaneswar's research area includes Compilers, Algorithm Exploration, and Modelling Algorithmic Systems using Feedback Control. His research focuses on building better tools and techniques for teaching algorithms to students using no-code strategies, evaluating students' understanding of algorithms, and modelling and understanding the workings of algorithmic systems through the application of feedback control.
+Gnaneswar's research area includes Compilers, Algorithm Exploration, and Modelling Algorithmic Systems using Feedback Control. His research focuses on building better tools and techniques for teaching algorithms to students using no-code strategies, evaluating students' understanding of algorithms and exploring Verilog from a hardware-software interface perspective.
