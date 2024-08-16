@@ -16,7 +16,7 @@ sections:
       filters:
       #   folders:
       #     - project
-        tag: "ongoing"
+        tag: 'ongoing'
       page_type: project
     design:
       view: compact
@@ -33,7 +33,7 @@ sections:
       filters:
       #   folders:
       #     - project
-        tag: "completed"
+        tag: 'completed'
       page_type: project
     design:
       view: compact
