@@ -35,6 +35,9 @@ social:
   - icon: github
     icon_pack: fab
     link: 'https://github.com/perbaw'
+  - icon: linkedin
+    icon_pack: fab
+    link: 'https://linkedin.com/in/prabhavshetty/'
 
 user_groups:
   - MS by Research Students
