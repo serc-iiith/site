@@ -53,7 +53,7 @@ def process_csv(csv_file):
                 for item in interests:
                     md_file.write(f"  - {item}\n")
                 md_file.write(f"\n")
-                md_file.write(f"# Social/Academic Networking\nsocial:\n  - icon: envelope\n    icon_pack: fas\n    link: '{email}'\n  - icon: github\n    icon_pack: fab\n    link: '{github}'\n\n")
+                md_file.write(f"# Social/Academic Networking\nsocial:\n  - icon: envelope\n    icon_pack: fas\n    link: 'mailto:{email}'\n  - icon: github\n    icon_pack: fab\n    link: '{github}'\n\n")
                 md_file.write(f"user_groups:\n  - {category}\n\n")
                 md_file.write(f"# Advisor\nadvisor: \"{advisor}\"\n\n")
                 md_file.write(f"---\n{lbio}\n\n")

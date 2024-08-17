@@ -31,10 +31,10 @@ interests:
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'prabhav.shetty@research.iiit.ac.in'
+    link: 'mailto:prabhav.shetty@research.iiit.ac.in'
   - icon: github
     icon_pack: fab
-    link: 'github.com/perbaw'
+    link: 'https://github.com/perbaw'
 
 user_groups:
   - MS by Research Students
