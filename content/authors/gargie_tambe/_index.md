@@ -1,13 +1,13 @@
 ---
-title: Prabhav Shetty
+title: Gargie Tambe
 
 # Full name (for SEO)
-first_name: Prabhav
-last_name: Shetty
+first_name: Gargie
+last_name: Tambe
 
 # Username (this should match the folder name)
 authors:
-  - prabhav
+  - gargie_tambe
 
 superuser: false
 
@@ -20,27 +20,24 @@ organizations:
     url: ''
 
 # Short bio (displayed in user profile at end of posts)
-bio: I like escalators
+bio: 
 
 interests:
-  - Compilers
-  - Formal Verification
-  - CS Education
+
 
 # Social/Academic Networking
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'prabhav.shetty@research.iiit.ac.in'
+    link: ''
   - icon: github
     icon_pack: fab
-    link: 'github.com/perbaw'
+    link: ''
 
 user_groups:
   - MS by Research Students
-  - Website Maintainer
 
 # Advisor
-advisor: "Dr. Venkatesh Choppella"
+advisor: "Dr. Y. Raghu Reddy"
 
 ---
