@@ -38,6 +38,9 @@ social:
   - icon: linkedin
     icon_pack: fab
     link: 'https://linkedin.com/in/prabhavshetty/'
+  - icon: instagram
+    icon_pack: fab
+    link: 'https://www.instagram.com/prabhav.shetty/'
 
 user_groups:
   - MS by Research Students
