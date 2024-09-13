@@ -20,19 +20,21 @@ organizations:
     url: ''
 
 # Short bio (displayed in user profile at end of posts)
-bio: 
+bio: Begusarai baby!!!
 
 interests:
-
+  - XR Technologies
+  - User Centric Research
+  - Game Development
 
 # Social/Academic Networking
 social:
   - icon: envelope
     icon_pack: fas
-    link: ''
+    link: 'mailto:aaditya.narain@research.iiit.ac.in'
   - icon: github
     icon_pack: fab
-    link: ''
+    link: 'https://github.com/aadityanarain2003'
 
 user_groups:
   - MS by Research Students
