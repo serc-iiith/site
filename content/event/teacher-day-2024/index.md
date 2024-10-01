@@ -14,7 +14,7 @@ address:
 
 
 summary: Teacher's Day 2024
-abstract: IIIT Hyderabad marked Teachers' Day with a heartfelt celebration honoring its distinguished faculty: Professor Raghu Reddy, Professor Karthik Vaidhyanathan, Professor Venkatesh Chopella, and Professor Raman Saxena. Students expressed their gratitude through thoughtful tributes, sharing personal stories of mentorship and inspiration. The event showcased the profound impact these professors have on shaping both academic journeys and future innovations, highlighting the vital role educators play in the lives of their students. It was a day filled with appreciation and reflection on the transformative power of teaching..'
+abstract: 'IIIT Hyderabad marked Teachers\' Day with a heartfelt celebration honoring its distinguished faculty: Professor Raghu Reddy, Professor Karthik Vaidhyanathan, Professor Venkatesh Chopella, and Professor Raman Saxena. Students expressed their gratitude through thoughtful tributes, sharing personal stories of mentorship and inspiration. The event showcased the profound impact these professors have on shaping both academic journeys and future innovations, highlighting the vital role educators play in the lives of their students. It was a day filled with appreciation and reflection on the transformative power of teaching..'
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
