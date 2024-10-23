@@ -1,8 +1,8 @@
 ---
-title: Gnaneswar Kulindala
+title: GnaneswarTest Kulindala
 
 # Full name (for SEO)
-first_name: Gnaneswar
+first_name: GnaneswarTest
 last_name: Kulindala
 
 # Username (this should match the folder name)
