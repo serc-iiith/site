@@ -2,9 +2,9 @@
 title: Teachers Day 2024
 
 event:  Teachers Day At SERC
-event_url: https://conf.researchr.org/home/icsa-2024
+event_url: 
 
-location: IIIT Hyderabad
+location: Software Engineering Research Center, IIIT Hyderabad
 address:
   street: Prof. C R Rao Road, Gachibowli
   city: Hyderabad
@@ -14,19 +14,20 @@ address:
 
 
 summary: Teacher's Day 2024
-abstract: Aacharya Devo Bhava
+abstract: Acharya Devo Bhava. Software Engineering Research Center marked Teachers Day with a heartfelt celebration honoring its distinguished faculty - Professors [Raghu Reddy](/author/raghu-reddy/), [Karthik Vaidhyanathan](/author/karthik-vaidhyanathan/), [Venkatesh Choppella](/author/venkatesh-choppella/), and [Raman Saxena](/author/raman-saxena/). Students expressed their gratitude through thoughtful tributes, sharing personal stories of mentorship and inspiration. The event showcased the profound impact these professors have on shaping both academic journeys and future innovations, highlighting the vital role educators play in the lives of students. It was a day filled with appreciation and reflection on the transformative power of teaching.
+
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: '2024-09-05T09:30:00+05:30'
-# date_end: '2024-06-08T18:00:00+05:30'
+date: '2024-09-05T15:30:00+05:30'
+#date_end: '2024-06-08T18:00:00+05:30'
 all_day: false
 
 # Schedule page publish date (NOT talk date).
-publishDate: '2024-10-01T00:00:00+05:30'
+#publishDate: '2024-03-13T00:00:00+05:30'
 
-authors: []
-tags: []
+#authors: []
+#tags: []
 
 # Is this a featured talk? (true/false)
 featured: true
@@ -55,4 +56,4 @@ slides:
 projects:
 ---
 
-Teachers day was held at **[International Institute of Information Technology Campus (IIIT-H) Hyderabad](https://iiit.ac.in), India** on **5th September 2024**.
+Teacher's Day 2024 held at Software Engineering Research Center, **[International Institute of Information Technology Campus (IIIT-H) Hyderabad](https://iiit.ac.in), India** on **5th September 2024**. 
