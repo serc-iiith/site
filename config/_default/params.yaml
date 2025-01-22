@@ -20,14 +20,14 @@ marketing:
     org_name: 'Software Engineering Research Center'
     description: 'This is the official website of Software Engineering Research Center, IIIT Hyderabad, India.'
     twitter: ''
-  analytics:
-    google_analytics: ''
-    baidu_tongji: ''
-    google_tag_manager: ''
-    microsoft_clarity: ''
-  verification:
-    google: ''
-    baidu: ''
+  # analytics:
+  #   google_analytics: ''
+  #   baidu_tongji: ''
+  #   google_tag_manager: ''
+  #   microsoft_clarity: ''
+  # verification:
+  #   google: ''
+  #   baidu: ''
 
 # Site header
 
