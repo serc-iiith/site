@@ -9,9 +9,8 @@ date: 2024-07-10
 #   focal_point: 'top'
 ---
 
-Gamification of software engineering activities to increase interest in developers.
 
-"!Demo: [YouTube Link](https://www.youtube.com/watch?v=IjgOBEQMFn8)"
+
 
 <!--more-->
 

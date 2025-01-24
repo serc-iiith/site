@@ -9,9 +9,7 @@ date: 2024-07-10
 #   focal_point: 'top'
 ---
 
-Adoption of a technology into an organization needs acceptance and ease of use
-
-"!Demo: [YouTube Link](https://www.youtube.com/watch?v=IjgOBEQMFn8)"
+Adoption of a technology into an organization needs acceptance and ease of use.
 
 <!--more-->
 
