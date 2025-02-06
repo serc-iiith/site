@@ -12,7 +12,7 @@ authors:
 superuser: false
 
 # Role/position
-role: PhD CSE 
+role: Alumni
 
 # Organizations/Affiliations
 organizations:
