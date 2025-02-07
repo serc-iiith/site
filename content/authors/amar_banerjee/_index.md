@@ -20,7 +20,7 @@ organizations:
     url: ''
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include Semantics, Knowledge Graphs, Reasoning Systems, Domain Specific Langauges, Control Software, Automated Software Development
+bio: Amar Banerjee is PhD student under Dr. Venkatesh Choppella. He has contributed to multiple technology domains, including robotics, IoT, healthcare, and radio astrophysics. Currently, he serves as an Advanced Technology Researcher at Philips Healthcare. Amar’s research interests include knowledge graphs, semantics, neural networks, medical image processing, human-machine collaboration, and cognitive AI.
 
 interests:
   - Semantics
@@ -46,4 +46,4 @@ user_groups:
 advisor: "Dr. Venkatesh Choppella"
 
 ---
-Amar Banerjee is currently a PhD student at IIIT Hyderabad's Software Engineering Research Center under the guidance of Prof. Venkatesh Choppella. His research focuses on semantics, artificial intelligence, and the automation of software generation. Currently working with Phillips, he leads the initiatives in AI for mobile surgery, and his past projects have included research and product design in AI, Robotics and IoT at Siemens and TCS Research. Amar's research interests include knowledge graphs, semantics, neural networks, medical image processing, human-machine collaboration and cognitive AI. He has published multiple patents and publications as contributions to the scientific community.
+Amar Banerjee is a PhD student under Dr. Venkatesh Choppella. His work area is knowledge-driven automated software engineering for the controls domain in cyber-physical and IoT systems. He is an Advanced Technology Researcher at Philips Healthcare, leading global research initiatives in AI-driven medical imaging, surgical innovations, and quantum computing applications for healthcare. His prior roles include Technology Expert at Siemens Technologies & Research, where he drove AI-based sales transformation, semantic knowledge graphs, and domain-specific language models, and Senior Researcher at Tata Research Development and Design Center. He has authored multiple publications and patents in AI-driven automation, robotics, and control systems. Additionally, he is an active reviewer for renowned journals, including Elsevier, Springer, and IEEE. He is also engaged in academic mentoring, serving as a guest lecturer at multiple institutes, where he prepares students for careers in AI and industrial automation.
