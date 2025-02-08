@@ -7,7 +7,7 @@ last_name: Maddireddy
 
 # Username (this should match the folder name)
 authors:
-  - how2kritin
+  - kritin_maddireddy
 
 superuser: false
 
@@ -45,6 +45,7 @@ user_groups:
 advisor: "Dr. Karthik Vaidhyanathan"
 
 ---
+
 Hi there! I'm Kritin, and I love computers and everything that they can do. I like architecting software, and I like machine learning, so I decided to research the intersection of the two!
 
 Currently, I'm researching Model Driven Engineering and how we can create Low-Code or No-Code systems, to make it easier for people to achieve a specific goal without having to learn programming.

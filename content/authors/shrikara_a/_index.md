@@ -42,4 +42,3 @@ user_groups:
 advisor: "Dr. Karthik Vaidhyanathan"
 
 ---
-<!-- Bio Here -->

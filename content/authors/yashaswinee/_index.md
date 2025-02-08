@@ -43,6 +43,7 @@ user_groups:
 advisor: "Dr. Y. Raghu Reddy"
 
 ---
+
 Undergrad Researcher under Prof Raghu Reddy.
 
 Field of work -- VR and Digital Twin

@@ -45,4 +45,5 @@ user_groups:
 advisor: "Dr. Raman Saxena"
 
 ---
+
 As a computer science engineering student, I am dedicated to acquiring a strong foundation in programming languages, algorithms, and software development methodologies. Eager to explore various domains within the field, I am actively engaged in coursework, projects, and self-directed learning to enhance my skills. I am particularly interested in Full Stack development with design thinking actively applied.

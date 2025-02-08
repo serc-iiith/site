@@ -39,4 +39,3 @@ user_groups:
 advisor: "Dr. Y. Raghu Reddy"
 
 ---
-<!-- Bio Here -->

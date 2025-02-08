@@ -43,6 +43,7 @@ user_groups:
 advisor: "Dr. Karthik Vaidhyanathan"
 
 ---
+
 I am a researcher exploring the intersection of software engineering and AI, with the focus on software architecture for machine learning (ML) systems, certifying ML systems, and developing low-code ML platforms. Previously, I worked as a full stack developer at Infosys Limited. My long-term career goal is to advance software engineering through research and innovation, Whether in academia, industry, or by starting a research-driven startup. I aim to apply my expertise to solve real-world challenges and contribute to technological advancements.
 
 Some of my accepted works include:

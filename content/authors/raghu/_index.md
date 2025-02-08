@@ -76,7 +76,9 @@ highlight_name: false
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
   - Faculty
+
 ---
+
 Dr. Y. Raghu Reddy currently works as an Associate Professor at International Institute of Information Technolgoy (IIIT Hyderabad), India. His primary research interests are in Software Engineering, HCI and Knowledge Engineering.
 
 His primary research interests are in design and construction of complex software systems. He has published a number of peer reviewed publications in these areas. He is currently the Head of the Software Engineering Research Center (SERC) at IIIT Hyderabad.

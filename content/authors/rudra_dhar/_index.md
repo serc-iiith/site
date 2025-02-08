@@ -43,4 +43,5 @@ user_groups:
 advisor: "Dr. Karthik Vaidhyanathan"
 
 ---
+
 Rudra is a PhD student working in SERC, in the area of Generative AI for Software Engineering, focused on Software Architecture. His research areas are Information Retrieval, Generative AI, Architectural Knowledge Management.

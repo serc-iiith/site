@@ -42,4 +42,3 @@ user_groups:
 advisor: "Dr. Raghu Reddy & Dr. Kartik Vaidyanathan "
 
 ---
-<!-- Bio Here -->

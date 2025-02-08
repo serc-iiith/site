@@ -44,7 +44,7 @@ user_groups:
 advisor: "Dr. Y. Raghu Reddy"
 
 ---
- Nitheesh Chandra Y is pursuing his PhD at IIIT Hyderabad, where his research spans multiple areas including distributed systems, formal verification of PLC programming languages, large-scale modular reliability, and innovative approaches to computer science education. His current work is focused on establishing theoretical foundations and practical methodologies to ensure system safety and scalability.
+
+Nitheesh Chandra Y is pursuing his PhD at IIIT Hyderabad, where his research spans multiple areas including distributed systems, formal verification of PLC programming languages, large-scale modular reliability, and innovative approaches to computer science education. His current work is focused on establishing theoretical foundations and practical methodologies to ensure system safety and scalability.
 
 Prior to entering academia, Nitheesh accumulated 4.5 years of diverse industry experience. He began his career as a backend developer, advanced to full-stack development, then embraced DevSecOps practices, and ultimately specialized in reliability engineering. This varied professional background provides him with a unique perspective that enriches his research and bridges the gap between rigorous academic inquiry and real-world system challenges.
-

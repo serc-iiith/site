@@ -43,5 +43,3 @@ user_groups:
 advisor: "Dr. Karthik Vaidhyanathan"
 
 ---
-
-

@@ -44,5 +44,6 @@ user_groups:
 advisor: "Dr. Y. Raghu Reddy"
 
 ---
+
 10 Years experience in Designing and developing Safety Critical Embedded systems. Experience in Automotive and Aerospace industry.
 Masters in VLSI design, Bachelors in ECE.

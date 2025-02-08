@@ -40,4 +40,5 @@ user_groups:
 advisor: "Dr. Karthik Vaidhyanathan"
 
 ---
+
 I'm an MS by Research student in Computer Science and Engineering, working under the guidance of Dr. Karthik Vaidhyanathan. My research focuses on developing sustainable self-adaptive machine learning-enabled systems that can efficiently manage changing environments and resource constraints. I’m also exploring how these systems can be integrated with digital twins to enhance real-time monitoring, analysis, and decision-making in dynamic scenarios. Alongside my academic work, I enjoy singing.
