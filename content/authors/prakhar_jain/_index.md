@@ -12,7 +12,7 @@ authors:
 superuser: false
 
 # Role/position
-role: LCD (Dual Degree)
+role: LCD
 
 # Organizations/Affiliations
 organizations:

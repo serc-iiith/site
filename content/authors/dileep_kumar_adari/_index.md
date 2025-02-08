@@ -3,7 +3,7 @@ title: Dileep Kumar Adari
 
 # Full name (for SEO)
 first_name: Dileep Kumar
-last_name: Kulindala
+last_name: Adari
 
 # Username (this should match the folder name)
 authors:
@@ -12,7 +12,7 @@ authors:
 superuser: false
 
 # Role/position
-role: CSD
+role: CSE
 
 # Organizations/Affiliations
 organizations:
@@ -39,7 +39,7 @@ social:
     link: 'https://linkedin.com/in/dileep-kumar-adari-298169252/'
 
 user_groups:
-  - MS by Research Students
+  - Honors Students
 
 # Advisor
 advisor: "Dr. Raman Saxena"

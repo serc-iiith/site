@@ -6,7 +6,7 @@ last_name: Yaratapalli
 
 # Username (this should match the folder name)
 authors:
-  - nitheesh_chandra_y
+  - nitheesh_chandra
 
 superuser: false
 
