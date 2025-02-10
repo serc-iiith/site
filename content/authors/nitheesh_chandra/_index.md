@@ -39,6 +39,7 @@ social:
 
 user_groups:
   - PhD Students
+  - Website Maintainer
 
 # Advisor
 advisor: "Dr. Y. Raghu Reddy"
