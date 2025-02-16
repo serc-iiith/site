@@ -26,7 +26,7 @@ interests:
   - Software Architecture
   - Internet of Things
   - Green Software
-- Self Sustaining systems and architecture
+  - Self Sustaining systems and architecture
 
 
 
