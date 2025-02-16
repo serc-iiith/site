@@ -36,8 +36,7 @@ social:
     link: 'https://github.com/adyanshkakran'
 
 user_groups:
-  - MS by Research Students
-
+  - Dual Degree
 # Advisor
 advisor: "Dr. Karthik Vaidhyanathan"
 

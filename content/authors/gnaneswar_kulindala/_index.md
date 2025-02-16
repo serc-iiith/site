@@ -41,7 +41,7 @@ social:
     link: 'https://linkedin.com/in/gnaneswar-kulindala/'
 
 user_groups:
-  - MS by Research Students
+  - Dual Degree
   - Website Maintainer
 
 # Advisor

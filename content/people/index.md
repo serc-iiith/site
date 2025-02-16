@@ -14,6 +14,7 @@ sections:
           - Faculty
           - PhD Students
           - MS by Research Students
+          - Dual Degree
           - Honors Students
           - BTP Students
           - Research Interns

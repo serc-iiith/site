@@ -43,7 +43,7 @@ social:
     link: 'https://www.instagram.com/prabhav.shetty/'
 
 user_groups:
-  - MS by Research Students
+  - Dual Degree
   - Website Maintainer
 
 # Advisor

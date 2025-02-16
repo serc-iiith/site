@@ -32,7 +32,7 @@ social:
     link: 'https://github.com/prakharjain3'
 
 user_groups:
-  - MS by Research Students
+  - Dual Degree
   - Website Maintainer
 
 # Advisor

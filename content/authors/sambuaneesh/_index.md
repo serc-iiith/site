@@ -40,7 +40,7 @@ social:
     link: 'github.com/sambuaneesh'
 
 user_groups:
-  - MS by Research Students
+  - Dual Degree
 
 # Advisor
 advisor: "Dr. Karthik Vaidhyanathan"

@@ -36,7 +36,7 @@ social:
     link: 'https://github.com/StarryBadger'
 
 user_groups:
-  - MS by Research Students
+  - Dual Degree
 
 # Advisor
 advisor: "Dr. Karthik Vaidhyanathan"

@@ -39,7 +39,7 @@ social:
     link: 'https://github.com/bassamadnan/'
 
 user_groups:
-  - MS by Research Students
+  - Dual Degree
 
 # Advisor
 advisor: "Dr. Karthik Vaidhyanathan"

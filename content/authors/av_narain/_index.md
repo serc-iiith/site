@@ -40,7 +40,7 @@ social:
     link: 'https://github.com/aadityanarain2003'
 
 user_groups:
-  - MS by Research Students
+  - Dual Degree
 
 # Advisor
 advisor: "Dr. Raman Saxena"
