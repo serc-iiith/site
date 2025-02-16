@@ -45,6 +45,6 @@ user_groups:
 # Advisor
 advisor: "Dr. Karthik Vaidhyanathan"
 
-Hi! You can reach out to me through SERC and SCRC. I like building, breaking, and fixing systems-keeps things interesting.
-
 ---
+
+Hi! You can reach out to me through SERC and SCRC. I like building, breaking, and fixing systems-keeps things interesting.

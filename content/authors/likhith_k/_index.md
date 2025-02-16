@@ -39,6 +39,7 @@ user_groups:
 # Advisor
 advisor: "Dr. Karthik Vaidhyanathan"
 
+---
 I am always curious about new frontiers where technology enables groundbreaking innovations. My work primarily revolves around Digital Twins, DevOps, and ML. I am pursuing an MS by Research in Computer Science under the guidance of Dr. Karthik Vaidhyanathan, focusing on developing Digital Twins for Smart Cities to optimize infrastructure and urban planning. Beyond my core research, I am actively exploring the integration of AR/VR with smart city ecosystems and enhancing simulation frameworks. I aspire to be an achiever—someone whose contributions leave a lasting impact and inspire others. I am passionate about expanding my expertise into space technologies
 
 
