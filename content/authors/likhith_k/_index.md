@@ -1,8 +1,8 @@
 ---
-title: Hiya Bhatt
+title: Likhith Kanigolla
 # Full name (for SEO)
-first_name: Hiya
-last_name: Bhatt
+first_name: Likhith
+last_name: Kanigolla
 
 # Username (this should match the folder name)
 authors:
@@ -28,7 +28,7 @@ interests:
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'mailto:hiya.bhatt@research.iiiit.ac.in'
+    link: 'mailto:likhith.kanigolla@research.iiit.ac.in'
   - icon: github
     icon_pack: fab
     link:
