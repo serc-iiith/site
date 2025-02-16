@@ -48,5 +48,3 @@ advisor: "Dr. Karthik Vaidhyanathan"
 Hi! You can reach out to me through SERC and SCRC. I like building, breaking, and fixing systems-keeps things interesting.
 
 ---
-
-

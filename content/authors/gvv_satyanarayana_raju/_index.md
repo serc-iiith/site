@@ -12,7 +12,7 @@ authors:
 superuser: false
 
 # Role/position
-role: Alumni
+role: PhD CSE
 
 # Organizations/Affiliations
 organizations:
@@ -36,10 +36,9 @@ social:
     link: 'https://github.com/gvvsraju '
 
 user_groups:
-  - PhD Students
+  - Alumni
 
 # Advisor
 advisor: "Dr. Raghu Reddy & Dr. Kartik Vaidyanathan "
 
 ---
-<!-- Bio Here -->

@@ -46,4 +46,5 @@ user_groups:
 advisor: "Dr. Venkatesh Choppella"
 
 ---
+
 Amar Banerjee is a PhD student under Dr. Venkatesh Choppella. His work area is knowledge-driven automated software engineering for the controls domain in cyber-physical and IoT systems. He is an Advanced Technology Researcher at Philips Healthcare, leading global research initiatives in AI-driven medical imaging, surgical innovations, and quantum computing applications for healthcare. His prior roles include Technology Expert at Siemens Technologies & Research, where he drove AI-based sales transformation, semantic knowledge graphs, and domain-specific language models, and Senior Researcher at Tata Research Development and Design Center. He has authored multiple publications and patents in AI-driven automation, robotics, and control systems. Additionally, he is an active reviewer for renowned journals, including Elsevier, Springer, and IEEE. He is also engaged in academic mentoring, serving as a guest lecturer at multiple institutes, where he prepares students for careers in AI and industrial automation.

@@ -43,4 +43,7 @@ user_groups:
 advisor: "Dr. Karthik Vaidhyanathan"
 
 ---
+<<<<<<< HEAD
 I'm a final year BTech student at IIITH, advised by Dr Karthik Vaidhyanathan of the Software Engineering Research Center. My previous work has involved sustainable MLOps using self-adaptation, architectural component generation using LLMs and simplifying CloudOps using LLMs. I work primarily in the intersection of AI and SE/SA to bridge the gap between them and improve both. I also enjoy traditional software development and architecture, particularly serverless functions and microservices and improving their quality. Besides CS, I enjoy watching and playing basketball and reading (mostly fiction).
+=======
+>>>>>>> c419b5cd8ff5a883e2d1e5a431e2711159284707

@@ -1,13 +1,13 @@
 ---
-title: Adyansh Kakran
+title: Harshvardhan
 
 # Full name (for SEO)
-first_name: Adyansh
-last_name: Kakran
+first_name: Harshvardhan
+last_name: Harshvardhan
 
 # Username (this should match the folder name)
 authors:
-  - adyansh_kakran
+  - harshvardhan
   
 superuser: false
 
@@ -20,24 +20,26 @@ organizations:
     url: ''
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include GenAI for Self Adaption, Self Adaptive MLOps
+bio: My research interests include Virtual Reality in SE & Healthcare
 
 interests:
-  - GenAI for Self Adaption
-  - Self Adaptive MLOps
+  - Virtual Reality
+  - Software Engineering
+  - Healthcare
 
 # Social/Academic Networking
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'mailto:adyansh.kakran@research.iiit.ac.in'
+    link: 'mailto:harshvardhan.sv@research.iiit.ac.in'
   - icon: github
     icon_pack: fab
-    link: 'https://github.com/adyanshkakran'
+    link: 'https://github.com/harsv689'
 
 user_groups:
-  - Dual Degree
+  - MS by Research Students
+
 # Advisor
-advisor: "Dr. Karthik Vaidhyanathan"
+advisor: "Dr. Y. Raghu Reddy"
 
 ---

@@ -48,6 +48,7 @@ user_groups:
 advisor: "Dr. Venkatesh Choppella"
 
 ---
+
 Gnaneswar Kulindala is an undergraduate dual-degree student studying in the Electronics and Communications stream at the International Institute of Information Technology, Hyderabad. He is pursuing research at the Software Engineering Research Center under Dr. Venkatesh Choppella. His main academic interests are Digital Electronics, Computer Architecture, Hardware-Software Interface, System Modelling and Algorithm Exploration.
 
 Gnaneswar's research area includes Compilers, Algorithm Exploration, and Modelling Algorithmic Systems using Feedback Control. His research focuses on building better tools and techniques for teaching algorithms to students using no-code strategies, evaluating students' understanding of algorithms and exploring Verilog from a hardware-software interface perspective.

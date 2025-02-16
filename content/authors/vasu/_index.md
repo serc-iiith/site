@@ -60,6 +60,7 @@ social:
   - icon: github
     icon_pack: fab
     link: https://github.com/devvarma
+
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 # - icon: cv
@@ -73,7 +74,9 @@ email: ''
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
   - Faculty
+
 ---
+
 Dr. Vasudeva Varma is a Professor at the International Institute of Information Technology, Hyderabad (IIIT-H), currently serving as the Head of Language Technologies Research Centre (LTRC) and the Head of Information Retrieval and Extraction Lab (iREL). His research interests are in the broad areas of Information Retrieval, Extraction & Access, more specifically ~ Social Media Analysis, Summarization, Semantic Search, Text Generation, and Cloud Computing.
 
 He has previously served as CEO of IIIT Hyderabad Foundation, which runs one of the largest technology incubators in India, and the Dean (Research & Development), IIIT-H.

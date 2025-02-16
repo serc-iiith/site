@@ -41,5 +41,3 @@ user_groups:
 advisor: "Dr. Y. Raghu Reddy"
 
 ---
-
-

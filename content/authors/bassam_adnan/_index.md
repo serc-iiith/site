@@ -45,4 +45,5 @@ user_groups:
 advisor: "Dr. Karthik Vaidhyanathan"
 
 ---
-Hey everyone Im currently in my 3rd year, learning things as I go along on my time here at SERC. My research interests include software architectures, particularly for IoT systems, making them autonomous. Do come by and meet me at SERC!
+
+Hey everyone! I'm currently in my 3rd year, learning things as I go along on my time here at SERC. My research interests include software architectures, particularly for IoT systems, making them autonomous. Do come by and meet me at SERC!

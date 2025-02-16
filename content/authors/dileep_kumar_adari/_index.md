@@ -3,7 +3,7 @@ title: Dileep Kumar Adari
 
 # Full name (for SEO)
 first_name: Dileep Kumar
-last_name: Kulindala
+last_name: Adari
 
 # Username (this should match the folder name)
 authors:
@@ -12,7 +12,7 @@ authors:
 superuser: false
 
 # Role/position
-role: CSD
+role: CSE
 
 # Organizations/Affiliations
 organizations:
@@ -39,10 +39,11 @@ social:
     link: 'https://linkedin.com/in/dileep-kumar-adari-298169252/'
 
 user_groups:
-  - MS by Research Students
+  - Honors Students
 
 # Advisor
 advisor: "Dr. Raman Saxena"
 
 ---
+
 As a computer science engineering student, I am dedicated to acquiring a strong foundation in programming languages, algorithms, and software development methodologies. Eager to explore various domains within the field, I am actively engaged in coursework, projects, and self-directed learning to enhance my skills. I am particularly interested in Full Stack development with design thinking actively applied.

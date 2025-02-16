@@ -70,7 +70,9 @@ email: ''
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
   - Faculty
+
 ---
+
 As Professor Co-Innovation, heading the Research/Innovation outreach at IIIT Hyderabad. Helped start and grow the Technology Transfer Office, Co-Innovation (corp) labs, and the Centre for Innovation & Entrepreneurship. Association with IIITH started in 2002 as Adjunct faculty. Also, was visiting faculty at IIT Hyderabad (Innovation), and a member of governing board of incubators at IIIT-H, IIT Hyd, IIIT-Delhi and BITS.
 
 Prior to academics worked in the tech industry bay area and since 2000 in Hyderabad, as product R&D leader. Mo st recently was the India Head for Progress Software. Prior to Progress, was VP of Middleware Technologies at Pramati, and also headed Product Engineering.
