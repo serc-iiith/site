@@ -7,7 +7,7 @@ publishDate: '2024-03-23T15:50:49.314992Z'
 authors:
 - Federico Di Menna
 - Henry Muccini
-- Karthik Vaidhyanathan
+- karthik
 publication_types:
 - 'conference'
 abstract: ''

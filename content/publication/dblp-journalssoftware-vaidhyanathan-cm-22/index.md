@@ -5,7 +5,7 @@ date: '2022-01-01'
 draft: true
 publishDate: '2024-03-23T15:50:49.129956Z'
 authors:
-- Karthik Vaidhyanathan
+- karthik
 - Anish Chandran
 - Henry Muccini
 - Regi Roy

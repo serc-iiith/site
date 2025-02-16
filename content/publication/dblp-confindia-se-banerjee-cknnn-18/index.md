@@ -5,8 +5,8 @@ draft: true
 publishDate: '2024-03-23T15:49:05.371512Z'
 authors:
 - Amar Banerjee
-- Venkatesh Choppella
-- Viswanath Kasturi
+- venkatesh
+- viswanath
 - Swaminathan Natarajan
 - Padmalata V. Nistala
 - Kesav V. Nori

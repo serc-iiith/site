@@ -8,7 +8,7 @@ authors:
 - Sai Gollapudi
 - Sridhar Chimalakonda
 - Y. Raghu Reddy
-- Venkatesh Choppella
+- venkatesh
 publication_types:
 - 'conference'
 abstract: ''

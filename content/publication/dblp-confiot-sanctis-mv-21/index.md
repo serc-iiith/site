@@ -6,7 +6,7 @@ publishDate: '2024-03-23T15:50:49.805340Z'
 authors:
 - Martina De Sanctis
 - Henry Muccini
-- Karthik Vaidhyanathan
+- karthik
 publication_types:
 - 'conference'
 abstract: ''

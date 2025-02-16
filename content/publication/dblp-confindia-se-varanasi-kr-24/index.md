@@ -5,8 +5,8 @@ draft: true
 publishDate: '2024-03-23T15:50:58.128364Z'
 authors:
 - Dhiraj SM Varanasi
-- Sai Anirudh Karre
-- Raghu Reddy
+- sai_anirudh_karre
+- raghu
 publication_types:
 - 'conference'
 abstract: ''

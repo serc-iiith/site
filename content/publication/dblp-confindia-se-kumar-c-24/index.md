@@ -5,8 +5,8 @@ date: '2024-01-01'
 draft: true
 publishDate: '2024-03-23T15:49:00.931800Z'
 authors:
-- Mrityunjay Kumar
-- Venkatesh Choppella
+- mrityunjay_kumar
+- venkatesh
 publication_types:
 - 'conference'
 abstract: ''

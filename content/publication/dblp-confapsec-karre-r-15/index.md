@@ -5,7 +5,7 @@ date: '2015-01-01'
 draft: true
 publishDate: '2024-03-23T15:51:05.148540Z'
 authors:
-- Sai Anirudh Karre
+- sai_anirudh_karre
 - Y. Raghu Reddy
 publication_types:
 - 'conference'

@@ -6,7 +6,7 @@ publishDate: '2024-03-23T15:51:00.724507Z'
 authors:
 - Shivang Shekar
 - Pranav Reddy Pesaladinne
-- Sai Anirudh Karre
+- sai_anirudh_karre
 - Y. Raghu Reddy
 publication_types:
 - 'conference'

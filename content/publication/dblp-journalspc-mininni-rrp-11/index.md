@@ -7,7 +7,7 @@ publishDate: '2024-03-23T15:51:07.893516Z'
 authors:
 - Pablo D. Mininni
 - Duane Rosenberg
-- Raghu Reddy
+- raghu
 - Annick Pouquet
 publication_types:
 - 'other'

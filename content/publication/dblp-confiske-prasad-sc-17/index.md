@@ -6,7 +6,7 @@ publishDate: '2024-03-23T15:49:06.302081Z'
 authors:
 - Gollapudi V. R. J. Sai Prasad
 - Maddala Saraswati Soumya
-- Venkatesh Choppella
+- venkatesh
 publication_types:
 - 'conference'
 abstract: ''

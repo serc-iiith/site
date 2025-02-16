@@ -12,7 +12,7 @@ authors:
 - P. Sadayappan
 - J. Ramanujam
 - David E. Bernholdt
-- Venkatesh Choppella
+- venkatesh
 publication_types:
 - 'conference'
 abstract: ''

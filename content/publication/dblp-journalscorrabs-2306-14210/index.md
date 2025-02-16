@@ -7,7 +7,7 @@ publishDate: '2024-03-23T15:50:58.438641Z'
 authors:
 - Y. Pawan Kumar Gururaj
 - Raghav Mittal
-- Sai Anirudh Karre
+- sai_anirudh_karre
 - Y. Raghu Reddy
 - Syed Azeemuddin
 publication_types:

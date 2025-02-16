@@ -6,7 +6,7 @@ publishDate: '2024-03-23T15:49:05.239041Z'
 authors:
 - Gollapudi V. R. J. Sai Prasad
 - Sridhar Chimalakonda
-- Venkatesh Choppella
+- venkatesh
 publication_types:
 - 'conference'
 abstract: ''

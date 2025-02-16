@@ -7,7 +7,7 @@ authors:
 - Sudipto Ghosh
 - Nishant Bawa
 - Sameer Goel
-- Raghu Reddy
+- raghu
 publication_types:
 - 'conference'
 abstract: ''

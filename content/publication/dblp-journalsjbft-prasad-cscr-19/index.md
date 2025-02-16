@@ -6,7 +6,7 @@ draft: true
 publishDate: '2024-03-23T15:49:03.979281Z'
 authors:
 - Gollapudi V. R. J. Sai Prasad
-- Venkatesh Choppella
+- venkatesh
 - Lalit Mohan Sanagavarapu
 - Sridhar Chimalakonda
 - Y. Raghu Reddy

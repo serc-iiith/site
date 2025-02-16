@@ -5,7 +5,7 @@ date: '2021-01-01'
 draft: true
 publishDate: '2024-03-23T15:50:59.466410Z'
 authors:
-- Sai Anirudh Karre
+- sai_anirudh_karre
 - Abhinav Gupta
 - Lalit Mohan S.
 - Y. Raghu Reddy

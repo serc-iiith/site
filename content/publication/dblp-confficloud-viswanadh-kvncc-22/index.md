@@ -10,7 +10,7 @@ authors:
 - P. Vinzey
 - Nitin Nilesh
 - Sachin Chaudhari
-- Venkatesh Choppella
+- venkatesh
 publication_types:
 - 'conference'
 abstract: ''

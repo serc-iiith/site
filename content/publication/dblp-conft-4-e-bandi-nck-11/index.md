@@ -6,7 +6,7 @@ publishDate: '2024-03-23T15:49:09.496326Z'
 authors:
 - Krishna Chaitanya Bandi
 - Aditya Kiran Nori
-- Venkatesh Choppella
+- venkatesh
 - Sandhya Kode
 publication_types:
 - 'conference'

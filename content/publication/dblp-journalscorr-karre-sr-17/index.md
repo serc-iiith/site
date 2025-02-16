@@ -5,7 +5,7 @@ date: '2017-01-01'
 draft: true
 publishDate: '2024-03-23T15:51:04.487606Z'
 authors:
-- Sai Anirudh Karre
+- sai_anirudh_karre
 - Anveshi Shukla
 - Y. Raghu Reddy
 publication_types:

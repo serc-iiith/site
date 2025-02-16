@@ -7,7 +7,7 @@ publishDate: '2024-03-23T15:49:07.217890Z'
 authors:
 - Aditi Mavalankar
 - Tejaswinee Kelkar
-- Venkatesh Choppella
+- venkatesh
 publication_types:
 - 'conference'
 abstract: ''

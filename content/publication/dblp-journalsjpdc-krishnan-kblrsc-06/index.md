@@ -11,7 +11,7 @@ authors:
 - Chi-Chung Lam
 - J. Ramanujam
 - P. Sadayappan
-- Venkatesh Choppella
+- venkatesh
 publication_types:
 - 'other'
 abstract: ''

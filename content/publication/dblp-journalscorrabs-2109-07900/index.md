@@ -4,7 +4,7 @@ date: '2021-01-01'
 draft: true
 publishDate: '2024-03-23T15:50:50.053439Z'
 authors:
-- Karthik Vaidhyanathan
+- karthik
 - Antonio Bruno
 - Eleonora Mendola
 - Filippo Mignosi

@@ -4,7 +4,7 @@ date: '2021-01-01'
 draft: true
 publishDate: '2024-03-23T15:49:03.359012Z'
 authors:
-- Venkatesh Choppella
+- venkatesh
 - Manoranjan Satpathy
 publication_types:
 - 'conference'

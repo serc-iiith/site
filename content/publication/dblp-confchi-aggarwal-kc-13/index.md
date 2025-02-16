@@ -6,7 +6,7 @@ publishDate: '2024-03-23T15:49:08.120014Z'
 authors:
 - Deepti Aggarwal
 - Rohit Ashok Khot
-- Venkatesh Choppella
+- venkatesh
 publication_types:
 - 'conference'
 abstract: ''

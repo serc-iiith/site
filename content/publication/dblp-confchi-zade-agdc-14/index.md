@@ -9,7 +9,7 @@ authors:
 - Santosh Arvind Adimoolam
 - Sai Gollapudi
 - Anind K. Dey
-- Venkatesh Choppella
+- venkatesh
 publication_types:
 - 'conference'
 abstract: ''

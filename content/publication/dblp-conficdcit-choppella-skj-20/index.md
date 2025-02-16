@@ -4,9 +4,9 @@ date: '2020-01-01'
 draft: true
 publishDate: '2024-03-23T15:49:03.717268Z'
 authors:
-- Venkatesh Choppella
+- venkatesh
 - Arjun Sanjeev
-- Viswanath Kasturi
+- viswanath
 - Bharat Jayaraman
 publication_types:
 - 'conference'

@@ -6,7 +6,7 @@ draft: true
 publishDate: '2024-03-23T15:49:09.381863Z'
 authors:
 - Rohit Ashok Khot
-- Venkatesh Choppella
+- venkatesh
 publication_types:
 - 'conference'
 abstract: ''

@@ -12,7 +12,7 @@ authors:
 - Marcel Nooijen
 - Gerald Baumgartner
 - David E. Bernholdt
-- Venkatesh Choppella
+- venkatesh
 - Russell M. Pitzer
 - J. Ramanujam
 - Atanas Rountev

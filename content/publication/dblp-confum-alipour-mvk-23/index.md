@@ -6,7 +6,7 @@ publishDate: '2024-03-23T15:50:48.716720Z'
 authors:
 - Mina Alipour
 - Mahyar Tourchi Moghaddam
-- Karthik Vaidhyanathan
+- karthik
 - Mikkel Baun Kjærgaard
 publication_types:
 - 'conference'

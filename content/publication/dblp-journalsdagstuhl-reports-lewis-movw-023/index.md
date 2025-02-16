@@ -7,7 +7,7 @@ authors:
 - Grace A. Lewis
 - Henry Muccini
 - Ipek Ozkaya
-- Karthik Vaidhyanathan
+- karthik
 - Roland Weiss
 - Liming Zhu
 publication_types:
