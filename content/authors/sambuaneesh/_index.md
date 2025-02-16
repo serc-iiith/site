@@ -23,7 +23,12 @@ organizations:
 bio: I like to try out new stuff!
 
 interests:
-  - 
+  - Software Architecture
+  - Internet of Things
+  - Green Software
+- Self Sustaining systems and architecture
+
+
 
 # Social/Academic Networking
 social:
@@ -39,6 +44,8 @@ user_groups:
 
 # Advisor
 advisor: "Dr. Karthik Vaidhyanathan"
+
+Hi! You can reach out to me through SERC and SCRC. I like building, breaking, and fixing systems-keeps things interesting.
 
 ---
 

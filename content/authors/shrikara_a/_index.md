@@ -20,7 +20,8 @@ organizations:
     url: ''
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include Serverless Computing, Self Adaptive MLOps
+bio: I'm Shrikara and I enjoy designing and building intelligent systems. My interests include both Software Engineering (SE) and Software Architecture (SA) for AI (SE4AI & SA4AI) and vice versa (AI4SE & AI4SA).
+
 
 interests:
   - Serverless Computing
@@ -42,4 +43,4 @@ user_groups:
 advisor: "Dr. Karthik Vaidhyanathan"
 
 ---
-<!-- Bio Here -->
+I'm a final year BTech student at IIITH, advised by Dr Karthik Vaidhyanathan of the Software Engineering Research Center. My previous work has involved sustainable MLOps using self-adaptation, architectural component generation using LLMs and simplifying CloudOps using LLMs. I work primarily in the intersection of AI and SE/SA to bridge the gap between them and improve both. I also enjoy traditional software development and architecture, particularly serverless functions and microservices and improving their quality. Besides CS, I enjoy watching and playing basketball and reading (mostly fiction).

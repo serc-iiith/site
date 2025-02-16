@@ -20,12 +20,15 @@ organizations:
     url: ''
 
 # Short bio (displayed in user profile at end of posts)
-bio: Begusarai baby!!!
+bio: I am passionate about AR/VR, Human-Computer Interaction (HCI), and Gamification, exploring how technology enhances user experiences. My interests also extend to Software Engineering, Web Development, and Game Design. Beyond academics, I enjoy sports, especially cricket, along with video gaming, chess, and reading.
 
 interests:
   - XR Technologies
   - User Centric Research
   - Game Development
+  - Chess
+  - Cricket
+  - Reading
 
 # Social/Academic Networking
 social:
@@ -43,3 +46,5 @@ user_groups:
 advisor: "Dr. Raman Saxena"
 
 ---
+I am a researcher and developer with a keen interest in AR/VR, Human-Computer Interaction (HCI), and Gamification. My work focuses on creating immersive and engaging digital experiences that bridge the gap between virtual and real-world interactions. Additionally, I explore Software Engineering, Web Development, and Game Design to enhance digital interfaces and interactive environments.
+
