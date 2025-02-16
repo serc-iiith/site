@@ -7,7 +7,7 @@ authors:
 - Mauro Caporuscio
 - Marco De Toma
 - Henry Muccini
-- Karthik Vaidhyanathan
+- karthik
 publication_types:
 - 'conference'
 abstract: ''

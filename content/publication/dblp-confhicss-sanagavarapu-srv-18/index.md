@@ -7,7 +7,7 @@ authors:
 - Lalit Mohan Sanagavarapu
 - Sourav Sarangi
 - Y. Raghu Reddy
-- Vasudeva Varma
+- vasu
 publication_types:
 - 'conference'
 abstract: ''

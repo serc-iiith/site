@@ -4,11 +4,11 @@ date: '2022-01-01'
 draft: true
 publishDate: '2024-03-23T15:50:58.675434Z'
 authors:
-- Mohammad Waqas Wani
+- mohammad_waqas_wani
 - Y. Pawan Kumar Gururaj
 - Vivek P
-- Sai Anirudh Karre
-- Raghu Reddy
+- sai_anirudh_karre
+- raghu
 - Syed Azeemuddin
 publication_types:
 - 'conference'

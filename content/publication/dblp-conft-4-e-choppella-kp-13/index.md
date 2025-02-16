@@ -4,8 +4,8 @@ date: '2013-01-01'
 draft: true
 publishDate: '2024-03-23T15:49:08.529883Z'
 authors:
-- Venkatesh Choppella
-- Viswanath Kasturi
+- venkatesh
+- viswanath
 - Manjula Pidaparty
 publication_types:
 - 'conference'

@@ -5,7 +5,7 @@ draft: true
 publishDate: '2024-03-23T15:49:09.233085Z'
 authors:
 - T. B. Dinesh
-- Venkatesh Choppella
+- venkatesh
 publication_types:
 - 'conference'
 abstract: ''

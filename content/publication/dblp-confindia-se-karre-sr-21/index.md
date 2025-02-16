@@ -4,7 +4,7 @@ date: '2021-01-01'
 draft: true
 publishDate: '2024-03-23T15:50:59.827280Z'
 authors:
-- Sai Anirudh Karre
+- sai_anirudh_karre
 - Lalit Mohan Sanagavarapu
 - Y. Raghu Reddy
 publication_types:

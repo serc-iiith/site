@@ -9,7 +9,7 @@ authors:
 - Alexander A. Auer
 - David E. Bernholdt
 - Alina Bibireata
-- Venkatesh Choppella
+- venkatesh
 - Daniel Cociorva
 - Xiaoyang Gao
 - Robert J. Harrison

@@ -4,9 +4,9 @@ date: '2020-01-01'
 draft: true
 publishDate: '2024-03-23T15:49:03.884558Z'
 authors:
-- Venkatesh Choppella
-- Viswanath Kasturi
-- Mrityunjay Kumar
+- venkatesh
+- viswanath
+- mrityunjay_kumar
 - Ojas Mohril
 publication_types:
 - 'other'

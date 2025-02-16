@@ -7,7 +7,7 @@ authors:
 - Subhrojyoti Roy Chaudhuri
 - Swaminathan Natarajan
 - Amar Banerjee
-- Venkatesh Choppella
+- venkatesh
 publication_types:
 - 'conference'
 abstract: ''

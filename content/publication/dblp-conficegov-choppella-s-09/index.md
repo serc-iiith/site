@@ -4,7 +4,7 @@ date: '2009-01-01'
 draft: true
 publishDate: '2024-03-23T15:49:09.916751Z'
 authors:
-- Venkatesh Choppella
+- venkatesh
 - K. R. Srivathsan
 publication_types:
 - 'conference'

@@ -6,7 +6,7 @@ publishDate: '2024-03-23T15:49:06.960385Z'
 authors:
 - Tejaswinee Kelkar
 - Anon Ray
-- Venkatesh Choppella
+- venkatesh
 publication_types:
 - 'conference'
 abstract: ''

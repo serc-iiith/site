@@ -10,7 +10,7 @@ authors:
 - Antinisca Di Marco
 - Henry Muccini
 - Fabrizio Rossi
-- Karthik Vaidhyanathan
+- karthik
 publication_types:
 - 'other'
 abstract: ''

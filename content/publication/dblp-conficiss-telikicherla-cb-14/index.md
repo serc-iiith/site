@@ -5,7 +5,7 @@ draft: true
 publishDate: '2024-03-23T15:49:07.606462Z'
 authors:
 - Krishna Chaitanya Telikicherla
-- Venkatesh Choppella
+- venkatesh
 - Bruhadeshwar Bezawada
 publication_types:
 - 'conference'

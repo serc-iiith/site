@@ -4,10 +4,10 @@ date: '2012-01-01'
 draft: true
 publishDate: '2024-03-23T15:49:08.920164Z'
 authors:
-- Venkatesh Choppella
+- venkatesh
 - Hitesh Kumar
 - Manjula Pidaparty
-- Viswanath Kasturi
+- viswanath
 publication_types:
 - 'conference'
 abstract: ''

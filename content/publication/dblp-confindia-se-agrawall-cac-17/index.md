@@ -7,7 +7,7 @@ authors:
 - Akash Agrawall
 - Krishna Chaitanya
 - Arnav Kumar Agrawal
-- Venkatesh Choppella
+- venkatesh
 publication_types:
 - 'conference'
 abstract: ''

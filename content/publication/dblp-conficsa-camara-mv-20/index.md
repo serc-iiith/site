@@ -7,7 +7,7 @@ publishDate: '2024-03-23T15:50:50.305904Z'
 authors:
 - Javier Cámara
 - Henry Muccini
-- Karthik Vaidhyanathan
+- karthik
 publication_types:
 - 'conference'
 abstract: ''

@@ -7,7 +7,7 @@ publishDate: '2024-03-23T15:49:09.037389Z'
 authors:
 - Sankalp Khare
 - Yishan Misra
-- Venkatesh Choppella
+- venkatesh
 publication_types:
 - 'conference'
 abstract: ''

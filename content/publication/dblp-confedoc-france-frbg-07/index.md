@@ -6,7 +6,7 @@ publishDate: '2024-03-23T15:51:08.673627Z'
 authors:
 - Robert B. France
 - Franck Fleurey
-- Raghu Reddy
+- raghu
 - Benoit Baudry
 - Sudipto Ghosh
 publication_types:

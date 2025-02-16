@@ -5,7 +5,7 @@ draft: true
 publishDate: '2024-03-23T15:49:06.839885Z'
 authors:
 - Phillip G. Bradford
-- Venkatesh Choppella
+- venkatesh
 publication_types:
 - 'conference'
 abstract: ''

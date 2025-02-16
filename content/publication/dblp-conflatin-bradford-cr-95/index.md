@@ -5,7 +5,7 @@ draft: true
 publishDate: '2024-03-23T15:49:11.644153Z'
 authors:
 - Phillip G. Bradford
-- Venkatesh Choppella
+- venkatesh
 - Gregory J. E. Rawlins
 publication_types:
 - 'conference'

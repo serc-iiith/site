@@ -6,7 +6,7 @@ publishDate: '2024-03-23T15:51:08.917868Z'
 authors:
 - Arnor Solberg
 - Devon M. Simmonds
-- Raghu Reddy
+- raghu
 - Robert B. France
 - Sudipto Ghosh
 - Jan Øyvind Aagedal

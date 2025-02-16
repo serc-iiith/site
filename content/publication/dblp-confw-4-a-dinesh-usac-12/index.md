@@ -8,7 +8,7 @@ authors:
 - Susan M. Üsküdarli
 - Subramanya Sastry
 - Deepti Aggarwal
-- Venkatesh Choppella
+- venkatesh
 publication_types:
 - 'conference'
 abstract: ''

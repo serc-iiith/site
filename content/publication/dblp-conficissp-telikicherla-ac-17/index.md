@@ -7,7 +7,7 @@ publishDate: '2024-03-23T15:49:05.707501Z'
 authors:
 - Krishna Chaitanya Telikicherla
 - Akash Agrawall
-- Venkatesh Choppella
+- venkatesh
 publication_types:
 - 'conference'
 abstract: ''

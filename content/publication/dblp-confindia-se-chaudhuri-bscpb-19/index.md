@@ -7,7 +7,7 @@ authors:
 - Subhrojyoti Roy Chaudhuri
 - Amar Banerjee
 - N. Swaminathan
-- Venkatesh Choppella
+- venkatesh
 - Arpan Pal
 - P. Balamurali
 publication_types:

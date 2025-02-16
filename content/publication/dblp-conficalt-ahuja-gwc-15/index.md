@@ -8,7 +8,7 @@ authors:
 - Garima Ahuja
 - Anubha Gupta
 - Harsh Wardhan
-- Venkatesh Choppella
+- venkatesh
 publication_types:
 - 'conference'
 abstract: ''

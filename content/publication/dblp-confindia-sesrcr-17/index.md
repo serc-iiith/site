@@ -6,7 +6,7 @@ publishDate: '2024-03-23T15:49:06.166626Z'
 authors:
 - Lalit Mohan S.
 - Priya Raman
-- Venkatesh Choppella
+- venkatesh
 - Y. Raghu Reddy
 publication_types:
 - 'conference'

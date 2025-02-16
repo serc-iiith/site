@@ -8,7 +8,7 @@ authors:
 - Amar Budhiraja
 - Kartik Dutta
 - Manish Shrivastava
-- Raghu Reddy
+- raghu
 publication_types:
 - 'conference'
 abstract: ''
