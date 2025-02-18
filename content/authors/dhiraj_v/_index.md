@@ -35,8 +35,7 @@ social:
     link: 'https://github.com/dhiraj-v'
 
 user_groups:
-  - MS by Research Students
-
+  - Alumni
 # Advisor
 advisor: "Dr. Y. Raghu Reddy"
 

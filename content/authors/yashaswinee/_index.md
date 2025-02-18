@@ -37,7 +37,7 @@ social:
     link: 'https://github.com/yashaswinee'
 
 user_groups:
-  - MS by Research Students
+  - Dual Degree
 
 # Advisor
 advisor: "Dr. Y. Raghu Reddy"

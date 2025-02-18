@@ -37,7 +37,7 @@ social:
     link: 'https://github.com/waqaswani'
 
 user_groups:
-  - MS by Research Students
+  - Alumni
 
 # Advisor
 advisor: "Dr. Y. Raghu Reddy"
