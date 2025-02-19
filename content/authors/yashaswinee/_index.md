@@ -48,4 +48,4 @@ Undergrad Researcher under Prof Raghu Reddy.
 
 Field of work -- VR and Digital Twin
 
-I love watching anime :]
+I love watching anime.

@@ -33,9 +33,9 @@ social:
   - icon: github
     icon_pack: fab
     link: ''
-
 user_groups:
-  - MS by Research Students
+  - Honors Students
+
 
 # Advisor
 advisor: "Dr. Karthik Vaidhyanathan"
