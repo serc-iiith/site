@@ -6,7 +6,7 @@ publishDate: '2024-03-23T15:49:11.402729Z'
 authors:
 - Bhaskar Bose
 - M. Esen Tuna
-- Venkatesh Choppella
+- venkatesh
 publication_types:
 - 'conference'
 abstract: ''

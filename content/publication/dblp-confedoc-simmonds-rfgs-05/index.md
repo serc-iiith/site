@@ -5,7 +5,7 @@ draft: true
 publishDate: '2024-03-23T15:51:09.376921Z'
 authors:
 - Devon M. Simmonds
-- Raghu Reddy
+- raghu
 - Robert B. France
 - Sudipto Ghosh
 - Arnor Solberg

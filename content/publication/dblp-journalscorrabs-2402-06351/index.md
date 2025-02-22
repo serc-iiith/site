@@ -4,9 +4,9 @@ date: '2024-01-01'
 draft: true
 publishDate: '2024-03-23T15:50:48.204413Z'
 authors:
-- Arya Marda
-- Shubham Kulkarni
-- Karthik Vaidhyanathan
+- arya_marda
+- shubham_kulkarni
+- karthik
 publication_types:
 - 'other'
 abstract: ''

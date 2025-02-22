@@ -6,12 +6,12 @@ draft: true
 publishDate: '2024-03-23T15:51:03.454547Z'
 authors:
 - Y. Raghu Reddy
-- Vasudeva Varma
+- vasu
 - Jane Cleland-Huang
 - Umesh Bellur
 - Shubashsis Sengupta
 - Naveen Sharma
-- Ramesh Loganathan
+- ramesh
 - Richa Sharma
 - Santonu Sarkar
 publication_types:

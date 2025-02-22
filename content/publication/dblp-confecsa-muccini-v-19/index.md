@@ -6,7 +6,7 @@ draft: true
 publishDate: '2024-03-23T15:50:50.743323Z'
 authors:
 - Henry Muccini
-- Karthik Vaidhyanathan
+- karthik
 publication_types:
 - 'conference'
 abstract: ''

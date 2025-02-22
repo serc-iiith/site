@@ -6,7 +6,7 @@ publishDate: '2024-03-23T15:49:09.744310Z'
 authors:
 - Thulasi Ram Naidu
 - Manisha Verma
-- Venkatesh Choppella
+- venkatesh
 - Gangadhar Chalapakay
 publication_types:
 - 'conference'

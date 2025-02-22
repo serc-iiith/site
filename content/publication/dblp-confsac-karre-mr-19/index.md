@@ -4,7 +4,7 @@ date: '2019-01-01'
 draft: true
 publishDate: '2024-03-23T15:51:01.434167Z'
 authors:
-- Sai Anirudh Karre
+- sai_anirudh_karre
 - Neeraj Mathur
 - Y. Raghu Reddy
 publication_types:

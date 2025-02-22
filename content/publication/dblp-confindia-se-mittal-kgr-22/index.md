@@ -5,7 +5,7 @@ draft: true
 publishDate: '2024-03-23T15:50:58.938947Z'
 authors:
 - Raghav Mittal
-- Sai Anirudh Karre
+- sai_anirudh_karre
 - Y. Pawan Kumar Gururaj
 - Y. Raghu Reddy
 publication_types:

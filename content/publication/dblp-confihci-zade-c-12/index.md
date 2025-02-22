@@ -5,7 +5,7 @@ draft: true
 publishDate: '2024-03-23T15:49:08.648975Z'
 authors:
 - Himanshu Zade
-- Venkatesh Choppella
+- venkatesh
 publication_types:
 - 'conference'
 abstract: ''

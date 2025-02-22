@@ -10,7 +10,7 @@ authors:
 - Vinay Kulkarni
 - Shivani Soni
 - Kesav V. Nori
-- Raghu Reddy
+- raghu
 publication_types:
 - 'other'
 abstract: ''

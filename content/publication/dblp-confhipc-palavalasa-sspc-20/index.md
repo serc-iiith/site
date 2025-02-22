@@ -8,7 +8,7 @@ authors:
 - Yuvraj Singh
 - Adhish Singla
 - Suresh Purini
-- Venkatesh Choppella
+- venkatesh
 publication_types:
 - 'conference'
 abstract: ''

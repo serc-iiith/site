@@ -4,9 +4,9 @@ date: '2023-01-01'
 draft: true
 publishDate: '2024-03-23T15:50:58.234212Z'
 authors:
-- Sai Anirudh Karre
+- sai_anirudh_karre
 - Raghav Mittal
-- Raghu Reddy
+- raghu
 publication_types:
 - 'conference'
 abstract: ''

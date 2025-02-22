@@ -9,7 +9,7 @@ authors:
 - Barnali B.
 - Dhankshinamoorthy R.
 - Rajesh N.
-- Venkatesh Choppella
+- venkatesh
 publication_types:
 - 'conference'
 abstract: ''

@@ -7,7 +7,7 @@ authors:
 - Moamin Abughazala
 - Mahyar Tourchi Moghaddam
 - Henry Muccini
-- Karthik Vaidhyanathan
+- karthik
 publication_types:
 - 'conference'
 abstract: ''

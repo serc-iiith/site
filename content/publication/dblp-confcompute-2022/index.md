@@ -4,7 +4,7 @@ date: '2022-01-01'
 draft: true
 publishDate: '2024-03-23T15:49:02.919239Z'
 authors:
-- Venkatesh Choppella
+- venkatesh
 - Amey Karkare
 - Chitra Babu
 - Sridhar Chimalakonda

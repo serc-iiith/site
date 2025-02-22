@@ -6,7 +6,7 @@ publishDate: '2024-03-23T15:49:04.437532Z'
 authors:
 - Ravi Shankar Pillutla
 - Lalit Mohan S.
-- Venkatesh Choppella
+- venkatesh
 - Avni Jesrani
 - Priya Raman
 - Y. Raghu Reddy

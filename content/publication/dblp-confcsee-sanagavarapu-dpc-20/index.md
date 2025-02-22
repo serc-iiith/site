@@ -7,7 +7,7 @@ authors:
 - Lalit Mohan Sanagavarapu
 - Mrudhivka Damaraju
 - Ravi Shankar Pillutla
-- Venkatesh Choppella
+- venkatesh
 - Y. Raghu Reddy
 - Priya Raman
 publication_types:

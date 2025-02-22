@@ -10,8 +10,8 @@ authors:
 - Rishabh Agrawal
 - Shiven Sinha
 - Sachin Chaudhari
-- Karthik Vaidhyanathan
-- Venkatesh Choppella
+- karthik
+- venkatesh
 - Prabhakar Bhimalapuram
 - Harikumar Kandath
 - Aftab M. Hussain

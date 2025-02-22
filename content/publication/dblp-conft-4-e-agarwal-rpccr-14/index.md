@@ -8,8 +8,8 @@ authors:
 - Utkarsh Rastogiy
 - Prateek Pandey
 - Nurendra Choudhary
-- Venkatesh Choppella
-- Raghu Reddy
+- venkatesh
+- raghu
 publication_types:
 - 'conference'
 abstract: ''

@@ -5,8 +5,8 @@ date: '2023-01-01'
 draft: true
 publishDate: '2024-03-23T15:50:48.423092Z'
 authors:
-- Sai Anirudh Karre
-- Karthik Vaidhyanathan
+- sai_anirudh_karre
+- karthik
 - Y. Raghu Reddy
 publication_types:
 - 'conference'

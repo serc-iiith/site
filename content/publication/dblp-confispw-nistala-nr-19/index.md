@@ -6,7 +6,7 @@ publishDate: '2024-03-23T15:51:01.141632Z'
 authors:
 - Padmalata Nistala
 - Kesav Vithal Nori
-- Raghu Reddy
+- raghu
 publication_types:
 - 'conference'
 abstract: ''

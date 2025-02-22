@@ -5,8 +5,8 @@ draft: true
 publishDate: '2024-03-23T15:49:07.803570Z'
 authors:
 - Nurendra Choudhary
-- Venkatesh Choppella
-- Raghu Reddy
+- venkatesh
+- raghu
 - Thirumal Ravula
 publication_types:
 - 'conference'

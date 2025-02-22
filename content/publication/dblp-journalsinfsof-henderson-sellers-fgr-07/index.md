@@ -8,7 +8,7 @@ authors:
 - Brian Henderson-Sellers
 - Robert B. France
 - Geri Georg
-- Raghu Reddy
+- raghu
 publication_types:
 - 'other'
 abstract: ''

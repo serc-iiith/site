@@ -5,7 +5,7 @@ draft: true
 publishDate: '2024-03-23T15:51:02.122975Z'
 authors:
 - Neeraj Mathur
-- Sai Anirudh Karre
+- sai_anirudh_karre
 - Y. Raghu Reddy
 publication_types:
 - 'conference'

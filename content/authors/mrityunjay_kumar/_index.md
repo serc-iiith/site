@@ -7,7 +7,7 @@ last_name: Kumar
 
 # Username (this should match the folder name)
 authors:
-  - mritunjay_kumar
+  - mrityunjay_kumar
   
 superuser: false
 

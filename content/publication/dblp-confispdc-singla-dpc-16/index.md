@@ -7,7 +7,7 @@ authors:
 - Adhish Singla
 - Krishnaji Desai
 - Suresh Purini
-- Venkatesh Choppella
+- venkatesh
 publication_types:
 - 'conference'
 abstract: ''

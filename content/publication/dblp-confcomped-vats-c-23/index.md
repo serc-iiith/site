@@ -5,7 +5,7 @@ draft: true
 publishDate: '2024-03-23T15:49:02.042734Z'
 authors:
 - Pranav Vats
-- Venkatesh Choppella
+- venkatesh
 publication_types:
 - 'conference'
 abstract: ''

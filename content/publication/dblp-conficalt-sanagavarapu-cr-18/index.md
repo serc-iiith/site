@@ -5,7 +5,7 @@ draft: true
 publishDate: '2024-03-23T15:49:05.016074Z'
 authors:
 - Lalit Mohan Sanagavarapu
-- Venkatesh Choppella
+- venkatesh
 - Y. Raghu Reddy
 publication_types:
 - 'conference'
