@@ -13,7 +13,6 @@ Study the usage of smart contracts for open source software license management a
 
 This project is funded by IIIT via RIPPLE.
 
-Demo: [YouTube Video](https://www.youtube.com/watch?v=NlqTsSvGoLY)
 
 <!--more-->
 

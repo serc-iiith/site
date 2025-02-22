@@ -55,4 +55,4 @@ slides:
 projects:
 ---
 
-ICSA 2024 is scheduled to be held at **[International Institute of Information Technology Campus (IIIT-H) Hyderabad](https://iiit.ac.in), India** between **4th June 2024 and 8th June 2024**. Check out more about the history and past series of ICSA at [https://icsa-conferences.org/series/history/](https://icsa-conferences.org/series/history/)
+ICSA 2024 is scheduled held at **[International Institute of Information Technology Campus (IIIT-H) Hyderabad](https://iiit.ac.in), India** between **4th June 2024 and 8th June 2024**. Check out more about the history and past series of ICSA at [https://icsa-conferences.org/series/history/](https://icsa-conferences.org/series/history/)
