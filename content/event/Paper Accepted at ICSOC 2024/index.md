@@ -1,7 +1,7 @@
 ---
 title: Paper Accepted at ICSOC 2024
 
-event:Paper Accepted at ICSOC 2024
+event: Paper Accepted at ICSOC 2024
 event_url: 
 
 location: Les côtes de Carthage, La Marsa, Tunis, BP 597-2070, Gammarth, Tunisie
