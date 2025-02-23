@@ -6,7 +6,7 @@ publishDate: '2024-03-23T15:49:04.307868Z'
 authors:
 - Subhrojyoti Roy Chaudhuri
 - Swaminathan Natarajan
-- Amar Banerjee
+- amar_banerjee
 - venkatesh
 publication_types:
 - 'conference'
