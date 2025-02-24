@@ -4,7 +4,7 @@ date: '2021-01-01'
 draft: true
 publishDate: '2024-03-23T15:49:03.100085Z'
 authors:
-- Amar Banerjee
+- amar_banerjee
 - Subhrojyoti C.
 - Barnali B.
 - Dhankshinamoorthy R.

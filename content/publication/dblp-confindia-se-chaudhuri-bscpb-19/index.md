@@ -5,7 +5,7 @@ draft: true
 publishDate: '2024-03-23T15:49:04.072528Z'
 authors:
 - Subhrojyoti Roy Chaudhuri
-- Amar Banerjee
+- amar_banerjee
 - N. Swaminathan
 - venkatesh
 - Arpan Pal

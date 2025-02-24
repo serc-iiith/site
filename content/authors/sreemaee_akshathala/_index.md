@@ -1,5 +1,5 @@
 ---
-title: Hiya Bhatt
+title: Sreemaee Akshathala
 # Full name (for SEO)
 first_name: Sreemaee
 last_name: Akshathala
