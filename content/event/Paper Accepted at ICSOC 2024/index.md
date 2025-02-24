@@ -13,7 +13,7 @@ address:
   country: Tunisie
 
 
-summary: Our Student Prakhar Jain presented their work about POSEIDON at ICSOC 2024, Tunisia
+summary: Our Student [Prakhar Jain](prakhar-jain) presented their work about POSEIDON at ICSOC 2024, Tunisia
 abstract: POSEIDON is a new framework that combines Deep Reinforcement Learning (Deep RL) with traditional optimization techniques to improve how we manage these networks. While still in the early stages, POSEIDON offers a fresh approach to handling some of the key issues facing MEC networks today.
  This groundbreaking work was presented by our student, Prakhar Jain, at ICSOC 2024 in Tunisia. This work, authored by Prakhar Jain, Prakhar Singhal, Divyansh Pandey, Giovanni Ennio Quattrocchi, and Karthik Vaidhyanathan,showcased the research to the international audience, highlighting how POSEIDON's AI-driven approach can transform network optimization of function placement in edge networks. His presentation received great interest from researchers and industry professionals, reflecting the growing importance of intelligent solutions in edge computing.
 
