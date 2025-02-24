@@ -8,9 +8,7 @@ date: 2024-07-10
 # image:
 #   focal_point: 'top'
 ---
-
-
-
+Sustainable Edge Ai using Edge-Cloud Continuum
 
 <!--more-->
 
