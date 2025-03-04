@@ -5,7 +5,7 @@ draft: true
 publishDate: '2024-03-23T15:51:03.663013Z'
 authors:
 - Lalit Mohan S.
-- Y. Raghu Reddy
+- raghu
 - G. R. Gangadharan
 publication_types:
 - 'conference'

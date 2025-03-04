@@ -4,7 +4,7 @@ date: '2006-01-01'
 draft: true
 publishDate: '2024-03-23T15:51:09.030100Z'
 authors:
-- Y. Raghu Reddy
+- raghu
 - Sudipto Ghosh
 - Robert B. France
 - Greg Straw

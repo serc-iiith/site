@@ -8,7 +8,7 @@ authors:
 - Abhay Kumar
 - Abhinav Gupta
 - Lalit Mohan Sanagavarapu
-- Y. Raghu Reddy
+- raghu
 publication_types:
 - 'conference'
 abstract: ''

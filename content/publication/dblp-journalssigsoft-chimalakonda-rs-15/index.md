@@ -6,7 +6,7 @@ draft: true
 publishDate: '2024-03-23T15:51:05.031648Z'
 authors:
 - Sridhar Chimalakonda
-- Y. Raghu Reddy
+- raghu
 - Rakesh Shukla
 publication_types:
 - 'other'

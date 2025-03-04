@@ -7,7 +7,7 @@ publishDate: '2024-03-23T15:51:00.893156Z'
 authors:
 - sai_anirudh_karre
 - Lalit Mohan S.
-- Y. Raghu Reddy
+- raghu
 - K. V. Raghavan
 - R. D. Naik
 - Rahul Purandare

@@ -5,7 +5,7 @@ draft: true
 publishDate: '2024-03-23T15:51:08.331028Z'
 authors:
 - Varsha Rathod
-- Y. Raghu Reddy
+- raghu
 publication_types:
 - 'conference'
 abstract: ''

@@ -5,7 +5,7 @@ draft: true
 publishDate: '2024-03-23T15:51:02.749659Z'
 authors:
 - Lalit Mohan Sanagavarapu
-- Y. Raghu Reddy
+- raghu
 publication_types:
 - 'conference'
 abstract: ''

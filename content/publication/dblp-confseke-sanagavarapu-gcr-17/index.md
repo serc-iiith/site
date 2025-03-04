@@ -7,7 +7,7 @@ authors:
 - Lalit Sanagavarapu
 - Sai Gollapudi
 - Sridhar Chimalakonda
-- Y. Raghu Reddy
+- raghu
 - venkatesh
 publication_types:
 - 'conference'

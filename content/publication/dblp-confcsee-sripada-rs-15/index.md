@@ -6,7 +6,7 @@ draft: true
 publishDate: '2024-03-23T15:51:05.985038Z'
 authors:
 - Saikrishna Sripada
-- Y. Raghu Reddy
+- raghu
 - Ashish Sureka
 publication_types:
 - 'conference'

@@ -4,9 +4,9 @@ date: '2021-01-01'
 draft: true
 publishDate: '2024-03-23T15:51:00.052135Z'
 authors:
-- Vivek Iyer
+- vivek_iyer
 - Lalit Mohan Sanagavarapu
-- Y. Raghu Reddy
+- raghu
 publication_types:
 - 'conference'
 abstract: ''

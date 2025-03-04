@@ -4,7 +4,7 @@ date: '2013-01-01'
 draft: true
 publishDate: '2024-03-23T15:49:08.224277Z'
 authors:
-- Ankur Goel
+- ankur_goel
 - venkatesh
 publication_types:
 - 'conference'

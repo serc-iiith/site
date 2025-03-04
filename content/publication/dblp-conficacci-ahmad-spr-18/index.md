@@ -7,7 +7,7 @@ authors:
 - Shadab Ahmad
 - Lalit Mohan Sanagavarapu
 - Rajarshi Pal
-- Y. Raghu Reddy
+- raghu
 publication_types:
 - 'conference'
 abstract: ''

@@ -6,7 +6,7 @@ publishDate: '2024-03-23T15:50:59.938701Z'
 authors:
 - Dhruv Parashar
 - Lalit Mohan Sanagavarapu
-- Y. Raghu Reddy
+- raghu
 publication_types:
 - 'conference'
 abstract: ''

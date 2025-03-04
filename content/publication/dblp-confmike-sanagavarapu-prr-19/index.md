@@ -7,7 +7,7 @@ authors:
 - Lalit Mohan Sanagavarapu
 - Jahfar Ali Pichen
 - Syed Mohd Ali Rizwi
-- Y. Raghu Reddy
+- raghu
 - Dipti Sharma
 publication_types:
 - 'conference'

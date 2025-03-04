@@ -7,7 +7,7 @@ authors:
 - Dae-Kyoo Kim
 - Eunjee Song
 - Jungwoo Ryoo
-- Y. Raghu Reddy
+- raghu
 publication_types:
 - 'other'
 abstract: ''

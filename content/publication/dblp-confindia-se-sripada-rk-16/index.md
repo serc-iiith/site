@@ -5,7 +5,7 @@ draft: true
 publishDate: '2024-03-23T15:51:04.626564Z'
 authors:
 - Saikrishna Sripada
-- Y. Raghu Reddy
+- raghu
 - Shivam Khandelwal
 publication_types:
 - 'conference'

@@ -7,7 +7,7 @@ publishDate: '2024-03-23T15:51:04.487606Z'
 authors:
 - sai_anirudh_karre
 - Anveshi Shukla
-- Y. Raghu Reddy
+- raghu
 publication_types:
 - 'other'
 abstract: ''

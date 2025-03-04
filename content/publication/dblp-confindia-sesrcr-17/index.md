@@ -7,7 +7,7 @@ authors:
 - Lalit Mohan S.
 - Priya Raman
 - venkatesh
-- Y. Raghu Reddy
+- raghu
 publication_types:
 - 'conference'
 abstract: ''

@@ -4,10 +4,10 @@ date: '2022-01-01'
 draft: true
 publishDate: '2024-03-23T15:50:58.938947Z'
 authors:
-- Raghav Mittal
+- raghav_mittal
 - sai_anirudh_karre
 - Y. Pawan Kumar Gururaj
-- Y. Raghu Reddy
+- raghu
 publication_types:
 - 'conference'
 abstract: ''

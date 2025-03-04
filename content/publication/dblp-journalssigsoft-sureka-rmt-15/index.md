@@ -6,7 +6,7 @@ draft: true
 publishDate: '2024-03-23T15:51:04.903117Z'
 authors:
 - Ashish Sureka
-- Y. Raghu Reddy
+- raghu
 - Pornsiri Muenchaisri
 - Masateru Tsunoda
 publication_types:

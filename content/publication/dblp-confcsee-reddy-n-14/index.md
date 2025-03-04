@@ -4,7 +4,7 @@ date: '2014-01-01'
 draft: true
 publishDate: '2024-03-23T15:51:07.459625Z'
 authors:
-- Y. Raghu Reddy
+- raghu
 - Kesav V. Nori
 publication_types:
 - 'conference'

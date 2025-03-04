@@ -6,7 +6,7 @@ publishDate: '2024-03-23T15:51:01.679575Z'
 authors:
 - Shriyansh Agrawal
 - Lalit Mohan Sanagavarapu
-- Y. Raghu Reddy
+- raghu
 publication_types:
 - 'conference'
 abstract: ''

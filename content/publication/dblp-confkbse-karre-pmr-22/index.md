@@ -6,7 +6,7 @@ publishDate: '2024-03-23T15:50:59.048447Z'
 authors:
 - sai_anirudh_karre
 - Vivek Pareek
-- Raghav Mittal
+- raghav_mittal
 - raghu
 publication_types:
 - 'conference'

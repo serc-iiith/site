@@ -6,7 +6,7 @@ publishDate: '2024-03-23T15:51:07.619196Z'
 authors:
 - Sonal Aggarwal
 - Herre van Oostendorp
-- Y. Raghu Reddy
+- raghu
 - Bipin Indurkhya
 publication_types:
 - 'conference'

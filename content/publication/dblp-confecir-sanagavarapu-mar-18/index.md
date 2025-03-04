@@ -5,9 +5,9 @@ draft: true
 publishDate: '2024-03-23T15:51:02.333246Z'
 authors:
 - Lalit Mohan Sanagavarapu
-- Neeraj Mathur
+- neeraj_mathur
 - Shriyansh Agrawal
-- Y. Raghu Reddy
+- raghu
 publication_types:
 - 'conference'
 abstract: ''

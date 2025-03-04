@@ -7,7 +7,7 @@ authors:
 - Shivang Shekar
 - Pranav Reddy Pesaladinne
 - sai_anirudh_karre
-- Y. Raghu Reddy
+- raghu
 publication_types:
 - 'conference'
 abstract: ''

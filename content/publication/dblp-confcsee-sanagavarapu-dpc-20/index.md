@@ -8,7 +8,7 @@ authors:
 - Mrudhivka Damaraju
 - Ravi Shankar Pillutla
 - venkatesh
-- Y. Raghu Reddy
+- raghu
 - Priya Raman
 publication_types:
 - 'conference'

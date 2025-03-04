@@ -5,7 +5,7 @@ draft: true
 publishDate: '2024-03-23T15:50:58.234212Z'
 authors:
 - sai_anirudh_karre
-- Raghav Mittal
+- raghav_mittal
 - raghu
 publication_types:
 - 'conference'

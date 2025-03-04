@@ -5,7 +5,7 @@ draft: true
 publishDate: '2024-03-23T15:51:07.779605Z'
 authors:
 - Mohammad Asif
-- Y. Raghu Reddy
+- raghu
 publication_types:
 - 'conference'
 abstract: ''

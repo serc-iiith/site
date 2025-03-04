@@ -9,7 +9,7 @@ publishDate: '2024-03-23T15:51:04.743087Z'
 authors:
 - Atul Kumar
 - Vinay Kulkarni
-- Y. Raghu Reddy
+- raghu
 - Meenakshi D'Souza
 - Swarup Mohalik
 - Mahesh Babu Jayaraman

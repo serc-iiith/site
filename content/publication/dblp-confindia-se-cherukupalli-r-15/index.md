@@ -5,7 +5,7 @@ draft: true
 publishDate: '2024-03-23T15:51:06.692679Z'
 authors:
 - Prabhakar Cherukupalli
-- Y. Raghu Reddy
+- raghu
 publication_types:
 - 'conference'
 abstract: ''

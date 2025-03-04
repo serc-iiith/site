@@ -6,7 +6,7 @@ draft: true
 publishDate: '2024-03-23T15:51:06.300105Z'
 authors:
 - sai_anirudh_karre
-- Y. Raghu Reddy
+- raghu
 publication_types:
 - 'conference'
 abstract: ''

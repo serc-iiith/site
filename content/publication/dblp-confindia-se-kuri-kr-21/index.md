@@ -7,7 +7,7 @@ publishDate: '2024-03-23T15:50:59.701153Z'
 authors:
 - Mohit Kuri
 - sai_anirudh_karre
-- Y. Raghu Reddy
+- raghu
 publication_types:
 - 'conference'
 abstract: ''

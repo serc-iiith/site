@@ -7,7 +7,7 @@ publishDate: '2024-03-23T15:50:48.423092Z'
 authors:
 - sai_anirudh_karre
 - karthik
-- Y. Raghu Reddy
+- raghu
 publication_types:
 - 'conference'
 abstract: ''

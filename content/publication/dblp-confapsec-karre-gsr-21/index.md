@@ -8,7 +8,7 @@ authors:
 - sai_anirudh_karre
 - Abhinav Gupta
 - Lalit Mohan S.
-- Y. Raghu Reddy
+- raghu
 publication_types:
 - 'conference'
 abstract: ''

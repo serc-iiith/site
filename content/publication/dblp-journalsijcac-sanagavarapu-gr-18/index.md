@@ -6,7 +6,7 @@ publishDate: '2024-03-23T15:51:01.891370Z'
 authors:
 - Lalit Mohan Sanagavarapu
 - G. R. Gangadharan
-- Y. Raghu Reddy
+- raghu
 publication_types:
 - 'other'
 abstract: ''

@@ -6,7 +6,7 @@ publishDate: '2024-03-23T15:51:03.866757Z'
 authors:
 - Lalit Mohan Sanagavarapu
 - Sourav Sarangi
-- Y. Raghu Reddy
+- raghu
 publication_types:
 - 'conference'
 abstract: ''

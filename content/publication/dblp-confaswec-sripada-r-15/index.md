@@ -6,7 +6,7 @@ draft: true
 publishDate: '2024-03-23T15:51:05.864500Z'
 authors:
 - Saikrishna Sripada
-- Y. Raghu Reddy
+- raghu
 publication_types:
 - 'conference'
 abstract: ''

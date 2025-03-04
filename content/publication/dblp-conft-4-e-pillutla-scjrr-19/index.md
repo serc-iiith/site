@@ -9,7 +9,7 @@ authors:
 - venkatesh
 - Avni Jesrani
 - Priya Raman
-- Y. Raghu Reddy
+- raghu
 publication_types:
 - 'conference'
 abstract: ''

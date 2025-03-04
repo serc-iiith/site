@@ -9,7 +9,7 @@ authors:
 - venkatesh
 - Lalit Mohan Sanagavarapu
 - Sridhar Chimalakonda
-- Y. Raghu Reddy
+- raghu
 publication_types:
 - 'other'
 abstract: ''

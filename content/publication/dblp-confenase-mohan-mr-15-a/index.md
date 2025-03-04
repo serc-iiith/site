@@ -5,8 +5,8 @@ draft: true
 publishDate: '2024-03-23T15:51:06.435445Z'
 authors:
 - Lalit Mohan S.
-- Neeraj Mathur
-- Y. Raghu Reddy
+- neeraj_mathur
+- raghu
 publication_types:
 - 'conference'
 abstract: ''
