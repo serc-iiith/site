@@ -27,7 +27,7 @@ abstract: On National Science Day, Prof.Raghu Reddy delivered a keynote on AI an
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: '2025-02-28'
+date: '2025-02-28T14:00:00+15:00'
 all_day: false
 
 # Schedule page publish date (NOT talk date).
