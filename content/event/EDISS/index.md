@@ -37,7 +37,7 @@ featured: true
 #   focal_point: Right
 
 url_code: ''
-url_pdf: ''![alt text](image.png)
+url_pdf: ''
 url_slides: ''
 url_video: ''
 
