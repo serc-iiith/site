@@ -1,6 +1,5 @@
 ---
 title: ISEC 2025
-
 event: Innovations in Software Engineering Confernce 2025 (ISEC2025)
 event_url: https://conf.researchr.org/home/isec-2025
 
@@ -13,8 +12,7 @@ address:
   country: India
 
 summary: Our Team attended ISEC 2025 in NIT Kurukshetra.
-abstract:   Professors [Raghu Reddy](/author/raghu-reddy/) and .[Karthik Vaidhyanathan](/author/karthik-vaidhyanathan/)  attended the 18th ISEC in NIT Kurukshetra.   Dr. .[Karthik Vaidhyanathan](/author/karthik-vaidhyanathan/)han gave an invited talk on “Playing with Abstractions: At the crossroads of Software Architecture and Generative AI”, while Prof. [Raghu Reddy](/author/raghu-reddy/) was part of the panel on “GenAI for Large Scale Software Engineering - Hype to Reality”.  [Brahma Reddy Korraprolu](/author/Brahma-Reddy-Korraprolu/), PhD student at SERC presented his accepted paper on large language models (LLMs) for test case generation.
-
+abstract: Professors [Raghu Reddy](/author/raghu-reddy/) and [Karthik Vaidhyanathan](/author/karthik-vaidhyanathan/) attended the 18th ISEC in NIT Kurukshetra.   Dr.[Karthik Vaidhyanathan](/author/karthik-vaidhyanathan/) gave an invited talk on “Playing with Abstractions:At the crossroads of Software Architecture and Generative AI”, while Prof. [Raghu Reddy](/author/raghu-reddy/) was part of the panel on “GenAI for Large Scale Software Engineering - Hype to Reality”.  [Brahma Reddy Korraprolu](/author/Brahma-Reddy-Korraprolu/), PhD student at SERC presented his accepted paper on large language models (LLMs) for test case generation.
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
 date: '2025-02-19T09:30:00+05:30'
