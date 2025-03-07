@@ -45,13 +45,14 @@ sections:
   
   - block: collection
     content:
-      title: Latest Events
+      title: Upcoming Events
       subtitle:
       text:
       count: 5
       filters:
         author: ''
         category: ''
+        exclude_past: true
         exclude_featured: false
         publication_type: ''
         tag: ''
@@ -59,7 +60,26 @@ sections:
       order: desc
       page_type: event
     design:
-      view: card
+      view: showcase
+      columns: '1'
+  - block: collection
+    content:
+      title: Recent Events
+      subtitle:
+      text:
+      count: 5
+      filters:
+        author: ''
+        category: ''
+        exclude_future: true
+        exclude_featured: false
+        publication_type: ''
+        tag: ''
+      offset: 0
+      order: desc
+      page_type: event
+    design:
+      view: showcase
       columns: '1'
 
   - block: contact

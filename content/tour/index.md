@@ -23,7 +23,7 @@ sections:
           icon: diagram-project
           icon_pack: fas
           text: Projects
-          url: ../projects/
+          url: ../project/
       - title: Collaborate and Learn ☕️
         content: 'Share your knowledge with the group and explore exciting new topics together!'
         align: left
