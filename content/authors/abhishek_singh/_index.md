@@ -27,7 +27,7 @@ organizations:
 bio: 
 
 interests:
-  -Formal Methods
+- Formal Methods
 - Semantics of Programming Languages
 - Shared Memory Concurrency and Weak Memory Models 
 - Software Engineering and Program Synthesis
