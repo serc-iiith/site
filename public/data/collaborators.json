@@ -1,0 +1,186 @@
+[
+  {
+    "id": "cat",
+    "name": "CA Technologies",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/1/11/CA_Technologies_brand.svg",
+    "website": "http://ca.com",
+    "description": "DevOps and security projects",
+    "category": "industry"
+  },
+  {
+    "id": "drdo",
+    "name": "Defence Research and Development Organisation",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a2/DRDO_Seal.png",
+    "website": "https://www.drdo.gov.in",
+    "description": "Defense technology research and development",
+    "category": "government"
+  },
+  {
+    "id": "deepsee",
+    "name": "DEEP-SE",
+    "logo": "/images/deepSeLogo.png",
+    "website": "https://www.deepse.deib.polimi.it/",
+    "description": "DEpendable Evolvable Pervasive Software Engineering (DEEP-SE) group",
+    "category": "academic"
+  },
+  {
+    "id": "ea",
+    "name": "Electronic Arts",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Electronic-Arts-Logo.svg/640px-Electronic-Arts-Logo.svg.png",
+    "website": "https://www.ea.com",
+    "description": "Gaming and entertainment technology",
+    "category": "industry"
+  },
+  {
+    "id": "google",
+    "name": "Google",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
+    "website": "https://about.google/",
+    "description": "AI and cloud computing research",
+    "category": "industry"
+  },
+  {
+    "id": "hitachi",
+    "name": "Hitachi",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Logo_HITACHI_%28Japan%29.png",
+    "website": "https://www.hitachi.com",
+    "description": "IoT and industrial systems",
+    "category": "industry"
+  },
+  {
+    "id": "hsbc",
+    "name": "HSBC",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/d/d4/HSBC_%E6%BB%99%E8%B1%90_2020_alt.png?20210125094019",
+    "website": "https://www.hsbc.com",
+    "description": "Global banking and financial services",
+    "category": "industry"
+  },
+  {
+    "id": "lloyds",
+    "name": "Lloyds",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/9/95/Lloyds_bank_logo_2024.jpg",
+    "website": "https://www.lloydsbank.com",
+    "description": "Financial services and banking technology",
+    "category": "industry"
+  },
+  {
+    "id": "meta",
+    "name": "Meta",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/0/05/Meta_Platforms_Inc._logo_%28cropped%29.svg",
+    "website": "https://about.meta.com",
+    "description": "AR/VR and social computing",
+    "category": "industry"
+  },
+  {
+    "id": "middlesex",
+    "name": "Middlesex University London",
+    "logo": "/images/middlesexLogo.png",
+    "website": "https://www.mdx.ac.uk",
+    "description": "Academic research collaboration",
+    "category": "academic"
+  },
+  {
+    "id": "moe",
+    "name": "Ministry of Education",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Ministry_of_Education_India.svg",
+    "website": "https://www.education.gov.in",
+    "description": "Educational initiatives and funding",
+    "category": "government"
+  },
+  {
+    "id": "meity",
+    "name": "Ministry of Electronics & IT",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Ministry_of_Electronics_and_Information_Technology.svg",
+    "website": "https://www.meity.gov.in",
+    "description": "Digital India initiatives",
+    "category": "government"
+  },
+  {
+    "id": "mst",
+    "name": "Ministry of Science and Technology",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Ministry_of_Science_and_Technology_India.svg",
+    "website": "https://dst.gov.in",
+    "description": "Research grants and policy support",
+    "category": "government"
+  },
+  {
+    "id": "microsoft",
+    "name": "Microsoft",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
+    "website": "https://www.microsoft.com/",
+    "description": "Leading software and cloud services",
+    "category": "industry"
+  },
+  {
+    "id": "montycloud",
+    "name": "Monty Cloud",
+    "logo": "/images/mcLogo.webp",
+    "website": "http://montycloud.com",
+    "description": "Cloud automation solutions",
+    "category": "industry"
+  },
+  {
+    "id": "bhashini",
+    "name": "Bhashini",
+    "logo": "/images/bhashiniLogo.png",
+    "website": "https://bhashini.gov.in",
+    "description": "National language translation mission",
+    "category": "government"
+  },
+  {
+    "id": "qualcomm",
+    "name": "Qualcomm",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Qualcomm-Logo.svg",
+    "website": "https://www.qualcomm.com",
+    "description": "Mobile technology research",
+    "category": "industry"
+  },
+  {
+    "id": "s2-research-group",
+    "name": "S2 Research Group",
+    "logo": "/images/S2Logo.png",
+    "website": "https://s2group.cs.vu.nl",
+    "description": "Software and Sustainability Research Group at Vrije Universiteit Amsterdam",
+    "category": "academic"
+  },
+  {
+    "id": "siemens",
+    "name": "Siemens",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Siemens-logo.svg",
+    "website": "https://www.siemens.com",
+    "description": "Industrial automation research",
+    "category": "industry"
+  },
+  {
+    "id": "scrc",
+    "name": "Smart City Research Center",
+    "logo": "/images/scrcLogo.png",
+    "website": "https://smartcity.iiit.ac.in",
+    "description": "Urban technology innovation",
+    "category": "academic"
+  },
+  {
+    "id": "tcs",
+    "name": "Tata Consultancy Services",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/2/2e/TCS_NewLogo_Final_RGB.png",
+    "website": "https://www.tcs.com",
+    "description": "Enterprise software innovation",
+    "category": "industry"
+  },
+  {
+    "id": "universite-aquila",
+    "name": "Università degli Studi dell'Aquila",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/UnivaqLogo.png/640px-UnivaqLogo.png",
+    "website": "https://www.univaq.it",
+    "description": "Academic research collaboration",
+    "category": "academic"
+  },
+  {
+    "id": "vu-amsterdam",
+    "name": "Vrije Universiteit Amsterdam",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/VU_Logo.jpg/640px-VU_Logo.jpg",
+    "website": "https://www.vu.nl/en",
+    "description": "Academic research collaboration",
+    "category": "academic"
+  }
+]

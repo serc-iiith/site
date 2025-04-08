@@ -1,0 +1,656 @@
+{
+    "Faculty": [
+        {
+            "name": "Raghu Reddy",
+            "title": "Associate Professor and Center Head",
+            "email": "raghu.reddy@iiit.ac.in",
+            "imageURL": "/images/people/raghu-reddy.png",
+            "slug": "raghu-reddy",
+            "social_links": {
+                "Google Scholar": "https://scholar.google.co.in/citations?user=-WWiT4MAAAAJ",
+                "LinkedIn": "https://www.linkedin.com/in/y-raghu-reddy-4759357/"
+            },
+            "interests": [
+                "Virtual Reality/Extended Reality Systems",
+                "Usability Engineering",
+                "Software Quality"
+            ],
+            "education": [
+                {
+                    "degree": "PhD in Computer Science",
+                    "institution": "Colorado State University, US",
+                    "year": 2006
+                },
+                {
+                    "degree": "MS Computer Science",
+                    "institution": "Colorado State University, US",
+                    "year": 2001
+                },
+                {
+                    "degree": "BE Computer Science and Engineering",
+                    "institution": "University of Madras, India",
+                    "year": 1999
+                }
+            ],
+            "bio": "Dr. Y. Raghu Reddy currently works as an Associate Professor at International Institute of Information Technolgoy (IIIT Hyderabad), India. His primary research interests are in Software Engineering, HCI and Knowledge Engineering.\n\nHis primary research interests are in design and construction of complex software systems. He has published a number of peer reviewed publications in these areas. He is currently the Head of the Software Engineering Research Center (SERC) at IIIT Hyderabad."
+        },
+        {
+            "name": "Venkatesh Choppella",
+            "title": "Associate Professor",
+            "email": "venkatesh.choppella@iiit.ac.in",
+            "imageURL": "/images/people/venkatesh-choppella.png",
+            "slug": "venkatesh-choppella",
+            "social_links": {
+                "Google Scholar": "https://scholar.google.co.in/citations?user=fGj4T74AAAAJ",
+                "LinkedIn": "https://www.linkedin.com/in/venkatesh-choppella-7280864/",
+                "GitHub": "https://github.com/vxc"
+            },
+            "interests": [
+                "Computer Science",
+                "Software Engineering",
+                "Education and Technology"
+            ],
+            "education": [
+                {
+                    "degree": "PhD in Computer Science",
+                    "institution": "Indiana University, USA",
+                    "year": 2002
+                },
+                {
+                    "degree": "MTech Computer Science and Engineering",
+                    "institution": "IIT Madras",
+                    "year": 1987
+                },
+                {
+                    "degree": "BTech Computer Science and Engineering",
+                    "institution": "IIT Kanpur",
+                    "year": 1985
+                }
+            ],
+            "bio": "Dr. Venkatesh Choppella is Associate Professor of Software Engineering at the International Institute of Information Technology Hyderabad, India. He was also associated with Indian Institute of Information Technology and Management – Kerala, Trivandrum (2003-2009) and the IIIT Bangalore (2009-2010).\n\nVenkatesh holds a PhD. degree in Computer Science from Indiana University, Bloomington, USA, and Bachelors and Masters degrees from the Indian Institutes of Technology, Kanpur and Madras, respectively. He has held research and engineering positions in Hewlett Packard, Xerox Palo Alto Research Centre, Oak Ridge National Laboratory, and the Ohio State University in the United States.\n\nVenkatesh's current research interests are in formal methods and software architectures. In addition, he has an interest in computer science education and FOSS-based educational technology. He has published over 75 research papers and technical reports in the areas of computer science, software engineering, educational technology and computer science pedagogy."
+        },
+        {
+            "name": "Karthik Vaidhyanathan",
+            "title": "Assistant Professor",
+            "email": "karthik.vaidhyanathan@iiit.ac.in",
+            "imageURL": "/images/people/karthik-vaidhyanathan.png",
+            "slug": "karthik-vaidhyanathan",
+            "social_links": {
+                "Google Scholar": "https://scholar.google.co.in/citations?user=qtITyHkAAAAJ",
+                "LinkedIn": "https://www.linkedin.com/in/karthikv1392/",
+                "GitHub": "https://github.com/karthikv1392",
+                "Twitter": "https://twitter.com/karthi_ishere"
+            },
+            "interests": [
+                "Software Architecture",
+                "Self-adaptive Systems",
+                "ML-Enabled Systems",
+                "Software Sustainability"
+            ],
+            "education": [
+                {
+                    "degree": "PhD in Computer Science",
+                    "institution": "Gran Sasso Science Institute, Italy",
+                    "year": 2021
+                },
+                {
+                    "degree": "Msc Computer Science",
+                    "institution": "University of L'Aquila, Italy",
+                    "year": 2016
+                },
+                {
+                    "degree": "MTech Computer Science and Engineering",
+                    "institution": "Amrita University, India",
+                    "year": 2016
+                },
+                {
+                    "degree": "BTech Computer Science and Engineering",
+                    "institution": "Amrita University, India",
+                    "year": 2014
+                }
+            ],
+            "bio": "Karthik Vaidhyanathan is an Assistant Professor at the Software Engineering Research Center, IIIT-Hyderabad, India where he is also associated with the leadership team of smart city living lab. He obtained his Ph.D. from the Gran Sasso Science Institute, Italy and did his postdoc at the University of L'Aquila, Italy. His main research interests lie in the intersection of software architecture and machine learning with a specific focus on building sustainable software systems. His research focuses on how machine learning techniques can be leveraged to better architect self-adaptive systems and further how to better define architecting practices for developing Machine Learning-enabled software systems. As a part of his research activities, he serves as a reviewer/organizing committee member in various workshops, conferences, and journals. He is also an editorial board member (SE Radio) of IEEE Software.\n\nKarthik also poses more than 5 years of industrial experience as an employee and as a consultant in building and deploying ML products/services."
+        },
+        {
+            "name": "Raman Saxena",
+            "title": "Professor of Practice",
+            "email": "raman.saxena@iiit.ac.in",
+            "imageURL": "/images/people/raman-saxena.png",
+            "slug": "raman-saxena",
+            "social_links": {
+                "Google Scholar": "https://scholar.google.co.in/citations?user=ah1DhecAAAAJ",
+                "LinkedIn": "https://www.linkedin.com/in/dr-raman-saxena-697838/"
+            },
+            "interests": [
+                "Human-Behaviour Research",
+                "Cognitive Ergonomics",
+                "Intersection of Tech & Design"
+            ],
+            "education": [
+                {
+                    "degree": "PhD in Computer Science",
+                    "institution": "IIT Guwahati, India",
+                    "year": 2020
+                },
+                {
+                    "degree": "Master of Design",
+                    "institution": "National Institute of Design, India",
+                    "year": 1996
+                },
+                {
+                    "degree": "BTech Electronics and Communication Engineering",
+                    "institution": "Delhi University",
+                    "year": 1987
+                }
+            ],
+            "bio": "Prof. Raman Saxena currently serves as a Professor at the Software Engineering Research Center (SERC) at IIIT Hy- derabad. Additionally, he holds the position of Adjunct Professor at Department of Design -IIT Kanpur, where he em- barked on his academic journey in 2013. He is an alumnus of the Indian Institute of Technology Guwahati where he completed his PhD. Prior to joining academia, He accumulated over 25 years of industry experience across various do- mains, including design, innovation, technology, and product management. As an academician and researcher, he has worked on 20+ consulting projects with Industry and development organisations including Govt. Of India, Govt. Of UP, Bill and Melinda Gates Foundation (BMGF), Contraceptive Technologies Lab at Family Health Incorporation-USA etc.\n\nHe is also a Co-founder & Curator of USID Foundation (<www.usidfoundation.org>) a non- profit platform to promote design and its social impact and has organised several design and innovation conferences, seminars, workshops and gurukul workshops in partnership with industry and academic institutions since 2007. - did not match any documents."
+        },
+        {
+            "name": "Vasudeva Varma",
+            "title": "Professor",
+            "email": "vv@iiit.ac.in",
+            "imageURL": "/images/people/vasudeva-varma.png",
+            "slug": "vasudeva-varma",
+            "social_links": {
+                "Google Scholar": "https://scholar.google.co.in/citations?user=9OFvbfcAAAAJ",
+                "LinkedIn": "https://www.linkedin.com/in/vasuvarma/",
+                "GitHub": "https://github.com/devvarma"
+            },
+            "interests": [
+                "Computer Science",
+                "Software Engineering",
+                "Education and Technology"
+            ],
+            "education": [
+                {
+                    "degree": "PhD in Computer Science",
+                    "institution": "Indiana University, USA",
+                    "year": 2002
+                },
+                {
+                    "degree": "MTech Computer Science and Engineering",
+                    "institution": "IIT Madras",
+                    "year": 1987
+                },
+                {
+                    "degree": "BTech Computer Science and Engineering",
+                    "institution": "IIT Kanpur",
+                    "year": 1985
+                }
+            ],
+            "bio": "Dr. Vasudeva Varma is a Professor at the International Institute of Information Technology, Hyderabad (IIIT-H), currently serving as the Head of Language Technologies Research Centre (LTRC) and the Head of Information Retrieval and Extraction Lab (iREL). His research interests are in the broad areas of Information Retrieval, Extraction & Access, more specifically ~ Social Media Analysis, Summarization, Semantic Search, Text Generation, and Cloud Computing.\n\nHe has previously served as CEO of IIIT Hyderabad Foundation, which runs one of the largest technology incubators in India, and the Dean (Research & Development), IIIT-H.\n\nProf. Varma has over 300 publications which have been cited over 4800 times. In 2020, he received Google India's Research Award for his works in the area of Artificial Intelligence for Social Good (AI4SG). He published a book on Software Architecture (Pearson Education) and close to two hundred technical papers in journals and conferences. In 2004, he obtained young scientist award and grant from Department of Science and Technology, Government of India, for his proposal on personalized search engines. In 2007, he was given Research Faculty Award by AOL Labs.\n\nHe co-founded SETU Software Systems Pvt Ltd, a technology start-up along with Dr. Prasad Pingali (Vasu's first PhD student) which is focused on solving information access problems using unstructured data analytics."
+        },
+        {
+            "name": "Viswanath Kasturi",
+            "title": "Research Professor of Eminence",
+            "email": "viswanath.iiithyd@gmail.com",
+            "imageURL": "/images/people/viswanath-kasturi.png",
+            "slug": "viswanath-kasturi",
+            "social_links": {},
+            "interests": [
+                "Mathematics"
+            ],
+            "education": [
+                {
+                    "degree": "PhD in Mathematics",
+                    "institution": "Indian Statistical Institute, Kolkata",
+                    "year": 1968
+                }
+            ],
+            "bio": "Viswanath Kasturi\nResearch Professor of Eminence\nIIIT Hyderabad"
+        },
+        {
+            "name": "Ramesh Loganathan",
+            "title": "Professor of Practice",
+            "email": "ramesh.loganathan@iiit.ac.in",
+            "imageURL": "/images/people/ramesh-loganathan.png",
+            "slug": "ramesh-loganathan",
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/rameshl/",
+                "Google Scholar": "https://scholar.google.co.in/citations?user=zMeXWXcAAAAJ"
+            },
+            "interests": [
+                "Software Engineering",
+                "Entrepreneurship",
+                "Innovation"
+            ],
+            "education": [
+                {
+                    "degree": "Master of Engineering (ME) in Control Systems and Instrumentation",
+                    "institution": "Anna University, India",
+                    "year": 1990
+                },
+                {
+                    "degree": "BTech Electrical and Electronics Engineering",
+                    "institution": "Sri Venkateswara University",
+                    "year": 1988
+                }
+            ],
+            "bio": "As Professor Co-Innovation, heading the Research/Innovation outreach at IIIT Hyderabad. Helped start and grow the Technology Transfer Office, Co-Innovation (corp) labs, and the Centre for Innovation & Entrepreneurship. Association with IIITH started in 2002 as Adjunct faculty. Also, was visiting faculty at IIT Hyderabad (Innovation), and a member of governing board of incubators at IIIT-H, IIT Hyd, IIIT-Delhi and BITS.\n\nPrior to academics worked in the tech industry bay area and since 2000 in Hyderabad, as product R&D leader. Mo st recently was the India Head for Progress Software. Prior to Progress, was VP of Middleware Technologies at Pramati, and also headed Product Engineering.\n\nWas the Interim Chief Innovation Officer of Telangana state in 2017 and One of the Founders of Headstart Network (StartupSaturday). Also Chaired ACM Hyderabad Chapter 2012-14. Active in industry organizations. most recently was President of HYSEA (Hyderabad Software Industry Association) and Regional council member at Nasscom. Also on several committees and panels of state and central government including Meity (Gov of INdia) panel on innovation, BIRAC ACE fund of funds committee and state Blockhain District.\n\nAn accomplished Technologist, with over 20 years product engineering and R&D leadership experience. Regularly speak at tech workshops and seminars in India. Recently co-authored a book on 'SOA approach to Integration', published by Packt Publishers. Member of several Standards Expert groups including J2EE 1.3. Active in Product/Startup circles. .After 25 years in the product R&D space, moved to IIIT Hyderabad as faculty in 2016. As Professor Co-Innovation, heading the Research/Innovation outreach at IIIT Hyderabad. Helped start and grow the Technology Transfer Office, Co-Innovation (corp) labs, and the Centre for Innovation & Entrepreneurship. Association with IIITH started in 2002 as Adjunct faculty. Also, was visiting faculty at IIT Hyderabad (Innovation), and a member of governing board of incubators at IIIT-H, IIT Hyd, IIIT-Delhi and BITS. Prior to academics worked in the tech industry bay area and since 2000 in Hyderabad, as product R&D leader. Mo st recently was the India Head for Progress Software. Prior to Progress, was VP of Middleware Technologies at Pramati, and also headed Product Engineering. Was the Interim Chief Innovation Officer of Telangana state in 2017 and One of the Founders of Headstart Network (StartupSaturday). Also Chaired ACM Hyderabad Chapter 2012-14. Active in industry organizations. most recently was President of HYSEA (Hyderabad Software Industry Association) and Regional council member at Nasscom. Also on several committees and panels of state and central government including Meity (Gov of INdia) panel on innovation, BIRAC ACE fund of funds committee and state Blockhain District. An accomplished Technologist, with over 20 years product engineering and R&D leadership experience. Regularly speak at tech workshops and seminars in India. Recently co-authored a book on 'SOA approach to Integration', published by Packt Publishers. Member of several Standards Expert groups including J2EE 1.3. Active in Product/Startup circles."
+        }
+    ],
+    "PhD Students": [
+        {
+            "name": "Mrityunjay Kumar",
+            "title": "PhD CSE",
+            "email": "mrityunjay.k@research.iiit.ac.in",
+            "imageURL": "/images/people/mrityunjay-kumar.png",
+            "slug": "mrityunjay-kumar",
+            "social_links": {
+                "GitHub": "https://github.com/mkumar2"
+            }
+        },
+        {
+            "name": "Amar Banerjee",
+            "title": "PhD CSE",
+            "email": "amar.banerjee@research.iiit.ac.in",
+            "imageURL": "/images/people/amar-banerjee.png",
+            "slug": "amar-banerjee",
+            "social_links": {
+                "GitHub": "https://github.com/amarbanerjee23"
+            }
+        },
+        {
+            "name": "Akhila Matathammal",
+            "title": "PhD CSE",
+            "email": "akhila.matathammal@research.iiit.ac.in",
+            "imageURL": "/images/people/akhila-matathammal.png",
+            "slug": "akhila-matathammal",
+            "social_links": {
+                "GitHub": "https://github.com/akhiha"
+            }
+        },
+        {
+            "name": "Brahma Reddy Korraprolu",
+            "title": "PhD CSE",
+            "email": "brahma.reddy@researc.iiit.ac.in",
+            "imageURL": "/images/people/brahma-reddy-korraprolu.png",
+            "slug": "brahma-reddy-korraprolu",
+            "social_links": {
+                "GitHub": "https://github.com/k-brahma-reddy"
+            }
+        },
+        {
+            "name": "Nitheesh Chandra Yaratapalli",
+            "title": "PhD CSE",
+            "email": "nitheeshchandra.y@research.iiit.ac.in",
+            "imageURL": "/images/people/nitheesh-chandra-yaratapalli.png",
+            "slug": "nitheesh-chandra-yaratapalli",
+            "social_links": {}
+        },
+        {
+            "name": "Radha Krishna B",
+            "title": "PhD CSE",
+            "email": "radha.krishna@research.iiit.ac.in",
+            "imageURL": "/images/people/radha-krishna-b.png",
+            "slug": "radha-krishna-b",
+            "social_links": {
+                "GitHub": "https://github.com/radha-krishna-b"
+            }
+        },
+        {
+            "name": "Rudra Dhar",
+            "title": "PhD CSE",
+            "email": "rudra.dhar@research.iiit.ac.in",
+            "imageURL": "/images/people/rudra-dhar.png",
+            "slug": "rudra-dhar",
+            "social_links": {
+                "GitHub": "https://github.com/rudradhariiit"
+            }
+        }
+    ],
+    "MS by Research": [
+        {
+            "name": "Chandrasekar S",
+            "title": "MS (CSE)",
+            "email": "chandrasekar.s@research.iiiit.ac.in",
+            "imageURL": "/images/people/chandrasekar-s.png",
+            "slug": "chandrasekar-s",
+            "social_links": {}
+        },
+        {
+            "name": "Hiya Bhatt",
+            "title": "MS (CSE)",
+            "email": "hiya.bhatt@research.iiiit.ac.in",
+            "imageURL": "/images/people/hiya-bhatt.png",
+            "slug": "hiya-bhatt",
+            "social_links": {}
+        },
+        {
+            "name": "Likhith Kanigolla",
+            "title": "MS (CSE)",
+            "email": "likhith.kanigolla@research.iiit.ac.in",
+            "imageURL": "/images/people/likhith-kanigolla.png",
+            "slug": "likhith-kanigolla",
+            "social_links": {}
+        },
+        {
+            "name": "Puru Ojha",
+            "title": "MS (CSE)",
+            "email": "puru.ojha@research.iiit.ac.in",
+            "imageURL": "/images/people/puru-ojha.png",
+            "slug": "puru-ojha",
+            "social_links": {
+                "GitHub": "https://github.com/puru-ojha"
+            }
+        }
+    ],
+    "Dual Degree": [
+        {
+            "name": "Prakhar Jain",
+            "title": "LCD",
+            "email": "prakhar.jain@research.iiit.ac.in",
+            "imageURL": "/images/people/prakhar-jain.png",
+            "slug": "prakhar-jain",
+            "social_links": {
+                "GitHub": "https://github.com/prakharjain3"
+            }
+        },
+        {
+            "name": "Aaditya Vardhan Narain",
+            "title": "CSD",
+            "email": "aaditya.narain@research.iiit.ac.in",
+            "imageURL": "/images/people/aaditya-vardhan-narain.png",
+            "slug": "aaditya-vardhan-narain",
+            "social_links": {
+                "GitHub": "https://github.com/aadityanarain2003"
+            }
+        },
+        {
+            "name": "Adyansh Kakran",
+            "title": "CSD",
+            "email": "adyansh.kakran@research.iiit.ac.in",
+            "imageURL": "/images/people/adyansh-kakran.png",
+            "slug": "adyansh-kakran",
+            "social_links": {
+                "GitHub": "https://github.com/adyanshkakran"
+            }
+        },
+        {
+            "name": "Amey Karan",
+            "title": "CSD",
+            "email": "amey.karan@research.iiit.ac.in",
+            "imageURL": "/images/people/amey-karan.png",
+            "slug": "amey-karan",
+            "social_links": {
+                "GitHub": "https://github.com/ameykaran"
+            }
+        },
+        {
+            "name": "Aneesh Sambu",
+            "title": "CSD",
+            "email": "sambu.aneesh@research.iiit.ac.in",
+            "imageURL": "/images/people/aneesh-sambu.png",
+            "slug": "aneesh-sambu",
+            "social_links": {
+                "GitHub": "https://github.com/sambuaneesh"
+            }
+        },
+        {
+            "name": "Bassam Adnan",
+            "title": "CSD",
+            "email": "bassam.adnan@research.iiit.ac.in",
+            "imageURL": "/images/people/bassam-adnan.png",
+            "slug": "bassam-adnan",
+            "social_links": {
+                "GitHub": "https://github.com/bassamadnan/"
+            }
+        },
+        {
+            "name": "Gargie Tambe",
+            "title": "CSD",
+            "email": "",
+            "imageURL": "/images/people/gargie-tambe.png",
+            "slug": "gargie-tambe",
+            "social_links": {}
+        },
+        {
+            "name": "Gnaneswar Kulindala",
+            "title": "ECD",
+            "email": "gnaneswar.kulindala@research.iiit.ac.in",
+            "imageURL": "/images/people/gnaneswar-kulindala.png",
+            "slug": "gnaneswar-kulindala",
+            "social_links": {
+                "GitHub": "https://github.com/gnaneswar-k",
+                "LinkedIn": "https://linkedin.com/in/gnaneswar-kulindala/"
+            }
+        },
+        {
+            "name": "Miryala Sathvika",
+            "title": "CSD",
+            "email": "miryala.sathvika@research.iiit.ac.in",
+            "imageURL": "/images/people/miryala-sathvika.png",
+            "slug": "miryala-sathvika",
+            "social_links": {
+                "GitHub": "https://github.com/miryala10sathvika"
+            }
+        },
+        {
+            "name": "Pavitra Pinninti",
+            "title": "CSD",
+            "email": "pavitra.pinninti@research.iiit.ac.in",
+            "imageURL": "/images/people/pavitra-pinninti.png",
+            "slug": "pavitra-pinninti",
+            "social_links": {}
+        },
+        {
+            "name": "Prabhav Shetty",
+            "title": "CSD",
+            "email": "prabhav.shetty@research.iiit.ac.in",
+            "imageURL": "/images/people/prabhav-shetty.png",
+            "slug": "prabhav-shetty",
+            "social_links": {
+                "GitHub": "https://github.com/perbaw",
+                "LinkedIn": "https://linkedin.com/in/prabhavshetty/",
+                "Instagram": "https://www.instagram.com/prabhav.shetty/"
+            }
+        },
+        {
+            "name": "Prakhar Singhal",
+            "title": "CSD",
+            "email": "",
+            "imageURL": "/images/people/prakhar-singhal.png",
+            "slug": "prakhar-singhal",
+            "social_links": {}
+        },
+        {
+            "name": "Shailender Goyal",
+            "title": "CSD",
+            "email": "shailender.goyal@research.iiit.ac.in",
+            "imageURL": "/images/people/shailender-goyal.png",
+            "slug": "shailender-goyal",
+            "social_links": {
+                "GitHub": "https://github.com/ShailenderGoyal"
+            }
+        },
+        {
+            "name": "Shambhavi Jahagirdar",
+            "title": "CSD",
+            "email": "shambhavi.jahagirdar@research.iiit.ac.in",
+            "imageURL": "/images/people/shambhavi-jahagirdar.png",
+            "slug": "shambhavi-jahagirdar",
+            "social_links": {
+                "GitHub": "https://github.com/Shambhaviiiit"
+            }
+        },
+        {
+            "name": "Shaunak Biswas",
+            "title": "CSD",
+            "email": "shaunak.biswas@research.iiit.ac.in",
+            "imageURL": "/images/people/shaunak-biswas.png",
+            "slug": "shaunak-biswas",
+            "social_links": {
+                "GitHub": "https://github.com/StarryBadger"
+            }
+        },
+        {
+            "name": "Yashaswinee Dharmineni",
+            "title": "CSD",
+            "email": "dharmineni.y@research.iiit.ac.in",
+            "imageURL": "/images/people/yashaswinee-dharmineni.png",
+            "slug": "yashaswinee-dharmineni",
+            "social_links": {
+                "GitHub": "https://github.com/yashaswinee"
+            }
+        }
+    ],
+    "Honors": [
+        {
+            "name": "Arya Marda",
+            "title": "ECE",
+            "email": "arya.marda@students.iiit.ac.in",
+            "imageURL": "/images/people/arya-marda.png",
+            "slug": "arya-marda",
+            "social_links": {
+                "GitHub": "https://github.com/Arya-Ayra"
+            }
+        },
+        {
+            "name": "Agrim Mittal",
+            "title": "CSE",
+            "email": "agrim.mittal@students.iiit.ac.in",
+            "imageURL": "/images/people/agrim-mittal.png",
+            "slug": "agrim-mittal",
+            "social_links": {
+                "GitHub": "https://github.com/agrimmmm"
+            }
+        },
+        {
+            "name": "Dileep Kumar Adari",
+            "title": "CSE",
+            "email": "dileepkumar.adari@research.iiit.ac.in",
+            "imageURL": "/images/people/dileep-kumar-adari.png",
+            "slug": "dileep-kumar-adari",
+            "social_links": {
+                "GitHub": "https://github.com/dileepadari",
+                "LinkedIn": "https://linkedin.com/in/dileep-kumar-adari-298169252/"
+            }
+        },
+        {
+            "name": "Divij",
+            "title": "CSE",
+            "email": "divij.d@students.iiit.ac.in",
+            "imageURL": "/images/people/divij.png",
+            "slug": "divij",
+            "social_links": {
+                "GitHub": "https://github.com/divijd012"
+            }
+        },
+        {
+            "name": "Divyansh Pandey",
+            "title": "CSE",
+            "email": "divyanshp1136@gmail.com",
+            "imageURL": "/images/people/divyansh-pandey.png",
+            "slug": "divyansh-pandey",
+            "social_links": {}
+        },
+        {
+            "name": "Kotekal Methukula Santhosh",
+            "title": "CSD",
+            "email": "",
+            "imageURL": "/images/people/kotekal-methukula-santhosh.png",
+            "slug": "kotekal-methukula-santhosh",
+            "social_links": {}
+        },
+        {
+            "name": "Kritin Maddireddy",
+            "title": "CSE",
+            "email": "kritin.maddireddy@students.iiit.ac.in",
+            "imageURL": "/images/people/kritin-maddireddy.png",
+            "slug": "kritin-maddireddy",
+            "social_links": {
+                "GitHub": "https://github.com/how2kritin"
+            }
+        },
+        {
+            "name": "Meghana Tedla",
+            "title": "ECE",
+            "email": "meghana.tedla@students.iiit.ac.in",
+            "imageURL": "/images/people/meghana-tedla.png",
+            "slug": "meghana-tedla",
+            "social_links": {
+                "GitHub": "https://github.com/Meghanatedla"
+            }
+        },
+        {
+            "name": "Moida Praneeth Jain",
+            "title": "CSE",
+            "email": "moida.praneeth@students.iiit.ac.in",
+            "imageURL": "/images/people/moida-praneeth-jain.png",
+            "slug": "moida-praneeth-jain",
+            "social_links": {
+                "GitHub": "https://github.com/PraneethJain/"
+            }
+        },
+        {
+            "name": "Shrikara A",
+            "title": "CSE",
+            "email": "shrikara.a@students.iiit.ac.in",
+            "imageURL": "/images/people/shrikara-a.png",
+            "slug": "shrikara-a",
+            "social_links": {
+                "GitHub": "https://github.com/sudokara"
+            }
+        },
+        {
+            "name": "Vyakhya Guptha",
+            "title": "CSE",
+            "email": "vyakhya.gupta@students.iiit.ac.in",
+            "imageURL": "/images/people/vyakhya-guptha.png",
+            "slug": "vyakhya-guptha",
+            "social_links": {}
+        }
+    ],
+    "Alumni": [
+        {
+            "name": "Sai Anirudh Karre",
+            "title": "PhD CSE (Part-Time)",
+            "email": "",
+            "imageURL": "/images/people/sai-anirudh-karre.png",
+            "slug": "sai-anirudh-karre",
+            "social_links": {
+                "GitHub": "https://github.com/sai11101989"
+            }
+        },
+        {
+            "name": "Shubham Kulkarni",
+            "title": "MS (CSE)",
+            "email": "",
+            "imageURL": "/images/people/shubham-kulkarni.png",
+            "slug": "shubham-kulkarni",
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/shubham-kulkarni-061732123/"
+            }
+        },
+        {
+            "name": "Mohammad Waqas Wani",
+            "title": "MS (ECE)",
+            "email": "mohammad.wani@research.iiit.ac.in",
+            "imageURL": "/images/people/mohammad-waqas-wani.png",
+            "slug": "mohammad-waqas-wani",
+            "social_links": {
+                "GitHub": "https://github.com/waqaswani"
+            }
+        },
+        {
+            "name": "Dhiraj V",
+            "title": "MS (CSE)",
+            "email": "dhiraj.shanmukha@research.iiiit.ac.in",
+            "imageURL": "/images/people/dhiraj-v.png",
+            "slug": "dhiraj-v",
+            "social_links": {
+                "GitHub": "https://github.com/dhiraj-v"
+            }
+        }
+    ],
+    "Research Associates": [
+        {
+            "name": "Sreemaee Akshathala",
+            "title": "Research Engineer",
+            "email": "sreemaee.akshathala@research.iiit.ac.in",
+            "imageURL": "/images/people/sreemaee-akshathala.png",
+            "slug": "sreemaee-akshathala",
+            "social_links": {}
+        }
+    ]
+}

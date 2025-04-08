@@ -1,0 +1,173 @@
+[
+  {
+    "id": "cloudops-genai",
+    "title": "Autonomous CloudOps using GenAI",
+    "description": "The aim is to simplify the complex multi-dimensional space of CloudOps with the help of Generative AI.",
+    "collaborators": [
+      {
+        "name": "Monty Cloud",
+        "logo": "/images/mcLogo.webp",
+        "url": "http://montycloud.com"
+      }
+    ],
+    "links": [],
+    "image": "",
+    "category": "AI"
+  },
+  {
+    "id": "dic",
+    "title": "Design Innovation Center",
+    "description": "Ministry of Human Resource Development has proposed a National Initiative for Design Innovation in the Twelfth Plan. Under this initiative, 20 new Design Innovation Centers (DIC), one Open Design school (ODS) and a National Design Innovation Network (NDIN), linking together all these schools and other allied bodies such as leading institutions of Industry and academics, NGOs and government were set up.",
+    "collaborators": [
+      {
+        "name": "Ministry of Education",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Ministry_of_Education_India.svg",
+        "url": "https://www.education.gov.in"
+      }
+    ],
+    "links": [
+      {
+        "label": "Website",
+        "url": "https://serc.iiit.ac.in/dic.html"
+      }
+    ],
+    "image": "",
+    "category": "Education"
+  },
+  {
+    "id": "security-search-engine",
+    "title": "Development of Security Search Engine",
+    "description": "The project involves development of a information security search engine.",
+    "collaborators": [
+      {
+        "name": "Ministry of Science and Technology",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Ministry_of_Science_and_Technology_India.svg",
+        "url": "https://dst.gov.in"
+      }
+    ],
+    "links": [],
+    "image": "",
+    "category": "security"
+  },
+  {
+    "id": "gamily",
+    "title": "Gamily - Gamification Platform For All",
+    "description": "Gamification of software engineering activities to increase interest in developers.",
+    "collaborators": [],
+    "links": [],
+    "image": "",
+    "category": "software-engineering",
+    "demoLink": "https://www.youtube.com/watch?v=IjgOBEQMFn8&ab_channel=skbly7"
+  },
+  {
+    "id": "github-hsbc",
+    "title": "Github HSBC",
+    "description": "Adoption of a technology into an organization needs acceptance and ease of use.",
+    "collaborators": [
+      {
+        "name": "HSBC",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/d/d4/HSBC_%E6%BB%99%E8%B1%90_2020_alt.png?20210125094019",
+        "url": ""
+      }
+    ],
+    "links": [],
+    "image": "",
+    "category": "software-engineering"
+  },
+  {
+    "id": "meta-project",
+    "title": "Meta",
+    "description": "The aim is to simplify the complex multi-dimensional space of CloudOps with the help of Generative AI.",
+    "collaborators": [
+      {
+        "name": "Meta",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/0/05/Meta_Platforms_Inc._logo_%28cropped%29.svg",
+        "url": "https://about.meta.com"
+      }
+    ],
+    "links": [],
+    "image": "",
+    "category": "AI"
+  },
+  {
+    "id": "qualcomm-edgeai",
+    "title": "Qualcomm EdgeAi",
+    "description": "Sustainable Edge Ai using Edge-Cloud Continuum",
+    "collaborators": [
+      {
+        "name": "Qualcomm",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Qualcomm-Logo.svg",
+        "url": "https://www.qualcomm.com"
+      }
+    ],
+    "links": [],
+    "image": "",
+    "category": "AI"
+  },
+  {
+    "id": "smart-contracts-oss",
+    "title": "Smart Contracts for Open Source Software License Management",
+    "description": "Study the usage of smart contracts for open source software license management and create a prototype implementation using RIPPLE or Ether.",
+    "collaborators": [
+      {
+        "name": "IIIT",
+        "logo": "",
+        "url": ""
+      },
+      {
+        "name": "RIPPLE",
+        "logo": "",
+        "url": ""
+      }
+    ],
+    "links": [],
+    "image": "",
+    "category": "blockchain"
+  },
+  {
+    "id": "umetrix",
+    "title": "UMETRIX - Usability Evaluation for Mobile Apps",
+    "description": "UMETRIX to identify functional usability issues specific to mobile applications.",
+    "collaborators": [],
+    "links": [],
+    "image": "",
+    "category": "usability",
+    "demoLink": "https://www.youtube.com/watch?v=eeo0e1ajNnM"
+  },
+  {
+    "id": "virtual-labs",
+    "title": "Virtual Labs",
+    "description": "Online simulations of various science and engineering laboratory experiments available free and 24x7 to anyone and everyone.",
+    "collaborators": [
+      {
+        "name": "Ministry of Education",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Ministry_of_Education_India.svg",
+        "url": "https://www.education.gov.in"
+      }
+    ],
+    "links": [
+      {
+        "label": "Website",
+        "url": "https://www.vlab.co.in"
+      }
+    ],
+    "image": "",
+    "category": "education"
+  },
+  {
+    "id": "vreye",
+    "title": "Visual Acuity Testing using VR",
+    "description": "The VREYE project aims to widen the scope of VR software systems in the medical domain and loops in various benefits of the technology in order to solve the problems that persist in the scope of testing and detection.",
+    "collaborators": [
+      {
+        "name": "Google",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
+        "url": "https://about.google/"
+      }
+    ],
+    "links": [],
+    "image": "",
+    "category": "medical",
+    "demoLink": "https://www.youtube.com/watch?v=NlqTsSvGoLY"
+  }
+]

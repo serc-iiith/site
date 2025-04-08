@@ -1,0 +1,150 @@
+[
+    {
+        "slug": "annual-rd-showcase-at-iiith",
+        "name": "Annual R&D Showcase at IIITH",
+        "eventURL": "https://www.iiit.ac.in/rd-showcase/",
+        "location": "IIIT Hyderabad",
+        "locationURL": "Prof. C R Rao Road, Gachibowli, Hyderabad, Telangana, 500032, India",
+        "summary": "2025 Research and Development Showcase at IIIT Hyderabad",
+        "detail": "IIITH's annual R&D Showcase provides a unique opportunity for viewers to interact with faculty and students to understand their work in form of demos and presentations. Join faculty from SERC and other experts from academia and industry during the day for talks/discussions on the intersection of technology, sustainability, and AI @ March 08 2025.",
+        "startTime": "2025-03-08T10:00:00+05:30",
+        "endTime": "2025-03-09T17:00:00+05:30",
+        "imageURLs": [],
+        "presenters": [],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
+        "slug": "ediss-winter-school-2025",
+        "name": "EDISS-Winter School 2025",
+        "eventURL": "https://www.master-ediss.eu/winter-school-2025/",
+        "location": "University of L'Aquila, Italy",
+        "locationURL": "Palazzo Camponeschi, piazza Santa Margherita 2, L'Aquila, 67100, Italy",
+        "summary": "Prof. Karthik Vaidhyanathan Talk at EDISS Winter School 2025.",
+        "detail": "Prof. Karthik Vaidhyanathan recently delivered an invited talk at the 4th Edition of the EDISS Master's Programme Winter School 2025 in L'Aquila, Italy. His talk focused on the intersection of Generative AI and Software Engineering, highlighting key research developments in the field. The event also featured presentations by EDISS alumni, who shared practical insights into the world of data-intensive intelligent systems, offering valuable perspectives on real-world applications and industry challenges.",
+        "startTime": "2025-02-24T14:00:00+15:00",
+        "endTime": "2025-02-24T15:00:00+15:00",
+        "imageURLs": [],
+        "presenters": [
+            "karthik"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
+        "slug": "paper-accepted-at-icsoc-2024",
+        "name": "Paper Accepted at ICSOC 2024",
+        "eventURL": "",
+        "location": "Les côtes de Carthage, La Marsa, Tunis",
+        "locationURL": "Les côtes de Carthage, La Marsa, Tunis, Gammarth, BP 597-2070, Tunisie",
+        "summary": "Our Student Prakhar Jain presented their work about POSEIDON at ICSOC 2024, Tunisia",
+        "detail": "POSEIDON is a new framework that combines Deep Reinforcement Learning (Deep RL) with traditional optimization techniques to improve how we manage these networks. While still in the early stages, POSEIDON offers a fresh approach to handling some of the key issues facing MEC networks today. This groundbreaking work was presented by our student, Prakhar Jain, at ICSOC 2024 in Tunisia. This work, authored by Prakhar Jain, Prakhar Singhal, Divyansh Pandey, Giovanni Ennio Quattrocchi, and Karthik Vaidhyanathan,showcased the research to the international audience, highlighting how POSEIDON's AI-driven approach can transform network optimization of function placement in edge networks. His presentation received great interest from researchers and industry professionals, reflecting the growing importance of intelligent solutions in edge computing.",
+        "startTime": "2024-12-03T09:30:00+05:30",
+        "endTime": "2024-12-06T18:00:00+05:30",
+        "imageURLs": [],
+        "presenters": [
+            "prakhar_jain"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
+        "slug": "icsa-2024",
+        "name": "ICSA 2024",
+        "eventURL": "https://conf.researchr.org/home/icsa-2024",
+        "location": "IIIT Hyderabad",
+        "locationURL": "Prof. C R Rao Road, Gachibowli, Hyderabad, Telangana, 500032, India",
+        "summary": "21st IEEE International Conference on Software Architecture (ICSA 2024)",
+        "detail": "The International Conference on Software Architecture (ICSA) is the premier venue for practitioners and researchers interested in software architecture, in component-based software engineering and in quality aspects of software and how these relate to the design of software architectures. ICSA has a strong tradition as a working conference (previously named Working International Conference on Software Architecture, WICSA), where researchers meet practitioners and software architects can explain the problems they face in their day-to-day work and try to influence the future of the field.",
+        "startTime": "2024-06-04T09:30:00+05:30",
+        "endTime": "2024-06-08T18:00:00+05:30",
+        "imageURLs": [],
+        "presenters": [],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
+        "slug": "isec-2025",
+        "name": "ISEC 2025",
+        "eventURL": "https://conf.researchr.org/home/isec-2025",
+        "location": "NIT Kurukshetra",
+        "locationURL": "WRXF+23G, NIT, Haryana, Kurukshetra, 136119, India",
+        "summary": "Our Team attended ISEC 2025 in NIT Kurukshetra.",
+        "detail": "Professors Raghu Reddy and Karthik Vaidhyanathan attended the 18th ISEC in NIT Kurukshetra. Dr.Karthik Vaidhyanathan gave an invited talk on \"Playing with detailions:At the crossroads of Software Architecture and Generative AI\", while Prof. Raghu Reddy was part of the panel on \"GenAI for Large Scale Software Engineering - Hype to Reality\". Brahma Reddy Korraprolu, PhD student at SERC presented his accepted paper on large language models (LLMs) for test case generation.",
+        "startTime": "2025-02-19T09:30:00+05:30",
+        "endTime": "2025-02-22T18:00:00+05:30",
+        "imageURLs": [],
+        "presenters": [
+            "brahma",
+            "raghu",
+            "karthik"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
+        "slug": "national-science-day",
+        "name": "National Science Day",
+        "eventURL": "",
+        "location": "ECIL, Hyderabad",
+        "locationURL": "Block B - 3 Huda Complex, Tarnaka, Hyderabad, Telangana, 500007, India",
+        "summary": "Keynote in ECIL on the occasion of National Science Day.",
+        "detail": "On National Science Day, Prof.Raghu Reddy delivered a keynote on AI and Systems Architecture at Electronics Corporation of India Limited (ECIL), Hyderabad campus. The talk was attended by senior leaders, scientists, and engineers from the organization.Discussions revolved around the role of AI in critical systems and its potential applications.",
+        "startTime": "2025-02-28T14:00:00+15:00",
+        "endTime": "",
+        "imageURLs": [],
+        "presenters": [
+            "raghu"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
+        "slug": "teachers-day-2024",
+        "name": "Teachers Day 2024",
+        "eventURL": "",
+        "location": "Software Engineering Research Center, IIIT Hyderabad",
+        "locationURL": "Prof. C R Rao Road, Gachibowli, Hyderabad, Telangana, 500032, India",
+        "summary": "Teacher's Day 2024",
+        "detail": "Acharya Devo Bhava. Software Engineering Research Center marked Teachers Day with a heartfelt celebration honoring its distinguished faculty - Professors Raghu Reddy, Karthik Vaidhyanathan, Venkatesh Choppella, and Raman Saxena. Students expressed their gratitude through thoughtful tributes, sharing personal stories of mentorship and inspiration. The event showcased the profound impact these professors have on shaping both academic journeys and future innovations, highlighting the vital role educators play in the lives of students. It was a day filled with appreciation and reflection on the transformative power of teaching.",
+        "startTime": "2024-09-05T15:30:00+05:30",
+        "endTime": "",
+        "imageURLs": [],
+        "presenters": [
+            "raghu",
+            "karthik",
+            "venkatesh",
+            "raman"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    }
+]
