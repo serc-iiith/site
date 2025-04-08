@@ -14,14 +14,7 @@ const nextConfig: NextConfig = {
 
   // Images configuration
   images: {
-    loader: 'custom',
-    loaderFile: './src/lib/localImageLoader.ts',
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'upload.wikimedia.org',
-      },
-    ]
+    unoptimized: true,
   },
   output: 'export',
   trailingSlash: true,
