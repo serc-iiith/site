@@ -5,6 +5,7 @@ import path from 'path';
 export const dynamic = "force-static";
 
 const peopleFilePath = path.join(process.cwd(), 'public', 'data', 'people.json');
+const peopleImagesDir = path.join(process.cwd(), 'public', 'images', 'people');
 
 // Helper function to read the people data
 function readPeopleData() {
@@ -25,9 +26,73 @@ function generateSlug(name: string): string {
     .replace(/^-|-$/g, '');
 }
 
+// Helper function to rename an image file when slug changes
+async function renameImageFile(oldImageURL: string, oldSlug: string, newSlug: string): Promise<string | null> {
+  try {
+    // Skip if no image or if the image isn't in the people directory
+    if (!oldImageURL || !oldImageURL.includes('/images/people/')) {
+      return null;
+    }
+
+    // Extract old filename from URL
+    const oldFilename = oldImageURL.split('/').pop();
+
+    // Skip if we can't parse the filename
+    if (!oldFilename) {
+      return null;
+    }
+
+    // Get file extension
+    const fileExt = path.extname(oldFilename);
+    const newFilename = `${newSlug}${fileExt}`;
+
+    // Skip if the filename is already correctly named
+    if (oldFilename === newFilename) {
+      return null;
+    }
+
+    const oldFilePath = path.join(peopleImagesDir, oldFilename);
+    const newFilePath = path.join(peopleImagesDir, newFilename);
+
+    // Check if old file exists
+    if (!fs.existsSync(oldFilePath)) {
+      return null;
+    }
+
+    // Check if new file path already exists, avoid overwrite
+    if (fs.existsSync(newFilePath)) {
+      // Generate unique name with timestamp to avoid conflicts
+      const timestamp = Date.now();
+      const newUniqueFilename = `${newSlug}-${timestamp}${fileExt}`;
+      const newUniqueFilePath = path.join(peopleImagesDir, newUniqueFilename);
+      fs.renameSync(oldFilePath, newUniqueFilePath);
+      return `/images/people/${newUniqueFilename}`;
+    }
+
+    // Rename the file
+    fs.renameSync(oldFilePath, newFilePath);
+
+    // Return the new URL
+    return `/images/people/${newFilename}`;
+  } catch (error) {
+    console.error('Error renaming image file:', error);
+    return null;
+  }
+}
+
 export async function GET() {
   try {
     const data = readPeopleData();
+
+    // Sort people alphabetically within each category
+    for (const category in data) {
+      if (Array.isArray(data[category])) {
+        data[category].sort((a: any, b: any) => {
+          return (a.name || '').localeCompare(b.name || '');
+        });
+      }
+    }
+
     return NextResponse.json(data);
   } catch (error) {
     console.error('Error reading people data:', error);
@@ -101,6 +166,9 @@ export async function PUT(request: NextRequest) {
 
     // Handle category change
     if (oldCategory && oldCategory !== category) {
+      // Find the person in old category to get access to the current imageURL
+      const oldPerson = data[oldCategory].find((p: any) => p.slug === oldSlug);
+
       // Remove from old category
       data[oldCategory] = data[oldCategory].filter((p: any) => p.slug !== oldSlug);
 
@@ -119,6 +187,14 @@ export async function PUT(request: NextRequest) {
         person.slug = `${baseSlug}-${count}`;
       }
 
+      // Rename image file if slug changed
+      if (oldPerson && oldPerson.imageURL && person.slug !== oldSlug) {
+        const newImageURL = await renameImageFile(oldPerson.imageURL, oldSlug, person.slug);
+        if (newImageURL) {
+          person.imageURL = newImageURL;
+        }
+      }
+
       // Add to new category
       data[category].push(person);
     } else {
@@ -135,6 +211,14 @@ export async function PUT(request: NextRequest) {
             count++;
           }
           person.slug = `${baseSlug}-${count}`;
+        }
+
+        // Rename image file if slug changed
+        if (person.imageURL && person.slug !== oldSlug) {
+          const newImageURL = await renameImageFile(person.imageURL, oldSlug, person.slug);
+          if (newImageURL) {
+            person.imageURL = newImageURL;
+          }
         }
 
         data[category][index] = person;

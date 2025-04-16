@@ -10,8 +10,15 @@ import {
   FaGithub,
   FaEdit,
   FaSave,
+  FaMedium,
+  FaGlobe,
+  FaResearchgate,
+  FaOrcid,
+  FaUserGraduate,
+  FaUniversity,
 } from "react-icons/fa";
-import { SiGooglescholar } from "react-icons/si";
+import { SiGooglescholar, SiSemanticscholar, SiAcm, SiIeee, SiScopus } from "react-icons/si";
+import { HiExternalLink } from "react-icons/hi";
 
 // Define TypeScript types for our data
 type Education = {
@@ -111,8 +118,33 @@ export default function PersonProfile({ person, category, publications }: Person
         return <FaGithub size={20} />;
       case "google scholar":
         return <SiGooglescholar size={20} />;
+      case "researchgate":
+        return <FaResearchgate size={20} />;
+      case "orcid":
+        return <FaOrcid size={20} />;
+      case "medium":
+        return <FaMedium size={20} />;
+      case "website":
+      case "personal website":
+        return <FaGlobe size={20} />;
+      case "semantic scholar":
+        return <SiSemanticscholar size={20} />;
+      case "acm":
+      case "acm digital library":
+        return <SiAcm size={20} />;
+      case "ieee":
+      case "ieee xplore":
+        return <SiIeee size={20} />;
+      case "scopus":
+        return <SiScopus size={20} />;
+      case "academia":
+      case "academia.edu":
+        return <FaUserGraduate size={20} />;
+      case "university":
+      case "institution":
+        return <FaUniversity size={20} />;
       default:
-        return null;
+        return <HiExternalLink size={20} />;
     }
   };
 
@@ -372,54 +404,16 @@ export default function PersonProfile({ person, category, publications }: Person
                     <h3 className="text-lg font-medium text-[color:var(--text-color)] mb-3">
                       Research Interests
                     </h3>
-                    {isMounted && isEditMode ? (
-                      <div className="space-y-3 overflow-x-hidden">
-                        <div className="flex flex-wrap gap-2">
-                          {personToDisplay.interests?.map((interest, index) => (
-                            <div
-                              key={index}
-                              className="px-3 py-1 bg-[color:var(--tag-bg)] text-[color:var(--primary-color)] rounded-full text-sm flex items-center max-w-full"
-                            >
-                              <span className="truncate max-w-[80%]">
-                                {interest}
-                              </span>
-                              <button
-                                onClick={() => handleRemoveInterest(index)}
-                                className="ml-2 text-[color:var(--error-color)] hover:text-[color:var(--error-color)]/80 flex-shrink-0"
-                              >
-                                &times;
-                              </button>
-                            </div>
-                          ))}
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <input
-                            type="text"
-                            value={newInterest}
-                            onChange={(e) => setNewInterest(e.target.value)}
-                            placeholder="Add new interest"
-                            className="flex-1 min-w-0 px-3 py-2 text-sm border border-[color:var(--border-color)] rounded-md"
-                          />
-                          <button
-                            onClick={handleAddInterest}
-                            className="px-3 py-2 bg-[color:var(--primary-color)] text-white rounded-md hover:bg-[color:var(--primary-color)]/90 flex-shrink-0"
-                          >
-                            Add
-                          </button>
-                        </div>
-                      </div>
-                    ) : (
-                      <div className="flex flex-wrap gap-2">
-                        {personToDisplay.interests?.map((interest, index) => (
-                          <span
-                            key={index}
-                            className="px-4 py-2 bg-[color:var(--tag-bg)] text-[color:var(--primary-color)] rounded-full text-sm"
-                          >
-                            {interest}
-                          </span>
-                        ))}
-                      </div>
-                    )}
+                    <div className="flex flex-wrap gap-2">
+                      {personToDisplay.interests?.map((interest, index) => (
+                        <span
+                          key={index}
+                          className="px-4 py-2 bg-[color:var(--tag-bg)] text-[color:var(--primary-color)] rounded-full text-sm"
+                        >
+                          {interest}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 )}
 
@@ -429,81 +423,27 @@ export default function PersonProfile({ person, category, publications }: Person
                     <h3 className="text-lg font-medium text-[color:var(--text-color)] mb-3">
                       Connect
                     </h3>
-                    {isMounted && isEditMode ? (
-                      <div className="space-y-3">
-                        <div className="flex flex-wrap gap-2">
-                          {Object.entries(personToDisplay.social_links || {}).map(
-                            ([platform, url]) => (
-                              <div
-                                key={platform}
-                                className="flex items-center px-3 py-2 bg-[color:var(--foreground)] rounded-lg max-w-full"
-                              >
-                                <span className="text-[color:var(--secondary-color)] flex-shrink-0">
-                                  {getSocialIcon(platform)}
-                                </span>
-                                <span className="ml-2 text-sm text-[color:var(--text-color)] truncate max-w-[80px]">
-                                  {platform}
-                                </span>
-                                <button
-                                  onClick={() => handleRemoveSocialLink(platform)}
-                                  className="ml-2 text-[color:var(--error-color)] hover:text-[color:var(--error-color)]/80 flex-shrink-0"
-                                >
-                                  &times;
-                                </button>
-                              </div>
-                            )
-                          )}
-                        </div>
-                        <div className="flex flex-col gap-2">
-                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                            <input
-                              type="text"
-                              value={newSocialPlatform}
-                              onChange={(e) =>
-                                setNewSocialPlatform(e.target.value)
-                              }
-                              placeholder="Platform (e.g. LinkedIn)"
-                              className="w-full px-3 py-2 text-sm border border-[color:var(--border-color)] rounded-md"
-                            />
-                            <input
-                              type="text"
-                              value={newSocialUrl}
-                              onChange={(e) => setNewSocialUrl(e.target.value)}
-                              placeholder="URL"
-                              className="w-full px-3 py-2 text-sm border border-[color:var(--border-color)] rounded-md"
-                            />
-                          </div>
-                          <button
-                            onClick={handleAddSocialLink}
-                            className="px-3 py-2 bg-[color:var(--primary-color)] text-white rounded-md hover:bg-[color:var(--primary-color)]/90"
+                    <div className="flex flex-wrap gap-2">
+                      {Object.entries(personToDisplay.social_links || {}).map(
+                        ([platform, url]) => (
+                          <a
+                            key={platform}
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center px-3 py-2 bg-[color:var(--foreground)] hover:bg-[color:var(--hover-bg)] rounded-lg transition"
+                            aria-label={platform}
                           >
-                            Add Social Link
-                          </button>
-                        </div>
-                      </div>
-                    ) : (
-                      <div className="flex flex-wrap gap-2">
-                        {Object.entries(personToDisplay.social_links || {}).map(
-                          ([platform, url]) => (
-                            <a
-                              key={platform}
-                              href={url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center px-3 py-2 bg-[color:var(--foreground)] hover:bg-[color:var(--hover-bg)] rounded-lg transition"
-                              aria-label={platform}
-                            >
-                              <span className="text-[color:var(--secondary-color)]">
-                                {getSocialIcon(platform)}
-                              </span>
-                              <span className="ml-2 text-sm text-[color:var(--text-color)]">
-                                {platform}
-                              </span>
-                            </a>
-                          )
-                        )}
-                      </div>
-                    )}
+                            <span className="text-[color:var(--secondary-color)]">
+                              {getSocialIcon(platform)}
+                            </span>
+                            <span className="ml-2 text-sm text-[color:var(--text-color)]">
+                              {platform}
+                            </span>
+                          </a>
+                        )
+                      )}
+                    </div>
                   </div>
                 )}
               </div>

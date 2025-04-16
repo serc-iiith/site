@@ -1,6 +1,22 @@
 [
   {
     "authors": [
+      "Akhila Matathammal",
+      "Kriti Gupta",
+      "Larissa Lavanya",
+      "Ananya Vishal Halgatti",
+      "Priyanshi Gupta",
+      "Karthik Vaidhyanathan"
+    ],
+    "year": "2025",
+    "title": "EdgeMLBalancer: A Self-Adaptive Approach for Dynamic Model Switching on Resource-Constrained Edge Devices",
+    "cite": "@misc{matathammal2025edgemlbalancerselfadaptiveapproachdynamic,\n      title={EdgeMLBalancer: A Self-Adaptive Approach for Dynamic Model Switching on Resource-Constrained Edge Devices}, \n      author={Akhila Matathammal and Kriti Gupta and Larissa Lavanya and Ananya Vishal Halgatti and Priyanshi Gupta and Karthik Vaidhyanathan},\n      year={2025},\n      eprint={2502.06493},\n      archivePrefix={arXiv},\n      primaryClass={cs.SE},\n      url={https://arxiv.org/abs/2502.06493}, \n}",
+    "venue": "The International Workshop on Flexible Software Architecture for Embedded Computing Systems (SARECS) - 22nd International Conference on Software Architecture (ICSA)",
+    "doi": "https://doi.org/10.48550/arXiv.2502.06493",
+    "url": "https://arxiv.org/abs/2502.06493"
+  },
+  {
+    "authors": [
       "Arya Marda",
       "Shubham Kulkarni",
       "Karthik Vaidhyanathan"

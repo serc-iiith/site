@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Plus, Edit, X, Save, Search, Trash2, Upload, AlertTriangle } from 'lucide-react';
 import Image from 'next/image';
 import { toast } from 'react-hot-toast';
@@ -66,6 +66,147 @@ const DeleteConfirmationModal: React.FC<DeleteModalProps> = ({ isOpen, onClose, 
     );
 };
 
+interface ImageDropzoneProps {
+    onImageUpload: (file: File) => void;
+    currentImage?: string;
+    isLoading: boolean;
+}
+
+const ImageDropzone: React.FC<ImageDropzoneProps> = ({ onImageUpload, currentImage, isLoading }) => {
+    const [isDragging, setIsDragging] = useState(false);
+    const [previewUrl, setPreviewUrl] = useState<string | null>(null);
+
+    useEffect(() => {
+        // Clear the preview when the component unmounts
+        return () => {
+            if (previewUrl) {
+                URL.revokeObjectURL(previewUrl);
+            }
+        };
+    }, [previewUrl]);
+
+    const handleDragEnter = useCallback((e: React.DragEvent<HTMLDivElement>) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setIsDragging(true);
+    }, []);
+
+    const handleDragLeave = useCallback((e: React.DragEvent<HTMLDivElement>) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setIsDragging(false);
+    }, []);
+
+    const handleDragOver = useCallback((e: React.DragEvent<HTMLDivElement>) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (e.dataTransfer.files) {
+            setIsDragging(true);
+        }
+    }, []);
+
+    const handleDrop = useCallback((e: React.DragEvent<HTMLDivElement>) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setIsDragging(false);
+
+        if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+            const file = e.dataTransfer.files[0];
+            // Check if file is an image
+            if (!file.type.match('image.*')) {
+                toast.error('Please upload an image file');
+                return;
+            }
+
+            // Create preview
+            if (previewUrl) {
+                URL.revokeObjectURL(previewUrl);
+            }
+            setPreviewUrl(URL.createObjectURL(file));
+
+            // Pass the file to parent component
+            onImageUpload(file);
+        }
+    }, [onImageUpload, previewUrl]);
+
+    const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+        if (e.target.files && e.target.files[0]) {
+            const file = e.target.files[0];
+
+            // Create preview
+            if (previewUrl) {
+                URL.revokeObjectURL(previewUrl);
+            }
+            setPreviewUrl(URL.createObjectURL(file));
+
+            // Pass the file to parent component
+            onImageUpload(file);
+        }
+    }, [onImageUpload, previewUrl]);
+
+    // Decide what image to show
+    const imageToShow = previewUrl || currentImage || '/images/person_fallback.png';
+
+    return (
+        <div
+            className={`relative border-2 border-dashed rounded-lg p-4 text-center transition-colors ${isDragging
+                ? 'border-[color:var(--primary-color)] bg-[color:var(--primary-color)] bg-opacity-10'
+                : 'border-[color:var(--border-color)] hover:border-[color:var(--primary-color)]'
+                }`}
+            onDragEnter={handleDragEnter}
+            onDragOver={handleDragOver}
+            onDragLeave={handleDragLeave}
+            onDrop={handleDrop}
+        >
+            <input
+                type="file"
+                id="image-upload"
+                className="hidden"
+                accept="image/*"
+                onChange={handleChange}
+                disabled={isLoading}
+            />
+
+            <div className="mb-4 relative mx-auto w-32 h-32 overflow-hidden rounded-full bg-gray-100">
+                <Image
+                    src={imageToShow}
+                    alt="Profile preview"
+                    width={128}
+                    height={128}
+                    className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
+                    unoptimized={true}
+                    onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        if (target.src !== window.location.origin + '/images/person_fallback.png') {
+                            target.src = '/images/person_fallback.png';
+                        }
+                    }}
+                />
+            </div>
+
+            <label
+                htmlFor="image-upload"
+                className="cursor-pointer inline-flex items-center justify-center gap-2 py-2 px-4 bg-[color:var(--background)] border border-[color:var(--border-color)] rounded-md text-[color:var(--text-color)] hover:bg-[color:var(--hover-bg)] transition-colors"
+            >
+                <Upload size={16} /> Choose Image
+            </label>
+
+            <p className="mt-2 text-sm text-[color:var(--secondary-color)]">
+                Drag & drop an image or click to browse
+            </p>
+            <p className="mt-1 text-xs text-[color:var(--secondary-color)]">
+                JPEG, PNG, or WebP (max 5MB)
+            </p>
+
+            {isLoading && (
+                <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-lg">
+                    <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-[color:var(--primary-color)]"></div>
+                </div>
+            )}
+        </div>
+    );
+};
+
 interface PeopleData {
     [key: string]: Person[];
 }
@@ -76,6 +217,7 @@ const EditPeople: React.FC = () => {
     const [editingSlug, setEditingSlug] = useState<string | null>(null);
     const [searchTerm, setSearchTerm] = useState<string>('');
     const [isLoading, setIsLoading] = useState(false);
+    const [isUploading, setIsUploading] = useState(false);
     const [newSocialPlatform, setNewSocialPlatform] = useState<string>('');
     const [newSocialLink, setNewSocialLink] = useState<string>('');
     const [newInterest, setNewInterest] = useState<string>('');
@@ -96,6 +238,9 @@ const EditPeople: React.FC = () => {
         bio: '',
         category: '',
     });
+    // New state for unique titles
+    const [uniqueTitles, setUniqueTitles] = useState<string[]>([]);
+    const [customTitle, setCustomTitle] = useState<string>('');
 
     // New state for deletion modal
     const [deleteModal, setDeleteModal] = useState<{
@@ -122,15 +267,26 @@ const EditPeople: React.FC = () => {
             setCategories(allCategories);
 
             const allPeople: Person[] = [];
+            // Extract unique titles
+            const titles = new Set<string>();
+
             allCategories.forEach(category => {
-                const peopleInCategory = data[category].map((person: Person) => ({
-                    ...person,
-                    category
-                }));
+                const peopleInCategory = data[category].map((person: Person) => {
+                    // Add title to the set
+                    if (person.title) {
+                        titles.add(person.title);
+                    }
+                    return {
+                        ...person,
+                        category
+                    };
+                });
                 allPeople.push(...peopleInCategory);
             });
 
             setPeople(allPeople);
+            // Set unique titles
+            setUniqueTitles(Array.from(titles).sort());
         } catch (error) {
             console.error('Error fetching people data:', error);
             toast.error('Failed to load people data');
@@ -156,8 +312,76 @@ const EditPeople: React.FC = () => {
         });
     };
 
+    // New handler for title dropdown
+    const handleTitleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        const value = e.target.value;
+        if (value === "custom") {
+            // Do not change the title if "custom" is selected
+            return;
+        }
+        setFormData((prev) => ({ ...prev, title: value }));
+    };
+
+    // New handler for custom title input
+    const handleCustomTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value;
+        setCustomTitle(value);
+        setFormData((prev) => ({ ...prev, title: value }));
+    };
+
     const handleCategoryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setFormData((prev) => ({ ...prev, category: e.target.value }));
+    };
+
+    // New function to handle image upload
+    const handleImageUpload = async (file: File) => {
+        if (!file) return;
+
+        // Check file size (max 5MB)
+        if (file.size > 5 * 1024 * 1024) {
+            toast.error('Image size must be less than 5MB');
+            return;
+        }
+
+        setIsUploading(true);
+
+        try {
+            // Generate a slug if it exists
+            const slug = formData.slug || (formData.name ? generateSlug(formData.name) : '');
+
+            const formDataObj = new FormData();
+            formDataObj.append('file', file);
+            formDataObj.append('type', 'people');
+
+            // Only pass the slug if we have one, otherwise the API will use the original filename
+            if (slug) {
+                formDataObj.append('slug', slug);
+            }
+
+            const response = await fetch('/api/upload', {
+                method: 'POST',
+                body: formDataObj,
+            });
+
+            const result = await response.json();
+
+            if (!response.ok) {
+                throw new Error(result.error || 'Failed to upload image');
+            }
+
+            if (result.filePath) {
+                setFormData(prev => ({
+                    ...prev,
+                    imageURL: result.filePath
+                }));
+                // Success toast removed
+            }
+        } catch (error) {
+            console.error('Error uploading image:', error);
+            toast.error('Failed to upload image. Please try again.');
+        } finally {
+            setIsUploading(false);
+        }
     };
 
     // Handle social links
@@ -244,6 +468,11 @@ const EditPeople: React.FC = () => {
             education: person.education || [],
             bio: person.bio || '',
         });
+        // Check if the person's title exists in unique titles
+        setCustomTitle(uniqueTitles.includes(person.title) ? '' : person.title);
+
+        // Scroll to the top of the page
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     const startAdding = () => {
@@ -260,6 +489,7 @@ const EditPeople: React.FC = () => {
             bio: '',
             category: categories[0] || '',
         });
+        setCustomTitle('');
     };
 
     const cancelEditing = () => {
@@ -284,6 +514,7 @@ const EditPeople: React.FC = () => {
             institution: '',
             year: new Date().getFullYear()
         });
+        setCustomTitle('');
     };
 
     const savePerson = async () => {
@@ -442,95 +673,127 @@ const EditPeople: React.FC = () => {
                     {/* Basic Information Section */}
                     <div className="mb-6">
                         <h4 className="text-md font-semibold mb-3 text-[color:var(--text-color)]">Basic Information</h4>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                            <div>
-                                <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1">
-                                    Name*
-                                </label>
-                                <input
-                                    type="text"
-                                    name="name"
-                                    value={formData.name}
-                                    onChange={handleInputChange}
-                                    className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
-                                    disabled={isLoading}
-                                />
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="space-y-4">
+                                <div>
+                                    <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1">
+                                        Name*
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        value={formData.name}
+                                        onChange={handleInputChange}
+                                        className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                        disabled={isLoading}
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1">
+                                        Title*
+                                    </label>
+                                    <div className="flex flex-col gap-2">
+                                        <select
+                                            value={uniqueTitles.includes(formData.title) ? formData.title : 'custom'}
+                                            onChange={handleTitleChange}
+                                            className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                            disabled={isLoading}
+                                        >
+                                            <option value="">Select title</option>
+                                            {uniqueTitles.map((title) => (
+                                                <option key={title} value={title}>
+                                                    {title}
+                                                </option>
+                                            ))}
+                                            <option value="custom">Custom title</option>
+                                        </select>
+                                        {!uniqueTitles.includes(formData.title) && (
+                                            <input
+                                                type="text"
+                                                value={formData.title}
+                                                onChange={handleCustomTitleChange}
+                                                placeholder="Enter custom title"
+                                                className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                                disabled={isLoading}
+                                            />
+                                        )}
+                                    </div>
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1">
+                                        Email
+                                    </label>
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        value={formData.email || ''}
+                                        onChange={handleInputChange}
+                                        className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                        disabled={isLoading}
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1">
+                                        Category*
+                                    </label>
+                                    <select
+                                        name="category"
+                                        value={formData.category}
+                                        onChange={handleCategoryChange}
+                                        className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                        disabled={isLoading}
+                                    >
+                                        <option value="">Select category</option>
+                                        {categories.map((category) => (
+                                            <option key={category} value={category}>
+                                                {category}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1">
+                                        Slug (URL identifier) <span className="text-xs ml-2 text-[color:var(--info-color)]">(Auto-generated, not editable)</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="slug"
+                                        value={formData.slug}
+                                        readOnly
+                                        className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)] opacity-70"
+                                    />
+                                    {editingSlug === 'new' && formData.name && (
+                                        <p className="text-xs text-[color:var(--secondary-color)] mt-1">
+                                            Auto-generated from name: {generateSlug(formData.name)}
+                                        </p>
+                                    )}
+                                </div>
                             </div>
-                            <div>
-                                <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1">
-                                    Title*
-                                </label>
-                                <input
-                                    type="text"
-                                    name="title"
-                                    value={formData.title}
-                                    onChange={handleInputChange}
-                                    className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
-                                    disabled={isLoading}
-                                />
-                            </div>
-                            <div>
-                                <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1">
-                                    Email
-                                </label>
-                                <input
-                                    type="email"
-                                    name="email"
-                                    value={formData.email || ''}
-                                    onChange={handleInputChange}
-                                    className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
-                                    disabled={isLoading}
-                                />
-                            </div>
-                            <div>
-                                <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1 flex items-center">
-                                    <Upload size={16} className="mr-1" /> Image URL
-                                </label>
-                                <input
-                                    type="text"
-                                    name="imageURL"
-                                    value={formData.imageURL || ''}
-                                    onChange={handleInputChange}
-                                    className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
-                                    disabled={isLoading}
-                                />
-                            </div>
-                            <div>
-                                <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1">
-                                    Slug (URL identifier - auto-generated if empty)
-                                </label>
-                                <input
-                                    type="text"
-                                    name="slug"
-                                    value={formData.slug}
-                                    onChange={handleInputChange}
-                                    className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
-                                    disabled={isLoading || editingSlug !== 'new'} // Only allow slug editing for new people
-                                />
-                                {editingSlug === 'new' && formData.name && (
-                                    <p className="text-xs text-[color:var(--secondary-color)] mt-1">
-                                        Auto-generated from name: {generateSlug(formData.name)}
-                                    </p>
-                                )}
-                            </div>
-                            <div>
-                                <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1">
-                                    Category*
-                                </label>
-                                <select
-                                    name="category"
-                                    value={formData.category}
-                                    onChange={handleCategoryChange}
-                                    className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
-                                    disabled={isLoading}
-                                >
-                                    <option value="">Select category</option>
-                                    {categories.map((category) => (
-                                        <option key={category} value={category}>
-                                            {category}
-                                        </option>
-                                    ))}
-                                </select>
+
+                            <div className="space-y-4">
+                                <div>
+                                    <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1">
+                                        Profile Image
+                                    </label>
+                                    <ImageDropzone
+                                        onImageUpload={handleImageUpload}
+                                        currentImage={formData.imageURL}
+                                        isLoading={isUploading}
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-medium text-[color:var(--secondary-color)] mt-8 mb-1">
+                                        Image URL <span className="text-xs ml-2 text-[color:var(--info-color)]">(Updated automatically when image is uploaded)</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="imageURL"
+                                        value={formData.imageURL || ''}
+                                        onChange={handleInputChange}
+                                        className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                        disabled={isLoading}
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -703,7 +966,7 @@ const EditPeople: React.FC = () => {
                         </button>
                         <button
                             onClick={savePerson}
-                            disabled={isLoading}
+                            disabled={isLoading || isUploading}
                             className="px-3 py-1.5 sm:px-4 sm:py-2 bg-[color:var(--primary-color)] text-white rounded-md hover:bg-opacity-90 flex items-center disabled:opacity-50"
                         >
                             {isLoading ? 'Saving...' : <><Save size={16} className="mr-1" /> Save</>}

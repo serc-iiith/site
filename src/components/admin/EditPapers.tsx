@@ -11,6 +11,7 @@ interface Paper {
     venue: string;
     doi?: string;
     url?: string;
+    id?: string;
 }
 
 const EditPapers: React.FC = () => {
@@ -91,6 +92,9 @@ const EditPapers: React.FC = () => {
         setCurrentAuthors([...paper.authors]);
         setIsEditing(true);
         setIsNew(false);
+
+        // Scroll to the top of the page
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     const startAdding = () => {

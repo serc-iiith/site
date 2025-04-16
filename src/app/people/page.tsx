@@ -209,15 +209,6 @@ export default function PeoplePage() {
     );
   };
 
-  const renderBlogPost = (blogPost: { content: string }) => {
-    return (
-      <div className="blog-post">
-        {/* Render blogPost.content using ReactMarkdown */}
-        <ReactMarkdown>{blogPost.content}</ReactMarkdown>
-      </div>
-    );
-  };
-
   return (
     <div className="min-h-screen pt-32 bg-[color:var(--foreground)] py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -283,9 +274,10 @@ export default function PeoplePage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {activeCategory === "Overall"
             ? getAllPeople().map((person) => renderPersonCard(person))
-            : (peopleData as PeopleData)[activeCategory].map((person) =>
-              renderPersonCard(person)
-            )}
+            : [...(peopleData as PeopleData)[activeCategory]]
+                .sort((a, b) => a.name.localeCompare(b.name))
+                .map((person) => renderPersonCard(person))
+          }
         </div>
       </div>
     </div>

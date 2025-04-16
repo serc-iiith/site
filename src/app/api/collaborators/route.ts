@@ -5,6 +5,7 @@ import path from 'path';
 export const dynamic = "force-static";
 
 const collaboratorsFilePath = path.join(process.cwd(), 'public', 'data', 'collaborators.json');
+const collaboratorsImagesDir = path.join(process.cwd(), 'public', 'images', 'collaborators');
 
 // Helper function to read the collaborators data
 function readCollaboratorsData() {
@@ -15,6 +16,60 @@ function readCollaboratorsData() {
 // Helper function to write the collaborators data
 function writeCollaboratorsData(data: any) {
   fs.writeFileSync(collaboratorsFilePath, JSON.stringify(data, null, 2), 'utf8');
+}
+
+// Helper function to rename an image file when ID changes
+async function renameImageFile(oldImageURL: string, oldId: string, newId: string): Promise<string | null> {
+  try {
+    // Skip if no image or if the image isn't in the collaborators directory
+    if (!oldImageURL || !oldImageURL.includes('/images/collaborators/')) {
+      return null;
+    }
+
+    // Extract old filename from URL
+    const oldFilename = oldImageURL.split('/').pop();
+
+    // Skip if we can't parse the filename
+    if (!oldFilename) {
+      return null;
+    }
+
+    // Get file extension
+    const fileExt = path.extname(oldFilename);
+    const newFilename = `${newId}${fileExt}`;
+
+    // Skip if the filename is already correctly named
+    if (oldFilename === newFilename) {
+      return null;
+    }
+
+    const oldFilePath = path.join(collaboratorsImagesDir, oldFilename);
+    const newFilePath = path.join(collaboratorsImagesDir, newFilename);
+
+    // Check if old file exists
+    if (!fs.existsSync(oldFilePath)) {
+      return null;
+    }
+
+    // Check if new file path already exists, avoid overwrite
+    if (fs.existsSync(newFilePath)) {
+      // Generate unique name with timestamp to avoid conflicts
+      const timestamp = Date.now();
+      const newUniqueFilename = `${newId}-${timestamp}${fileExt}`;
+      const newUniqueFilePath = path.join(collaboratorsImagesDir, newUniqueFilename);
+      fs.renameSync(oldFilePath, newUniqueFilePath);
+      return `/images/collaborators/${newUniqueFilename}`;
+    }
+
+    // Rename the file
+    fs.renameSync(oldFilePath, newFilePath);
+
+    // Return the new URL
+    return `/images/collaborators/${newFilename}`;
+  } catch (error) {
+    console.error('Error renaming collaborator logo file:', error);
+    return null;
+  }
 }
 
 // GET: Fetch all collaborators
@@ -98,6 +153,18 @@ export async function PUT(request: NextRequest) {
         { error: 'Collaborator not found' },
         { status: 404 }
       );
+    }
+
+    // Check if the ID has changed
+    const oldId = collaborators[index].id;
+    const newId = updatedCollaborator.id;
+
+    // Rename logo image if ID changed and there is a logo
+    if (newId !== oldId && updatedCollaborator.logo) {
+      const newLogoURL = await renameImageFile(updatedCollaborator.logo, oldId, newId);
+      if (newLogoURL) {
+        updatedCollaborator.logo = newLogoURL;
+      }
     }
 
     // Update the collaborator

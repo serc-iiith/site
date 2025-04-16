@@ -102,7 +102,10 @@ const Footer = () => {
                 </div>
                 <div className="text-center pt-8 mt-4 border-t border-gray-700">
                     <p className="flex items-center justify-center mb-2 text-gray-300">
-                        Made with <Heart className="mx-1 h-4 w-4 text-red-700 fill-red-600" /> by Arihant, Aviral and Mohit
+                        Made with <Heart className="mx-1 h-4 w-4 text-red-700 fill-red-600" /> by 
+                        <a href="/people/arihant-tripathy" className="mx-1 hover:text-blue-300">Arihant, </a> 
+                        <a href="/people/aviral-gupta" className="mr-1 hover:text-blue-300">Aviral,</a>and  
+                        <a href="/people/nitheesh-chandra-yaratapalli" className="mx-1 hover:text-blue-300">Nitheesh</a>
                     </p>
                     <p className="text-sm text-gray-400">&copy; {new Date().getFullYear()} Software Engineering Research Center. All rights reserved.</p>
                 </div>

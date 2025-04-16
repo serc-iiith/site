@@ -227,6 +227,27 @@
                 }
             ],
             "bio": "As Professor Co-Innovation, heading the Research/Innovation outreach at IIIT Hyderabad. Helped start and grow the Technology Transfer Office, Co-Innovation (corp) labs, and the Centre for Innovation & Entrepreneurship. Association with IIITH started in 2002 as Adjunct faculty. Also, was visiting faculty at IIT Hyderabad (Innovation), and a member of governing board of incubators at IIIT-H, IIT Hyd, IIIT-Delhi and BITS.\n\nPrior to academics worked in the tech industry bay area and since 2000 in Hyderabad, as product R&D leader. Mo st recently was the India Head for Progress Software. Prior to Progress, was VP of Middleware Technologies at Pramati, and also headed Product Engineering.\n\nWas the Interim Chief Innovation Officer of Telangana state in 2017 and One of the Founders of Headstart Network (StartupSaturday). Also Chaired ACM Hyderabad Chapter 2012-14. Active in industry organizations. most recently was President of HYSEA (Hyderabad Software Industry Association) and Regional council member at Nasscom. Also on several committees and panels of state and central government including Meity (Gov of INdia) panel on innovation, BIRAC ACE fund of funds committee and state Blockhain District.\n\nAn accomplished Technologist, with over 20 years product engineering and R&D leadership experience. Regularly speak at tech workshops and seminars in India. Recently co-authored a book on 'SOA approach to Integration', published by Packt Publishers. Member of several Standards Expert groups including J2EE 1.3. Active in Product/Startup circles. .After 25 years in the product R&D space, moved to IIIT Hyderabad as faculty in 2016. As Professor Co-Innovation, heading the Research/Innovation outreach at IIIT Hyderabad. Helped start and grow the Technology Transfer Office, Co-Innovation (corp) labs, and the Centre for Innovation & Entrepreneurship. Association with IIITH started in 2002 as Adjunct faculty. Also, was visiting faculty at IIT Hyderabad (Innovation), and a member of governing board of incubators at IIIT-H, IIT Hyd, IIIT-Delhi and BITS. Prior to academics worked in the tech industry bay area and since 2000 in Hyderabad, as product R&D leader. Mo st recently was the India Head for Progress Software. Prior to Progress, was VP of Middleware Technologies at Pramati, and also headed Product Engineering. Was the Interim Chief Innovation Officer of Telangana state in 2017 and One of the Founders of Headstart Network (StartupSaturday). Also Chaired ACM Hyderabad Chapter 2012-14. Active in industry organizations. most recently was President of HYSEA (Hyderabad Software Industry Association) and Regional council member at Nasscom. Also on several committees and panels of state and central government including Meity (Gov of INdia) panel on innovation, BIRAC ACE fund of funds committee and state Blockhain District. An accomplished Technologist, with over 20 years product engineering and R&D leadership experience. Regularly speak at tech workshops and seminars in India. Recently co-authored a book on 'SOA approach to Integration', published by Packt Publishers. Member of several Standards Expert groups including J2EE 1.3. Active in Product/Startup circles."
+        },
+        {
+            "name": "Abhishek Kumar Singh",
+            "title": "Assistant Professor",
+            "email": "abhishek.singh@iiit.ac.in",
+            "imageURL": "/images/people/abhishek-kumar-singh.jpeg",
+            "slug": "abhishek-kumar-singh",
+            "social_links": {},
+            "interests": [
+                "Formal Methods",
+                "Programming Languages",
+                "Software Engineering",
+                "Program Semantics",
+                "Relaxed Memory Concurrency",
+                "Theorem Proving",
+                "Automated Reasoning",
+                "Program Synthesis",
+                "Trustworthy Artificial Intelligence"
+            ],
+            "education": [],
+            "bio": "He earned his PhD in Computer Science from the Tata Institute of Fundamental Research (TIFR) in Mumbai, under the esteemed supervision of Prof. Raja Natarajan, focusing broadly on Formalized Mathematics. He served as a Senior Research Fellow in the Automated Program Repair group at the School of Computing, National University of Singapore. Prior to this role, Dr. Singh was a postdoctoral researcher at Tel Aviv University.\n\nDr. Singh also has experience as a faculty member in the Department of Computer Science and Engineering at BITS Pilani, Goa, where he taught courses in Automata Theory, Algorithms, Parallel Computing, and Interactive Theorem Proving."
         }
     ],
     "PhD Students": [
@@ -353,8 +374,16 @@
             "imageURL": "/images/people/aaditya-vardhan-narain.png",
             "slug": "aaditya-vardhan-narain",
             "social_links": {
-                "GitHub": "https://github.com/aadityanarain2003"
-            }
+                "GitHub": "https://github.com/aadityanarain2003",
+                "LinkedIn": "https://www.linkedin.com/in/aaditya-vardhan-narain-9142581b5/?originalSubdomain=in"
+            },
+            "interests": [
+                "Virtual Reality",
+                "Human Behaviour",
+                "Gamification"
+            ],
+            "education": [],
+            "bio": "."
         },
         {
             "name": "Adyansh Kakran",
@@ -423,7 +452,14 @@
             "slug": "miryala-sathvika",
             "social_links": {
                 "GitHub": "https://github.com/miryala10sathvika"
-            }
+            },
+            "interests": [
+                "Software Architecture",
+                "High-Level Design",
+                "Large Language Models"
+            ],
+            "education": [],
+            "bio": ""
         },
         {
             "name": "Pavitra Pinninti",
@@ -492,6 +528,137 @@
             "social_links": {
                 "GitHub": "https://github.com/yashaswinee"
             }
+        },
+        {
+            "name": "Arihant Tripathy",
+            "title": "CSD",
+            "email": "arihant.tripathy@research.iiit.ac.in",
+            "imageURL": "/images/people/arihant-tripathy.jpg",
+            "slug": "arihant-tripathy",
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/arihanttr/",
+                "Google Scholar": "https://scholar.google.com/citations?user=K2JbGPsAAAAJ&hl=en",
+                "Website": "https://arihant25.github.io/",
+                "GitHub": "https://github.com/Arihant25"
+            },
+            "interests": [
+                "Green AI",
+                "Software Sustainibility"
+            ],
+            "education": [],
+            "bio": "Currently investigating software sustainability and green AI solutions under Prof. Karthik Vaidhyanathan.\n\nWith experience in both full-stack development and systems programming, I bring a technical perspective to sustainability challenges. Notable projects include distributed network file systems, multi-agent AI frameworks, and resource-efficient web applications.\n\nAs an active open-source contributor and coordinator at IIIT-H's Open Source Developers' Group, I'm keen on using collaborative approaches to solving complex technology problems.\n\nI'm motivated by producing scalable, enduring technology solutions which have real influence."
+        },
+        {
+            "name": "Mohit Kumar Singh",
+            "title": "CSD",
+            "email": "mohit.singh@research.iiit.ac.in",
+            "imageURL": "/images/people/mohit-kumar-singh.png",
+            "slug": "mohit-kumar-singh",
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/unignoramus/",
+                "Website": "https://unignoramus11.github.io/",
+                "GitHub": "https://github.com/unignoramus11"
+            },
+            "interests": [
+                "Human-Computer Interaction (HCI)",
+                "Human-Centered and Usability-Driven Design",
+                " User Experience in Software Systems",
+                "Accessible and Inclusive Technology",
+                "Intelligent Systems with Human-in-the-Loop Design",
+                "Sensor-Based Applications and Context-Aware Systems",
+                "Practical Applications of Software Engineering Methods"
+            ],
+            "education": [
+                {
+                    "degree": "AISSCE",
+                    "institution": "Delhi Public School, Patna",
+                    "year": 2023
+                }
+            ],
+            "bio": "Mohit Kumar Singh is a Computer Science and Engineering undergraduate at IIIT Hyderabad, interested in Human-Computer Interaction and Human-Centered Design. He views software engineering as more than solving technical problems—it's about designing systems that align with how people actually use them. His focus is on usability, accessibility, and building applications that fit real-world workflows.\n\nHe has worked on several projects involving full-stack development, IoT systems, and campus-wide tools, often taking responsibility for frontend design and user experience. These include the MyIIIT app revamp, an intra-campus service platform, and the college’s sports council website. Across these, he’s aimed to make systems that are not just functional but intuitive and practical.\n\nAt SERC, he’s looking to contribute to research that connects user needs with system design, especially through field studies, iterative prototyping, and real-world validation."
+        },
+        {
+            "name": "Aviral Gupta",
+            "title": "CSD",
+            "email": "aviral.gupta@research.iiit.ac.in",
+            "imageURL": "/images/people/aviral-gupta.jpg",
+            "slug": "aviral-gupta",
+            "social_links": {
+                "GitHub": "https://github.com/avi1o1/",
+                "LinkedIn": "https://www.linkedin.com/in/avilol/",
+                "Website": "https://avi1o1.github.io/Code/index.html"
+            },
+            "interests": [
+                "Software Architecture",
+                "AI4SE"
+            ],
+            "education": [],
+            "bio": "Hello! I'm Aviral, a second-year student pursuing a Dual Degree (B.Tech + MS by Research) in Computer Science and Engineering at IIIT Hyderabad. I specialize in Python, with experience in libraries like Pandas, MatPlotLib, Sklearn, Keras, and BeautifulSoup, alongside web development (Vanilla, React and Next framework with experience in Tailwind and Material UI). In my free time, I like to delve into the world of Formula 1 and aviation."
+        },
+        {
+            "name": "Vijay Arvaynthan",
+            "title": "CSD",
+            "email": "vijay.s@research.iiit.ac.in",
+            "imageURL": "/images/people/vijay-arvaynthan.jpg",
+            "slug": "vijay-arvaynthan",
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/vijay-aravynthan/",
+                "GitHub": "https://github.com/VA24d"
+            },
+            "interests": [
+                "VR",
+                "Knowledge Systems",
+                "ML",
+                "Google Scholar"
+            ],
+            "education": [],
+            "bio": "I am an enthusiastic individual dedicated to exploring and implementing innovative ideas that enhance people's lives.\nThis passion led me to pursue a dual degree at IIIT-H, where I am completing a B.Tech in Computer Science and a MS by Research in Computer Science.\nMy academic journey has equipped me with a strong foundation in both theoretical and practical aspects of Computer Science, IoT and Coding."
+        },
+        {
+            "name": "Rudra Choudhary",
+            "title": "LCD",
+            "email": "rudra.choudhary@research.iiit.ac.in",
+            "imageURL": "/images/people/rudra-choudhary.png",
+            "slug": "rudra-choudhary",
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/rudrachoudhary/",
+                "GitHub": "https://github.com/rudra20-6"
+            },
+            "interests": [
+                "Software Engineering"
+            ],
+            "education": [],
+            "bio": "I am a Computer Science Dual Degree student at IIIT Hyderabad with research interests in Software Engineering and LLMs, and I'm always eager to explore new fields."
+        },
+        {
+            "name": "Aditya Nair",
+            "title": "CSD",
+            "email": "aditya.nair@research.iiit.ac.in",
+            "imageURL": "/images/people/aditya-nair.png",
+            "slug": "aditya-nair",
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/aditya-girish-nair/",
+                "GitHub": "https://github.com/AN5517"
+            },
+            "interests": [],
+            "education": [],
+            "bio": ""
+        },
+        {
+            "name": "Aryan Mishra",
+            "title": "LCD",
+            "email": "aryan.mishra@research.iiit.ac.in",
+            "imageURL": "/images/people/aryan-mishra.jpeg",
+            "slug": "aryan-mishra",
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/aryan-mishra-928b07258"
+            },
+            "interests": [
+                "Programming",
+                "Software Engineering"
+            ],
+            "education": [],
+            "bio": "I'm a passionate software developer skilled in both front-end and back-end technologies, with a strong foundation in Computer Science. I specialize in building robust, scalable applications using a variety of programming languages and tools. With hands-on industry experience and a commitment to continuous learning, I aim to contribute to innovative projects that make a positive societal impact."
         }
     ],
     "Honors": [
@@ -599,6 +766,21 @@
             "imageURL": "/images/people/vyakhya-guptha.png",
             "slug": "vyakhya-guptha",
             "social_links": {}
+        },
+        {
+            "name": "Ananya Vishal Halgatti",
+            "title": "CSE",
+            "email": "ananya.halgatti@students.iiit.ac.in",
+            "imageURL": "/images/people/ananya-vishal-halgatti.jpg",
+            "slug": "ananya-vishal-halgatti",
+            "social_links": {},
+            "interests": [
+                "Sustainable Software",
+                "Self-Adaptive Systems",
+                "Edge Computing"
+            ],
+            "education": [],
+            "bio": "I am Ananya Halgatti, undergraduate at IIITH, working with professor Karthik Vaidhyanathan. Our recent works include EdgeMLBalancer – a model-switching system for edge devices using MAPE-K and epsilon-greedy strategies.  \n\nMy current publication: [https://arxiv.org/abs/2502.06493](https://arxiv.org/abs/2502.06493)\n\nI had the opportunity to present this work at the R&D Showcase 2025 – Tech for Sustainable Futures, which further reinforced my passion for responsible software development.\n\nI am a competitive swimmer, love making artwork and a devoted dog person."
         }
     ],
     "Alumni": [

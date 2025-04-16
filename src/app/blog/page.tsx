@@ -260,6 +260,8 @@ const FeaturedBlogPost = ({ post }: { post: BlogPost }): JSX.Element => {
                       src={authorImageUrl}
                       alt={post.author}
                       className="object-cover"
+                      width={100}
+                      height={100}
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.style.display = "none";

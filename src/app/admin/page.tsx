@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { toast, Toaster } from 'react-hot-toast';
 import {
   Users,
   BookOpen,
@@ -22,24 +23,9 @@ import EditPapers from '@/components/admin/EditPapers';
 import EditCollaborators from '@/components/admin/EditCollaborators';
 import EditBlogs from '@/components/admin/EditBlogs';
 
-// Dummy data - would be fetched from API in a real app
-const initialPeople = [
-  { id: 1, name: "John Doe", title: "Professor", email: "john@example.com", imageURL: "" },
-  { id: 2, name: "Jane Smith", title: "Research Associate", email: "jane@example.com", imageURL: "" },
-];
-
 export default function AdminPage() {
   const [activeSection, setActiveSection] = useState('people');
   const [sidebarOpen, setSidebarOpen] = useState(true);
-  const [people, setPeople] = useState(initialPeople);
-  const [editingId, setEditingId] = useState<number | null>(null);
-  const [formData, setFormData] = useState({
-    id: 0,
-    name: '',
-    title: '',
-    email: '',
-    imageURL: '',
-  });
   const [isMobile, setIsMobile] = useState(false);
 
   // Check if we're on a mobile device
@@ -57,43 +43,6 @@ export default function AdminPage() {
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
-
-  // Authentication would be required here
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-  };
-
-  const startEditing = (person: any) => {
-    setEditingId(person.id);
-    setFormData(person);
-    if (isMobile) setSidebarOpen(false);
-  };
-
-  const cancelEditing = () => {
-    setEditingId(null);
-    setFormData({ id: 0, name: '', title: '', email: '', imageURL: '' });
-  };
-
-  const savePerson = () => {
-    if (editingId) {
-      // Update existing person
-      setPeople(people.map(p => p.id === editingId ? formData : p));
-    } else {
-      // Add new person
-      const newId = Math.max(0, ...people.map(p => p.id)) + 1;
-      setPeople([...people, { ...formData, id: newId }]);
-    }
-    cancelEditing();
-  };
-
-  const deletePerson = (id: number) => {
-    setPeople(people.filter(p => p.id !== id));
-  };
 
   const renderContent = () => {
     switch (activeSection) {
@@ -123,8 +72,17 @@ export default function AdminPage() {
     { id: 'events', name: 'Events', icon: <CalendarClock size={20} /> },
   ];
 
+  // Show toast notification when changing sections
+  const changeSection = (sectionId: string) => {
+    setActiveSection(sectionId);
+
+    if (isMobile) setSidebarOpen(false);
+  };
+
   return (
     <div className="min-h-screen pt-16 bg-[color:var(--foreground)]">
+      {/* Toast notifications container - positioned in bottom right */}
+      <Toaster position="bottom-right" />
 
       <div className="flex relative">
         {/* Sidebar - hidden on mobile */}
@@ -156,10 +114,7 @@ export default function AdminPage() {
               {sidebarItems.map((item) => (
                 <li key={item.id}>
                   <button
-                    onClick={() => {
-                      setActiveSection(item.id);
-                      if (isMobile) setSidebarOpen(false);
-                    }}
+                    onClick={() => changeSection(item.id)}
                     className={`w-full flex items-center px-4 py-2 rounded-md transition-colors ${activeSection === item.id
                       ? 'bg-[color:var(--primary-color)] text-white'
                       : 'text-[color:var(--text-color)] hover:bg-[color:var(--hover-bg)]'

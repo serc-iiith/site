@@ -3,6 +3,7 @@ import { Plus, Edit, X, Save, Search, Trash2, Calendar, Clock, Tag, User } from 
 import Image from 'next/image';
 import { Toaster, toast } from 'react-hot-toast';
 import DeleteConfirmationModal from '@/components/common/DeleteConfirmationModal';
+import ImageDropzone from '@/components/common/ImageDropzone';
 
 interface Blog {
     id: number;
@@ -18,12 +19,37 @@ interface Blog {
     content: string;
 }
 
+interface Person {
+    name: string;
+    title: string;
+    email: string;
+    imageURL: string;
+    slug: string;
+    social_links: Record<string, string>;
+    interests?: string[];
+    education?: { degree: string; institution: string; year: number }[];
+    bio?: string;
+}
+
+interface PeopleData {
+    Faculty: Person[];
+    'PhD Students': Person[];
+    'MS by Research': Person[];
+    'Dual Degree': Person[];
+    'Honors': Person[];
+    'Alumni': Person[];
+    'Research Associates': Person[];
+}
+
 const EditBlogs: React.FC = () => {
     const [blogs, setBlogs] = useState<Blog[]>([]);
     const [editingId, setEditingId] = useState<number | null>(null);
     const [searchTerm, setSearchTerm] = useState<string>('');
     const [isLoading, setIsLoading] = useState(false);
+    const [isPeopleLoading, setIsPeopleLoading] = useState(true);
     const [isPreviewMode, setIsPreviewMode] = useState(false);
+    const [peopleData, setPeopleData] = useState<PeopleData | null>(null);
+    const [authorsList, setAuthorsList] = useState<string[]>([]);
     const [deleteModal, setDeleteModal] = useState<{
         isOpen: boolean;
         blogId: number | null;
@@ -47,6 +73,7 @@ const EditBlogs: React.FC = () => {
         content: '',
         generateNewSlug: false
     });
+    const [isUploading, setIsUploading] = useState(false);
 
     const categories = [
         'Software Architecture',
@@ -60,7 +87,59 @@ const EditBlogs: React.FC = () => {
 
     useEffect(() => {
         fetchBlogs();
+        fetchPeopleData();
     }, []);
+
+    // Extract unique authors from people data
+    useEffect(() => {
+        if (peopleData) {
+            const authors: string[] = [];
+
+            // Extract names from all categories
+            Object.values(peopleData).forEach(category => {
+                category.forEach((person: Person) => {
+                    if (person.name) {
+                        authors.push(person.name);
+                    }
+                });
+            });
+
+            // Sort alphabetically
+            authors.sort();
+            setAuthorsList(authors);
+        }
+    }, [peopleData]);
+
+    const fetchPeopleData = async () => {
+        setIsPeopleLoading(true);
+        try {
+            const response = await fetch('/data/people.json');
+            if (!response.ok) {
+                throw new Error('Failed to fetch people data');
+            }
+            const data: PeopleData = await response.json();
+            setPeopleData(data);
+
+            // Extract author names immediately after fetching
+            const authors: string[] = [];
+            Object.values(data).forEach(category => {
+                category.forEach((person: { name: string }) => {
+                    if (person.name) {
+                        authors.push(person.name);
+                    }
+                });
+            });
+            authors.sort();
+            setAuthorsList(authors);
+        } catch (error) {
+            console.error('Error fetching people data:', error);
+            toast.error('Failed to load people data. Author selection may not work correctly.');
+            // Set an empty list as fallback
+            setAuthorsList([]);
+        } finally {
+            setIsPeopleLoading(false);
+        }
+    };
 
     const fetchBlogs = async () => {
         try {
@@ -76,6 +155,24 @@ const EditBlogs: React.FC = () => {
         }
     };
 
+    // Find role based on selected author name
+    const getAuthorRole = (authorName: string): string => {
+        if (!peopleData) return '';
+
+        try {
+            for (const category in peopleData) {
+                const person = peopleData[category as keyof PeopleData]?.find(p => p.name === authorName);
+                if (person) {
+                    return person.title || '';
+                }
+            }
+            return ''; // Return empty string if no match found
+        } catch (error) {
+            console.error('Error finding author role:', error);
+            return ''; // Return empty string on error
+        }
+    };
+
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
 
@@ -86,7 +183,22 @@ const EditBlogs: React.FC = () => {
                 [name]: value,
                 generateNewSlug: true
             }));
-        } else {
+        }
+        // If author is being changed, update the role as well
+        else if (name === 'author') {
+            try {
+                const role = getAuthorRole(value);
+                setFormData(prev => ({
+                    ...prev,
+                    [name]: value,
+                    role: role
+                }));
+            } catch (error) {
+                console.error('Error updating author role:', error);
+                setFormData(prev => ({ ...prev, [name]: value }));
+            }
+        }
+        else {
             setFormData(prev => ({ ...prev, [name]: value }));
         }
     };
@@ -98,6 +210,9 @@ const EditBlogs: React.FC = () => {
             generateNewSlug: false
         });
         setIsPreviewMode(false);
+
+        // Scroll to the top of the page
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     const startAdding = () => {
@@ -136,16 +251,24 @@ const EditBlogs: React.FC = () => {
         setIsLoading(true);
 
         try {
+            // Create a copy of the form data to ensure we send a clean object
+            const blogToSave = {
+                ...formData,
+                // If role is empty but author is set, try to get the role one more time
+                role: formData.role || (formData.author ? getAuthorRole(formData.author) : '')
+            };
+
             if (editingId === -1) {
                 // Add new blog
                 const response = await fetch('/api/blogs', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(formData)
+                    body: JSON.stringify(blogToSave)
                 });
 
                 if (!response.ok) {
-                    throw new Error('Failed to add blog post');
+                    const errorData = await response.json().catch(() => null);
+                    throw new Error(`Failed to add blog post: ${errorData?.error || response.statusText}`);
                 }
 
                 toast.success('Blog post added successfully');
@@ -154,11 +277,12 @@ const EditBlogs: React.FC = () => {
                 const response = await fetch('/api/blogs', {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(formData)
+                    body: JSON.stringify(blogToSave)
                 });
 
                 if (!response.ok) {
-                    throw new Error('Failed to update blog post');
+                    const errorData = await response.json().catch(() => null);
+                    throw new Error(`Failed to update blog post: ${errorData?.error || response.statusText}`);
                 }
 
                 toast.success('Blog post updated successfully');
@@ -169,7 +293,7 @@ const EditBlogs: React.FC = () => {
             cancelEditing();
         } catch (error) {
             console.error('Error saving blog:', error);
-            toast.error('Failed to save. Please try again.');
+            toast.error(`Failed to save: ${error instanceof Error ? error.message : 'Unknown error'}`);
         } finally {
             setIsLoading(false);
         }
@@ -218,6 +342,59 @@ const EditBlogs: React.FC = () => {
 
     const togglePreviewMode = () => {
         setIsPreviewMode(!isPreviewMode);
+    };
+
+    // Function to handle image upload
+    const handleImageUpload = async (file: File) => {
+        if (!file) return;
+
+        // Check file size (max 5MB)
+        if (file.size > 5 * 1024 * 1024) {
+            toast.error('Image size must be less than 5MB');
+            return;
+        }
+
+        setIsUploading(true);
+
+        try {
+            // Generate a slug if it exists
+            const slug = formData.slug || (formData.title ? formData.title.toLowerCase()
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/^-|-$/g, '') : '');
+
+            const formDataObj = new FormData();
+            formDataObj.append('file', file);
+            formDataObj.append('type', 'blogs');
+
+            // Only pass the slug if we have one, otherwise the API will use the original filename
+            if (slug) {
+                formDataObj.append('slug', slug);
+            }
+
+            const response = await fetch('/api/upload', {
+                method: 'POST',
+                body: formDataObj,
+            });
+
+            const result = await response.json();
+
+            if (!response.ok) {
+                throw new Error(result.error || 'Failed to upload image');
+            }
+
+            if (result.filePath) {
+                setFormData(prev => ({
+                    ...prev,
+                    coverImage: result.filePath
+                }));
+                toast.success('Image uploaded successfully');
+            }
+        } catch (error) {
+            console.error('Error uploading image:', error);
+            toast.error('Failed to upload image. Please try again.');
+        } finally {
+            setIsUploading(false);
+        }
     };
 
     const filteredBlogs = blogs.filter(blog =>
@@ -344,16 +521,15 @@ const EditBlogs: React.FC = () => {
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1">
-                                        Slug (URL-friendly title)
+                                        Slug (URL-friendly title) <span className="text-xs ml-2 text-[color:var(--info-color)]">(Auto-generated, not editable)</span>
                                         {formData.generateNewSlug && <span className="text-xs ml-2 text-[color:var(--info-color)]">(Will be auto-generated on save)</span>}
                                     </label>
                                     <input
                                         type="text"
                                         name="slug"
                                         value={formData.slug}
-                                        onChange={handleInputChange}
-                                        className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
-                                        disabled={isLoading || formData.generateNewSlug}
+                                        readOnly
+                                        className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)] opacity-70"
                                         placeholder="blog-post-slug"
                                     />
                                 </div>
@@ -361,25 +537,39 @@ const EditBlogs: React.FC = () => {
                                     <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1">
                                         Author*
                                     </label>
-                                    <input
-                                        type="text"
-                                        name="author"
-                                        value={formData.author}
-                                        onChange={handleInputChange}
-                                        className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
-                                        disabled={isLoading}
-                                        placeholder="Author name"
-                                    />
+                                    {isPeopleLoading ? (
+                                        <div className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--secondary-color)]">
+                                            Loading authors...
+                                        </div>
+                                    ) : (
+                                        <select
+                                            name="author"
+                                            value={formData.author}
+                                            onChange={handleInputChange}
+                                            className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                            disabled={isLoading}
+                                        >
+                                            <option value="">Select an author</option>
+                                            {authorsList.map((name) => (
+                                                <option key={name} value={name}>
+                                                    {name}
+                                                </option>
+                                            ))}
+                                            {!authorsList.includes(formData.author) && formData.author && (
+                                                <option value={formData.author}>{formData.author} (Not in people.json)</option>
+                                            )}
+                                        </select>
+                                    )}
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1">
-                                        Role/Position
+                                        Role/Position <span className="text-xs ml-2 text-[color:var(--info-color)]">(Auto-filled from people data, if not specified)</span>
                                     </label>
                                     <input
                                         type="text"
                                         name="role"
                                         value={formData.role}
-                                        onChange={handleInputChange}
+                                        onChange={handleInputChange} // Allow manual editing as a fallback
                                         className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
                                         disabled={isLoading}
                                         placeholder="Author's role or position"
@@ -434,17 +624,33 @@ const EditBlogs: React.FC = () => {
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1">
-                                        Cover Image URL
+                                        Cover Image
                                     </label>
-                                    <input
-                                        type="text"
-                                        name="coverImage"
-                                        value={formData.coverImage}
-                                        onChange={handleInputChange}
-                                        className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
-                                        disabled={isLoading}
-                                        placeholder="https://example.com/image.jpg"
-                                    />
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <ImageDropzone
+                                                onImageUpload={handleImageUpload}
+                                                currentImage={formData.coverImage}
+                                                isLoading={isUploading}
+                                                fallbackImage="/images/blog_fallback.png"
+                                                roundedFull={false}
+                                            />
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1">
+                                                Image URL <span className="text-xs ml-2 text-[color:var(--info-color)]">(Updated automatically when image is uploaded)</span>
+                                            </label>
+                                            <input
+                                                type="text"
+                                                name="coverImage"
+                                                value={formData.coverImage}
+                                                onChange={handleInputChange}
+                                                className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                                disabled={isLoading}
+                                                placeholder="https://example.com/image.jpg"
+                                            />
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -535,37 +741,35 @@ const EditBlogs: React.FC = () => {
                             key={blog.id}
                             className="bg-[color:var(--foreground)] rounded-lg border border-[color:var(--border-color)] overflow-hidden group"
                         >
-                            {blog.coverImage && (
-                                <div className="w-full h-40 overflow-hidden relative">
-                                    <Image
-                                        src={blog.coverImage}
-                                        alt={blog.title}
-                                        fill
-                                        className="object-cover group-hover:scale-105 transition-transform duration-300"
-                                        unoptimized={true}
-                                        onError={(e) => {
-                                            const target = e.target as HTMLImageElement;
-                                            target.src = '/images/blog_fallback.jpg';
-                                        }}
-                                    />
-                                    <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity flex gap-1">
-                                        <button
-                                            onClick={() => startEditing(blog)}
-                                            disabled={isLoading || editingId !== null}
-                                            className="p-1.5 rounded-md bg-[color:var(--background)] bg-opacity-80 hover:bg-opacity-100 text-[color:var(--primary-color)] transition"
-                                        >
-                                            <Edit size={16} />
-                                        </button>
-                                        <button
-                                            onClick={() => openDeleteModal(blog)}
-                                            disabled={isLoading || editingId !== null}
-                                            className="p-1.5 rounded-md bg-[color:var(--background)] bg-opacity-80 hover:bg-opacity-100 text-[color:var(--error-color)] transition"
-                                        >
-                                            <Trash2 size={16} />
-                                        </button>
-                                    </div>
+                            <div className="w-full h-40 overflow-hidden relative">
+                                <Image
+                                    src={blog.coverImage || "/images/blog_fallback.png"}
+                                    alt={blog.title}
+                                    fill
+                                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                                    unoptimized={true}
+                                    onError={(e) => {
+                                        const target = e.target as HTMLImageElement;
+                                        target.src = '/images/blog_fallback.png';
+                                    }}
+                                />
+                                <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity flex gap-1">
+                                    <button
+                                        onClick={() => startEditing(blog)}
+                                        disabled={isLoading || editingId !== null}
+                                        className="p-1.5 rounded-md bg-[color:var(--background)] bg-opacity-80 hover:bg-opacity-100 text-[color:var(--primary-color)] transition"
+                                    >
+                                        <Edit size={16} />
+                                    </button>
+                                    <button
+                                        onClick={() => openDeleteModal(blog)}
+                                        disabled={isLoading || editingId !== null}
+                                        className="p-1.5 rounded-md bg-[color:var(--background)] bg-opacity-80 hover:bg-opacity-100 text-[color:var(--error-color)] transition"
+                                    >
+                                        <Trash2 size={16} />
+                                    </button>
                                 </div>
-                            )}
+                            </div>
                             <div className="p-4">
                                 <div className="flex items-center text-xs text-[color:var(--secondary-color)] mb-2">
                                     <Tag size={12} className="mr-1" />
@@ -594,25 +798,6 @@ const EditBlogs: React.FC = () => {
                                         </>
                                     )}
                                 </div>
-
-                                {!blog.coverImage && (
-                                    <div className="mt-4 flex justify-end gap-2">
-                                        <button
-                                            onClick={() => startEditing(blog)}
-                                            disabled={isLoading || editingId !== null}
-                                            className="p-1 text-[color:var(--primary-color)] hover:text-[color:var(--info-color)] transition"
-                                        >
-                                            <Edit size={16} />
-                                        </button>
-                                        <button
-                                            onClick={() => openDeleteModal(blog)}
-                                            disabled={isLoading || editingId !== null}
-                                            className="p-1 text-[color:var(--error-color)] hover:text-red-700 transition"
-                                        >
-                                            <Trash2 size={16} />
-                                        </button>
-                                    </div>
-                                )}
                             </div>
                         </div>
                     ))}
