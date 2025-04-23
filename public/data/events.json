@@ -1,5 +1,16 @@
 [
     {
+        "id": null,
+        "name": "White Friday",
+        "description": "White-Friday is a dedicated day for research students for showing their work progress, types of tools working on and etc. Questions from the audience are addressed and they get their feedback from the Panel members.\nSoftware Engineering Research Centre- with 28 Research students has successfully completed #Spring2025 White friday, where all students got to present their work in front of faculty and fellow students.",
+        "startTime": "2025-04-19T10:00",
+        "endTime": "2025-04-19T15:30",
+        "location": "SERC,IIITH",
+        "year": 2025,
+        "image": "",
+        "presenters": []
+    },
+    {
         "slug": "annual-rd-showcase-at-iiith",
         "name": "Annual R&D Showcase at IIITH",
         "eventURL": "https://www.iiit.ac.in/rd-showcase/",
@@ -11,6 +22,27 @@
         "endTime": "2025-03-09T17:00:00+05:30",
         "imageURLs": [],
         "presenters": [],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
+        "slug": "national-science-day",
+        "name": "National Science Day",
+        "eventURL": "",
+        "location": "ECIL, Hyderabad",
+        "locationURL": "Block B - 3 Huda Complex, Tarnaka, Hyderabad, Telangana, 500007, India",
+        "summary": "Keynote in ECIL on the occasion of National Science Day.",
+        "detail": "On National Science Day, Prof.Raghu Reddy delivered a keynote on AI and Systems Architecture at Electronics Corporation of India Limited (ECIL), Hyderabad campus. The talk was attended by senior leaders, scientists, and engineers from the organization.Discussions revolved around the role of AI in critical systems and its potential applications.",
+        "startTime": "2025-02-28T14:00:00+15:00",
+        "endTime": "",
+        "imageURLs": [],
+        "presenters": [
+            "raghu"
+        ],
         "otherURLs": {
             "code": "",
             "pdf": "",
@@ -32,46 +64,6 @@
         "presenters": [
             "karthik"
         ],
-        "otherURLs": {
-            "code": "",
-            "pdf": "",
-            "slides": "",
-            "video": ""
-        }
-    },
-    {
-        "slug": "paper-accepted-at-icsoc-2024",
-        "name": "Paper Accepted at ICSOC 2024",
-        "eventURL": "",
-        "location": "Les côtes de Carthage, La Marsa, Tunis",
-        "locationURL": "Les côtes de Carthage, La Marsa, Tunis, Gammarth, BP 597-2070, Tunisie",
-        "summary": "Our Student Prakhar Jain presented their work about POSEIDON at ICSOC 2024, Tunisia",
-        "detail": "POSEIDON is a new framework that combines Deep Reinforcement Learning (Deep RL) with traditional optimization techniques to improve how we manage these networks. While still in the early stages, POSEIDON offers a fresh approach to handling some of the key issues facing MEC networks today. This groundbreaking work was presented by our student, Prakhar Jain, at ICSOC 2024 in Tunisia. This work, authored by Prakhar Jain, Prakhar Singhal, Divyansh Pandey, Giovanni Ennio Quattrocchi, and Karthik Vaidhyanathan,showcased the research to the international audience, highlighting how POSEIDON's AI-driven approach can transform network optimization of function placement in edge networks. His presentation received great interest from researchers and industry professionals, reflecting the growing importance of intelligent solutions in edge computing.",
-        "startTime": "2024-12-03T09:30:00+05:30",
-        "endTime": "2024-12-06T18:00:00+05:30",
-        "imageURLs": [],
-        "presenters": [
-            "prakhar_jain"
-        ],
-        "otherURLs": {
-            "code": "",
-            "pdf": "",
-            "slides": "",
-            "video": ""
-        }
-    },
-    {
-        "slug": "icsa-2024",
-        "name": "ICSA 2024",
-        "eventURL": "https://conf.researchr.org/home/icsa-2024",
-        "location": "IIIT Hyderabad",
-        "locationURL": "Prof. C R Rao Road, Gachibowli, Hyderabad, Telangana, 500032, India",
-        "summary": "21st IEEE International Conference on Software Architecture (ICSA 2024)",
-        "detail": "The International Conference on Software Architecture (ICSA) is the premier venue for practitioners and researchers interested in software architecture, in component-based software engineering and in quality aspects of software and how these relate to the design of software architectures. ICSA has a strong tradition as a working conference (previously named Working International Conference on Software Architecture, WICSA), where researchers meet practitioners and software architects can explain the problems they face in their day-to-day work and try to influence the future of the field.",
-        "startTime": "2024-06-04T09:30:00+05:30",
-        "endTime": "2024-06-08T18:00:00+05:30",
-        "imageURLs": [],
-        "presenters": [],
         "otherURLs": {
             "code": "",
             "pdf": "",
@@ -103,18 +95,18 @@
         }
     },
     {
-        "slug": "national-science-day",
-        "name": "National Science Day",
+        "slug": "paper-accepted-at-icsoc-2024",
+        "name": "Paper Accepted at ICSOC 2024",
         "eventURL": "",
-        "location": "ECIL, Hyderabad",
-        "locationURL": "Block B - 3 Huda Complex, Tarnaka, Hyderabad, Telangana, 500007, India",
-        "summary": "Keynote in ECIL on the occasion of National Science Day.",
-        "detail": "On National Science Day, Prof.Raghu Reddy delivered a keynote on AI and Systems Architecture at Electronics Corporation of India Limited (ECIL), Hyderabad campus. The talk was attended by senior leaders, scientists, and engineers from the organization.Discussions revolved around the role of AI in critical systems and its potential applications.",
-        "startTime": "2025-02-28T14:00:00+15:00",
-        "endTime": "",
+        "location": "Les côtes de Carthage, La Marsa, Tunis",
+        "locationURL": "Les côtes de Carthage, La Marsa, Tunis, Gammarth, BP 597-2070, Tunisie",
+        "summary": "Our Student Prakhar Jain presented their work about POSEIDON at ICSOC 2024, Tunisia",
+        "detail": "POSEIDON is a new framework that combines Deep Reinforcement Learning (Deep RL) with traditional optimization techniques to improve how we manage these networks. While still in the early stages, POSEIDON offers a fresh approach to handling some of the key issues facing MEC networks today. This groundbreaking work was presented by our student, Prakhar Jain, at ICSOC 2024 in Tunisia. This work, authored by Prakhar Jain, Prakhar Singhal, Divyansh Pandey, Giovanni Ennio Quattrocchi, and Karthik Vaidhyanathan,showcased the research to the international audience, highlighting how POSEIDON's AI-driven approach can transform network optimization of function placement in edge networks. His presentation received great interest from researchers and industry professionals, reflecting the growing importance of intelligent solutions in edge computing.",
+        "startTime": "2024-12-03T09:30:00+05:30",
+        "endTime": "2024-12-06T18:00:00+05:30",
         "imageURLs": [],
         "presenters": [
-            "raghu"
+            "prakhar_jain"
         ],
         "otherURLs": {
             "code": "",
@@ -140,6 +132,25 @@
             "venkatesh",
             "raman"
         ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
+        "slug": "icsa-2024",
+        "name": "ICSA 2024",
+        "eventURL": "https://conf.researchr.org/home/icsa-2024",
+        "location": "IIIT Hyderabad",
+        "locationURL": "Prof. C R Rao Road, Gachibowli, Hyderabad, Telangana, 500032, India",
+        "summary": "21st IEEE International Conference on Software Architecture (ICSA 2024)",
+        "detail": "The International Conference on Software Architecture (ICSA) is the premier venue for practitioners and researchers interested in software architecture, in component-based software engineering and in quality aspects of software and how these relate to the design of software architectures. ICSA has a strong tradition as a working conference (previously named Working International Conference on Software Architecture, WICSA), where researchers meet practitioners and software architects can explain the problems they face in their day-to-day work and try to influence the future of the field.",
+        "startTime": "2024-06-04T09:30:00+05:30",
+        "endTime": "2024-06-08T18:00:00+05:30",
+        "imageURLs": [],
+        "presenters": [],
         "otherURLs": {
             "code": "",
             "pdf": "",
