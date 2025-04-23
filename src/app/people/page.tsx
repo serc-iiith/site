@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import ReactMarkdown from "react-markdown"; // Import ReactMarkdown
 import peopleData from "../../../public/data/people.json";
 import {
   siGithub,
@@ -23,6 +22,7 @@ interface Person {
   social_links: SocialLinks;
   slug: string;
   imageURL: string;
+  internStatus?: 'current' | 'past';
 }
 
 interface PeopleData {
@@ -120,21 +120,68 @@ export default function PeoplePage() {
     }
   };
 
-  const renderPersonCard = (person: Person) => {
+  const getCategoryColor = (category: string) => {
+    switch (category) {
+      case "Faculty":
+        return "bg-blue-600";
+      case "PhD Students":
+        return "bg-green-600";
+      case "MS by Research":
+        return "bg-purple-600";
+      case "Dual Degree":
+        return "bg-amber-600";
+      case "Honors":
+        return "bg-teal-600";
+      case "Alumni":
+        return "bg-red-600";
+      case "Research Associates":
+        return "bg-indigo-600";
+      case "Interns":
+        return "bg-emerald-600";
+      default:
+        return "bg-[color:var(--primary-color)]";
+    }
+  };
+
+  const renderPersonCard = (person: Person, category?: string) => {
     const imagePath = person.imageURL;
+
+    // Helper function to determine priority for sorting social links
+    const getLinkPriority = (platform: string): number => {
+      switch (platform) {
+        case "Google Scholar": return 1;
+        case "GitHub": return 2;
+        case "LinkedIn": return 3;
+        default: return 4;
+      }
+    };
+
+    // Sort social links based on priority
+    const sortedSocialLinks = Object.entries(person.social_links || {}).sort(
+      (a, b) => getLinkPriority(a[0]) - getLinkPriority(b[0])
+    );
 
     return (
       <div
         key={person.name}
-        className="bg-[color:var(--background)] rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:-translate-y-2 hover:shadow-xl border border-[color:var(--border-color)] group"
+        className="bg-[color:var(--background)] rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:-translate-y-2 hover:shadow-xl border border-[color:var(--border-color)] group relative"
         onClick={(e) => {
           if (!e.defaultPrevented && !(e.target as Element).closest("a")) {
             window.location.href = `/people/${person.slug}`;
           }
         }}
         style={{ cursor: "pointer" }}
-      >
-        <div className="p-6">
+            >
+        {category && (
+          <div className={`absolute top-0 right-0 ${getCategoryColor(category)} text-white text-sm font-semibold px-2 py-0.5 shadow-md`}>
+            {category === "Interns" && person.internStatus ? 
+              `${person.internStatus === 'current' ? 'Current' : 'Past'} ${category}` : 
+              category
+            }
+          </div>
+        )}
+
+        <div className="p-6 pt-10">
           <div className="h-32 w-32 rounded-full mx-auto mb-4 overflow-hidden relative">
             <Image
               src={imagePath}
@@ -186,7 +233,7 @@ export default function PeoplePage() {
             </p>
           )}
           <div className="flex justify-center space-x-3 mt-4">
-            {Object.entries(person.social_links || {}).map(
+            {sortedSocialLinks.map(
               ([platform, link]) => (
                 <a
                   key={platform}
@@ -273,10 +320,19 @@ export default function PeoplePage() {
         {/* People Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {activeCategory === "Overall"
-            ? getAllPeople().map((person) => renderPersonCard(person))
+            ? getAllPeople().map((person) => {
+              // Find which category this person belongs to
+              let personCategory = "";
+              Object.entries(peopleData).forEach(([category, people]) => {
+                if (people.some(p => p.name === person.name)) {
+                  personCategory = category;
+                }
+              });
+              return renderPersonCard(person, personCategory);
+            })
             : [...(peopleData as PeopleData)[activeCategory]]
-                .sort((a, b) => a.name.localeCompare(b.name))
-                .map((person) => renderPersonCard(person))
+              .sort((a, b) => a.name.localeCompare(b.name))
+              .map((person) => renderPersonCard(person, activeCategory))
           }
         </div>
       </div>

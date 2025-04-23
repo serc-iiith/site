@@ -35,7 +35,6 @@ export default function ResearchPapers() {
   const [selectedAuthors, setSelectedAuthors] = useState<string[]>([]);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [openDialogId, setOpenDialogId] = useState<number | null>(null);
-  
   // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
   const papersPerPage = 12;
@@ -138,22 +137,29 @@ export default function ResearchPapers() {
     setSearchAuthor('');
   }
 
+  // Check if any filter is active
+  const isAnyFilterActive = useCallback(() => {
+    return searchQuery !== '' ||
+      selectedYear !== '' ||
+      selectedVenues.length > 0 ||
+      selectedAuthors.length > 0;
+  }, [searchQuery, selectedYear, selectedVenues, selectedAuthors]);
+
   // Generate pagination range
   const getPaginationRange = () => {
     const range = [];
     const showPages = 5; // Max number of page buttons to show
     let start = Math.max(1, currentPage - Math.floor(showPages / 2));
     let end = Math.min(totalPages, start + showPages - 1);
-    
     // Adjust start if we're near the end
     if (end === totalPages) {
       start = Math.max(1, end - showPages + 1);
     }
-    
+
     for (let i = start; i <= end; i++) {
       range.push(i);
     }
-    
+
     return range;
   };
 
@@ -208,6 +214,89 @@ export default function ResearchPapers() {
         />
       </section>
 
+      {/* Stats Section - will stay in DOM but change visibility */}
+      <motion.section
+        className="py-20 px-4 relative overflow-hidden"
+        initial={{ opacity: 1, height: 'auto' }}
+        animate={{
+          opacity: isAnyFilterActive() ? 0 : 1,
+          height: isAnyFilterActive() ? 0 : 'auto',
+          marginTop: isAnyFilterActive() ? 0 : undefined,
+          marginBottom: isAnyFilterActive() ? 0 : undefined,
+          padding: isAnyFilterActive() ? 0 : undefined
+        }}
+        transition={{ duration: 0.3 }}
+      >
+        <div className="absolute inset-0 opacity-10 overflow-hidden">
+          {Array.from({ length: 8 }).map((_, i) => (
+            <div
+              key={i}
+              className="absolute bg-indigo-600 rounded-full blur-3xl"
+              style={{
+                width: `${Math.random() * 300 + 100}px`,
+                height: `${Math.random() * 300 + 100}px`,
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                opacity: Math.random() * 0.05 + 0.02,
+              }}
+            />
+          ))}
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.2 }}
+              className="bg-[var(--background)] p-8 rounded-xl shadow-xl hover:shadow-2xl text-center group hover:-translate-y-1 transform transition-all duration-300"
+            >
+              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-red-200 transition-colors duration-300">
+                <BookOpen className="w-8 h-8 text-red-600" />
+              </div>
+              <CustomCountUp value={papers.length.toString()} title="TOTAL PUBLICATIONS" icon="" customStyle="text-5xl font-bold text-red-600 mb-3" />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.3 }}
+              className="bg-[var(--background)] p-8 rounded-xl shadow-xl hover:shadow-2xl text-center group hover:-translate-y-1 transform transition-all duration-300"
+            >
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-green-200 transition-colors duration-300">
+                <Calendar className="w-8 h-8 text-green-600" />
+              </div>
+              <CustomCountUp value={(years.length > 0 ? parseInt(years[0]) - parseInt(years[years.length - 1]) + 1 : 0).toString()} title="YEARS OF RESEARCH" icon="" customStyle="text-5xl font-bold text-green-600 mb-3" />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.4 }}
+              className="bg-[var(--background)] p-8 rounded-xl shadow-xl hover:shadow-2xl text-center group hover:-translate-y-1 transform transition-all duration-300"
+            >
+              <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-yellow-200 transition-colors duration-300">
+                <Users className="w-8 h-8 text-yellow-600" />
+              </div>
+              <CustomCountUp value={authors.length.toString()} title="UNIQUE AUTHORS" icon="" customStyle="text-5xl font-bold text-yellow-600 mb-3" />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.5 }}
+              className="bg-[var(--background)] p-8 rounded-xl shadow-xl hover:shadow-2xl text-center group hover:-translate-y-1 transform transition-all duration-300"
+            >
+              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-orange-200 transition-colors duration-300">
+                <Filter className="w-8 h-8 text-orange-600" />
+              </div>
+              <CustomCountUp value={venues.length.toString()} title="PUBLICATION VENUES" icon="" customStyle="text-5xl font-bold text-orange-600 mb-3" />
+            </motion.div>
+          </div>
+        </div>
+      </motion.section>
+
       {/* Research Modal */}
       <AnimatePresence mode="wait">
         {openDialogId !== null && (
@@ -225,7 +314,7 @@ export default function ResearchPapers() {
       {/* Papers Grid */}
       <section id="papers-section" className="max-w-7xl mx-auto py-12 px-4">
         {filteredPapers.length === 0 ? (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
@@ -249,8 +338,8 @@ export default function ResearchPapers() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    transition={{ 
-                      duration: 0.3, 
+                    transition={{
+                      duration: 0.3,
                       delay: index % 12 * 0.03,
                       ease: "easeOut"
                     }}
@@ -267,7 +356,6 @@ export default function ResearchPapers() {
                           {paper.year}
                         </span>
                       </div>
-                      
                       <h3 className="text-lg font-semibold text-text mb-3 line-clamp-2 group-hover:text-[var(--primary-color)] transition-colors">
                         {paper.title}
                       </h3>
@@ -289,7 +377,6 @@ export default function ResearchPapers() {
                         )}
                       </div>
                     </div>
-                    
                     <div className="px-6 pb-6 mt-auto">
                       <div className="flex gap-2">
                         <button
@@ -322,11 +409,10 @@ export default function ResearchPapers() {
                   <button
                     onClick={() => paginate(currentPage - 1)}
                     disabled={currentPage === 1}
-                    className={`relative inline-flex items-center px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
-                      currentPage === 1
+                    className={`relative inline-flex items-center px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ${currentPage === 1
                         ? 'text-gray-500 bg-[var(--background)] cursor-not-allowed'
                         : 'text-[var(--text-color)] bg-[var(--background)] hover:bg-[var(--accent-color)] hover:text-white'
-                    }`}
+                      }`}
                   >
                     <ChevronLeft className="h-4 w-4" />
                     <span className="ml-1">Previous</span>
@@ -352,11 +438,10 @@ export default function ResearchPapers() {
                     <button
                       key={number}
                       onClick={() => paginate(number)}
-                      className={`relative inline-flex items-center justify-center h-9 w-9 rounded-md text-sm font-medium transition-all duration-200 ${
-                        currentPage === number
+                      className={`relative inline-flex items-center justify-center h-9 w-9 rounded-md text-sm font-medium transition-all duration-200 ${currentPage === number
                           ? 'z-10 text-white bg-[var(--accent-color)]'
                           : 'text-[var(--text-color)] bg-[var(--background)] hover:bg-[var(--accent-color)] hover:text-white'
-                      }`}
+                        }`}
                     >
                       {number}
                     </button>
@@ -370,7 +455,7 @@ export default function ResearchPapers() {
                       )}
                       <button
                         onClick={() => paginate(totalPages)}
-                        className={"relative inline-flex items-center justify-center h-9 w-9 rounded-md text-sm font-medium transition-all duration-200 text-[var(--text-color)] bg-[var(--background)] hover:bg-[var(--accent-color)] hover:text-white"}
+                        className={"relative inline-flex items-center justify-center h-9 w-9 rounded-md text-sm font-medium transition-all duration-200 text-[var(--text-color)] bg-[var(--background)] hover:bg-[var(--accent-color)]"}
                       >
                         {totalPages}
                       </button>
@@ -380,17 +465,15 @@ export default function ResearchPapers() {
                   <button
                     onClick={() => paginate(currentPage + 1)}
                     disabled={currentPage === totalPages}
-                    className={`relative inline-flex items-center px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
-                      currentPage === totalPages
+                    className={`relative inline-flex items-center px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ${currentPage === totalPages
                         ? 'text-gray-500 bg-[var(--background)] cursor-not-allowed'
                         : 'text-[var(--text-color)] bg-[var(--background)] hover:bg-[var(--accent-color)] hover:text-white'
-                    }`}
+                      }`}
                   >
                     <span className="mr-1">Next</span>
                     <ChevronRight className="h-4 w-4" />
                   </button>
                 </div>
-                
                 <div className="mt-3 text-sm text-gray-500">
                   Showing <span className="font-medium">{indexOfFirstPaper + 1}</span> to{" "}
                   <span className="font-medium">
@@ -402,93 +485,6 @@ export default function ResearchPapers() {
             )}
           </>
         )}
-      </section>
-
-      {/* Stats Section */}
-      <section className="bg-[var(--background)] py-20 px-4 relative">
-        <div className="absolute inset-0 opacity-10 overflow-hidden">
-          {Array.from({ length: 8 }).map((_, i) => (
-            <div
-              key={i}
-              className="absolute bg-indigo-600 rounded-full blur-3xl"
-              style={{
-                width: `${Math.random() * 300 + 100}px`,
-                height: `${Math.random() * 300 + 100}px`,
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-                opacity: Math.random() * 0.05 + 0.02,
-              }}
-            />
-          ))}
-        </div>
-        <div className="max-w-7xl mx-auto relative z-10">
-          <motion.h2
-            initial={{ opacity: 0, y: -10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
-            className="text-3xl font-bold text-center text-text mb-4"
-          >
-            Publication Statistics
-          </motion.h2>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.1 }}
-            className="w-24 h-1 bg-indigo-600 mx-auto mb-12 rounded-full"
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.2 }}
-              className="bg-[var(--foreground)] p-8 rounded-xl shadow-xl hover:shadow-2xl text-center group hover:-translate-y-1 transform transition-all duration-300"
-            >
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-red-200 transition-colors duration-300">
-                <BookOpen className="w-8 h-8 text-red-600" />
-              </div>
-              <CustomCountUp value={papers.length.toString()} title="TOTAL PUBLICATIONS" icon="" customStyle="text-5xl font-bold text-red-600 mb-3" />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.3 }}
-              className="bg-[var(--foreground)] p-8 rounded-xl shadow-xl hover:shadow-2xl text-center group hover:-translate-y-1 transform transition-all duration-300"
-            >
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-green-200 transition-colors duration-300">
-                <Calendar className="w-8 h-8 text-green-600" />
-              </div>
-              <CustomCountUp value={(years.length > 0 ? parseInt(years[0]) - parseInt(years[years.length - 1]) + 1 : 0).toString()} title="YEARS OF RESEARCH" icon="" customStyle="text-5xl font-bold text-green-600 mb-3" />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.4 }}
-              className="bg-[var(--foreground)] p-8 rounded-xl shadow-xl hover:shadow-2xl text-center group hover:-translate-y-1 transform transition-all duration-300"
-            >
-              <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-yellow-200 transition-colors duration-300">
-                <Users className="w-8 h-8 text-yellow-600" />
-              </div>
-              <CustomCountUp value={authors.length.toString()} title="UNIQUE AUTHORS" icon="" customStyle="text-5xl font-bold text-yellow-600 mb-3" />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.5 }}
-              className="bg-[var(--foreground)] p-8 rounded-xl shadow-xl hover:shadow-2xl text-center group hover:-translate-y-1 transform transition-all duration-300"
-            >
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-orange-200 transition-colors duration-300">
-                <Filter className="w-8 h-8 text-orange-600" />
-              </div>
-              <CustomCountUp value={venues.length.toString()} title="PUBLICATION VENUES" icon="" customStyle="text-5xl font-bold text-orange-600 mb-3" />
-            </motion.div>
-          </div>
-        </div>
       </section>
 
       <Toaster

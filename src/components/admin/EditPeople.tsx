@@ -24,6 +24,7 @@ interface Person {
     education?: Education[];
     bio?: string;
     category?: string; // To track which category this person belongs to
+    internStatus?: 'current' | 'past'; // To track if intern is current or past
 }
 
 // A custom modal component for confirming deletion
@@ -330,7 +331,18 @@ const EditPeople: React.FC = () => {
     };
 
     const handleCategoryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        setFormData((prev) => ({ ...prev, category: e.target.value }));
+        const categoryValue = e.target.value;
+        setFormData((prev) => ({
+            ...prev,
+            category: categoryValue,
+            // Clear internStatus when changing to a non-intern category
+            internStatus: categoryValue === 'Interns' ? (prev.internStatus || 'current') : undefined
+        }));
+    };
+
+    // New handler for intern status
+    const handleInternStatusChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        setFormData((prev) => ({ ...prev, internStatus: e.target.value as 'current' | 'past' }));
     };
 
     // New function to handle image upload
@@ -744,13 +756,41 @@ const EditPeople: React.FC = () => {
                                         disabled={isLoading}
                                     >
                                         <option value="">Select category</option>
-                                        {categories.map((category) => (
-                                            <option key={category} value={category}>
-                                                {category}
-                                            </option>
-                                        ))}
+                                        {categories.includes("Interns") ? (
+                                            categories.map((category) => (
+                                                <option key={category} value={category}>
+                                                    {category}
+                                                </option>
+                                            ))
+                                        ) : (
+                                            <>
+                                                {categories.map((category) => (
+                                                    <option key={category} value={category}>
+                                                        {category}
+                                                    </option>
+                                                ))}
+                                                <option value="Interns">Interns</option>
+                                            </>
+                                        )}
                                     </select>
                                 </div>
+                                {formData.category === 'Interns' && (
+                                    <div>
+                                        <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1">
+                                            Intern Status*
+                                        </label>
+                                        <select
+                                            name="internStatus"
+                                            value={formData.internStatus || 'current'}
+                                            onChange={handleInternStatusChange}
+                                            className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                            disabled={isLoading}
+                                        >
+                                            <option value="current">Current</option>
+                                            <option value="past">Past</option>
+                                        </select>
+                                    </div>
+                                )}
                                 <div>
                                     <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1">
                                         Slug (URL identifier) <span className="text-xs ml-2 text-[color:var(--info-color)]">(Auto-generated, not editable)</span>
