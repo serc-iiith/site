@@ -651,6 +651,17 @@
             "imageURL": "/images/people/sreemaee-akshathala.png",
             "slug": "sreemaee-akshathala",
             "social_links": {}
+        },
+        {
+            "name": "Payel Das",
+            "title": "Research Associate",
+            "email": "payel.das@research.iiit.ac.in",
+            "imageURL": "",
+            "slug": "payel-das",
+            "social_links": {},
+            "interests": [],
+            "education": [],
+            "bio": ""
         }
     ]
 }
