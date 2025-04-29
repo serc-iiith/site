@@ -235,7 +235,7 @@ export default function ProjectsPage() {
                   className="flex flex-col h-full"
                 >
                   <div
-                    className="h-full bg-[var(--background)] rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-500"
+                    className="h-full bg-[var(--background)] rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-500 flex flex-col"
                     onMouseEnter={() => setHoveredProject(project.id)}
                     onMouseLeave={() => setHoveredProject(null)}
                   >
@@ -276,14 +276,14 @@ export default function ProjectsPage() {
                         {project.title}
                       </h3>
 
-                      <div className="overflow-hidden transition-all text-justify duration-500 ease-in-out">
+                      <div className="flex-grow overflow-hidden transition-all text-justify duration-500 ease-in-out">
                         <p className="text-secondary text-sm mb-4">
                           {project.description}
                         </p>
                       </div>
 
                       {project.collaborators.length > 0 && (
-                        <div className="mt-auto">
+                        <div className="mt-auto pt-2">
                           <h4 className="text-xs font-semibold text-tertiary uppercase tracking-wider mb-2">Collaborators</h4>
                           <div className="flex flex-wrap gap-2">
                             {project.collaborators.map((collab, i) => (
@@ -316,31 +316,33 @@ export default function ProjectsPage() {
                         </div>
                       )}
 
-                      <div className="mt-4 pt-4 border-t border-[var(--border-color)] flex flex-wrap gap-2 justify-between">
-                        {project.demoLink && (
-                          <button
-                            onClick={() => openVideoModal(project.demoLink || '')}
-                            className="text-sm px-3 py-1.5 rounded-lg flex items-center transition-colors bg-[var(--primary-color)] text-white hover:bg-[var(--primary-color)]/90"
-                          >
-                            <Play className="h-3.5 w-3.5 mr-1" />
-                            Watch Demo
-                          </button>
-                        )}
+                      {project.demoLink || project.links.length > 0 ? (
+                        <div className="mt-4 pt-4 border-t border-[var(--border-color)] flex flex-wrap gap-2 justify-between">
+                          {project.demoLink && (
+                            <button
+                              onClick={() => openVideoModal(project.demoLink || '')}
+                              className="text-sm px-3 py-1.5 rounded-lg flex items-center transition-colors bg-[var(--primary-color)] text-white hover:bg-[var(--primary-color)]/90"
+                            >
+                              <Play className="h-3.5 w-3.5 mr-1" />
+                              Watch Demo
+                            </button>
+                          )}
 
-                        {/* External Links */}
-                        {project.links.map((link, i) => (
-                          <Link
-                            key={i}
-                            href={link.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-sm text-secondary hover:text-[var(--primary-color)] flex items-center px-3 py-1.5 border border-[var(--border-color)] rounded-lg hover:border-[var(--primary-color)]/30 transition-colors"
-                          >
-                            {link.label}
-                            <ExternalLink className="h-3.5 w-3.5 ml-1" />
-                          </Link>
-                        ))}
-                      </div>
+                          {/* External Links */}
+                          {project.links.map((link, i) => (
+                            <Link
+                              key={i}
+                              href={link.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-sm text-secondary hover:text-[var(--primary-color)] flex items-center px-3 py-1.5 border border-[var(--border-color)] rounded-lg hover:border-[var(--primary-color)]/30 transition-colors"
+                            >
+                              {link.label}
+                              <ExternalLink className="h-3.5 w-3.5 ml-1" />
+                            </Link>
+                          ))}
+                        </div>
+                      ) : null}
                     </div>
                   </div>
                 </motion.div>
@@ -433,7 +435,7 @@ export default function ProjectsPage() {
                                     />
                                   </div>
                                 ) : (
-                                    <span className="text-sm px-2 py-1 text-black font-bold">
+                                  <span className="text-sm px-2 py-1 text-black font-bold">
                                     {collab.name}
                                   </span>
                                 )}

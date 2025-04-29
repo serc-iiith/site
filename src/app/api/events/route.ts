@@ -5,6 +5,7 @@ import path from 'path';
 export const dynamic = "force-static";
 
 const eventsFilePath = path.join(process.cwd(), 'public', 'data', 'events.json');
+const eventsImagesDir = path.join(process.cwd(), 'public', 'images', 'events');
 
 // Helper function to read the events data
 function readEventsData() {
@@ -15,6 +16,67 @@ function readEventsData() {
 // Helper function to write the events data
 function writeEventsData(data: any) {
   fs.writeFileSync(eventsFilePath, JSON.stringify(data, null, 4), 'utf8');
+}
+
+// Helper function to rename an event image file when slug changes
+async function renameImageFile(oldImageURL: string, oldSlug: string, newSlug: string): Promise<string | null> {
+  try {
+    // Skip if no image or if the image isn't in the events directory
+    if (!oldImageURL || !oldImageURL.includes('/images/events/')) {
+      return null;
+    }
+
+    // Extract old filename from URL
+    const oldFilename = oldImageURL.split('/').pop();
+
+    // Skip if we can't parse the filename
+    if (!oldFilename) {
+      return null;
+    }
+
+    // Get file extension
+    const fileExt = path.extname(oldFilename);
+
+    // Generate new filename with slug as prefix
+    // Use a timestamp suffix to avoid naming conflicts for multiple event images
+    const timestamp = Date.now();
+    const newFilename = `${newSlug}-${timestamp}${fileExt}`;
+
+    const oldFilePath = path.join(eventsImagesDir, oldFilename);
+    const newFilePath = path.join(eventsImagesDir, newFilename);
+
+    // Check if old file exists
+    if (!fs.existsSync(oldFilePath)) {
+      return null;
+    }
+
+    // Rename the file
+    fs.renameSync(oldFilePath, newFilePath);
+
+    // Return the new URL
+    return `/images/events/${newFilename}`;
+  } catch (error) {
+    console.error('Error renaming event image file:', error);
+    return null;
+  }
+}
+
+// Helper function to rename all images in an event's imageURLs array
+async function renameEventImages(imageURLs: string[], oldSlug: string, newSlug: string): Promise<string[]> {
+  if (!imageURLs || !Array.isArray(imageURLs)) {
+    return [];
+  }
+
+  const newImageURLs = [...imageURLs];
+
+  for (let i = 0; i < imageURLs.length; i++) {
+    const newImageURL = await renameImageFile(imageURLs[i], oldSlug, newSlug);
+    if (newImageURL) {
+      newImageURLs[i] = newImageURL;
+    }
+  }
+
+  return newImageURLs;
 }
 
 // GET: Fetch all events
@@ -33,7 +95,7 @@ export async function POST(request: NextRequest) {
   try {
     const event = await request.json();
 
-    if (!event || !event.name || !event.startTime || !event.endTime || !event.location) {
+    if (!event || !event.name || !event.startTime || !event.location || !event.slug) {
       return NextResponse.json(
         { error: 'Required event data is missing' },
         { status: 400 }
@@ -42,12 +104,13 @@ export async function POST(request: NextRequest) {
 
     const events = readEventsData();
 
-    // Ensure ID is unique
-    const newId = events.length > 0 ? Math.max(...events.map((e: any) => e.id)) + 1 : 1;
-    event.id = newId;
-
-    // Ensure year is set properly
-    event.year = new Date(event.startTime).getFullYear();
+    // Check for unique slug
+    if (events.some((e: any) => e.slug === event.slug)) {
+      return NextResponse.json(
+        { error: 'An event with this slug already exists' },
+        { status: 400 }
+      );
+    }
 
     // Add the new event
     events.push(event);
@@ -57,7 +120,7 @@ export async function POST(request: NextRequest) {
 
     writeEventsData(events);
 
-    return NextResponse.json({ success: true, id: newId });
+    return NextResponse.json({ success: true, slug: event.slug });
   } catch (error) {
     console.error('Error adding event:', error);
     return NextResponse.json({ error: 'Failed to add event' }, { status: 500 });
@@ -69,9 +132,9 @@ export async function PUT(request: NextRequest) {
   try {
     const updatedEvent = await request.json();
 
-    if (!updatedEvent || !updatedEvent.id) {
+    if (!updatedEvent || !updatedEvent.slug) {
       return NextResponse.json(
-        { error: 'Event ID is required' },
+        { error: 'Event slug is required' },
         { status: 400 }
       );
     }
@@ -79,7 +142,7 @@ export async function PUT(request: NextRequest) {
     const events = readEventsData();
 
     // Find the index of the event to update
-    const index = events.findIndex((e: any) => e.id === updatedEvent.id);
+    const index = events.findIndex((e: any) => e.slug === updatedEvent.slug);
 
     if (index === -1) {
       return NextResponse.json(
@@ -88,8 +151,10 @@ export async function PUT(request: NextRequest) {
       );
     }
 
-    // Ensure year is set properly
-    updatedEvent.year = new Date(updatedEvent.startTime).getFullYear();
+    // Rename event images if slug has changed
+    if (updatedEvent.slug !== events[index].slug) {
+      updatedEvent.imageURLs = await renameEventImages(events[index].imageURLs, events[index].slug, updatedEvent.slug);
+    }
 
     // Update the event
     events[index] = updatedEvent;
@@ -110,11 +175,11 @@ export async function PUT(request: NextRequest) {
 export async function DELETE(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
-    const id = searchParams.get('id');
+    const slug = searchParams.get('slug');
 
-    if (!id) {
+    if (!slug) {
       return NextResponse.json(
-        { error: 'Event ID is required' },
+        { error: 'Event slug is required' },
         { status: 400 }
       );
     }
@@ -122,7 +187,7 @@ export async function DELETE(request: NextRequest) {
     const events = readEventsData();
 
     // Filter out the event to delete
-    const filteredEvents = events.filter((e: any) => e.id !== parseInt(id));
+    const filteredEvents = events.filter((e: any) => e.slug !== slug);
 
     if (filteredEvents.length === events.length) {
       return NextResponse.json(

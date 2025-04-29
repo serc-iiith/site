@@ -3,6 +3,7 @@ import { Plus, Edit, X, Save, Search, Trash2, Tag } from 'lucide-react';
 import Image from 'next/image';
 import { Toaster, toast } from 'react-hot-toast';
 import DeleteConfirmationModal from '@/components/common/DeleteConfirmationModal';
+import ImageDropzone from '@/components/common/ImageDropzone';
 
 interface Collaborator {
     name: string;
@@ -31,6 +32,7 @@ const EditProjects: React.FC = () => {
     const [editingId, setEditingId] = useState<string | null>(null);
     const [searchTerm, setSearchTerm] = useState<string>('');
     const [isLoading, setIsLoading] = useState(false);
+    const [isUploading, setIsUploading] = useState(false);
     const [newCollaborator, setNewCollaborator] = useState<Collaborator>({ name: '', logo: '', url: '' });
     const [newLink, setNewLink] = useState<Link>({ label: '', url: '' });
     const [deleteModal, setDeleteModal] = useState<{
@@ -122,7 +124,12 @@ const EditProjects: React.FC = () => {
 
     const startEditing = (project: Project) => {
         setEditingId(project.id);
-        setFormData({ ...project });
+        setFormData({
+            ...project
+        });
+
+        // Scroll to the top of the page
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     const startAdding = () => {
@@ -230,6 +237,59 @@ const EditProjects: React.FC = () => {
         } finally {
             setIsLoading(false);
             closeDeleteModal();
+        }
+    };
+
+    // Function to handle project image upload
+    const handleImageUpload = async (file: File) => {
+        if (!file) return;
+
+        // Check file size (max 5MB)
+        if (file.size > 5 * 1024 * 1024) {
+            toast.error('Image size must be less than 5MB');
+            return;
+        }
+
+        setIsUploading(true);
+
+        try {
+            // Generate a slug-like ID from the project title for the image filename
+            const fileId = formData.id || (formData.title ? formData.title.toLowerCase()
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/^-|-$/g, '') : '');
+
+            const formDataObj = new FormData();
+            formDataObj.append('file', file);
+            formDataObj.append('type', 'projects');
+
+            // Only pass the slug if we have one, otherwise the API will use the original filename
+            if (fileId) {
+                formDataObj.append('slug', fileId);
+            }
+
+            const response = await fetch('/api/upload', {
+                method: 'POST',
+                body: formDataObj,
+            });
+
+            const result = await response.json();
+
+            if (!response.ok) {
+                throw new Error(result.error || 'Failed to upload image');
+            }
+
+            if (result.filePath) {
+                setFormData(prev => ({
+                    ...prev,
+                    image: result.filePath
+                }));
+                // Success toast removed
+            }
+        } catch (error) {
+            console.error('Error uploading image:', error);
+            toast.error('Failed to upload image. Please try again.');
+        } finally {
+            setIsUploading(false);
         }
     };
 
@@ -364,6 +424,20 @@ const EditProjects: React.FC = () => {
                                     disabled={isLoading}
                                     placeholder="URL to project image"
                                 />
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1">
+                                    Project Image
+                                </label>
+                                <div className="grid grid-cols-1 gap-4">
+                                    <ImageDropzone
+                                        onImageUpload={handleImageUpload}
+                                        currentImage={formData.image}
+                                        isLoading={isUploading}
+                                        fallbackImage="/images/project_fallback.png"
+                                        roundedFull={false}
+                                    />
+                                </div>
                             </div>
                             <div>
                                 <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1">

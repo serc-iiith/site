@@ -5,6 +5,7 @@ import path from 'path';
 export const dynamic = "force-static";
 
 const projectsFilePath = path.join(process.cwd(), 'public', 'data', 'projects.json');
+const projectsImagesDir = path.join(process.cwd(), 'public', 'images', 'projects');
 
 // Helper function to read the projects data
 function readProjectsData() {
@@ -15,6 +16,60 @@ function readProjectsData() {
 // Helper function to write the projects data
 function writeProjectsData(data: any) {
   fs.writeFileSync(projectsFilePath, JSON.stringify(data, null, 2), 'utf8');
+}
+
+// Helper function to rename an image file when ID changes
+async function renameImageFile(oldImageURL: string, oldId: string, newId: string): Promise<string | null> {
+  try {
+    // Skip if no image or if the image isn't in the projects directory
+    if (!oldImageURL || !oldImageURL.includes('/images/projects/')) {
+      return null;
+    }
+
+    // Extract old filename from URL
+    const oldFilename = oldImageURL.split('/').pop();
+
+    // Skip if we can't parse the filename
+    if (!oldFilename) {
+      return null;
+    }
+
+    // Get file extension
+    const fileExt = path.extname(oldFilename);
+    const newFilename = `${newId}${fileExt}`;
+
+    // Skip if the filename is already correctly named
+    if (oldFilename === newFilename) {
+      return null;
+    }
+
+    const oldFilePath = path.join(projectsImagesDir, oldFilename);
+    const newFilePath = path.join(projectsImagesDir, newFilename);
+
+    // Check if old file exists
+    if (!fs.existsSync(oldFilePath)) {
+      return null;
+    }
+
+    // Check if new file path already exists, avoid overwrite
+    if (fs.existsSync(newFilePath)) {
+      // Generate unique name with timestamp to avoid conflicts
+      const timestamp = Date.now();
+      const newUniqueFilename = `${newId}-${timestamp}${fileExt}`;
+      const newUniqueFilePath = path.join(projectsImagesDir, newUniqueFilename);
+      fs.renameSync(oldFilePath, newUniqueFilePath);
+      return `/images/projects/${newUniqueFilename}`;
+    }
+
+    // Rename the file
+    fs.renameSync(oldFilePath, newFilePath);
+
+    // Return the new URL
+    return `/images/projects/${newFilename}`;
+  } catch (error) {
+    console.error('Error renaming project image file:', error);
+    return null;
+  }
 }
 
 // GET: Fetch all projects
@@ -95,6 +150,14 @@ export async function PUT(request: NextRequest) {
         { error: 'Project not found' },
         { status: 404 }
       );
+    }
+
+    // Rename image file if ID changes
+    if (updatedProject.imageURL && updatedProject.id !== projects[index].id) {
+      const newImageURL = await renameImageFile(updatedProject.imageURL, projects[index].id, updatedProject.id);
+      if (newImageURL) {
+        updatedProject.imageURL = newImageURL;
+      }
     }
 
     // Update the project

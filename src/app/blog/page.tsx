@@ -260,6 +260,8 @@ const FeaturedBlogPost = ({ post }: { post: BlogPost }): JSX.Element => {
                       src={authorImageUrl}
                       alt={post.author}
                       className="object-cover"
+                      width={100}
+                      height={100}
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.style.display = "none";
@@ -585,7 +587,7 @@ export default function BlogPage(): JSX.Element {
               <Search className="w-5 h-5 text-[color:var(--secondary-color)] ml-4" />
               <input
                 type="text"
-                placeholder="Search papers by title, author, or venue..."
+                placeholder="Search blogs by title, author, or content..."
                 className="w-full py-3 px-4 bg-transparent text-[color:var(--text-color)] placeholder-[color:var(--tertiary-color)] focus:outline-none"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}

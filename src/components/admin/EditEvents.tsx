@@ -1,30 +1,40 @@
 import React, { useState, useEffect } from 'react';
-import { Plus, Edit, X, Save, Search, Trash2, Calendar, MapPin, Clock } from 'lucide-react';
+import { Plus, Edit, X, Save, Search, Trash2, Calendar, MapPin, Clock, Link } from 'lucide-react';
 import Image from 'next/image';
 import { Toaster, toast } from 'react-hot-toast';
 import DeleteConfirmationModal from '@/components/common/DeleteConfirmationModal';
+import ImageDropzone from '@/components/common/ImageDropzone';
 
 interface Event {
-    id: number;
+    id?: number;
+    slug: string;
     name: string;
-    description: string;
+    eventURL: string;
+    location: string;
+    locationURL: string;
+    summary: string;
+    detail: string;
     startTime: string;
     endTime: string;
-    location: string;
-    year: number;
-    image: string;
+    imageURLs: string[];
     presenters: string[];
+    otherURLs: {
+        code: string;
+        pdf: string;
+        slides: string;
+        video: string;
+    };
 }
 
 const EditEvents: React.FC = () => {
     const [events, setEvents] = useState<Event[]>([]);
-    const [editingId, setEditingId] = useState<number | null>(null);
+    const [editingId, setEditingId] = useState<number | string | null>(null);
     const [searchTerm, setSearchTerm] = useState<string>('');
     const [isLoading, setIsLoading] = useState(false);
     const [newPresenter, setNewPresenter] = useState('');
     const [deleteModal, setDeleteModal] = useState<{
         isOpen: boolean;
-        eventId: number | null;
+        eventId: number | string | null;
         eventName: string;
     }>({
         isOpen: false,
@@ -32,16 +42,26 @@ const EditEvents: React.FC = () => {
         eventName: '',
     });
     const [formData, setFormData] = useState<Event>({
-        id: 0,
+        slug: '',
         name: '',
-        description: '',
+        eventURL: '',
+        location: '',
+        locationURL: '',
+        summary: '',
+        detail: '',
         startTime: new Date().toISOString().slice(0, 16),
         endTime: new Date().toISOString().slice(0, 16),
-        location: '',
-        year: new Date().getFullYear(),
-        image: '',
-        presenters: []
+        imageURLs: [],
+        presenters: [],
+        otherURLs: {
+            code: '',
+            pdf: '',
+            slides: '',
+            video: ''
+        }
     });
+    const [newImageURL, setNewImageURL] = useState('');
+    const [isUploading, setIsUploading] = useState(false);
 
     useEffect(() => {
         fetchEvents();
@@ -61,17 +81,41 @@ const EditEvents: React.FC = () => {
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
 
-        // Special handling for date fields
-        if (name === 'startTime' || name === 'endTime') {
-            setFormData(prev => ({
-                ...prev,
-                [name]: value,
-                // Update year if start time changes
-                ...(name === 'startTime' ? { year: new Date(value).getFullYear() } : {})
-            }));
+        if (name.includes('.')) {
+            // Handle nested properties like otherURLs.code
+            const [parent, child] = name.split('.');
+            if (parent === 'otherURLs') {
+                setFormData(prev => ({
+                    ...prev,
+                    otherURLs: {
+                        ...prev.otherURLs,
+                        [child]: value
+                    }
+                }));
+            } else {
+                // Handle other nested properties if needed
+                setFormData(prev => ({ ...prev, [name]: value }));
+            }
         } else {
             setFormData(prev => ({ ...prev, [name]: value }));
         }
+
+        // Auto-generate slug if name is being edited and slug is empty or auto-generated
+        if (name === 'name' && (!formData.slug || formData.slug === generateSlug(formData.name))) {
+            setFormData(prev => ({
+                ...prev,
+                slug: generateSlug(value)
+            }));
+        }
+    };
+
+    const generateSlug = (name: string): string => {
+        return name
+            .toLowerCase()
+            .replace(/[^\w\s-]/g, '')  // Remove special characters
+            .replace(/\s+/g, '-')      // Replace spaces with hyphens
+            .replace(/-+/g, '-')       // Replace multiple hyphens with single hyphen
+            .trim();
     };
 
     const addPresenter = () => {
@@ -93,47 +137,81 @@ const EditEvents: React.FC = () => {
         });
     };
 
-    const startEditing = (event: Event) => {
-        setEditingId(event.id);
-        setFormData({
-            ...event,
-            // Ensure date strings are formatted for datetime-local input
-            startTime: event.startTime.slice(0, 16),
-            endTime: event.endTime.slice(0, 16)
+    const addImageURL = () => {
+        if (!newImageURL) return;
+
+        setFormData(prev => ({
+            ...prev,
+            imageURLs: [...prev.imageURLs, newImageURL]
+        }));
+
+        setNewImageURL('');
+    };
+
+    const removeImageURL = (index: number) => {
+        setFormData(prev => {
+            const updatedImageURLs = [...prev.imageURLs];
+            updatedImageURLs.splice(index, 1);
+            return { ...prev, imageURLs: updatedImageURLs };
         });
+    };
+
+    const startEditing = (event: Event) => {
+        if (event.id) {
+            setEditingId(event.id);
+        } else {
+            setEditingId('unknown');
+        }
+
+        setFormData({
+            ...event
+        });
+
+        // Scroll to the top of the page
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     const startAdding = () => {
         const now = new Date().toISOString().slice(0, 16);
         const nextHour = new Date(Date.now() + 60 * 60 * 1000).toISOString().slice(0, 16);
 
-        setEditingId(-1); // Use -1 to indicate new event
+        setEditingId('new'); // Use 'new' to indicate new event
         setFormData({
-            id: 0, // Will be calculated when saving
+            slug: '',
             name: '',
-            description: '',
+            eventURL: '',
+            location: '',
+            locationURL: '',
+            summary: '',
+            detail: '',
             startTime: now,
             endTime: nextHour,
-            location: '',
-            year: new Date().getFullYear(),
-            image: '',
-            presenters: []
+            imageURLs: [],
+            presenters: [],
+            otherURLs: {
+                code: '',
+                pdf: '',
+                slides: '',
+                video: ''
+            }
         });
     };
 
     const cancelEditing = () => {
         setEditingId(null);
         setNewPresenter('');
+        setNewImageURL('');
     };
 
     const saveEvent = async () => {
-        if (!formData.name || !formData.location || !formData.startTime || !formData.endTime) {
+        if (!formData.name || !formData.location || !formData.startTime || !formData.slug) {
             toast.error('Please fill in all required fields');
             return;
         }
 
-        // Validate end time is after start time
-        if (new Date(formData.endTime) <= new Date(formData.startTime)) {
+        // Validate end time is after start time if both are provided
+        if (formData.startTime && formData.endTime &&
+            new Date(formData.endTime) <= new Date(formData.startTime)) {
             toast.error('End time must be after start time');
             return;
         }
@@ -141,21 +219,12 @@ const EditEvents: React.FC = () => {
         setIsLoading(true);
 
         try {
-            if (editingId === -1) {
+            if (editingId === 'new') {
                 // Add new event
-                const newId = events.length > 0
-                    ? Math.max(...events.map(e => e.id)) + 1
-                    : 1;
-
-                const newEvent = {
-                    ...formData,
-                    id: newId
-                };
-
                 const response = await fetch('/api/events', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(newEvent)
+                    body: JSON.stringify(formData)
                 });
 
                 if (!response.ok) {
@@ -192,7 +261,7 @@ const EditEvents: React.FC = () => {
     const openDeleteModal = (event: Event) => {
         setDeleteModal({
             isOpen: true,
-            eventId: event.id,
+            eventId: event.slug,
             eventName: event.name,
         });
     };
@@ -211,7 +280,7 @@ const EditEvents: React.FC = () => {
         setIsLoading(true);
 
         try {
-            const response = await fetch(`/api/events?id=${deleteModal.eventId}`, {
+            const response = await fetch(`/api/events?slug=${deleteModal.eventId}`, {
                 method: 'DELETE'
             });
 
@@ -231,6 +300,8 @@ const EditEvents: React.FC = () => {
     };
 
     const formatDate = (dateString: string) => {
+        if (!dateString) return '';
+
         try {
             const date = new Date(dateString);
 
@@ -257,11 +328,63 @@ const EditEvents: React.FC = () => {
         }
     };
 
+    // Function to handle image upload for events
+    const handleImageUpload = async (file: File) => {
+        if (!file) return;
+
+        // Check file size (max 5MB)
+        if (file.size > 5 * 1024 * 1024) {
+            toast.error('Image size must be less than 5MB');
+            return;
+        }
+
+        setIsUploading(true);
+
+        try {
+            // Generate a slug if it exists
+            const slug = formData.slug || (formData.name ? generateSlug(formData.name) : '');
+
+            const formDataObj = new FormData();
+            formDataObj.append('file', file);
+            formDataObj.append('type', 'events');
+
+            // Only pass the slug if we have one, otherwise the API will use the original filename
+            if (slug) {
+                formDataObj.append('slug', slug);
+            }
+
+            const response = await fetch('/api/upload', {
+                method: 'POST',
+                body: formDataObj,
+            });
+
+            const result = await response.json();
+
+            if (!response.ok) {
+                throw new Error(result.error || 'Failed to upload image');
+            }
+
+            if (result.filePath) {
+                // Add the image URL to the imageURLs array
+                setFormData(prev => ({
+                    ...prev,
+                    imageURLs: [...prev.imageURLs, result.filePath]
+                }));
+                // Success toast removed
+            }
+        } catch (error) {
+            console.error('Error uploading image:', error);
+            toast.error('Failed to upload image. Please try again.');
+        } finally {
+            setIsUploading(false);
+        }
+    };
+
     const filteredEvents = events.filter(event =>
         event.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        event.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        event.detail.toLowerCase().includes(searchTerm.toLowerCase()) ||
         event.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        event.year.toString().includes(searchTerm)
+        event.summary.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
     return (
@@ -307,13 +430,13 @@ const EditEvents: React.FC = () => {
             {editingId !== null && (
                 <div className="mb-8 bg-[color:var(--foreground)] p-4 rounded-lg border border-[color:var(--border-color)]">
                     <h3 className="text-lg font-semibold mb-4 text-[color:var(--text-color)] flex items-center">
-                        {editingId === -1 ? <Plus size={18} className="mr-2" /> : <Edit size={18} className="mr-2" />}
-                        {editingId === -1 ? 'Add New Event' : 'Edit Event'}
+                        {editingId === 'new' ? <Plus size={18} className="mr-2" /> : <Edit size={18} className="mr-2" />}
+                        {editingId === 'new' ? 'Add New Event' : 'Edit Event'}
                     </h3>
 
                     {/* Basic Information Section */}
                     <div className="mb-6">
-                        <h4 className="text-md font-semibold mb-3 text-[color:var(--text-color)]">Event Details</h4>
+                        <h4 className="text-md font-semibold mb-3 text-[color:var(--text-color)]">Basic Information</h4>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                             <div>
                                 <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1">
@@ -331,7 +454,53 @@ const EditEvents: React.FC = () => {
                             </div>
                             <div>
                                 <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1">
-                                    Location*
+                                    Slug* (URL-friendly name) <span className="text-xs ml-2 text-[color:var(--info-color)]">(Auto-generated, not editable)</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    name="slug"
+                                    value={formData.slug}
+                                    readOnly
+                                    className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)] opacity-70"
+                                    placeholder="event-name-slug"
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1 flex items-center">
+                                    <Clock size={14} className="mr-1" /> <span>Start Time*</span>
+                                </label>
+                                <input
+                                    type="datetime-local"
+                                    name="startTime"
+                                    value={formData.startTime}
+                                    onChange={handleInputChange}
+                                    className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                    disabled={isLoading}
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1 flex items-center">
+                                    <Clock size={14} className="mr-1" /> <span>End Time</span>
+                                </label>
+                                <input
+                                    type="datetime-local"
+                                    name="endTime"
+                                    value={formData.endTime}
+                                    onChange={handleInputChange}
+                                    className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                    disabled={isLoading}
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Location Section */}
+                    <div className="mb-6">
+                        <h4 className="text-md font-semibold mb-3 text-[color:var(--text-color)]">Location</h4>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1 flex items-center">
+                                    <MapPin size={14} className="mr-1" /> <span>Location Name*</span>
                                 </label>
                                 <input
                                     type="text"
@@ -345,72 +514,194 @@ const EditEvents: React.FC = () => {
                             </div>
                             <div>
                                 <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1 flex items-center">
-                                    <Clock size={16} className="mr-1" /> Start Time*
-                                </label>
-                                <input
-                                    type="datetime-local"
-                                    name="startTime"
-                                    value={formData.startTime}
-                                    onChange={handleInputChange}
-                                    className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
-                                    disabled={isLoading}
-                                />
-                            </div>
-                            <div>
-                                <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1 flex items-center">
-                                    <Clock size={16} className="mr-1" /> End Time*
-                                </label>
-                                <input
-                                    type="datetime-local"
-                                    name="endTime"
-                                    value={formData.endTime}
-                                    onChange={handleInputChange}
-                                    className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
-                                    disabled={isLoading}
-                                />
-                            </div>
-                            <div>
-                                <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1 flex items-center">
-                                    <Calendar size={16} className="mr-1" /> Year (auto-set from start date)
-                                </label>
-                                <input
-                                    type="number"
-                                    name="year"
-                                    value={formData.year}
-                                    onChange={handleInputChange}
-                                    className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
-                                    disabled={true}
-                                />
-                            </div>
-                            <div>
-                                <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1">
-                                    Image URL
+                                    <Link size={14} className="mr-1" /> <span>Location URL (full address)</span>
                                 </label>
                                 <input
                                     type="text"
-                                    name="image"
-                                    value={formData.image}
+                                    name="locationURL"
+                                    value={formData.locationURL}
                                     onChange={handleInputChange}
                                     className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
                                     disabled={isLoading}
-                                    placeholder="URL to event image"
+                                    placeholder="Full address or Google Maps URL"
                                 />
                             </div>
                         </div>
                     </div>
 
-                    {/* Description Section */}
+                    {/* Event URL Section */}
                     <div className="mb-6">
-                        <h4 className="text-md font-semibold mb-3 text-[color:var(--text-color)]">Description</h4>
-                        <textarea
-                            name="description"
-                            value={formData.description}
-                            onChange={handleInputChange}
-                            rows={5}
-                            className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
-                            disabled={isLoading}
-                            placeholder="Event description..."
-                        />
+                        <h4 className="text-md font-semibold mb-3 text-[color:var(--text-color)]">Links</h4>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1 flex items-center">
+                                    <Link size={14} className="mr-1" /> <span>Event URL</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    name="eventURL"
+                                    value={formData.eventURL}
+                                    onChange={handleInputChange}
+                                    className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                    disabled={isLoading}
+                                    placeholder="https://example.com/event"
+                                />
+                            </div>
+                        </div>
+
+                        <h4 className="text-sm font-medium mb-2 text-[color:var(--secondary-color)]">Other URLs</h4>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1 flex items-center">
+                                    <Link size={14} className="mr-1" /> <span>Code URL</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    name="otherURLs.code"
+                                    value={formData.otherURLs.code}
+                                    onChange={handleInputChange}
+                                    className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                    disabled={isLoading}
+                                    placeholder="GitHub repository URL"
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1 flex items-center">
+                                    <Link size={14} className="mr-1" /> <span>PDF URL</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    name="otherURLs.pdf"
+                                    value={formData.otherURLs.pdf}
+                                    onChange={handleInputChange}
+                                    className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                    disabled={isLoading}
+                                    placeholder="PDF document URL"
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1 flex items-center">
+                                    <Link size={14} className="mr-1" /> <span>Slides URL</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    name="otherURLs.slides"
+                                    value={formData.otherURLs.slides}
+                                    onChange={handleInputChange}
+                                    className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                    disabled={isLoading}
+                                    placeholder="Presentation slides URL"
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1 flex items-center">
+                                    <Link size={14} className="mr-1" /> <span>Video URL</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    name="otherURLs.video"
+                                    value={formData.otherURLs.video}
+                                    onChange={handleInputChange}
+                                    className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                    disabled={isLoading}
+                                    placeholder="YouTube or other video URL"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Content Section */}
+                    <div className="mb-6">
+                        <h4 className="text-md font-semibold mb-3 text-[color:var(--text-color)]">Content</h4>
+                        <div className="mb-4">
+                            <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1">
+                                Summary*
+                            </label>
+                            <input
+                                type="text"
+                                name="summary"
+                                value={formData.summary}
+                                onChange={handleInputChange}
+                                className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                disabled={isLoading}
+                                placeholder="Brief summary of the event"
+                            />
+                        </div>
+                        <div>
+                            <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1">
+                                Detailed Description
+                            </label>
+                            <textarea
+                                name="detail"
+                                value={formData.detail}
+                                onChange={handleInputChange}
+                                rows={5}
+                                className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                disabled={isLoading}
+                                placeholder="Full description of the event..."
+                            />
+                        </div>
+                    </div>
+
+                    {/* Images Section */}
+                    <div className="mb-6">
+                        <h4 className="text-md font-semibold mb-3 text-[color:var(--text-color)]">Images</h4>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <ImageDropzone
+                                    onImageUpload={handleImageUpload}
+                                    currentImage={formData.imageURLs[0] || ''}
+                                    isLoading={isUploading}
+                                    fallbackImage="/images/event_fallback.png"
+                                    roundedFull={false}
+                                />
+                                <p className="text-xs mt-2 text-[color:var(--secondary-color)]">
+                                    Upload an image to add to the event gallery
+                                </p>
+                            </div>
+                            <div>
+                                <div className="mb-3">
+                                    <h5 className="text-sm font-medium mb-2 text-[color:var(--secondary-color)]">Current Images</h5>
+                                    <div className="flex flex-wrap gap-2">
+                                        {(formData.imageURLs || []).map((url, index) => (
+                                            <div key={index} className="flex items-center bg-[color:var(--background)] p-2 rounded-md max-w-full text-[color:var(--tertiary-color)]">
+                                                <span className="text-sm mr-2 truncate max-w-xs">{url.split('/').pop()}</span>
+                                                <button
+                                                    type="button"
+                                                    onClick={() => removeImageURL(index)}
+                                                    className="text-[color:var(--error-color)] hover:text-red-700 flex-shrink-0"
+                                                    disabled={isLoading}
+                                                >
+                                                    <X size={16} />
+                                                </button>
+                                            </div>
+                                        ))}
+                                        {formData.imageURLs.length === 0 && (
+                                            <p className="text-sm text-[color:var(--secondary-color)]">No images added yet</p>
+                                        )}
+                                    </div>
+                                </div>
+                                <h5 className="text-sm font-medium mb-2 text-[color:var(--secondary-color)]">Add Image URL Manually</h5>
+                                <div className="flex gap-2">
+                                    <input
+                                        type="text"
+                                        value={newImageURL}
+                                        onChange={(e) => setNewImageURL(e.target.value)}
+                                        placeholder="Add an image URL"
+                                        className="flex-grow px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                        disabled={isLoading}
+                                    />
+                                    <button
+                                        type="button"
+                                        onClick={addImageURL}
+                                        disabled={isLoading || !newImageURL}
+                                        className="px-3 py-2 bg-[color:var(--primary-color)] text-white rounded-md hover:bg-opacity-90 disabled:opacity-50 flex items-center"
+                                    >
+                                        <Plus size={16} className="mr-1" /> Add
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     {/* Presenters Section */}
@@ -502,15 +793,15 @@ const EditEvents: React.FC = () => {
                             </thead>
                             <tbody className="bg-[color:var(--background)] divide-y divide-[color:var(--border-color)]">
                                 {filteredEvents.map((event) => (
-                                    <tr key={event.id}>
+                                    <tr key={event.slug}>
                                         <td className="px-3 sm:px-6 py-4">
                                             <div className="flex items-center">
-                                                {event.image && (
+                                                {event.imageURLs && event.imageURLs.length > 0 && (
                                                     <div className="flex-shrink-0 h-8 w-8 sm:h-10 sm:w-10 rounded-md overflow-hidden bg-gray-100 mr-3">
                                                         <Image
                                                             width={40}
                                                             height={40}
-                                                            src={event.image || '/images/event_fallback.png'}
+                                                            src={event.imageURLs[0] || '/images/event_fallback.png'}
                                                             alt={event.name}
                                                             className="object-cover"
                                                             unoptimized={true}

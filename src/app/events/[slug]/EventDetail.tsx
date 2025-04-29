@@ -145,7 +145,7 @@ export default function EventDetail({ event, presenters }: EventDetailProps) {
                                 </p>
 
                                 {/* Event Details with markdown support */}
-                                <div className="prose prose-lg max-w-none mx-0 text-[color:var(--text-color)]">
+                                <div className="prose lg:prose-xl max-w-none text-[var(--text-color)] prose-a:text-blue-600 hover:prose-a:text-blue-500 prose-headings:text-[var(--text-color)]">
                                     <ReactMarkdown
                                         remarkPlugins={[remarkGfm]}
                                         rehypePlugins={[rehypeRaw]}

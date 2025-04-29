@@ -27,20 +27,6 @@ interface Event {
     };
 }
 
-// HexPattern SVG component reused from home page for visual consistency
-const HexPattern = () => (
-    <div className="absolute inset-0 z-0 opacity-5">
-        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-                <pattern id="hexagons" width="50" height="43.4" patternUnits="userSpaceOnUse" patternTransform="scale(2)">
-                    <polygon points="25,0 50,14.4 50,28.8 25,43.4 0,28.8 0,14.4" fill="none" stroke="currentColor" strokeWidth="1" />
-                </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#hexagons)" />
-        </svg>
-    </div>
-);
-
 // Section transition component from home page for consistency
 const SectionTransition = ({ children, delay = 0, className = "" }) => {
     const ref = useRef(null);
@@ -115,16 +101,13 @@ const EventCard = ({ event, isSelected }: { event: Event, isSelected: boolean })
         ? event.imageURLs[0]
         : defaultImage;
 
-    // Check if event is in the past
-    const isPast = new Date(event.startTime) < new Date();
-
     return (
-        <Link href={`/events/${event.slug}`}>
+        <Link href={`/events/${event.slug}`} className="h-full block">
             <motion.div
                 ref={ref}
                 layout
                 whileHover={{ y: -5 }}
-                className={`relative rounded-xl overflow-hidden shadow-md transition-all duration-300 ${isSelected
+                className={`relative rounded-xl overflow-hidden shadow-md transition-all duration-300 h-full flex flex-col ${isSelected
                     ? 'border-2 border-[color:var(--primary-color)] ring-4 ring-[color:var(--primary-color)]/20 scale-102 z-10'
                     : 'border border-[color:var(--border-color)] bg-[color:var(--background)]'
                     }`}
@@ -146,7 +129,7 @@ const EventCard = ({ event, isSelected }: { event: Event, isSelected: boolean })
                         <EventTag type={eventType} />
                     </div>
                 </div>
-                <div className="p-5 relative">
+                <div className="p-5 relative flex-grow flex flex-col">
                     <h3 className="text-xl font-bold text-[color:var(--text-color)] mb-2">{event.name}</h3>
                     <div className="flex items-center text-[color:var(--secondary-color)] mb-2">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -161,9 +144,9 @@ const EventCard = ({ event, isSelected }: { event: Event, isSelected: boolean })
                         </svg>
                         <span className="text-sm">{event.location}</span>
                     </div>
-                    <p className="text-[color:var(--tertiary-color)] text-sm mb-4 line-clamp-2">{event.summary}</p>
+                    <p className="text-[color:var(--tertiary-color)] text-sm mb-4 line-clamp-2 flex-grow">{event.summary}</p>
 
-                    <div className="flex items-center text-[color:var(--primary-color)] hover:text-[color:var(--info-color)] transition-colors duration-200">
+                    <div className="flex items-center text-[color:var(--primary-color)] hover:text-[color:var(--info-color)] transition-colors duration-200 mt-auto">
                         Learn more
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
                             <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -316,11 +299,12 @@ export default function Events() {
                                     {upcomingEvents.length > 0 ? (
                                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                                             {upcomingEvents.map((event) => (
-                                                <EventCard
-                                                    key={event.slug}
-                                                    event={event}
-                                                    isSelected={false}
-                                                />
+                                                <div key={event.slug} className="h-full">
+                                                    <EventCard
+                                                        event={event}
+                                                        isSelected={false}
+                                                    />
+                                                </div>
                                             ))}
                                         </div>
                                     ) : (
@@ -348,11 +332,12 @@ export default function Events() {
                                     {pastEvents.length > 0 ? (
                                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                                             {pastEvents.map((event) => (
-                                                <EventCard
-                                                    key={event.slug}
-                                                    event={event}
-                                                    isSelected={false}
-                                                />
+                                                <div key={event.slug} className="h-full">
+                                                    <EventCard
+                                                        event={event}
+                                                        isSelected={false}
+                                                    />
+                                                </div>
                                             ))}
                                         </div>
                                     ) : (

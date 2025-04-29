@@ -3,6 +3,7 @@ import { Plus, Edit, X, Save, Search, Trash2, Link as LinkIcon, Building, Tag } 
 import Image from 'next/image';
 import { Toaster, toast } from 'react-hot-toast';
 import DeleteConfirmationModal from '@/components/common/DeleteConfirmationModal';
+import ImageDropzone from '@/components/common/ImageDropzone';
 
 interface Collaborator {
     id: string;
@@ -18,6 +19,7 @@ const EditCollaborators: React.FC = () => {
     const [editingId, setEditingId] = useState<string | null>(null);
     const [searchTerm, setSearchTerm] = useState<string>('');
     const [isLoading, setIsLoading] = useState(false);
+    const [isUploading, setIsUploading] = useState(false);
     const [deleteModal, setDeleteModal] = useState<{
         isOpen: boolean;
         collaboratorId: string | null;
@@ -37,7 +39,7 @@ const EditCollaborators: React.FC = () => {
     });
 
     // Available categories for the dropdown
-    const categories = ['academic', 'industry', 'governmen</div>t'];
+    const categories = ['academic', 'industry', 'government'];
 
     useEffect(() => {
         fetchCollaborators();
@@ -61,7 +63,12 @@ const EditCollaborators: React.FC = () => {
 
     const startEditing = (collaborator: Collaborator) => {
         setEditingId(collaborator.id);
-        setFormData({ ...collaborator });
+        setFormData({
+            ...collaborator
+        });
+
+        // Scroll to the top of the page
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     const startAdding = () => {
@@ -166,6 +173,59 @@ const EditCollaborators: React.FC = () => {
         } finally {
             setIsLoading(false);
             closeDeleteModal();
+        }
+    };
+
+    // Function to handle logo image upload
+    const handleImageUpload = async (file: File) => {
+        if (!file) return;
+
+        // Check file size (max 5MB)
+        if (file.size > 5 * 1024 * 1024) {
+            toast.error('Image size must be less than 5MB');
+            return;
+        }
+
+        setIsUploading(true);
+
+        try {
+            // Generate a slug-like ID from the organization name for the filename
+            const fileId = formData.id || (formData.name ? formData.name.toLowerCase()
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/^-|-$/g, '') : '');
+
+            const formDataObj = new FormData();
+            formDataObj.append('file', file);
+            formDataObj.append('type', 'collaborators');
+
+            // Only pass the slug if we have one, otherwise the API will use the original filename
+            if (fileId) {
+                formDataObj.append('slug', fileId);
+            }
+
+            const response = await fetch('/api/upload', {
+                method: 'POST',
+                body: formDataObj,
+            });
+
+            const result = await response.json();
+
+            if (!response.ok) {
+                throw new Error(result.error || 'Failed to upload logo');
+            }
+
+            if (result.filePath) {
+                setFormData(prev => ({
+                    ...prev,
+                    logo: result.filePath
+                }));
+                // Success toast removed
+            }
+        } catch (error) {
+            console.error('Error uploading logo:', error);
+            toast.error('Failed to upload logo. Please try again.');
+        } finally {
+            setIsUploading(false);
         }
     };
 
@@ -299,35 +359,54 @@ const EditCollaborators: React.FC = () => {
                         </div>
                         <div className="md:col-span-2">
                             <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1">
-                                Logo URL
+                                Logo
                             </label>
-                            <input
-                                type="text"
-                                name="logo"
-                                value={formData.logo}
-                                onChange={handleInputChange}
-                                className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
-                                disabled={isLoading}
-                                placeholder="https://example.com/logo.png or /images/logo.png"
-                            />
-                            {formData.logo && (
-                                <div className="mt-2 p-2 border border-[color:var(--border-color)] rounded-md inline-flex items-center">
-                                    <span className="mr-2 text-xs text-[color:var(--secondary-color)]">Logo Preview:</span>
-                                    <div className="h-8 w-8">
-                                        <Image
-                                            src={formData.logo}
-                                            width={32}
-                                            height={32}
-                                            alt="Logo preview"
-                                            className="max-h-8 object-contain"
-                                            onError={(e) => {
-                                                const target = e.target as HTMLImageElement;
-                                                target.src = '/images/placeholder.png';
-                                            }}
-                                        />
-                                    </div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <ImageDropzone
+                                        onImageUpload={handleImageUpload}
+                                        currentImage={formData.logo}
+                                        isLoading={isUploading}
+                                        fallbackImage="/images/placeholder.png"
+                                        roundedFull={false}
+                                    />
+                                    <p className="text-xs mt-2 text-center text-[color:var(--secondary-color)]">
+                                        Upload organization logo
+                                    </p>
                                 </div>
-                            )}
+                                <div>
+                                    <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1">
+                                        Logo URL <span className="text-xs ml-2 text-[color:var(--info-color)]">(Updated automatically when image is uploaded)</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="logo"
+                                        value={formData.logo}
+                                        onChange={handleInputChange}
+                                        className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                        disabled={isLoading}
+                                        placeholder="https://example.com/logo.png or /images/logo.png"
+                                    />
+                                    {formData.logo && (
+                                        <div className="mt-2 p-2 border border-[color:var(--border-color)] rounded-md inline-flex items-center">
+                                            <span className="mr-2 text-xs text-[color:var(--secondary-color)]">Logo Preview:</span>
+                                            <div className="h-8 w-8">
+                                                <Image
+                                                    src={formData.logo}
+                                                    width={32}
+                                                    height={32}
+                                                    alt="Logo preview"
+                                                    className="max-h-8 object-contain"
+                                                    onError={(e) => {
+                                                        const target = e.target as HTMLImageElement;
+                                                        target.src = '/images/placeholder.png';
+                                                    }}
+                                                />
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -451,17 +530,6 @@ const EditCollaborators: React.FC = () => {
                                             <p className="text-sm text-[color:var(--secondary-color)] mb-2 line-clamp-2">
                                                 {collaborator.description}
                                             </p>
-                                        )}
-
-                                        {collaborator.website && (
-                                            <a
-                                                href={collaborator.website}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="text-xs flex items-center text-[color:var(--primary-color)] hover:underline"
-                                            >
-                                                <LinkIcon size={12} className="mr-1" /> Visit website
-                                            </a>
                                         )}
                                     </div>
                                 ))}

@@ -5,6 +5,7 @@ import path from 'path';
 export const dynamic = "force-static";
 
 const blogsFilePath = path.join(process.cwd(), 'public', 'data', 'blogs.json');
+const blogsImagesDir = path.join(process.cwd(), 'public', 'images', 'blogs');
 
 // Helper function to read the blogs data
 function readBlogsData() {
@@ -28,6 +29,60 @@ function generateSlug(title: string): string {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/(^-|-$)/g, '');
+}
+
+// Helper function to rename an image file when slug changes
+async function renameImageFile(oldImageURL: string, oldSlug: string, newSlug: string): Promise<string | null> {
+  try {
+    // Skip if no image or if the image isn't in the blogs directory
+    if (!oldImageURL || !oldImageURL.includes('/images/blogs/')) {
+      return null;
+    }
+
+    // Extract old filename from URL
+    const oldFilename = oldImageURL.split('/').pop();
+
+    // Skip if we can't parse the filename
+    if (!oldFilename) {
+      return null;
+    }
+
+    // Get file extension
+    const fileExt = path.extname(oldFilename);
+    const newFilename = `${newSlug}${fileExt}`;
+
+    // Skip if the filename is already correctly named
+    if (oldFilename === newFilename) {
+      return null;
+    }
+
+    const oldFilePath = path.join(blogsImagesDir, oldFilename);
+    const newFilePath = path.join(blogsImagesDir, newFilename);
+
+    // Check if old file exists
+    if (!fs.existsSync(oldFilePath)) {
+      return null;
+    }
+
+    // Check if new file path already exists, avoid overwrite
+    if (fs.existsSync(newFilePath)) {
+      // Generate unique name with timestamp to avoid conflicts
+      const timestamp = Date.now();
+      const newUniqueFilename = `${newSlug}-${timestamp}${fileExt}`;
+      const newUniqueFilePath = path.join(blogsImagesDir, newUniqueFilename);
+      fs.renameSync(oldFilePath, newUniqueFilePath);
+      return `/images/blogs/${newUniqueFilename}`;
+    }
+
+    // Rename the file
+    fs.renameSync(oldFilePath, newFilePath);
+
+    // Return the new URL
+    return `/images/blogs/${newFilename}`;
+  } catch (error) {
+    console.error('Error renaming blog image file:', error);
+    return null;
+  }
 }
 
 // GET: Fetch all blogs
@@ -54,9 +109,7 @@ export async function POST(request: NextRequest) {
     }
 
     const blogs = readBlogsData();
-
-    // Generate a unique ID
-    const newId = blogs.length > 0 ? Math.max(...blogs.map((b: any) => b.id)) + 1 : 0;
+    const newId = blogs.length + 1;
     blog.id = newId;
 
     // Generate slug if not provided
@@ -69,6 +122,11 @@ export async function POST(request: NextRequest) {
       const now = new Date();
       const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
       blog.date = now.toLocaleDateString('en-US', options);
+    }
+
+    // Remove any generate flag that might have been passed
+    if (blog.generateNewSlug !== undefined) {
+      delete blog.generateNewSlug;
     }
 
     // Add the new blog to the beginning of the array (most recent first)
@@ -108,9 +166,25 @@ export async function PUT(request: NextRequest) {
     }
 
     // Generate slug if title changed
+    const oldSlug = blogs[index].slug;
+    let slugChanged = false;
+
     if (blogs[index].title !== updatedBlog.title && updatedBlog.generateNewSlug) {
       updatedBlog.slug = generateSlug(updatedBlog.title);
+      slugChanged = true;
+    }
+
+    // Remove the generateNewSlug property before saving
+    if (updatedBlog.generateNewSlug !== undefined) {
       delete updatedBlog.generateNewSlug;
+    }
+
+    // Rename image file if slug changed
+    if (slugChanged && updatedBlog.coverImage) {
+      const newImageURL = await renameImageFile(updatedBlog.coverImage, oldSlug, updatedBlog.slug);
+      if (newImageURL) {
+        updatedBlog.coverImage = newImageURL;
+      }
     }
 
     // Update the blog
