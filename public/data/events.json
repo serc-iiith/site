@@ -1,14 +1,50 @@
 [
     {
-        "id": null,
-        "name": "White Friday",
-        "description": "White-Friday is a dedicated day for research students for showing their work progress, types of tools working on and etc. Questions from the audience are addressed and they get their feedback from the Panel members.\nSoftware Engineering Research Centre- with 28 Research students has successfully completed #Spring2025 White friday, where all students got to present their work in front of faculty and fellow students.",
+        "slug": "white-friday-spring2025",
+        "name": "White Friday  #Spring2025",
+        "eventURL": "",
+        "location": "SERC",
+        "locationURL": "",
+        "summary": "White-Friday is a dedicated day for research students for showing their work progress, types of tools working on and etc. Questions from the Fellow students are addressed and they get their feedback from the Panel members, Faculty, Advisors.",
+        "detail": "Software Engineering Research Centre- with 28 Research students has successfully completed #Spring2025 White friday , where all students got to present their work in front of faculty and fellow students.",
         "startTime": "2025-04-19T10:00",
-        "endTime": "2025-04-19T15:30",
-        "location": "SERC,IIITH",
-        "year": 2025,
-        "image": "",
-        "presenters": []
+        "endTime": "2025-04-19T16:00",
+        "imageURLs": [
+            "/images/events/white-friday-spring2025.jpg",
+            "/images/events/white-friday-spring2025.jpg",
+            "/images/events/white-friday-spring2025.jpg"
+        ],
+        "presenters": [],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
+        "slug": "co-host-of-ai-days-round-table",
+        "name": "Co-Host of AI Days Round Table",
+        "eventURL": "https://www.aidays.io/#/roundtables?lang=en",
+        "location": "Tech Mahindra Gate No. 3  Oracle Gate, opposite Phase 2, Street Number 4, Jubilee Enclave, HITEC City, Hyderabad, Telangana - 500081  India",
+        "locationURL": "",
+        "summary": "Co-Host of AI Days Round Table",
+        "detail": "Dr. Y Raghu Reddy attended Ai Days event Round Table as a Co-Host on \"IP, privacy & policy in the age of AI\" organized by Viswam AI.",
+        "startTime": "2025-04-12T15:00",
+        "endTime": "2025-04-12T16:00",
+        "imageURLs": [
+            "/images/events/co-host-of-ai-days-round-table.jpg",
+            "/images/events/co-host-of-ai-days-round-table.jpg"
+        ],
+        "presenters": [
+            "Raghu Reddy"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
     },
     {
         "slug": "annual-rd-showcase-at-iiith",
