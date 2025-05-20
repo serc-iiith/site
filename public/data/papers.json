@@ -1,6 +1,19 @@
 [
   {
     "authors": [
+      "Raghu Reddy",
+      "Brahma Reddy Korraprolu",
+      "Pavitra Pinninti"
+    ],
+    "year": "2025",
+    "title": "Test Case Generation for Requirements in Natural Language - An LLM Comparison Study",
+    "cite": "@inproceedings{10.1145/3717383.3717389,\nauthor = {Korraprolu, Brahma Reddy and Pinninti, Pavitra and Reddy, Y. Raghu},\ntitle = {Test Case Generation for Requirements in Natural Language - An LLM Comparison Study},\nyear = {2025},\nisbn = {9798400714245},\npublisher = {Association for Computing Machinery},\naddress = {New York, NY, USA},\nurl = {https://doi.org/10.1145/3717383.3717389},\ndoi = {10.1145/3717383.3717389},\nabstract = {The rapid evolution of Large Language Models (LLMs) have opened new possibilities in automating tasks across the software developing life cycle, including test case generation This paper presents a comparative analysis of six LLMs in the context of generating test cases for technical requirements written in natural language (in this case English). We compare publicly available general purpose LLMs viz., BARD, ChatGPT3.5, Claude, Gemini, ChatGPT4.o (Omni) and Llama3. The generated test cases are tested against a Simulink model created for the corresponding set of requirements. The coverage metrics thus generated are used for a quantitative comparison of the LLMs.},\nbooktitle = {Proceedings of the 18th Innovations in Software Engineering Conference},\narticleno = {9},\nnumpages = {5},\nkeywords = {LLM, Large Language Models, Test Case Generation, Requirements},\nlocation = {\n},\nseries = {ISEC '25}\n}",
+    "venue": "18th Innovations in Software Engineering Conference- ISEC2025, NIT Kurukshetra",
+    "doi": "10.1145/3717383.3717389",
+    "url": "https://dl.acm.org/doi/10.1145/3717383.3717389"
+  },
+  {
+    "authors": [
       "Akhila Matathammal",
       "Kriti Gupta",
       "Larissa Lavanya",
