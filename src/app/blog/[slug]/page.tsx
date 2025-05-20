@@ -166,5 +166,43 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         notFound();
     }
 
-    return <Blog blogPost={blogPost} blogData={blogData} />;
+    // Create JSON-LD structured data for this blog post
+    const blogPostJsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        headline: blogPost.title,
+        description: blogPost.excerpt,
+        image: blogPost.coverImage || '/images/blog_fallback.png',
+        datePublished: blogPost.date,
+        author: {
+            '@type': 'Person',
+            name: blogPost.author
+        },
+        publisher: {
+            '@type': 'Organization',
+            name: 'Software Engineering Research Center, IIIT Hyderabad',
+            logo: {
+                '@type': 'ImageObject',
+                url: 'https://serc.iiit.ac.in/images/logo.png'
+            }
+        },
+        mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': `https://serc.iiit.ac.in/blog/${slug}`
+        },
+        keywords: [blogPost.category, 'SERC', 'Research', 'Software Engineering'],
+        articleSection: blogPost.category
+    };
+
+    return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(blogPostJsonLd)
+                }}
+            />
+            <Blog blogPost={blogPost} blogData={blogData} />
+        </>
+    );
 }
