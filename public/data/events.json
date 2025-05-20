@@ -10,8 +10,6 @@
         "startTime": "2025-04-19T10:00",
         "endTime": "2025-04-19T16:00",
         "imageURLs": [
-            "/images/events/white-friday-spring2025.jpg",
-            "/images/events/white-friday-spring2025.jpg",
             "/images/events/white-friday-spring2025.jpg"
         ],
         "presenters": [],
@@ -33,7 +31,6 @@
         "startTime": "2025-04-12T15:00",
         "endTime": "2025-04-12T16:00",
         "imageURLs": [
-            "/images/events/co-host-of-ai-days-round-table.jpg",
             "/images/events/co-host-of-ai-days-round-table.jpg"
         ],
         "presenters": [

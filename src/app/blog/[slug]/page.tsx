@@ -2,7 +2,6 @@ import React, { type ReactNode } from 'react';
 import { notFound } from "next/navigation";
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 import { Calendar, Clock, ChevronLeft, Share2, Facebook, Twitter, Linkedin } from 'lucide-react';
 import { Toaster, toast } from "react-hot-toast";
 import { getFormattedDate } from 'utils/date';
@@ -31,23 +30,6 @@ const categoryColors = {
     "DevOps": "bg-primary",
     "SE Trends": "bg-green-600",
     "Open Source": "bg-indigo-600",
-};
-
-interface PageTransitionProp {
-    children: ReactNode;
-}
-
-// Components for page transitions and animations
-const PageTransition = ({ children }: PageTransitionProp) => {
-    return (
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-        >
-            {children}
-        </motion.div>
-    );
 };
 
 // Related blog posts component
