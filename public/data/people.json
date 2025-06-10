@@ -303,7 +303,7 @@
                 "Modeling for comprehension"
             ],
             "advisor": "Dr. Venkatesh Choppella",
-            "bio": "Mrityunjay is a PhD student working in the area of CS Education and Software Systems. His research tries to answer the question: “Why do new campus hires struggle at SaaS product companies?” His interest lies in using systems modeling in software engineering, and he is applying the same to his research problem.\n\nMrityunjay has more than twenty-five years of experience working in software product companies globally, including last several years in a SaaS product company where he observed this problem closely. He graduated from Indian Institute of Technology, Delhi and also has a business degree from Foster School of Management, University of Washington."    
+            "bio": "Mrityunjay is a PhD student working in the area of CS Education and Software Systems. His research tries to answer the question: “Why do new campus hires struggle at SaaS product companies?” His interest lies in using systems modeling in software engineering, and he is applying the same to his research problem.\n\nMrityunjay has more than twenty-five years of experience working in software product companies globally, including last several years in a SaaS product company where he observed this problem closely. He graduated from Indian Institute of Technology, Delhi and also has a business degree from Foster School of Management, University of Washington."
         },
         {
             "name": "Amar Banerjee",
@@ -323,7 +323,7 @@
                 "Automated Software Development"
             ],
             "advisor": "Dr. Venkatesh Choppella",
-            "bio": "Amar Banerjee is a PhD student under Dr. Venkatesh Choppella. His work area is knowledge-driven automated software engineering for the controls domain in cyber-physical and IoT systems. He is an Advanced Technology Researcher at Philips Healthcare, leading global research initiatives in AI-driven medical imaging, surgical innovations, and quantum computing applications for healthcare. His prior roles include Technology Expert at Siemens Technologies & Research, where he drove AI-based sales transformation, semantic knowledge graphs, and domain-specific language models, and Senior Researcher at Tata Research Development and Design Center. He has authored multiple publications and patents in AI-driven automation, robotics, and control systems. Additionally, he is an active reviewer for renowned journals, including Elsevier, Springer, and IEEE. He is also engaged in academic mentoring, serving as a guest lecturer at multiple institutes, where he prepares students for careers in AI and industrial automation."    
+            "bio": "Amar Banerjee is a PhD student under Dr. Venkatesh Choppella. His work area is knowledge-driven automated software engineering for the controls domain in cyber-physical and IoT systems. He is an Advanced Technology Researcher at Philips Healthcare, leading global research initiatives in AI-driven medical imaging, surgical innovations, and quantum computing applications for healthcare. His prior roles include Technology Expert at Siemens Technologies & Research, where he drove AI-based sales transformation, semantic knowledge graphs, and domain-specific language models, and Senior Researcher at Tata Research Development and Design Center. He has authored multiple publications and patents in AI-driven automation, robotics, and control systems. Additionally, he is an active reviewer for renowned journals, including Elsevier, Springer, and IEEE. He is also engaged in academic mentoring, serving as a guest lecturer at multiple institutes, where he prepares students for careers in AI and industrial automation."
         },
         {
             "name": "Akhila Matathammal",
@@ -381,7 +381,7 @@
                 "Algorithm Design"
             ],
             "advisor": "Dr. Venkatesh Choppella",
-            "bio": "Nitheesh Chandra Y is pursuing his PhD at IIIT Hyderabad, where his research spans multiple areas including distributed systems, formal verification of PLC programming languages, large-scale modular reliability, and innovative approaches to computer science education. His current work is focused on establishing theoretical foundations and practical methodologies to ensure system safety and scalability.\n\nPrior to entering academia, Nitheesh accumulated 4.5 years of diverse industry experience. He began his career as a backend developer, advanced to full-stack development, then embraced DevSecOps practices, and ultimately specialized in reliability engineering. This varied professional background provides him with a unique perspective that enriches his research and bridges the gap between rigorous academic inquiry and real-world system challenges."            
+            "bio": "Nitheesh Chandra Y is pursuing his PhD at IIIT Hyderabad, where his research spans multiple areas including distributed systems, formal verification of PLC programming languages, large-scale modular reliability, and innovative approaches to computer science education. His current work is focused on establishing theoretical foundations and practical methodologies to ensure system safety and scalability.\n\nPrior to entering academia, Nitheesh accumulated 4.5 years of diverse industry experience. He began his career as a backend developer, advanced to full-stack development, then embraced DevSecOps practices, and ultimately specialized in reliability engineering. This varied professional background provides him with a unique perspective that enriches his research and bridges the gap between rigorous academic inquiry and real-world system challenges."
         },
         {
             "name": "Radha Krishna B",
@@ -391,7 +391,7 @@
             "slug": "radha-krishna-b",
             "social_links": {
                 "GitHub": "https://github.com/radha-krishna-b"
-            },        
+            },
             "interests": [
                 "Augmented Reality Systems for Navigation"
             ],
@@ -446,7 +446,7 @@
                 "Software Engineering",
                 "Low code platforms for ML",
                 "ML certification."
-            ],  
+            ],
             "advisor": "Dr. Karthik Vaidhyanathan",
             "bio": "I am a researcher exploring the intersection of software engineering and AI, with the focus on software architecture for machine learning (ML) systems, certifying ML systems, and developing low-code ML platforms. Previously, I worked as a full stack developer at Infosys Limited. My long-term career goal is to advance software engineering through research and innovation, Whether in academia, industry, or by starting a research-driven startup. I aim to apply my expertise to solve real-world challenges and contribute to technological advancements.\n\nSome of my accepted works include:\n\n1. Approach Towards Semi-Automated Certification for Low Criticality ML-Enabled Airborne Applications\n2. LoCoML: A Framework for Real-World ML Inference Pipelines."
         },
@@ -454,7 +454,7 @@
             "name": "Hiya Bhatt",
             "title": "MS (CSE)",
             "email": "hiya.bhatt@research.iiiit.ac.in",
-            "imageURL": "/images/people/hiya-bhatt.png",
+            "imageURL": "/images/people/hiya-bhatt.jpeg",
             "slug": "hiya-bhatt",
             "social_links": {},
             "interests": [
@@ -462,7 +462,8 @@
                 "Singing"
             ],
             "advisor": "Dr. Karthik Vaidhyanathan",
-            "bio": "I'm an MS by Research student in Computer Science and Engineering, working under the guidance of Dr. Karthik Vaidhyanathan. My research focuses on developing sustainable self-adaptive machine learning-enabled systems that can efficiently manage changing environments and resource constraints. I’m also exploring how these systems can be integrated with digital twins to enhance real-time monitoring, analysis, and decision-making in dynamic scenarios. Alongside my academic work, I enjoy singing."
+            "bio": "I'm an MS by Research student in Computer Science and Engineering, working under the guidance of Dr. Karthik Vaidhyanathan. My research focuses on developing sustainable self-adaptive machine learning-enabled systems that can efficiently manage changing environments and resource constraints. I’m also exploring how these systems can be integrated with digital twins to enhance real-time monitoring, analysis, and decision-making in dynamic scenarios. Alongside my academic work, I enjoy singing.",
+            "education": []
         },
         {
             "name": "Likhith Kanigolla",
@@ -477,7 +478,7 @@
                 "AR/VR/XR"
             ],
             "advisor": "Dr. Karthik Vaidhyanathan",
-            "bio": "I am always curious about new frontiers where technology enables groundbreaking innovations. My work primarily revolves around Digital Twins, DevOps, and ML. I am pursuing an MS by Research in Computer Science under the guidance of Dr. Karthik Vaidhyanathan, focusing on developing Digital Twins for Smart Cities to optimize infrastructure and urban planning. Beyond my core research, I am actively exploring the integration of AR/VR with smart city ecosystems and enhancing simulation frameworks. I aspire to be an achiever—someone whose contributions leave a lasting impact and inspire others. I am passionate about expanding my expertise into space technologies"    
+            "bio": "I am always curious about new frontiers where technology enables groundbreaking innovations. My work primarily revolves around Digital Twins, DevOps, and ML. I am pursuing an MS by Research in Computer Science under the guidance of Dr. Karthik Vaidhyanathan, focusing on developing Digital Twins for Smart Cities to optimize infrastructure and urban planning. Beyond my core research, I am actively exploring the integration of AR/VR with smart city ecosystems and enhancing simulation frameworks. I aspire to be an achiever—someone whose contributions leave a lasting impact and inspire others. I am passionate about expanding my expertise into space technologies"
         },
         {
             "name": "Puru Ojha",
@@ -505,7 +506,7 @@
             "slug": "prakhar_jain",
             "social_links": {
                 "GitHub": "https://github.com/prakharjain3"
-            },        
+            },
             "advisor": "Dr. Karthik Vaidhyanathan",
             "bio": "My research interests include Self-Adaptation, GenAI for Self-Adaptation, Reinforcement Learning for Self-Adaptation"
         },
@@ -531,7 +532,7 @@
             "name": "Adyansh Kakran",
             "title": "CSD",
             "email": "adyansh.kakran@research.iiit.ac.in",
-            "imageURL": "/images/people/adyansh-kakran.png",
+            "imageURL": "/images/people/adyansh-kakran.jpg",
             "slug": "adyansh-kakran",
             "social_links": {
                 "GitHub": "https://github.com/adyanshkakran"
@@ -541,7 +542,8 @@
                 "Self Adaptive MLOps"
             ],
             "advisor": "Dr. Karthik Vaidhyanathan",
-            "bio": "My research interests include GenAI for Self Adaption, Self Adaptive MLOps"
+            "bio": "Hi there! I’m Adyansh, a dual degree student at the Software Engineering Research Centre, IIIT Hyderabad. I am fortunate to be advised by Dr. Karthik Vaidhyanathan, and my research lies at the intersection of Natural Language Processing (NLP) and Software Engineering. My work primarily focuses on leveraging artificial intelligence to enhance software quality, development processes, and engineering practices.\n\nBeyond research, I have a strong passion for building impactful software products and exploring the world of finance. I enjoy applying both analytical and creative thinking to solve real-world problems, whether through academic work or practical software solutions.\n\nI’m always open to meaningful collaborations, interesting conversations, or new connections. If our interests align or you'd simply like to chat, feel free to reach out — I’d love to hear from you!",
+            "education": []
         },
         {
             "name": "Amey Karan",
@@ -571,7 +573,7 @@
                 "Self Sustaining systems and architecture"
             ],
             "advisor": "Dr. Karthik Vaidhyanathan",
-            "bio": "Hi! You can reach out to me through SERC and SCRC. I like building, breaking, and fixing systems-keeps things interesting."    
+            "bio": "Hi! You can reach out to me through SERC and SCRC. I like building, breaking, and fixing systems-keeps things interesting."
         },
         {
             "name": "Bassam Adnan",
@@ -635,7 +637,7 @@
                 "Large Language Models"
             ],
             "advisor": "Dr. Karthik Vaidhyanathan",
-            "bio": "My research lies at the intersection of Software Architecture (SA) and Artificial Intelligence (AI), exploring how AI can be applied to software architecture. Currently, I am focused on modeling and creating architectural views, using AI to generate these views from inputs such as descriptions, code, and other relevant data. Outside of my research, I enjoy reading books, cooking, and in my leisure time, I love watching movies and web series."    
+            "bio": "My research lies at the intersection of Software Architecture (SA) and Artificial Intelligence (AI), exploring how AI can be applied to software architecture. Currently, I am focused on modeling and creating architectural views, using AI to generate these views from inputs such as descriptions, code, and other relevant data. Outside of my research, I enjoy reading books, cooking, and in my leisure time, I love watching movies and web series."
         },
         {
             "name": "Pavitra Pinninti",
@@ -737,7 +739,7 @@
                 "Mixed Reality"
             ],
             "advisor": "Dr. Y. Raghu Reddy",
-            "bio": "Undergrad Researcher under Prof Raghu Reddy.\n\nField of work -- VR and Digital Twin\n\nI love watching anime."    
+            "bio": "Undergrad Researcher under Prof Raghu Reddy.\n\nField of work -- VR and Digital Twin\n\nI love watching anime."
         },
         {
             "name": "Arihant Tripathy",
@@ -869,6 +871,28 @@
             ],
             "education": [],
             "bio": "I'm a passionate software developer skilled in both front-end and back-end technologies, with a strong foundation in Computer Science. I specialize in building robust, scalable applications using a variety of programming languages and tools. With hands-on industry experience and a commitment to continuous learning, I aim to contribute to innovative projects that make a positive societal impact."
+        },
+        {
+            "name": "Divijh K Mangtani",
+            "title": "CSD",
+            "email": "divijh.mangtani@research.iiit.ac.in",
+            "imageURL": "",
+            "slug": "divijh-k-mangtani",
+            "social_links": {},
+            "interests": [],
+            "education": [],
+            "bio": ""
+        },
+        {
+            "name": "Hardik Chadha",
+            "title": "CSD",
+            "email": "hardik.chadha@research.iiit.ac.in",
+            "imageURL": "/images/people/hardik-chadha.jpg",
+            "slug": "hardik-chadha",
+            "social_links": {},
+            "interests": [],
+            "education": [],
+            "bio": "Hardik Chadha is a B.Tech and M.S dual-degree student in Computer Science and Engineering at the International Institute of Information Technology, Hyderabad (IIITH). He is currently conducting research at the Software Engineering Research Center (SERC) Lab under the guidance of Prof. Abhishek Kr Singh. His work focuses on Trustworthy Automated Programming, with the goal of reducing ambiguity in AI-generated code by aligning natural language intent with formal specifications.\n\nOriginally from Jalandhar, Punjab, he completed his schooling at Innocent Hearts School, Green Model Town. Outside of academics, he has represented his state in Table Tennis at the National Level and has a strong interest in sports. He is also deeply fascinated by the field of space exploration."
         }
     ],
     "Honors": [
@@ -884,7 +908,7 @@
             "interests": [
                 "Software Engineering",
                 "Self-Adaptation"
-            ],        
+            ],
             "advisor": "Dr. Karthik Vaidhyanathan",
             "bio": "I am a B. Tech. Student at IIIT Hyderabad. I am also pursuing my honors degree in Software Engineering Research Center(SERC), IIIT Hyd, under the supervision of Dr. Karthik Vaidhyanathan. As part of the Research/ Honors program, I am working on self-adaptive approaches, especially toward ML-based systems. I have also been doing an Internship project on developing an observability platform for enhancing the sustainability of ML-enabled systems projects. My previous works include: Paper accepted at A* conference: ASE 2023 NIER track, it focuses on \" Self-Adaptive Machine Learning-Enabled Systems Through QoS-Aware Model Switching\""
         },
@@ -918,7 +942,7 @@
                 "Design Thinking"
             ],
             "advisor": "Dr. Raman Saxena",
-            "bio": "As a computer science engineering student, I am dedicated to acquiring a strong foundation in programming languages, algorithms, and software development methodologies. Eager to explore various domains within the field, I am actively engaged in coursework, projects, and self-directed learning to enhance my skills. I am particularly interested in Full Stack development with design thinking actively applied."    
+            "bio": "As a computer science engineering student, I am dedicated to acquiring a strong foundation in programming languages, algorithms, and software development methodologies. Eager to explore various domains within the field, I am actively engaged in coursework, projects, and self-directed learning to enhance my skills. I am particularly interested in Full Stack development with design thinking actively applied."
         },
         {
             "name": "Divij D",
@@ -1049,6 +1073,44 @@
             ],
             "education": [],
             "bio": "I am Ananya Halgatti, undergraduate at IIITH, working with professor Karthik Vaidhyanathan. Our recent works include EdgeMLBalancer – a model-switching system for edge devices using MAPE-K and epsilon-greedy strategies.  \n\nMy current publication: [https://arxiv.org/abs/2502.06493](https://arxiv.org/abs/2502.06493)\n\nI had the opportunity to present this work at the R&D Showcase 2025 – Tech for Sustainable Futures, which further reinforced my passion for responsible software development.\n\nI am a competitive swimmer, love making artwork and a devoted dog person."
+        },
+        {
+            "name": "Manidhar Sukasi",
+            "title": "CSE",
+            "email": "sukasi.manidhar@students.iiit.ac.in",
+            "imageURL": "",
+            "slug": "manidhar-sukasi",
+            "social_links": {},
+            "interests": [],
+            "education": [],
+            "bio": ""
+        },
+        {
+            "name": "Anvithraj Reddy Basani",
+            "title": "CSE",
+            "email": "anvithraj.basani@students.iiit.ac.in",
+            "imageURL": "",
+            "slug": "anvithraj-reddy-basani",
+            "social_links": {},
+            "interests": [],
+            "education": [],
+            "bio": ""
+        },
+        {
+            "name": "Nikhilesh tiruveedula ",
+            "title": "CSE",
+            "email": "tiruveedula.n@students.iiit.ac.in",
+            "imageURL": "/images/people/nikhilesh-tiruveedula.jpg",
+            "slug": "nikhilesh-tiruveedula",
+            "social_links": {
+                "Github": "https://github.com/nikhilesh4"
+            },
+            "interests": [
+                "Virtual Reality and Extended Reality Systems ",
+                "Augmented Reality "
+            ],
+            "education": [],
+            "bio": "I am a dedicated Computer Science engineer with a strong passion for immersive technologies and software development. My current research focuses on AR-based Indoor Navigation Systems, supervised by Prof. Raghu Reddy, where I aim to bridge real and digital spaces through intuitive AR interfaces. Alongside my academic pursuits, I am an enthusiastic web developer, always eager to learn and adopt emerging technologies to build innovative and scalable digital solutions."
         }
     ],
     "Alumni": [
@@ -1067,7 +1129,7 @@
                 "Software Products"
             ],
             "advisor": "Dr. Y. Raghu Reddy",
-            "bio": "I am a Software Engineer with a solid skill set in developing Software Systems and Enterprise Product Design. I have strong experience developing backend layers (Data Integration/ETL/Replication/Sharding/NoSQL DB), middleware (transaction processing/messaging), and API development (REST/ODATA/SOAP/Microservices). I have built and been involved in software projects for academia and budding startup communities since 2013. I love code design patterns and refactoring legacy code. I am an avid follower of Martin Fowler's experiences in Software System development.\n\nI am currently working as a Technical Product Manager at Accurate Background. I previously worked as a Senior Product Manager at SumTotal Systems - a Cornerstone Ondemand Company , I gained a keen interest in computing research in my early professional career. I started working as a graduate software researcher in 2014 in the area of Software Quality Engineering at the Software Engineering Research Center, IIIT Hyderabad, under the guidance of Prof. Y. Raghu Reddy. I managed to coin a software quality metric called Defect Dependency Degree. I developed a rough-set theory-based approach to calculate a dependency of a defect over the rest of the defects in a Large Scale Integrated Software Product. I published my dissertation as part of my Master of Science by Research in 2016.\n\nIn 2017, I studied different emerging technologies. I started exploring the Virtual Reality technology domain as part of my Doctoral Research program at IIIT Hyderabad. I am working on Requirement Engineering problems for Virtual Reality and hope to graduate with a Ph.D. by 2024!"    
+            "bio": "I am a Software Engineer with a solid skill set in developing Software Systems and Enterprise Product Design. I have strong experience developing backend layers (Data Integration/ETL/Replication/Sharding/NoSQL DB), middleware (transaction processing/messaging), and API development (REST/ODATA/SOAP/Microservices). I have built and been involved in software projects for academia and budding startup communities since 2013. I love code design patterns and refactoring legacy code. I am an avid follower of Martin Fowler's experiences in Software System development.\n\nI am currently working as a Technical Product Manager at Accurate Background. I previously worked as a Senior Product Manager at SumTotal Systems - a Cornerstone Ondemand Company , I gained a keen interest in computing research in my early professional career. I started working as a graduate software researcher in 2014 in the area of Software Quality Engineering at the Software Engineering Research Center, IIIT Hyderabad, under the guidance of Prof. Y. Raghu Reddy. I managed to coin a software quality metric called Defect Dependency Degree. I developed a rough-set theory-based approach to calculate a dependency of a defect over the rest of the defects in a Large Scale Integrated Software Product. I published my dissertation as part of my Master of Science by Research in 2016.\n\nIn 2017, I studied different emerging technologies. I started exploring the Virtual Reality technology domain as part of my Doctoral Research program at IIIT Hyderabad. I am working on Requirement Engineering problems for Virtual Reality and hope to graduate with a Ph.D. by 2024!"
         },
         {
             "name": "Shubham Kulkarni",
@@ -1248,7 +1310,6 @@
             "social_links": {},
             "advisor": "Dr. Venkatesh Choppella"
         }
-
     ],
     "Research Associates": [
         {
@@ -1257,7 +1318,10 @@
             "email": "sreemaee.akshathala@research.iiit.ac.in",
             "imageURL": "/images/people/sreemaee-akshathala.png",
             "slug": "sreemaee-akshathala",
-            "social_links": {}
+            "social_links": {},
+            "interests": [],
+            "education": [],
+            "bio": "My current primary focus is contribute to the building of a LLM based multi-agent framework for autonomous CloudOps. My interest areas include exploring the intersection of Software Engineering and AI, particularly in areas such as  Agents in SE, LLM Agents, LLMs for Architecture Decision Records (ADRs), and NLP in SE.  I am passionate about building intelligent, scalable systems and am always eager to collaborate on innovative projects in the intersection of SE and ML. Beyond my professional work, I enjoy painting as a creative outlet and play board games, which keeps me inspired and engaged in fun ways!"
         }
     ]
 }
