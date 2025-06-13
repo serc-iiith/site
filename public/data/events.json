@@ -1,5 +1,28 @@
 [
     {
+        "slug": "techforward-research-seminar",
+        "name": "TechForward Research Seminar",
+        "eventURL": "https://outreach.iiit.ac.in/techforward/",
+        "location": "HYSEA",
+        "locationURL": "1st Floor, TGIIC- IALA Building, beside Madhapur Fire Station, Phase 2, HITEC City, Hyderabad, Telangana 500081, India",
+        "summary": "Talk on  𝑬𝒏𝒈𝒊𝒏𝒆𝒆𝒓𝒊𝒏𝒈 𝑨𝒈𝒆𝒏𝒕𝒊𝒄 𝑨𝑰 𝑺𝒚𝒔𝒕𝒆𝒎𝒔: 𝑭𝒓𝒐𝒎 𝑳𝒂𝒃 𝒕𝒐 𝑳𝒂𝒏𝒅 by Prof Karthik Vaidhyanathan",
+        "detail": "Dr. Karthik Vaidhyanathan delivered a talk on 𝑬𝒏𝒈𝒊𝒏𝒆𝒆𝒓𝒊𝒏𝒈 𝑨𝒈𝒆𝒏𝒕𝒊𝒄 𝑨𝑰 𝑺𝒚𝒔𝒕𝒆𝒎𝒔: 𝑭𝒓𝒐𝒎 𝑳𝒂𝒃 𝒕𝒐 𝑳𝒂𝒏𝒅 at the 11th edition of the TechForward Research Seminar Series, organized by the International Institute of Information Technology Hyderabad (IIITH) and HYSEA, in collaboration with ServiceNow, Hyderabad.",
+        "startTime": "2025-06-13T08:59",
+        "endTime": "2025-06-13T09:59",
+        "imageURLs": [
+            "/images/events/Karthik_labtoland-1749805209607.jpeg"
+        ],
+        "presenters": [
+            "Karthik Vaidhyanathan"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "https://karthikvaidhyanathan.com/assets/pdf/AgenticAI_TechForward_2025.pdf",
+            "video": ""
+        }
+    },
+    {
         "slug": "white-friday-spring2025",
         "name": "White Friday  #Spring2025",
         "eventURL": "",

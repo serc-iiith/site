@@ -999,21 +999,6 @@
             "bio": "Hi there! I'm Kritin, and I love computers and everything that they can do. I like architecting software, and I like machine learning, so I decided to research the intersection of the two!\n\nCurrently, I'm researching Model Driven Engineering and how we can create Low-Code or No-Code systems, to make it easier for people to achieve a specific goal without having to learn programming.\n\nFeel free to message me if you'd like to chat more about these!"
         },
         {
-            "name": "Meghana Tedla",
-            "title": "ECE",
-            "email": "meghana.tedla@students.iiit.ac.in",
-            "imageURL": "/images/people/meghana-tedla.png",
-            "slug": "meghana_tedla",
-            "social_links": {
-                "GitHub": "https://github.com/Meghanatedla"
-            },
-            "interests": [
-                "Self Adaptation for Sustainable Software Systems"
-            ],
-            "advisor": "Dr. Karthik Vaidhyanathan",
-            "bio": "My research interests include Self Adaptation for Sustainable Software Systems"
-        },
-        {
             "name": "Moida Praneeth Jain",
             "title": "CSE",
             "email": "moida.praneeth@students.iiit.ac.in",
@@ -1024,22 +1009,6 @@
             },
             "advisor": "Dr. Venkatesh Choppella",
             "bio": "Interested in low level development and systems"
-        },
-        {
-            "name": "Shrikara A",
-            "title": "CSE",
-            "email": "shrikara.a@students.iiit.ac.in",
-            "imageURL": "/images/people/shrikara-a.png",
-            "slug": "shrikara-a",
-            "social_links": {
-                "GitHub": "https://github.com/sudokara"
-            },
-            "interests": [
-                "Serverless Computing",
-                "Self Adaptive MLOps"
-            ],
-            "advisor": "Dr. Karthik Vaidhyanathan",
-            "bio": "I'm a final year BTech student at IIITH, advised by Dr Karthik Vaidhyanathan of the Software Engineering Research Center. My previous work has involved sustainable MLOps using self-adaptation, architectural component generation using LLMs and simplifying CloudOps using LLMs. I work primarily in the intersection of AI and SE/SA to bridge the gap between them and improve both. I also enjoy traditional software development and architecture, particularly serverless functions and microservices and improving their quality. Besides CS, I enjoy watching and playing basketball and reading (mostly fiction)."
         },
         {
             "name": "Vyakhya Guptha",
@@ -1309,6 +1278,39 @@
             "imageURL": "/images/people/krutam-hathi.png",
             "social_links": {},
             "advisor": "Dr. Venkatesh Choppella"
+        },
+        {
+            "name": "Shrikara A",
+            "title": "CSE",
+            "email": "shrikara.a@students.iiit.ac.in",
+            "imageURL": "/images/people/shrikara-a.png",
+            "slug": "shrikara-a",
+            "social_links": {
+                "GitHub": "https://github.com/sudokara"
+            },
+            "interests": [
+                "Serverless Computing",
+                "Self Adaptive MLOps"
+            ],
+            "advisor": "Dr. Karthik Vaidhyanathan",
+            "bio": "I'm a final year BTech student at IIITH, advised by Dr Karthik Vaidhyanathan of the Software Engineering Research Center. My previous work has involved sustainable MLOps using self-adaptation, architectural component generation using LLMs and simplifying CloudOps using LLMs. I work primarily in the intersection of AI and SE/SA to bridge the gap between them and improve both. I also enjoy traditional software development and architecture, particularly serverless functions and microservices and improving their quality. Besides CS, I enjoy watching and playing basketball and reading (mostly fiction).",
+            "education": []
+        },
+        {
+            "name": "Meghana Tedla",
+            "title": "ECE",
+            "email": "meghana.tedla@students.iiit.ac.in",
+            "imageURL": "/images/people/meghana_tedla.jpg",
+            "slug": "meghana_tedla",
+            "social_links": {
+                "GitHub": "https://github.com/Meghanatedla"
+            },
+            "interests": [
+                "Self Adaptation for Sustainable Software Systems"
+            ],
+            "advisor": "Dr. Karthik Vaidhyanathan",
+            "bio": "My research interests include Self Adaptation for Sustainable Software Systems",
+            "education": []
         }
     ],
     "Research Associates": [
@@ -1322,6 +1324,28 @@
             "interests": [],
             "education": [],
             "bio": "My current primary focus is contribute to the building of a LLM based multi-agent framework for autonomous CloudOps. My interest areas include exploring the intersection of Software Engineering and AI, particularly in areas such as  Agents in SE, LLM Agents, LLMs for Architecture Decision Records (ADRs), and NLP in SE.  I am passionate about building intelligent, scalable systems and am always eager to collaborate on innovative projects in the intersection of SE and ML. Beyond my professional work, I enjoy painting as a creative outlet and play board games, which keeps me inspired and engaged in fun ways!"
+        },
+        {
+            "name": "Payel Das",
+            "title": "Research Associate",
+            "email": "payel.das@research.iiit.ac.in",
+            "imageURL": "/images/people/payel-das.jpg",
+            "slug": "payel-das",
+            "social_links": {},
+            "interests": [],
+            "education": [],
+            "bio": "I am currently a Research Associate at the Software Engineering Research Center (SERC), IIIT Hyderabad, working under the guidance of Professor Raghu Reddy. My current research concentrates on leveraging Large Language Models for ontological analysis, requirements engineering, test case development, and also streamlining generative AI adoption across industry. Beyond my academic pursuits, I'm deeply interested in software development and continuously explore emerging technological domains. In my leisure hours, I find joy in painting and spending time with my cats."
+        },
+        {
+            "name": "Pavan Harshit Chinta",
+            "title": "Research Engineer",
+            "email": "pavan.harshit@research.iiit.ac.in",
+            "imageURL": "/images/people/pavan-harshit-chinta.jpg",
+            "slug": "pavan-harshit-chinta",
+            "social_links": {},
+            "interests": [],
+            "education": [],
+            "bio": "My primary focus is building LEAF-Cloud, an analytical framework that models and estimates the carbon footprint of cloud infrastructure using Terraform code. This project combines my interests in building full-stack systems and applying data-driven methods to solve practical software engineering challenges.\nThis work fuels my passion for the broader intersection of AI and Software Engineering. I am particularly excited about the potential of Large Language Models (LLMs) and autonomous agents to automate complex CloudOps, improve architectural decisions, and create more efficient, intelligent systems.\nI have a strong background in building a variety of applications, from high-performance AI video analysis tools to full-stack web platforms using both .NET/SQL and MERN stacks. My real passion is simply building new things, and I'm always looking for the next interesting problem to solve with technology. I'm eager to collaborate on innovative projects in this space."
         }
     ]
 }
