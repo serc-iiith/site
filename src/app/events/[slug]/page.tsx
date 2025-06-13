@@ -122,6 +122,55 @@ export default async function EventPage({ params }: { params: { slug: string } }
     // Get presenter information if available
     const presenters = event.presenters ? getPeopleBySlug(event.presenters) : [];
 
+    // Format dates for structured data
+    const startDate = new Date(event.startTime).toISOString();
+    const endDate = event.endTime ? new Date(event.endTime).toISOString() : '';
+
+    // Create JSON-LD structured data for this event
+    const eventJsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'Event',
+        name: event.name,
+        description: event.summary || `${event.name} at ${event.location}`,
+        startDate: startDate,
+        endDate: endDate || startDate,
+        location: {
+            '@type': 'Place',
+            name: event.location,
+            address: {
+                '@type': 'PostalAddress',
+                addressLocality: event.location
+            },
+            url: event.locationURL || null
+        },
+        image: event.imageURLs && event.imageURLs.length > 0 ? event.imageURLs[0] : '/images/event_fallback.png',
+        url: `https://serc.iiit.ac.in/events/${event.slug}`,
+        organizer: {
+            '@type': 'Organization',
+            name: 'Software Engineering Research Center, IIIT Hyderabad',
+            url: 'https://serc.iiit.ac.in'
+        }
+    };
+
+    // Add performers/presenters if available
+    if (presenters.length > 0) {
+        eventJsonLd.performer = presenters.map(presenter => ({
+            '@type': 'Person',
+            name: presenter.name,
+            url: `https://serc.iiit.ac.in/people/${presenter.slug}`
+        }));
+    }
+
     // Return the client component with pre-fetched data
-    return <EventDetail event={event} presenters={presenters} />;
+    return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(eventJsonLd)
+                }}
+            />
+            <EventDetail event={event} presenters={presenters} />
+        </>
+    );
 }

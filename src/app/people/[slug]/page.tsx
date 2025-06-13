@@ -82,10 +82,15 @@ export async function generateMetadata({ params }: { params: { slug: string } },
   const { person, category } = result;
   const papers = getPublicationsByAuthor(person.name);
 
+  // Create a rich description using the bio if available
+  const description = person.bio
+    ? `${person.name} is a ${person.title} at the Software Engineering Research Center. ${person.bio.substring(0, 150)}${person.bio.length > 150 ? '...' : ''}`
+    : `${person.name} is a ${person.title} at the Software Engineering Research Center.`;
+
   // Use the person's data to generate SEO metadata
   return {
     title: `${person.name} | ${person.title} | SERC`,
-    description: person.bio || `${person.name} is a ${person.title} at the Software Engineering Research Center.`,
+    description: description,
     keywords: [
       'SERC',
       'Software Engineering',
@@ -97,22 +102,23 @@ export async function generateMetadata({ params }: { params: { slug: string } },
     ],
     openGraph: {
       title: `${person.name} | ${person.title}`,
-      description: person.bio || `${person.name} is a ${person.title} at the Software Engineering Research Center.`,
+      description: description,
       url: `https://serc.iiit.ac.in/people/${person.slug}`,
       images: [
         {
-          url: person.imageURL || '/images/people/person_fallback.png',
+          url: person.imageURL || '/images/person_fallback.png',
           width: 800,
           height: 800,
           alt: person.name,
         }
       ],
+      type: 'profile',
     },
     twitter: {
       card: 'summary',
       title: `${person.name} | ${person.title}`,
-      description: person.bio || `${person.name} is a ${person.title} at the Software Engineering Research Center.`,
-      images: [person.imageURL || '/images/people/person_fallback.png'],
+      description: description,
+      images: [person.imageURL || '/images/person_fallback.png'],
     },
   }
 }
@@ -142,6 +148,64 @@ export default function PersonPage({ params }: { params: { slug: string } }) {
   const { person, category } = result;
   const publications = getPublicationsByAuthor(person.name);
 
+  // Create JSON-LD structured data for this person
+  const personJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: person.name,
+    jobTitle: person.title,
+    email: person.email,
+    description: person.bio,
+    url: `https://serc.iiit.ac.in/people/${person.slug}`,
+    image: person.imageURL || '/images/person_fallback.png',
+    affiliation: {
+      '@type': 'Organization',
+      name: 'Software Engineering Research Center, IIIT Hyderabad',
+      url: 'https://serc.iiit.ac.in'
+    },
+    memberOf: {
+      '@type': 'Organization',
+      name: 'Software Engineering Research Center, IIIT Hyderabad',
+      url: 'https://serc.iiit.ac.in'
+    }
+  };
+
+  // Add publications if present
+  if (publications.length > 0) {
+    personJsonLd.publications = publications.map(pub => ({
+      '@type': 'ScholarlyArticle',
+      name: pub.title,
+      author: pub.authors.map(author => ({ '@type': 'Person', name: author })),
+      datePublished: pub.year,
+      publisher: pub.venue,
+      url: pub.url || pub.doi
+    }));
+  }
+
+  // Add interests if present
+  if (person.interests && person.interests.length > 0) {
+    personJsonLd.knowsAbout = person.interests;
+  }
+
+  // Add education if present
+  if (person.education && person.education.length > 0) {
+    personJsonLd.alumniOf = person.education.map(edu => ({
+      '@type': 'EducationalOrganization',
+      name: edu.institution,
+      degree: edu.degree
+    }));
+  }
+
   // Return the client component with pre-fetched data
-  return <PersonProfile person={person} category={category} publications={publications} />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(personJsonLd)
+        }}
+      />
+      <PersonProfile person={person} category={category} publications={publications} />
+    </>
+  );
 }

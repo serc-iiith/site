@@ -2,7 +2,6 @@ import React, { type ReactNode } from 'react';
 import { notFound } from "next/navigation";
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 import { Calendar, Clock, ChevronLeft, Share2, Facebook, Twitter, Linkedin } from 'lucide-react';
 import { Toaster, toast } from "react-hot-toast";
 import { getFormattedDate } from 'utils/date';
@@ -31,23 +30,6 @@ const categoryColors = {
     "DevOps": "bg-primary",
     "SE Trends": "bg-green-600",
     "Open Source": "bg-indigo-600",
-};
-
-interface PageTransitionProp {
-    children: ReactNode;
-}
-
-// Components for page transitions and animations
-const PageTransition = ({ children }: PageTransitionProp) => {
-    return (
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-        >
-            {children}
-        </motion.div>
-    );
 };
 
 // Related blog posts component
@@ -166,5 +148,43 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         notFound();
     }
 
-    return <Blog blogPost={blogPost} blogData={blogData} />;
+    // Create JSON-LD structured data for this blog post
+    const blogPostJsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        headline: blogPost.title,
+        description: blogPost.excerpt,
+        image: blogPost.coverImage || '/images/blog_fallback.png',
+        datePublished: blogPost.date,
+        author: {
+            '@type': 'Person',
+            name: blogPost.author
+        },
+        publisher: {
+            '@type': 'Organization',
+            name: 'Software Engineering Research Center, IIIT Hyderabad',
+            logo: {
+                '@type': 'ImageObject',
+                url: 'https://serc.iiit.ac.in/images/logo.png'
+            }
+        },
+        mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': `https://serc.iiit.ac.in/blog/${slug}`
+        },
+        keywords: [blogPost.category, 'SERC', 'Research', 'Software Engineering'],
+        articleSection: blogPost.category
+    };
+
+    return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(blogPostJsonLd)
+                }}
+            />
+            <Blog blogPost={blogPost} blogData={blogData} />
+        </>
+    );
 }
