@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import peopleData from '../../public/data/people.json';
 import blogsData from '../../public/data/blogs.json';
 import projectsData from '../../public/data/projects.json';
-import eventsData from '../../public/data/events.json';
+import newsData from '../../public/data/news.json';
 
 export const dynamic = 'force-static';
 
@@ -30,7 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/research',
         '/projects',
         '/blog',
-        '/events',
+        '/news',
         '/collaborators',
         '/contact',
     ].map(route => ({
@@ -70,8 +70,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }));
 
     // Dynamic event pages
-    const eventPages = eventsData.map(event => ({
-        url: `${baseUrl}/events/${event.slug}`,
+    const eventPages = newsData.map(event => ({
+        url: `${baseUrl}/news/${event.slug}`,
         lastModified: safeDate(event.startTime || event.date),
         changeFrequency: 'monthly' as const,
         priority: 0.7,

@@ -26,8 +26,8 @@ interface Event {
     };
 }
 
-const EditEvents: React.FC = () => {
-    const [events, setEvents] = useState<Event[]>([]);
+const EditNews: React.FC = () => {
+    const [news, setNews] = useState<Event[]>([]);
     const [editingId, setEditingId] = useState<number | string | null>(null);
     const [searchTerm, setSearchTerm] = useState<string>('');
     const [isLoading, setIsLoading] = useState(false);
@@ -64,17 +64,17 @@ const EditEvents: React.FC = () => {
     const [isUploading, setIsUploading] = useState(false);
 
     useEffect(() => {
-        fetchEvents();
+        fetchNews();
     }, []);
 
-    const fetchEvents = async () => {
+    const fetchNews = async () => {
         try {
-            const response = await fetch('/api/events');
+            const response = await fetch('/api/news');
             const data = await response.json();
-            setEvents(data);
+            setNews(data);
         } catch (error) {
-            console.error('Error fetching events data:', error);
-            toast.error('Failed to load events data');
+            console.error('Error fetching news data:', error);
+            toast.error('Failed to load news data');
         }
     };
 
@@ -221,7 +221,7 @@ const EditEvents: React.FC = () => {
         try {
             if (editingId === 'new') {
                 // Add new event
-                const response = await fetch('/api/events', {
+                const response = await fetch('/api/news', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(formData)
@@ -234,7 +234,7 @@ const EditEvents: React.FC = () => {
                 toast.success('Event added successfully');
             } else {
                 // Update existing event
-                const response = await fetch('/api/events', {
+                const response = await fetch('/api/news', {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(formData)
@@ -248,7 +248,7 @@ const EditEvents: React.FC = () => {
             }
 
             // Refresh the data
-            await fetchEvents();
+            await fetchNews();
             cancelEditing();
         } catch (error) {
             console.error('Error saving event:', error);
@@ -280,7 +280,7 @@ const EditEvents: React.FC = () => {
         setIsLoading(true);
 
         try {
-            const response = await fetch(`/api/events?slug=${deleteModal.eventId}`, {
+            const response = await fetch(`/api/news?slug=${deleteModal.eventId}`, {
                 method: 'DELETE'
             });
 
@@ -289,7 +289,7 @@ const EditEvents: React.FC = () => {
             }
 
             toast.success('Event deleted successfully');
-            await fetchEvents();
+            await fetchNews();
         } catch (error) {
             console.error('Error deleting event:', error);
             toast.error('Failed to delete. Please try again.');
@@ -328,7 +328,7 @@ const EditEvents: React.FC = () => {
         }
     };
 
-    // Function to handle image upload for events
+    // Function to handle image upload for news
     const handleImageUpload = async (file: File) => {
         if (!file) return;
 
@@ -346,7 +346,7 @@ const EditEvents: React.FC = () => {
 
             const formDataObj = new FormData();
             formDataObj.append('file', file);
-            formDataObj.append('type', 'events');
+            formDataObj.append('type', 'news');
 
             // Only pass the slug if we have one, otherwise the API will use the original filename
             if (slug) {
@@ -380,7 +380,7 @@ const EditEvents: React.FC = () => {
         }
     };
 
-    const filteredEvents = events.filter(event =>
+    const filteredNews = news.filter(event =>
         event.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         event.detail.toLowerCase().includes(searchTerm.toLowerCase()) ||
         event.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -417,7 +417,7 @@ const EditEvents: React.FC = () => {
             />
 
             <div className="flex flex-wrap justify-between items-center mb-6">
-                <h2 className="text-xl sm:text-2xl font-bold text-[color:var(--text-color)] mb-2 sm:mb-0">Events Management</h2>
+                <h2 className="text-xl sm:text-2xl font-bold text-[color:var(--text-color)] mb-2 sm:mb-0">News Management</h2>
                 <button
                     onClick={startAdding}
                     disabled={isLoading}
@@ -766,7 +766,7 @@ const EditEvents: React.FC = () => {
                     <Search size={18} className="text-[color:var(--secondary-color)] mr-2" />
                     <input
                         type="text"
-                        placeholder="Search events..."
+                        placeholder="Search news..."
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                         className="px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)] w-full sm:w-64"
@@ -792,7 +792,7 @@ const EditEvents: React.FC = () => {
                                 </tr>
                             </thead>
                             <tbody className="bg-[color:var(--background)] divide-y divide-[color:var(--border-color)]">
-                                {filteredEvents.map((event) => (
+                                {filteredNews.map((event) => (
                                     <tr key={event.slug}>
                                         <td className="px-3 sm:px-6 py-4">
                                             <div className="flex items-center">
@@ -851,10 +851,10 @@ const EditEvents: React.FC = () => {
                                         </td>
                                     </tr>
                                 ))}
-                                {filteredEvents.length === 0 && (
+                                {filteredNews.length === 0 && (
                                     <tr>
                                         <td colSpan={4} className="px-6 py-8 text-center text-[color:var(--secondary-color)]">
-                                            {searchTerm ? 'No events found matching your search.' : 'No events found. Add your first event!'}
+                                            {searchTerm ? 'No news found matching your search.' : 'No news found. Add your first event!'}
                                         </td>
                                     </tr>
                                 )}
@@ -867,4 +867,4 @@ const EditEvents: React.FC = () => {
     );
 };
 
-export default EditEvents;
+export default EditNews;

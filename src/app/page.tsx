@@ -11,7 +11,7 @@ import researchData from "../../public/data/papers.json";
 import collabData from "../../public/data/collaborators.json";
 import peopleData from "../../public/data/people.json";
 import blogData from "../../public/data/blogs.json";
-import eventsData from "../../public/data/events.json";
+import newsData from "../../public/data/news.json";
 import { ArrowRight, BarChart3, BookMarked, Brain, Calculator, CheckCircle, Code, Fingerprint, FlaskConical, FolderGit2, Gamepad2, Glasses, Handshake, Leaf, Microscope, RefreshCw, Smartphone } from "lucide-react";
 
 const researchTopics = [
@@ -435,7 +435,7 @@ export default function Home() {
   // Add the state for recent publications
   const [recentPublications, setRecentPublications] = useState<Paper[]>([]);
   const [latestBlogs, setLatestBlogs] = useState(blogData.slice(0, 3));
-  const [topEvents, setTopEvents] = useState<Event[]>([]);
+  const [topNews, setTopNews] = useState<Event[]>([]);
   const [isMobile, setIsMobile] = useState(false);
 
   // Add a useEffect to fetch and process the papers
@@ -485,13 +485,13 @@ export default function Home() {
       }
     }
 
-    function fetchTopEvents() {
+    function fetchTopNews() {
       try {
-        const events: Event[] = eventsData;
+        const news: Event[] = newsData;
         const currentDate = new Date();
 
-        // Sort events - upcoming first (by closest date), then recent past
-        const sortedEvents = [...events].sort((a, b) => {
+        // Sort news - upcoming first (by closest date), then recent past
+        const sortedNews = [...news].sort((a, b) => {
           const dateA = new Date(a.startTime);
           const dateB = new Date(b.startTime);
 
@@ -511,17 +511,17 @@ export default function Home() {
           return dateB.getTime() - dateA.getTime();
         });
 
-        // Get the top 3 events
-        const top = sortedEvents.slice(0, 3);
-        setTopEvents(top);
+        // Get the top 3 news
+        const top = sortedNews.slice(0, 3);
+        setTopNews(top);
       } catch (error) {
-        console.error("Error fetching events:", error);
+        console.error("Error fetching news:", error);
       }
     }
 
     fetchRecentPapers();
     fetchLatestBlogs();
-    fetchTopEvents();
+    fetchTopNews();
 
     // Clean up
     return () => {
@@ -532,18 +532,18 @@ export default function Home() {
   // Create the tabs data for the mobile view
   const updatesTabs = [
     {
-      title: "Events",
+      title: "News",
       content: (
         <div className="space-y-3">
-          {topEvents.map((event) => (
+          {topNews.map((event) => (
             <EventCard key={event.id} event={event} />
           ))}
           <div className="mt-4">
             <Link
-              href="/events"
+              href="/news"
               className="text-[color:var(--primary-color)] text-sm hover:underline flex items-center"
             >
-              View all events
+              View all news
               <ArrowRight className="h-3 w-3 ml-1" />
             </Link>
           </div>
@@ -695,7 +695,7 @@ export default function Home() {
             <div className="grid grid-cols-4 gap-8">
               <CustomCountUp
                 value={researchData.length.toString()}
-                title="Research Publications"
+                title="Publications"
                 icon={<BookMarked className="text-primary" size={32} />}
                 customStyle="text-4xl font-bold text-text"
               />
@@ -748,23 +748,23 @@ export default function Home() {
             </SectionTransition>
           ) : (
             <div className="grid lg:grid-cols-3 gap-8">
-              {/* Events Section */}
+              {/* News Section */}
               <SectionTransition delay={0.1}>
                 <div>
                   <h3 className="text-2xl font-semibold mb-6 border-b border-[color:var(--border-color)] pb-2 text-[color:var(--text-color)]">
-                    Upcoming & Recent Events
+                    Upcoming & Recent News
                   </h3>
                   <div className="space-y-4">
-                    {topEvents.map((event) => (
+                    {topNews.map((event) => (
                       <EventCard key={event.id} event={event} />
                     ))}
                   </div>
                   <div className="mt-6">
                     <Link
-                      href="/events"
+                      href="/news"
                       className="text-[color:var(--primary-color)] text-md hover:underline flex items-center"
                     >
-                      View all events
+                      View all news
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-4 w-4 ml-1"

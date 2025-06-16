@@ -69,7 +69,7 @@ export default function EventDetail({ event, presenters }: EventDetailProps) {
         });
     };
 
-    // Default image for events without images
+    // Default image for news without images
     const defaultImage = '/images/event_fallback.png';
 
     // Determine if the event is in the past
@@ -98,7 +98,7 @@ export default function EventDetail({ event, presenters }: EventDetailProps) {
                 {/* Back button */}
                 <div className="mb-6">
                     <Link
-                        href="/events"
+                        href="/news"
                         className="flex items-center text-[color:var(--primary-color)] hover:text-[color:var(--info-color)] transition"
                     >
                         <svg
@@ -113,7 +113,7 @@ export default function EventDetail({ event, presenters }: EventDetailProps) {
                                 clipRule="evenodd"
                             />
                         </svg>
-                        Back to Events
+                        Back to News
                     </Link>
                 </div>
 
@@ -391,7 +391,7 @@ export default function EventDetail({ event, presenters }: EventDetailProps) {
                                         <h4 className="font-medium text-[color:var(--text-color)] mb-3">Share Event</h4>
                                         <div className="flex space-x-2">
                                             <a
-                                                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`${event.name} at ${event.location}`)}&url=${encodeURIComponent(`https://serc.iiit.ac.in/events/${event.slug}`)}`}
+                                                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`${event.name} at ${event.location}`)}&url=${encodeURIComponent(`https://serc.iiit.ac.in/news/${event.slug}`)}`}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="p-2 bg-[#1DA1F2] text-white rounded-full hover:opacity-90 transition"
@@ -402,7 +402,7 @@ export default function EventDetail({ event, presenters }: EventDetailProps) {
                                                 </svg>
                                             </a>
                                             <a
-                                                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://serc.iiit.ac.in/events/${event.slug}`)}`}
+                                                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://serc.iiit.ac.in/news/${event.slug}`)}`}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="p-2 bg-[#0A66C2] text-white rounded-full hover:opacity-90 transition"
@@ -413,7 +413,7 @@ export default function EventDetail({ event, presenters }: EventDetailProps) {
                                                 </svg>
                                             </a>
                                             <a
-                                                href={`mailto:?subject=${encodeURIComponent(`${event.name} at ${event.location}`)}&body=${encodeURIComponent(`Check out this event: ${event.name}\n\nDate: ${formatDate(event.startTime)}\nLocation: ${event.location}\n\n${event.summary}\n\nLearn more: https://serc.iiit.ac.in/events/${event.slug}`)}`}
+                                                href={`mailto:?subject=${encodeURIComponent(`${event.name} at ${event.location}`)}&body=${encodeURIComponent(`Check out this event: ${event.name}\n\nDate: ${formatDate(event.startTime)}\nLocation: ${event.location}\n\n${event.summary}\n\nLearn more: https://serc.iiit.ac.in/news/${event.slug}`)}`}
                                                 className="p-2 bg-[color:var(--text-color)] text-[color:var(--background)] rounded-full hover:opacity-90 transition"
                                                 aria-label="Share via Email"
                                             >

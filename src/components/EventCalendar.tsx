@@ -15,20 +15,20 @@ interface Event {
 }
 
 interface EventCalendarProps {
-    events: Event[];
+    news: Event[];
     onSelectDate: (date: Date) => void;
     currentMonth?: Date;
     onMonthChange?: (date: Date) => void;
 }
 
 const EventCalendar = ({
-    events,
+    news,
     onSelectDate,
     currentMonth: propCurrentMonth,
     onMonthChange
 }: EventCalendarProps) => {
     const [currentMonth, setCurrentMonth] = useState(propCurrentMonth || new Date());
-    const [hoveredEvents, setHoveredEvents] = useState<Event[]>([]);
+    const [hoveredNews, setHoveredNews] = useState<Event[]>([]);
     const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
 
     // Get the days in the current month
@@ -64,10 +64,10 @@ const EventCalendar = ({
         return date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
     };
 
-    // Get events for a specific day
-    const getEventsForDay = (day: number) => {
+    // Get news for a specific day
+    const getNewsForDay = (day: number) => {
         const dateToCheck = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), day);
-        return events.filter(event => {
+        return news.filter(event => {
             const eventDate = new Date(event.date);
             return eventDate.getDate() === day &&
                 eventDate.getMonth() === dateToCheck.getMonth() &&
@@ -86,18 +86,18 @@ const EventCalendar = ({
         e: React.MouseEvent,
         day: number
     ) => {
-        const dayEvents = getEventsForDay(day);
-        if (dayEvents.length > 0) {
-            setHoveredEvents(dayEvents);
+        const dayNews = getNewsForDay(day);
+        if (dayNews.length > 0) {
+            setHoveredNews(dayNews);
             setHoverPosition({ x: e.clientX, y: e.clientY });
         } else {
-            setHoveredEvents([]);
+            setHoveredNews([]);
         }
     };
 
     // Handle mouse leave
     const handleMouseLeave = () => {
-        setHoveredEvents([]);
+        setHoveredNews([]);
     };
 
     // Generate calendar grid
@@ -120,8 +120,8 @@ const EventCalendar = ({
 
         // Add cells for each day in the month
         for (let day = 1; day <= daysInMonth; day++) {
-            const dayEvents = getEventsForDay(day);
-            const hasEvent = dayEvents.length > 0;
+            const dayNews = getNewsForDay(day);
+            const hasEvent = dayNews.length > 0;
             const isToday = new Date().getDate() === day &&
                 new Date().getMonth() === currentMonth.getMonth() &&
                 new Date().getFullYear() === currentMonth.getFullYear();
@@ -144,9 +144,9 @@ const EventCalendar = ({
                                         ${isToday ? 'bg-[var(--primary-color)]' : 'bg-[var(--info-color)]'}`}>
                         </div>
                     )}
-                    {dayEvents.length > 1 && (
+                    {dayNews.length > 1 && (
                         <div className="absolute bottom-1 left-1 text-xs text-[var(--info-color)] font-medium">
-                            +{dayEvents.length}
+                            +{dayNews.length}
                         </div>
                     )}
                 </div>
@@ -205,16 +205,16 @@ const EventCalendar = ({
             </div>
 
             {/* Event tooltip */}
-            {hoveredEvents.length > 0 && (
+            {hoveredNews.length > 0 && (
                 <div
-                    className="fixed z-50 bg-[var(--primary-color)] text-white px-3 py-2 rounded shadow-lg pointer-events-none max-w-xs"
+                    className="fixed z-50 bg-[var(--primary-color)] text-white px-3 py-2 rounded shadow-lg pointer-news-none max-w-xs"
                     style={{
                         left: `${hoverPosition.x + 10}px`,
                         top: `${hoverPosition.y + 10}px`
                     }}
                 >
                     <div className="max-h-40 overflow-y-auto">
-                        {hoveredEvents.map((event, index) => (
+                        {hoveredNews.map((event, index) => (
                             <div key={event.id} className={index > 0 ? "mt-2 pt-2 border-t border-white/20" : ""}>
                                 <p className="font-medium text-sm">{event.title}</p>
                                 <p className="text-xs opacity-90">

@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import eventsData from "../../../../public/data/events.json";
+import newsData from "../../../../public/data/news.json";
 import peopleData from "../../../../public/data/people.json";
 import EventDetail from "./EventDetail";
 import type { Metadata } from 'next';
@@ -35,7 +35,7 @@ function createSlug(name: string): string {
 
 // Function to get event by slug
 function getEventBySlug(slug: string): Event | null {
-    const event = eventsData.find(event => event.slug === slug);
+    const event = newsData.find(event => event.slug === slug);
     return event || null;
 }
 
@@ -89,7 +89,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         openGraph: {
             title: `${event.name} | ${dateString}`,
             description: event.summary || `${event.name} at ${event.location}`,
-            url: `https://serc.iiit.ac.in/events/${event.slug}`,
+            url: `https://serc.iiit.ac.in/news/${event.slug}`,
             images: event.imageURLs && event.imageURLs.length > 0
                 ? [{ url: event.imageURLs[0], width: 800, height: 600, alt: event.name }]
                 : [{ url: '/images/event_fallback.png', width: 800, height: 600, alt: event.name }],
@@ -105,9 +105,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     }
 }
 
-// Generate static paths for all events
+// Generate static paths for all news
 export async function generateStaticParams() {
-    return eventsData.map(event => ({
+    return newsData.map(event => ({
         slug: event.slug
     }));
 }
@@ -144,7 +144,7 @@ export default async function EventPage({ params }: { params: { slug: string } }
             url: event.locationURL || null
         },
         image: event.imageURLs && event.imageURLs.length > 0 ? event.imageURLs[0] : '/images/event_fallback.png',
-        url: `https://serc.iiit.ac.in/events/${event.slug}`,
+        url: `https://serc.iiit.ac.in/news/${event.slug}`,
         organizer: {
             '@type': 'Organization',
             name: 'Software Engineering Research Center, IIIT Hyderabad',

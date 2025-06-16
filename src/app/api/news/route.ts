@@ -4,25 +4,25 @@ import path from 'path';
 
 export const dynamic = "force-static";
 
-const eventsFilePath = path.join(process.cwd(), 'public', 'data', 'events.json');
-const eventsImagesDir = path.join(process.cwd(), 'public', 'images', 'events');
+const newsFilePath = path.join(process.cwd(), 'public', 'data', 'news.json');
+const newsImagesDir = path.join(process.cwd(), 'public', 'images', 'news');
 
-// Helper function to read the events data
-function readEventsData() {
-  const fileContents = fs.readFileSync(eventsFilePath, 'utf8');
+// Helper function to read the news data
+function readNewsData() {
+  const fileContents = fs.readFileSync(newsFilePath, 'utf8');
   return JSON.parse(fileContents);
 }
 
-// Helper function to write the events data
-function writeEventsData(data: any) {
-  fs.writeFileSync(eventsFilePath, JSON.stringify(data, null, 4), 'utf8');
+// Helper function to write the news data
+function writeNewsData(data: any) {
+  fs.writeFileSync(newsFilePath, JSON.stringify(data, null, 4), 'utf8');
 }
 
 // Helper function to rename an event image file when slug changes
 async function renameImageFile(oldImageURL: string, oldSlug: string, newSlug: string): Promise<string | null> {
   try {
-    // Skip if no image or if the image isn't in the events directory
-    if (!oldImageURL || !oldImageURL.includes('/images/events/')) {
+    // Skip if no image or if the image isn't in the news directory
+    if (!oldImageURL || !oldImageURL.includes('/images/news/')) {
       return null;
     }
 
@@ -42,8 +42,8 @@ async function renameImageFile(oldImageURL: string, oldSlug: string, newSlug: st
     const timestamp = Date.now();
     const newFilename = `${newSlug}-${timestamp}${fileExt}`;
 
-    const oldFilePath = path.join(eventsImagesDir, oldFilename);
-    const newFilePath = path.join(eventsImagesDir, newFilename);
+    const oldFilePath = path.join(newsImagesDir, oldFilename);
+    const newFilePath = path.join(newsImagesDir, newFilename);
 
     // Check if old file exists
     if (!fs.existsSync(oldFilePath)) {
@@ -54,7 +54,7 @@ async function renameImageFile(oldImageURL: string, oldSlug: string, newSlug: st
     fs.renameSync(oldFilePath, newFilePath);
 
     // Return the new URL
-    return `/images/events/${newFilename}`;
+    return `/images/news/${newFilename}`;
   } catch (error) {
     console.error('Error renaming event image file:', error);
     return null;
@@ -79,14 +79,14 @@ async function renameEventImages(imageURLs: string[], oldSlug: string, newSlug: 
   return newImageURLs;
 }
 
-// GET: Fetch all events
+// GET: Fetch all news
 export async function GET() {
   try {
-    const data = readEventsData();
+    const data = readNewsData();
     return NextResponse.json(data);
   } catch (error) {
-    console.error('Error reading events data:', error);
-    return NextResponse.json({ error: 'Failed to read events data' }, { status: 500 });
+    console.error('Error reading news data:', error);
+    return NextResponse.json({ error: 'Failed to read news data' }, { status: 500 });
   }
 }
 
@@ -102,10 +102,10 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const events = readEventsData();
+    const news = readNewsData();
 
     // Check for unique slug
-    if (events.some((e: any) => e.slug === event.slug)) {
+    if (news.some((e: any) => e.slug === event.slug)) {
       return NextResponse.json(
         { error: 'An event with this slug already exists' },
         { status: 400 }
@@ -113,12 +113,12 @@ export async function POST(request: NextRequest) {
     }
 
     // Add the new event
-    events.push(event);
+    news.push(event);
 
-    // Sort events by date (newest first)
-    events.sort((a: any, b: any) => new Date(b.startTime).getTime() - new Date(a.startTime).getTime());
+    // Sort news by date (newest first)
+    news.sort((a: any, b: any) => new Date(b.startTime).getTime() - new Date(a.startTime).getTime());
 
-    writeEventsData(events);
+    writeNewsData(news);
 
     return NextResponse.json({ success: true, slug: event.slug });
   } catch (error) {
@@ -139,10 +139,10 @@ export async function PUT(request: NextRequest) {
       );
     }
 
-    const events = readEventsData();
+    const news = readNewsData();
 
     // Find the index of the event to update
-    const index = events.findIndex((e: any) => e.slug === updatedEvent.slug);
+    const index = news.findIndex((e: any) => e.slug === updatedEvent.slug);
 
     if (index === -1) {
       return NextResponse.json(
@@ -152,17 +152,17 @@ export async function PUT(request: NextRequest) {
     }
 
     // Rename event images if slug has changed
-    if (updatedEvent.slug !== events[index].slug) {
-      updatedEvent.imageURLs = await renameEventImages(events[index].imageURLs, events[index].slug, updatedEvent.slug);
+    if (updatedEvent.slug !== news[index].slug) {
+      updatedEvent.imageURLs = await renameEventImages(news[index].imageURLs, news[index].slug, updatedEvent.slug);
     }
 
     // Update the event
-    events[index] = updatedEvent;
+    news[index] = updatedEvent;
 
-    // Sort events by date (newest first)
-    events.sort((a: any, b: any) => new Date(b.startTime).getTime() - new Date(a.startTime).getTime());
+    // Sort news by date (newest first)
+    news.sort((a: any, b: any) => new Date(b.startTime).getTime() - new Date(a.startTime).getTime());
 
-    writeEventsData(events);
+    writeNewsData(news);
 
     return NextResponse.json({ success: true });
   } catch (error) {
@@ -184,19 +184,19 @@ export async function DELETE(request: NextRequest) {
       );
     }
 
-    const events = readEventsData();
+    const news = readNewsData();
 
     // Filter out the event to delete
-    const filteredEvents = events.filter((e: any) => e.slug !== slug);
+    const filteredNews = news.filter((e: any) => e.slug !== slug);
 
-    if (filteredEvents.length === events.length) {
+    if (filteredNews.length === news.length) {
       return NextResponse.json(
         { error: 'Event not found' },
         { status: 404 }
       );
     }
 
-    writeEventsData(filteredEvents);
+    writeNewsData(filteredNews);
 
     return NextResponse.json({ success: true });
   } catch (error) {

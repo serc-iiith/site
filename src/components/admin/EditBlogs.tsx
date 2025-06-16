@@ -82,7 +82,7 @@ const EditBlogs: React.FC = () => {
         'Research',
         'Education',
         'Announcements',
-        'Events'
+        'News'
     ];
 
     useEffect(() => {

@@ -56,8 +56,8 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-[color:var(--text-color)]">Email</h3>
                     <p className="text-[color:var(--secondary-color)]">
-                      <a href="mailto:serc@iiit.ac.in" className="hover:text-[color:var(--primary-color)] transition-colors">
-                        serc@iiit.ac.in
+                      <a href="mailto:serc.admin@iiit.ac.in" className="hover:text-[color:var(--primary-color)] transition-colors">
+                        serc.admin@iiit.ac.in
                       </a>
                     </p>
                   </div>

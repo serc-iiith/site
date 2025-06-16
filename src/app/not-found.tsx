@@ -73,7 +73,7 @@ export default function NotFound() {
       >
         <h3 className="text-lg font-medium mb-4" style={{ color: 'var(--text-color)' }}>You might be looking for:</h3>
         <div className="flex flex-wrap justify-center gap-3">
-          {["/projects", "/people", "/blog", "/events", "/research", "/contact"].map((path) => (
+          {["/projects", "/people", "/blog", "/news", "/research", "/contact"].map((path) => (
             <Link 
               key={path}
               href={path}

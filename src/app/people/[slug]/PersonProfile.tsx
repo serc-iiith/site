@@ -903,7 +903,7 @@ export default function PersonProfile({ person, category, publications }: Person
                         Publications Coming Soon
                       </h3>
                       <p className="text-[color:var(--secondary-color)] max-w-md">
-                        Research publications are currently in progress and will
+                        Publications are currently in progress and will
                         be available here when published.
                       </p>
                     </div>

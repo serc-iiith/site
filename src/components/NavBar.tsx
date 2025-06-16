@@ -164,7 +164,7 @@ const Navbar: React.FC = () => {
                                 onClick={closeMobileMenu}>
                                 Blog
                             </Link>
-                            <Link href="/events"
+                            <Link href="/news"
                                 className={`block px-8 py-3 hover:bg-hover text-text text-lg transition-all duration-300 ease-in-out ${isClosing ? 'opacity-0 -translate-y-2' : 'opacity-100 translate-y-0 delay-[300ms]'}`}
                                 style={{
                                     opacity: mobileMenuOpen && !isClosing ? 1 : 0,
@@ -172,7 +172,7 @@ const Navbar: React.FC = () => {
                                     transitionDelay: '300ms'
                                 }}
                                 onClick={closeMobileMenu}>
-                                Events
+                                News
                             </Link>
                             <Link href="/people"
                                 className={`block px-8 py-3 hover:bg-hover text-text text-lg transition-all duration-300 ease-in-out ${isClosing ? 'opacity-0 -translate-y-2' : 'opacity-100 translate-y-0 delay-[350ms]'}`}
@@ -294,8 +294,8 @@ const Navbar: React.FC = () => {
                         Blog
                         <span className="absolute bottom-0 left-0 h-0.5 bg-accent w-0 group-hover:w-full transition-width duration-300"></span>
                     </Link>
-                    <Link href="/events" className="group relative py-2 pl-0 font-medium text-text hover:text-accent transition-colors duration-200">
-                        Events
+                    <Link href="/news" className="group relative py-2 pl-0 font-medium text-text hover:text-accent transition-colors duration-200">
+                        News
                         <span className="absolute bottom-0 left-0 h-0.5 bg-accent w-0 group-hover:w-full transition-width duration-300"></span>
                     </Link>
                     <Link href="/people" className="group relative py-2 pl-0 font-medium text-text hover:text-accent transition-colors duration-200">

@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 
 import EditPeople from '@/components/admin/EditPeople';
-import EditEvents from '@/components/admin/EditEvents';
+import EditNews from '@/components/admin/EditNews';
 import EditProjects from '@/components/admin/EditProjects';
 import EditPapers from '@/components/admin/EditPapers';
 import EditCollaborators from '@/components/admin/EditCollaborators';
@@ -48,8 +48,8 @@ export default function AdminPage() {
     switch (activeSection) {
       case 'people':
         return <EditPeople />
-      case 'events':
-        return <EditEvents />
+      case 'news':
+        return <EditNews />
       case 'projects':
         return <EditProjects />
       case 'research':
@@ -69,7 +69,7 @@ export default function AdminPage() {
     { id: 'projects', name: 'Projects', icon: <ClipboardList size={20} /> },
     { id: 'collaborators', name: 'Collaborators', icon: <Handshake size={20} /> },
     { id: 'blog', name: 'Blog', icon: <Newspaper size={20} /> },
-    { id: 'events', name: 'Events', icon: <CalendarClock size={20} /> },
+    { id: 'news', name: 'News', icon: <CalendarClock size={20} /> },
   ];
 
   // Show toast notification when changing sections

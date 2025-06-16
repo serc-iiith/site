@@ -9,9 +9,9 @@ This is the official website for the Software Engineering Research Center (SERC)
 - SEO optimized with Next.js metadata
 - Blog system with markdown support
 - Dynamic people profiles
-- Research publications database
+- Publications database
 - Projects showcase
-- Events calendar and management
+- News calendar and management
 - Administrative interface for content management
 
 ## 📦 Tech Stack
@@ -62,8 +62,8 @@ This is the official website for the Software Engineering Research Center (SERC)
 All content is stored in JSON files in the `/public/data` directory:
 - `blogs.json`: Blog posts
 - `collaborators.json`: Industry and academic partners
-- `events.json`: Upcoming and past events
-- `papers.json`: Research publications
+- `news.json`: Upcoming and past news
+- `papers.json`: Publications
 - `people.json`: Team members
 - `projects.json`: Research projects
 
@@ -112,7 +112,7 @@ This repository contains the data schemas and content for the Software Engineeri
 }
 ```
 
-### Events Schema (`events.json`)
+### News Schema (`news.json`)
 
 ```json
 {

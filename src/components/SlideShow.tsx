@@ -150,7 +150,7 @@ const Slideshow: FC<SlideshowProps> = ({
     };
   }, [isMounted, isAutoplayEnabled]);
 
-  // Handle touch events
+  // Handle touch news
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartXRef.current = e.touches[0].clientX;
   };

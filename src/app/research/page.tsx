@@ -185,10 +185,10 @@ export default function ResearchPapers() {
           className="text-center mb-16"
         >
           <h1 className="text-5xl md:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 mb-6">
-            Research Publications
+            Publications
           </h1>
           <p className="text-xl text-secondary max-w-3xl mx-auto">
-            Browse through our collection of research publications by our faculty and students.
+            Browse through our collection of publications by our faculty and students.
           </p>
         </motion.div>
 

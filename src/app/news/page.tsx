@@ -93,7 +93,7 @@ const EventCard = ({ event, isSelected }: { event: Event, isSelected: boolean })
         });
     };
 
-    // Default image for events without images
+    // Default image for news without images
     const defaultImage = '/images/event_fallback.png';
 
     // Get first image or default
@@ -102,7 +102,7 @@ const EventCard = ({ event, isSelected }: { event: Event, isSelected: boolean })
         : defaultImage;
 
     return (
-        <Link href={`/events/${event.slug}`} className="h-full block">
+        <Link href={`/news/${event.slug}`} className="h-full block">
             <motion.div
                 ref={ref}
                 layout
@@ -158,48 +158,48 @@ const EventCard = ({ event, isSelected }: { event: Event, isSelected: boolean })
     );
 };
 
-export default function Events() {
-    const [events, setEvents] = useState<Event[]>([]);
+export default function News() {
+    const [news, setNews] = useState<Event[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
 
     // State for current viewing date
     const [currentDate, setCurrentDate] = useState<Date>(new Date());
 
-    // Load events from JSON on component mount
+    // Load news from JSON on component mount
     useEffect(() => {
-        const loadEvents = async () => {
+        const loadNews = async () => {
             try {
-                const response = await fetch('/data/events.json');
+                const response = await fetch('/data/news.json');
                 const data = await response.json();
-                setEvents(data);
+                setNews(data);
             } catch (error) {
-                console.error("Error loading events data:", error);
+                console.error("Error loading news data:", error);
             } finally {
                 setLoading(false);
             }
         };
 
-        loadEvents();
+        loadNews();
     }, []);
 
-    // Sort events by date (newest first)
-    const sortedEvents = [...events].sort((a, b) =>
+    // Sort news by date (newest first)
+    const sortedNews = [...news].sort((a, b) =>
         new Date(b.startTime).getTime() - new Date(a.startTime).getTime()
     );
 
-    // Filter events for current month/year
-    const currentEvents = sortedEvents.filter(event => {
+    // Filter news for current month/year
+    const currentNews = sortedNews.filter(event => {
         const eventDate = new Date(event.startTime);
         return eventDate.getMonth() === currentDate.getMonth() &&
             eventDate.getFullYear() === currentDate.getFullYear();
     });
 
-    // Group events into upcoming and past
-    const upcomingEvents = sortedEvents.filter(event => new Date(event.startTime) >= new Date());
-    const pastEvents = sortedEvents.filter(event => new Date(event.startTime) < new Date());
+    // Group news into upcoming and past
+    const upcomingNews = sortedNews.filter(event => new Date(event.startTime) >= new Date());
+    const pastNews = sortedNews.filter(event => new Date(event.startTime) < new Date());
 
-    // Convert events for the calendar component
-    const calendarEvents = events.map(event => ({
+    // Convert news for the calendar component
+    const calendarNews = news.map(event => ({
         slug: event.slug,
         title: event.name,
         date: event.startTime,
@@ -215,9 +215,9 @@ export default function Events() {
     const handleCalendarDateSelect = (date: Date) => {
         setCurrentDate(date);
 
-        const eventsSection = document.getElementById('current-events-section');
-        if (eventsSection) {
-            eventsSection.scrollIntoView({ behavior: 'smooth' });
+        const newsSection = document.getElementById('current-news-section');
+        if (newsSection) {
+            newsSection.scrollIntoView({ behavior: 'smooth' });
         }
     };
 
@@ -259,10 +259,10 @@ export default function Events() {
                     className="text-center mb-16"
                 >
                     <h1 className="text-5xl md:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 mb-6">
-                        Our Events
+                        Our News
                     </h1>
                     <p className="text-xl text-[color:var(--secondary-color)] max-w-3xl mx-auto">
-                        Stay up to date with our latest events, workshops, and conferences.
+                        Stay up to date with our latest news, workshops, and conferences.
                     </p>
                 </motion.div>
 
@@ -282,80 +282,10 @@ export default function Events() {
                     </section>
                 )}
 
-                {/* All Events */}
-                {!loading && (
-                    <>
-                        {/* Upcoming Events */}
-                        <section className="py-16 bg-[color:var(--foreground)]">
-                            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                                <SectionTransition delay={0.01}>
-                                    <div className="mb-8">
-                                        <h2 className="text-2xl md:text-3xl font-bold text-[color:var(--text-color)]">
-                                            Upcoming Events
-                                        </h2>
-                                        <div className="w-20 h-1 bg-[color:var(--success-color)] mt-2"></div>
-                                    </div>
-
-                                    {upcomingEvents.length > 0 ? (
-                                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                                            {upcomingEvents.map((event) => (
-                                                <div key={event.slug} className="h-full">
-                                                    <EventCard
-                                                        event={event}
-                                                        isSelected={false}
-                                                    />
-                                                </div>
-                                            ))}
-                                        </div>
-                                    ) : (
-                                        <div className="bg-[color:var(--background)] rounded-lg p-8 text-center">
-                                            <p className="text-[color:var(--secondary-color)]">
-                                                No upcoming events at this time. Check back later!
-                                            </p>
-                                        </div>
-                                    )}
-                                </SectionTransition>
-                            </div>
-                        </section>
-
-                        {/* Past Events */}
-                        <section className="py-16 bg-[color:var(--foreground)]">
-                            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                                <SectionTransition delay={0.01}>
-                                    <div className="mb-8">
-                                        <h2 className="text-2xl md:text-3xl font-bold text-[color:var(--text-color)]">
-                                            Past Events
-                                        </h2>
-                                        <div className="w-20 h-1 bg-[color:var(--tertiary-color)] mt-2"></div>
-                                    </div>
-
-                                    {pastEvents.length > 0 ? (
-                                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                                            {pastEvents.map((event) => (
-                                                <div key={event.slug} className="h-full">
-                                                    <EventCard
-                                                        event={event}
-                                                        isSelected={false}
-                                                    />
-                                                </div>
-                                            ))}
-                                        </div>
-                                    ) : (
-                                        <div className="bg-[color:var(--foreground)] rounded-lg p-8 text-center">
-                                            <p className="text-[color:var(--secondary-color)]">
-                                                No past events to display.
-                                            </p>
-                                        </div>
-                                    )}
-                                </SectionTransition>
-                            </div>
-                        </section>
-                    </>
-                )}
 
                 {/* Calendar Section */}
-                {!loading && events.length > 0 && (
-                    <section id="current-events-section" className="py-12 rounded-2xl bg-[color:var(--background)]">
+                {!loading && news.length > 0 && (
+                    <section id="current-news-section" className="py-12 rounded-2xl bg-[color:var(--background)]">
                         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                             <SectionTransition>
                                 <div className="text-center mb-8">
@@ -363,7 +293,7 @@ export default function Events() {
                                         Event Calendar
                                     </h2>
                                     <p className="text-xl text-[color:var(--tertiary-color)] mt-2">
-                                        Browse all events on our interactive calendar
+                                        Browse all news on our interactive calendar
                                     </p>
                                 </div>
 
@@ -371,7 +301,7 @@ export default function Events() {
                                     {/* Calendar Component */}
                                     <div className="md:w-1/2 lg:w-2/5 mb-8 md:mb-0">
                                         <EventCalendar
-                                            events={calendarEvents}
+                                            news={calendarNews}
                                             onSelectDate={handleCalendarDateSelect}
                                             currentMonth={currentDate}
                                             onMonthChange={handleMonthChange}
@@ -382,20 +312,20 @@ export default function Events() {
                                     <div className="md:w-1/2 lg:w-3/5">
                                         <div className="bg-[color:var(--background)] rounded-xl border border-[color:var(--border-color)] shadow-sm p-6">
                                             <h3 className="text-xl font-bold text-[color:var(--text-color)] mb-4">
-                                                Events in {currentDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+                                                News in {currentDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
                                             </h3>
 
-                                            {/* Display events for current month */}
-                                            {currentEvents.length > 0 ? (
+                                            {/* Display news for current month */}
+                                            {currentNews.length > 0 ? (
                                                 <div className="space-y-4">
-                                                    {currentEvents
+                                                    {currentNews
                                                         .sort((a, b) => new Date(a.startTime).getTime() - new Date(b.startTime).getTime())
                                                         .map(event => {
                                                             const eventDate = new Date(event.startTime);
                                                             return (
                                                                 <Link
                                                                     key={event.slug}
-                                                                    href={`/events/${event.slug}`}
+                                                                    href={`/news/${event.slug}`}
                                                                 >
                                                                     <div
                                                                         className="p-4 rounded-lg border border-[color:var(--border-color)] hover:border-[color:var(--primary-color)] transition-colors"
@@ -425,7 +355,7 @@ export default function Events() {
                                                 </div>
                                             ) : (
                                                 <p className="text-[color:var(--secondary-color)]">
-                                                    No events scheduled for this month.
+                                                    No news scheduled for this month.
                                                 </p>
                                             )}
                                         </div>
@@ -434,6 +364,79 @@ export default function Events() {
                             </SectionTransition>
                         </div>
                     </section>
+                )}
+
+                {/* All News */}
+                {!loading && (
+                    <>
+                        {/* Upcoming News */}
+                        {upcomingNews.length > 0 && (
+                        <section className="py-16 bg-[color:var(--foreground)]">
+                            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                                <SectionTransition delay={0.01}>
+                                    <div className="mb-8">
+                                        <h2 className="text-2xl md:text-3xl font-bold text-[color:var(--text-color)]">
+                                            Upcoming
+                                        </h2>
+                                        <div className="w-20 h-1 bg-[color:var(--success-color)] mt-2"></div>
+                                    </div>
+
+                                    {upcomingNews.length > 0 ? (
+                                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                            {upcomingNews.map((event) => (
+                                                <div key={event.slug} className="h-full">
+                                                    <EventCard
+                                                        event={event}
+                                                        isSelected={false}
+                                                    />
+                                                </div>
+                                            ))}
+                                        </div>
+                                    ) : (
+                                        <div className="bg-[color:var(--background)] rounded-lg p-8 text-center">
+                                            <p className="text-[color:var(--secondary-color)]">
+                                                No news at this time. Check back later!
+                                            </p>
+                                        </div>
+                                    )}
+                                </SectionTransition>
+                            </div>
+                        </section>
+                        )}
+
+                        {/* Archives */}
+                        <section className="py-16 bg-[color:var(--foreground)]">
+                            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                                <SectionTransition delay={0.01}>
+                                    <div className="mb-8">
+                                        <h2 className="text-2xl md:text-3xl font-bold text-[color:var(--text-color)]">
+                                            Archives
+                                        </h2>
+                                        <div className="w-20 h-1 bg-[color:var(--tertiary-color)] mt-2"></div>
+                                    </div>
+
+                                    {pastNews.length > 0 ? (
+                                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                            {pastNews.map((event) => (
+                                                <div key={event.slug} className="h-full">
+                                                    <EventCard
+                                                        event={event}
+                                                        isSelected={false}
+                                                    />
+                                                </div>
+                                            ))}
+                                        </div>
+                                    ) : (
+                                        <div className="bg-[color:var(--foreground)] rounded-lg p-8 text-center">
+                                            <p className="text-[color:var(--secondary-color)]">
+                                                No archives to display.
+                                            </p>
+                                        </div>
+                                    )}
+                                </SectionTransition>
+                            </div>
+                        </section>
+                    </>
                 )}
             </div>
         </div>

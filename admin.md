@@ -11,15 +11,15 @@ The admin interface is available at `/admin` when running the website locally. J
 The admin interface provides forms to edit all the website's content data, including:
 
 - **People**: Update team member information
-- **Papers**: Add, edit, or remove research publications
+- **Papers**: Add, edit, or remove publications
 - **Projects**: Manage research project details
-- **Events**: Manage upcoming and past events
+- **News**: Manage upcoming and past news
 - **Collaborators**: Update information about industry, academic, and government partners
 - **Blogs**: Create and edit blog posts
 
 ## Usage Instructions
 
-1. Navigate to the section you wish to edit (e.g., Papers, Events, etc.)
+1. Navigate to the section you wish to edit (e.g., Papers, News, etc.)
 2. To edit an existing entry, click the "Edit" button next to the item
 3. To create a new entry, click "Add New" at the top of the relevant section
 4. Fill in the form fields according to the data schema requirements

@@ -39,8 +39,8 @@ export async function POST(request: NextRequest) {
     let destFolder = '';
     if (type === 'people') {
       destFolder = path.join(process.cwd(), 'public', 'images', 'people');
-    } else if (type === 'events') {
-      destFolder = path.join(process.cwd(), 'public', 'images', 'events');
+    } else if (type === 'news') {
+      destFolder = path.join(process.cwd(), 'public', 'images', 'news');
     } else if (type === 'projects') {
       destFolder = path.join(process.cwd(), 'public', 'images', 'projects');
     } else if (type === 'blogs') {
