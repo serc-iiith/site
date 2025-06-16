@@ -2,7 +2,7 @@
   {
     "id": "bhashini",
     "name": "Bhashini",
-    "logo": "/images/bhashiniLogo.png",
+    "logo": "/images/collaborators/bhashiniLogo.png",
     "website": "https://bhashini.gov.in",
     "description": "National language translation mission",
     "category": "government"
@@ -10,7 +10,7 @@
   {
     "id": "cat",
     "name": "CA Technologies",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/1/11/CA_Technologies_brand.svg",
+    "logo": "/images/collaborators/ca.svg",
     "website": "http://ca.com",
     "description": "DevOps and security projects",
     "category": "industry"
@@ -26,7 +26,7 @@
   {
     "id": "deepsee",
     "name": "DEEP-SE",
-    "logo": "/images/deepSeLogo.png",
+    "logo": "/images/collaborators/deepSeLogo.png",
     "website": "https://www.deepse.deib.polimi.it/",
     "description": "DEpendable Evolvable Pervasive Software Engineering (DEEP-SE) group",
     "category": "academic"
@@ -50,7 +50,7 @@
   {
     "id": "hitachi",
     "name": "Hitachi",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Logo_HITACHI_%28Japan%29.png",
+    "logo": "/images/collaborators/hitachi.svg",
     "website": "https://www.hitachi.com",
     "description": "IoT and industrial systems",
     "category": "industry"
@@ -74,7 +74,7 @@
   {
     "id": "meta",
     "name": "Meta",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/0/05/Meta_Platforms_Inc._logo_%28cropped%29.svg",
+    "logo": "/images/collaborators/meta.svg",
     "website": "https://about.meta.com",
     "description": "AR/VR and social computing",
     "category": "industry"
@@ -90,7 +90,7 @@
   {
     "id": "middlesex",
     "name": "Middlesex University London",
-    "logo": "/images/middlesexLogo.png",
+    "logo": "/images/collaborators/middlesexLogo.png",
     "website": "https://www.mdx.ac.uk",
     "description": "Academic research collaboration",
     "category": "academic"
@@ -98,7 +98,7 @@
   {
     "id": "moe",
     "name": "Ministry of Education",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Ministry_of_Education_India.svg",
+    "logo": "/images/collaborators/moe.svg",
     "website": "https://www.education.gov.in",
     "description": "Educational initiatives and funding",
     "category": "government"
@@ -106,7 +106,7 @@
   {
     "id": "meity",
     "name": "Ministry of Electronics & IT",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Ministry_of_Electronics_and_Information_Technology.svg",
+    "logo": "/images/collaborators/moeit.svg",
     "website": "https://www.meity.gov.in",
     "description": "Digital India initiatives",
     "category": "government"
@@ -114,7 +114,7 @@
   {
     "id": "mst",
     "name": "Ministry of Science and Technology",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Ministry_of_Science_and_Technology_India.svg",
+    "logo": "/images/collaborators/most.svg",
     "website": "https://dst.gov.in",
     "description": "Research grants and policy support",
     "category": "government"
@@ -122,7 +122,7 @@
   {
     "id": "montycloud",
     "name": "Monty Cloud",
-    "logo": "/images/mcLogo.webp",
+    "logo": "/images/collaborators/montycloud.svg",
     "website": "http://montycloud.com",
     "description": "Cloud automation solutions",
     "category": "industry"
@@ -130,7 +130,7 @@
   {
     "id": "qualcomm",
     "name": "Qualcomm",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Qualcomm-Logo.svg",
+    "logo": "/images/collaborators/qualcomm.svg",
     "website": "https://www.qualcomm.com",
     "description": "Mobile technology research",
     "category": "industry"
@@ -138,7 +138,7 @@
   {
     "id": "s2-research-group",
     "name": "S2 Research Group",
-    "logo": "/images/S2Logo.png",
+    "logo": "/images/collaborators/S2Logo.png",
     "website": "https://s2group.cs.vu.nl",
     "description": "Software and Sustainability Research Group at Vrije Universiteit Amsterdam",
     "category": "academic"
@@ -146,7 +146,7 @@
   {
     "id": "siemens",
     "name": "Siemens",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Siemens-logo.svg",
+    "logo": "/images/collaborators/siemens.svg",
     "website": "https://www.siemens.com",
     "description": "Industrial automation research",
     "category": "industry"
@@ -154,7 +154,7 @@
   {
     "id": "scrc",
     "name": "Smart City Research Center",
-    "logo": "/images/scrcLogo.png",
+    "logo": "/images/collaborators/scrcLogo.png",
     "website": "https://smartcity.iiit.ac.in",
     "description": "Urban technology innovation",
     "category": "academic"
@@ -162,7 +162,7 @@
   {
     "id": "tcs",
     "name": "Tata Consultancy Services",
-    "logo": "/images/collaborators/tcs.png",
+    "logo": "/images/collaborators/tcs.svg",
     "website": "https://www.tcs.com",
     "description": "Enterprise software innovation",
     "category": "industry"
