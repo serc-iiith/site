@@ -1,5 +1,26 @@
 [
     {
+        "slug": "summer-interns-in-serc",
+        "name": "Summer Interns in SERC",
+        "eventURL": "",
+        "location": "SERC",
+        "locationURL": "Prof. C R Rao Road, Gachibowli, Hyderabad, Telangana, 500032, India",
+        "summary": "",
+        "detail": "Software Engineering Research Center got an amazing bunch of interns joining this summer, each working under the guidance of Prof Y. Raghu Reddy, Dr. Raman Saxena, PhD, Prof Karthik Vaidhyanathan, Prof Abhishek Singh, and are already bringing fresh energy and curiosity into the lab.",
+        "startTime": "2025-06-01T09:00",
+        "endTime": "",
+        "imageURLs": [
+            "/images/events/summer-interns-in-serc.jpeg"
+        ],
+        "presenters": [],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
         "slug": "techforward-research-seminar",
         "name": "TechForward Research Seminar",
         "eventURL": "https://outreach.iiit.ac.in/techforward/",
@@ -7,8 +28,8 @@
         "locationURL": "1st Floor, TGIIC- IALA Building, beside Madhapur Fire Station, Phase 2, HITEC City, Hyderabad, Telangana 500081, India",
         "summary": "Talk on  𝑬𝒏𝒈𝒊𝒏𝒆𝒆𝒓𝒊𝒏𝒈 𝑨𝒈𝒆𝒏𝒕𝒊𝒄 𝑨𝑰 𝑺𝒚𝒔𝒕𝒆𝒎𝒔: 𝑭𝒓𝒐𝒎 𝑳𝒂𝒃 𝒕𝒐 𝑳𝒂𝒏𝒅 by Prof Karthik Vaidhyanathan",
         "detail": "Dr. Karthik Vaidhyanathan delivered a talk on 𝑬𝒏𝒈𝒊𝒏𝒆𝒆𝒓𝒊𝒏𝒈 𝑨𝒈𝒆𝒏𝒕𝒊𝒄 𝑨𝑰 𝑺𝒚𝒔𝒕𝒆𝒎𝒔: 𝑭𝒓𝒐𝒎 𝑳𝒂𝒃 𝒕𝒐 𝑳𝒂𝒏𝒅 at the 11th edition of the TechForward Research Seminar Series, organized by the International Institute of Information Technology Hyderabad (IIITH) and HYSEA, in collaboration with ServiceNow, Hyderabad.",
-        "startTime": "2025-06-13T08:59",
-        "endTime": "2025-06-13T09:59",
+        "startTime": "2025-05-30T09:00",
+        "endTime": "2025-05-30T14:00",
         "imageURLs": [
             "/images/events/Karthik_labtoland-1749805209607.jpeg"
         ],
