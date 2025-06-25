@@ -9,9 +9,10 @@ interface AnimatedCounterProps {
     title: string;
     icon: React.ReactNode;
     customStyle?: string; // Make customStyle optional with a proper type
+    postfix?: string; // Optional postfix for the counter
 }
 
-const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ value, title, icon, customStyle }) => {
+const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ value, title, icon, customStyle, postfix }) => {
     const [count, setCount] = useState<number>(0);
     const ref = useRef<HTMLDivElement>(null);
     const inView = useInView(ref, { once: true });
@@ -60,7 +61,7 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ value, title, icon, c
         >
             <div className="text-4xl text-primary mb-2">{icon}</div>
             <div className={`text-4xl font-bold ${customStyle || 'text-text'}`}>
-                {count}
+                {count}{postfix && <span>{postfix}</span>}
             </div>
             <p className="text-gray-500 text-center mt-1">{title}</p>
         </motion.div>

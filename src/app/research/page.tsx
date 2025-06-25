@@ -265,9 +265,21 @@ export default function ResearchPapers() {
               className="bg-[var(--background)] p-8 rounded-xl shadow-xl hover:shadow-2xl text-center group hover:-translate-y-1 transform transition-all duration-300"
             >
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-green-200 transition-colors duration-300">
-                <Calendar className="w-8 h-8 text-green-600" />
+              <Calendar className="w-8 h-8 text-green-600" />
               </div>
-              <CustomCountUp value={(years.length > 0 ? parseInt(years[0]) - parseInt(years[years.length - 1]) + 1 : 0).toString()} title="YEARS OF RESEARCH" icon="" customStyle="text-5xl font-bold text-green-600 mb-3" />
+              <CustomCountUp
+              value={
+                years.length > 0 &&
+                !isNaN(parseInt(years[0])) &&
+                !isNaN(parseInt(years[years.length - 1]))
+                ? (Math.max(parseInt(years[0]), 2013) - Math.max(Math.min(...years.map(y => parseInt(y))), 2013)).toString()
+                : "0"
+              }
+                title="YEARS OF RESEARCH EXCELLENCE"
+              postfix="+"
+              icon=""
+              customStyle="text-5xl font-bold text-green-600 mb-3"
+              />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
