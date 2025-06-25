@@ -897,22 +897,6 @@
     ],
     "Honors": [
         {
-            "name": "Arya Marda",
-            "title": "ECE",
-            "email": "arya.marda@students.iiit.ac.in",
-            "imageURL": "/images/people/arya-marda.png",
-            "slug": "arya_marda",
-            "social_links": {
-                "GitHub": "https://github.com/Arya-Ayra"
-            },
-            "interests": [
-                "Software Engineering",
-                "Self-Adaptation"
-            ],
-            "advisor": "Dr. Karthik Vaidhyanathan",
-            "bio": "I am a B. Tech. Student at IIIT Hyderabad. I am also pursuing my honors degree in Software Engineering Research Center(SERC), IIIT Hyd, under the supervision of Dr. Karthik Vaidhyanathan. As part of the Research/ Honors program, I am working on self-adaptive approaches, especially toward ML-based systems. I have also been doing an Internship project on developing an observability platform for enhancing the sustainability of ML-enabled systems projects. My previous works include: Paper accepted at A* conference: ASE 2023 NIER track, it focuses on \" Self-Adaptive Machine Learning-Enabled Systems Through QoS-Aware Model Switching\""
-        },
-        {
             "name": "Agrim Mittal",
             "title": "CSE",
             "email": "agrim.mittal@students.iiit.ac.in",
@@ -943,17 +927,6 @@
             ],
             "advisor": "Dr. Raman Saxena",
             "bio": "As a computer science engineering student, I am dedicated to acquiring a strong foundation in programming languages, algorithms, and software development methodologies. Eager to explore various domains within the field, I am actively engaged in coursework, projects, and self-directed learning to enhance my skills. I am particularly interested in Full Stack development with design thinking actively applied."
-        },
-        {
-            "name": "Divij D",
-            "title": "CSE",
-            "email": "divij.d@students.iiit.ac.in",
-            "imageURL": "/images/people/divij.png",
-            "slug": "divij",
-            "social_links": {
-                "GitHub": "https://github.com/divijd012"
-            },
-            "advisor": "Dr. Y. Raghu Reddy"
         },
         {
             "name": "Divyansh Pandey",
@@ -1011,7 +984,7 @@
             "bio": "Interested in low level development and systems"
         },
         {
-            "name": "Vyakhya Guptha",
+            "name": "Vyakhya Gupta",
             "title": "CSE",
             "email": "vyakhya.gupta@students.iiit.ac.in",
             "imageURL": "/images/people/vyakhya-guptha.png",
@@ -1026,7 +999,8 @@
                 "Reading novels"
             ],
             "advisor": "Dr. Karthik Vaidhyanathan",
-            "bio": "I am Vyakhya Gupta, a CSE student pursuing honors with Professor Karthik Vaidyanathan. My research focuses on certifying ML-enabled systems for safety-critical applications, ensuring their reliability and compliance with industry standards. I am also exploring using Gen AI for self adaption. Accepted works include: https://arxiv.org/abs/2501."
+            "bio": "I am Vyakhya Gupta, a CSE student pursuing honors with Professor Karthik Vaidyanathan. My research focuses on certifying ML-enabled systems for safety-critical applications, ensuring their reliability and compliance with industry standards. I am also exploring using Gen AI for self adaption. Accepted works include: https://arxiv.org/abs/2501.",
+            "education": []
         },
         {
             "name": "Ananya Vishal Halgatti",
@@ -1310,6 +1284,37 @@
             ],
             "advisor": "Dr. Karthik Vaidhyanathan",
             "bio": "My research interests include Self Adaptation for Sustainable Software Systems",
+            "education": []
+        },
+        {
+            "name": "Divij D",
+            "title": "CSE",
+            "email": "divij.d@students.iiit.ac.in",
+            "imageURL": "/images/people/divij.png",
+            "slug": "divij",
+            "social_links": {
+                "GitHub": "https://github.com/divijd012"
+            },
+            "advisor": "Dr. Y. Raghu Reddy",
+            "interests": [],
+            "education": [],
+            "bio": ""
+        },
+        {
+            "name": "Arya Marda",
+            "title": "ECE",
+            "email": "arya.marda@students.iiit.ac.in",
+            "imageURL": "/images/people/arya-marda.png",
+            "slug": "arya_marda",
+            "social_links": {
+                "GitHub": "https://github.com/Arya-Ayra"
+            },
+            "interests": [
+                "Software Engineering",
+                "Self-Adaptation"
+            ],
+            "advisor": "Dr. Karthik Vaidhyanathan",
+            "bio": "I am a B. Tech. Student at IIIT Hyderabad. I am also pursuing my honors degree in Software Engineering Research Center(SERC), IIIT Hyd, under the supervision of Dr. Karthik Vaidhyanathan. As part of the Research/ Honors program, I am working on self-adaptive approaches, especially toward ML-based systems. I have also been doing an Internship project on developing an observability platform for enhancing the sustainability of ML-enabled systems projects. My previous works include: Paper accepted at A* conference: ASE 2023 NIER track, it focuses on \" Self-Adaptive Machine Learning-Enabled Systems Through QoS-Aware Model Switching\"",
             "education": []
         }
     ],

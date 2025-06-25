@@ -144,7 +144,7 @@ export default function PeoplePage() {
   };
 
   const renderPersonCard = (person: Person, category?: string) => {
-    const imagePath = person.imageURL;
+    const imagePath = person.imageURL || '/images/person_fallback.png';
 
     // Helper function to determine priority for sorting social links
     const getLinkPriority = (platform: string): number => {

@@ -10,7 +10,7 @@
         "startTime": "2025-06-01T09:00",
         "endTime": "",
         "imageURLs": [
-            "/images/news/summer-interns-in-serc.jpeg"
+            "/images/events/summer-interns-in-serc.jpeg"
         ],
         "presenters": [],
         "otherURLs": {
@@ -31,7 +31,7 @@
         "startTime": "2025-05-30T09:00",
         "endTime": "2025-05-30T14:00",
         "imageURLs": [
-            "/images/news/Karthik_labtoland-1749805209607.jpeg"
+            "/images/events/Karthik_labtoland-1749805209607.jpeg"
         ],
         "presenters": [
             "Karthik Vaidhyanathan"
@@ -54,9 +54,32 @@
         "startTime": "2025-04-19T10:00",
         "endTime": "2025-04-19T16:00",
         "imageURLs": [
-            "/images/news/white-friday-spring2025.jpg"
+            "/images/events/white-friday-spring2025.jpg"
         ],
         "presenters": [],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
+        "slug": "welcoming-new-research-engineer-to-serc",
+        "name": "Welcoming New Research Engineer to SERC",
+        "eventURL": "",
+        "location": "SERC",
+        "locationURL": "Prof. C R Rao Road, Gachibowli, Hyderabad, Telangana, 500032, India",
+        "summary": "We’re thrilled to welcome two amazing new member to our team at Software Engineering Research Center, IIIT Hyderabad.",
+        "detail": "Pavan Ch has joined us as a Research Engineer and is working with Dr. Karthik Vaidhyanathan. He’s currently working on LEAF, a framework that estimates the carbon footprint of cloud infrastructure by analyzing Terraform code. He’s deeply interested in the intersection of AI, LLMs, and cloud systems, especially how they can help solve real software engineering challenges. \n",
+        "startTime": "2025-04-16T09:30",
+        "endTime": "",
+        "imageURLs": [
+            "/images/events/welcoming-new-research-engineer-to-serc.jpg"
+        ],
+        "presenters": [
+            "Pavan Harshit"
+        ],
         "otherURLs": {
             "code": "",
             "pdf": "",
@@ -75,10 +98,33 @@
         "startTime": "2025-04-12T15:00",
         "endTime": "2025-04-12T16:00",
         "imageURLs": [
-            "/images/news/co-host-of-ai-days-round-table.jpg"
+            "/images/events/co-host-of-ai-days-round-table.jpg"
         ],
         "presenters": [
             "Raghu Reddy"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
+        "slug": "welcoming-new-professor-to-serc",
+        "name": "Welcoming New Professor to SERC",
+        "eventURL": "",
+        "location": "SERC",
+        "locationURL": "Prof. C R Rao Road, Gachibowli, Hyderabad, Telangana, 500032, India",
+        "summary": "We’re thrilled to welcome new Professor to Software Engineering Research Center, IIIT Hyderabad.",
+        "detail": "We are delighted to welcome Dr. Abhishek K. R. Singh to SERC!\nThe Software Engineering Research Center (SERC) warmly welcomes Dr. Abhishek K. R. Singh as our newest faculty member. We are thrilled to have him join our team and look forward to the expertise, energy, and insights he brings. Here's to new beginnings and meaningful collaborations ahead!",
+        "startTime": "2025-03-27T12:00",
+        "endTime": "",
+        "imageURLs": [
+            "/images/events/welcoming-new-professor-to-serc.jpg"
+        ],
+        "presenters": [
+            "Abhishek Singh"
         ],
         "otherURLs": {
             "code": "",
@@ -116,7 +162,9 @@
         "detail": "On National Science Day, Prof.Raghu Reddy delivered a keynote on AI and Systems Architecture at Electronics Corporation of India Limited (ECIL), Hyderabad campus. The talk was attended by senior leaders, scientists, and engineers from the organization.Discussions revolved around the role of AI in critical systems and its potential applications.",
         "startTime": "2025-02-28T14:00:00+15:00",
         "endTime": "",
-        "imageURLs": [],
+        "imageURLs": [
+            "/images/events/national-science-day.jpeg"
+        ],
         "presenters": [
             "raghu"
         ],
@@ -137,7 +185,9 @@
         "detail": "Prof. Karthik Vaidhyanathan recently delivered an invited talk at the 4th Edition of the EDISS Master's Programme Winter School 2025 in L'Aquila, Italy. His talk focused on the intersection of Generative AI and Software Engineering, highlighting key research developments in the field. The event also featured presentations by EDISS alumni, who shared practical insights into the world of data-intensive intelligent systems, offering valuable perspectives on real-world applications and industry challenges.",
         "startTime": "2025-02-24T14:00:00+15:00",
         "endTime": "2025-02-24T15:00:00+15:00",
-        "imageURLs": [],
+        "imageURLs": [
+            "/images/events/ediss-winter-school-2025.jpeg"
+        ],
         "presenters": [
             "karthik"
         ],
@@ -172,6 +222,29 @@
         }
     },
     {
+        "slug": "welcoming-new-research-associate-to-serc",
+        "name": "Welcoming New Research Associate to SERC",
+        "eventURL": "",
+        "location": "SERC",
+        "locationURL": "Prof. C R Rao Road, Gachibowli, Hyderabad, Telangana, 500032, India",
+        "summary": "We’re thrilled to welcome two amazing new member to our team at Software Engineering Research Center, IIIT Hyderabad.",
+        "detail": "Payel Das joins as a Research Associate and is working with Dr .Y. Raghu Reddy. Her focus is on using LLMs for everything from ontological analysis and requirements engineering to test case generation. She’s also exploring how generative AI can be effectively adopted in real-world software development. Alongside her research, she’s passionate about coding and stays curious about where tech is heading next.",
+        "startTime": "2025-02-13T10:00",
+        "endTime": "",
+        "imageURLs": [
+            "/images/events/welcoming-new-research-associate-to-serc.jpg"
+        ],
+        "presenters": [
+            "Payel Das"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
         "slug": "paper-accepted-at-icsoc-2024",
         "name": "Paper Accepted at ICSOC 2024",
         "eventURL": "",
@@ -181,7 +254,9 @@
         "detail": "POSEIDON is a new framework that combines Deep Reinforcement Learning (Deep RL) with traditional optimization techniques to improve how we manage these networks. While still in the early stages, POSEIDON offers a fresh approach to handling some of the key issues facing MEC networks today. This groundbreaking work was presented by our student, Prakhar Jain, at ICSOC 2024 in Tunisia. This work, authored by Prakhar Jain, Prakhar Singhal, Divyansh Pandey, Giovanni Ennio Quattrocchi, and Karthik Vaidhyanathan,showcased the research to the international audience, highlighting how POSEIDON's AI-driven approach can transform network optimization of function placement in edge networks. His presentation received great interest from researchers and industry professionals, reflecting the growing importance of intelligent solutions in edge computing.",
         "startTime": "2024-12-03T09:30:00+05:30",
         "endTime": "2024-12-06T18:00:00+05:30",
-        "imageURLs": [],
+        "imageURLs": [
+            "/images/events/paper-accepted-at-icsoc-2024.jpg"
+        ],
         "presenters": [
             "prakhar_jain"
         ],
@@ -202,7 +277,9 @@
         "detail": "Acharya Devo Bhava. Software Engineering Research Center marked Teachers Day with a heartfelt celebration honoring its distinguished faculty - Professors Raghu Reddy, Karthik Vaidhyanathan, Venkatesh Choppella, and Raman Saxena. Students expressed their gratitude through thoughtful tributes, sharing personal stories of mentorship and inspiration. The event showcased the profound impact these professors have on shaping both academic journeys and future innovations, highlighting the vital role educators play in the lives of students. It was a day filled with appreciation and reflection on the transformative power of teaching.",
         "startTime": "2024-09-05T15:30:00+05:30",
         "endTime": "",
-        "imageURLs": [],
+        "imageURLs": [
+            "/images/events/teachers-day-2024.jpg"
+        ],
         "presenters": [
             "raghu",
             "karthik",
@@ -226,7 +303,9 @@
         "detail": "The International Conference on Software Architecture (ICSA) is the premier venue for practitioners and researchers interested in software architecture, in component-based software engineering and in quality aspects of software and how these relate to the design of software architectures. ICSA has a strong tradition as a working conference (previously named Working International Conference on Software Architecture, WICSA), where researchers meet practitioners and software architects can explain the problems they face in their day-to-day work and try to influence the future of the field.",
         "startTime": "2024-06-04T09:30:00+05:30",
         "endTime": "2024-06-08T18:00:00+05:30",
-        "imageURLs": [],
+        "imageURLs": [
+            "/images/events/icsa-2024.jpg"
+        ],
         "presenters": [],
         "otherURLs": {
             "code": "",
