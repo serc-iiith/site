@@ -169,5 +169,14 @@
     "image": "",
     "category": "medical",
     "demoLink": "https://www.youtube.com/watch?v=NlqTsSvGoLY"
+  },
+  {
+    "id": "greensam",
+    "title": "GreenSAM",
+    "description": "The goal of the project is to develop approaches, frameworks and tools for greening software deployments. The project is in collaboration with Lloyds Technology Center",
+    "category": "software-engineering",
+    "image": "/images/projects/greensam.webp",
+    "collaborators": [],
+    "links": []
   }
 ]
