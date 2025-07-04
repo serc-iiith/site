@@ -6,7 +6,7 @@
     "collaborators": [
       {
         "name": "Monty Cloud",
-        "logo": "/images/mcLogo.webp",
+        "logo": "/images/collaborators/montycloud.svg",
         "url": "http://montycloud.com"
       }
     ],
@@ -176,7 +176,13 @@
     "description": "The goal of the project is to develop approaches, frameworks and tools for greening software deployments. The project is in collaboration with Lloyds Technology Center",
     "category": "software-engineering",
     "image": "/images/projects/greensam.webp",
-    "collaborators": [],
+    "collaborators": [
+      {
+        "name": "Lloyds Technology Center",
+        "logo": "/images/collaborators/lloyds.png",
+        "url": "https://lloydstechnologycentre.com/"
+      }
+    ],
     "links": []
   }
 ]
