@@ -1,28 +1,5 @@
 [
     {
-        "slug": "student-defending-thesis",
-        "name": "Student Defending Thesis!",
-        "eventURL": "",
-        "location": "KRB",
-        "locationURL": "Prof. C R Rao Road, Gachibowli, Hyderabad, Telangana, 500032, India",
-        "summary": "Masters student Puru Ojha has successfully defended his thesis titled \"Beyond the walls: Designing and Evaluating the impact of overlapping Environments in Virtual Reality\".",
-        "detail": "We are happy to share that Prof Raghu Reddy Masters student Puru Ojha has successfully defended his thesis titled \"Beyond the walls: Designing and Evaluating the impact of overlapping Environments in Virtual Reality\".\n\nAs part of his thesis Puru proposed and developed a framework for overlapping environments and empirically validated the framework. The work results in a couple of publications:\n\n* ACMGVR: Architecturally Consistent Mazes for Games in Virtual Reality\n* The POMS Effect: Measuring the impact of overlapping architectures on User Engagement in Virtual Reality",
-        "startTime": "2025-06-27T14:30",
-        "endTime": "",
-        "imageURLs": [
-            "/images/news/student-defending-thesis.jpg"
-        ],
-        "presenters": [
-            "puru ojha"
-        ],
-        "otherURLs": {
-            "code": "",
-            "pdf": "",
-            "slides": "",
-            "video": ""
-        }
-    },
-    {
         "slug": "vnrvjiet-full-day-workshop-with-serc-at-international-institute-of-information-technology-hyderabad-iiith",
         "name": "VNRVJIET full-day workshop with SERC at International Institute of Information Technology Hyderabad (IIITH)",
         "eventURL": "",
@@ -282,6 +259,29 @@
         ],
         "presenters": [
             "Payel Das"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
+        "slug": "student-defending-thesis",
+        "name": "Student Defending Thesis!",
+        "eventURL": "",
+        "location": "KRB",
+        "locationURL": "Prof. C R Rao Road, Gachibowli, Hyderabad, Telangana, 500032, India",
+        "summary": "Masters student Puru Ojha has successfully defended his thesis titled \"Beyond the walls: Designing and Evaluating the impact of overlapping Environments in Virtual Reality\".",
+        "detail": "We are happy to share that Prof Raghu Reddy Masters student Puru Ojha has successfully defended his thesis titled \"Beyond the walls: Designing and Evaluating the impact of overlapping Environments in Virtual Reality\".\n\nAs part of his thesis Puru proposed and developed a framework for overlapping environments and empirically validated the framework. The work results in a couple of publications:\n\n* ACMGVR: Architecturally Consistent Mazes for Games in Virtual Reality\n* The POMS Effect: Measuring the impact of overlapping architectures on User Engagement in Virtual Reality",
+        "startTime": "2025-02-06T14:30",
+        "endTime": "",
+        "imageURLs": [
+            "/images/news/student-defending-thesis.jpg"
+        ],
+        "presenters": [
+            "puru ojha"
         ],
         "otherURLs": {
             "code": "",
