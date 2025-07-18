@@ -1,5 +1,51 @@
 [
     {
+        "slug": "the-24th-convocation-of-iiit-hyderabad",
+        "name": "The 24th Convocation of IIIT Hyderabad",
+        "eventURL": "",
+        "location": "Global Peace Auditorium, Brahmakumaris Shanti Sarovar",
+        "locationURL": "Gachibowli, Hyderabad.",
+        "summary": "SERC Students graduation in 24th Convocation of IIIT Hyderabad",
+        "detail": "The 24th Convocation of IIIT Hyderabad was held on Saturday, 12th July 2025 at the Global Peace Auditorium, Brahmakumaris Shanti Sarovar, Gachibowli, Hyderabad. We are happy to share that 7 students from our SERC graduated on this special day.",
+        "startTime": "2025-07-12T14:00",
+        "endTime": "",
+        "imageURLs": [
+            "/images/news/the-24th-convocation-of-iiit-hyderabad.jpg"
+        ],
+        "presenters": [],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
+        "slug": "seri-2025",
+        "name": "SERI 2025",
+        "eventURL": "",
+        "location": "NIT Warangal",
+        "locationURL": "National Institute of Technology, Warangal - 506004, TS, INDIA",
+        "summary": "SERC students presented their work in the occasion of SERI 2025 in NIT Warangal.",
+        "detail": "Few of our Students Presented their work in The Software Engineering Research in India (SERI) - with the aim of bringing together faculty, students, industrial researchers, and practitioners working in software engineering, to present and discuss advances in their areas of interests.",
+        "startTime": "2025-07-11T10:00",
+        "endTime": "2025-07-12T17:00",
+        "imageURLs": [
+            "/images/news/seri-2025.jpg",
+            "/images/news/seri-2025.jpg",
+            "/images/news/seri-2025.jpg",
+            "/images/news/seri-2025.jpg",
+            "/images/news/seri-2025.jpg"
+        ],
+        "presenters": [],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
         "slug": "vnrvjiet-full-day-workshop-with-serc-at-international-institute-of-information-technology-hyderabad-iiith",
         "name": "VNRVJIET full-day workshop with SERC at International Institute of Information Technology Hyderabad (IIITH)",
         "eventURL": "",
