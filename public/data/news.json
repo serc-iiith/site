@@ -1,5 +1,28 @@
 [
     {
+        "slug": "talk-delivered-by-prof-karthik-vaidhyanathan",
+        "name": "Talk Delivered by Prof Karthik Vaidhyanathan.",
+        "eventURL": "",
+        "location": "Bengaluru",
+        "locationURL": "Sherton grand, Whitefield, Bengaluru",
+        "summary": "Prof Karthik Vaidhyanathan Delivered talk in Nasscom.ai",
+        "detail": "A session by Dr Karthik Vaidhyanathan is given on 𝐄𝐧𝐠𝐢𝐧𝐞𝐞𝐫𝐢𝐧𝐠 𝐀𝐠𝐞𝐧𝐭𝐢𝐜 𝐀𝐈 – 𝐅𝐫𝐨𝐦 𝐂𝐨𝐧𝐜𝐞𝐩𝐭𝐬 𝐭𝐨 𝐏𝐫𝐚𝐜𝐭𝐢𝐜𝐞 using the open-source MOYA framework.\n",
+        "startTime": "2025-08-08T12:00",
+        "endTime": "",
+        "imageURLs": [
+            "/images/news/talk-delivered-by-prof-karthik-vaidhyanathan.jpeg"
+        ],
+        "presenters": [
+            "karthik Vaidhyanathan"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
         "slug": "the-24th-convocation-of-iiit-hyderabad",
         "name": "The 24th Convocation of IIIT Hyderabad",
         "eventURL": "",
