@@ -23,6 +23,33 @@
         }
     },
     {
+        "slug": "students-of-serc-have-secured-placements-in-top-companies",
+        "name": "Students of SERC have secured placements in top companies.",
+        "eventURL": "",
+        "location": "SERC,IIITH",
+        "locationURL": "Prof. C R Rao Road, Gachibowli, Hyderabad, Telangana, 500032, India",
+        "summary": "Students of Software Engineering Research Center, IIITH are placed in leading Companies like Microsoft , Google.",
+        "detail": "Students of SERC, IIIT Hyderabad, have been placed in top companies.\nShrikara joined Microsoft Research, Meghana joined Microsoft, Santrupta joined QualComm, Dhiraj joined Ola, Divij in Microsoft Research and Arya joined Google.",
+        "startTime": "2025-07-31T09:00",
+        "endTime": "",
+        "imageURLs": [
+            "/images/news/students-of-serc-have-secured-placements-in-top-companies.jpg"
+        ],
+        "presenters": [
+            "Meghana Tedla",
+            "Shrikara Arun",
+            "Divij D",
+            "Dhiraj",
+            "Arya Marda"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
         "slug": "the-24th-convocation-of-iiit-hyderabad",
         "name": "The 24th Convocation of IIIT Hyderabad",
         "eventURL": "",
