@@ -1,5 +1,74 @@
 [
     {
+        "slug": "dr-karthik-vaidhyanathan-delivered-a-talk",
+        "name": "Dr. Karthik Vaidhyanathan delivered a talk",
+        "eventURL": "",
+        "location": "Hyderabad",
+        "locationURL": "",
+        "summary": "Dr. Karthik Vaidhyanathan delivered a talk on “Software Sustainability: From Research to Practice” at J.P. Morgan Chase, Hyderabad",
+        "detail": "Dr. Karthik Vaidhyanathan delivered a talk on “Software Sustainability: From Research to Practice\" - Highlighting the importance of sustainable software practices with a presentation on the SustAInd project.",
+        "startTime": "2025-10-27T10:00",
+        "endTime": "",
+        "imageURLs": [
+            "/images/news/dr-karthik-vaidhyanathan-delivered-a-talk.jpeg"
+        ],
+        "presenters": [
+            "Karthik Vaidhyanathan"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
+        "slug": "welcoming-junior-research-fellow-to-serc",
+        "name": "Welcoming Junior Research Fellow to SERC",
+        "eventURL": "",
+        "location": "SERC,IIITH",
+        "locationURL": "Prof. C R Rao Road, Gachibowli, Hyderabad, Telangana, 500032, India",
+        "summary": "We’re thrilled to welcome amazing new member to our team at Software Engineering Research Center, IIIT Hyderabad.",
+        "detail": "Aneetta Sara Shany joins us with rich industrial experience and a strong academic background. She will be leading efforts on environmental sustainability in AI-enabled systems, exploring how we can make AI systems greener.",
+        "startTime": "2025-10-16T10:00",
+        "endTime": "",
+        "imageURLs": [
+            "/images/news/welcoming-junior-research-fellow-to-serc.jpeg"
+        ],
+        "presenters": [],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
+        "slug": "nasscom-agentic-ai-confluence-2025",
+        "name": "Nasscom- Agentic Ai Confluence 2025",
+        "eventURL": "",
+        "location": "Bengaluru",
+        "locationURL": "",
+        "summary": "Professor and students from the Software Engineering Research Center (SERC), IIIT Hyderabad, participated in the NASSCOM Agentic AI Confluence",
+        "detail": "Dr. Karthik Vaidhyanathan took part in the roundtable discussion on “State of AI Research in India: The Promise, Pitfalls, and Path Ahead.”\n\nResearch artefact Moya, developed in collaboration with MontyCloud, was shortlisted among the top 16 artefacts from around 150 submissions. Sreemaee Akshathala and Amey Karan presented the poster of Moya at the event.",
+        "startTime": "2025-10-07T10:00",
+        "endTime": "2025-10-07T18:00",
+        "imageURLs": [
+            "/images/news/nasscom-agentic-ai-confluence-2025.jpeg"
+        ],
+        "presenters": [
+            "Karthik Vaidhyanathan",
+            "Amey Karan",
+            "Sreemaee Akshathala"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
         "slug": "talk-delivered-by-prof-karthik-vaidhyanathan",
         "name": "Talk Delivered by Prof Karthik Vaidhyanathan.",
         "eventURL": "",
