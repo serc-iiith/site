@@ -184,5 +184,20 @@
       }
     ],
     "links": []
+  },
+  {
+    "id": "anrf",
+    "title": "ANRF",
+    "description": " The SustAInd project under ANRF PM ECRG aims to build a software-centric framework for enhancing the sustainability of AI-enabled systems. ",
+    "category": "ai",
+    "image": "/images/projects/anrf.jpeg",
+    "collaborators": [
+      {
+        "name": " SustAInd",
+        "logo": "",
+        "url": "https://sa4s-serc.github.io/sustaind/"
+      }
+    ],
+    "links": []
   }
 ]
