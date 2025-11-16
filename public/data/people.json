@@ -889,10 +889,13 @@
             "email": "hardik.chadha@research.iiit.ac.in",
             "imageURL": "/images/people/hardik-chadha.jpg",
             "slug": "hardik-chadha",
-            "social_links": {},
-            "interests": [],
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/hardik-chadha-876338266/",
+                "GitHub": "https://github.com/Hardik1106"
+            },
+            "interests": ["Programming Languages", "Formal Methods", "Program Verification"],
             "education": [],
-            "bio": "Hardik Chadha is a B.Tech and M.S dual-degree student in Computer Science and Engineering at the International Institute of Information Technology, Hyderabad (IIITH). He is currently conducting research at the Software Engineering Research Center (SERC) Lab under the guidance of Prof. Abhishek Kr Singh. His work focuses on Trustworthy Automated Programming, with the goal of reducing ambiguity in AI-generated code by aligning natural language intent with formal specifications.\n\nOriginally from Jalandhar, Punjab, he completed his schooling at Innocent Hearts School, Green Model Town. Outside of academics, he has represented his state in Table Tennis at the National Level and has a strong interest in sports. He is also deeply fascinated by the field of space exploration."
+            "bio": "I am a B.Tech and M.S dual-degree student in Computer Science and Engineering at the International Institute of Information Technology, Hyderabad (IIIT Hyderabad). I am currently conducting research at the Software Engineering Research Center (SERC) under the guidance of Prof. Abhishek Kr Singh.\n\nMy research lies at the intersection of Formal Methods, Program Verification, and Programming Languages, with a current focus on fuzzing and model checking for concurrency under weak memory models. I am also exploring directions in Trustworthy Automated Programming, which aims to enhance the reliability of AI-generated code by aligning natural language intent with formal specifications through synthesis and verification techniques such as Syntax-Guided Synthesis (SyGuS).\n\nI am originally from Jalandhar, Punjab, where I completed my schooling at Innocent Hearts School, Green Model Town. Beyond academics, I have represented my state at the National Level in Table Tennis and remain deeply interested in science, technology, and space exploration."
         }
     ],
     "Honors": [
