@@ -1,6 +1,55 @@
 [
   {
     "authors": [
+      "Y Raghu Reddy",
+      "Sai Anirudh Karre"
+    ],
+    "year": "2025",
+    "title": "Model-based approach for specifying requirements of virtual reality software products",
+    "cite": "@ARTICLE{10.3389/frvir.2024.1471579,\n  \nAUTHOR={Karre, Sai Anirudh  and Reddy, Y. Raghu },\n         \nTITLE={Model-based approach for specifying requirements of virtual reality software products},\n        \nJOURNAL={Frontiers in Virtual Reality},\n        \nVOLUME={Volume 5 - 2024},\n\nYEAR={2024},\n\nURL={https://www.frontiersin.org/journals/virtual-reality/articles/10.3389/frvir.2024.1471579},\n\nDOI={10.3389/frvir.2024.1471579},\n\nISSN={2673-4192},\n\nABSTRACT={Gathering requirements for developing Virtual Reality (VR) Software products is laborious.It requires detailed elicitation of scene flow, articles in the scene, action responses, custom behaviors, and timeline of events. The slightest change in requirements will escalate the design and development cost. While most VR practitioners depend on conventional software engineering (SE) requirement-gathering techniques, they desire novel methods to ease VR software development. With severe software platform fragmentation and volatility in hardware offerings, VR practitioners need assistance specifying non-volatile requirements for a minimum viable VR software product. To address this gap, we present a model-based tool called VReqST, a requirement specification tool for specifying requirements for developing Virtual Reality Software products. Using VReqST, requirement analysts can specify the requirements of simple to complex multi-scene VR software products and Virtual Environments (VE). VReqST is customizable and is competent in illustrating custom requirements for new locomotion, colocation, teleportation algorithms, etc. We worked with the VR community from Industry for adoption and feedback. We revised and included the desired features based on inputs from the VR community and gathered their observations on the overall impact of VReqST in practice.}}",
+    "venue": "https://www.frontiersin.org/journals/virtual-reality/articles/10.3389/frvir.2024.1471579/full",
+    "doi": "10.3389/frvir.2024.1471579/full",
+    "url": "https://www.frontiersin.org/journals/virtual-reality/articles/10.3389/frvir.2024.1471579/full"
+  },
+  {
+    "authors": [
+      "Y Raghu Reddy"
+    ],
+    "year": "2025",
+    "title": " VRSLOG: An Approach to Log Immersive Experiences in Virtual Reality Systems",
+    "cite": "@conference{enase25,\nauthor={Divij D. and Y. Raghu Reddy and Radha Krishna B. and Sai Anirudh Karre},\ntitle={VRSLOG: An Approach to Log Immersive Experiences in Virtual Reality Systems},\nbooktitle={Proceedings of the 20th International Conference on Evaluation of Novel Approaches to Software Engineering - ENASE},\nyear={2025},\npages={229-239},\npublisher={SciTePress},\norganization={INSTICC},\ndoi={10.5220/0013434900003928},\nisbn={978-989-758-742-9},\nissn={2184-4895},\n}",
+    "venue": "20th International conference on Evaluation of Novel Approaches to Software Engineering (ENASE)",
+    "doi": "10.5220/0013434900003928",
+    "url": ""
+  },
+  {
+    "authors": [
+      "Y Raghu Reddy",
+      "Sai Anirudh Karre",
+      "Amogha A Halhalli"
+    ],
+    "year": "2025",
+    "title": "VReqST: A Requirement Specification Tool for Virtual Reality Software Products",
+    "cite": "@INPROCEEDINGS{11024301,\n  author={Karre, Sai Anirudh and Halhalli, Amogha A and Reddy, Y. Raghu},\n  booktitle={2025 IEEE/ACM 47th International Conference on Software Engineering: Companion Proceedings (ICSE-Companion)}, \n  title={VReqST: A Requirement Specification Tool for Virtual Reality Software Products}, \n  year={2025},\n  volume={},\n  number={},\n  pages={9-12},\n  abstract={Developing Virtual Reality (VR) software products with discrete and incremental requirements is a challenging task for VR practitioners. A domain expert's assistance plays a key role in VR product completeness, as most VR requirements are abstract or under-specified during the early stages. Slight changes to the requirements can significantly impact the overall flow of the VR software development process. In this paper, we introduce VReqST, a tool for VR requirement analysts to specify requirements for building effective VR software products. It is developed based on a Role-based model template for specifying virtual environments, custom behaviors, VR-specific algorithms, user-flows, action responses, timeline of events, etc. The tool has been developed after several interactions with VR practitioners from industry & academia. We share our insights on the effectiveness of this tool in practice.},\n  keywords={Industries;Solid modeling;Software algorithms;Buildings;Virtual environments;Software;Software engineering;Software development management;Software Requirement Specification;Requirement Elicitation;Virtual Reality;Industrial Practices},\n  doi={10.1109/ICSE-Companion66252.2025.00012},\n  ISSN={2574-1934},\n  month={April},}\n",
+    "venue": "2025 IEEE/ACM 47th International Conference on Software Engineering: Companion Proceedings (ICSE-Companion)",
+    "doi": "10.1109/ICSE-Companion66252.2025.00012",
+    "url": " https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11024301&isnumber=11024244"
+  },
+  {
+    "authors": [
+      "Y Raghu Reddy",
+      "Puru Ojha",
+      "Aaditya Vardhan Narain"
+    ],
+    "year": "2025",
+    "title": "The POMS Effect: Measuring the impact of overlapping architectures on User Engagement in Virtual Reality",
+    "cite": "@INPROCEEDINGS{11172565,\n  author={Ojha, Puru and Narain, Aaditya Vardhan and Reddy, Y. Raghu},\n  booktitle={2025 11th International Conference on Virtual Reality (ICVR)}, \n  title={The POMS Effect: Measuring the impact of overlapping architectures on User Engagement in Virtual Reality}, \n  year={2025},\n  volume={},\n  number={},\n  pages={198-207},\n  abstract={Natural walking offers high immersion in Virtual Reality (VR) but is constrained by physical space. Overlapping architectures, which reuse physical space, are a potential solution. Building on foundational principles of Architecturally Consistent Maze Generation in VR [1], we developed, implemented, and evaluated the Procedural Overlapping Maze System (POMS). POMS procedurally generates and prunes right-angled, overlapping maze corridors in real-time, enabling continuous natural walking in footprints $\\geq 4 \\times 4 \\mathrm{~m}$. This paper presents a controlled, betweengroup empirical evaluation ($\\mathrm{N}=17$ matched pairs) comparing POMS against a spatially equivalent static maze in an $8 \\times 8 \\mathrm{~m}$ tracked area using an Oculus Quest 3. Participants performed a time-constrained navigation task. We investigated effects on user engagement (time-on-task), usability (User Experience Questionnaire - UEQ), presence (igroup Presence Questionnaire - iPQ), and cybersickness (Simulator Sickness Questionnaire - SSQ). We hypothesized POMS would lead to increased time-on-task (H1), and that its dynamic nature would not negatively impact user experience, aiming for UEQ, iPQ, and SSQ outcomes comparable to a static environment $(\\mathrm{H} 2-\\mathrm{H} 4)$. Results indicated no statistically significant differences in UEQ (H2) or iPQ (H3) between conditions, supporting our hypotheses that POMS could maintain these experiential qualities. Surprisingly, regarding cybersickness (H4), the increase in Oculomotor, Disorientation, and Total SSQ symptoms was significantly smaller in the POMS condition compared to the Static condition, while there was no significant difference for Nausea. This finding demonstrates an unexpected and substantial comfort benefit with POMS, exceeding our initial hypothesis of mere comparability. While POMS did not show a statistically significant increase in time-on-task (H1) in this study, a numerical trend suggesting longer engagement was observed. The markedly improved comfort achieved with POMS strongly suggests that such architectures have the potential to facilitate longer interaction periods, warranting further investigation into task design to fully leverage this benefit. These findings highlight that procedurally overlapping architectures like POMS can enable extended natural walking, not only without degrading core experiential qualities, but also by significantly enhancing user comfort.},\n  keywords={Legged locomotion;Procedural generation;Cybersickness;Navigation;Architecture;Buildings;Market research;User experience;Real-time systems;Usability;Virtual Reality (VR);Procedural Content Generation (PCG);Locomotion;Cybersickness;User Experience (UX);Overlapping Architectures;Maze Generation;User Study},\n  doi={10.1109/ICVR66534.2025.11172565},\n  ISSN={},\n  month={July},}\n",
+    "venue": "2025 11th International Conference on Virtual Reality (ICVR)",
+    "doi": "10.1109/ICVR66534.2025.11172565",
+    "url": "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11172565&isnumber=11172380"
+  },
+  {
+    "authors": [
       "Raghu Reddy",
       "Brahma Reddy Korraprolu",
       "Pavitra Pinninti"
