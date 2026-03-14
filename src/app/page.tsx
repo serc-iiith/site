@@ -103,7 +103,7 @@ const researchTopics = [
 
 const slides = [
   {
-    image: "/images/slideshow-all-2025.webp",
+    image: "/images/slideshow-all-2026.webp",
     title: "Slide 1",
   },
   {

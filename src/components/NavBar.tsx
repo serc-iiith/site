@@ -103,7 +103,7 @@ const Navbar: React.FC = () => {
             <div className="flex justify-between items-center bg-[var(--navbar-bg)] backdrop-blur-[30px] px-8 h-[70px] fixed top-0 left-0 right-0 z-[1001] shadow-[var(--navbar-shadow)] border-b border-[var(--border-color)]">
                 <div className="text-2xl text-text tracking-wide">
                     <Link href="/" className="flex items-center gap-3 no-underline text-text" onClick={closeMobileMenu}>
-                        <Image src="/images/logo.png" width={80} height={80} alt="SERC Logo" />
+                        <Image src="/images/serc-logo.png" width={80} height={80} alt="SERC Logo" />
                         <div className="hidden sm:flex flex-col justify-center">
                             <span className="hidden xs:hidden sm:block md:hidden lg:hidden xl:block font-black text-2xl text-text leading-tight">Software Engineering Research Center</span>
                             <span className="block xs:block sm:hidden md:block lg:block xl:hidden font-black text-2xl text-text leading-tight">SERC</span>

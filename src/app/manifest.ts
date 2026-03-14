@@ -19,8 +19,8 @@ export default function manifest(): MetadataRoute.Manifest {
                 type: 'image/x-icon',
             },
             {
-                src: '/images/logo.png',
-                sizes: '512x512',
+                src: '/images/serc-logo.png',
+                sizes: '766x484',
                 type: 'image/png',
             },
         ],

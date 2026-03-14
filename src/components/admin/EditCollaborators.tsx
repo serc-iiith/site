@@ -385,7 +385,7 @@ const EditCollaborators: React.FC = () => {
                                         onChange={handleInputChange}
                                         className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
                                         disabled={isLoading}
-                                        placeholder="https://example.com/logo.png or /images/logo.png"
+                                        placeholder="https://example.com/serc-logo.png or /images/serc-logo.png"
                                     />
                                     {formData.logo && (
                                         <div className="mt-2 p-2 border border-[color:var(--border-color)] rounded-md inline-flex items-center">
@@ -399,7 +399,7 @@ const EditCollaborators: React.FC = () => {
                                                     className="max-h-8 object-contain"
                                                     onError={(e) => {
                                                         const target = e.target as HTMLImageElement;
-                                                        target.src = '/images/placeholder.png';
+                                                        target.src = '/images/serc-logo.png';
                                                     }}
                                                 />
                                             </div>

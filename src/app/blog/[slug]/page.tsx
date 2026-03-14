@@ -165,7 +165,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             name: 'Software Engineering Research Center, IIIT Hyderabad',
             logo: {
                 '@type': 'ImageObject',
-                url: 'https://serc.iiit.ac.in/images/logo.png'
+                url: 'https://serc.iiit.ac.in/images/serc-logo.png'
             }
         },
         mainEntityOfPage: {

@@ -14,7 +14,7 @@ const Footer = () => {
                     <div>
                         <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-5 mb-6">
                             <div className="mb-4 sm:mb-0">
-                                <Image src="/images/logo.png" width={100} height={100} alt="SERC Logo" />
+                                <Image src="/images/serc-logo.png" width={100} height={100} alt="SERC Logo" />
                             </div>
                             <div className="flex flex-col text-base sm:text-lg text-gray-400">
                                 <span className="font-semibold text-white mb-1">Software Engineering Research Center</span>
