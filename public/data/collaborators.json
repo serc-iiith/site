@@ -34,7 +34,7 @@
   {
     "id": "ea",
     "name": "Electronic Arts",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Electronic-Arts-Logo.svg/640px-Electronic-Arts-Logo.svg.png",
+    "logo": "/images/collaborators/Electronic-Arts-Logo.svg",
     "website": "https://www.ea.com",
     "description": "Gaming and entertainment technology",
     "category": "industry"
@@ -170,7 +170,7 @@
   {
     "id": "universite-aquila",
     "name": "Università degli Studi dell'Aquila",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/UnivaqLogo.png/640px-UnivaqLogo.png",
+    "logo": "/images/collaborators/UnivaqLogo.png",
     "website": "https://www.univaq.it",
     "description": "Academic research collaboration",
     "category": "academic"
@@ -178,7 +178,7 @@
   {
     "id": "vu-amsterdam",
     "name": "Vrije Universiteit Amsterdam",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/VU_Logo.jpg/640px-VU_Logo.jpg",
+    "logo": "/images/collaborators/VU-logo-nobg.svg",
     "website": "https://www.vu.nl/en",
     "description": "Academic research collaboration",
     "category": "academic"
