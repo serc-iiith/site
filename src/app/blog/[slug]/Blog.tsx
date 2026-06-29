@@ -4,7 +4,7 @@ import React, { type ReactNode } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Calendar, Clock, ChevronLeft, Share2, Facebook, Twitter, Linkedin } from 'lucide-react';
+import { Calendar, Clock, Share2, Facebook, Twitter, Linkedin } from 'lucide-react';
 import { Toaster, toast } from "react-hot-toast";
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm'; // Added plugin for GitHub-flavored Markdown
@@ -111,9 +111,23 @@ const getAuthorImageUrl = (authorName: string) => {
     return `/images/people/${formattedName}.png`;
 };
 
+interface BlogPost {
+    id: number | string;
+    slug: string;
+    title: string;
+    excerpt: string;
+    content: string;
+    author: string;
+    role?: string;
+    date: string;
+    readTime: number;
+    category: string;
+    coverImage?: string;
+}
+
 interface BlogProps {
-    blogPost: any;
-    blogData: any[];
+    blogPost: BlogPost;
+    blogData: BlogPost[];
 }
 
 export default function Blog({ blogPost, blogData }: BlogProps) {

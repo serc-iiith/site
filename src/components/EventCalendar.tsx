@@ -163,7 +163,7 @@ const EventCalendar = ({
                 propCurrentMonth.getFullYear() !== currentMonth.getFullYear())) {
             setCurrentMonth(propCurrentMonth);
         }
-    }, [propCurrentMonth]);
+    }, [propCurrentMonth, currentMonth]);
 
     return (
         <div className="bg-background rounded-xl border border-[var(--border-color)] shadow-sm overflow-hidden">

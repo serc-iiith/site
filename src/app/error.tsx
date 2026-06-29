@@ -47,7 +47,7 @@ export default function Error({
                     </h2>
 
                     <p className="text-lg mb-8 max-w-xl mx-auto" style={{ color: "var(--secondary-color)" }}>
-                        Oopsie Woopsie! The code monkeys at our headquarters are working vewy hard to fix this!
+                        Oopsie Woopsie! The code monkeys at our headquarters are working very hard to fix this!
                     </p>
 
                     <div className="flex flex-wrap justify-center gap-4">

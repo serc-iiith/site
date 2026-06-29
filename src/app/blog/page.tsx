@@ -342,7 +342,7 @@ const Pagination = ({
 }: PaginationProps): JSX.Element => {
   const maxVisiblePages = 5;
   let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
-  let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+  const endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
 
   if (endPage - startPage + 1 < maxVisiblePages) {
     startPage = Math.max(1, endPage - maxVisiblePages + 1);
@@ -998,7 +998,7 @@ export default function BlogPage(): JSX.Element {
                   No articles found
                 </h3>
                 <p className="text-[color:var(--secondary-color)] max-w-lg mx-auto mb-6 px-4">
-                  We couldn't find any articles matching your search criteria.
+                  We couldn&apos;t find any articles matching your search criteria.
                   Try adjusting your filters or search terms.
                 </p>
                 <button

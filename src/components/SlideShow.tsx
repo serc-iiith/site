@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, FC } from "react";
+import { useState, useEffect, useRef, useCallback, FC } from "react";
 import { Play, Pause, ChevronDown } from "lucide-react";
 import Image from "next/image";
 
@@ -49,19 +49,34 @@ const Slideshow: FC<SlideshowProps> = ({
     }
   }, [currentIndex, slides.length, isMounted]);
 
-  const showSlide = (index: number) => {
+  const showSlide = useCallback((index: number) => {
     setCurrentIndex(index);
-  };
+  }, []);
 
-  const nextSlide = () => {
-    const nextIndex = (currentIndex + 1) % slides.length;
-    showSlide(nextIndex);
-  };
+  const nextSlide = useCallback(() => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
+  }, [slides.length]);
 
-  const prevSlide = () => {
-    const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
-    showSlide(prevIndex);
-  };
+  const prevSlide = useCallback(() => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + slides.length) % slides.length);
+  }, [slides.length]);
+
+  const pauseAutoplay = useCallback(() => {
+    if (autoplayIntervalRef.current) {
+      clearInterval(autoplayIntervalRef.current);
+      autoplayIntervalRef.current = null;
+    }
+  }, []);
+
+  const startAutoplay = useCallback(() => {
+    if (autoplayIntervalRef.current) {
+      clearInterval(autoplayIntervalRef.current);
+    }
+
+    autoplayIntervalRef.current = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
+    }, autoplaySpeed);
+  }, [autoplaySpeed, slides.length]);
 
   const goToSlide = (index: number) => {
     showSlide(index);
@@ -70,24 +85,6 @@ const Slideshow: FC<SlideshowProps> = ({
     if (isAutoplayEnabled) {
       pauseAutoplay();
       startAutoplay();
-    }
-  };
-
-  const startAutoplay = () => {
-    if (autoplayIntervalRef.current) {
-      clearInterval(autoplayIntervalRef.current);
-    }
-
-    autoplayIntervalRef.current = setInterval(() => {
-      // Force update regardless of visibility state
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
-    }, autoplaySpeed);
-  };
-
-  const pauseAutoplay = () => {
-    if (autoplayIntervalRef.current) {
-      clearInterval(autoplayIntervalRef.current);
-      autoplayIntervalRef.current = null;
     }
   };
 
@@ -111,7 +108,7 @@ const Slideshow: FC<SlideshowProps> = ({
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [currentIndex, isMounted]);
+  }, [isMounted, nextSlide, prevSlide]);
 
   // Handle autoplay - only on client side
   useEffect(() => {
@@ -127,7 +124,7 @@ const Slideshow: FC<SlideshowProps> = ({
     return () => {
       pauseAutoplay();
     };
-  }, [isAutoplayEnabled, isMounted, autoplaySpeed]);
+  }, [isAutoplayEnabled, isMounted, pauseAutoplay, startAutoplay]);
 
   // Add visibility change listener to handle tab switching
   useEffect(() => {
@@ -148,7 +145,7 @@ const Slideshow: FC<SlideshowProps> = ({
     return () => {
       document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
-  }, [isMounted, isAutoplayEnabled]);
+  }, [isMounted, isAutoplayEnabled, pauseAutoplay, startAutoplay]);
 
   // Handle touch news
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -195,11 +192,16 @@ const Slideshow: FC<SlideshowProps> = ({
       <div className="relative w-full max-h-screen overflow-hidden">
         <div className="w-full">
           <div className="w-full animate-fade block">
-            <img
-              src={slides[0].image}
-              alt={slides[0].title || "Slide 1"}
-              className="w-full object-cover block mt-[70px] h-[300px] sm:mt-0 sm:h-[300px] md:h-auto"
-            />
+            <div className="relative w-full mt-[70px] h-[300px] sm:mt-0 sm:h-[300px] md:h-[50vh] lg:h-[100vh]">
+              <Image
+                src={slides[0].image}
+                alt={slides[0].title || "Slide 1"}
+                fill
+                sizes="100vw"
+                className="object-cover"
+                priority
+              />
+            </div>
           </div>
         </div>
       </div>

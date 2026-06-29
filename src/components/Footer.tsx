@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import {
     siX,
     siYoutube,
@@ -14,7 +15,7 @@ const Footer = () => {
                     <div>
                         <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-5 mb-6">
                             <div className="mb-4 sm:mb-0">
-                                <Image src="/images/serc-logo.png" width={100} height={100} alt="SERC Logo" />
+                                <Image src="/images/serc-logo-white.png" width={100} height={100} alt="SERC Logo" />
                             </div>
                             <div className="flex flex-col text-base sm:text-lg text-gray-400">
                                 <span className="font-semibold text-white mb-1">Software Engineering Research Center</span>
@@ -103,10 +104,10 @@ const Footer = () => {
                 <div className="text-center pt-8 mt-4 border-t border-gray-700">
                     <p className="flex items-center justify-center mb-2 text-gray-300">
                         Made with <Heart className="mx-1 h-4 w-4 text-red-700 fill-red-600" /> by
-                        <a href="/people/arihant-tripathy" className="mx-1 hover:text-blue-300">Arihant, </a>
-                        <a href="/people/aviral-gupta" className="mr-1 hover:text-blue-300">Aviral,</a>
-                        <a href="/people/nitheesh-chandra-yaratapalli" className="mx-1 hover:text-blue-300">Nitheesh,</a> and
-                        <a href="/people/mohit-kumar-singh" className="mx-1 hover:text-blue-300">Mohit</a>
+                        <Link href="/people/arihant-tripathy" className="mx-1 hover:text-blue-300">Arihant, </Link>
+                        <Link href="/people/aviral-gupta" className="mr-1 hover:text-blue-300">Aviral,</Link>
+                        <Link href="/people/nitheesh-chandra-yaratapalli" className="mx-1 hover:text-blue-300">Nitheesh,</Link> and
+                        <Link href="/people/mohit-kumar-singh" className="mx-1 hover:text-blue-300">Mohit</Link>
                     </p>
                     <p className="text-sm text-gray-400">&copy; {new Date().getFullYear()} Software Engineering Research Center. All rights reserved.</p>
                 </div>

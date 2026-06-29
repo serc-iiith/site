@@ -17,6 +17,7 @@ interface Collaborator {
 }
 
 const collaboratorsData = CollaboratorsData as Collaborator[];
+const fallbackLogo = '/images/serc-logo.png';
 
 export default function CollaboratorsPage() {
   const [activeCategory, setActiveCategory] = useState<string>('all');
@@ -39,7 +40,7 @@ export default function CollaboratorsPage() {
     : collaboratorsData.filter(collab => collab.category === activeCategory);
 
   // For the 3D card effect
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>, id: string) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const card = e.currentTarget;
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left;
@@ -126,7 +127,7 @@ export default function CollaboratorsPage() {
                 >
                   <div
                     className="bg-[color:var(--background)] rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl h-full flex flex-col border border-[color:var(--border-color)]"
-                    onMouseMove={(e) => handleMouseMove(e, collaborator.id)}
+                    onMouseMove={(e) => handleMouseMove(e)}
                     onMouseLeave={handleMouseLeave}
                     onMouseEnter={() => setHoveredCollaborator(collaborator.id)}
                   >
@@ -137,6 +138,10 @@ export default function CollaboratorsPage() {
                           alt={`${collaborator.name} logo`}
                           fill
                           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                          onError={(e) => {
+                            const img = e.target as HTMLImageElement;
+                            img.src = fallbackLogo;
+                          }}
                           style={{
                             objectFit: 'contain',
                             transition: 'transform 0.7s ease-in-out',

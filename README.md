@@ -2,6 +2,17 @@
 
 This is the official website for the Software Engineering Research Center (SERC) at IIIT-Hyderabad.
 
+
+## Deployment (Update pending)
+
+```
+rsync -avz --delete out/ deploy@server:/var/www/serc.iiit.ac.in/
+
+ssh deploy@server
+sudo nginx -t
+sudo systemctl reload nginx
+```
+
 ## 🚀 Features
 
 - Modern, responsive design using Tailwind CSS

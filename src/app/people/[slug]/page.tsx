@@ -2,7 +2,15 @@ import { notFound } from "next/navigation";
 import peopleData from "../../../../public/data/people.json";
 import papersData from "../../../../public/data/papers.json";
 import PersonProfile from "./PersonProfile";
-import type { Metadata, ResolvingMetadata } from 'next'
+import type { Metadata } from 'next'
+
+const BASE_URL = 'https://serc.iiit.ac.in';
+
+const toAbsoluteUrl = (url: string): string => {
+  if (!url) return `${BASE_URL}/images/person_fallback.png`;
+  if (url.startsWith('http://') || url.startsWith('https://')) return url;
+  return `${BASE_URL}${url.startsWith('/') ? '' : '/'}${url}`;
+};
 
 // Define TypeScript types for our data
 type Education = {
@@ -69,8 +77,8 @@ function getPublicationsByAuthor(authorName: string): Paper[] {
 }
 
 // Generate metadata for better SEO
-export async function generateMetadata({ params }: { params: { slug: string } }, parent: ResolvingMetadata): Promise<Metadata> {
-  const slug = params.slug;
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
   const result = getPersonBySlug(slug);
 
   if (!result) {
@@ -80,7 +88,7 @@ export async function generateMetadata({ params }: { params: { slug: string } },
   }
 
   const { person, category } = result;
-  const papers = getPublicationsByAuthor(person.name);
+  // papers unused in metadata - used in page component
 
   // Create a rich description using the bio if available
   const description = person.bio
@@ -88,6 +96,8 @@ export async function generateMetadata({ params }: { params: { slug: string } },
     : `${person.name} is a ${person.title} at the Software Engineering Research Center.`;
 
   // Use the person's data to generate SEO metadata
+  const canonical = `${BASE_URL}/people/${person.slug}`;
+
   return {
     title: `${person.name} | ${person.title} | SERC`,
     description: description,
@@ -100,13 +110,16 @@ export async function generateMetadata({ params }: { params: { slug: string } },
       category,
       ...(person.interests || [])
     ],
+    alternates: {
+      canonical,
+    },
     openGraph: {
       title: `${person.name} | ${person.title}`,
       description: description,
-      url: `https://serc.iiit.ac.in/people/${person.slug}`,
+      url: canonical,
       images: [
         {
-          url: person.imageURL || '/images/person_fallback.png',
+          url: toAbsoluteUrl(person.imageURL || '/images/person_fallback.png'),
           width: 800,
           height: 800,
           alt: person.name,
@@ -118,7 +131,7 @@ export async function generateMetadata({ params }: { params: { slug: string } },
       card: 'summary',
       title: `${person.name} | ${person.title}`,
       description: description,
-      images: [person.imageURL || '/images/person_fallback.png'],
+      images: [toAbsoluteUrl(person.imageURL || '/images/person_fallback.png')],
     },
   }
 }
@@ -128,7 +141,7 @@ export async function generateStaticParams() {
   const data: PeopleData = peopleData as PeopleData;
   const slugs = [];
 
-  for (const [_, people] of Object.entries(data)) {
+  for (const people of Object.values(data)) {
     for (const person of people) {
       slugs.push({ slug: person.slug });
     }
@@ -137,8 +150,8 @@ export async function generateStaticParams() {
   return slugs;
 }
 
-export default function PersonPage({ params }: { params: { slug: string } }) {
-  const slug = params.slug;
+export default async function PersonPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const result = getPersonBySlug(slug);
 
   if (!result) {
@@ -156,17 +169,17 @@ export default function PersonPage({ params }: { params: { slug: string } }) {
     jobTitle: person.title,
     email: person.email,
     description: person.bio,
-    url: `https://serc.iiit.ac.in/people/${person.slug}`,
-    image: person.imageURL || '/images/person_fallback.png',
+    url: `${BASE_URL}/people/${person.slug}`,
+    image: toAbsoluteUrl(person.imageURL || '/images/person_fallback.png'),
     affiliation: {
       '@type': 'Organization',
       name: 'Software Engineering Research Center, IIIT Hyderabad',
-      url: 'https://serc.iiit.ac.in'
+      url: BASE_URL
     },
     memberOf: {
       '@type': 'Organization',
       name: 'Software Engineering Research Center, IIIT Hyderabad',
-      url: 'https://serc.iiit.ac.in'
+      url: BASE_URL
     }
   };
 
@@ -178,7 +191,7 @@ export default function PersonPage({ params }: { params: { slug: string } }) {
       author: pub.authors.map(author => ({ '@type': 'Person', name: author })),
       datePublished: pub.year,
       publisher: pub.venue,
-      url: pub.url || pub.doi
+      url: pub.url ? toAbsoluteUrl(pub.url) : pub.doi
     }));
   }
 

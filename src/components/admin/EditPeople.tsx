@@ -208,10 +208,6 @@ const ImageDropzone: React.FC<ImageDropzoneProps> = ({ onImageUpload, currentIma
     );
 };
 
-interface PeopleData {
-    [key: string]: Person[];
-}
-
 const EditPeople: React.FC = () => {
     const [people, setPeople] = useState<Person[]>([]);
     const [categories, setCategories] = useState<string[]>([]);
@@ -241,7 +237,6 @@ const EditPeople: React.FC = () => {
     });
     // New state for unique titles
     const [uniqueTitles, setUniqueTitles] = useState<string[]>([]);
-    const [customTitle, setCustomTitle] = useState<string>('');
 
     // New state for deletion modal
     const [deleteModal, setDeleteModal] = useState<{
@@ -545,7 +540,8 @@ const EditPeople: React.FC = () => {
 
         try {
             // Remove the category field from the person object as it's not stored in the JSON structure
-            const { category, ...personData } = formData;
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            const { category: _category, ...personData } = formData;
 
             if (editingSlug === 'new') {
                 // Add new person

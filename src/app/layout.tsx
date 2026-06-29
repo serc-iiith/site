@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://serc.iiit.ac.in"),
   title: "SERC - Software Engineering Research Center",
   description: "SERC - Software Engineering Research Center at IIIT-Hyderabad specializes in research and development of state-of-the-art software engineering techniques and tools.",
-  keywords: "software engineering, research, IIIT-Hyderabad, programming languages, machine learning, SE and ML, formal methods, gamification, HCI, IoT, programming languages, self-adaptive systems, software analytics, software quality, software sustainiblity, VR and AR",
+  keywords: "software engineering, research, IIIT Hyderabad, programming languages, machine learning, SE and ML, formal methods, gamification, HCI, IoT, self-adaptive systems, software analytics, software quality, software sustainability, VR and AR",
   authors: [{ name: "SERC Team" }],
   openGraph: {
     title: "SERC - Software Engineering Research Center",

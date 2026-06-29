@@ -4,7 +4,6 @@ import { ReactNode, useRef, useEffect, useState } from "react";
 import Slideshow from "@/components/SlideShow";
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
-import Image from "next/image";
 import CustomCountUp from "@/components/CustomCountUp";
 import projectsData from "../../public/data/projects.json";
 import researchData from "../../public/data/papers.json";
@@ -197,7 +196,7 @@ const SectionTransition = ({
 };
 
 // Function to return the appropriate Lucide icon based on topic title
-const getIconForTopic = (title: String) => {
+const getIconForTopic = (title: string) => {
   switch (title) {
     case "Formal Methods":
       return <Calculator className="w-6 h-6 text-[color:var(--primary-color)]" />;
@@ -307,20 +306,29 @@ const UpdatesCard = ({
 
 // Event card component
 interface Event {
-  id: number;
+  slug: string;
   name: string;
-  description: string;
+  summary: string;
+  detail: string;
   startTime: string;
   endTime: string;
   location: string;
-  year: number;
-  image: string;
+  eventURL: string;
+  locationURL: string;
+  imageURLs: string[];
   presenters: string[];
+  otherURLs: {
+    code: string;
+    pdf: string;
+    slides: string;
+    video: string;
+  };
 }
 
 const EventCard = ({ event }: { event: Event }) => {
   const eventDate = new Date(event.startTime);
   const isUpcoming = eventDate > new Date();
+  const eventSummary = event.summary || event.detail;
 
   // Format date for display
   const formattedDate = eventDate.toLocaleDateString("en-US", {
@@ -350,7 +358,7 @@ const EventCard = ({ event }: { event: Event }) => {
           {isUpcoming ? "Upcoming" : "Past"}
         </span>
       </div>
-      <p className="text-xs text-[color:var(--secondary-color)] mt-1 line-clamp-2">{event.description}</p>
+      <p className="text-xs text-[color:var(--secondary-color)] mt-1 line-clamp-2">{eventSummary}</p>
       <div className="flex justify-between items-center mt-2">
         <p className="text-[10px] text-[color:var(--tertiary-color)]">
           {formattedDate} • {event.location.split(",")[0]}
@@ -403,11 +411,6 @@ const StatCard = ({ icon, value, title }: { icon: ReactNode, value: string, titl
 };
 
 export default function Home() {
-  interface Author {
-    name: string;
-    url: string;
-  }
-
   interface Paper {
     authors: string[];
     year: string;
@@ -536,7 +539,7 @@ export default function Home() {
       content: (
         <div className="space-y-3">
           {topNews.map((event) => (
-            <EventCard key={event.id} event={event} />
+            <EventCard key={event.slug} event={event} />
           ))}
           <div className="mt-4">
             <Link
@@ -634,19 +637,24 @@ export default function Home() {
             <SectionTransition delay={0.1}>
               <div className="md:pr-6">
                 <h2 className="text-3xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[color:var(--primary-color)] to-[color:var(--info-color)] text-center md:text-left">
-                  Our Mission
+                  Our Vision
                 </h2>
                 <div className="w-24 h-1 bg-[color:var(--primary-color)] mb-6 mx-auto md:mx-0"></div>
                 <p className="text-base md:text-lg text-[color:var(--text-color)] leading-relaxed text-center md:text-justify">
-                  Software Engineering Research Center (SERC) aims to research
-                  and develop state of art techniques, methods and tools in
-                  various areas of software engineering and programming
-                  languages.
+                  To be a globally respected software research center that addresses Indian challenges while creating worldwide impact through intelligent, reliable, human-centered software. We envision a future where our research advances not just technology, but the broader understanding of how computation can augment human capabilities.
                 </p>
                 <p className="text-base md:text-lg text-[color:var(--text-color)] mt-4 leading-relaxed text-center md:text-justify">
-                  SERC has faculty with vast teaching and research experience in
-                  and outside India.
+                  We study how human intelligence and autonomous computation can come together to build software that is functional, efficient, trustworthy, and understandable. Through rigorous research, education, and collaboration, we strive to create a positive impact on society.
                 </p>
+                <div className="mt-6 flex justify-center md:justify-start">
+                  <Link href="/about-us" className="relative inline-flex items-center gap-2 text-[color:var(--primary-color)] font-medium transition-all duration-300 group">
+                    <span className="relative">
+                      Learn more about our mission
+                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[color:var(--primary-color)] to-[color:var(--info-color)] group-hover:w-full transition-all duration-300"></span>
+                    </span>
+                    <ArrowRight size={16} className="group-hover:translate-x-1 group-hover:text-[color:var(--info-color)] transition-all duration-300" />
+                  </Link>
+                </div>
               </div>
             </SectionTransition>
 
@@ -756,7 +764,7 @@ export default function Home() {
                   </h3>
                   <div className="space-y-4">
                     {topNews.map((event) => (
-                      <EventCard key={event.id} event={event} />
+                      <EventCard key={event.slug} event={event} />
                     ))}
                   </div>
                   <div className="mt-6">

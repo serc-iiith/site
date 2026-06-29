@@ -1,7 +1,6 @@
 import { MetadataRoute } from 'next';
 import peopleData from '../../public/data/people.json';
 import blogsData from '../../public/data/blogs.json';
-import projectsData from '../../public/data/projects.json';
 import newsData from '../../public/data/news.json';
 
 export const dynamic = 'force-static';
@@ -17,7 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             const date = new Date(dateString);
             // Check if date is valid
             return isNaN(date.getTime()) ? new Date() : date;
-        } catch (e) {
+        } catch {
             // Return current date if there's any error
             return new Date();
         }
@@ -26,6 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Basic site pages
     const routes = [
         '',
+        '/about-us',
         '/people',
         '/research',
         '/projects',
@@ -61,21 +61,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.7,
     }));
 
-    // Dynamic project pages
-    const projectPages = projectsData.map(project => ({
-        url: `${baseUrl}/projects/${project.slug}`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly' as const,
-        priority: 0.7,
-    }));
-
     // Dynamic event pages
     const eventPages = newsData.map(event => ({
         url: `${baseUrl}/news/${event.slug}`,
-        lastModified: safeDate(event.startTime || event.date),
+        lastModified: safeDate(event.startTime),
         changeFrequency: 'monthly' as const,
         priority: 0.7,
     }));
 
-    return [...routes, ...peoplePages, ...blogPages, ...projectPages, ...eventPages];
+    return [...routes, ...peoplePages, ...blogPages, ...eventPages];
 }

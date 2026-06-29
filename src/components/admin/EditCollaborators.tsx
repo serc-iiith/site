@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Plus, Edit, X, Save, Search, Trash2, Link as LinkIcon, Building, Tag } from 'lucide-react';
+import { Plus, Edit, X, Save, Search, Trash2, Building, Tag } from 'lucide-react';
 import Image from 'next/image';
 import { Toaster, toast } from 'react-hot-toast';
 import DeleteConfirmationModal from '@/components/common/DeleteConfirmationModal';

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React from "react";
 import dynamic from "next/dynamic";
 import { siYoutube, siFacebook, siX } from 'simple-icons/icons';
 import { motion } from 'framer-motion';

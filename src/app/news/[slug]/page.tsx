@@ -4,6 +4,14 @@ import peopleData from "../../../../public/data/people.json";
 import EventDetail from "./EventDetail";
 import type { Metadata } from 'next';
 
+const BASE_URL = 'https://serc.iiit.ac.in';
+
+const toAbsoluteUrl = (url: string): string => {
+    if (!url) return `${BASE_URL}/images/event_fallback.png`;
+    if (url.startsWith('http://') || url.startsWith('https://')) return url;
+    return `${BASE_URL}${url.startsWith('/') ? '' : '/'}${url}`;
+};
+
 // Define Event interface
 interface Event {
     slug: string;
@@ -25,7 +33,8 @@ interface Event {
     };
 }
 
-// Create slug from event name
+// Create slug from event name (kept for potential future use)
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function createSlug(name: string): string {
     return name
         .toLowerCase()
@@ -55,9 +64,9 @@ function getPeopleBySlug(slugs: string[]) {
 }
 
 // Generate metadata for better SEO
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     // Await the params to satisfy Next.js requirement
-    const { slug } = await Promise.resolve(params);
+    const { slug } = await params;
     const event = getEventBySlug(slug);
 
     if (!event) {
@@ -75,6 +84,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     });
 
     // Use the event data to generate SEO metadata
+    const canonical = `${BASE_URL}/news/${event.slug}`;
+
     return {
         title: `${event.name} | ${dateString} | SERC`,
         description: event.summary || `${event.name} at ${event.location}`,
@@ -86,21 +97,24 @@ export async function generateMetadata({ params }: { params: { slug: string } })
             event.name,
             event.location,
         ],
+        alternates: {
+            canonical,
+        },
         openGraph: {
             title: `${event.name} | ${dateString}`,
             description: event.summary || `${event.name} at ${event.location}`,
-            url: `https://serc.iiit.ac.in/news/${event.slug}`,
+            url: canonical,
             images: event.imageURLs && event.imageURLs.length > 0
-                ? [{ url: event.imageURLs[0], width: 800, height: 600, alt: event.name }]
-                : [{ url: '/images/event_fallback.png', width: 800, height: 600, alt: event.name }],
+                ? [{ url: toAbsoluteUrl(event.imageURLs[0]), width: 800, height: 600, alt: event.name }]
+                : [{ url: toAbsoluteUrl('/images/event_fallback.png'), width: 800, height: 600, alt: event.name }],
         },
         twitter: {
             card: 'summary_large_image',
             title: `${event.name} | ${dateString}`,
             description: event.summary || `${event.name} at ${event.location}`,
             images: event.imageURLs && event.imageURLs.length > 0
-                ? [event.imageURLs[0]]
-                : ['/images/event_fallback.png'],
+                ? [toAbsoluteUrl(event.imageURLs[0])]
+                : [toAbsoluteUrl('/images/event_fallback.png')],
         },
     }
 }
@@ -111,8 +125,8 @@ export async function generateStaticParams() {
         slug: event.slug
     }));
 }
-export default async function EventPage({ params }: { params: { slug: string } }) {
-    const { slug } = await Promise.resolve(params);
+export default async function EventPage({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params;
     const event = getEventBySlug(slug);
 
     if (!event) {
@@ -144,13 +158,17 @@ export default async function EventPage({ params }: { params: { slug: string } }
             url: event.locationURL || null
         },
         image: event.imageURLs && event.imageURLs.length > 0 ? event.imageURLs[0] : '/images/event_fallback.png',
-        url: `https://serc.iiit.ac.in/news/${event.slug}`,
+        url: `${BASE_URL}/news/${event.slug}`,
         organizer: {
             '@type': 'Organization',
             name: 'Software Engineering Research Center, IIIT Hyderabad',
-            url: 'https://serc.iiit.ac.in'
+            url: BASE_URL
         }
     };
+
+    eventJsonLd.image = toAbsoluteUrl(
+        event.imageURLs && event.imageURLs.length > 0 ? event.imageURLs[0] : '/images/event_fallback.png'
+    );
 
     // Add performers/presenters if available
     if (presenters.length > 0) {

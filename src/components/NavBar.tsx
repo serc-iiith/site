@@ -1,7 +1,5 @@
 "use client"
 
-// TODO: Changing of Software Research Centre to SERC not proper (zooming garbages it)
-
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Search, Menu, Sun, Moon, Monitor } from 'lucide-react';
@@ -15,6 +13,7 @@ const Navbar: React.FC = () => {
     const [searchModalOpen, setSearchModalOpen] = useState(false);
     const { theme, setTheme } = useTheme();
     const [themeMenuOpen, setThemeMenuOpen] = useState(false);
+    const [shortcutLabel, setShortcutLabel] = useState('Ctrl+K');
 
     // Function to close the mobile menu with animation
     const closeMobileMenu = () => {
@@ -98,15 +97,22 @@ const Navbar: React.FC = () => {
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, []);
 
+    useEffect(() => {
+        const isMac = navigator.userAgent.indexOf('Mac') !== -1;
+        setShortcutLabel(isMac ? '⌘K' : 'Ctrl+K');
+    }, []);
+
     return (
         <>
             <div className="flex justify-between items-center bg-[var(--navbar-bg)] backdrop-blur-[30px] px-8 h-[70px] fixed top-0 left-0 right-0 z-[1001] shadow-[var(--navbar-shadow)] border-b border-[var(--border-color)]">
                 <div className="text-2xl text-text tracking-wide">
                     <Link href="/" className="flex items-center gap-3 no-underline text-text" onClick={closeMobileMenu}>
-                        <Image src="/images/serc-logo.png" width={80} height={80} alt="SERC Logo" />
-                        <div className="hidden sm:flex flex-col justify-center">
-                            <span className="hidden xs:hidden sm:block md:hidden lg:hidden xl:block font-black text-2xl text-text leading-tight">Software Engineering Research Center</span>
-                            <span className="block xs:block sm:hidden md:block lg:block xl:hidden font-black text-2xl text-text leading-tight">SERC</span>
+                        <Image src="/images/serc-logo-white.png" width={80} height={80} alt="SERC Logo" className="rounded-sm" />
+                        <div className="hidden sm:flex flex-col justify-center min-w-0">
+                            <span className="hidden 2xl:block max-w-[15rem] overflow-hidden text-ellipsis font-black text-lg 2xl:text-xl text-text leading-tight 2xl:[display:-webkit-box] 2xl:[-webkit-line-clamp:2] 2xl:[-webkit-box-orient:vertical]">
+                                Software Engineering Research Center
+                            </span>
+                            <span className="block 2xl:hidden font-black text-2xl text-text leading-tight">SERC</span>
                         </div>
                     </Link>
                 </div>
@@ -124,7 +130,7 @@ const Navbar: React.FC = () => {
                         }}
                     >
                         <div className="py-2 overflow-y-auto max-h-[calc(80vh-4px)] pb-safe">
-                            <Link href="/research"
+                            <Link href="/about-us"
                                 className={`block px-8 py-3 hover:bg-hover text-text text-lg transition-all duration-300 ease-in-out ${isClosing ? 'opacity-0 -translate-y-2' : 'opacity-100 translate-y-0 delay-[100ms]'}`}
                                 style={{
                                     opacity: mobileMenuOpen && !isClosing ? 1 : 0,
@@ -132,9 +138,9 @@ const Navbar: React.FC = () => {
                                     transitionDelay: '100ms'
                                 }}
                                 onClick={closeMobileMenu}>
-                                Research
+                                About
                             </Link>
-                            <Link href="/projects"
+                            <Link href="/research"
                                 className={`block px-8 py-3 hover:bg-hover text-text text-lg transition-all duration-300 ease-in-out ${isClosing ? 'opacity-0 -translate-y-2' : 'opacity-100 translate-y-0 delay-[150ms]'}`}
                                 style={{
                                     opacity: mobileMenuOpen && !isClosing ? 1 : 0,
@@ -142,9 +148,9 @@ const Navbar: React.FC = () => {
                                     transitionDelay: '150ms'
                                 }}
                                 onClick={closeMobileMenu}>
-                                Projects
+                                Research
                             </Link>
-                            <Link href="/collaborators"
+                            <Link href="/projects"
                                 className={`block px-8 py-3 hover:bg-hover text-text text-lg transition-all duration-300 ease-in-out ${isClosing ? 'opacity-0 -translate-y-2' : 'opacity-100 translate-y-0 delay-[200ms]'}`}
                                 style={{
                                     opacity: mobileMenuOpen && !isClosing ? 1 : 0,
@@ -152,9 +158,9 @@ const Navbar: React.FC = () => {
                                     transitionDelay: '200ms'
                                 }}
                                 onClick={closeMobileMenu}>
-                                Collaborators
+                                Projects
                             </Link>
-                            <Link href="/blog"
+                            <Link href="/collaborators"
                                 className={`block px-8 py-3 hover:bg-hover text-text text-lg transition-all duration-300 ease-in-out ${isClosing ? 'opacity-0 -translate-y-2' : 'opacity-100 translate-y-0 delay-[250ms]'}`}
                                 style={{
                                     opacity: mobileMenuOpen && !isClosing ? 1 : 0,
@@ -162,9 +168,9 @@ const Navbar: React.FC = () => {
                                     transitionDelay: '250ms'
                                 }}
                                 onClick={closeMobileMenu}>
-                                Blog
+                                Collaborators
                             </Link>
-                            <Link href="/news"
+                            <Link href="/blog"
                                 className={`block px-8 py-3 hover:bg-hover text-text text-lg transition-all duration-300 ease-in-out ${isClosing ? 'opacity-0 -translate-y-2' : 'opacity-100 translate-y-0 delay-[300ms]'}`}
                                 style={{
                                     opacity: mobileMenuOpen && !isClosing ? 1 : 0,
@@ -172,9 +178,9 @@ const Navbar: React.FC = () => {
                                     transitionDelay: '300ms'
                                 }}
                                 onClick={closeMobileMenu}>
-                                News
+                                Blog
                             </Link>
-                            <Link href="/people"
+                            <Link href="/news"
                                 className={`block px-8 py-3 hover:bg-hover text-text text-lg transition-all duration-300 ease-in-out ${isClosing ? 'opacity-0 -translate-y-2' : 'opacity-100 translate-y-0 delay-[350ms]'}`}
                                 style={{
                                     opacity: mobileMenuOpen && !isClosing ? 1 : 0,
@@ -182,9 +188,9 @@ const Navbar: React.FC = () => {
                                     transitionDelay: '350ms'
                                 }}
                                 onClick={closeMobileMenu}>
-                                People
+                                News
                             </Link>
-                            <Link href="/contact"
+                            <Link href="/people"
                                 className={`block px-8 py-3 hover:bg-hover text-text text-lg transition-all duration-300 ease-in-out ${isClosing ? 'opacity-0 -translate-y-2' : 'opacity-100 translate-y-0 delay-[400ms]'}`}
                                 style={{
                                     opacity: mobileMenuOpen && !isClosing ? 1 : 0,
@@ -192,15 +198,25 @@ const Navbar: React.FC = () => {
                                     transitionDelay: '400ms'
                                 }}
                                 onClick={closeMobileMenu}>
-                                Contact Us
+                                People
                             </Link>
-                            <div
-                                onClick={handleSearchClick}
-                                className={`flex items-center px-8 py-3 hover:bg-hover text-text cursor-pointer text-lg transition-all duration-300 ease-in-out ${isClosing ? 'opacity-0 -translate-y-2' : 'opacity-100 translate-y-0 delay-[450ms]'}`}
+                            <Link href="/contact"
+                                className={`block px-8 py-3 hover:bg-hover text-text text-lg transition-all duration-300 ease-in-out ${isClosing ? 'opacity-0 -translate-y-2' : 'opacity-100 translate-y-0 delay-[450ms]'}`}
                                 style={{
                                     opacity: mobileMenuOpen && !isClosing ? 1 : 0,
                                     transform: mobileMenuOpen && !isClosing ? 'translateY(0)' : 'translateY(-10px)',
                                     transitionDelay: '450ms'
+                                }}
+                                onClick={closeMobileMenu}>
+                                Contact Us
+                            </Link>
+                            <div
+                                onClick={handleSearchClick}
+                                className={`flex items-center px-8 py-3 hover:bg-hover text-text cursor-pointer text-lg transition-all duration-300 ease-in-out ${isClosing ? 'opacity-0 -translate-y-2' : 'opacity-100 translate-y-0 delay-[500ms]'}`}
+                                style={{
+                                    opacity: mobileMenuOpen && !isClosing ? 1 : 0,
+                                    transform: mobileMenuOpen && !isClosing ? 'translateY(0)' : 'translateY(-10px)',
+                                    transitionDelay: '500ms'
                                 }}
                             >
                                 <Search className="mr-2 hover:bg-hover text-text" size={18} />
@@ -209,11 +225,11 @@ const Navbar: React.FC = () => {
 
                             {/* Theme selector for mobile with animation */}
                             <div
-                                className={`px-8 py-3 transition-all duration-300 ease-in-out ${isClosing ? 'opacity-0 -translate-y-2' : 'opacity-100 translate-y-0 delay-[500ms]'}`}
+                                className={`px-8 py-3 transition-all duration-300 ease-in-out ${isClosing ? 'opacity-0 -translate-y-2' : 'opacity-100 translate-y-0 delay-[550ms]'}`}
                                 style={{
                                     opacity: mobileMenuOpen && !isClosing ? 1 : 0,
                                     transform: mobileMenuOpen && !isClosing ? 'translateY(0)' : 'translateY(-10px)',
-                                    transitionDelay: '500ms'
+                                    transitionDelay: '550ms'
                                 }}
                             >
                                 <div className="text-text text-lg font-medium mb-3 flex items-center">
@@ -278,6 +294,10 @@ const Navbar: React.FC = () => {
                 </div>
 
                 <div className="hidden lg:flex items-center gap-6">
+                    <Link href="/about-us" className="group relative py-2 pl-0 font-medium text-text hover:text-accent transition-colors duration-200">
+                        About
+                        <span className="absolute bottom-0 left-0 h-0.5 bg-accent w-0 group-hover:w-full transition-width duration-300"></span>
+                    </Link>
                     <Link href="/research" className="group relative py-2 pl-0 font-medium text-text hover:text-accent transition-colors duration-200">
                         Research
                         <span className="absolute bottom-0 left-0 h-0.5 bg-accent w-0 group-hover:w-full transition-width duration-300"></span>
@@ -314,7 +334,7 @@ const Navbar: React.FC = () => {
                         <Search className="text-text" size={18} />
                         <span className="text-text mr-5">Search</span>
                         <div className="flex items-center text-xs py-0.5 px-1.5 rounded border border-[var(--border-color)] hover:bg-hover text-text ">
-                            {typeof navigator !== 'undefined' && navigator.userAgent.indexOf('Mac') !== -1 ? '⌘K' : 'Ctrl+K'}
+                            {shortcutLabel}
                         </div>
                     </div>
 

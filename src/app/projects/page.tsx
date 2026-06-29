@@ -95,7 +95,6 @@ export default function ProjectsPage() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
-  const [hoveredListProject, setHoveredListProject] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [isLoaded, setIsLoaded] = useState(false);
   const [videoModal, setVideoModal] = useState({ isOpen: false, videoId: '' });

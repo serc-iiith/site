@@ -31,7 +31,7 @@ export default function NotFound() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ color: 'var(--text-color)' }}>Page Not Found!</h2>
           
           <p className="text-lg mb-8 max-w-xl mx-auto" style={{ color: 'var(--secondary-color)' }}>
-            Oopsie Woopsie! The code monkeys at our headquarters are working vewy hard to fix this!
+            Oopsie Woopsie! The code monkeys at our headquarters are working very hard to fix this!
           </p>
           
           <motion.div

@@ -55,7 +55,7 @@ type PersonProfileProps = {
   publications: Paper[];
 };
 
-export default function PersonProfile({ person, category, publications }: PersonProfileProps) {
+export default function PersonProfile({ person, publications }: Omit<PersonProfileProps, 'category'> & { category?: string }) {
   // State for authentication and editing mode
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -69,16 +69,12 @@ export default function PersonProfile({ person, category, publications }: Person
   const [showAllPublications, setShowAllPublications] = useState(false);
 
   // New states for education and interests arrays
-  const [newInterest, setNewInterest] = useState("");
+  // New states for education
   const [newEducation, setNewEducation] = useState<Education>({
     degree: "",
     institution: "",
     year: new Date().getFullYear(),
   });
-
-  // Social link editing
-  const [newSocialPlatform, setNewSocialPlatform] = useState("");
-  const [newSocialUrl, setNewSocialUrl] = useState("");
 
   // Use useEffect to mark when component is mounted
   useEffect(() => {
@@ -149,28 +145,10 @@ export default function PersonProfile({ person, category, publications }: Person
   };
 
   // Handle field changes in edit mode
-  const handleFieldChange = (field: string, value: any) => {
+  const handleFieldChange = (field: string, value: string | string[] | boolean | number | undefined) => {
     setEditablePerson((prev) => ({
       ...prev,
       [field]: value,
-    }));
-  };
-
-  // Handle interest changes
-  const handleAddInterest = () => {
-    if (newInterest.trim()) {
-      setEditablePerson((prev) => ({
-        ...prev,
-        interests: [...(prev.interests || []), newInterest.trim()],
-      }));
-      setNewInterest("");
-    }
-  };
-
-  const handleRemoveInterest = (index: number) => {
-    setEditablePerson((prev) => ({
-      ...prev,
-      interests: prev.interests?.filter((_, i) => i !== index),
     }));
   };
 
@@ -193,31 +171,6 @@ export default function PersonProfile({ person, category, publications }: Person
     setEditablePerson((prev) => ({
       ...prev,
       education: prev.education?.filter((_, i) => i !== index),
-    }));
-  };
-
-  // Handle social link changes
-  const handleAddSocialLink = () => {
-    if (newSocialPlatform.trim() && newSocialUrl.trim()) {
-      setEditablePerson((prev) => ({
-        ...prev,
-        social_links: {
-          ...(prev.social_links || {}),
-          [newSocialPlatform.trim()]: newSocialUrl.trim(),
-        },
-      }));
-      setNewSocialPlatform("");
-      setNewSocialUrl("");
-    }
-  };
-
-  const handleRemoveSocialLink = (platform: string) => {
-    const updatedLinks = { ...editablePerson.social_links };
-    delete updatedLinks[platform];
-
-    setEditablePerson((prev) => ({
-      ...prev,
-      social_links: updatedLinks,
     }));
   };
 

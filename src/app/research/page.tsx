@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useEffect, useMemo, useRef, useCallback } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Filter, Calendar, Users, BookOpen, Bookmark, X, Copy, Info, Link, ChevronLeft, ChevronRight } from 'lucide-react';
-import { Toaster, toast } from "react-hot-toast";
+import { Filter, Calendar, Users, BookOpen, Bookmark, Info, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Toaster } from "react-hot-toast";
 import CustomCountUp from '@/components/CustomCountUp';
 import SearchFilterBar from '@/components/SearchFilterBar'
 import ResearchModal from '@/components/ResearchModal';
@@ -46,8 +46,8 @@ export default function ResearchPapers() {
         const response = await fetch('/data/papers.json');
         const data = await response.json();
         setPapers(data);
-      } catch (error) {
-        toast.error('Error fetching papers');
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      } catch (_error) {
       } finally {
         setLoading(false);
       }
@@ -150,7 +150,7 @@ export default function ResearchPapers() {
     const range = [];
     const showPages = 5; // Max number of page buttons to show
     let start = Math.max(1, currentPage - Math.floor(showPages / 2));
-    let end = Math.min(totalPages, start + showPages - 1);
+    const end = Math.min(totalPages, start + showPages - 1);
     // Adjust start if we're near the end
     if (end === totalPages) {
       start = Math.max(1, end - showPages + 1);

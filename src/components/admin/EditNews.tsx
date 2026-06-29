@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Plus, Edit, X, Save, Search, Trash2, Calendar, MapPin, Clock, Link } from 'lucide-react';
+import { Plus, Edit, X, Save, Search, Trash2, MapPin, Clock, Link } from 'lucide-react';
 import Image from 'next/image';
 import { Toaster, toast } from 'react-hot-toast';
 import DeleteConfirmationModal from '@/components/common/DeleteConfirmationModal';
@@ -323,7 +323,8 @@ const EditNews: React.FC = () => {
             hours = hours ? hours : 12; // Convert 0 to 12 for 12 AM
 
             return `${month} ${day}, ${year} ${hours}:${minutes} ${ampm}`;
-        } catch (error) {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        } catch (_error) {
             return dateString;
         }
     };

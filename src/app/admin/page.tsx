@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { toast, Toaster } from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
 import {
   Users,
   BookOpen,
@@ -11,6 +11,7 @@ import {
   Handshake,
   Newspaper,
   CalendarClock,
+  FileJson,
   LogOut,
   X,
   ChevronRight,
@@ -22,6 +23,7 @@ import EditProjects from '@/components/admin/EditProjects';
 import EditPapers from '@/components/admin/EditPapers';
 import EditCollaborators from '@/components/admin/EditCollaborators';
 import EditBlogs from '@/components/admin/EditBlogs';
+import SeoVerifier from '@/components/admin/SeoVerifier';
 
 export default function AdminPage() {
   const [activeSection, setActiveSection] = useState('people');
@@ -58,6 +60,8 @@ export default function AdminPage() {
         return <EditCollaborators />
       case 'blog':
         return <EditBlogs />
+      case 'seo':
+        return <SeoVerifier />
       default:
         return null;
     }
@@ -70,6 +74,7 @@ export default function AdminPage() {
     { id: 'collaborators', name: 'Collaborators', icon: <Handshake size={20} /> },
     { id: 'blog', name: 'Blog', icon: <Newspaper size={20} /> },
     { id: 'news', name: 'News', icon: <CalendarClock size={20} /> },
+    { id: 'seo', name: 'SEO Verifier', icon: <FileJson size={20} /> },
   ];
 
   // Show toast notification when changing sections
