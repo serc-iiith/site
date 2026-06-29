@@ -495,6 +495,20 @@
             ],
             "advisor": "Dr. Y. Raghu Reddy",
             "bio": "Puru has always been fascinated by the way humans interact with intelligent systems—and how those systems, in turn, interact with each other. With a background in mechanical engineering and a growing expertise in artificial intelligence and robotics, his journey has been anything but conventional. He began his career in the banking sector, where he honed his problem-solving skills in a fast-paced environment, but his passion for innovation led him back to research and development. He’s interested in making technology feel more intuitive, whether it’s a robot learning from experience or a virtual environment that responds naturally to human movement.\n\nOver the years, he’s explored different facets of this idea. He’s worked on AI-driven applications, multilingual text analysis, and immersive virtual reality experiences. One of his recent projects involved designing dynamic, infinitely branching mazes in VR that adapt to users’ movements, creating a seamless exploration experience. But his real passion lies in robotics—specifically, how intelligent systems can transfer learned behaviors across different embodiments and interact more naturally with both humans and other machines.\n\nAt the heart of his work is a simple but powerful idea: the future of technology isn’t just about making smarter systems, but about making them work together—and with us—in more meaningful ways. He hopes to continue his research in this space, pushing the boundaries of how we build and interact with intelligent systems in the real and virtual worlds"
+        },
+        {
+            "name": "Sreemaee Akshathala",
+            "title": "MS (CSE)",
+            "email": "sreemaee.akshathala@research.iiit.ac.in",
+            "imageURL": "/images/people/sreemaee-akshathala.png",
+            "slug": "sreemaee-akshathala",
+            "social_links": {
+                "Github": "https://github.com/Sreemaee21",
+                "LinkedIn": "https://www.linkedin.com/in/sreemaee-akshathala"
+            },
+            "interests": [],
+            "education": [],
+            "bio": "Hi! I am a Master’s by Research student and my work is at the intersection of Software Engineering and AI, with a primary focus on the software architectural aspects and evaluation of agentic AI systems.\nMy recent research explores the development of frameworks for evaluating multi-agent systems beyond simple task completion, aiming to establish more robust assessment metrics for autonomous systems, and genAI in software architecture. I have contributed to projects like ArchBench, which benchmarks LLMs for software architecture tasks, and I am particularly interested in refining the memory mechanisms and reliability of agentic systems to better support complex, real-world applications.\nWhen I’m not in the lab, you can usually find me playing board games with friends."
         }
     ],
     "Dual Degree": [
@@ -1315,17 +1329,6 @@
         }
     ],
     "Research Associates": [
-        {
-            "name": "Sreemaee Akshathala",
-            "title": "Research Engineer",
-            "email": "sreemaee.akshathala@research.iiit.ac.in",
-            "imageURL": "/images/people/sreemaee-akshathala.png",
-            "slug": "sreemaee-akshathala",
-            "social_links": {},
-            "interests": [],
-            "education": [],
-            "bio": "My current primary focus is contribute to the building of a LLM based multi-agent framework for autonomous CloudOps. My interest areas include exploring the intersection of Software Engineering and AI, particularly in areas such as  Agents in SE, LLM Agents, LLMs for Architecture Decision Records (ADRs), and NLP in SE.  I am passionate about building intelligent, scalable systems and am always eager to collaborate on innovative projects in the intersection of SE and ML. Beyond my professional work, I enjoy painting as a creative outlet and play board games, which keeps me inspired and engaged in fun ways!"
-        },
         {
             "name": "Payel Das",
             "title": "Research Associate",

@@ -1,6 +1,27 @@
 [
   {
     "authors": [
+      "Parthasarathy, Kannan",
+      "Vaidhyanathan, Karthik",
+      "Dhar, Rudra",
+      "Krishnamachari, Venkat",
+      "Kakran, Adyansh",
+      "sreemaee-akshathala",
+      "Arun, Shrikara",
+      "Karan, Amey",
+      "Muhammed, Basil",
+      "Dubey, Sumant",
+      "Veerubhotla, Mohan"
+    ],
+    "year": "2025",
+    "title": "Engineering LLM Powered Multi-Agent Framework for Autonomous CloudOps",
+    "cite": "@INPROCEEDINGS{11030040,\n  author={Parthasarathy, Kannan and Vaidhyanathan, Karthik and Dhar, Rudra and Krishnamachari, Venkat and Kakran, Adyansh and Akshathala, Sreemaee and Arun, Shrikara and Karan, Amey and Muhammed, Basil and Dubey, Sumant and Veerubhotla, Mohan},\n  booktitle={2025 IEEE/ACM 4th International Conference on AI Engineering – Software Engineering for AI (CAIN)}, \n  title={Engineering LLM Powered Multi-Agent Framework for Autonomous CloudOps}, \n  year={2025},\n  volume={},\n  number={},\n  pages={201-211},\n  abstract={Cloud Operations (CloudOps) is a rapidly growing field focused on the automated management and optimization of cloud infrastructure which is essential for organizations nav-igating increasingly complex cloud environments. MontyCloud Inc. is one of the major companies in the CloudOps domain that leverages autonomous bots to manage cloud compliance, security, and continuous operations. To make the platform more accessible and effective to the customers, we leveraged the use of GenAl. Developing a GenAl-based solution for autonomous CloudOps for the existing MontyCloud system presented us with various challenges such as i) diverse data sources; ii) orchestration of multiple processes and iii) handling complex workflows to automate routine tasks. To this end, we developed MOYA, a multi-agent framework that leverages GenAI and balances autonomy with the necessary human control. This framework integrates various internal and external systems and is optimized for factors like task orchestration, security, and error mitigation while producing accurate, reliable, and relevant insights by utilizing Retrieval Augmented Generation (RAG). Evaluations of our multi-agent system with the help of practitioners as well as using automated checks demonstrate enhanced accuracy, responsiveness, and effectiveness over non-agentic approaches across complex workflows.},\n  keywords={Accuracy;Software architecture;Generative AI;Soft sensors;Prevention and mitigation;Retrieval augmented generation;Software reliability;Security;Optimization;Multi-agent systems;Autonomous CloudOps;LLM;AI Engineering;Multi-Agent Framework;Generative AI;Software Architecture},\n  doi={10.1109/CAIN66642.2025.00031},\n  ISSN={},\n  month={April},}\n",
+    "venue": "Software Engineering for AI (CAIN)",
+    "doi": "10.1109/CAIN66642.2025.00031",
+    "url": "https://ieeexplore.ieee.org/abstract/document/11030040"
+  },
+  {
+    "authors": [
       "Abhishek Kumar Singh"
     ],
     "year": "2025",
