@@ -1,0 +1,851 @@
+\documentclass[11pt,a4paper,DIV=16,headings=normal,parskip=half]{scrartcl}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{scrlayer-scrpage}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+urlcolor=blue,
+pdftitle={SERC Website Infrastructure Migration Report},
+pdfauthor={Nitheesh}
+}
+
+\definecolor{codebg}{RGB}{248,248,248}
+\definecolor{highlightgreen}{RGB}{212,237,218}
+\definecolor{codecomment}{RGB}{128,128,128}
+\definecolor{codekeyword}{RGB}{0,0,255}
+\definecolor{codestring}{RGB}{0,128,0}
+
+\lstdefinelanguage{nginx}{
+  keywords={server, listen, server_name, root, index, ssl_certificate, ssl_certificate_key, ssl_session_cache, ssl_session_timeout, ssl_session_tickets, ssl_protocols, ssl_prefer_server_ciphers, add_header, gzip, gzip_vary, gzip_min_length, gzip_proxied, gzip_types, location, try_files, expires, access_log, error_page, return},
+  keywordstyle=\color{codekeyword}\bfseries,
+  ndkeywords={on, off, always, shared, ssl, http2},
+  ndkeywordstyle=\color{teal}\bfseries,
+  sensitive=true,
+  comment=[l]{\#},
+  commentstyle=\color{codecomment}\itshape,
+  string=[b]",
+  stringstyle=\color{codestring},
+  alsoletter={.,-,/,@}
+}
+
+\lstset{
+  backgroundcolor=\color{codebg},
+  basicstyle=\ttfamily\small,
+  commentstyle=\color{codecomment}\itshape,
+  keywordstyle=\color{codekeyword}\bfseries,
+  stringstyle=\color{codestring},
+  frame=single,
+  breaklines=true,
+  columns=fullflexible,
+  showstringspaces=false,
+  keepspaces=true,
+  language=bash,
+  morekeywords={bun, rsync, chown, chmod, systemctl, nginx, git, curl, vim, passwd, groupadd, useradd, tar, visudo, apt, openssl},
+  alsoletter={.,-,/,@}
+}
+
+\setlist{
+nosep,
+topsep=2pt,
+partopsep=0pt
+}
+
+\renewcommand{\arraystretch}{1.15}
+
+\clearpairofpagestyles
+\ihead{SERC Website Migration Report}
+\ohead{25 June 2026}
+\cfoot{\pagemark}
+\pagestyle{scrheadings}
+
+\title{
+\Large SERC Website Infrastructure Migration Report\\
+\vspace{0.2cm}
+\large Platform Migration and Security Hardening to Nginx
+}
+
+\author{Prepared by Nitheesh Chandra \\ \small (\href{mailto:nitheeshchandra.y@research.iiit.ac.in}{nitheeshchandra.y@research.iiit.ac.in}) \\ \small Software Engineering Research Center \\ \small International Institute of Information Technology, Hyderabad}
+\date{25 June 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{table}[htbp]
+\centering
+\caption{Project Migration Parameters and Status Summary}
+\label{tab:migration_params}
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Parameter} & \textbf{Detail} \\
+\midrule
+\textbf{Project} & SERC Website Migration \& Security Hardening \\
+\textbf{Target Domain} & serc.iiit.ac.in (Production Target) \\
+\textbf{Validation Domain} & serc-dev.iiit.ac.in (Staging / Development Server) \\
+\textbf{Migration Date} & 25 June 2026 \\
+\textbf{Status} & Migrated \& Validated (\colorbox{highlightgreen}{\textbf{Ready for Production Cutover}}) \\
+\textbf{Environment} & Staging / Development (\colorbox{highlightgreen}{\textbf{Validation Complete}}) \\
+\textbf{Technical Contact} & Nitheesh Chandra (\href{mailto:nitheeshchandra.y@research.iiit.ac.in}{nitheeshchandra.y@research.iiit.ac.in}) \\
+\textbf{Target Web Server} & Nginx 1.24.0 (Ubuntu Default) \\
+\textbf{Target OS} & Ubuntu 24.04 LTS \\
+\textbf{Document Version} & 1.4 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{0.5cm}
+
+\begin{abstract}
+This document records the migration of the Software Engineering Research Center (SERC) website from a legacy Apache-based CentOS server to a modern, security-hardened Nginx-based Ubuntu deployment. The migration was initiated in response to the IIIT Hyderabad IT Office Information Security Review, which flagged the legacy server for operating on an outdated and unsupported platform (CentOS 7 \cite{centos7-eol} and Apache 2.4.6 \cite{apache-cves}). Key parameters and metadata for the project are summarized in Table~\ref{tab:migration_params}.
+
+Following the CISO guidelines, public external access to the SERC portal was restricted on 22 June 2026 due to pending application-level validation. This report provides the technical documentation of the migration, architectural decisions, and successful validation activities conducted on the newly provisioned staging/development server (\texttt{serc-dev.iiit.ac.in}). Since the required validation has been successfully completed, the IT Office is requested to plan the production cutover to transition the public domain \texttt{serc.iiit.ac.in} to the new infrastructure.
+\end{abstract}
+\pagebreak
+
+\tableofcontents
+
+\clearpage
+
+\section{Context and Regulatory Compliance}
+
+\subsection{Information Security Review Findings}
+During the institutional Information Security Review, the server hosting the SERC portal (\texttt{serc.iiit.ac.in}) was flagged for critical vulnerabilities. The system was running:
+\begin{itemize}
+\item \textbf{Operating System:} CentOS Linux 7 (reached End of Life on 30 June 2024 \cite{centos7-eol}).
+\item \textbf{Web Server Software:} Apache HTTP Server version 2.4.6 (released in 2013, with numerous unpatched security vulnerabilities \cite{apache-cves}).
+\end{itemize}
+Because both the OS and the web server software were no longer receiving security updates, they represented a significant threat to the campus network integrity and compliance framework.
+
+\subsection{Compliance Timeline and Consequences}
+The IIIT Hyderabad IT Office and CISO established a strict timeline for resolution:
+\begin{itemize}
+\item \textbf{20 June 2026:} Deadline to nominate a technical contact for validation coordination. Nitheesh (SERC Team, email: \href{mailto:nitheeshchandra.y@research.iiit.ac.in}{nitheeshchandra.y@research.iiit.ac.in}) was designated as the contact.
+\item \textbf{22 June 2026 (Validation Deadline):} Deadline to complete application-level migration and compatibility validation. Because validation was not finalized by this date, public/external access to the portal was restricted, moving the site to campus-internal access only.
+\item \textbf{29 June 2026 (Decommissioning Deadline):} Portals remaining unvalidated or unsupported beyond this date are subject to complete removal from the campus network.
+\end{itemize}
+The migration and validation activities documented herein were completed on the staging server (\texttt{serc-dev.iiit.ac.in}) on 25 June 2026. With validation complete, the IT Office can now plan the production cutover to restore full external public access to \texttt{serc.iiit.ac.in}.
+
+\section{Migration Objectives}
+
+The migration was structured to meet both security compliance and operational requirements:
+
+\begin{enumerate}
+\item \textbf{Ensure Regulatory Compliance:} Align with the CISO security guidelines to restore public external access and avoid network-level decommissioning on 29 June 2026.
+\item \textbf{Simplify Infrastructure Architecture:} Eliminate complex server-side modules by transitioning from Apache to a lightweight static hosting configuration.
+\item \textbf{Decommission Legacy Daemons:} Disable unnecessary system services (such as Sendmail, saslauthd, xinetd) that were running on the legacy server, thereby reducing the system's attack surface.
+\item \textbf{Maintain Full Functional Parity:} Verify that all pages, internal links, research reports, and static assets remain functional on the new platform.
+\item \textbf{Upgrade to Active Support Cycles:} Transition to an operating system (Ubuntu 24.04 LTS \cite{ubuntu-lts}) and web server (Nginx 1.24.0 \cite{nginx-docs}) that receive regular security patches.
+\item \textbf{Establish Secure Deployment Pipeline:} Replace manual file-copying methods with a predictable, automated local-to-remote build and synchronization pipeline.
+\end{enumerate}
+
+\section{Legacy Environment Assessment}
+
+\subsection{Platform Overview}
+The legacy environment consisted of CentOS Linux release 7.9.2009 (Core), which has been EOL since 30 June 2024 \cite{centos7-eol}. The active processes on the old server included:
+\begin{itemize}
+\item \texttt{httpd.service} (Apache HTTP Server 2.4.6, configured with prefork MPM)
+\item \texttt{sendmail.service} \& \texttt{sm-client.service} (Mail Transport Agent, active but unused)
+\item \texttt{saslauthd.service} (SASL authentication daemon)
+\item \texttt{xinetd.service} (Extended Internet Services daemon)
+\item \texttt{nrpe.service} (Nagios Remote Program Executor monitoring agent)
+\item \texttt{sshd.service} (OpenSSH Server daemon)
+\end{itemize}
+Apache exposed port 80 and port 443, serving static content from \texttt{/var/www/html}. The full inventory details are documented in Appendix~\ref{sec:legacy_inventory}.
+
+\subsection{Application Static Audit}
+Before initiating the migration, the SERC technical team ran a validation sweep on \texttt{/var/www/html} to confirm that the site could be safely hosted as a static application:
+\begin{enumerate}
+\item \textbf{File Search:} We recursively searched the document root for dynamic runtimes:
+\begin{lstlisting}
+find /var/www/html -name "*.php" -o -name "*.cgi" -o -name "*.pl" -o -name "*.py" -o -name "*.rb"
+\end{lstlisting}
+The search returned zero files, confirming that the site contains no backend dynamic code.
+\item \textbf{Apache Configuration Check:} Inspected the global configurations and local \texttt{.htaccess} files. No rewrites to dynamic interpreters, CGI directories, or dynamic proxying rules were found.
+\item \textbf{Listening Sockets Check:} Used \texttt{ss -tlnp} to confirm that no application runtimes (e.g., PHP-FPM, Gunicorn, Node.js) were active locally.
+\end{enumerate}
+\textit{Conclusion:} The SERC application was verified as a 100\% static website, making Nginx static hosting the optimal architectural path.
+
+\subsection{Legacy SSL/TLS Certificate}
+The legacy server was configured with a wildcard or domain certificate for the university:
+\begin{lstlisting}[language=]
+SSLCertificateFile /etc/pki/tls/certs/iiit.ac.in.crt
+SSLCertificateKeyFile /etc/pki/tls/private/iiit.ac.in.key
+\end{lstlisting}
+Validation of the certificate using OpenSSL commands confirmed:
+\begin{itemize}
+\item \textbf{Issuer:} GlobalSign GCC R6 AlphaSSL CA 2025.
+\item \textbf{Validity:} 30 September 2025 to 1 November 2026.
+\end{itemize}
+This certificate was copied to the target server for validation.
+
+\section{Architecture Decision Record}
+
+\subsection{ADR-001: Web Server and Platform Migration}
+
+\textbf{Status:} Approved
+
+\textbf{Context:}
+The IT Office restricted external access to \texttt{serc.iiit.ac.in} on 22 June 2026 due to security risks associated with CentOS 7 and Apache 2.4.6. We must migrate the site to the newly provisioned target server and choose a performant, maintainable, and secure hosting architecture.
+
+\textbf{Decision:}
+Migrate the application to Nginx 1.24.0 \cite{nginx-docs} hosted on Ubuntu 24.04 LTS \cite{ubuntu-lts}.
+
+\textbf{Decision Drivers:}
+\begin{itemize}
+\item \textbf{Security Compliance:} Resolving IT Office audit findings to restore public access.
+\item \textbf{Performance Optimization:} Minimizing memory and CPU usage when serving static research reports and assets.
+\item \textbf{Operational Simplicity:} Moving to a declarative, single-file server configuration format.
+\end{itemize}
+
+\textbf{Alternatives Considered:}
+
+\subsubsection{Option A: Retain Apache on a New OS}
+\begin{itemize}
+\item \textit{Advantages:} Familiarity, compatibility with existing configurations.
+\item \textit{Disadvantages:} Apache's process-per-connection (or thread-per-connection) architecture consumes significant memory and CPU, especially under heavy request loads. It introduces unnecessary complexity and modules (e.g., \texttt{mod\_cgi}, \texttt{mod\_php}) that are useless for a static site.
+\end{itemize}
+
+\subsubsection{Option B: Nginx Static Server (Selected)}
+\begin{itemize}
+\item \textit{Advantages:} Nginx utilizes an asynchronous, event-driven, non-blocking architecture. It handles concurrent static file requests with minimal memory ($<$10MB) and provides simple configuration blocks for headers, gzip, and caching.
+\item \textit{Disadvantages:} Requires converting any virtual host configuration to Nginx server block format. Since the configuration is straightforward, this was a one-time migration task.
+\end{itemize}
+
+\subsubsection{Option C: External Static Hosting (e.g., GitHub/Cloudflare Pages, AWS S3)}
+\begin{itemize}
+\item \textit{Disadvantages:} Strongly rejected due to the IIIT Hyderabad CISO data sovereignty policies, which require university assets and domains to resolve to university-controlled networks.
+\end{itemize}
+
+\textbf{Consequences:}
+\begin{itemize}
+\item Resolves the security audit finding, enabling the restoration of public access.
+\item Reduces server memory footprint by over 90\%.
+\item Standardizes future deployments via an SSH-based file sync.
+\end{itemize}
+
+\section{Target Environment Configuration}
+
+\subsection{Operating System Upgrade}
+The new server was provisioned with installation of \textbf{Ubuntu 24.04 LTS (Noble Numbat)} \cite{ubuntu-lts}.
+\textit{Why Ubuntu LTS?} It provides stable, long-term support with security updates guaranteed until April 2029, resolving the EOL platform risk. The package initialization commands are detailed in Appendix~\ref{sec:provisioning_commands}.
+
+Installed package checklist:
+\begin{lstlisting}
+nginx (v1.24.0, Ubuntu default)
+git curl vim rsync
+\end{lstlisting}
+
+\subsection{Nginx Site Configuration}
+The production-hardened site configuration file was deployed to \texttt{/etc/nginx/sites-available/serc.iiit.ac.in.conf}. The detailed Nginx site configuration is documented in Appendix~\ref{sec:nginx_config}. It enforces:
+\begin{itemize}
+\item Port 80 HTTP-to-HTTPS permanent redirect (301).
+\item Port 443 HTTPS serving with HTTP/2 enabled (\texttt{listen 443 ssl http2} \cite{rfc7540}).
+\item Hardened SSL protocol negotiation (TLS 1.2 \cite{rfc5246} and TLS 1.3 \cite{rfc8446} only; \texttt{ssl\_prefer\_server\_ciphers off} as per modern practices).
+\item Security response headers \cite{owasp-headers} (HSTS, X-Content-Type-Options, Referrer-Policy).
+\item Gzip compression rules.
+\item Static asset expiration (30 days caching with `public, immutable` control).
+\item Custom 404 error routing to \texttt{/404/index.html}.
+\end{itemize}
+
+\section{Deployment Architecture \& Permissions}
+
+\subsection{Security Permissions Model}
+The application document root is configured at:
+\begin{lstlisting}
+/var/www/serc.iiit.ac.in
+\end{lstlisting}
+To implement a secure permissions boundary, we enforced the following access controls:
+\begin{itemize}
+\item \textbf{Ownership:} The directory is recursively owned by \texttt{root} and the group \texttt{deploy}:
+\begin{lstlisting}
+chown -R root:deploy /var/www/serc.iiit.ac.in
+\end{lstlisting}
+\item \textbf{Permissions:} Set to \texttt{775} for folders and \texttt{664} for files:
+\begin{lstlisting}
+find /var/www/serc.iiit.ac.in -type d -exec chmod 775 {} \;
+find /var/www/serc.iiit.ac.in -type f -exec chmod 664 {} \;
+\end{lstlisting}
+\end{itemize}
+\textit{Why this design?} The deployment user \texttt{deploy} is a member of the \texttt{deploy} group, granting it read and write permissions (group permission \texttt{7} for directories, \texttt{6} for files) to push website updates. Nginx worker processes run as \texttt{www-data}, which falls under the "others" permission class. Nginx has read-only access (represented by the permissions \texttt{5} for directories and \texttt{4} for files) to serve the content. The Nginx process cannot write to or modify the site files, preventing a compromised web daemon from writing to disk.
+
+The deployment pipeline and permission flow are visualized in Figure~\ref{fig:deployment_arch}.
+
+\subsection{Deployment Workflow}
+Deployments are initiated from the local development system to the remote staging/dev server:
+\begin{lstlisting}
+# Step 1: Compile static assets locally using Bun
+bun run build
+
+# Step 2: Push build outputs and clean up deleted files
+rsync -avz --delete out/ deploy@serc-dev.iiit.ac.in:/var/www/serc.iiit.ac.in/
+\end{lstlisting}
+Rsync's delta-transfer algorithm \cite{rsync-tool} only uploads modified files, reducing bandwidth. The Bun bundler \cite{bun-sh} is used for building the static files. The \texttt{--delete} flag is essential because it guarantees that deleted local files are removed from the server, preventing orphaned scripts or pages from remaining accessible.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+  node distance=1.2cm and 2.0cm,
+  box/.style={draw, rectangle, rounded corners, text width=3.2cm, minimum height=1.2cm, align=center, fill=blue!5},
+  dirbox/.style={draw, rectangle, rounded corners, text width=4.5cm, minimum height=1.2cm, align=center, fill=blue!5},
+  user/.style={draw, circle, minimum size=1.2cm, align=center, fill=orange!10},
+  arrow/.style={-latex, thick}
+]
+  % Nodes
+  \node[box] (dev) {Local Dev System\\ (Bun Build)};
+  \node[box, right=of dev] (server) {Target Server\\ (Ubuntu 24.04)};
+  \node[dirbox, right=of server] (dir) {Document Root\\ \texttt{/var/www/serc.iiit.ac.in}\\ \textbf{root:deploy} (775/664)};
+  
+  \node[user, above=of dir] (deployer) {\small deploy\\ \small user};
+  \node[user, below=of dir] (nginx) {\small www-data\\ \small (Nginx)};
+  
+  % Paths
+  \draw[arrow] (dev) -- node[above, align=center]{\small rsync\\ \small (over SSH)} (server);
+  \draw[arrow] (server) -- (dir);
+  \draw[arrow, dashed, green!60!black] (deployer) -- node[right] {\small Write (Group)} (dir);
+  \draw[arrow, dashed, red!80!black] (nginx) -- node[right] {\small Read-Only (Others)} (dir);
+\end{tikzpicture}
+\caption{Deployment Pipeline and Permissions Boundary Architecture.}
+\label{fig:deployment_arch}
+\end{figure}
+
+\section{Security Design and Hardening}
+
+The secure request handling pipeline, including HTTP-to-HTTPS redirects, TLS protocol negotiations, and security header injection, is illustrated in Figure~\ref{fig:connection_flow}.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+  node distance=1.0cm and 1.5cm,
+  client/.style={draw, rectangle, rounded corners, minimum width=2cm, minimum height=1.0cm, align=center, fill=orange!10},
+  nginx/.style={draw, rectangle, rounded corners, text width=2.8cm, minimum height=1.2cm, align=center, fill=blue!5},
+  action/.style={draw, diamond, aspect=2, text width=2.2cm, align=center, fill=yellow!10},
+  docroot/.style={draw, cylinder, shape border rotate=90, minimum width=2.2cm, minimum height=1.2cm, align=center, fill=green!5},
+  arrow/.style={-latex, thick}
+]
+  % Nodes
+  \node[client] (client) {Client Browser};
+  \node[action, right=of client] (port) {Request Port?};
+  \node[nginx, above right=0.3cm and 1.2cm of port] (redirect) {HTTP Port 80\\ \texttt{301 Permanent Redirect}};
+  \node[nginx, below right=0.3cm and 1.2cm of port] (ssl) {HTTPS Port 443\\ \small TLS 1.2 / 1.3 \& \\ \small Security Headers};
+  \node[docroot, right=of ssl] (files) {Static Assets\\ \texttt{/var/www/serc...}};
+
+  % Paths
+  \draw[arrow] (client) -- (port);
+  \draw[arrow] (port) -- node[above left] {\small Port 80} (redirect);
+  \draw[arrow] (port) -- node[below left] {\small Port 443} (ssl);
+  \draw[arrow] (redirect) |- (client);
+  \draw[arrow] (ssl) -- (files);
+\end{tikzpicture}
+\caption{HTTP/HTTPS connection flow and security processing layers under Nginx.}
+\label{fig:connection_flow}
+\end{figure}
+
+\subsection{HTTPS Enforcement}
+The Nginx configuration redirects all port 80 (HTTP) traffic to port 443 (HTTPS) using a permanent 301 redirect. This guarantees that all communication between clients and the server is encrypted.
+
+\subsection{TLS Protocol Restrictions}
+We disabled SSLv3, TLS 1.0, and TLS 1.1 to protect against cryptographic vulnerabilities (e.g., POODLE, BEAST). The server only negotiates TLS 1.2 and TLS 1.3 connections, using secure, modern cipher suites.
+
+\subsection{Hardened Response Headers}
+The response headers implement standard browser-side protection layers, detailed in Table~\ref{tab:security_headers}:
+
+\begin{table}[htbp]
+\centering
+\caption{Hardened Security Headers and Rationale}
+\label{tab:security_headers}
+\begin{tabular}{@{}lp{9cm}@{}}
+\toprule
+\textbf{Header} & \textbf{Security Purpose \& Reasoning} \\
+\midrule
+Strict-Transport-Security & Enforces HTTPS usage on the client browser for the next year (max-age=31536000), preventing protocol downgrade attacks (SSL stripping). \\
+X-Frame-Options & Set to \texttt{SAMEORIGIN} to prevent clickjacking attacks by blocking unauthorized domains from embedding the website in an iframe. \\
+X-Content-Type-Options & Set to \texttt{nosniff} to force the browser to respect the server-provided MIME type, preventing MIME-type sniffing exploits. \\
+Referrer-Policy & Set to \texttt{strict-origin-when-cross-origin} to prevent the browser from leaking sensitive query parameters or URL structures to third-party domains. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Performance Optimization}
+
+\subsection{Gzip Compression}
+Nginx compresses text-based assets (HTML, CSS, JS, JSON, XML, SVG) before transmission. This achieves up to a 70\% reduction in payload sizes, reducing Time to First Byte (TTFB) and page load times.
+
+\subsection{Asset Caching}
+Static resources receive an expiration header of 30 days. Since the local build tool appends content hashes to asset filenames (cache-busting), these files are immutable. Serving them with long cache times and the \texttt{public, immutable} flag eliminates repetitive network requests for returning users.
+
+\section{Operational Controls}
+
+\subsection{Dedicated Deployment Account}
+We created the isolated user account \texttt{deploy} for publishing website updates. This prevents developers from deploying content using personal administrative accounts or the root login.
+
+\subsection{Privilege Separation (Sudoers configuration)}
+The \texttt{deploy} user's administrative execution is restricted. It can only execute verification and reload commands without a password. This was configured by deploying a sudoers policy file at \texttt{/etc/sudoers.d/deploy} containing:
+\begin{lstlisting}
+deploy ALL=(root) NOPASSWD: /usr/sbin/nginx -t
+deploy ALL=(root) NOPASSWD: /usr/bin/systemctl reload nginx
+\end{lstlisting}
+\textit{Why this model?} This allows automated build scripts to test the configuration syntax and reload the server during deployments without requiring interactive password prompts. However, the user cannot execute other administrative tasks, limiting the impact of a potential credential compromise.
+
+\section{Validation Activities Summary}
+\label{sec:validation_activities}
+
+To guarantee compatibility, security hardening, and structural integrity post-migration, the SERC technical team executed a series of system validation checks on the target staging server (\texttt{serc-dev.iiit.ac.in}). 
+
+The validation activities comprised:
+\begin{enumerate}
+    \item \textbf{Nginx Configuration Syntax Check}: Verifying the syntax of the Nginx configuration blocks to prevent syntax errors and ensure service stability.
+    \item \textbf{Local HTTP Redirect Audit}: Inspecting local HTTP port 80 requests to confirm active port listening.
+    \item \textbf{Local HTTPS Header Audit}: Requesting the local HTTPS port 443 page to check HTTP/2 capabilities and verify that the security hardening headers (HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy) are correctly injected in responses.
+    \item \textbf{Active Certificate Validation}: Checking the expiration dates and issuer metadata of the deployed wildcard TLS certificate.
+\end{enumerate}
+
+All verification activities succeeded, confirming complete functional parity and security compliance of the migrated site. The detailed command execution steps and raw stdout logs for these tests are documented in Appendix~\ref{sec:validation_logs}.
+
+\pagebreak
+\section{Risk Assessment Matrix}
+
+Table~\ref{tab:risk_matrix} outlines the risk events managed during the migration, their impact levels, and mitigation reasons:
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Risk Assessment and Mitigation Matrix}
+\label{tab:risk_matrix}
+\begin{tabular}{@{}lp{2.5cm}p{7.5cm}@{}}
+\toprule
+\textbf{Risk Event} & \textbf{Impact Level} & \textbf{Mitigation Action \& Rationale} \\
+\midrule
+Campus Network Decommissioning & Critical & Complete validation and submit this report to the IT Office before 29 June 2026 to prevent complete removal from the network. \\
+% Certificate Expiration & Critical & Deferred (currently using institutional wildcard certificate valid until 1 November 2026). Future certificate automation is deferred. \\
+Broken Nginx Config & High & Force a configuration syntax check (\texttt{nginx -t}) before reloading Nginx in the deployment script. \\
+Orphaned Code Files & Medium & Run \texttt{rsync} with the \texttt{--delete} flag to automatically clear remote files removed from local builds. \\
+Privilege Escalation & Medium & Restrict the \texttt{deploy} user's sudoers entry to \texttt{nginx -t} and \texttt{systemctl reload nginx} only. \\
+Service Interruption & High & Execute reload rather than restart. \texttt{systemctl reload} processes new configurations without dropping active connections. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Recommendations for Future Work}
+
+\subsection{Immediate Actions}
+
+\begin{enumerate}
+\item \textbf{Implement Directory-Based Symlink Rollbacks:} Deploy static versions to versioned folders and symlink the active folder to `/var/www/serc.iiit.ac.in`.
+\textit{Why:} Enables instantaneous rollbacks to a previous stable state if a build error is detected post-deployment.
+\item \textbf{Enable and Harden Host Firewall (UFW):} Enable the UFW firewall and restrict incoming connections.
+\textit{Why:} The host firewall is currently inactive (\texttt{Status: inactive}); enabling it restricts access to ports 22, 80, and 443, mitigating exposure on unauthorized network ports.
+\end{enumerate}
+
+\subsection{Medium-Term Improvements}
+
+\begin{enumerate}
+\item \textbf{Enable Brotli Compression:} Build and configure the Brotli Nginx extension to work alongside Gzip.
+\textit{Why:} Brotli achieves 15--20\% better compression ratios than Gzip, enhancing page speed for users with slower internet connections.
+\item \textbf{Enforce SSH Key-Based Authentication:} Disable password-based SSH access for the \texttt{deploy} account.
+\textit{Why:} Eliminates the risk of SSH credential brute-forcing.
+\item \textbf{Deploy Content Security Policy (CSP) Headers:} Configure a Content Security Policy header \cite{rfc7762} in the Nginx configuration.
+\textit{Why:} CSP provides defense-in-depth against Cross-Site Scripting (XSS) and code injection by restricting script and resource load paths.
+\item \textbf{Wildcard Certificate Monitoring:} (Deferred) Monitor wildcard certificate validity status and coordinate institutional renewal ahead of the 1 November 2026 expiration date.
+\textit{Why:} Deferred since the university maintains a wildcard certificate.
+\end{enumerate}
+
+\subsection{Strategic Improvements}
+
+\begin{enumerate}
+% \item \textbf{Infrastructure-as-Code (IaC):} Describe the OS-level dependencies and Nginx configurations in Ansible playbooks.
+% \textit{Why:} Guarantees that the hosting infrastructure can be completely rebuilt in a standard and automated manner in the event of hardware failure.
+% \item \textbf{CI/CD Pipeline Integration:} Migrate the deploy script execution from administrative machines to an automated runner.
+% \textit{Why:} Establishes a clear audit log for deployments and removes direct developer SSH access to production systems.
+\item \textbf{Deployment Audit Trail:} Maintain a documented history of deployments and configuration changes.
+\textit{Why:} Improves traceability, accountability, and incident investigation capabilities.
+\end{enumerate}
+
+\section{Conclusion}
+
+The migration successfully transitioned the SERC website from the insecure, EOL CentOS 7 server running Apache 2.4.6 to a modern Nginx static hosting platform on Ubuntu 24.04 LTS.
+
+Technical analysis verified that the workload consisted entirely of static files, allowing a substantial simplification of the hosting architecture. The new Nginx architecture delivers higher throughput, lower memory usage, and improved security controls.
+
+The established deployment pipeline using Bun and Rsync ensures that future updates are fast, secure, and predictable. Operational controls have been hardened using privilege separation, and immediate recommendations have been outlined to further automate certificate renewals and rollback procedures.
+
+This report serves as the official confirmation of successful migration and compatibility validation on the staging environment (\texttt{serc-dev.iiit.ac.in}). The SERC team requests the IT Office to plan the production cutover for the \texttt{serc.iiit.ac.in} domain.
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.3cm}
+
+\textbf{Migration Outcome:} SUCCESSFUL (Validated on \texttt{serc-dev.iiit.ac.in}) \\
+\textbf{Production Status:} \colorbox{highlightgreen}{\textbf{READY FOR CUTOVER}} \\
+\textbf{Report Revision:} 1.4 \\
+\textbf{Report Date:} 25 June 2026
+
+\begin{thebibliography}{99}
+
+\bibitem{centos7-eol}
+Red Hat, Inc., \emph{CentOS Linux 7 End-of-Life Guidance}, \url{https://www.centos.org/cl7-eol/}, 2024.
+
+\bibitem{apache-cves}
+The Apache Software Foundation, \emph{Apache HTTP Server 2.4 Vulnerabilities}, \url{https://httpd.apache.org/security/vulnerabilities_24.html}, accessed June 2026.
+
+\bibitem{nginx-docs}
+Nginx, Inc., \emph{NGINX Documentation}, \url{https://nginx.org/en/docs/}, accessed June 2026.
+
+\bibitem{ubuntu-lts}
+Canonical Ltd., \emph{Ubuntu 24.04 LTS (Noble Numbat) Release Notes}, \url{https://discourse.ubuntu.com/t/noble-numbat-release-notes/}, 2024.
+
+\bibitem{rfc7540}
+M. Belshe, R. Peon, and M. Thomson, \emph{Hypertext Transfer Protocol Version 2 (HTTP/2)}, RFC 7540, May 2015.
+
+\bibitem{rfc8446}
+E. Rescorla, \emph{The Transport Layer Security (TLS) Protocol Version 1.3}, RFC 8446, August 2018.
+
+\bibitem{rfc5246}
+T. Dierks and E. Rescorla, \emph{The Transport Layer Security (TLS) Protocol Version 1.2}, RFC 5246, August 2008.
+
+\bibitem{owasp-headers}
+OWASP Foundation, \emph{OWASP Secure Headers Project}, \url{https://owasp.org/www-project-secure-headers/}, accessed June 2026.
+
+\bibitem{letsencrypt}
+Internet Security Research Group (ISRG), \emph{Let's Encrypt: A Free, Automated, and Open Certificate Authority}, \url{https://letsencrypt.org/}, accessed June 2026.
+
+\bibitem{rfc7762}
+W. West, \emph{Content Security Policy Level 2}, RFC 7762, October 2015.
+
+\bibitem{bun-sh}
+Oven Ltd., \emph{Bun Runtime, Bundler, and Test Runner}, \url{https://bun.sh/}, accessed June 2026.
+
+\bibitem{rsync-tool}
+A. Tridgell and P. Mackerras, \emph{rsync: A fast, versatile, remote (and local) file-copying tool}, \url{https://rsync.samba.org/}, accessed June 2026.
+
+\end{thebibliography}
+
+\clearpage
+\appendix
+
+\section{Legacy Server Diagnostic Inventory}
+\label{sec:legacy_inventory}
+This appendix provides the output logs of commands executed on the legacy CentOS 7 server during the initial environment assessment.
+
+\subsection{Active Services Inventory}
+Command:
+\begin{lstlisting}
+systemctl list-units --type=service --state=running
+\end{lstlisting}
+Output:
+\begin{lstlisting}[language=]
+UNIT                     LOAD   ACTIVE SUB     DESCRIPTION
+console-getty.service    loaded active running Console Getty
+crond.service            loaded active running Command Scheduler
+dbus.service             loaded active running D-Bus System Message Bus
+getty@tty2.service       loaded active running Getty on tty2
+httpd.service            loaded active running The Apache HTTP Server
+network.service          loaded active running LSB: Bring up/down networking
+nrpe.service             loaded active running Nagios Remote Program Executor
+rsyslog.service          loaded active running System Logging Service
+saslauthd.service        loaded active running SASL authentication daemon.
+sendmail.service         loaded active running Sendmail Mail Transport Agent
+sm-client.service        loaded active running Sendmail Mail Transport Client
+sshd.service             loaded active running OpenSSH server daemon
+systemd-journald.service loaded active running Journal Service
+systemd-logind.service   loaded active running Login Service
+systemd-udevd.service    loaded active running udev Kernel Device Manager
+xinetd.service           loaded active running Xinetd A Powerful Replacement For Inetd
+
+16 loaded units listed.
+\end{lstlisting}
+
+\subsection{Apache Version and Virtual Host Settings}
+Command:
+\begin{lstlisting}
+httpd -V
+\end{lstlisting}
+Output:
+\begin{lstlisting}[language=]
+Server version: Apache/2.4.6 (CentOS)
+Server built:   Nov 10 2021 14:26:31
+Server's Module Magic Number: 20120211:24
+Server root:    /etc/httpd
+Server MPM:     prefork
+\end{lstlisting}
+
+Command:
+\begin{lstlisting}
+httpd -S
+\end{lstlisting}
+Output:
+\begin{lstlisting}[language=]
+VirtualHost configuration:
+*:443                  serc.iiit.ac.in (/etc/httpd/conf.d/ssl.conf:56)
+*:80                   serc.iiit.ac.in (/etc/httpd/conf/httpd.conf:355)
+ServerRoot: "/etc/httpd"
+Main DocumentRoot: "/var/www/html"
+Main ErrorLog: "/etc/httpd/logs/error_log"
+User: name="apache" id=48
+Group: name="apache" id=48
+\end{lstlisting}
+
+\subsection{Configuration File Layout}
+Command:
+\begin{lstlisting}
+find /etc/httpd -type f | sort
+\end{lstlisting}
+Output:
+\begin{lstlisting}[language=]
+/etc/httpd/conf.d/autoindex.conf
+/etc/httpd/conf.d/mpm_prefork.conf
+/etc/httpd/conf.d/README
+/etc/httpd/conf.d/ssl.conf
+/etc/httpd/conf.d/userdir.conf
+/etc/httpd/conf.d/welcome.conf
+/etc/httpd/conf/httpd.conf
+/etc/httpd/conf/magic
+/etc/httpd/conf.modules.d/00-base.conf
+/etc/httpd/conf.modules.d/00-dav.conf
+/etc/httpd/conf.modules.d/00-lua.conf
+/etc/httpd/conf.modules.d/00-mpm.conf
+/etc/httpd/conf.modules.d/00-proxy.conf
+/etc/httpd/conf.modules.d/00-ssl.conf
+/etc/httpd/conf.modules.d/00-systemd.conf
+/etc/httpd/conf.modules.d/01-cgi.conf
+\end{lstlisting}
+
+\subsection{Backup Execution Commands}
+Before initiating the cutover, a full tar archive of the legacy configurations and site roots was generated:
+\begin{lstlisting}
+# System file backup
+sudo tar czf migration.tar.gz \
+    /var/www/html \
+    /etc/pki/tls/certs/iiit.ac.in.crt \
+    /etc/pki/tls/private/iiit.ac.in.key \
+    /etc/httpd/conf.d/ssl.conf
+
+# Complete www directory backup
+cd /var/www/
+tar czf serc-site-migration-backup-$(date +%F).tar.gz \
+    cgi-bin git-repo \
+    html out public \
+    newserc-v1.back site_backup_1sep2024 site-backups \
+    ssl.conf test.txt
+\end{lstlisting}
+
+\clearpage
+\section{Target Server Provisioning \& Configuration Commands}
+\label{sec:provisioning_commands}
+This appendix provides the sequence of commands executed on the target Ubuntu 24.04 LTS server during installation, permissions setup, and privilege configuration.
+
+\subsection{Package Installation and Directory Setup}
+\begin{lstlisting}
+# Upgrade OS packages
+apt update && apt upgrade -y
+# Install tools and web server
+apt install git nginx vim curl rsync -y
+# Enable and start Nginx daemon
+systemctl enable nginx
+systemctl start nginx
+# Initialize website directory
+mkdir -p /var/www/serc.iiit.ac.in
+\end{lstlisting}
+
+\subsection{Deployment User and Permissions Configuration}
+\begin{lstlisting}
+# Create the deployment group
+groupadd deploy
+# Create the deploy system user
+useradd --system --gid deploy --shell /bin/bash --no-create-home deploy
+# Set password for deploy user
+passwd deploy
+# Set ownership of the document root
+chown -R root:deploy /var/www/serc.iiit.ac.in
+# Apply directory and file permissions
+find /var/www/serc.iiit.ac.in -type d -exec chmod 775 {} \;
+find /var/www/serc.iiit.ac.in -type f -exec chmod 664 {} \;
+\end{lstlisting}
+
+\subsection{Sudoers Privilege Delegation}
+Command:
+\begin{lstlisting}
+visudo -f /etc/sudoers.d/deploy
+\end{lstlisting}
+File Content:
+\begin{lstlisting}[language=]
+deploy ALL=(root) NOPASSWD: /usr/sbin/nginx -t
+deploy ALL=(root) NOPASSWD: /usr/bin/systemctl reload nginx
+\end{lstlisting}
+Command:
+\begin{lstlisting}
+# Enforce proper file permissions
+chown root:root /etc/sudoers.d/deploy
+chmod 0440 /etc/sudoers.d/deploy
+# Validate sudoers file syntax
+visudo -c
+\end{lstlisting}
+
+\clearpage
+\section{Target Nginx Site Configuration File}
+\label{sec:nginx_config}
+Below is the verbatim Nginx configuration file deployed to \texttt{/etc/nginx/sites-available/serc.iiit.ac.in.conf}.
+
+\begin{lstlisting}[language=nginx]
+# HTTP to HTTPS redirect
+server {
+    listen 80;
+    listen [::]:80;
+    server_name serc.iiit.ac.in;
+    return 301 https://$host$request_uri;
+}
+
+# Main HTTPS site
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+
+    server_name serc.iiit.ac.in;
+
+    root /var/www/serc.iiit.ac.in;
+    index index.html;
+
+    # SSL Certificates
+    ssl_certificate     /etc/nginx/ssl/iiit.ac.in.crt;
+    ssl_certificate_key /etc/nginx/ssl/iiit.ac.in.key;
+    # TLS Parameters
+    ssl_session_cache shared:SSL:10m;
+    ssl_session_timeout 1d;
+    ssl_session_tickets off;
+
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_prefer_server_ciphers off;
+
+    # Hardening Security Headers
+    add_header Strict-Transport-Security "max-age=31536000" always;
+    add_header X-Content-Type-Options nosniff always;
+    add_header X-Frame-Options SAMEORIGIN always;
+    add_header Referrer-Policy strict-origin-when-cross-origin always;
+    # Compression Settings
+    gzip on;
+    gzip_vary on;
+    gzip_min_length 1024;
+    gzip_proxied any;
+    gzip_types
+        text/plain text/css text/javascript application/javascript
+        application/json application/xml application/rss+xml image/svg+xml;
+    # Main Locations Routing
+    location / { try_files $uri $uri/ =404; }
+    # Immutable Caching for Assets
+    location ~* \.(css|js|jpg|jpeg|png|gif|svg|ico|woff|woff2)$ {
+        expires 30d;
+        add_header Cache-Control "public, immutable";
+        access_log off;
+    }
+    # Error Routing
+    error_page 404 /404/index.html;
+}
+\end{lstlisting}
+
+\clearpage
+\section{Validation Test Execution Logs and Command Outputs}
+\label{sec:validation_logs}
+
+This appendix records the exact commands and raw command outputs from the
+system validation activities executed on the staging server.
+
+\subsection{Nginx Configuration Test}
+
+\noindent
+\begin{minipage}[t]{0.32\textwidth}
+\textbf{Command}
+\begin{lstlisting}
+sudo nginx -t
+\end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.64\textwidth}
+\textbf{Output}
+\begin{lstlisting}[language=]
+nginx: the configuration file
+/etc/nginx/nginx.conf syntax is ok
+
+nginx: configuration file
+/etc/nginx/nginx.conf
+test is successful
+\end{lstlisting}
+\end{minipage}
+
+
+\subsection{Active Certificate Validation}
+
+\noindent
+\begin{minipage}[t]{0.32\textwidth}
+\textbf{Command}
+\begin{lstlisting}
+openssl x509 \
+-in iiit.ac.in.crt \
+-noout \
+-dates \
+-issuer
+\end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.64\textwidth}
+\textbf{Output}
+\begin{lstlisting}[language=]
+notBefore=
+Sep 30 08:51:06 2025 GMT
+
+notAfter=
+Nov 1 08:51:05 2026 GMT
+
+issuer=C=BE,
+O=GlobalSign nv-sa,
+CN=GlobalSign GCC R6
+AlphaSSL CA 2025
+\end{lstlisting}
+\end{minipage}
+
+
+\subsection{Local HTTPS Port Validation and Header Audit}
+
+\noindent
+\begin{minipage}[t]{0.32\textwidth}
+\textbf{Command}
+\begin{lstlisting}
+curl -Ik https://localhost
+\end{lstlisting}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.64\textwidth}
+\textbf{Output}
+\begin{lstlisting}[language=]
+HTTP/2 200
+server: nginx/1.24.0 (Ubuntu)
+date: Wed, 24 Jun 2026 23:55:51 GMT
+content-type: text/html
+content-length: 58529
+last-modified:
+Wed, 24 Jun 2026 22:38:20 GMT
+vary: Accept-Encoding
+etag: "6a3c5c5c-e4a1"
+
+strict-transport-security: max-age=31536000
+
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+
+referrer-policy: strict-origin-when-cross-origin
+accept-ranges: bytes
+\end{lstlisting}
+\end{minipage}
+
+
+\end{document}
