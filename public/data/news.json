@@ -1,5 +1,28 @@
 [
     {
+        "slug": "icsa-2026",
+        "name": "ICSA - 2026",
+        "eventURL": "https://conf.researchr.org/home/icsa-2026",
+        "location": "Vrije Universiteit Amsterdam (VU Amsterdam), Amsterdam, Netherlands",
+        "locationURL": "https://maps.app.goo.gl/dcFcvaSAXZmmLVcRA",
+        "summary": "Received the ICSA 2026 Best Artifact Award for the paper \"LLM-based Automated Architecture View Generation: Where Are We Now?",
+        "detail": "The research paper, \"LLM-based Automated Architecture View Generation: Where Are We Now?\", authored by Miryala Sathvika, Rudra Dhar, and Prof. Karthik Vaidhyanathan, received the Best Artifact Award at the 23rd IEEE International Conference on Software Architecture (ICSA 2026) held in Amsterdam, Netherlands. The award recognizes the quality, reproducibility, and impact of the research artifact accompanying the paper, highlighting excellence in software architecture research and artifact evaluation.",
+        "startTime": "2026-06-22T11:03",
+        "endTime": "2026-06-26T12:03",
+        "imageURLs": [
+            "/images/news/icsa-2026.jpeg"
+        ],
+        "presenters": [
+            "Prof. Karthik Vaidhyanathan, Rudra Dhar and Miryala Sathvika"
+        ],
+        "otherURLs": {
+            "code": "https://github.com/ntua/icsa2026",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
         "slug": "dr-karthik-vaidhyanathan-delivered-a-talk",
         "name": "Dr. Karthik Vaidhyanathan delivered a talk",
         "eventURL": "",
