@@ -1,5 +1,26 @@
 [
     {
+        "slug": "adyansh-kakran-successfully-defends-his-ms-thesis",
+        "name": "Adyansh Kakran Successfully Defends His MS Thesis",
+        "eventURL": "https://serc.iiit.ac.in/",
+        "location": "SERC, IIIT Hyderabad",
+        "locationURL": "https://maps.app.goo.gl/aMhLCxbKchz9Tab39",
+        "summary": "Congratulations to Adyansh on Successfully Defending His MS Thesis",
+        "detail": "We congratulate Adyansh Kakran on the successful defense of his MS thesis titled \"Automating the Lifecycle of Architecture Design Decisions using Generative AI.\"\n\nThis marks a significant academic milestone, and we wish him every success in his future endeavors.",
+        "startTime": "2026-07-02T11:01",
+        "endTime": "2026-07-02T13:30",
+        "imageURLs": [
+            "/images/news/adyansh-kakran-successfully-defends-his-ms-thesis.jpeg"
+        ],
+        "presenters": [],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
         "slug": "icsa-2026",
         "name": "ICSA - 2026",
         "eventURL": "https://conf.researchr.org/home/icsa-2026",

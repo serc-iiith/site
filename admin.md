@@ -6,6 +6,22 @@ The SERC Website includes an admin interface that allows maintainers to easily e
 
 The admin interface is available at `/admin` when running the website locally. Just `npm run dev` to start the development server, and then navigate to `http://localhost:3000/admin` in your web browser.
 
+# Git instruction
+
+Open terminal with `Ctrl + \``
+
+```
+# get latest code from github
+git pull
+# stage changes
+git add .
+# commit changes
+git commit -m "<message>"
+# push local changes to github
+git push
+```
+
+
 ## Admin Interface Features
 
 The admin interface provides forms to edit all the website's content data, including:
