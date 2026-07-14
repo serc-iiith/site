@@ -1,5 +1,28 @@
 [
     {
+        "slug": "research-paper-accepted-at-acm-icmi-2026",
+        "name": "Research Paper Accepted at ACM ICMI 2026",
+        "eventURL": "https://serc.iiit.ac.in/",
+        "location": "SERC, IIIT Hyderabad",
+        "locationURL": "https://maps.app.goo.gl/phJt7rjbqq5bMGLy7",
+        "summary": "Aaditya Vardhan Narain's Paper Accepted at ACM ICMI 2026",
+        "detail": "The Software Engineering Research Center (SERC), IIIT Hyderabad, congratulates Aaditya Vardhan Narain on the acceptance of the paper, \"Inferring Openness to Experience from Behavioral Signals in a Virtual Reality Art Gallery,\" as a long paper in the main track of the 28th ACM International Conference on Multimodal Interaction (ICMI 2026), to be held in Napoli, Italy.\n\nThis achievement marks an important milestone, and the SERC family congratulates Aaditya Vardhan Narain and wishes him continued success in his future research endeavors.",
+        "startTime": "2026-07-02T12:00",
+        "endTime": "2026-07-02T14:45",
+        "imageURLs": [
+            "/images/news/research-paper-accepted-at-acm-icmi-2026.png"
+        ],
+        "presenters": [
+            "Aaditya Vardhan Narain "
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
         "slug": "adyansh-kakran-successfully-defends-his-ms-thesis",
         "name": "Adyansh Kakran Successfully Defends His MS Thesis",
         "eventURL": "https://serc.iiit.ac.in/",
@@ -12,7 +35,101 @@
         "imageURLs": [
             "/images/news/adyansh-kakran-successfully-defends-his-ms-thesis.jpeg"
         ],
-        "presenters": [],
+        "presenters": [
+            "Adyansh Kakran"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
+        "slug": "chandrasekar-s-successfully-defends-his-ms-thesis",
+        "name": "Chandrasekar S Successfully Defends His MS Thesis",
+        "eventURL": "https://serc.iiit.ac.in/",
+        "location": "SERC, IIIT Hyderabad",
+        "locationURL": "https://maps.app.goo.gl/phJt7rjbqq5bMGLy7",
+        "summary": "Congratulations to Chandrasekar S on Successfully Defending His MS Thesis",
+        "detail": "SERC, IIIT Hyderabad congratulates Chandrasekar S on the successful defense of his MS thesis, \"A Semi-Automated Framework for the Certification of Machine Learning-Based Airborne Applications.\"\n\nThis marks a significant academic milestone, and we wish him continued success in his future endeavors.",
+        "startTime": "2026-06-30T14:18",
+        "endTime": "2026-06-30T16:27",
+        "imageURLs": [
+            "/images/news/chandrasekar-s-successfully-defends-his-ms-thesis.jpeg"
+        ],
+        "presenters": [
+            "Chandrasekar S"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
+        "slug": "prakhar-jain-successfully-defends-his-ms-thesis",
+        "name": "Prakhar Jain Successfully Defends His MS Thesis",
+        "eventURL": "https://serc.iiit.ac.in/",
+        "location": "SERC, IIIT Hyderabad",
+        "locationURL": "https://maps.app.goo.gl/phJt7rjbqq5bMGLy7",
+        "summary": "Congratulations to Prakhar Jain on Successfully Defending His MS Thesis",
+        "detail": "SERC, IIIT Hyderabad congratulates Prakhar Jain on the successful defense of his MS thesis, \"AI-driven Optimization in Self-Adaptive Software Systems: From Reinforcement Learning to Generative AI.\"\n\nThis marks a significant academic milestone, and we wish him continued success in his future endeavors.",
+        "startTime": "2026-06-30T12:18",
+        "endTime": "2026-06-30T14:18",
+        "imageURLs": [
+            "/images/news/prakhar-jain-successfully-defends-his-ms-thesis.jpeg"
+        ],
+        "presenters": [
+            "Prakhar Jain"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
+        "slug": "shambhavi-jahagirdar-successfully-defends-her-ms-thesis",
+        "name": "Shambhavi Jahagirdar Successfully Defends Her MS Thesis",
+        "eventURL": "",
+        "location": "SERC, IIIT Hyderabad",
+        "locationURL": "https://maps.app.goo.gl/phJt7rjbqq5bMGLy7",
+        "summary": "Shambhavi Jahagirdar Successfully Defends Her MS Thesis",
+        "detail": "SERC, IIIT Hyderabad congratulates Shambhavi Jahagirdar on the successful defense of her MS thesis.\n\nThis marks a significant academic milestone, and we wish her continued success in her future endeavors.",
+        "startTime": "2026-06-29T13:09",
+        "endTime": "2026-06-29T14:09",
+        "imageURLs": [
+            "/images/news/shambhavi-jahagirdar-successfully-defends-her-ms-thesis.jpeg"
+        ],
+        "presenters": [
+            "Shambhavi Jahagirdar"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
+        "slug": "phd-comprehensive-examination-achievement",
+        "name": "PhD Comprehensive Examination Achievement",
+        "eventURL": "https://serc.iiit.ac.in/",
+        "location": "SERC, IIIT Hyderabad",
+        "locationURL": "https://maps.app.goo.gl/phJt7rjbqq5bMGLy7",
+        "summary": "PhD Scholar Brahma Reddy Korraprolu Successfully Clears Comprehensive Examination",
+        "detail": "he Software Engineering Research Center (SERC), IIIT Hyderabad, is delighted to congratulate Brahma Reddy Korraprolu, PhD Scholar, on successfully clearing his Comprehensive Examination.\n\nSuccessfully clearing the comprehensive examination is an important milestone in the PhD journey, reflecting the scholar's preparedness for advanced doctoral research.\n\nThe SERC family congratulates Brahma Reddy Korraprolu on this achievement and wishes him continued success in his research.",
+        "startTime": "2026-06-24T14:00",
+        "endTime": "2026-06-24T16:00",
+        "imageURLs": [
+            "/images/news/phd-comprehensive-examination-achievement.jpeg"
+        ],
+        "presenters": [
+            "Brahma Reddy Korraprolu"
+        ],
         "otherURLs": {
             "code": "",
             "pdf": "",
