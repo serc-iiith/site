@@ -167,7 +167,6 @@ export default async function PersonPage({ params }: { params: Promise<{ slug: s
     '@type': 'Person',
     name: person.name,
     jobTitle: person.title,
-    email: person.email,
     description: person.bio,
     url: `${BASE_URL}/people/${person.slug}`,
     image: toAbsoluteUrl(person.imageURL || '/images/person_fallback.png'),
@@ -183,29 +182,26 @@ export default async function PersonPage({ params }: { params: Promise<{ slug: s
     }
   };
 
-  // Add publications if present
-  if (publications.length > 0) {
-    personJsonLd.publications = publications.map(pub => ({
-      '@type': 'ScholarlyArticle',
-      name: pub.title,
-      author: pub.authors.map(author => ({ '@type': 'Person', name: author })),
-      datePublished: pub.year,
-      publisher: pub.venue,
-      url: pub.url ? toAbsoluteUrl(pub.url) : pub.doi
-    }));
-  }
-
   // Add interests if present
   if (person.interests && person.interests.length > 0) {
-    personJsonLd.knowsAbout = person.interests;
+    (personJsonLd as any).knowsAbout = person.interests;
   }
 
-  // Add education if present
+  // Standard alumniOf mapping (EducationalOrganization does not support degree)
   if (person.education && person.education.length > 0) {
-    personJsonLd.alumniOf = person.education.map(edu => ({
+    (personJsonLd as any).alumniOf = person.education.map(edu => ({
       '@type': 'EducationalOrganization',
-      name: edu.institution,
-      degree: edu.degree
+      name: edu.institution
+    }));
+    // Correctly output degree details under qualifications
+    (personJsonLd as any).hasCredential = person.education.map(edu => ({
+      '@type': 'EducationalOccupationalCredential',
+      credentialCategory: 'degree',
+      name: edu.degree,
+      recognizedBy: {
+        '@type': 'EducationalOrganization',
+        name: edu.institution
+      }
     }));
   }
 

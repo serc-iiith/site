@@ -31,6 +31,8 @@ interface Event {
         video: string;
     };
     hasTime?: boolean;
+    eventType?: string;
+    schemaType?: string;
 }
 
 const EditNews: React.FC = () => {
@@ -59,6 +61,8 @@ const EditNews: React.FC = () => {
         startTime: new Date().toISOString().slice(0, 16),
         endTime: new Date().toISOString().slice(0, 16),
         hasTime: true,
+        eventType: 'seminar',
+        schemaType: 'Event',
         imageURLs: [],
         presenters: [],
         otherURLs: {
@@ -187,6 +191,8 @@ const EditNews: React.FC = () => {
 
         setFormData({
             ...event,
+            eventType: event.eventType || 'seminar',
+            schemaType: event.schemaType || 'Event',
             hasTime: event.hasTime !== false,
             otherURLLabels: event.otherURLLabels || {
                 code: '',
@@ -216,6 +222,8 @@ const EditNews: React.FC = () => {
             startTime: now,
             endTime: nextHour,
             hasTime: true,
+            eventType: 'seminar',
+            schemaType: 'Event',
             imageURLs: [],
             presenters: [],
             otherURLs: {
@@ -541,6 +549,46 @@ const EditNews: React.FC = () => {
                                 <label htmlFor="hasTime" className="ml-2 block text-sm font-medium text-[color:var(--text-color)]">
                                     Include Time (display time alongside dates)
                                 </label>
+                            </div>
+                            <div className="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4 mt-3">
+                                <div>
+                                    <label htmlFor="eventType" className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1">
+                                        Event Type (used for listing badge & categorization)
+                                    </label>
+                                    <select
+                                        id="eventType"
+                                        name="eventType"
+                                        value={formData.eventType || 'seminar'}
+                                        onChange={(e) => setFormData(prev => ({ ...prev, eventType: e.target.value }))}
+                                        className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                        disabled={isLoading}
+                                    >
+                                        <option value="admissions">Admissions</option>
+                                        <option value="conference">Conference</option>
+                                        <option value="workshop">Workshop</option>
+                                        <option value="seminar">Seminar</option>
+                                        <option value="showcase">Showcase</option>
+                                        <option value="paper">Paper</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label htmlFor="schemaType" className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1">
+                                        Google Search SEO Schema Type
+                                    </label>
+                                    <select
+                                        id="schemaType"
+                                        name="schemaType"
+                                        value={formData.schemaType || 'Event'}
+                                        onChange={(e) => setFormData(prev => ({ ...prev, schemaType: e.target.value }))}
+                                        className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                        disabled={isLoading}
+                                    >
+                                        <option value="Event">Event (Talks, Workshops, Conferences)</option>
+                                        <option value="EducationalOccupationalProgram">Educational Program (Admissions, Fellowships)</option>
+                                        <option value="NewsArticle">News Article / Press Release</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>

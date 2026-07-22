@@ -324,6 +324,8 @@ interface Event {
     video: string;
   };
   hasTime?: boolean;
+  eventType?: string;
+  schemaType?: string;
 }
 
 const EventCard = ({ event }: { event: Event }) => {

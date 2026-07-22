@@ -31,6 +31,8 @@
         "startTime": "2026-07-22T00:00",
         "endTime": "2026-09-15T23:59",
         "hasTime": false,
+        "eventType": "admissions",
+        "schemaType": "EducationalOccupationalProgram",
         "imageURLs": [
             "/images/PhD. Posting.png"
         ],

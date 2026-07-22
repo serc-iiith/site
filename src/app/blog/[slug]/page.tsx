@@ -98,6 +98,17 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         notFound();
     }
 
+    // Helper function to convert human date strings (e.g. "April 14, 2025") to ISO (YYYY-MM-DD)
+    const toIsoDate = (dateStr: string): string => {
+        try {
+            const dateObj = new Date(dateStr);
+            if (isNaN(dateObj.getTime())) return new Date().toISOString().split('T')[0];
+            return dateObj.toISOString().split('T')[0];
+        } catch {
+            return new Date().toISOString().split('T')[0];
+        }
+    };
+
     // Create JSON-LD structured data for this blog post
     const blogPostJsonLd = {
         '@context': 'https://schema.org',
@@ -105,7 +116,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         headline: blogPost.title,
         description: blogPost.excerpt,
         image: toAbsoluteUrl(blogPost.coverImage || '/images/blog_fallback.png'),
-        datePublished: blogPost.date,
+        datePublished: toIsoDate(blogPost.date),
         author: {
             '@type': 'Person',
             name: blogPost.author

@@ -254,22 +254,17 @@ const Slideshow: FC<SlideshowProps> = ({
       </div>
 
       {/* Text Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/10 to-black/5 flex items-top justify-top flex-col">
-        {/* Mobile view (single line) */}
-        <h1 className="md:hidden text-white text-3xl font-bold text-center mb-1 pt-24">
-          Welcome to SERC
-        </h1>
-
-        {/* Desktop view (separated lines) */}
-        <div className="hidden md:block text-center pt-32">
-          <p className="text-white/90 text-xl md:text-2xl lg:text-4xl font-medium text-center mb-3 font-sans">
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex items-center justify-end flex-col pb-24 md:pb-32">
+        <div className="text-center px-4 max-w-5xl">
+          <p className="hidden md:block text-white/90 text-lg md:text-2xl lg:text-3xl font-medium mb-1 md:mb-3 font-sans">
             Welcome to
           </p>
-          <h1 className="text-white text-3xl md:text-3xl lg:text-6xl font-bold text-center mb-3 bg-clip-text text-transparent bg-gradient-to-r from-blue-200 to-white">
-            Software Engineering Research Centre
+          <h1 className="text-white text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-100 to-white">
+            <span className="md:hidden">Welcome to SERC</span>
+            <span className="hidden md:inline">Software Engineering Research Centre</span>
           </h1>
+          <div className="w-20 md:w-32 h-1 md:h-2 bg-blue-500 mx-auto rounded-full"></div>
         </div>
-        <div className="hidden lg:block w-40 h-2 bg-blue-500 mx-auto mt-5"></div>
       </div>
 
       {/* Navigation Controls */}

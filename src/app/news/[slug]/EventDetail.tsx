@@ -35,6 +35,8 @@ interface Event {
         video: string;
     };
     hasTime?: boolean;
+    eventType?: string;
+    schemaType?: string;
 }
 
 // Define Person interface
@@ -127,6 +129,11 @@ export default function EventDetail({ event, presenters }: EventDetailProps) {
 
     // Determine event type based on content
     const determineEventType = (): string => {
+        if (event.eventType) {
+            if (event.eventType.toLowerCase() === 'admissions') return 'Admissions';
+            return event.eventType.charAt(0).toUpperCase() + event.eventType.slice(1);
+        }
+
         const name = event.name.toLowerCase();
         const summary = event.summary.toLowerCase();
 
@@ -192,7 +199,7 @@ export default function EventDetail({ event, presenters }: EventDetailProps) {
                         </h1>
                         <div className="absolute top-6 right-6 px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm flex items-center">
                             <span className="mr-2">
-                                {statusLabel} {eventType}
+                                {eventType === 'Admissions' ? `${statusLabel} Opportunities` : `${statusLabel} ${eventType}`}
                             </span>
                             {isPastEvent || statusLabel === 'Closed' ? (
                                 <span className="h-2 w-2 rounded-full bg-[color:var(--error-color)]"></span>
@@ -202,9 +209,9 @@ export default function EventDetail({ event, presenters }: EventDetailProps) {
                         </div>
                     </div>
 
-                    <div className="flex flex-col-reverse md:flex-row">
+                    <div className="flex flex-col-reverse md:flex-row" role="main">
                         {/* Left column with details */}
-                        <div className="md:w-[60%] lg:w-[70%] p-6 md:p-8">
+                        <article className="md:w-[60%] lg:w-[70%] p-6 md:p-8">
                             {/* Event images carousel (Gallery on top) */}
                             {event.imageURLs && event.imageURLs.length > 0 && (
                                 <div className="mb-8 border-b border-[color:var(--border-color)] pb-8">
@@ -212,7 +219,7 @@ export default function EventDetail({ event, presenters }: EventDetailProps) {
                                     <div 
                                         onClick={() => {
                                             setShowLightbox(true);
-                                            setIsZoomed(false);
+                                            setZoomScale(1);
                                         }}
                                         className="relative rounded-lg overflow-hidden h-64 md:h-80 mb-4 bg-neutral-900/5 dark:bg-neutral-900/40 border border-[color:var(--border-color)] shadow-sm cursor-zoom-in group transition-transform hover:scale-[1.01]"
                                     >
@@ -326,10 +333,10 @@ export default function EventDetail({ event, presenters }: EventDetailProps) {
                                     </div>
                                 </div>
                             )}
-                        </div>
+                        </article>
 
                         {/* Right column with event details */}
-                        <div className="md:w-[40%] lg:w-[30%] bg-[color:var(--foreground)]/50 p-6 md:p-8 border-t md:border-t-0 md:border-l border-[color:var(--border-color)]">
+                        <aside className="md:w-[40%] lg:w-[30%] bg-[color:var(--foreground)]/50 p-6 md:p-8 border-t md:border-t-0 md:border-l border-[color:var(--border-color)]" aria-label="Event Logistics">
                             <div className="sticky top-24">
                                 <h3 className="text-xl font-bold text-[color:var(--text-color)] mb-6">Event Details</h3>
 
@@ -619,7 +626,7 @@ export default function EventDetail({ event, presenters }: EventDetailProps) {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </aside>
                     </div>
                 </div>
             </div>
