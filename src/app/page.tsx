@@ -614,6 +614,30 @@ export default function Home() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ResearchOrganization",
+            "name": "Software Engineering Research Center, IIIT Hyderabad",
+            "alternateName": "SERC IIITH",
+            "url": "https://serc.iiit.ac.in",
+            "logo": "https://serc.iiit.ac.in/images/serc_logo.png",
+            "parentOrganization": {
+              "@type": "EducationalOrganization",
+              "name": "International Institute of Information Technology, Hyderabad",
+              "url": "https://www.iiit.ac.in"
+            },
+            "sameAs": [
+              "https://facebook.com/SERC.IIITH",
+              "https://x.com/SERC_IIITH",
+              "https://linkedin.com/company/serciiith",
+              "https://youtube.com/channel/UCpelOBy_e7_HNxbewtVg8yw"
+            ]
+          })
+        }}
+      />
       {/* Hero Section with Parallax Effect */}
       <Slideshow slides={slides} />
 

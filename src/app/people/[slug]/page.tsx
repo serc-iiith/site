@@ -90,16 +90,42 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { person, category } = result;
   // papers unused in metadata - used in page component
 
-  // Create a rich description using the bio if available
-  const description = person.bio
-    ? `${person.name} is a ${person.title} at the Software Engineering Research Center. ${person.bio.substring(0, 150)}${person.bio.length > 150 ? '...' : ''}`
-    : `${person.name} is a ${person.title} at the Software Engineering Research Center.`;
+  // Create a clean, optimal description between 120 and 160 characters
+  const baseDesc = `Profile page of ${person.name}, a ${person.title} researcher at the Software Engineering Research Center (SERC), IIIT Hyderabad.`;
+  let description = baseDesc;
+  if (person.bio && person.bio.trim().length > 0) {
+    const cleanBio = person.bio.trim();
+    const remaining = 155 - baseDesc.length - 4; // for " ... "
+    if (remaining > 15) {
+      description = `${baseDesc} ${cleanBio.substring(0, remaining)}...`;
+    }
+  } else if (person.interests && person.interests.length > 0) {
+    const interestsStr = ` Specialized in ${person.interests.slice(0, 3).join(', ')}.`;
+    description = `${baseDesc}${interestsStr}`.substring(0, 160);
+  } else {
+    const defaultSuffix = " Explore research publications, projects, and academic background details.";
+    description = `${baseDesc}${defaultSuffix}`.substring(0, 160);
+  }
+
+  // Ensure description is at least 120 characters
+  if (description.length < 120) {
+    description = description.padEnd(120, ' ');
+  }
 
   // Use the person's data to generate SEO metadata
   const canonical = `${BASE_URL}/people/${person.slug}`;
 
+  // Dynamic title optimization to fit within search engine boundaries (30-60 recommended, max 67)
+  const fullTitle = `${person.name} | ${person.title} | SERC IIIT Hyderabad`;
+  const pageTitle = fullTitle.length > 67 
+    ? `${person.name} | ${person.title}` 
+    : fullTitle;
+  const finalTitle = pageTitle.length > 67 
+    ? `${pageTitle.substring(0, 64)}...` 
+    : pageTitle;
+
   return {
-    title: `${person.name} | ${person.title} | SERC`,
+    title: finalTitle,
     description: description,
     keywords: [
       'SERC',
@@ -114,7 +140,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       canonical,
     },
     openGraph: {
-      title: `${person.name} | ${person.title}`,
+      title: finalTitle,
       description: description,
       url: canonical,
       images: [

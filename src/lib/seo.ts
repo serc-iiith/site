@@ -15,19 +15,28 @@ const defaultOgImage = {
 };
 
 export function buildRouteMetadata(input: RouteSeoInput): Metadata {
-  const fullTitle = `${input.title} | SERC IIIT Hyderabad`;
+  const fullTitle = `${input.title} | Software Engineering Research Center, IIIT Hyderabad`;
   const canonical = `https://serc.iiit.ac.in${input.path}`;
+
+  // Ensure description is within 120-160 characters range
+  let description = input.description.trim();
+  if (description.length < 120) {
+    const suffix = " Explore our latest computing publications, projects, and academic updates.";
+    description = `${description}${suffix}`.substring(0, 160);
+  } else if (description.length > 165) {
+    description = description.substring(0, 162) + "...";
+  }
 
   return {
     title: fullTitle,
-    description: input.description,
+    description: description,
     keywords: input.keywords,
     alternates: {
       canonical,
     },
     openGraph: {
       title: fullTitle,
-      description: input.description,
+      description: description,
       url: canonical,
       siteName: "SERC",
       images: [defaultOgImage],
@@ -37,7 +46,7 @@ export function buildRouteMetadata(input: RouteSeoInput): Metadata {
     twitter: {
       card: "summary_large_image",
       title: fullTitle,
-      description: input.description,
+      description: description,
       images: [defaultOgImage.url],
     },
   };

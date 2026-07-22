@@ -90,9 +90,28 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
     // Use the event data to generate SEO metadata
     const canonical = `${BASE_URL}/news/${event.slug}`;
-    const pageTitle = isAdmissions 
-        ? `${event.name} | Software Engineering Research Centre, IIIT Hyderabad`
-        : `${event.name} | ${dateString} | SERC IIIT Hyderabad`;
+    
+    // Dynamic page title optimization to fit search snippets (30-60 recommended, max 67)
+    let pageTitle = event.name;
+    if (isAdmissions) {
+        const fullTitle = `${event.name} | Software Engineering Research Centre, IIIT Hyderabad`;
+        pageTitle = fullTitle.length > 67 
+            ? `${event.name} | SERC IIIT Hyderabad`
+            : fullTitle;
+    } else {
+        const fullTitle = `${event.name} | ${dateString} | SERC IIIT Hyderabad`;
+        if (fullTitle.length > 67) {
+            const shorterTitle = `${event.name} | SERC IIIT Hyderabad`;
+            pageTitle = shorterTitle.length > 67 
+                ? event.name 
+                : shorterTitle;
+        } else {
+            pageTitle = fullTitle;
+        }
+    }
+    if (pageTitle.length > 67) {
+        pageTitle = pageTitle.substring(0, 64) + "...";
+    }
 
     const seoKeywords = [
         'SERC',
@@ -117,16 +136,25 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         seoKeywords.push('Research Seminar', 'Academic Talk', 'Computer Science Event');
     }
 
+    // Ensure description is within 120-160 characters range
+    let description = (event.summary || `${event.name} at ${event.location || 'SERC, IIIT Hyderabad'}.`).trim();
+    if (description.length < 120) {
+        const suffix = " Read more about this Software Engineering Research Center event at IIIT Hyderabad.";
+        description = `${description}${suffix}`.substring(0, 160);
+    } else if (description.length > 165) {
+        description = description.substring(0, 162) + "...";
+    }
+
     return {
         title: pageTitle,
-        description: event.summary || `${event.name} at ${event.location}`,
+        description: description,
         keywords: seoKeywords,
         alternates: {
             canonical,
         },
         openGraph: {
             title: pageTitle,
-            description: event.summary || `${event.name} at ${event.location}`,
+            description: description,
             url: canonical,
             siteName: 'Software Engineering Research Centre | IIIT Hyderabad',
             images: event.imageURLs && event.imageURLs.length > 0
@@ -137,7 +165,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         twitter: {
             card: 'summary_large_image',
             title: pageTitle,
-            description: event.summary || `${event.name} at ${event.location}`,
+            description: description,
             images: event.imageURLs && event.imageURLs.length > 0
                 ? [toAbsoluteUrl(event.imageURLs[0])]
                 : [toAbsoluteUrl('/images/event_fallback.png')],
@@ -196,6 +224,34 @@ export default async function EventPage({ params }: { params: Promise<{ slug: st
             programPrerequisites: 'B.E / B.Tech / M.E / M.Tech in Computer Science and Engineering (CSE) or Electronics and Communication Engineering (ECE).'
         };
         schemas.push(programJsonLd);
+
+        // Also add NewsArticle to make it show as a rich result in Google's Article test!
+        const newsArticleJsonLd = {
+            '@context': 'https://schema.org',
+            '@type': 'NewsArticle',
+            headline: event.name,
+            description: event.summary || event.name,
+            image: event.imageURLs && event.imageURLs.length > 0 
+                ? event.imageURLs.map(url => toAbsoluteUrl(url))
+                : [toAbsoluteUrl('/images/event_fallback.png')],
+            datePublished: startDate,
+            dateModified: startDate,
+            author: {
+                '@type': 'Organization',
+                name: 'Software Engineering Research Centre, IIIT Hyderabad',
+                url: BASE_URL
+            },
+            publisher: {
+                '@type': 'Organization',
+                name: 'Software Engineering Research Centre, IIIT Hyderabad',
+                url: BASE_URL,
+                logo: {
+                    '@type': 'ImageObject',
+                    url: toAbsoluteUrl('/images/event_fallback.png')
+                }
+            }
+        };
+        schemas.push(newsArticleJsonLd);
     } else if (event.eventType === 'conference' || event.eventType === 'seminar' || event.eventType === 'workshop' || event.location) {
         // Render structured event data with required status fields
         const eventJsonLd = {
