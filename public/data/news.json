@@ -1,12 +1,40 @@
 [
     {
+        "slug": "phd-admissions-serc-2026",
+        "name": "Ph.D. Opportunities at SERC, IIIT Hyderabad",
+        "eventURL": "",
+        "location": "SERC, IIIT Hyderabad",
+        "locationURL": "https://maps.app.goo.gl/phJt7rjbqq5bMGLy7",
+        "summary": "Applications are invited for Ph.D. positions at Software Engineering Research Centre (SERC), IIIT Hyderabad in Agentic AI, HCI/VR, Parallel Computing, and Software Engineering. Apply by September 15, 2026.",
+        "detail": "IIIT Hyderabad invites applications for Ph.D. opportunities in the Software Engineering Research Centre (SERC). Applications are open until September 15, 2026. Review of applications will happen every two weeks, so interested candidates are highly encouraged to apply early.\n\n### Exciting Research Frontiers:\n* **Engineering Agentic AI Systems:** Architectural approaches, Sustainable Coding/Sovereign Agents, AgentOps, evaluation frameworks, and Agentic Memory.\n* **Human-Centred Immersive Healthcare Experiences:** HCI, Human-Centred Design, AI, VR/AR/MR/XR, wearables, and health data for personalized digital healthcare.\n* **Trustworthy & Accessible Digital Systems:** Human-Centred AI, Design Thinking, inclusive, ethical, and privacy-aware systems promoting digital wellbeing.\n* **AI and Educational Technology:** LLMs and Generative AI for Virtual Labs and supporting cloud infrastructure.\n* **Trustworthy Parallel Computing:** Semantics, formal verification, model checking, controlled testing, and fuzzing under weak memory models.\n* **AI for Software Engineering & Theorem Proving:** LLM-based translation to formal specifications, property-based testing, and ML-driven automation of proof assistants.\n* **Software Testing for Modern Systems & Code Smell Detection:** Conformance-based interaction testing, automated test case generation, and smell detection for AI-enabled apps.\n\n### Candidate Eligibility & Prerequisites:\n* **Degree:** B.E / B.Tech / M.E / M.Tech in Computer Science and Engineering (CSE) or Electronics and Communication Engineering (ECE).\n* **Requirements:** Highly motivated candidates with a strong mathematical background (particularly probability theory). Prior exposure to statistics, optimization, machine learning, formal methods, or software engineering research is an added advantage.\n\n### Evaluation & Selection Process:\nShortlisted candidates will work on an internship-style project or research problem for 3-4 months prior to the formal admission process. This provides a mutual evaluation period to assess research readiness. Formal admission is finalized via the Standing Committee route at IIIT Hyderabad.\n\n### How to Apply:\nInterested candidates should submit a Cover Letter, Curriculum Vitae (CV), and Statement of Purpose (SOP) directly to **serc.admin@iiit.ac.in**, clearly specifying the research area(s) of interest.\n\nApplications will remain open until **September 15, 2026**.",
+        "startTime": "2026-07-22T00:00",
+        "endTime": "2026-09-15T23:59",
+        "hasTime": false,
+        "imageURLs": [
+            "/images/PhD. Posting.png"
+        ],
+        "presenters": [],
+        "otherURLs": {
+            "code": "",
+            "pdf": "/assets/Advt_JD_SERC_Ph.d.pdf",
+            "slides": "",
+            "video": ""
+        },
+        "otherURLLabels": {
+            "code": "",
+            "pdf": "PhD Job Description & Advertisement",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
         "slug": "seri-2026-july-1618-2026",
         "name": "SERI 2026 (July 16–18, 2026)",
         "eventURL": "https://conf.researchr.org/home/seri-2026",
         "location": "IIIT Hyderabad",
         "locationURL": "https://maps.app.goo.gl/phJt7rjbqq5bMGLy7",
         "summary": "SERI 2026 is a three-day conference at IIIT Hyderabad that brings together academia and industry to share cutting-edge software engineering research. The event features invited talks, research presentations, and a dedicated Industry Day.",
-        "detail": "🚀 𝗦𝗘𝗥𝗜 𝟮𝟬𝟮𝟲\n\nWe are excited to welcome the Software Engineering community to Software Engineering Research In India (SERI) 2026 at International Institute of Information Technology Hyderabad (IIITH) institute from 𝗝𝘂𝗹𝘆 𝟭𝟲–𝟭𝟴.\n\nSERI has long been a forum where researchers, students, and practitioners come together to share ideas, present ongoing work, and discuss the future of software engineering research in India.\n\nFor the 𝗳𝗶𝗿𝘀𝘁 𝘁𝗶𝗺𝗲, 𝗦𝗘𝗥𝗜 𝘄𝗶𝗹𝗹 𝗮𝗹𝘀𝗼 𝗳𝗲𝗮𝘁𝘂𝗿𝗲 𝗮 𝗱𝗲𝗱𝗶𝗰𝗮𝘁𝗲𝗱 𝗜𝗻𝗱𝘂𝘀𝘁𝗿𝘆 𝗗𝗮𝘆, strengthening interactions between academia and industry through invited talks, panels, roundtable discussions and a dedicated industry day workshop.\n\nSome highlights of hashtag#SERI2026 include:\n\n🔹 150+ participants from academia and industry\n🔹 5 invited talks by leading researchers across the first two days\n🔹 20 research presentations from institutions across India\n🔹 Industry Day featuring keynote talks, industry talks, round-table discussions, and panels\n🔹 Industry Day Workshop co-hosted with Infosys on 𝗧𝗲𝘀𝘁𝗶𝗻𝗴 𝗮𝗻𝗱 𝗩𝗲𝗿𝗶𝗳𝗶𝗰𝗮𝘁𝗶𝗼𝗻 𝗼𝗳 𝗔𝗴𝗲𝗻𝘁𝗶𝗰 𝗔𝗜 𝗦𝘆𝘀𝘁𝗲𝗺𝘀\n\nA big thank you to our sponsors, Techno-Comp Computer Services Pvt. Ltd., Infosys, Tata Consultancy Services - Research, ACM India ISOFT - The India Chapter of ACM SIGSOFT and knowledge partner nasscom for supporting SERI 2026.\n\nLooking forward to the three days of engaging discussions, new collaborations, and reconnecting with friends and colleagues from the software engineering community.\n\n📅 July 16–18, 2026\n🌐 𝗖𝗼𝗻𝗳𝗲𝗿𝗲𝗻𝗰𝗲 𝗪𝗲𝗯𝘀𝗶𝘁𝗲: https://lnkd.in/dYqeME_Z\n🌐 𝗜𝗻𝗱𝘂𝘀𝘁𝗿𝘆 𝗱𝗮𝘆 𝘄𝗼𝗿𝗸𝘀𝗵𝗼𝗽: https://lnkd.in/dPUWi4j4\n\nSoftware Engineering Research Center, IIIT Hyderabad , can u suggest brief summary of the event in 2 lines",
+        "detail": "🚀 𝗦𝗘𝗥𝗜 𝟮𝟬𝟮𝟲\n\nWe are excited to welcome the Software Engineering community to Software Engineering Research In India (SERI) 2026 at International Institute of Information Technology Hyderabad (IIITH) institute from 𝗝𝘂𝗹𝘆 𝟭𝟲–𝟭𝟴.\n\nSERI has long been a forum where researchers, students, and practitioners come together to share ideas, present ongoing work, and discuss the future of software engineering research in India.\n\nFor the 𝗳𝗶𝗿𝘀𝘁 𝘁𝗶𝗺𝗲, 𝗦𝗘𝗥𝗜 𝘄𝗶𝗹𝗹 𝗮𝗹𝘀𝗼 𝗳𝗲𝗮𝘁𝘂𝗿𝗲 𝗮 𝗱𝗲𝗱𝗶𝗰𝗮𝘁𝗲𝗱 𝗜𝗻𝗱𝘂𝘀𝘁𝗿𝘆 𝗗𝗮𝘆, strengthening interactions between academia and industry through invited talks, panels, roundtable discussions and a dedicated industry day workshop.\n\nSome highlights of hashtag#SERI2026 include:\n\n🔹 150+ participants from academia and industry\n🔹 5 invited talks by leading researchers across the first two days\n🔹 20 research presentations from institutions across India\n🔹 Industry Day featuring keynote talks, industry talks, round-table discussions, and panels\n🔹 Industry Day Workshop co-hosted with Infosys on 𝗧𝗲𝘀𝘁𝗶𝗻𝗴 𝗮𝗻𝗱 𝗩𝗲𝗿𝗶𝗳𝗶𝗰𝗮𝘁𝗶𝗼𝗻 𝗼𝗳 𝗔𝗴𝗲𝗻𝘁𝗶𝗰 𝗔𝗜 𝗦𝘆𝘀𝘁𝗲𝗺𝘀\n\nA big thank you to our sponsors, Techno-Comp Computer Services Pvt. Ltd., Infosys, Tata Consultancy Services - Research, ACM India ISOFT - The India Chapter of ACM SIGSOFT and knowledge partner nasscom for supporting SERI 2026.\n\nLooking forward to the three days of engaging discussions, new collaborations, and reconnecting with friends and colleagues from the software engineering community.\n\n📅 July 16–18, 2026\n🌐 𝗖𝗼𝗻𝗳𝗲𝗿𝗲𝗻𝗰𝗲 𝗪𝗲𝗯𝘀𝗶𝘁𝗲: https://lnkd.in/dYqeME_Z\n🌐 𝗜𝗻𝗱𝘂𝘀𝘁𝗿𝘆 𝗱𝗮𝘆 𝘄𝗼𝗿𝗸𝘀𝗵𝗼𝗽: https://lnkd.in/dPUWi4j4\n\nSoftware Engineering Research Center, IIIT Hyderabad",
         "startTime": "2026-07-16T09:00",
         "endTime": "2026-07-18T05:00",
         "imageURLs": [

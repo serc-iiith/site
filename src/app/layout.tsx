@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/NavBar";
 import Footer from "@/components/Footer";
+import PhdAdmissionsWidget from "@/components/PhdAdmissionsWidget";
 import { Analytics } from "@vercel/analytics/react"
 import { ThemeProvider } from "@/lib/ThemeProvider";
 
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
     ],
     locale: "en_IN",
     type: "website",
-  },
+    },
   twitter: {
     card: "summary_large_image",
     title: "SERC - Software Engineering Research Center",
@@ -63,6 +64,7 @@ export default function RootLayout({
         <ThemeProvider>
           <Navbar />
           {children}
+          <PhdAdmissionsWidget />
           <Footer />
           <Analytics />
         </ThemeProvider>

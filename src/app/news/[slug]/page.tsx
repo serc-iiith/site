@@ -31,6 +31,7 @@ interface Event {
         slides: string;
         video: string;
     };
+    hasTime?: boolean;
 }
 
 // Create slug from event name (kept for potential future use)

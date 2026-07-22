@@ -323,6 +323,7 @@ interface Event {
     slides: string;
     video: string;
   };
+  hasTime?: boolean;
 }
 
 const EventCard = ({ event }: { event: Event }) => {
