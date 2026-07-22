@@ -24,6 +24,13 @@ interface Event {
         slides: string;
         video: string;
     };
+    otherURLLabels?: {
+        code: string;
+        pdf: string;
+        slides: string;
+        video: string;
+    };
+    hasTime?: boolean;
 }
 
 const EditNews: React.FC = () => {
@@ -51,9 +58,16 @@ const EditNews: React.FC = () => {
         detail: '',
         startTime: new Date().toISOString().slice(0, 16),
         endTime: new Date().toISOString().slice(0, 16),
+        hasTime: true,
         imageURLs: [],
         presenters: [],
         otherURLs: {
+            code: '',
+            pdf: '',
+            slides: '',
+            video: ''
+        },
+        otherURLLabels: {
             code: '',
             pdf: '',
             slides: '',
@@ -82,13 +96,21 @@ const EditNews: React.FC = () => {
         const { name, value } = e.target;
 
         if (name.includes('.')) {
-            // Handle nested properties like otherURLs.code
+            // Handle nested properties like otherURLs.code or otherURLLabels.code
             const [parent, child] = name.split('.');
             if (parent === 'otherURLs') {
                 setFormData(prev => ({
                     ...prev,
                     otherURLs: {
                         ...prev.otherURLs,
+                        [child]: value
+                    }
+                }));
+            } else if (parent === 'otherURLLabels') {
+                setFormData(prev => ({
+                    ...prev,
+                    otherURLLabels: {
+                        ...prev.otherURLLabels || { code: '', pdf: '', slides: '', video: '' },
                         [child]: value
                     }
                 }));
@@ -164,7 +186,14 @@ const EditNews: React.FC = () => {
         }
 
         setFormData({
-            ...event
+            ...event,
+            hasTime: event.hasTime !== false,
+            otherURLLabels: event.otherURLLabels || {
+                code: '',
+                pdf: '',
+                slides: '',
+                video: ''
+            }
         });
 
         // Scroll to the top of the page
@@ -186,9 +215,16 @@ const EditNews: React.FC = () => {
             detail: '',
             startTime: now,
             endTime: nextHour,
+            hasTime: true,
             imageURLs: [],
             presenters: [],
             otherURLs: {
+                code: '',
+                pdf: '',
+                slides: '',
+                video: ''
+            },
+            otherURLLabels: {
                 code: '',
                 pdf: '',
                 slides: '',
@@ -492,6 +528,20 @@ const EditNews: React.FC = () => {
                                     disabled={isLoading}
                                 />
                             </div>
+                            <div className="md:col-span-2 flex items-center mt-2">
+                                <input
+                                    type="checkbox"
+                                    id="hasTime"
+                                    name="hasTime"
+                                    checked={formData.hasTime !== false}
+                                    onChange={(e) => setFormData(prev => ({ ...prev, hasTime: e.target.checked }))}
+                                    className="h-4 w-4 rounded border-[color:var(--border-color)] bg-[color:var(--background)] text-[color:var(--primary-color)] focus:ring-[color:var(--primary-color)]"
+                                    disabled={isLoading}
+                                />
+                                <label htmlFor="hasTime" className="ml-2 block text-sm font-medium text-[color:var(--text-color)]">
+                                    Include Time (display time alongside dates)
+                                </label>
+                            </div>
                         </div>
                     </div>
 
@@ -550,63 +600,107 @@ const EditNews: React.FC = () => {
                             </div>
                         </div>
 
-                        <h4 className="text-sm font-medium mb-2 text-[color:var(--secondary-color)]">Other URLs</h4>
+                        <h4 className="text-sm font-medium mb-2 text-[color:var(--secondary-color)]">Other URLs & Custom Labels</h4>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                             <div>
                                 <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1 flex items-center">
-                                    <Link size={14} className="mr-1" /> <span>Code URL</span>
+                                    <Link size={14} className="mr-1" /> <span>Code URL & Label</span>
                                 </label>
-                                <input
-                                    type="text"
-                                    name="otherURLs.code"
-                                    value={formData.otherURLs.code}
-                                    onChange={handleInputChange}
-                                    className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
-                                    disabled={isLoading}
-                                    placeholder="GitHub repository URL"
-                                />
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                    <input
+                                        type="text"
+                                        name="otherURLs.code"
+                                        value={formData.otherURLs.code}
+                                        onChange={handleInputChange}
+                                        className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                        disabled={isLoading}
+                                        placeholder="GitHub URL"
+                                    />
+                                    <input
+                                        type="text"
+                                        name="otherURLLabels.code"
+                                        value={formData.otherURLLabels?.code || ''}
+                                        onChange={handleInputChange}
+                                        className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                        disabled={isLoading}
+                                        placeholder="Custom Label"
+                                    />
+                                </div>
                             </div>
                             <div>
                                 <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1 flex items-center">
-                                    <Link size={14} className="mr-1" /> <span>PDF URL</span>
+                                    <Link size={14} className="mr-1" /> <span>PDF URL & Label</span>
                                 </label>
-                                <input
-                                    type="text"
-                                    name="otherURLs.pdf"
-                                    value={formData.otherURLs.pdf}
-                                    onChange={handleInputChange}
-                                    className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
-                                    disabled={isLoading}
-                                    placeholder="PDF document URL"
-                                />
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                    <input
+                                        type="text"
+                                        name="otherURLs.pdf"
+                                        value={formData.otherURLs.pdf}
+                                        onChange={handleInputChange}
+                                        className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                        disabled={isLoading}
+                                        placeholder="PDF URL"
+                                    />
+                                    <input
+                                        type="text"
+                                        name="otherURLLabels.pdf"
+                                        value={formData.otherURLLabels?.pdf || ''}
+                                        onChange={handleInputChange}
+                                        className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                        disabled={isLoading}
+                                        placeholder="Custom Label"
+                                    />
+                                </div>
                             </div>
                             <div>
                                 <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1 flex items-center">
-                                    <Link size={14} className="mr-1" /> <span>Slides URL</span>
+                                    <Link size={14} className="mr-1" /> <span>Slides URL & Label</span>
                                 </label>
-                                <input
-                                    type="text"
-                                    name="otherURLs.slides"
-                                    value={formData.otherURLs.slides}
-                                    onChange={handleInputChange}
-                                    className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
-                                    disabled={isLoading}
-                                    placeholder="Presentation slides URL"
-                                />
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                    <input
+                                        type="text"
+                                        name="otherURLs.slides"
+                                        value={formData.otherURLs.slides}
+                                        onChange={handleInputChange}
+                                        className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                        disabled={isLoading}
+                                        placeholder="Slides URL"
+                                    />
+                                    <input
+                                        type="text"
+                                        name="otherURLLabels.slides"
+                                        value={formData.otherURLLabels?.slides || ''}
+                                        onChange={handleInputChange}
+                                        className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                        disabled={isLoading}
+                                        placeholder="Custom Label"
+                                    />
+                                </div>
                             </div>
                             <div>
                                 <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1 flex items-center">
-                                    <Link size={14} className="mr-1" /> <span>Video URL</span>
+                                    <Link size={14} className="mr-1" /> <span>Video URL & Label</span>
                                 </label>
-                                <input
-                                    type="text"
-                                    name="otherURLs.video"
-                                    value={formData.otherURLs.video}
-                                    onChange={handleInputChange}
-                                    className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
-                                    disabled={isLoading}
-                                    placeholder="YouTube or other video URL"
-                                />
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                    <input
+                                        type="text"
+                                        name="otherURLs.video"
+                                        value={formData.otherURLs.video}
+                                        onChange={handleInputChange}
+                                        className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                        disabled={isLoading}
+                                        placeholder="Video URL"
+                                    />
+                                    <input
+                                        type="text"
+                                        name="otherURLLabels.video"
+                                        value={formData.otherURLLabels?.video || ''}
+                                        onChange={handleInputChange}
+                                        className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                        disabled={isLoading}
+                                        placeholder="Custom Label"
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>

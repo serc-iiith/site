@@ -25,6 +25,7 @@ interface Event {
         slides: string;
         video: string;
     };
+    hasTime?: boolean;
 }
 
 // Section transition component from home page for consistency
@@ -125,8 +126,36 @@ const EventCard = ({ event, isSelected }: { event: Event, isSelected: boolean })
                         }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                    <div className="absolute bottom-4 left-4">
+                    <div className="absolute bottom-4 left-4 flex gap-2 items-center flex-wrap">
                         <EventTag type={eventType} />
+                        {(() => {
+                            const now = new Date();
+                            const start = new Date(event.startTime);
+                            const end = event.endTime ? new Date(event.endTime) : null;
+                            
+                            let status: 'Open' | 'Closed' | 'Upcoming';
+                            if (now < start) {
+                                status = 'Upcoming';
+                            } else if (end && now <= end) {
+                                status = 'Open';
+                            } else {
+                                status = 'Closed';
+                            }
+
+                            const colors = {
+                                Open: "bg-green-100 text-green-800 border-green-400",
+                                Closed: "bg-red-100 text-red-800 border-red-400",
+                                Upcoming: "bg-blue-100 text-blue-800 border-blue-400",
+                            };
+
+                            const color = colors[status];
+
+                            return (
+                                <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-semibold border ${color}`}>
+                                    {status}
+                                </span>
+                            );
+                        })()}
                     </div>
                 </div>
                 <div className="p-5 relative flex-grow flex flex-col">
@@ -194,9 +223,42 @@ export default function News() {
             eventDate.getFullYear() === currentDate.getFullYear();
     });
 
-    // Group news into upcoming and past
-    const upcomingNews = sortedNews.filter(event => new Date(event.startTime) >= new Date());
-    const pastNews = sortedNews.filter(event => new Date(event.startTime) < new Date());
+    // Group news into ongoing, upcoming and archives (past)
+    const ongoingNews = sortedNews.filter(event => {
+        const now = new Date();
+        const start = new Date(event.startTime);
+        const end = event.endTime ? new Date(event.endTime) : null;
+        
+        if (end) {
+            return now >= start && now <= end;
+        } else {
+            // For single day events without end time, mark as ongoing if it is today
+            return now.toDateString() === start.toDateString();
+        }
+    });
+
+    const upcomingNews = sortedNews.filter(event => {
+        const now = new Date();
+        const start = new Date(event.startTime);
+        
+        if (event.endTime) {
+            return now < start;
+        }
+        // Single day events: starting in the future (not today and after now)
+        return now < start && now.toDateString() !== start.toDateString();
+    });
+
+    const pastNews = sortedNews.filter(event => {
+        const now = new Date();
+        const start = new Date(event.startTime);
+        const end = event.endTime ? new Date(event.endTime) : null;
+        
+        if (end) {
+            return now > end;
+        }
+        // Single day events: ending in the past (not today and before now)
+        return now > start && now.toDateString() !== start.toDateString();
+    });
 
     // Convert news for the calendar component
     const calendarNews = news.map(event => ({
@@ -207,7 +269,7 @@ export default function News() {
         description: event.summary,
         type: determineEventType(event),
         image: event.imageURLs && event.imageURLs.length > 0 ? event.imageURLs[0] : '',
-        isPast: new Date(event.startTime) < new Date(),
+        isPast: event.endTime ? new Date(event.endTime) < new Date() : new Date(event.startTime) < new Date(),
         presenters: event.presenters || []
     }));
 
@@ -319,7 +381,7 @@ export default function News() {
                                             {currentNews.length > 0 ? (
                                                 <div className="space-y-4">
                                                     {currentNews
-                                                        .sort((a, b) => new Date(a.startTime).getTime() - new Date(b.startTime).getTime())
+                                                        .sort((a, b) => new Date(b.startTime).getTime() - new Date(a.startTime).getTime())
                                                         .map(event => {
                                                             const eventDate = new Date(event.startTime);
                                                             return (
@@ -369,43 +431,62 @@ export default function News() {
                 {/* All News */}
                 {!loading && (
                     <>
-                        {/* Upcoming News */}
-                        {upcomingNews.length > 0 && (
-                        <section className="py-16 bg-[color:var(--foreground)]">
+                        {/* Ongoing News */}
+                        {ongoingNews.length > 0 && (
+                        <section className="py-12 bg-[color:var(--foreground)]">
                             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                                 <SectionTransition delay={0.01}>
                                     <div className="mb-8">
                                         <h2 className="text-2xl md:text-3xl font-bold text-[color:var(--text-color)]">
-                                            Upcoming
+                                            Ongoing Events & Announcements
                                         </h2>
                                         <div className="w-20 h-1 bg-[color:var(--success-color)] mt-2"></div>
                                     </div>
 
-                                    {upcomingNews.length > 0 ? (
-                                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                                            {upcomingNews.map((event) => (
-                                                <div key={event.slug} className="h-full">
-                                                    <EventCard
-                                                        event={event}
-                                                        isSelected={false}
-                                                    />
-                                                </div>
-                                            ))}
-                                        </div>
-                                    ) : (
-                                        <div className="bg-[color:var(--background)] rounded-lg p-8 text-center">
-                                            <p className="text-[color:var(--secondary-color)]">
-                                                No news at this time. Check back later!
-                                            </p>
-                                        </div>
-                                    )}
+                                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                        {ongoingNews.map((event) => (
+                                            <div key={event.slug} className="h-full">
+                                                <EventCard
+                                                    event={event}
+                                                    isSelected={false}
+                                                />
+                                            </div>
+                                        ))}
+                                    </div>
+                                </SectionTransition>
+                            </div>
+                        </section>
+                        )}
+
+                        {/* Upcoming News */}
+                        {upcomingNews.length > 0 && (
+                        <section className="py-12 bg-[color:var(--foreground)]">
+                            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                                <SectionTransition delay={0.01}>
+                                    <div className="mb-8">
+                                        <h2 className="text-2xl md:text-3xl font-bold text-[color:var(--text-color)]">
+                                            Upcoming Events
+                                        </h2>
+                                        <div className="w-20 h-1 bg-[color:var(--primary-color)] mt-2"></div>
+                                    </div>
+
+                                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                        {upcomingNews.map((event) => (
+                                            <div key={event.slug} className="h-full">
+                                                <EventCard
+                                                    event={event}
+                                                    isSelected={false}
+                                                />
+                                            </div>
+                                        ))}
+                                    </div>
                                 </SectionTransition>
                             </div>
                         </section>
                         )}
 
                         {/* Archives */}
-                        <section className="py-16 bg-[color:var(--foreground)]">
+                        <section className="py-12 bg-[color:var(--foreground)]">
                             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                                 <SectionTransition delay={0.01}>
                                     <div className="mb-8">
