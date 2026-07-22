@@ -17,16 +17,14 @@ export default function Error({
     }, [error]);
 
     return (
-        <div className="min-h-screen flex flex-col items-center justify-center px-4 py-16"
-            style={{ background: `linear-gradient(to bottom right, var(--background), var(--foreground))` }}
-        >
+        <div className="min-h-screen flex flex-col items-center justify-center px-4 py-16 bg-gradient-to-br from-[color:var(--background)] to-[color:var(--foreground)]">
             <div className="max-w-3xl mx-auto text-center">
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                 >
-                    <h1 className="text-9xl font-extrabold mb-4" style={{ color: "var(--error-color)" }}>
+                    <h1 className="text-9xl font-extrabold mb-4 text-[color:var(--error-color)]">
                         500
                     </h1>
 
@@ -37,16 +35,15 @@ export default function Error({
                         className="relative mb-8"
                     >
                         <div
-                            className="h-1 w-24 mx-auto"
-                            style={{ background: `linear-gradient(to right, var(--error-color), var(--warning-color))` }}
+                            className="h-1 w-24 mx-auto bg-gradient-to-r from-[color:var(--error-color)] to-[color:var(--warning-color)]"
                         ></div>
                     </motion.div>
 
-                    <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ color: "var(--text-color)" }}>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[color:var(--text-color)]">
                         Something went wrong!
                     </h2>
 
-                    <p className="text-lg mb-8 max-w-xl mx-auto" style={{ color: "var(--secondary-color)" }}>
+                    <p className="text-lg mb-8 max-w-xl mx-auto text-[color:var(--secondary-color)]">
                         Oopsie Woopsie! The code monkeys at our headquarters are working very hard to fix this!
                     </p>
 
@@ -58,13 +55,7 @@ export default function Error({
                         >
                             <Link
                                 href="/"
-                                className="inline-flex items-center px-6 py-3 font-medium rounded-lg shadow-lg hover:shadow-xl transition duration-300"
-                                style={{
-                                    background: "var(--background)",
-                                    borderColor: "var(--border-color)",
-                                    color: "var(--text-color)",
-                                    border: "1px solid",
-                                }}
+                                className="inline-flex items-center px-6 py-3 font-medium rounded-lg shadow-lg hover:shadow-xl transition duration-300 bg-[color:var(--background)] border border-[color:var(--border-color)] text-[color:var(--text-color)]"
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -87,8 +78,7 @@ export default function Error({
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.4, duration: 0.5 }}
                             onClick={reset}
-                            className="inline-flex items-center px-6 py-3 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition duration-300"
-                            style={{ background: `linear-gradient(to right, var(--error-color), var(--warning-color))` }}
+                            className="inline-flex items-center px-6 py-3 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition duration-300 bg-gradient-to-r from-[color:var(--error-color)] to-[color:var(--warning-color)]"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"

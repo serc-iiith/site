@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   authors: [{ name: "SERC Team" }],
   alternates: {
     canonical: "/",
+    languages: {
+      "en-IN": "/",
+    },
   },
   openGraph: {
     title: "SERC - Software Engineering Research Center | IIIT Hyderabad",

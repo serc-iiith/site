@@ -1,0 +1,102 @@
+# Software Engineering Research Center (SERC), IIIT Hyderabad
+
+This is the directory of resources for the Software Engineering Research Center (SERC) at the International Institute of Information Technology, Hyderabad. SERC focuses on building human-centered, intelligent, reliable, and sustainable software systems.
+
+## Primary Routes
+- [About Us](https://serc.iiit.ac.in/about-us): Mission, vision, and key research commitments of SERC.
+- [People](https://serc.iiit.ac.in/people): Faculty members, PhD scholars, research students, and alumni.
+- [Research & Publications](https://serc.iiit.ac.in/research): Academic publications in conferences and journals.
+- [Projects](https://serc.iiit.ac.in/projects): Ongoing and past software engineering research projects.
+- [News & Events](https://serc.iiit.ac.in/news): Announcements, thesis defenses, workshops, and admissions open updates.
+- [Blog](https://serc.iiit.ac.in/blog): Research insights, student experience stories, and technical posts.
+- [Contact Us](https://serc.iiit.ac.in/contact): Physical address, email, and coordinates.
+
+## Research Areas
+- Formal Methods & Program Analysis
+- Human-Computer Interaction (HCI) & Design
+- Software Engineering for AI & Machine Learning
+- Self-Adaptive & Sustainable Software Systems
+- Internet of Things (IoT) & Smart Cities
+- Gamification & Software Engineering Education
+
+## Faculty & Key Members
+### Faculty
+- [Raghu Reddy](https://serc.iiit.ac.in/people/raghu-reddy): Associate Professor and Center Head
+- [Venkatesh Choppella](https://serc.iiit.ac.in/people/venkatesh-choppella): Associate Professor
+- [Karthik Vaidhyanathan](https://serc.iiit.ac.in/people/karthik): Assistant Professor
+- [Raman Saxena](https://serc.iiit.ac.in/people/raman): Professor of Practice
+- [Vasudeva Varma](https://serc.iiit.ac.in/people/vasu): Professor
+- [Viswanath Kasturi](https://serc.iiit.ac.in/people/viswanath-kasturi): Research Professor of Eminence
+- [Ramesh Loganathan](https://serc.iiit.ac.in/people/ramesh-loganathan): Professor of Practice
+- [Prakash Yalla](https://serc.iiit.ac.in/people/prakash_yalla): Professor of Practice
+- [Abhishek Kumar Singh](https://serc.iiit.ac.in/people/abhishek-kumar-singh): Assistant Professor
+
+### PhD Students
+- [Mrityunjay Kumar](https://serc.iiit.ac.in/people/mrityunjay_kumar): PhD CSE
+- [Amar Banerjee](https://serc.iiit.ac.in/people/amar-banerjee): PhD CSE
+- [Akhila Matathammal](https://serc.iiit.ac.in/people/akhila_matathammal): PhD CSE
+- [Brahma Reddy Korraprolu](https://serc.iiit.ac.in/people/brahma-reddy-korraprolu): PhD CSE
+- [Nitheesh Chandra Yaratapalli](https://serc.iiit.ac.in/people/nitheesh-chandra-yaratapalli): PhD CSE
+- [Radha Krishna B](https://serc.iiit.ac.in/people/radha-krishna-b): PhD CSE
+- [Rudra Dhar](https://serc.iiit.ac.in/people/rudra-dhar): PhD CSE
+- [Abhinav Guptha](https://serc.iiit.ac.in/people/abhinav_guptha): PhD CSE
+- [Venkata Padmalata Nistala](https://serc.iiit.ac.in/people/venkata_padmalata_nistala): PhD CSE
+
+## Projects Showcase
+- **Autonomous CloudOps using GenAI**: The aim is to simplify the complex multi-dimensional space of CloudOps with the help of Generative AI.
+- **Design Innovation Center**: Ministry of Human Resource Development has proposed a National Initiative for Design Innovation in the Twelfth Plan. Under this initiative, 20 new Design Innovation Centers (DIC), one Open Design school (ODS) and a National Design Innovation Network (NDIN), linking together all these schools and other allied bodies such as leading institutions of Industry and academics, NGOs and government were set up.
+- **Development of Security Search Engine**: The project involves development of a information security search engine.
+- **Gamily - Gamification Platform For All**: Gamification of software engineering activities to increase interest in developers.
+- **Github HSBC**: Adoption of a technology into an organization needs acceptance and ease of use.
+- **Meta**: The aim is to simplify the complex multi-dimensional space of CloudOps with the help of Generative AI.
+- **Qualcomm EdgeAi**: Sustainable Edge Ai using Edge-Cloud Continuum
+- **Smart Contracts for Open Source Software License Management**: Study the usage of smart contracts for open source software license management and create a prototype implementation using RIPPLE or Ether.
+- **UMETRIX - Usability Evaluation for Mobile Apps**: UMETRIX to identify functional usability issues specific to mobile applications.
+- **Virtual Labs**: Online simulations of various science and engineering laboratory experiments available free and 24x7 to anyone and everyone.
+- **Visual Acuity Testing using VR**: The VREYE project aims to widen the scope of VR software systems in the medical domain and loops in various benefits of the technology in order to solve the problems that persist in the scope of testing and detection.
+- **GreenSAM**: The goal of the project is to develop approaches, frameworks and tools for greening software deployments. The project is in collaboration with Lloyds Technology Center
+- **ANRF**:  The SustAInd project under ANRF PM ECRG aims to build a software-centric framework for enhancing the sustainability of AI-enabled systems. 
+
+## Recent Publications (Top 25)
+- **Engineering LLM Powered Multi-Agent Framework for Autonomous CloudOps** (2025) - Parthasarathy, Kannan, Vaidhyanathan, Karthik, Dhar, Rudra, Krishnamachari, Venkat, Kakran, Adyansh, sreemaee-akshathala, Arun, Shrikara, Karan, Amey, Muhammed, Basil, Dubey, Sumant, Veerubhotla, Mohan. [Resource](https://ieeexplore.ieee.org/abstract/document/11030040)
+- ** VRSLOG: An Approach to Log Immersive Experiences in Virtual Reality Systems** (2025) - Y Raghu Reddy. [Resource](https://serc.iiit.ac.in/research)
+- **VReqST: A Requirement Specification Tool for Virtual Reality Software Products** (2025) - Y Raghu Reddy, Sai Anirudh Karre, Amogha A Halhalli. [Resource]( https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11024301&isnumber=11024244)
+- **The POMS Effect: Measuring the impact of overlapping architectures on User Engagement in Virtual Reality** (2025) - Y Raghu Reddy, Puru Ojha, Aaditya Vardhan Narain. [Resource](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11172565&isnumber=11172380)
+- **Test Case Generation for Requirements in Natural Language - An LLM Comparison Study** (2025) - Raghu Reddy, Brahma Reddy Korraprolu, Pavitra Pinninti. [Resource](https://dl.acm.org/doi/10.1145/3717383.3717389)
+- **EdgeMLBalancer: A Self-Adaptive Approach for Dynamic Model Switching on Resource-Constrained Edge Devices** (2025) - Akhila Matathammal, Kriti Gupta, Larissa Lavanya, Ananya Vishal Halgatti, Priyanshi Gupta, Karthik Vaidhyanathan. [Resource](https://arxiv.org/abs/2502.06493)
+- **Model-based approach for specifying requirements of virtual reality software products** (2024) - Y Raghu Reddy, Sai Anirudh Karre. [Resource](https://www.frontiersin.org/journals/virtual-reality/articles/10.3389/frvir.2024.1471579/full)
+- **SWITCH: An Exemplar for Evaluating Self-Adaptive ML-Enabled Systems** (2024) - Arya Marda, Shubham Kulkarni, Karthik Vaidhyanathan. [Resource](https://doi.org/10.48550/arXiv.2402.06351)
+- **Software Development Waste amidst COVID-19 Pandemic: An Industry Study** (2024) - Dhiraj SM Varanasi, Sai Anirudh Karre, Raghu Reddy. [Resource](https://doi.org/10.1145/3641399.3641417)
+- **Enhancing MVC architecture pattern description using its System of Systems model** (2024) - Mrityunjay Kumar, Venkatesh Choppella. [Resource](https://doi.org/10.1145/3641399.3641410)
+- **Engineering End-to-End Remote Labs using IoT-based Retrofitting** (2024) - K. S. Viswanadh, Akshit Gureja, Nagesh Walchatwar, Rishabh Agrawal, Shiven Sinha, Sachin Chaudhari, Karthik Vaidhyanathan, Venkatesh Choppella, Prabhakar Bhimalapuram, Harikumar Kandath, Aftab M. Hussain. [Resource](https://doi.org/10.48550/arXiv.2402.05466)
+- **Trace to Follow, Run to Explore: A Demonstration using Interactive Sorting** (2023) - Pranav Vats, Venkatesh Choppella. [Resource](https://doi.org/10.1145/3617650.3624930)
+- **Towards Self-Adaptive Machine Learning-Enabled Systems Through QoS-Aware Model Switching** (2023) - Shubham Kulkarni, Arya Marda, Karthik Vaidhyanathan. [Resource](https://doi.org/10.48550/arXiv.2308.09960)
+- **Towards Self-Adaptive Machine Learning-Enabled Systems Through QoS-Aware Model Switching** (2023) - Shubham Kulkarni, Arya Marda, Karthik Vaidhyanathan. [Resource](https://doi.org/10.1109/ASE56229.2023.00172)
+- **Towards Conducting Effective Locomotion Through Hardware Transformation in Head-Mounted-Device - A Review Study** (2023) - Y. Pawan Kumar Gururaj, Raghav Mittal, Sai Anirudh Karre, Y. Raghu Reddy, Syed Azeemuddin. [Resource](https://doi.org/10.48550/arXiv.2306.14210)
+- **Toward Changing Users behavior with Emotion-based Adaptive Systems** (2023) - Mina Alipour, Mahyar Tourchi Moghaddam, Karthik Vaidhyanathan, Mikkel Baun Kjærgaard. [Resource](https://doi.org/10.1145/3565472.3595614)
+- **Systems Modeling for novice engineers to comprehend software products better** (2023) - Mrityunjay Kumar, Venkatesh Choppella. [Resource](https://doi.org/10.48550/arXiv.2304.13294)
+- **Software Architecture and Machine Learning (Dagstuhl Seminar 23302)** (2023) - Grace A. Lewis, Henry Muccini, Ipek Ozkaya, Karthik Vaidhyanathan, Roland Weiss, Liming Zhu. [Resource](https://doi.org/10.4230/DagRep.13.7.166)
+- **Requirements Elicitation for Virtual Reality Products - A Mapping Study** (2023) - Sai Anirudh Karre, Raghav Mittal, Raghu Reddy. [Resource](https://doi.org/10.1145/3578527.3578536)
+- **Proceedings of the ACM Conference on Global Computing Education Vol 2, CompEd 2023, Hyderabad, India, December 5-9, 2023** (2023) - Venkatesh Choppella, Deepak B. Phatak, Andrew Luxton-Reilly, Michelle Craig. [Resource](https://doi.org/10.1145/3617650)
+- **Proceedings of the ACM Conference on Global Computing Education Vol 1, CompEd 2023, Hyderabad, India, December 5-9, 2023** (2023) - Venkatesh Choppella, Deepak B. Phatak, Andrew Luxton-Reilly, Michelle Craig. [Resource](https://doi.org/10.1145/3576882)
+- **Modeling Model-View-Controller (MVC) Architecture Pattern as System of Systems (SoS) to Aid Comprehension and Reasoning** (2023) - Mrityunjay Kumar, Venkatesh Choppella. [Resource](https://doi.org/10.1145/3617650.3624934)
+- **Knowledge Driven Synthesis Using Resource-Capability Semantics for Control Software Design** (2023) - Amar Banerjee, Venkatesh Choppella. [Resource](https://doi.org/10.1109/ACCESS.2023.3277859)
+- **Is Transition Systems Approach of Modeling Software Systems Hard to Learn and Use?** (2023) - Mrityunjay Kumar, Venkatesh Choppella. [Resource](https://doi.org/10.1145/3617650.3624931)
+- **Evaluating the difficulty for novice engineers in learning and using Transition Systems for modeling software systems** (2023) - Mrityunjay Kumar, Venkatesh Choppella. [Resource](https://doi.org/10.1145/3627217.3627223)
+
+## Latest Blog Posts
+- [SERC Students presented their work in ICSA 2025](https://serc.iiit.ac.in/blog/LLMs-for-Generation-of-Architectural-Components-An-Exploratory-Empirical-Study-in-th): SERC students under guidance of Prof. Karthik Vaidhyanathan has presented their papers in ICSA 2025 - Odense, Denmark (April 14, 2025)
+- [Enhancing Sustainability of Modern Software Systems through Self-adaptive Architectures](https://serc.iiit.ac.in/blog/self-adaptive-architectures-sustainability): Dr. Karthik Vaidhyanathan explains the concept of software sustainability and how his group's research on self-adaptation is contributing towards greener and sustainable software. (January 17, 2025)
+
+## News & Events (Top 10)
+- [Ph.D. Opportunities at SERC, IIIT Hyderabad](https://serc.iiit.ac.in/news/phd-admissions-serc-2026): Applications are invited for Ph.D. positions at Software Engineering Research Centre (SERC), IIIT Hyderabad in Agentic AI, HCI/VR, Parallel Computing, and Software Engineering. Apply by September 15, 2026. (7/22/2026)
+- [SERI 2026 (July 16–18, 2026)](https://serc.iiit.ac.in/news/seri-2026-july-1618-2026): SERI 2026 is a three-day conference at IIIT Hyderabad that brings together academia and industry to share cutting-edge software engineering research. The event features invited talks, research presentations, and a dedicated Industry Day. (7/16/2026)
+- [SERI 2026 Concludes Successfully at IIIT Hyderabad](https://serc.iiit.ac.in/news/seri-2026-concludes-successfully-at-iiit-hyderabad): SERI 2026 Successfully Concludes with Strong Academia–Industry Participation (7/16/2026)
+- [Research Paper Accepted at ACM ICMI 2026](https://serc.iiit.ac.in/news/research-paper-accepted-at-acm-icmi-2026): Aaditya Vardhan Narain's Paper Accepted at ACM ICMI 2026 (7/2/2026)
+- [Adyansh Kakran Successfully Defends His MS Thesis](https://serc.iiit.ac.in/news/adyansh-kakran-successfully-defends-his-ms-thesis): Congratulations to Adyansh on Successfully Defending His MS Thesis (7/2/2026)
+- [Chandrasekar S Successfully Defends His MS Thesis](https://serc.iiit.ac.in/news/chandrasekar-s-successfully-defends-his-ms-thesis): Congratulations to Chandrasekar S on Successfully Defending His MS Thesis (6/30/2026)
+- [Prakhar Jain Successfully Defends His MS Thesis](https://serc.iiit.ac.in/news/prakhar-jain-successfully-defends-his-ms-thesis): Congratulations to Prakhar Jain on Successfully Defending His MS Thesis (6/30/2026)
+- [Shambhavi Jahagirdar Successfully Defends Her MS Thesis](https://serc.iiit.ac.in/news/shambhavi-jahagirdar-successfully-defends-her-ms-thesis): Shambhavi Jahagirdar Successfully Defends Her MS Thesis (6/29/2026)
+- [PhD Comprehensive Examination Achievement](https://serc.iiit.ac.in/news/phd-comprehensive-examination-achievement): PhD Scholar Brahma Reddy Korraprolu Successfully Clears Comprehensive Examination (6/24/2026)
+- [ICSA - 2026](https://serc.iiit.ac.in/news/icsa-2026): Received the ICSA 2026 Best Artifact Award for the paper "LLM-based Automated Architecture View Generation: Where Are We Now? (6/22/2026)
+

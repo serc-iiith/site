@@ -33,6 +33,9 @@ export function buildRouteMetadata(input: RouteSeoInput): Metadata {
     keywords: input.keywords,
     alternates: {
       canonical,
+      languages: {
+        "en-IN": canonical,
+      },
     },
     openGraph: {
       title: fullTitle,
