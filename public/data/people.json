@@ -509,6 +509,20 @@
             "interests": [],
             "education": [],
             "bio": "Hi! I am a Master’s by Research student and my work is at the intersection of Software Engineering and AI, with a primary focus on the software architectural aspects and evaluation of agentic AI systems.\nMy recent research explores the development of frameworks for evaluating multi-agent systems beyond simple task completion, aiming to establish more robust assessment metrics for autonomous systems, and genAI in software architecture. I have contributed to projects like ArchBench, which benchmarks LLMs for software architecture tasks, and I am particularly interested in refining the memory mechanisms and reliability of agentic systems to better support complex, real-world applications.\nWhen I’m not in the lab, you can usually find me playing board games with friends."
+        },
+        {
+            "name": "Hrigved Naidu",
+            "title": "MS (CSE)",
+            "email": "",
+            "imageURL": "/images/people/hrigved-naidu.jpg",
+            "slug": "hrigved-naidu",
+            "social_links": {
+                "Linked In": " https://www.linkedin.com/in/hrigved-naidu-a97307246/",
+                "Github": "https://github.com/TheHMNhub"
+            },
+            "interests": [],
+            "education": [],
+            "bio": " Hey, I'm Hrigved & I love Mountains & Cricket (Thala for a Reason)."
         }
     ],
     "Dual Degree": [

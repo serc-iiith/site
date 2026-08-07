@@ -1,26 +1,5 @@
 [
     {
-        "slug": "seri-2026-concludes-successfully-at-iiit-hyderabad",
-        "name": "SERI 2026 Concludes Successfully at IIIT Hyderabad",
-        "eventURL": "https://conf.researchr.org/home/seri-2026",
-        "location": "IIIT Hyderabad",
-        "locationURL": "https://maps.app.goo.gl/phJt7rjbqq5bMGLy7",
-        "summary": "SERI 2026 Successfully Concludes with Strong Academia–Industry Participation",
-        "detail": "The Software Engineering Research in India (SERI) 2026 conference concluded successfully at IIIT Hyderabad from 16–18 July 2026, bringing together researchers, academicians, industry practitioners, and students from across the country to foster collaboration and advance software engineering research in India.\n\nPlanned over several months, SERI 2026 exceeded expectations by welcoming nearly 350 unique participants from academia and industry. A key highlight of this year's edition was the introduction of Industry Day, which attracted around 150 participants and strengthened collaborations between academia and industry through engaging discussions and knowledge exchange.\n\nThe three-day conference featured a rich technical program comprising:\n\n7 Invited Talks\n5 Spotlight Talks\n30+ Research and Practice Presentations\n10 Poster Presentations\n3 Panel Discussions\n\nThe event provided an excellent platform for presenting cutting-edge research, exchanging ideas, networking, and discussing emerging challenges and opportunities in software engineering.\n\nSERI 2026 was made possible through the collective efforts of the Organising Committee, Steering Committee, faculty members, staff, and dedicated student volunteers. The conference also received valuable support from its sponsors and partners, including the Anusandhan National Research Foundation (ANRF), Techno-Comp Computer Services Pvt. Ltd., Infosys, Tata Consultancy Services (TCS) Research, ISOFT – The India Chapter of ACM SIGSOFT, ACM India, NASSCOM, and the conference's Knowledge Partner.\n\nWe sincerely thank all our distinguished speakers, panelists, presenters, session chairs, sponsors, volunteers, and every participant who travelled from across the country to contribute to the success of SERI 2026. Their enthusiasm, insightful discussions, and active participation created a vibrant and collaborative environment throughout the conference.\n\nThe successful completion of SERI 2026 reflects the growing momentum of software engineering research in India and reinforces the importance of continued collaboration between academia and industry. We look forward to building on this success and welcoming the community again at future editions of SERI.",
-        "startTime": "2026-07-16T08:30",
-        "endTime": "2026-07-18T06:30",
-        "imageURLs": [
-            "/images/news/seri-2026-july-1618.jpeg"
-        ],
-        "presenters": [],
-        "otherURLs": {
-            "code": "",
-            "pdf": "",
-            "slides": "https://conf.researchr.org/committee/seri-2026/seri-2026-organising-committee",
-            "video": ""
-        }
-    },
-    {
         "slug": "phd-admissions-serc-2026",
         "name": "Ph.D. Opportunities at SERC, IIIT Hyderabad",
         "eventURL": "",
@@ -66,6 +45,34 @@
             "code": "",
             "pdf": "",
             "slides": "https://conf.researchr.org/committee/seri-2026/seri-2026-organising-committee",
+            "video": ""
+        }
+    },
+    {
+        "slug": "seri-2026-concludes-successfully-at-iiit-hyderabad",
+        "name": "SERI 2026 Concludes Successfully at IIIT Hyderabad",
+        "eventURL": "https://conf.researchr.org/home/seri-2026",
+        "location": "IIIT Hyderabad",
+        "locationURL": "https://maps.app.goo.gl/phJt7rjbqq5bMGLy7",
+        "summary": "SERI 2026 Successfully Concludes with Strong Academia–Industry Participation",
+        "detail": "The Software Engineering Research in India (SERI) 2026 conference concluded successfully at IIIT Hyderabad from 16–18 July 2026, bringing together researchers, academicians, industry practitioners, and students from across the country to foster collaboration and advance software engineering research in India.\n\nPlanned over several months, SERI 2026 exceeded expectations by welcoming nearly 350 unique participants from academia and industry. A key highlight of this year's edition was the introduction of Industry Day, which attracted around 150 participants and strengthened collaborations between academia and industry through engaging discussions and knowledge exchange.\n\nThe three-day conference featured a rich technical program comprising:\n\n7 Invited Talks\n5 Spotlight Talks\n30+ Research and Practice Presentations\n10 Poster Presentations\n3 Panel Discussions\n\nThe event provided an excellent platform for presenting cutting-edge research, exchanging ideas, networking, and discussing emerging challenges and opportunities in software engineering.\n\nSERI 2026 was made possible through the collective efforts of the Organising Committee, Steering Committee, faculty members, staff, and dedicated student volunteers. The conference also received valuable support from its sponsors and partners, including the Anusandhan National Research Foundation (ANRF), Techno-Comp Computer Services Pvt. Ltd., Infosys, Tata Consultancy Services (TCS) Research, ISOFT – The India Chapter of ACM SIGSOFT, ACM India, NASSCOM, and the conference's Knowledge Partner.\n\nWe sincerely thank all our distinguished speakers, panelists, presenters, session chairs, sponsors, volunteers, and every participant who travelled from across the country to contribute to the success of SERI 2026. Their enthusiasm, insightful discussions, and active participation created a vibrant and collaborative environment throughout the conference.\n\nThe successful completion of SERI 2026 reflects the growing momentum of software engineering research in India and reinforces the importance of continued collaboration between academia and industry. We look forward to building on this success and welcoming the community again at future editions of SERI.",
+        "startTime": "2026-07-16T08:30",
+        "endTime": "2026-07-18T06:30",
+        "imageURLs": [
+            "/images/news/seri-2026-july-1618.jpeg"
+        ],
+        "presenters": [],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "https://conf.researchr.org/committee/seri-2026/seri-2026-organising-committee",
+            "video": "https://www.linkedin.com/posts/seresearchinindia_seri2026-seri2026-softwareengineering-activity-7484277129535184896-khKR?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAVyF_sB_aFYjSWuiD38QfrTRXolX2a9oG8"
+        },
+        "hasTime": true,
+        "otherURLLabels": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
             "video": ""
         }
     },
