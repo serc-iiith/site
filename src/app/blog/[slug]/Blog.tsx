@@ -223,9 +223,9 @@ export default function Blog({ blogPost, blogData }: BlogProps) {
                 {/* Main Content */}
                 <section className="py-12 md:py-16 px-4 bg-[var(--background)]">
                     <div className="max-w-7xl mx-auto">
-                        <div className="flex flex-col md:flex-row gap-10">
+                        <div className="flex flex-col md:flex-row gap-10" role="main">
                             {/* Sidebar */}
-                            <div className="md:w-1/4 order-2 md:order-1">
+                            <aside className="md:w-1/4 order-2 md:order-1" aria-label="Article Actions">
                                 {/* Share Widget */}
                                 <div className="mt-8 bg-[var(--foreground)] p-6 rounded-lg">
                                     <h3 className="text-lg font-bold mb-4 text-text">Share Article</h3>
@@ -284,10 +284,10 @@ export default function Blog({ blogPost, blogData }: BlogProps) {
                                         </button>
                                     </div>
                                 </div>
-                            </div>
+                            </aside>
 
                             {/* Article Content */}
-                            <div className="md:w-3/4 order-1 md:order-2 text-justify">
+                            <article className="md:w-3/4 order-1 md:order-2 text-justify">
                                 <div className="prose lg:prose-xl max-w-none text-[var(--text-color)] prose-a:text-blue-600 hover:prose-a:text-blue-500 prose-headings:text-[var(--text-color)]">
                                     <ReactMarkdown
                                         remarkPlugins={[remarkGfm]}
@@ -296,7 +296,7 @@ export default function Blog({ blogPost, blogData }: BlogProps) {
                                         {blogPost.content}
                                     </ReactMarkdown>
                                 </div>
-                            </div>
+                            </article>
                         </div>
                     </div>
                 </section>

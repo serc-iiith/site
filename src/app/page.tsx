@@ -324,6 +324,8 @@ interface Event {
     video: string;
   };
   hasTime?: boolean;
+  eventType?: string;
+  schemaType?: string;
 }
 
 const EventCard = ({ event }: { event: Event }) => {
@@ -436,10 +438,35 @@ export default function Home() {
     content: string;
   }
 
-  // Add the state for recent publications
-  const [recentPublications, setRecentPublications] = useState<Paper[]>([]);
-  const [latestBlogs, setLatestBlogs] = useState(blogData.slice(0, 3));
-  const [topNews, setTopNews] = useState<Event[]>([]);
+  // Sort data for pre-rendering / initial state
+  const initialPublications = [...researchData]
+    .sort((a, b) => parseInt(b.year) - parseInt(a.year))
+    .slice(0, 3);
+
+  const initialBlogs = [...blogData]
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 3);
+
+  const initialNews = [...newsData]
+    .sort((a, b) => {
+      const dateA = new Date(a.startTime);
+      const dateB = new Date(b.startTime);
+      const currentDate = new Date();
+      const aIsUpcoming = dateA > currentDate;
+      const bIsUpcoming = dateB > currentDate;
+      if (aIsUpcoming && !bIsUpcoming) return -1;
+      if (!aIsUpcoming && bIsUpcoming) return 1;
+      if (aIsUpcoming && bIsUpcoming) {
+        return dateA.getTime() - dateB.getTime();
+      }
+      return dateB.getTime() - dateA.getTime();
+    })
+    .slice(0, 3);
+
+  // Add the state for recent publications (initialized with pre-sorted data for SEO pre-rendering)
+  const [recentPublications, setRecentPublications] = useState<Paper[]>(initialPublications);
+  const [latestBlogs, setLatestBlogs] = useState<Blog[]>(initialBlogs);
+  const [topNews, setTopNews] = useState<Event[]>(initialNews);
   const [isMobile, setIsMobile] = useState(false);
 
   // Add a useEffect to fetch and process the papers
@@ -612,6 +639,74 @@ export default function Home() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "Software Engineering Research Center",
+              "alternateName": "SERC",
+              "url": "https://serc.iiit.ac.in",
+              "inLanguage": "en-IN"
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "ResearchOrganization",
+              "name": "Software Engineering Research Center, IIIT Hyderabad",
+              "alternateName": "SERC IIITH",
+              "url": "https://serc.iiit.ac.in",
+              "logo": "https://serc.iiit.ac.in/images/serc-logo.png",
+              "parentOrganization": {
+                "@type": "EducationalOrganization",
+                "name": "International Institute of Information Technology, Hyderabad",
+                "url": "https://www.iiit.ac.in"
+              },
+              "sameAs": [
+                "https://facebook.com/SERC.IIITH",
+                "https://x.com/SERC_IIITH",
+                "https://linkedin.com/company/serciiith",
+                "https://youtube.com/channel/UCpelOBy_e7_HNxbewtVg8yw"
+              ]
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Software Engineering Research Center, IIIT Hyderabad",
+              "image": "https://serc.iiit.ac.in/images/serc_team.png",
+              "url": "https://serc.iiit.ac.in",
+              "telephone": "+91-40-6653-1000",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "IIIT Hyderabad Campus, Prof. C R Rao Road, Gachibowli",
+                "addressLocality": "Hyderabad",
+                "addressRegion": "Telangana",
+                "postalCode": "500032",
+                "addressCountry": "IN"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 17.4457,
+                "longitude": 78.3488
+              },
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday"
+                ],
+                "opens": "09:00",
+                "closes": "17:00"
+              }
+            }
+          ])
+        }}
+      />
       {/* Hero Section with Parallax Effect */}
       <Slideshow slides={slides} />
 
@@ -663,11 +758,13 @@ export default function Home() {
               <div className="relative w-full h-[220px] md:h-[370px] rounded-lg overflow-hidden shadow-md border border-[color:var(--border-color)]">
                 <iframe
                   id="ytplayer"
+                  title="SERC Introduction Video"
                   width="100%"
                   height="100%"
                   src="https://www.youtube.com/embed/051kkAC6eqs?autoplay=1&cc_load_policy=1&controls=0&modestbranding=1&color=white"
                   frameBorder="0"
                   allowFullScreen
+                  loading="lazy"
                 />
               </div>
             </SectionTransition>

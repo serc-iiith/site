@@ -81,7 +81,7 @@ export default function PhdAdmissionsWidget() {
               <span className="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
             </div>
             <GraduationCap size={18} className="text-white" />
-            <span>Ph.D. Admissions Open 2026</span>
+            <span>Ph.D. Opportunities 2026</span>
           </motion.div>
         ) : (
           /* Expanded Card Widget */
@@ -101,7 +101,7 @@ export default function PhdAdmissionsWidget() {
               <div className="flex justify-between items-center mb-3">
                 <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-[color:var(--primary-color)]/10 text-[color:var(--primary-color)] border border-[color:var(--primary-color)]/20 animate-pulse">
                   <Sparkles size={12} />
-                  <span>PH.D. ADMISSIONS OPEN</span>
+                  <span>PH.D. OPPORTUNITIES</span>
                 </div>
                 <div className="flex items-center gap-1">
                   <button

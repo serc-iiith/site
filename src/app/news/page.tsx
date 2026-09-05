@@ -60,7 +60,7 @@ const EventTag = ({ type }: { type: string }) => {
 
     return (
         <span className={`px-3 py-1 rounded-full text-xs font-medium border ${color}`}>
-            {type.charAt(0).toUpperCase() + type.slice(1)}
+            {type === 'admissions' ? 'Opportunities' : type.charAt(0).toUpperCase() + type.slice(1)}
         </span>
     );
 };

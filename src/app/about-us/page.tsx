@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import { buildRouteMetadata } from "@/lib/seo";
 import AboutUsContent from "./AboutUsContent";
 
-export const metadata: Metadata = {
-  title: "About | SERC IIIT Hyderabad",
-  description:
-    "Learn about SERC's vision and mission at IIIT Hyderabad, including our commitments to advancing software engineering knowledge, developing people, and creating societal impact through academia-industry collaboration.",
+export const metadata: Metadata = buildRouteMetadata({
+  title: "About Us",
+  description: "Learn about SERC's vision and mission at IIIT Hyderabad, focusing on human-centered and trustworthy software engineering research.",
+  path: "/about-us",
   keywords: [
     "SERC",
     "Software Engineering Research Center",
@@ -17,34 +18,7 @@ export const metadata: Metadata = {
     "trustworthy software",
     "academia industry collaboration",
   ],
-  openGraph: {
-    title: "About | SERC IIIT Hyderabad",
-    description:
-      "Vision and mission of SERC at IIIT Hyderabad: building intelligent, reliable, human-centered, and responsible software with real-world impact.",
-    url: "https://serc.iiit.ac.in/about-us",
-    siteName: "SERC",
-    images: [
-      {
-        url: "/images/serc_team.png",
-        width: 1200,
-        height: 630,
-        alt: "Software Engineering Research Center Team",
-      },
-    ],
-    locale: "en_IN",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "About | SERC IIIT Hyderabad",
-    description:
-      "Vision and mission of SERC at IIIT Hyderabad, and how we create impact through research and collaboration.",
-    images: ["/images/serc_team.png"],
-  },
-  alternates: {
-    canonical: "https://serc.iiit.ac.in/about-us",
-  },
-};
+});
 
 const visionStatement =
   "To be a globally respected software research center that addresses Indian challenges and creates worldwide impact by advancing how intelligent, reliable, human-centered and responsible software is designed, developed and sustained through deep academia-industry collaboration.";

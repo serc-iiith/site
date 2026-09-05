@@ -19,12 +19,18 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://serc.iiit.ac.in"),
-  title: "SERC - Software Engineering Research Center",
-  description: "SERC - Software Engineering Research Center at IIIT-Hyderabad specializes in research and development of state-of-the-art software engineering techniques and tools.",
+  title: "SERC - Software Engineering Research Center | IIIT Hyderabad",
+  description: "SERC at IIIT-Hyderabad specializes in research and development of state-of-the-art software engineering techniques, tools, and innovations.",
   keywords: "software engineering, research, IIIT Hyderabad, programming languages, machine learning, SE and ML, formal methods, gamification, HCI, IoT, self-adaptive systems, software analytics, software quality, software sustainability, VR and AR",
   authors: [{ name: "SERC Team" }],
+  alternates: {
+    canonical: "/",
+    languages: {
+      "en-IN": "/",
+    },
+  },
   openGraph: {
-    title: "SERC - Software Engineering Research Center",
+    title: "SERC - Software Engineering Research Center | IIIT Hyderabad",
     description: "Software Engineering Research Center at IIIT-Hyderabad",
     url: "https://serc.iiit.ac.in/",
     siteName: "SERC",
@@ -41,7 +47,7 @@ export const metadata: Metadata = {
     },
   twitter: {
     card: "summary_large_image",
-    title: "SERC - Software Engineering Research Center",
+    title: "SERC - Software Engineering Research Center | IIIT Hyderabad",
     description: "Software Engineering Research Center at IIIT-Hyderabad",
     images: ["/images/serc_team.png"],
   },

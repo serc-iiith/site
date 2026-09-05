@@ -43,20 +43,38 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         };
     }
 
+    // Dynamic title logic: truncate if title exceeds search limits (max 67)
+    const baseTitle = blogPost.title.trim();
+    let pageTitle = baseTitle;
+    if (pageTitle.length > 67) {
+        pageTitle = pageTitle.substring(0, 64) + '...';
+    } else if (pageTitle.length <= 55) {
+        pageTitle = `${pageTitle} | SERC Blog`;
+    }
+
+    // Ensure description is within 120-160 characters range
+    let description = blogPost.excerpt.trim();
+    if (description.length < 120) {
+        const suffix = " Read the latest software engineering research findings on the SERC blog, IIIT Hyderabad.";
+        description = `${description}${suffix}`.substring(0, 160);
+    } else if (description.length > 165) {
+        description = description.substring(0, 162) + "...";
+    }
+
     // Use the blog post's data to generate SEO metadata
     const canonical = `${BASE_URL}/blog/${slug}`;
 
     return {
-        title: blogPost.title + ' | SERC Blog',
-        description: blogPost.excerpt,
+        title: pageTitle,
+        description: description,
         authors: [{ name: blogPost.author }],
         keywords: [blogPost.category, 'SERC', 'Research', 'Blog', 'Software Engineering'],
         alternates: {
             canonical,
         },
         openGraph: {
-            title: blogPost.title,
-            description: blogPost.excerpt,
+            title: pageTitle,
+            description: description,
             url: canonical,
             type: 'article',
             publishedTime: blogPost.date,
@@ -72,8 +90,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         },
         twitter: {
             card: 'summary_large_image',
-            title: blogPost.title,
-            description: blogPost.excerpt,
+            title: pageTitle,
+            description: description,
             images: [toAbsoluteUrl(blogPost.coverImage || '/images/blog_fallback.png')],
         },
     }
@@ -98,6 +116,17 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         notFound();
     }
 
+    // Helper function to convert human date strings (e.g. "April 14, 2025") to ISO (YYYY-MM-DD)
+    const toIsoDate = (dateStr: string): string => {
+        try {
+            const dateObj = new Date(dateStr);
+            if (isNaN(dateObj.getTime())) return new Date().toISOString().split('T')[0];
+            return dateObj.toISOString().split('T')[0];
+        } catch {
+            return new Date().toISOString().split('T')[0];
+        }
+    };
+
     // Create JSON-LD structured data for this blog post
     const blogPostJsonLd = {
         '@context': 'https://schema.org',
@@ -105,7 +134,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         headline: blogPost.title,
         description: blogPost.excerpt,
         image: toAbsoluteUrl(blogPost.coverImage || '/images/blog_fallback.png'),
-        datePublished: blogPost.date,
+        datePublished: toIsoDate(blogPost.date),
         author: {
             '@type': 'Person',
             name: blogPost.author
