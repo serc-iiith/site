@@ -1,5 +1,138 @@
 [
     {
+        "slug": "dr-karthik-vaidhyanathan-discusses-trustworthy-agentic-ai-at-finai-confluence-2026",
+        "name": "Dr. Karthik Vaidhyanathan Discusses Trustworthy Agentic AI at FinAI Confluence 2026",
+        "eventURL": "https://nasscom.in/ai/FinAIConfluence/",
+        "location": "The Westin Mindspace, Hyderabad",
+        "locationURL": "https://maps.app.goo.gl/ZUDhpbhxnyzM27we6",
+        "summary": "Dr. Karthik Vaidhyanathan Participates in FinAI Confluence 2026 Panel on Trustworthy Agentic AI",
+        "detail": "Dr. Karthik Vaidhyanathan, Assistant Professor at IIIT Hyderabad, participated in a panel discussion at FinAI Confluence 2026 titled “Trust the Agent? Governing AI in Regulated Financial Services.” The panel explored an increasingly important question as AI agents become more autonomous: Can we trust them to operate within the boundaries we set?\n\nDr. Karthik highlighted several key considerations for building trustworthy Agentic AI systems. These included designing autonomy according to the risk associated with a task, managing uncertainty, strengthening observability beyond simply evaluating an agent’s output, and continuously assessing agent behaviour before and after deployment.\n\nHe emphasised that governance mechanisms such as access controls, monitoring, guardrails, decision limits, and mechanisms to safely stop agents need to be considered as part of the overall system architecture. Trust, he noted, needs to be established progressively before autonomy is scaled.\n\nThe discussion brought together experts from academia and industry to examine the challenges of deploying Agentic AI in regulated financial services, with a focus on governance, accountability, responsible AI, and trust.\n\nDr. Karthik’s participation reflects SERC, IIIT Hyderabad’s ongoing research and engagement in the emerging area of Agentic AI and dependable AI-enabled software systems.",
+        "startTime": "2026-08-18T09:00",
+        "endTime": "2026-08-18T18:12",
+        "hasTime": true,
+        "eventType": "conference",
+        "schemaType": "Event",
+        "imageURLs": [
+            "/images/news/dr-karthik-vaidhyanathan-discusses-trustworthy-agentic-ai-at-finai-confluence-2026.png"
+        ],
+        "presenters": [
+            "Prof. Karthik Vaidhyanathan"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        },
+        "otherURLLabels": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
+        "slug": "emnlp-2026",
+        "name": "EMNLP 2026",
+        "eventURL": "https://2026.emnlp.org/",
+        "location": "Budapest, Hungary",
+        "locationURL": "",
+        "summary": "\"Dissecting Transformers\": SERC Students' Paper on Sustainable AI Accepted at EMNLP 2026",
+        "detail": "A research paper by Software Engineering Research Center (SERC) undergraduate students Hemang Jain, Shailender Goyal, and Divyansh Pandey, co-authored with Dr. Karthik Vaidhyanathan, titled “Dissecting Transformers: A CLEAR Perspective Towards Green AI,” has been accepted as a main conference paper at Conference on Empirical Methods in Natural Language Processing (EMNLP 2026).\n\nThe work introduces CLEAR (Component-Level Energy Assessment via Repetitions), a methodology for conducting fine-grained energy analysis of Transformer architectures. While existing Green AI studies often examine energy consumption at the whole-model level, CLEAR focuses on individual Transformer components, including Attention, MLP, normalization, and the LM Head.\n\nThe researchers evaluated 15 models across four Transformer architecture types, with CLEAR capturing more than 90% of the total model energy. The study shows that Attention consumes significantly more energy per FLOP compared with the overall model, highlighting that FLOPs alone are not sufficient to characterise the true energy cost of different components.\n\nThe work also provides insights into how energy consumption varies with factors such as batch size, attention heads, hidden dimension, KV cache, and different attention implementations. These fine-grained measurements can help researchers and ML practitioners make more informed decisions when designing energy-efficient AI systems.\n\nThe research was carried out by SERC undergraduate research students Hemang Jain, Shailender Goyal, and Divyansh Pandey, under the guidance of Dr. Karthik Vaidhyanathan. The work represents more than a year of research and contributes to ongoing efforts towards Green AI and Sustainable AI.\n\nThe research was supported by the Anusandhan National Research Foundation (ANRF) PMECRG grant under the SustAInd project.",
+        "startTime": "2026-08-14T09:06",
+        "endTime": "2026-08-14T10:06",
+        "hasTime": true,
+        "eventType": "conference",
+        "schemaType": "Event",
+        "imageURLs": [
+            "/images/news/emnlp-2026.jpeg"
+        ],
+        "presenters": [
+            "Prof. Karthik Vaidhyanathan",
+            "Hemang Jain",
+            "Shailender Goyal",
+            "Divyansh Pandey"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        },
+        "otherURLLabels": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
+        "slug": "-embedded-safety-and-security-summit-2026-esss-2026",
+        "name": " Embedded Safety and Security Summit 2026 (ESSS 2026)",
+        "eventURL": "https://www.embedded-safety-security.com/",
+        "location": "Bengaluru and Hyderabad",
+        "locationURL": "",
+        "summary": " Embedded Safety and Security Summit 2026 (ESSS 2026)",
+        "detail": "Professor Dr. Karthik Vaidhyanathan from Software Engineering Research Center (SERC), IIIT Hyderabad, participated in a panel discussion at the Embedded Safety and Security Summit 2026 (ESSS 2026) held in Hyderabad and Bengaluru.\n\nHe delivered a talk titled “When Agentic AI Enters Safety-Critical Systems: Engineering Autonomy Under Uncertainty,” exploring the opportunities and challenges of introducing Agentic AI into safety-critical systems. His talk addressed key questions around the appropriate level of autonomy, engineering for uncertainty, and ensuring the dependability of AI-enabled systems.\n\nDr. Karthik also participated in a panel discussion on “Collaboration, Innovation and Dependability,” alongside experts from the embedded and safety-critical systems community. The panel explored emerging trends and the future direction of AI-enabled safety-critical systems.\n\nThe event provided an opportunity to engage with researchers, industry experts, and practitioners working in embedded systems, software engineering, safety, security, and dependability.\n\nThe SERC community congratulates Dr. Karthik Vaidhyanathan for representing IIIT Hyderabad at ESSS 2026 and contributing to discussions on the future of dependable AI-enabled systems.\n\nTalk Slides: https://lnkd.in/dNKBrUfP",
+        "startTime": "2026-08-11T06:00",
+        "endTime": "2026-08-13T07:00",
+        "hasTime": true,
+        "eventType": "seminar",
+        "schemaType": "Event",
+        "imageURLs": [
+            "/images/news/-embedded-safety-and-security-summit-2026-esss-2026.jpeg"
+        ],
+        "presenters": [
+            "Prof. Karthik Vaidhyanathan"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        },
+        "otherURLLabels": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
+        "slug": "models-2026",
+        "name": "MODELS 2026",
+        "eventURL": "https://conf.researchr.org/home/models-2026",
+        "location": "Malaga, Spain",
+        "locationURL": "https://maps.app.goo.gl/mCytUfzWf9XeUP4Y7",
+        "summary": "SERC Researchers' Paper on VR Systems Accepted at MODELS 2026",
+        "detail": "A research paper titled “VRSpecML: A Profile for Realizing Domain-Specific Virtual Reality Systems,” co-authored by Bavya Sri and Sai Anirudh Karre, with collaboration from Prof. Y. Raghu Reddy, has been accepted to the New Ideas and Emerging Results (NIER) Track of MODELS 2026 – International Conference on Model Driven Engineering Languages and Systems, a CORE A conference. The conference is scheduled to be held from 4–9 October 2026 in Málaga, Spain.\n\nThe paper presents VRSpecML, a UML profile designed to support the modeling of domain-specific Virtual Reality (VR) systems. The approach extends a platform-agnostic VR metamodel with domain-specific stereotypes and tagged values, OCL-based constraints for machine-checkable validation, and enhanced traceability from requirements to VR system design.\n\nThe proposed approach is demonstrated in two diverse domains — healthcare rehabilitation and fire safety evacuation — showing how free-text requirements can be transformed into structured and validated models at an early stage of the VR application development lifecycle.\n\nThis work forms part of a broader research effort at the Software Engineering Research Center (SERC), IIIT Hyderabad, focused on Model-Driven Development of Enterprise Virtual Reality systems. VRSpecML contributes to an emerging end-to-end model-driven pipeline for VR application development, building on a series of tools and research contributions for requirements specification, design generation and versioning, behavioral interaction logging, and model conformance checking.\n\nThe acceptance of the paper at MODELS 2026, a leading conference in Model-Driven Engineering, represents a significant research contribution toward systematic and scalable development of domain-specific VR applications and highlights the ongoing research efforts of SERC, IIIT Hyderabad, in the areas of Model-Driven Engineering, Virtual Reality, Requirements Engineering, and Software Engineering.\n\nAuthors: Bavya Sri and Sai Anirudh Karre\n\nCollaborator: Prof. Y. Raghu Reddy\n\nConference: MODELS 2026 – International Conference on Model Driven Engineering Languages and Systems\n\nTrack: New Ideas and Emerging Results (NIER)\n\nVenue: Málaga, Spain\n\nDates: 4–9 October 2026\n\nThis works is a part of our effort in providing support for an end-to-end model driven pipeline for building VR applications.\n\n* VRSpecML shown in this paper – extends our previous work on bare minimum metamodel for VR (https://lnkd.in/dzdBSjha)\n\n* VReqST (https://lnkd.in/dpdKQQ5y) – VR requirements specification tool\n\n* VReqDV (https://lnkd.in/dBZYzG8A) – Design Generation and Versioning tool that takes the VR Spec as input\n\n* VRSLog (https://lnkd.in/dX5qCVpb) – tool for logging behavioral interactions\n\n* Conformance Checker (https://lnkd.in/dYNu4xEs)",
+        "startTime": "2026-07-30T09:20",
+        "endTime": "2026-07-30T10:20",
+        "hasTime": true,
+        "eventType": "seminar",
+        "schemaType": "Event",
+        "imageURLs": [
+            "/images/news/1.0-1788600110454.jpeg"
+        ],
+        "presenters": [
+            "Prof. Y Raghu Reddy",
+            "Bavya Sri",
+            "Dr. Sai Anirudh Karre"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        },
+        "otherURLLabels": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
         "slug": "phd-admissions-serc-2026",
         "name": "Ph.D. Opportunities at SERC, IIIT Hyderabad",
         "eventURL": "",
