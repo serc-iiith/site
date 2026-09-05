@@ -28,4 +28,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;bun 
+export default nextConfig;
