@@ -443,21 +443,6 @@
             "bio": "I am a researcher exploring the intersection of software engineering and AI, with the focus on software architecture for machine learning (ML) systems, certifying ML systems, and developing low-code ML platforms. Previously, I worked as a full stack developer at Infosys Limited. My long-term career goal is to advance software engineering through research and innovation, Whether in academia, industry, or by starting a research-driven startup. I aim to apply my expertise to solve real-world challenges and contribute to technological advancements.\n\nSome of my accepted works include:\n\n1. Approach Towards Semi-Automated Certification for Low Criticality ML-Enabled Airborne Applications\n2. LoCoML: A Framework for Real-World ML Inference Pipelines."
         },
         {
-            "name": "Hiya Bhatt",
-            "title": "MS (CSE)",
-            "email": "hiya.bhatt@research.iiiit.ac.in",
-            "imageURL": "/images/people/hiya-bhatt.jpeg",
-            "slug": "hiya-bhatt",
-            "social_links": {},
-            "interests": [
-                "Social/Academic Networking",
-                "Singing"
-            ],
-            "advisor": "Dr. Karthik Vaidhyanathan",
-            "bio": "I'm an MS by Research student in Computer Science and Engineering, working under the guidance of Dr. Karthik Vaidhyanathan. My research focuses on developing sustainable self-adaptive machine learning-enabled systems that can efficiently manage changing environments and resource constraints. I’m also exploring how these systems can be integrated with digital twins to enhance real-time monitoring, analysis, and decision-making in dynamic scenarios. Alongside my academic work, I enjoy singing.",
-            "education": []
-        },
-        {
             "name": "Likhith Kanigolla",
             "title": "MS (CSE)",
             "email": "likhith.kanigolla@research.iiit.ac.in",
@@ -1372,6 +1357,21 @@
             "interests": [],
             "education": [],
             "bio": ""
+        },
+        {
+            "name": "Hiya Bhatt",
+            "title": "MS (CSE)",
+            "email": "hiya.bhatt@research.iiiit.ac.in",
+            "imageURL": "/images/people/hiya-bhatt.jpeg",
+            "slug": "hiya-bhatt",
+            "social_links": {},
+            "interests": [
+                "Social/Academic Networking",
+                "Singing"
+            ],
+            "advisor": "Dr. Karthik Vaidhyanathan",
+            "bio": "I'm an MS by Research student in Computer Science and Engineering, working under the guidance of Dr. Karthik Vaidhyanathan. My research focuses on developing sustainable self-adaptive machine learning-enabled systems that can efficiently manage changing environments and resource constraints. I’m also exploring how these systems can be integrated with digital twins to enhance real-time monitoring, analysis, and decision-making in dynamic scenarios. Alongside my academic work, I enjoy singing.",
+            "education": []
         }
     ],
     "Research Associates": [
