@@ -117,7 +117,7 @@ export default function PhdAdmissionsWidget() {
 
               {/* Body Content */}
               <h3 className="text-lg font-bold text-[color:var(--text-color)] leading-snug mb-2">
-                Join SERC Research Labs
+                Join SERC @ IIIT-H
               </h3>
               <p className="text-xs text-[color:var(--secondary-color)] mb-4">
                 The Software Engineering Research Centre (SERC) at IIIT Hyderabad invites Ph.D. applications for 2026. Join a world-class environment pushing the limits of software engineering.

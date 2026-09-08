@@ -24,7 +24,7 @@ This is the directory of resources for the Software Engineering Research Center 
 - [Raghu Reddy](https://serc.iiit.ac.in/people/raghu-reddy): Associate Professor and Center Head
 - [Venkatesh Choppella](https://serc.iiit.ac.in/people/venkatesh-choppella): Associate Professor
 - [Karthik Vaidhyanathan](https://serc.iiit.ac.in/people/karthik): Assistant Professor
-- [Raman Saxena](https://serc.iiit.ac.in/people/raman): Professor of Practice
+- [Raman Saxena](https://serc.iiit.ac.in/people/raman): Professor
 - [Vasudeva Varma](https://serc.iiit.ac.in/people/vasu): Professor
 - [Viswanath Kasturi](https://serc.iiit.ac.in/people/viswanath-kasturi): Research Professor of Eminence
 - [Ramesh Loganathan](https://serc.iiit.ac.in/people/ramesh-loganathan): Professor of Practice
@@ -33,7 +33,8 @@ This is the directory of resources for the Software Engineering Research Center 
 
 ### PhD Students
 - [Mrityunjay Kumar](https://serc.iiit.ac.in/people/mrityunjay_kumar): PhD CSE
-- [Amar Banerjee](https://serc.iiit.ac.in/people/amar-banerjee): PhD CSE
+- [Aneetta Sara](https://serc.iiit.ac.in/people/aneetta-sara): PhD CSE
+- [Chandrasekar S](https://serc.iiit.ac.in/people/chandrasekar): PhD CSE
 - [Akhila Matathammal](https://serc.iiit.ac.in/people/akhila_matathammal): PhD CSE
 - [Brahma Reddy Korraprolu](https://serc.iiit.ac.in/people/brahma-reddy-korraprolu): PhD CSE
 - [Nitheesh Chandra Yaratapalli](https://serc.iiit.ac.in/people/nitheesh-chandra-yaratapalli): PhD CSE

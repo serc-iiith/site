@@ -61,8 +61,8 @@ export default function AboutUsContent({
         animate="visible"
       >
         <motion.header variants={itemVariants} className="text-center mb-16 max-w-4xl mx-auto">
-          <p className="text-sm uppercase tracking-[0.2em] text-[color:var(--secondary-color)] mb-3">
-            About
+          <p className="text-sm uppercase tracking-[0.2em] font-semibold text-[color:var(--primary-color)] mb-3">
+            Software Engineering Research Center • IIIT Hyderabad
           </p>
           <motion.h1
             className="text-5xl md:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 mb-6"
@@ -73,7 +73,7 @@ export default function AboutUsContent({
             Vision & Mission
           </motion.h1>
           <p className="text-xl text-[color:var(--secondary-color)] max-w-3xl mx-auto leading-relaxed">
-            We combine software engineering, AI, HCI, and design to build systems that are powerful, understandable, and responsible in the real world.
+            Advancing the design, development, and sustainability of intelligent, reliable, human-centered, and responsible software through deep academia-industry collaboration.
           </p>
         </motion.header>
 
@@ -134,9 +134,12 @@ export default function AboutUsContent({
             <p className="text-sm uppercase tracking-[0.18em] text-[color:var(--secondary-color)] mb-3">
               How We Work
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-[color:var(--text-color)]">
+            <h2 className="text-3xl md:text-4xl font-bold text-[color:var(--text-color)] mb-2">
               Our Three Commitments
             </h2>
+            <p className="text-base text-[color:var(--secondary-color)]">
+              We pursue this mission through three core commitments:
+            </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {commitments.map((commitment, index) => {
