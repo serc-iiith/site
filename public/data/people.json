@@ -529,6 +529,20 @@
             "interests": [],
             "education": [],
             "bio": "Aduri Karthikeya is an MS by Research student at SERC, IIIT Hyderabad. Prior to joining IIIT Hyderabad, he completed his undergraduate studies at Osmania University and worked as a software developer at OSI Digital. He is interested in building reliable software systems."
+        },
+        {
+            "name": "Vidhi Jain",
+            "title": "MS (CSE)",
+            "email": "vidhi.jain@research.iiit.ac.in",
+            "imageURL": "/images/people/vidhi-jain.jpeg",
+            "slug": "vidhi-jain",
+            "social_links": {
+                "LinkedIN": "https://www.linkedin.com/in/vidhijain2710/",
+                "Github": "https://github.com/vidhijain0204"
+            },
+            "interests": [],
+            "education": [],
+            "bio": "I am Vidhi Jain, a first year MS by Research student. I like social networking and having talks about random stuff."
         }
     ],
     "Dual Degree": [
