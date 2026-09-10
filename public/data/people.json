@@ -440,23 +440,6 @@
     ],
     "MS by Research": [
         {
-            "name": "Chandrasekar S",
-            "title": "MS (CSE)",
-            "email": "chandrasekar.s@research.iiiit.ac.in",
-            "imageURL": "/images/people/chandrasekar-s.png",
-            "slug": "chandrasekar",
-            "social_links": {},
-            "interests": [
-                "SE4ML",
-                "Architectural best practices for ML systems",
-                "Software Engineering",
-                "Low code platforms for ML",
-                "ML certification."
-            ],
-            "advisor": "Dr. Karthik Vaidhyanathan",
-            "bio": "I am a researcher exploring the intersection of software engineering and AI, with the focus on software architecture for machine learning (ML) systems, certifying ML systems, and developing low-code ML platforms. Previously, I worked as a full stack developer at Infosys Limited. My long-term career goal is to advance software engineering through research and innovation, Whether in academia, industry, or by starting a research-driven startup. I aim to apply my expertise to solve real-world challenges and contribute to technological advancements.\n\nSome of my accepted works include:\n\n1. Approach Towards Semi-Automated Certification for Low Criticality ML-Enabled Airborne Applications\n2. LoCoML: A Framework for Real-World ML Inference Pipelines."
-        },
-        {
             "name": "Likhith Kanigolla",
             "title": "MS (CSE)",
             "email": "likhith.kanigolla@research.iiit.ac.in",
