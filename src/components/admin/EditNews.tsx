@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Plus, Edit, X, Save, Search, Trash2, MapPin, Clock, Link } from 'lucide-react';
 import Image from 'next/image';
-import { Toaster, toast } from 'react-hot-toast';
+import { toast } from 'react-hot-toast';
 import DeleteConfirmationModal from '@/components/common/DeleteConfirmationModal';
 import ImageDropzone from '@/components/common/ImageDropzone';
 import { slugify } from '@/lib/slug';
@@ -443,23 +443,6 @@ const EditNews: React.FC = () => {
 
     return (
         <div className="bg-[color:var(--background)] rounded-lg shadow-lg p-4 sm:p-6 border border-[color:var(--border-color)]">
-            <Toaster
-                position="top-right"
-                toastOptions={{
-                    duration: 3000,
-                    style: {
-                        background: 'var(--background)',
-                        color: 'var(--text-color)',
-                        border: '1px solid var(--border-color)'
-                    },
-                    success: {
-                        icon: '✅',
-                    },
-                    error: {
-                        icon: '❌',
-                    }
-                }}
-            />
 
             <DeleteConfirmationModal
                 isOpen={deleteModal.isOpen}

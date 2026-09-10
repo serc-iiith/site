@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Plus, Edit, X, Save, Search, Trash2, Tag } from 'lucide-react';
 import Image from 'next/image';
-import { Toaster, toast } from 'react-hot-toast';
+import { toast } from 'react-hot-toast';
 import DeleteConfirmationModal from '@/components/common/DeleteConfirmationModal';
 import ImageDropzone from '@/components/common/ImageDropzone';
 
@@ -61,7 +61,9 @@ const EditProjects: React.FC = () => {
     const fetchProjects = async () => {
         try {
             const response = await fetch('/api/projects');
+            if (!response.ok) throw new Error(`Request failed: ${response.status}`);
             const data = await response.json();
+            if (!Array.isArray(data)) throw new Error('Unexpected projects payload');
             setProjects(data);
         } catch (error) {
             console.error('Error fetching projects data:', error);
@@ -313,23 +315,6 @@ const EditProjects: React.FC = () => {
 
     return (
         <div className="bg-[color:var(--background)] rounded-lg shadow-lg p-4 sm:p-6 border border-[color:var(--border-color)]">
-            <Toaster
-                position="top-right"
-                toastOptions={{
-                    duration: 3000,
-                    style: {
-                        background: 'var(--background)',
-                        color: 'var(--text-color)',
-                        border: '1px solid var(--border-color)'
-                    },
-                    success: {
-                        icon: '✅',
-                    },
-                    error: {
-                        icon: '❌',
-                    }
-                }}
-            />
 
             <DeleteConfirmationModal
                 isOpen={deleteModal.isOpen}
@@ -602,7 +587,7 @@ const EditProjects: React.FC = () => {
                         </button>
                         <button
                             onClick={saveProject}
-                            disabled={isLoading}
+                            disabled={isLoading || isUploading}
                             className="px-3 py-1.5 sm:px-4 sm:py-2 bg-[color:var(--primary-color)] text-white rounded-md hover:bg-opacity-90 flex items-center disabled:opacity-50"
                         >
                             {isLoading ? 'Saving...' : <><Save size={16} className="mr-1" /> Save</>}

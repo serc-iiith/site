@@ -86,8 +86,21 @@ export default function AdminPage() {
 
   return (
     <div className="min-h-screen pt-16 bg-[color:var(--foreground)]">
-      {/* Toast notifications container - positioned in bottom right */}
-      <Toaster position="bottom-right" />
+      {/* Single toast container for the whole dashboard (editors must not
+          render their own <Toaster> or toasts get duplicated). */}
+      <Toaster
+        position="bottom-right"
+        toastOptions={{
+          duration: 3000,
+          style: {
+            background: 'var(--background)',
+            color: 'var(--text-color)',
+            border: '1px solid var(--border-color)',
+          },
+          success: { icon: '✅' },
+          error: { icon: '❌' },
+        }}
+      />
 
       <div className="flex relative">
         {/* Sidebar - hidden on mobile */}
@@ -164,7 +177,6 @@ export default function AdminPage() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
-              key={activeSection} // Force re-render animation when section changes
             >
               {renderContent()}
             </motion.div>

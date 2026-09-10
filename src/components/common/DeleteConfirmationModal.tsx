@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { AlertTriangle, X } from 'lucide-react';
 
 interface DeleteConfirmationModalProps {
@@ -18,13 +18,32 @@ const DeleteConfirmationModal: React.FC<DeleteConfirmationModalProps> = ({
     message,
     isLoading = false,
 }) => {
+    const cancelRef = useRef<HTMLButtonElement>(null);
+
+    useEffect(() => {
+        if (!isOpen) return;
+        cancelRef.current?.focus();
+
+        const onKeyDown = (e: KeyboardEvent) => {
+            if (e.key === 'Escape' && !isLoading) onClose();
+        };
+        document.addEventListener('keydown', onKeyDown);
+        return () => document.removeEventListener('keydown', onKeyDown);
+    }, [isOpen, isLoading, onClose]);
+
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 animate-fadeIn">
+        <div
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 animate-fadeIn"
+            onClick={() => !isLoading && onClose()}
+        >
             <div
+                role="dialog"
+                aria-modal="true"
+                aria-label={title}
                 className="bg-[color:var(--background)] rounded-lg shadow-xl max-w-md w-full p-6 animate-slideIn"
-                onClick={(e) => e.stopPropagation()} // Prevent clicks from propagating to backdrop
+                onClick={(e) => e.stopPropagation()}
             >
                 <div className="flex items-start justify-between mb-4">
                     <div className="flex items-center">
@@ -37,6 +56,7 @@ const DeleteConfirmationModal: React.FC<DeleteConfirmationModalProps> = ({
                         onClick={onClose}
                         className="text-[color:var(--secondary-color)] hover:text-[color:var(--text-color)]"
                         disabled={isLoading}
+                        aria-label="Close"
                     >
                         <X size={20} />
                     </button>
@@ -48,6 +68,7 @@ const DeleteConfirmationModal: React.FC<DeleteConfirmationModalProps> = ({
 
                 <div className="flex justify-end gap-3">
                     <button
+                        ref={cancelRef}
                         onClick={onClose}
                         className="px-4 py-2 border border-[color:var(--border-color)] rounded-md text-[color:var(--text-color)] hover:bg-[color:var(--hover-bg)]"
                         disabled={isLoading}

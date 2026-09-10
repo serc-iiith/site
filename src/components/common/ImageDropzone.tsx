@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useId, useState, useEffect, useCallback } from 'react';
 import { Upload } from 'lucide-react';
 import Image from 'next/image';
 import { toast } from 'react-hot-toast';
@@ -20,6 +20,7 @@ const ImageDropzone: React.FC<ImageDropzoneProps> = ({
     roundedFull = false,
     maxSize = 5
 }) => {
+    const inputId = useId();
     const [isDragging, setIsDragging] = useState(false);
     const [previewUrl, setPreviewUrl] = useState<string | null>(null);
 
@@ -86,6 +87,12 @@ const ImageDropzone: React.FC<ImageDropzoneProps> = ({
         if (e.target.files && e.target.files[0]) {
             const file = e.target.files[0];
 
+            // Check if file is an image (parity with the drop handler)
+            if (!file.type.match('image.*')) {
+                toast.error('Please upload an image file');
+                return;
+            }
+
             // Check file size
             if (file.size > maxSize * 1024 * 1024) {
                 toast.error(`Image size must be less than ${maxSize}MB`);
@@ -119,9 +126,9 @@ const ImageDropzone: React.FC<ImageDropzoneProps> = ({
         >
             <input
                 type="file"
-                id="image-upload"
+                id={inputId}
                 className="hidden"
-                accept="image/*"
+                accept="image/jpeg,image/png,image/webp"
                 onChange={handleChange}
                 disabled={isLoading}
             />
@@ -144,7 +151,7 @@ const ImageDropzone: React.FC<ImageDropzoneProps> = ({
             </div>
 
             <label
-                htmlFor="image-upload"
+                htmlFor={inputId}
                 className="cursor-pointer inline-flex items-center justify-center gap-2 py-2 px-4 bg-[color:var(--background)] border border-[color:var(--border-color)] rounded-md text-[color:var(--text-color)] hover:bg-[color:var(--hover-bg)] transition-colors"
             >
                 <Upload size={16} /> Choose Image
