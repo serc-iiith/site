@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { toast } from 'react-hot-toast';
 import DeleteConfirmationModal from '@/components/common/DeleteConfirmationModal';
 import ImageDropzone from '@/components/common/ImageDropzone';
+import MarkdownContent from '@/components/common/MarkdownContent';
 
 interface Blog {
     id: number;
@@ -482,9 +483,7 @@ const EditBlogs: React.FC = () => {
                                     {formData.excerpt}
                                 </div>
 
-                                <div className="markdown-content whitespace-pre-wrap">
-                                    {formData.content}
-                                </div>
+                                <MarkdownContent>{formData.content}</MarkdownContent>
                             </div>
                         </div>
                     ) : (

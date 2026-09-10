@@ -6,9 +6,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Calendar, Clock, Share2, Facebook, Twitter, Linkedin } from 'lucide-react';
 import { Toaster, toast } from "react-hot-toast";
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm'; // Added plugin for GitHub-flavored Markdown
-import rehypeRaw from 'rehype-raw'; // Added plugin to render raw HTML
+import MarkdownContent from '@/components/common/MarkdownContent';
 
 // Page transition component
 interface PageTransitionProp {
@@ -288,14 +286,7 @@ export default function Blog({ blogPost, blogData }: BlogProps) {
 
                             {/* Article Content */}
                             <article className="md:w-3/4 order-1 md:order-2 text-justify">
-                                <div className="prose lg:prose-xl max-w-none text-[var(--text-color)] prose-a:text-blue-600 hover:prose-a:text-blue-500 prose-headings:text-[var(--text-color)]">
-                                    <ReactMarkdown
-                                        remarkPlugins={[remarkGfm]}
-                                        rehypePlugins={[rehypeRaw]}
-                                    >
-                                        {blogPost.content}
-                                    </ReactMarkdown>
-                                </div>
+                                <MarkdownContent>{blogPost.content}</MarkdownContent>
                             </article>
                         </div>
                     </div>

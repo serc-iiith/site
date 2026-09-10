@@ -37,12 +37,22 @@ interface Paper {
 const dataDir = path.join(__dirname, '../public/data');
 const outputFile = path.join(__dirname, '../public/llms.txt');
 
+function loadJson<T>(file: string): T {
+  const full = path.join(dataDir, file);
+  try {
+    return JSON.parse(fs.readFileSync(full, 'utf8')) as T;
+  } catch (e) {
+    console.error(`FATAL: ${file} is not valid JSON — ${(e as Error).message}`);
+    process.exit(1);
+  }
+}
+
 try {
-  const blogs: BlogPost[] = JSON.parse(fs.readFileSync(path.join(dataDir, 'blogs.json'), 'utf8'));
-  const news: NewsEvent[] = JSON.parse(fs.readFileSync(path.join(dataDir, 'news.json'), 'utf8'));
-  const peopleData: Record<string, Person[]> = JSON.parse(fs.readFileSync(path.join(dataDir, 'people.json'), 'utf8'));
-  const projects: Project[] = JSON.parse(fs.readFileSync(path.join(dataDir, 'projects.json'), 'utf8'));
-  const papers: Paper[] = JSON.parse(fs.readFileSync(path.join(dataDir, 'papers.json'), 'utf8'));
+  const blogs = loadJson<BlogPost[]>('blogs.json');
+  const news = loadJson<NewsEvent[]>('news.json');
+  const peopleData = loadJson<Record<string, Person[]>>('people.json');
+  const projects = loadJson<Project[]>('projects.json');
+  const papers = loadJson<Paper[]>('papers.json');
   
   let content = `# Software Engineering Research Center (SERC), IIIT Hyderabad\n\n`;
   content += `This is the directory of resources for the Software Engineering Research Center (SERC) at the International Institute of Information Technology, Hyderabad. SERC focuses on building human-centered, intelligent, reliable, and sustainable software systems.\n\n`;
@@ -65,14 +75,23 @@ try {
   content += `- Gamification & Software Engineering Education\n\n`;
 
   content += `## Faculty & Key Members\n`;
-  for (const [category, people] of Object.entries(peopleData)) {
-    if (category === 'Faculty' || category === 'Affiliate Faculty' || category === 'PhD Students' || category === 'PhD Scholars') {
-      content += `### ${category}\n`;
-      people.forEach(p => {
-        content += `- [${p.name}](https://serc.iiit.ac.in/people/${p.slug}): ${p.title}\n`;
-      });
-      content += `\n`;
-    }
+  const llmsPeopleCategories = [
+    'Faculty',
+    'Affiliate Faculty',
+    'Research Associates',
+    'PhD Students',
+    'MS by Research',
+    'Dual Degree',
+    'Honors',
+  ];
+  for (const category of llmsPeopleCategories) {
+    const people = peopleData[category];
+    if (!Array.isArray(people) || people.length === 0) continue;
+    content += `### ${category}\n`;
+    people.forEach(p => {
+      content += `- [${p.name}](https://serc.iiit.ac.in/people/${p.slug}): ${p.title}\n`;
+    });
+    content += `\n`;
   }
 
   content += `## Projects Showcase\n`;

@@ -2,9 +2,14 @@
 
 The SERC Website includes an admin interface that allows maintainers to easily edit the website's content without directly modifying JSON files. This documentation explains how to access and use the admin features.
 
+> **See [`docs/ADMIN.md`](docs/ADMIN.md)** for the current setup, publishing
+> workflow, safety nets, and data model. The notes below are kept for context.
+
 ## Accessing the Admin Interface
 
-The admin interface is available at `/admin` when running the website locally. Just `npm run dev` to start the development server, and then navigate to `http://localhost:3000/admin` in your web browser.
+Run `NEXT_DISABLE_EXPORT=1 bun run dev` and open `http://localhost:3000/admin`.
+(The env var keeps the API route handlers working under the dev server; you no
+longer need to comment out `output: 'export'` in `next.config.ts`.)
 
 # Git instruction
 

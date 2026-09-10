@@ -47,7 +47,7 @@
     ],
     "links": [],
     "image": "",
-    "category": "security"
+    "category": "Security"
   },
   {
     "id": "gamily",
@@ -56,7 +56,7 @@
     "collaborators": [],
     "links": [],
     "image": "",
-    "category": "software-engineering",
+    "category": "Software-Engineering",
     "demoLink": "https://www.youtube.com/watch?v=IjgOBEQMFn8&ab_channel=skbly7"
   },
   {
@@ -72,7 +72,7 @@
     ],
     "links": [],
     "image": "",
-    "category": "software-engineering"
+    "category": "Software-Engineering"
   },
   {
     "id": "meta-project",
@@ -122,7 +122,7 @@
     ],
     "links": [],
     "image": "",
-    "category": "blockchain"
+    "category": "Blockchain"
   },
   {
     "id": "umetrix",
@@ -131,7 +131,7 @@
     "collaborators": [],
     "links": [],
     "image": "",
-    "category": "usability",
+    "category": "Usability",
     "demoLink": "https://www.youtube.com/watch?v=eeo0e1ajNnM"
   },
   {
@@ -152,7 +152,7 @@
       }
     ],
     "image": "",
-    "category": "education"
+    "category": "Education"
   },
   {
     "id": "vreye",
@@ -167,14 +167,14 @@
     ],
     "links": [],
     "image": "",
-    "category": "medical",
+    "category": "Medical",
     "demoLink": "https://www.youtube.com/watch?v=NlqTsSvGoLY"
   },
   {
     "id": "greensam",
     "title": "GreenSAM",
     "description": "The goal of the project is to develop approaches, frameworks and tools for greening software deployments. The project is in collaboration with Lloyds Technology Center",
-    "category": "software-engineering",
+    "category": "Software-Engineering",
     "image": "/images/projects/greensam.webp",
     "collaborators": [
       {
@@ -189,7 +189,7 @@
     "id": "anrf",
     "title": "ANRF",
     "description": " The SustAInd project under ANRF PM ECRG aims to build a software-centric framework for enhancing the sustainability of AI-enabled systems. ",
-    "category": "ai",
+    "category": "AI",
     "image": "/images/projects/anrf.jpeg",
     "collaborators": [
       {

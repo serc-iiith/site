@@ -33,6 +33,10 @@ This is the directory of resources for the Software Engineering Research Center 
 - [Ramesh Loganathan](https://serc.iiit.ac.in/people/ramesh-loganathan): Professor of Practice
 - [Prakash Yalla](https://serc.iiit.ac.in/people/prakash_yalla): Professor of Practice
 
+### Research Associates
+- [Payel Das](https://serc.iiit.ac.in/people/payel-das): Research Associate
+- [Pavan Harshit Chinta](https://serc.iiit.ac.in/people/pavan-harshit-chinta): Research Engineer
+
 ### PhD Students
 - [Mrityunjay Kumar](https://serc.iiit.ac.in/people/mrityunjay_kumar): PhD CSE
 - [Aneetta Sara](https://serc.iiit.ac.in/people/aneetta-sara): PhD CSE
@@ -43,6 +47,54 @@ This is the directory of resources for the Software Engineering Research Center 
 - [Radha Krishna B](https://serc.iiit.ac.in/people/radha-krishna-b): PhD CSE
 - [Rudra Dhar](https://serc.iiit.ac.in/people/rudra-dhar): PhD CSE
 - [Abhinav Guptha](https://serc.iiit.ac.in/people/abhinav_guptha): PhD CSE
+
+### MS by Research
+- [Likhith Kanigolla](https://serc.iiit.ac.in/people/likhith_k): MS (CSE)
+- [Puru Ojha](https://serc.iiit.ac.in/people/puru_ojha): MS (CSE)
+- [Sreemaee Akshathala](https://serc.iiit.ac.in/people/sreemaee-akshathala): MS (CSE)
+- [Hrigved Naidu](https://serc.iiit.ac.in/people/hrigved-naidu): MS (CSE)
+- [Paridhi Mittal](https://serc.iiit.ac.in/people/paridhi-mittal): MS (CSE)
+- [Aduri Karthikeya](https://serc.iiit.ac.in/people/aduri-karthikeya): MS (ECE)
+- [Vidhi Jain](https://serc.iiit.ac.in/people/vidhi-jain): MS (CSE)
+
+### Dual Degree
+- [Prakhar Jain](https://serc.iiit.ac.in/people/prakhar_jain): LCD
+- [Aaditya Vardhan Narain](https://serc.iiit.ac.in/people/aaditya-vardhan-narain): CSD
+- [Adyansh Kakran](https://serc.iiit.ac.in/people/adyansh-kakran): CSD
+- [Amey Karan](https://serc.iiit.ac.in/people/amey_karan): CSD
+- [Aneesh Sambu](https://serc.iiit.ac.in/people/sambuaneesh): CSD
+- [Bassam Adnan](https://serc.iiit.ac.in/people/bassam_adnan): CSD
+- [Gargie Tambe](https://serc.iiit.ac.in/people/gargie-tambe): CSD
+- [Gnaneswar Kulindala](https://serc.iiit.ac.in/people/gnaneswar_kulindala): ECD
+- [Miryala Sathvika](https://serc.iiit.ac.in/people/miryala-sathvika): CSD
+- [Pavitra Pinninti](https://serc.iiit.ac.in/people/pavitra-pinninti): CSD
+- [Prabhav Shetty](https://serc.iiit.ac.in/people/prabhav-shetty): CSD
+- [Prakhar Singhal](https://serc.iiit.ac.in/people/prakhar_singhal): CSD
+- [Shailender Goyal](https://serc.iiit.ac.in/people/shailender_goyal): CSD
+- [Shambhavi Jahagirdar](https://serc.iiit.ac.in/people/shambhavi_jahagirdar): CSD
+- [Shaunak Biswas](https://serc.iiit.ac.in/people/shaunak): CSD
+- [Yashaswinee Dharmineni](https://serc.iiit.ac.in/people/yashaswinee): CSD
+- [Arihant Tripathy](https://serc.iiit.ac.in/people/arihant-tripathy): CSD
+- [Mohit Kumar Singh](https://serc.iiit.ac.in/people/mohit-kumar-singh): CSD
+- [Aviral Gupta](https://serc.iiit.ac.in/people/aviral-gupta): CSD
+- [Vijay Arvaynthan](https://serc.iiit.ac.in/people/vijay-arvaynthan): CSD
+- [Rudra Choudhary](https://serc.iiit.ac.in/people/rudra-choudhary): LCD
+- [Aditya Nair](https://serc.iiit.ac.in/people/aditya-nair): CSD
+- [Aryan Mishra](https://serc.iiit.ac.in/people/aryan-mishra): LCD
+- [Divijh K Mangtani](https://serc.iiit.ac.in/people/divijh-k-mangtani): CSD
+- [Hardik Chadha](https://serc.iiit.ac.in/people/hardik-chadha): CSD
+
+### Honors
+- [Agrim Mittal](https://serc.iiit.ac.in/people/agrim-mittal): CSE
+- [Dileep Kumar Adari](https://serc.iiit.ac.in/people/dileep_kumar_adari): CSE
+- [Divyansh Pandey](https://serc.iiit.ac.in/people/divyansh_pandey): CSE
+- [Kotekal Methukula Santhosh](https://serc.iiit.ac.in/people/kotekal-methukula-santhosh): CSD
+- [Kritin Maddireddy](https://serc.iiit.ac.in/people/kritin-maddireddy): CSE
+- [Moida Praneeth Jain](https://serc.iiit.ac.in/people/praneeth_jain): CSE
+- [Vyakhya Gupta](https://serc.iiit.ac.in/people/vyakhya_guptha): CSE
+- [Ananya Vishal Halgatti](https://serc.iiit.ac.in/people/ananya-vishal-halgatti): CSE
+- [Anvithraj Reddy Basani](https://serc.iiit.ac.in/people/anvithraj-reddy-basani): CSE
+- [Nikhilesh tiruveedula ](https://serc.iiit.ac.in/people/nikhilesh-tiruveedula): CSE
 
 ## Projects Showcase
 - **Autonomous CloudOps using GenAI**: The aim is to simplify the complex multi-dimensional space of CloudOps with the help of Generative AI.
