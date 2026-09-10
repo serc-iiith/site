@@ -5,6 +5,7 @@ import { toast } from 'react-hot-toast';
 import DeleteConfirmationModal from '@/components/common/DeleteConfirmationModal';
 import ImageDropzone from '@/components/common/ImageDropzone';
 import { slugify } from '@/lib/slug';
+import { useUnsavedChanges } from '@/hooks/useUnsavedChanges';
 
 interface Event {
     id?: number;
@@ -85,6 +86,7 @@ const EditNews: React.FC = () => {
     });
     const [newImageURL, setNewImageURL] = useState('');
     const [isUploading, setIsUploading] = useState(false);
+    const confirmDiscard = useUnsavedChanges(editingId !== null);
 
     useEffect(() => {
         fetchNews();
@@ -188,6 +190,7 @@ const EditNews: React.FC = () => {
     };
 
     const startEditing = (event: Event) => {
+        if (!confirmDiscard()) return;
         setEditingId(event.id ?? 'unknown');
         setOriginalSlug(event.slug);
         setNewImageURL('');
@@ -214,6 +217,7 @@ const EditNews: React.FC = () => {
         const now = new Date().toISOString().slice(0, 16);
         const nextHour = new Date(Date.now() + 60 * 60 * 1000).toISOString().slice(0, 16);
 
+        if (!confirmDiscard()) return;
         setEditingId('new'); // Use 'new' to indicate new event
         setOriginalSlug('');
         setNewImageURL('');
@@ -886,7 +890,7 @@ const EditNews: React.FC = () => {
 
                     <div className="flex justify-end gap-2 mt-6">
                         <button
-                            onClick={cancelEditing}
+                            onClick={() => { if (confirmDiscard()) cancelEditing(); }}
                             disabled={isLoading}
                             className="px-3 py-1.5 sm:px-4 sm:py-2 border border-[color:var(--border-color)] rounded-md text-[color:var(--text-color)] hover:bg-[color:var(--hover-bg)] flex items-center disabled:opacity-50"
                         >

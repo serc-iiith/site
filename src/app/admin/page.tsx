@@ -24,8 +24,18 @@ import EditPapers from '@/components/admin/EditPapers';
 import EditCollaborators from '@/components/admin/EditCollaborators';
 import EditBlogs from '@/components/admin/EditBlogs';
 import SeoVerifier from '@/components/admin/SeoVerifier';
+import { AdminDirtyProvider, AdminDirtyContext } from '@/components/admin/AdminDirtyContext';
 
 export default function AdminPage() {
+  return (
+    <AdminDirtyProvider>
+      <AdminDashboard />
+    </AdminDirtyProvider>
+  );
+}
+
+function AdminDashboard() {
+  const dirty = React.useContext(AdminDirtyContext);
   const [activeSection, setActiveSection] = useState('people');
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
@@ -77,10 +87,10 @@ export default function AdminPage() {
     { id: 'seo', name: 'SEO Verifier', icon: <FileJson size={20} /> },
   ];
 
-  // Show toast notification when changing sections
   const changeSection = (sectionId: string) => {
+    if (sectionId === activeSection) return;
+    if (dirty && !dirty.confirmNavigation()) return;
     setActiveSection(sectionId);
-
     if (isMobile) setSidebarOpen(false);
   };
 

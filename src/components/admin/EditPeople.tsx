@@ -3,6 +3,7 @@ import { Plus, Edit, X, Save, Search, Trash2, Upload, AlertTriangle } from 'luci
 import Image from 'next/image';
 import { toast } from 'react-hot-toast';
 import { slugify } from '@/lib/slug';
+import { useUnsavedChanges } from '@/hooks/useUnsavedChanges';
 
 interface SocialLinks {
     [key: string]: string;
@@ -244,6 +245,7 @@ const EditPeople: React.FC = () => {
     const [uniqueTitles, setUniqueTitles] = useState<string[]>([]);
     // Free-text value backing the "custom" option of the title dropdown.
     const [customTitle, setCustomTitle] = useState<string>('');
+    const confirmDiscard = useUnsavedChanges(editingSlug !== null);
 
     // New state for deletion modal
     const [deleteModal, setDeleteModal] = useState<{
@@ -479,6 +481,7 @@ const EditPeople: React.FC = () => {
     };
 
     const startEditing = (person: Person) => {
+        if (!confirmDiscard()) return;
         setEditingSlug(person.slug);
         setEditingCategory(person.category || '');
         setFormData({
@@ -495,6 +498,7 @@ const EditPeople: React.FC = () => {
     };
 
     const startAdding = () => {
+        if (!confirmDiscard()) return;
         setEditingSlug('new');
         setFormData({
             name: '',
@@ -511,7 +515,7 @@ const EditPeople: React.FC = () => {
         setCustomTitle('');
     };
 
-    const cancelEditing = () => {
+    const closeForm = () => {
         setEditingSlug(null);
         setEditingCategory('');
         setFormData({
@@ -535,6 +539,12 @@ const EditPeople: React.FC = () => {
             year: new Date().getFullYear()
         });
         setCustomTitle('');
+    };
+
+    // User-initiated cancel — guarded against losing unsaved edits.
+    const cancelEditing = () => {
+        if (!confirmDiscard()) return;
+        closeForm();
     };
 
     const savePerson = async () => {
@@ -593,7 +603,7 @@ const EditPeople: React.FC = () => {
 
             // Refresh the data
             await fetchPeople();
-            cancelEditing();
+            closeForm();
         } catch (error) {
             console.error('Error saving person:', error);
             toast.error('Failed to save. Please try again.');

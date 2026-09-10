@@ -3,6 +3,7 @@ import { Plus, Edit, X, Save, Search, Trash2, Calendar, Clock, Tag, User } from 
 import Image from 'next/image';
 import { toast } from 'react-hot-toast';
 import DeleteConfirmationModal from '@/components/common/DeleteConfirmationModal';
+import { useUnsavedChanges } from '@/hooks/useUnsavedChanges';
 import ImageDropzone from '@/components/common/ImageDropzone';
 import MarkdownContent from '@/components/common/MarkdownContent';
 
@@ -75,6 +76,7 @@ const EditBlogs: React.FC = () => {
         generateNewSlug: false
     });
     const [isUploading, setIsUploading] = useState(false);
+    const confirmDiscard = useUnsavedChanges(editingId !== null);
 
     const categories = [
         'Software Architecture',
@@ -208,6 +210,7 @@ const EditBlogs: React.FC = () => {
     };
 
     const startEditing = (blog: Blog) => {
+        if (!confirmDiscard()) return;
         setEditingId(blog.id);
         setFormData({
             ...blog,
@@ -220,6 +223,7 @@ const EditBlogs: React.FC = () => {
     };
 
     const startAdding = () => {
+        if (!confirmDiscard()) return;
         const today = new Date();
         const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
 
@@ -676,7 +680,7 @@ const EditBlogs: React.FC = () => {
 
                             <div className="flex justify-end gap-2 mt-6">
                                 <button
-                                    onClick={cancelEditing}
+                                    onClick={() => { if (confirmDiscard()) cancelEditing(); }}
                                     disabled={isLoading}
                                     className="px-3 py-1.5 sm:px-4 sm:py-2 border border-[color:var(--border-color)] rounded-md text-[color:var(--text-color)] hover:bg-[color:var(--hover-bg)] flex items-center disabled:opacity-50"
                                 >

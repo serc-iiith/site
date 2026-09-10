@@ -3,6 +3,7 @@ import { Plus, Edit, X, Save, Search, Trash2, Building, Tag } from 'lucide-react
 import Image from 'next/image';
 import { toast } from 'react-hot-toast';
 import DeleteConfirmationModal from '@/components/common/DeleteConfirmationModal';
+import { useUnsavedChanges } from '@/hooks/useUnsavedChanges';
 import ImageDropzone from '@/components/common/ImageDropzone';
 
 interface Collaborator {
@@ -20,6 +21,7 @@ const EditCollaborators: React.FC = () => {
     const [searchTerm, setSearchTerm] = useState<string>('');
     const [isLoading, setIsLoading] = useState(false);
     const [isUploading, setIsUploading] = useState(false);
+    const confirmDiscard = useUnsavedChanges(editingId !== null);
     const [deleteModal, setDeleteModal] = useState<{
         isOpen: boolean;
         collaboratorId: string | null;
@@ -64,6 +66,7 @@ const EditCollaborators: React.FC = () => {
     };
 
     const startEditing = (collaborator: Collaborator) => {
+        if (!confirmDiscard()) return;
         setEditingId(collaborator.id);
         setFormData({
             ...collaborator
@@ -74,6 +77,7 @@ const EditCollaborators: React.FC = () => {
     };
 
     const startAdding = () => {
+        if (!confirmDiscard()) return;
         setEditingId('new');
         setFormData({
             id: '',
@@ -412,7 +416,7 @@ const EditCollaborators: React.FC = () => {
 
                     <div className="flex justify-end gap-2 mt-6">
                         <button
-                            onClick={cancelEditing}
+                            onClick={() => { if (confirmDiscard()) cancelEditing(); }}
                             disabled={isLoading}
                             className="px-3 py-1.5 sm:px-4 sm:py-2 border border-[color:var(--border-color)] rounded-md text-[color:var(--text-color)] hover:bg-[color:var(--hover-bg)] flex items-center disabled:opacity-50"
                         >

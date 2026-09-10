@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Plus, Edit, X, Save, Search, Trash2, BookOpen, Link as LinkIcon, User } from 'lucide-react';
 import { toast } from 'react-hot-toast';
 import DeleteConfirmationModal from '@/components/common/DeleteConfirmationModal';
+import { useUnsavedChanges } from '@/hooks/useUnsavedChanges';
 
 interface Paper {
     authors: string[];
@@ -38,6 +39,7 @@ const EditPapers: React.FC = () => {
         doi: '',
         url: '',
     });
+    const confirmDiscard = useUnsavedChanges(isEditing);
 
     useEffect(() => {
         fetchPapers();
@@ -83,6 +85,7 @@ const EditPapers: React.FC = () => {
     };
 
     const startEditing = (paper: Paper) => {
+        if (!confirmDiscard()) return;
         setFormData({ ...paper });
         setCurrentAuthors([...paper.authors]);
         setIsEditing(true);
@@ -93,6 +96,7 @@ const EditPapers: React.FC = () => {
     };
 
     const startAdding = () => {
+        if (!confirmDiscard()) return;
         setFormData({
             authors: [],
             year: new Date().getFullYear().toString(),
@@ -383,7 +387,7 @@ const EditPapers: React.FC = () => {
 
                     <div className="flex justify-end gap-2 mt-6">
                         <button
-                            onClick={cancelEditing}
+                            onClick={() => { if (confirmDiscard()) cancelEditing(); }}
                             disabled={isLoading}
                             className="px-3 py-1.5 sm:px-4 sm:py-2 border border-[color:var(--border-color)] rounded-md text-[color:var(--text-color)] hover:bg-[color:var(--hover-bg)] flex items-center disabled:opacity-50"
                         >
