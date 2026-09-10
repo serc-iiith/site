@@ -17,7 +17,7 @@ export default function Error({
     }, [error]);
 
     return (
-        <div className="min-h-screen flex flex-col items-center justify-center px-4 py-16 bg-gradient-to-br from-[color:var(--background)] to-[color:var(--foreground)]">
+        <div className="min-h-screen flex flex-col items-center justify-center px-4 py-16">
             <div className="max-w-3xl mx-auto text-center">
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}

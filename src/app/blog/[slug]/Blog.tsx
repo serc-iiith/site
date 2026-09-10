@@ -161,7 +161,7 @@ export default function Blog({ blogPost, blogData }: BlogProps) {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
+        <div className="min-h-screen">
             <PageTransition>
                 {/* Hero Section */}
                 <section className="relative">

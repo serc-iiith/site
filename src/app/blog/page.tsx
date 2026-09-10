@@ -555,7 +555,7 @@ export default function BlogPage(): JSX.Element {
   }, [searchTerm, selectedCategory, selectedCategories, selectedAuthors]);
 
   return (
-    <div className="min-h-screen bg-[color:var(--foreground)] overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden">
       <PageTransition>
         {/* Hero Section with Header */}
         <section className="relative pt-24 md:pt-32 pb-12 md:pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
