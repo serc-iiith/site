@@ -189,6 +189,27 @@ const EditNews: React.FC = () => {
         });
     };
 
+    // imageURLs[0] is the primary image (used on the news list and cards).
+    const moveImage = (index: number, dir: -1 | 1) => {
+        setFormData(prev => {
+            const next = [...prev.imageURLs];
+            const target = index + dir;
+            if (target < 0 || target >= next.length) return prev;
+            [next[index], next[target]] = [next[target], next[index]];
+            return { ...prev, imageURLs: next };
+        });
+    };
+
+    const makePrimary = (index: number) => {
+        setFormData(prev => {
+            if (index === 0) return prev;
+            const next = [...prev.imageURLs];
+            const [picked] = next.splice(index, 1);
+            next.unshift(picked);
+            return { ...prev, imageURLs: next };
+        });
+    };
+
     const startEditing = (event: Event) => {
         if (!confirmDiscard()) return;
         setEditingId(event.id ?? 'unknown');
@@ -807,15 +828,28 @@ const EditNews: React.FC = () => {
                             </div>
                             <div>
                                 <div className="mb-3">
-                                    <h5 className="text-sm font-medium mb-2 text-[color:var(--secondary-color)]">Current Images</h5>
-                                    <div className="flex flex-wrap gap-2">
+                                    <h5 className="text-sm font-medium mb-2 text-[color:var(--secondary-color)]">
+                                        Current Images <span className="font-normal">(the first is the primary image)</span>
+                                    </h5>
+                                    <div className="flex flex-col gap-2">
                                         {(formData.imageURLs || []).map((url, index) => (
-                                            <div key={index} className="flex items-center bg-[color:var(--background)] p-2 rounded-md max-w-full text-[color:var(--tertiary-color)]">
-                                                <span className="text-sm mr-2 truncate max-w-xs">{url.split('/').pop()}</span>
+                                            <div key={url} className="flex items-center bg-[color:var(--background)] p-2 rounded-md max-w-full text-[color:var(--tertiary-color)]">
+                                                <span className="text-sm mr-2 truncate flex-1">
+                                                    {index === 0 && <span className="text-xs font-semibold text-[color:var(--primary-color)] mr-1">PRIMARY</span>}
+                                                    {url.split('/').pop()}
+                                                </span>
+                                                <button type="button" onClick={() => moveImage(index, -1)} disabled={isLoading || index === 0}
+                                                    className="px-1 disabled:opacity-30" aria-label="Move up">↑</button>
+                                                <button type="button" onClick={() => moveImage(index, 1)} disabled={isLoading || index === formData.imageURLs.length - 1}
+                                                    className="px-1 disabled:opacity-30" aria-label="Move down">↓</button>
+                                                {index !== 0 && (
+                                                    <button type="button" onClick={() => makePrimary(index)} disabled={isLoading}
+                                                        className="text-xs px-1 text-[color:var(--primary-color)] hover:underline">Make primary</button>
+                                                )}
                                                 <button
                                                     type="button"
                                                     onClick={() => removeImageURL(index)}
-                                                    className="text-[color:var(--error-color)] hover:text-red-700 flex-shrink-0"
+                                                    className="text-[color:var(--error-color)] hover:text-red-700 flex-shrink-0 ml-1"
                                                     disabled={isLoading}
                                                 >
                                                     <X size={16} />

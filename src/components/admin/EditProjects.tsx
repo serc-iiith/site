@@ -107,6 +107,14 @@ const EditProjects: React.FC = () => {
         });
     };
 
+    const updateCollaborator = (index: number, field: keyof Collaborator, value: string) => {
+        setFormData(prev => {
+            const next = [...prev.collaborators];
+            next[index] = { ...next[index], [field]: value };
+            return { ...prev, collaborators: next };
+        });
+    };
+
     const addLink = () => {
         if (!newLink.label || !newLink.url) return;
 
@@ -123,6 +131,14 @@ const EditProjects: React.FC = () => {
             const updatedLinks = [...prev.links];
             updatedLinks.splice(index, 1);
             return { ...prev, links: updatedLinks };
+        });
+    };
+
+    const updateLink = (index: number, field: keyof Link, value: string) => {
+        setFormData(prev => {
+            const next = [...prev.links];
+            next[index] = { ...next[index], [field]: value };
+            return { ...prev, links: next };
         });
     };
 
@@ -464,7 +480,7 @@ const EditProjects: React.FC = () => {
                         <h4 className="text-md font-semibold mb-3 text-[color:var(--text-color)]">Collaborators</h4>
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mb-3">
                             {formData.collaborators.map((collaborator, index) => (
-                                <div key={index} className="flex flex-col bg-[color:var(--background)] p-3 rounded-md relative">
+                                <div key={index} className="flex flex-col gap-1 bg-[color:var(--background)] p-3 rounded-md relative">
                                     <button
                                         type="button"
                                         onClick={() => removeCollaborator(index)}
@@ -473,11 +489,30 @@ const EditProjects: React.FC = () => {
                                     >
                                         <X size={16} />
                                     </button>
-                                    <div className="font-medium text-[color:var(--text-color)]">{collaborator.name}</div>
-                                    <div className="text-xs text-[color:var(--secondary-color)] truncate">{collaborator.url}</div>
-                                    {collaborator.logo && (
-                                        <div className="text-xs text-[color:var(--secondary-color)] truncate mt-1">Has logo</div>
-                                    )}
+                                    <input
+                                        type="text"
+                                        value={collaborator.name}
+                                        onChange={(e) => updateCollaborator(index, 'name', e.target.value)}
+                                        placeholder="Name"
+                                        disabled={isLoading}
+                                        className="w-full px-2 py-1 text-sm font-medium border border-[color:var(--border-color)] rounded bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                    />
+                                    <input
+                                        type="text"
+                                        value={collaborator.url}
+                                        onChange={(e) => updateCollaborator(index, 'url', e.target.value)}
+                                        placeholder="Website URL"
+                                        disabled={isLoading}
+                                        className="w-full px-2 py-1 text-xs border border-[color:var(--border-color)] rounded bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                    />
+                                    <input
+                                        type="text"
+                                        value={collaborator.logo}
+                                        onChange={(e) => updateCollaborator(index, 'logo', e.target.value)}
+                                        placeholder="Logo URL"
+                                        disabled={isLoading}
+                                        className="w-full px-2 py-1 text-xs border border-[color:var(--border-color)] rounded bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                    />
                                 </div>
                             ))}
                         </div>
@@ -531,15 +566,27 @@ const EditProjects: React.FC = () => {
                         <h4 className="text-md font-semibold mb-3 text-[color:var(--text-color)]">Links</h4>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-3">
                             {formData.links.map((link, index) => (
-                                <div key={index} className="flex items-center justify-between bg-[color:var(--background)] p-3 rounded-md">
-                                    <div>
-                                        <div className="font-medium text-[color:var(--text-color)]">{link.label}</div>
-                                        <div className="text-xs text-[color:var(--secondary-color)] truncate">{link.url}</div>
-                                    </div>
+                                <div key={index} className="flex items-center gap-2 bg-[color:var(--background)] p-3 rounded-md">
+                                    <input
+                                        type="text"
+                                        value={link.label}
+                                        onChange={(e) => updateLink(index, 'label', e.target.value)}
+                                        placeholder="Label"
+                                        disabled={isLoading}
+                                        className="w-1/3 px-2 py-1 text-sm border border-[color:var(--border-color)] rounded bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                    />
+                                    <input
+                                        type="text"
+                                        value={link.url}
+                                        onChange={(e) => updateLink(index, 'url', e.target.value)}
+                                        placeholder="URL"
+                                        disabled={isLoading}
+                                        className="flex-1 px-2 py-1 text-xs border border-[color:var(--border-color)] rounded bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                    />
                                     <button
                                         type="button"
                                         onClick={() => removeLink(index)}
-                                        className="text-[color:var(--error-color)] hover:text-red-700"
+                                        className="text-[color:var(--error-color)] hover:text-red-700 flex-shrink-0"
                                         disabled={isLoading}
                                     >
                                         <X size={16} />
