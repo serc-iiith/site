@@ -41,7 +41,7 @@ export const educationSchema = z.object({
 
 export const personSchema = z.object({
     name: TRIMMED(200).min(1),
-    title: TRIMMED(200),
+    title: TRIMMED(200).optional().default(''),
     email: z.union([z.email().max(320), z.literal('')]).optional().default(''),
     imageURL: imagePath.optional().default(''),
     slug: TRIMMED(200).optional(),

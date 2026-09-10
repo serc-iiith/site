@@ -57,16 +57,16 @@ function sniffImageMime(buf: Buffer): string | null {
 }
 
 export async function POST(request: NextRequest) {
-    const contentType = request.headers.get('content-type');
-    if (!contentType || !contentType.includes('multipart/form-data')) {
-        return NextResponse.json(
-            { error: 'Content type must be multipart/form-data' },
-            { status: 400 },
-        );
-    }
-
     try {
-        const formData = await request.formData();
+        let formData: FormData;
+        try {
+            formData = await request.formData();
+        } catch {
+            return NextResponse.json(
+                { error: 'Request must be multipart/form-data' },
+                { status: 400 },
+            );
+        }
         const file = formData.get('file');
         const type = formData.get('type');
         const rawSlug = formData.get('slug');
