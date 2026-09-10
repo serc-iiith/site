@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Plus, Edit, X, Save, Search, Trash2, Tag } from 'lucide-react';
+import { Plus, Edit, X, Save, Search, Trash2, Tag, ArrowUpDown } from 'lucide-react';
 import Image from 'next/image';
 import { toast } from 'react-hot-toast';
 import DeleteConfirmationModal from '@/components/common/DeleteConfirmationModal';
 import { useUnsavedChanges } from '@/hooks/useUnsavedChanges';
 import ImageDropzone from '@/components/common/ImageDropzone';
+import SortableList from '@/components/admin/SortableList';
 
 interface Collaborator {
     name: string;
@@ -34,6 +35,7 @@ const EditProjects: React.FC = () => {
     const [searchTerm, setSearchTerm] = useState<string>('');
     const [isLoading, setIsLoading] = useState(false);
     const [isUploading, setIsUploading] = useState(false);
+    const [reorderMode, setReorderMode] = useState(false);
     const confirmDiscard = useUnsavedChanges(editingId !== null);
     const [newCollaborator, setNewCollaborator] = useState<Collaborator>({ name: '', logo: '', url: '' });
     const [newLink, setNewLink] = useState<Link>({ label: '', url: '' });
@@ -320,6 +322,25 @@ const EditProjects: React.FC = () => {
         project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
         project.category.toLowerCase().includes(searchTerm.toLowerCase())
     );
+
+    // Persist a new order. Optimistic: reflect it locally, revert on failure.
+    const handleReorder = async (orderedIds: string[]) => {
+        const prev = projects;
+        const byId = new Map(projects.map(p => [p.id, p]));
+        setProjects(orderedIds.map(id => byId.get(id)!).filter(Boolean));
+        try {
+            const res = await fetch('/api/projects', {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ reorder: true, ids: orderedIds }),
+            });
+            if (!res.ok) throw new Error('reorder failed');
+        } catch (error) {
+            console.error('Error reordering projects:', error);
+            toast.error('Failed to save the new order');
+            setProjects(prev);
+        }
+    };
 
     // Available categories for the dropdown
     const categories = [
@@ -648,16 +669,52 @@ const EditProjects: React.FC = () => {
             )}
 
             <div className="overflow-x-auto -mx-4 sm:mx-0">
-                <div className="flex items-center mb-4 px-4 sm:px-0">
-                    <Search size={18} className="text-[color:var(--secondary-color)] mr-2" />
-                    <input
-                        type="text"
-                        placeholder="Search projects..."
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                        className="px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)] w-full sm:w-64"
-                    />
+                <div className="flex flex-wrap items-center gap-2 mb-4 px-4 sm:px-0">
+                    {!reorderMode && (
+                        <div className="flex items-center flex-1 min-w-[12rem]">
+                            <Search size={18} className="text-[color:var(--secondary-color)] mr-2" />
+                            <input
+                                type="text"
+                                placeholder="Search projects..."
+                                value={searchTerm}
+                                onChange={(e) => setSearchTerm(e.target.value)}
+                                className="px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)] w-full sm:w-64"
+                            />
+                        </div>
+                    )}
+                    <button
+                        type="button"
+                        onClick={() => { setReorderMode(v => !v); setSearchTerm(''); }}
+                        disabled={editingId !== null}
+                        className={`ml-auto px-3 py-2 rounded-md border text-sm flex items-center gap-1 disabled:opacity-50 ${reorderMode ? 'bg-[color:var(--primary-color)] text-white border-transparent' : 'border-[color:var(--border-color)] text-[color:var(--text-color)] hover:bg-[color:var(--hover-bg)]'}`}
+                    >
+                        <ArrowUpDown size={16} /> {reorderMode ? 'Done reordering' : 'Reorder'}
+                    </button>
                 </div>
+
+                {reorderMode ? (
+                    <div className="px-4 sm:px-0">
+                        <p className="text-xs text-[color:var(--secondary-color)] mb-2">
+                            Drag to set the order projects appear in on the public site. Saved automatically.
+                        </p>
+                        <SortableList
+                            items={projects}
+                            getId={(p) => p.id}
+                            onReorder={handleReorder}
+                            renderItem={(p) => (
+                                <div className="flex items-center gap-2 bg-[color:var(--background)] border border-[color:var(--border-color)] rounded-md px-3 py-2">
+                                    {p.image && (
+                                        <Image width={28} height={28} src={p.image} alt="" unoptimized
+                                            className="h-7 w-7 rounded object-cover flex-shrink-0"
+                                            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
+                                    )}
+                                    <span className="text-sm text-[color:var(--text-color)] truncate">{p.title}</span>
+                                    <span className="ml-auto text-xs text-[color:var(--secondary-color)] capitalize">{p.category}</span>
+                                </div>
+                            )}
+                        />
+                    </div>
+                ) : (
                 <div className="min-w-full inline-block align-middle">
                     <div className="overflow-hidden">
                         <table className="min-w-full divide-y divide-[color:var(--border-color)]">
@@ -751,6 +808,7 @@ const EditProjects: React.FC = () => {
                         </table>
                     </div>
                 </div>
+                )}
             </div>
         </div>
     );

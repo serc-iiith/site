@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { toast } from 'react-hot-toast';
 import { slugify } from '@/lib/slug';
 import { useUnsavedChanges } from '@/hooks/useUnsavedChanges';
+import SortableList from '@/components/admin/SortableList';
+import { ArrowUpDown } from 'lucide-react';
 
 interface SocialLinks {
     [key: string]: string;
@@ -218,6 +220,7 @@ const EditPeople: React.FC = () => {
     // within a category, so PUT/DELETE must be scoped by both.
     const [editingCategory, setEditingCategory] = useState<string>('');
     const [searchTerm, setSearchTerm] = useState<string>('');
+    const [reorderCategory, setReorderCategory] = useState<string>('');
     const [isLoading, setIsLoading] = useState(false);
     const [isInitialLoading, setIsInitialLoading] = useState(true);
     const [isUploading, setIsUploading] = useState(false);
@@ -667,6 +670,28 @@ const EditPeople: React.FC = () => {
         openDeleteModal(person);
     };
 
+    const reorderPeople = people.filter((p) => p.category === reorderCategory);
+
+    const handleReorder = async (orderedSlugs: string[]) => {
+        const prev = people;
+        const others = people.filter((p) => p.category !== reorderCategory);
+        const bySlug = new Map(reorderPeople.map((p) => [p.slug, p]));
+        const reordered = orderedSlugs.map((s) => bySlug.get(s)!).filter(Boolean);
+        setPeople([...others, ...reordered]);
+        try {
+            const res = await fetch('/api/people', {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ reorder: true, category: reorderCategory, slugs: orderedSlugs }),
+            });
+            if (!res.ok) throw new Error('reorder failed');
+        } catch (error) {
+            console.error('Error reordering people:', error);
+            toast.error('Failed to save the new order');
+            setPeople(prev);
+        }
+    };
+
     const filteredPeople = people.filter(person =>
         person.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         person.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -1036,16 +1061,56 @@ const EditPeople: React.FC = () => {
             )}
 
             <div className="overflow-x-auto -mx-4 sm:mx-0">
-                <div className="flex items-center mb-4 px-4 sm:px-0">
-                    <Search size={18} className="text-[color:var(--secondary-color)] mr-2" />
-                    <input
-                        type="text"
-                        placeholder="Search people..."
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                        className="px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)] w-full sm:w-64"
-                    />
+                <div className="flex flex-wrap items-center gap-2 mb-4 px-4 sm:px-0">
+                    {!reorderCategory && (
+                        <div className="flex items-center flex-1 min-w-[12rem]">
+                            <Search size={18} className="text-[color:var(--secondary-color)] mr-2" />
+                            <input
+                                type="text"
+                                placeholder="Search people..."
+                                value={searchTerm}
+                                onChange={(e) => setSearchTerm(e.target.value)}
+                                className="px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)] w-full sm:w-64"
+                            />
+                        </div>
+                    )}
+                    <div className="ml-auto flex items-center gap-2">
+                        <ArrowUpDown size={16} className="text-[color:var(--secondary-color)]" />
+                        <select
+                            value={reorderCategory}
+                            onChange={(e) => { setReorderCategory(e.target.value); setSearchTerm(''); }}
+                            disabled={editingSlug !== null}
+                            className="px-2 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)] text-sm disabled:opacity-50"
+                        >
+                            <option value="">Reorder a category…</option>
+                            {categories.map((c) => (
+                                <option key={c} value={c}>{c}</option>
+                            ))}
+                        </select>
+                    </div>
                 </div>
+
+                {reorderCategory ? (
+                    <div className="px-4 sm:px-0">
+                        <p className="text-xs text-[color:var(--secondary-color)] mb-2">
+                            Drag to set the order of <strong>{reorderCategory}</strong> on the People page. Saved automatically.
+                        </p>
+                        <SortableList
+                            items={reorderPeople}
+                            getId={(p) => p.slug}
+                            onReorder={handleReorder}
+                            renderItem={(p) => (
+                                <div className="flex items-center gap-2 bg-[color:var(--background)] border border-[color:var(--border-color)] rounded-md px-3 py-2">
+                                    <span className="text-sm text-[color:var(--text-color)] truncate">{p.name}</span>
+                                    <span className="ml-auto text-xs text-[color:var(--secondary-color)] truncate flex-shrink-0">{p.title}</span>
+                                </div>
+                            )}
+                        />
+                        {reorderPeople.length === 0 && (
+                            <p className="text-sm text-[color:var(--secondary-color)] py-4">No people in this category.</p>
+                        )}
+                    </div>
+                ) : (
                 <div className="min-w-full inline-block align-middle">
                     <div className="overflow-hidden">
                         <table className="min-w-full divide-y divide-[color:var(--border-color)]">
@@ -1092,9 +1157,9 @@ const EditPeople: React.FC = () => {
                                                         alt={person.name}
                                                         className="object-cover transition-transform duration-500 hover:scale-110"
                                                         unoptimized={true}
-                                                        onError={() => {
-                                                            const img = document.querySelector(`img[alt="${person.name}"]`) as HTMLImageElement;
-                                                            if (img && img.src !== window.location.origin + '/images/person_fallback.png') {
+                                                        onError={(e) => {
+                                                            const img = e.currentTarget;
+                                                            if (!img.src.endsWith('/images/person_fallback.png')) {
                                                                 img.src = '/images/person_fallback.png';
                                                             }
                                                         }}
@@ -1136,6 +1201,7 @@ const EditPeople: React.FC = () => {
                         </table>
                     </div>
                 </div>
+                )}
             </div>
         </div>
     );

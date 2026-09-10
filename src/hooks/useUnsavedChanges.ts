@@ -1,4 +1,4 @@
-import { useCallback, useContext, useEffect } from 'react';
+import { useCallback, useContext, useEffect, useId } from 'react';
 import { AdminDirtyContext } from '@/components/admin/AdminDirtyContext';
 
 /**
@@ -8,16 +8,17 @@ import { AdminDirtyContext } from '@/components/admin/AdminDirtyContext';
  *  - a `beforeunload` handler warns on tab close / reload
  *  - `confirmDiscard()` returns false unless the user confirms (call it before
  *    Cancel, switching records, or switching admin sections)
- *  - the shared AdminDirtyContext is kept in sync so `admin/page.tsx` can block
- *    a section switch
+ *  - the shared AdminDirtyContext is kept in sync (per editor instance) so
+ *    `admin/page.tsx` can block a section switch while any editor is dirty
  */
 export function useUnsavedChanges(isDirty: boolean) {
     const ctx = useContext(AdminDirtyContext);
+    const id = useId();
 
     useEffect(() => {
-        ctx?.setDirty(isDirty);
-        return () => ctx?.setDirty(false);
-    }, [isDirty, ctx]);
+        ctx?.setDirty(id, isDirty);
+        return () => ctx?.setDirty(id, false);
+    }, [isDirty, ctx, id]);
 
     useEffect(() => {
         if (!isDirty) return;

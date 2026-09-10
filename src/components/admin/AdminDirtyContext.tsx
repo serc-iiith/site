@@ -3,31 +3,30 @@
 import React, { createContext, useCallback, useMemo, useRef, useState } from 'react';
 
 interface AdminDirtyValue {
-    /** Whether some editor currently has unsaved changes. */
+    /** Whether any registered editor currently has unsaved changes. */
     isDirty: boolean;
-    /** Editors call this to publish their dirty state. */
-    setDirty: (dirty: boolean) => void;
-    /** Returns true if it's safe to navigate away (prompts if dirty). */
+    /** An editor publishes its dirty state under a stable id. */
+    setDirty: (id: string, dirty: boolean) => void;
+    /** Returns true if it's safe to navigate away (prompts if anything is dirty). */
     confirmNavigation: () => boolean;
 }
 
 export const AdminDirtyContext = createContext<AdminDirtyValue | null>(null);
 
 export const AdminDirtyProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+    const dirtyIds = useRef<Set<string>>(new Set());
     const [isDirty, setIsDirty] = useState(false);
-    const dirtyRef = useRef(false);
 
-    const setDirty = useCallback((dirty: boolean) => {
-        dirtyRef.current = dirty;
-        setIsDirty(dirty);
+    const setDirty = useCallback((id: string, dirty: boolean) => {
+        if (dirty) dirtyIds.current.add(id);
+        else dirtyIds.current.delete(id);
+        setIsDirty(dirtyIds.current.size > 0);
     }, []);
 
     const confirmNavigation = useCallback(() => {
-        if (!dirtyRef.current) return true;
-        const ok = window.confirm('You have unsaved changes. Leave this section?');
-        if (ok) setDirty(false);
-        return ok;
-    }, [setDirty]);
+        if (dirtyIds.current.size === 0) return true;
+        return window.confirm('You have unsaved changes. Leave anyway?');
+    }, []);
 
     const value = useMemo(
         () => ({ isDirty, setDirty, confirmNavigation }),

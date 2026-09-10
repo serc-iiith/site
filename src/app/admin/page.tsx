@@ -37,6 +37,9 @@ export default function AdminPage() {
 function AdminDashboard() {
   const dirty = React.useContext(AdminDirtyContext);
   const [activeSection, setActiveSection] = useState('people');
+  // Sections keep their component mounted once first visited, so switching tabs
+  // doesn't refetch data or drop an in-progress edit.
+  const [mountedSections, setMountedSections] = useState<string[]>(['people']);
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -56,26 +59,25 @@ function AdminDashboard() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const renderContent = () => {
-    switch (activeSection) {
-      case 'people':
-        return <EditPeople />
-      case 'news':
-        return <EditNews />
-      case 'projects':
-        return <EditProjects />
-      case 'research':
-        return <EditPapers />
-      case 'collaborators':
-        return <EditCollaborators />
-      case 'blog':
-        return <EditBlogs />
-      case 'seo':
-        return <SeoVerifier />
-      default:
-        return null;
-    }
+  const sectionComponents: Record<string, React.ReactNode> = {
+    people: <EditPeople />,
+    news: <EditNews />,
+    projects: <EditProjects />,
+    research: <EditPapers />,
+    collaborators: <EditCollaborators />,
+    blog: <EditBlogs />,
+    seo: <SeoVerifier />,
   };
+
+  const renderContent = () => (
+    <>
+      {mountedSections.map((id) => (
+        <div key={id} hidden={id !== activeSection}>
+          {sectionComponents[id]}
+        </div>
+      ))}
+    </>
+  );
 
   const sidebarItems = [
     { id: 'people', name: 'People', icon: <Users size={20} /> },
@@ -90,6 +92,7 @@ function AdminDashboard() {
   const changeSection = (sectionId: string) => {
     if (sectionId === activeSection) return;
     if (dirty && !dirty.confirmNavigation()) return;
+    setMountedSections((prev) => (prev.includes(sectionId) ? prev : [...prev, sectionId]));
     setActiveSection(sectionId);
     if (isMobile) setSidebarOpen(false);
   };
