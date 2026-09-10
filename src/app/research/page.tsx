@@ -44,8 +44,12 @@ export default function ResearchPapers() {
       try {
         // TODO: follow basePath in next.config.js
         const response = await fetch('/data/papers.json');
-        const data = await response.json();
-        setPapers(data);
+        const data: Paper[] = await response.json();
+        // Defensive: keep newest-year-first even if the file drifts.
+        const sorted = [...data].sort(
+          (a, b) => (parseInt(b.year, 10) || 0) - (parseInt(a.year, 10) || 0),
+        );
+        setPapers(sorted);
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       } catch (_error) {
       } finally {
