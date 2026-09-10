@@ -13,6 +13,9 @@
 # testing
 /coverage
 
+# admin dashboard: pre-write backups of the data files
+public/data/*.json.bak
+
 # next.js
 .next/
 src/.next/
