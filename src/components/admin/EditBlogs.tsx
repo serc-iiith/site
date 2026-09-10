@@ -198,6 +198,9 @@ const EditBlogs: React.FC = () => {
                 setFormData(prev => ({ ...prev, [name]: value }));
             }
         }
+        else if (name === 'readTime') {
+            setFormData(prev => ({ ...prev, readTime: Number(value) || 0 }));
+        }
         else {
             setFormData(prev => ({ ...prev, [name]: value }));
         }

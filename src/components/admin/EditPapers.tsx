@@ -29,7 +29,7 @@ const EditPapers: React.FC = () => {
         isOpen: false,
         paper: null,
     });
-    const [formData, setFormData] = useState<Paper & { originalTitle?: string; originalYear?: string; originalAuthors?: string[] }>({
+    const [formData, setFormData] = useState<Paper>({
         authors: [],
         year: '',
         title: '',
@@ -83,12 +83,7 @@ const EditPapers: React.FC = () => {
     };
 
     const startEditing = (paper: Paper) => {
-        setFormData({
-            ...paper,
-            originalTitle: paper.title,
-            originalYear: paper.year,
-            originalAuthors: [...paper.authors],
-        });
+        setFormData({ ...paper });
         setCurrentAuthors([...paper.authors]);
         setIsEditing(true);
         setIsNew(false);
@@ -194,13 +189,8 @@ const EditPapers: React.FC = () => {
 
         try {
             const paper = deleteModal.paper;
-            const queryParams = new URLSearchParams({
-                title: paper.title,
-                year: paper.year,
-                authors: JSON.stringify(paper.authors)
-            });
-
-            const response = await fetch(`/api/papers?${queryParams}`, {
+            if (!paper.id) throw new Error('Paper has no id');
+            const response = await fetch(`/api/papers?id=${encodeURIComponent(paper.id)}`, {
                 method: 'DELETE'
             });
 
@@ -456,7 +446,7 @@ const EditPapers: React.FC = () => {
                     <div className="grid grid-cols-1 gap-4">
                         {filteredPapers.map((paper, index) => (
                             <div
-                                key={index}
+                                key={paper.id ?? `${paper.title}-${index}`}
                                 className="p-4 bg-[color:var(--foreground)] rounded-lg border border-[color:var(--border-color)]"
                             >
                                 <div className="flex justify-between items-start">

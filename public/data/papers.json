@@ -1,5 +1,6 @@
 [
   {
+    "id": "engineering-llm-powered-multi-agent-framework-for-autonomous-cloudops-2025",
     "authors": [
       "Parthasarathy, Kannan",
       "Vaidhyanathan, Karthik",
@@ -21,6 +22,7 @@
     "url": "https://ieeexplore.ieee.org/abstract/document/11030040"
   },
   {
+    "id": "model-based-approach-for-specifying-requirements-of-virtual-reality-software-products-2024",
     "authors": [
       "Y Raghu Reddy",
       "Sai Anirudh Karre"
@@ -33,6 +35,7 @@
     "url": "https://www.frontiersin.org/journals/virtual-reality/articles/10.3389/frvir.2024.1471579/full"
   },
   {
+    "id": "vrslog-an-approach-to-log-immersive-experiences-in-virtual-reality-systems-2025",
     "authors": [
       "Y Raghu Reddy"
     ],
@@ -44,6 +47,7 @@
     "url": ""
   },
   {
+    "id": "vreqst-a-requirement-specification-tool-for-virtual-reality-software-products-2025",
     "authors": [
       "Y Raghu Reddy",
       "Sai Anirudh Karre",
@@ -57,6 +61,7 @@
     "url": " https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11024301&isnumber=11024244"
   },
   {
+    "id": "the-poms-effect-measuring-the-impact-of-overlapping-architectures-on-user-engagement-in-virtual-reality-2025",
     "authors": [
       "Y Raghu Reddy",
       "Puru Ojha",
@@ -70,6 +75,7 @@
     "url": "https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=11172565&isnumber=11172380"
   },
   {
+    "id": "test-case-generation-for-requirements-in-natural-language-an-llm-comparison-study-2025",
     "authors": [
       "Raghu Reddy",
       "Brahma Reddy Korraprolu",
@@ -83,6 +89,7 @@
     "url": "https://dl.acm.org/doi/10.1145/3717383.3717389"
   },
   {
+    "id": "edgemlbalancer-a-self-adaptive-approach-for-dynamic-model-switching-on-resource-constrained-edge-devices-2025",
     "authors": [
       "Akhila Matathammal",
       "Kriti Gupta",
@@ -99,6 +106,7 @@
     "url": "https://arxiv.org/abs/2502.06493"
   },
   {
+    "id": "switch-an-exemplar-for-evaluating-self-adaptive-ml-enabled-systems-2024",
     "authors": [
       "Arya Marda",
       "Shubham Kulkarni",
@@ -112,6 +120,7 @@
     "url": "https://doi.org/10.48550/arXiv.2402.06351"
   },
   {
+    "id": "software-development-waste-amidst-covid-19-pandemic-an-industry-study-2024",
     "authors": [
       "Dhiraj SM Varanasi",
       "Sai Anirudh Karre",
@@ -125,6 +134,7 @@
     "url": "https://doi.org/10.1145/3641399.3641417"
   },
   {
+    "id": "enhancing-mvc-architecture-pattern-description-using-its-system-of-systems-model-2024",
     "authors": [
       "Mrityunjay Kumar",
       "Venkatesh Choppella"
@@ -137,6 +147,7 @@
     "url": "https://doi.org/10.1145/3641399.3641410"
   },
   {
+    "id": "engineering-end-to-end-remote-labs-using-iot-based-retrofitting-2024",
     "authors": [
       "K. S. Viswanadh",
       "Akshit Gureja",
@@ -158,6 +169,7 @@
     "url": "https://doi.org/10.48550/arXiv.2402.05466"
   },
   {
+    "id": "trace-to-follow-run-to-explore-a-demonstration-using-interactive-sorting-2023",
     "authors": [
       "Pranav Vats",
       "Venkatesh Choppella"
@@ -170,6 +182,7 @@
     "url": "https://doi.org/10.1145/3617650.3624930"
   },
   {
+    "id": "towards-self-adaptive-machine-learning-enabled-systems-through-qos-aware-model-switching-2023",
     "authors": [
       "Shubham Kulkarni",
       "Arya Marda",
@@ -183,6 +196,7 @@
     "url": "https://doi.org/10.48550/arXiv.2308.09960"
   },
   {
+    "id": "towards-self-adaptive-machine-learning-enabled-systems-through-qos-aware-model-switching-2023-1",
     "authors": [
       "Shubham Kulkarni",
       "Arya Marda",
@@ -196,6 +210,7 @@
     "url": "https://doi.org/10.1109/ASE56229.2023.00172"
   },
   {
+    "id": "towards-conducting-effective-locomotion-through-hardware-transformation-in-head-mounted-device-a-review-study-2023",
     "authors": [
       "Y. Pawan Kumar Gururaj",
       "Raghav Mittal",
@@ -211,6 +226,7 @@
     "url": "https://doi.org/10.48550/arXiv.2306.14210"
   },
   {
+    "id": "toward-changing-users-behavior-with-emotion-based-adaptive-systems-2023",
     "authors": [
       "Mina Alipour",
       "Mahyar Tourchi Moghaddam",
@@ -225,6 +241,7 @@
     "url": "https://doi.org/10.1145/3565472.3595614"
   },
   {
+    "id": "systems-modeling-for-novice-engineers-to-comprehend-software-products-better-2023",
     "authors": [
       "Mrityunjay Kumar",
       "Venkatesh Choppella"
@@ -237,6 +254,7 @@
     "url": "https://doi.org/10.48550/arXiv.2304.13294"
   },
   {
+    "id": "software-architecture-and-machine-learning-dagstuhl-seminar-23302-2023",
     "authors": [
       "Grace A. Lewis",
       "Henry Muccini",
@@ -253,6 +271,7 @@
     "url": "https://doi.org/10.4230/DagRep.13.7.166"
   },
   {
+    "id": "requirements-elicitation-for-virtual-reality-products-a-mapping-study-2023",
     "authors": [
       "Sai Anirudh Karre",
       "Raghav Mittal",
@@ -266,6 +285,7 @@
     "url": "https://doi.org/10.1145/3578527.3578536"
   },
   {
+    "id": "proceedings-of-the-acm-conference-on-global-computing-education-vol-2-comped-2023-hyderabad-india-december-5-9-2023-2023",
     "authors": [
       "Venkatesh Choppella",
       "Deepak B. Phatak",
@@ -280,6 +300,7 @@
     "url": "https://doi.org/10.1145/3617650"
   },
   {
+    "id": "proceedings-of-the-acm-conference-on-global-computing-education-vol-1-comped-2023-hyderabad-india-december-5-9-2023-2023",
     "authors": [
       "Venkatesh Choppella",
       "Deepak B. Phatak",
@@ -294,6 +315,7 @@
     "url": "https://doi.org/10.1145/3576882"
   },
   {
+    "id": "modeling-model-view-controller-mvc-architecture-pattern-as-system-of-systems-sos-to-aid-comprehension-and-reasoning-2023",
     "authors": [
       "Mrityunjay Kumar",
       "Venkatesh Choppella"
@@ -306,6 +328,7 @@
     "url": "https://doi.org/10.1145/3617650.3624934"
   },
   {
+    "id": "knowledge-driven-synthesis-using-resource-capability-semantics-for-control-software-design-2023",
     "authors": [
       "Amar Banerjee",
       "Venkatesh Choppella"
@@ -318,6 +341,7 @@
     "url": "https://doi.org/10.1109/ACCESS.2023.3277859"
   },
   {
+    "id": "is-transition-systems-approach-of-modeling-software-systems-hard-to-learn-and-use-2023",
     "authors": [
       "Mrityunjay Kumar",
       "Venkatesh Choppella"
@@ -330,6 +354,7 @@
     "url": "https://doi.org/10.1145/3617650.3624931"
   },
   {
+    "id": "evaluating-the-difficulty-for-novice-engineers-in-learning-and-using-transition-systems-for-modeling-software-systems-20",
     "authors": [
       "Mrityunjay Kumar",
       "Venkatesh Choppella"
@@ -342,6 +367,7 @@
     "url": "https://doi.org/10.1145/3627217.3627223"
   },
   {
+    "id": "emotional-internet-of-behaviors-a-qoe-qos-adjustment-mechanism-2023",
     "authors": [
       "Mina Alipour",
       "Mahyar Tourchi Moghaddam",
@@ -357,6 +383,7 @@
     "url": "https://doi.org/10.1007/978-3-031-35891-3_1"
   },
   {
+    "id": "emoticontrol-emotions-based-control-of-user-interfaces-adaptations-2023",
     "authors": [
       "Mina Alipour",
       "Mahyar Tourchi Moghaddam",
@@ -371,6 +398,7 @@
     "url": "https://doi.org/10.1145/3593227"
   },
   {
+    "id": "comped-2023-call-for-papers-2023",
     "authors": [
       "Andrew Luxton-Reilly",
       "Michelle Craig",
@@ -385,6 +413,7 @@
     "url": "https://doi.org/10.1145/3607479.3607483"
   },
   {
+    "id": "assessing-new-hires-programming-productivity-through-umetrix-an-industry-case-study-2023",
     "authors": [
       "Sai Anirudh Karre",
       "Neeraj Mathur",
@@ -398,6 +427,7 @@
     "url": "https://doi.org/10.48550/arXiv.2305.03332"
   },
   {
+    "id": "acm-comped-resumes-after-two-year-delay-2023",
     "authors": [
       "Brett A. Becker",
       "Venkatesh Choppella"
@@ -410,6 +440,7 @@
     "url": "https://doi.org/10.1145/3584667.3584673"
   },
   {
+    "id": "a-tool-based-experiment-to-teach-elicitation-and-specification-of-virtual-reality-product-requirements-2023",
     "authors": [
       "Sai Anirudh Karre",
       "Karthik Vaidhyanathan",
@@ -423,6 +454,7 @@
     "url": "https://doi.org/10.1145/3617650.3624936"
   },
   {
+    "id": "a-modeling-language-for-novice-engineers-to-design-well-at-saas-product-companies-2023",
     "authors": [
       "Mrityunjay Kumar",
       "Venkatesh Choppella"
@@ -435,6 +467,7 @@
     "url": "https://doi.org/10.1145/3578527.3578548"
   },
   {
+    "id": "velgmat-low-cost-gait-mat-for-stance-phase-calculation-2022",
     "authors": [
       "Mohammad Waqas Wani",
       "Y. Pawan Kumar Gururaj",
@@ -451,6 +484,7 @@
     "url": "https://doi.org/10.1109/SENSORS52175.2022.9967332"
   },
   {
+    "id": "towards-digitalization-of-requirements-generating-context-sensitive-user-stories-from-diverse-specifications-2022",
     "authors": [
       "Padmalata V. Nistala",
       "Asha Rajbhoj",
@@ -467,6 +501,7 @@
     "url": "https://doi.org/10.1007/s10515-022-00324-2"
   },
   {
+    "id": "towards-conducting-effective-locomotion-through-hardware-transformation-in-head-mounted-device-a-review-study-2022",
     "authors": [
       "Y. Pawan Kumar Gururaj",
       "Raghav Mittal",
@@ -482,6 +517,7 @@
     "url": "https://doi.org/10.1109/VRW55335.2022.00181"
   },
   {
+    "id": "feast-a-framework-for-evaluating-implementation-architectures-of-self-adaptive-iot-systems-2022",
     "authors": [
       "Federico Di Menna",
       "Henry Muccini",
@@ -495,6 +531,7 @@
     "url": "https://doi.org/10.1145/3477314.3507146"
   },
   {
+    "id": "enhancing-configurable-limitless-paths-in-virtual-reality-environments-2022",
     "authors": [
       "Raghav Mittal",
       "Sai Anirudh Karre",
@@ -509,6 +546,7 @@
     "url": "https://doi.org/10.1145/3511430.3511452"
   },
   {
+    "id": "cv-and-iot-based-remote-triggered-labs-use-case-of-conservation-of-mechanical-energy-2022",
     "authors": [
       "K. S. Viswanadh",
       "O. Kathalkar",
@@ -525,6 +563,7 @@
     "url": "https://doi.org/10.1109/FiCloud57274.2022.00021"
   },
   {
+    "id": "customizable-head-mounted-device-for-detection-of-eye-disorders-using-virtual-reality-2022",
     "authors": [
       "Y. Pawan Kumar Gururaj",
       "Sai Anirudh Karre",
@@ -540,6 +579,7 @@
     "url": "https://doi.org/10.1109/VLSID2022.2022.00022"
   },
   {
+    "id": "compute-2022-jaipur-india-november-9-11-2022-2022",
     "authors": [
       "Venkatesh Choppella",
       "Amey Karkare",
@@ -554,6 +594,7 @@
     "url": "https://doi.org/10.1145/3561833"
   },
   {
+    "id": "an-approach-to-open-source-software-license-management-using-blockchain-based-smart-contracts-2022",
     "authors": [
       "Abhay Kumar",
       "Abhinav Gupta",
@@ -568,6 +609,7 @@
     "url": "https://doi.org/10.1145/3511430.3511448"
   },
   {
+    "id": "agile4mls-leveraging-agile-practices-for-developing-machine-learning-enabled-systems-an-industrial-experience-2022",
     "authors": [
       "Karthik Vaidhyanathan",
       "Anish Chandran",
@@ -582,6 +624,7 @@
     "url": "https://doi.org/10.1109/MS.2022.3195432"
   },
   {
+    "id": "a-study-of-the-design-and-documentation-skills-of-industry-ready-cs-students-2022",
     "authors": [
       "Mrityunjay Kumar",
       "Venkatesh Choppella"
@@ -594,6 +637,7 @@
     "url": "https://doi.org/10.48550/arXiv.2212.04035"
   },
   {
+    "id": "a-study-of-the-design-and-documentation-skills-of-industry-ready-cs-students-2022-1",
     "authors": [
       "Mrityunjay Kumar",
       "Venkatesh Choppella"
@@ -606,6 +650,7 @@
     "url": "https://doi.org/10.1145/3561833.3561842"
   },
   {
+    "id": "a-role-based-model-template-for-specifying-virtual-reality-software-2022",
     "authors": [
       "Sai Anirudh Karre",
       "Vivek Pareek",
@@ -620,6 +665,7 @@
     "url": "https://doi.org/10.1145/3551349.3560514"
   },
   {
+    "id": "using-project-based-approach-to-teach-design-patterns-an-experience-report-2021",
     "authors": [
       "Sai Anirudh Karre",
       "Lalit Mohan Sanagavarapu",
@@ -632,6 +678,7 @@
     "url": "https://doi.org/10.1145/3452383.3452399"
   },
   {
+    "id": "understanding-software-quality-metrics-for-virtual-reality-products-a-mapping-study-2021",
     "authors": [
       "Mohit Kuri",
       "Sai Anirudh Karre",
@@ -645,6 +692,7 @@
     "url": "https://doi.org/10.1145/3452383.3452391"
   },
   {
+    "id": "sql-injection-vulnerability-identification-from-text-2021",
     "authors": [
       "Dhruv Parashar",
       "Lalit Mohan Sanagavarapu",
@@ -658,6 +706,7 @@
     "url": "https://doi.org/10.1145/3452383.3452405"
   },
   {
+    "id": "software-architecture-for-ml-based-systems-what-exists-and-what-lies-ahead-2021",
     "authors": [
       "Henry Muccini",
       "Karthik Vaidhyanathan"
@@ -670,6 +719,7 @@
     "doi": ""
   },
   {
+    "id": "software-architecture-for-ml-based-systems-what-exists-and-what-lies-ahead-2021-1",
     "authors": [
       "Henry Muccini",
       "Karthik Vaidhyanathan"
@@ -682,6 +732,7 @@
     "url": "https://doi.org/10.1109/WAIN52551.2021.00026"
   },
   {
+    "id": "knowledge-driven-approach-to-auto-generate-digital-twins-for-industrial-plants-2021",
     "authors": [
       "Amar Banerjee",
       "Venkatesh Choppella"
@@ -694,6 +745,7 @@
     "url": ""
   },
   {
+    "id": "introducing-software-system-course-to-engineering-undergraduate-students-an-experience-report-2021",
     "authors": [
       "Sai Anirudh Karre",
       "Abhinav Gupta",
@@ -707,6 +759,7 @@
     "url": ""
   },
   {
+    "id": "human-behavior-oriented-architectural-design-2021",
     "authors": [
       "Moamin Abughazala",
       "Mahyar Tourchi Moghaddam",
@@ -721,6 +774,7 @@
     "url": "https://doi.org/10.1007/978-3-030-86044-8_9"
   },
   {
+    "id": "designing-limitless-path-in-virtual-reality-environment-2021",
     "authors": [
       "Raghav Mittal",
       "Sai Anirudh Karre",
@@ -734,6 +788,7 @@
     "doi": ""
   },
   {
+    "id": "designing-limitless-path-in-virtual-reality-environment-2021-1",
     "authors": [
       "Raghav Mittal",
       "Sai Anirudh Karre",
@@ -747,6 +802,7 @@
     "url": "https://doi.org/10.1007/978-3-030-77599-5_7"
   },
   {
+    "id": "architecture-design-for-human-driven-systems-2021",
     "authors": [
       "Mahyar Tourchi Moghaddam",
       "Moamin B. Abughazala",
@@ -764,6 +820,7 @@
     "doi": ""
   },
   {
+    "id": "algodynamics-algorithms-as-systems-2021",
     "authors": [
       "Venkatesh Choppella",
       "Viswanath Kasturi",
@@ -777,6 +834,7 @@
     "url": "https://doi.org/10.1109/FIE49875.2021.9637441"
   },
   {
+    "id": "a-user-driven-adaptation-approach-for-microservice-based-iot-applications-2021",
     "authors": [
       "Martina De Sanctis",
       "Henry Muccini",
@@ -790,6 +848,7 @@
     "url": "https://doi.org/10.1145/3494322.3494329"
   },
   {
+    "id": "a-service-for-supporting-digital-and-immersive-cultural-experiences-2021",
     "authors": [
       "Karthik Vaidhyanathan",
       "Antonio Bruno",
@@ -807,6 +866,7 @@
     "doi": ""
   },
   {
+    "id": "a-report-on-the-phd-symposium-at-isec-2021-2021",
     "authors": [
       "Venkatesh Choppella",
       "Manoranjan Satpathy"
@@ -819,6 +879,7 @@
     "url": "https://doi.org/10.1145/3452383.3453713"
   },
   {
+    "id": "a-machine-learning-approach-to-service-discovery-for-microservice-architectures-2021",
     "authors": [
       "Mauro Caporuscio",
       "Marco De Toma",
@@ -833,6 +894,7 @@
     "url": "https://doi.org/10.1007/978-3-030-86044-8_5"
   },
   {
+    "id": "a-framework-for-syntactic-and-semantic-quality-evaluation-of-ontologies-2021",
     "authors": [
       "Vivek Iyer",
       "Lalit Mohan Sanagavarapu",
@@ -846,6 +908,7 @@
     "url": "https://doi.org/10.1007/978-3-030-97532-6_5"
   },
   {
+    "id": "a-framework-for-syntactic-and-semantic-quality-evaluation-of-ontologies-2021-1",
     "authors": [
       "Vivek Iyer",
       "Lalit Mohan Sanagavarapu",
@@ -859,6 +922,7 @@
     "doi": ""
   },
   {
+    "id": "a-deep-learning-approach-for-ontology-enrichment-from-unstructured-text-2021",
     "authors": [
       "Lalit Mohan Sanagavarapu",
       "Vivek Iyer",
@@ -872,6 +936,7 @@
     "doi": ""
   },
   {
+    "id": "vreye-exploring-human-visual-acuity-test-using-virtual-reality-2020",
     "authors": [
       "Shivang Shekar",
       "Pranav Reddy Pesaladinne",
@@ -886,6 +951,7 @@
     "url": "https://doi.org/10.1007/978-3-030-49698-2_28"
   },
   {
+    "id": "towards-self-learnable-software-architectures-2020",
     "authors": [
       "Henry Muccini",
       "Karthik Vaidhyanathan"
@@ -898,6 +964,7 @@
     "doi": ""
   },
   {
+    "id": "quantitative-verification-aided-machine-learning-a-tandem-approach-for-architecting-self-adaptive-iot-systems-2020",
     "authors": [
       "Javier Cámara",
       "Henry Muccini",
@@ -911,6 +978,7 @@
     "url": "https://doi.org/10.1109/ICSA47634.2020.00010"
   },
   {
+    "id": "model-checking-as-a-service-using-dynamic-resource-scaling-2020",
     "authors": [
       "Surya Teja Palavalasa",
       "Yuvraj Singh",
@@ -926,6 +994,7 @@
     "url": "https://doi.org/10.1109/HiPC50609.2020.00027"
   },
   {
+    "id": "machine-learning-techniques-for-credit-risk-evaluation-a-systematic-literature-review-2020",
     "authors": [
       "Siddharth Bhatore",
       "Y. Raghu Reddy"
@@ -938,6 +1007,7 @@
     "url": "https://doi.org/10.1007/s42786-020-00020-3"
   },
   {
+    "id": "leveraging-machine-learning-techniques-for-architecting-self-adaptive-iot-systems-2020",
     "authors": [
       "Henry Muccini",
       "Karthik Vaidhyanathan"
@@ -950,6 +1020,7 @@
     "url": "https://doi.org/10.1109/SMARTCOMP50058.2020.00029"
   },
   {
+    "id": "generalised-dining-philosophers-as-feedback-control-2020",
     "authors": [
       "Venkatesh Choppella",
       "Arjun Sanjeev",
@@ -964,6 +1035,7 @@
     "url": "https://doi.org/10.1007/978-3-030-36987-3_9"
   },
   {
+    "id": "data-driven-adaptation-in-microservice-based-iot-architectures-2020",
     "authors": [
       "Martina De Sanctis",
       "Henry Muccini",
@@ -977,6 +1049,7 @@
     "url": "https://doi.org/10.1109/ICSA-C50368.2020.00019"
   },
   {
+    "id": "an-se-approach-for-coco-learning-of-virtual-labs-2020",
     "authors": [
       "Lalit Mohan Sanagavarapu",
       "Mrudhivka Damaraju",
@@ -993,6 +1066,7 @@
     "url": "https://doi.org/10.1109/CSEET49119.2020.9206206"
   },
   {
+    "id": "algodynamics-teaching-algorithms-using-interactive-transition-systems-2020",
     "authors": [
       "Venkatesh Choppella",
       "Viswanath Kasturi",
@@ -1007,6 +1081,7 @@
     "doi": ""
   },
   {
+    "id": "usability-evaluation-of-vr-products-in-industry-a-systematic-literature-review-2019",
     "authors": [
       "Sai Anirudh Karre",
       "Neeraj Mathur",
@@ -1020,6 +1095,7 @@
     "url": "https://doi.org/10.1145/3297280.3297462"
   },
   {
+    "id": "tutorials-and-technical-briefings-at-isec-2019-2019",
     "authors": [
       "Venkatesh Choppella",
       "Aseem Rastogi"
@@ -1032,6 +1108,7 @@
     "url": "https://doi.org/10.1145/3299771.3301648"
   },
   {
+    "id": "towards-massively-open-online-virtual-internships-in-computing-education-2019",
     "authors": [
       "Ravi Shankar Pillutla",
       "Venkatesh Choppella",
@@ -1047,6 +1124,7 @@
     "url": "https://doi.org/10.1109/T4E.2019.00-44"
   },
   {
+    "id": "text-cohesion-in-cqa-does-it-impact-rating-2019",
     "authors": [
       "Lalit Mohan Sanagavarapu",
       "Jahfar Ali Pichen",
@@ -1062,6 +1140,7 @@
     "url": "https://doi.org/10.1007/978-3-030-66187-8_3"
   },
   {
+    "id": "software-quality-models-a-systematic-mapping-study-2019",
     "authors": [
       "Padmalata Nistala",
       "Kesav Vithal Nori",
@@ -1075,6 +1154,7 @@
     "url": "https://doi.org/10.1109/ICSSP.2019.00025"
   },
   {
+    "id": "promoting-better-financial-inclusion-through-web-page-transformation-a-systematic-literature-review-2019",
     "authors": [
       "Gollapudi V. R. J. Sai Prasad",
       "Venkatesh Choppella",
@@ -1090,6 +1170,7 @@
     "url": "https://doi.org/10.1007/s42786-019-00010-0"
   },
   {
+    "id": "methodology-to-develop-domain-specific-modeling-languages-2019",
     "authors": [
       "Subhrojyoti Roy Chaudhuri",
       "Swaminathan Natarajan",
@@ -1104,6 +1185,7 @@
     "url": "https://doi.org/10.1145/3358501.3361235"
   },
   {
+    "id": "is-virtual-reality-product-development-different-an-empirical-study-on-vr-product-development-practices-2019",
     "authors": [
       "Sai Anirudh Karre",
       "Neeraj Mathur",
@@ -1117,6 +1199,7 @@
     "url": "https://doi.org/10.1145/3299771.3299772"
   },
   {
+    "id": "grouping-semantically-related-change-sets-to-enhance-identification-of-logical-coupling-2019",
     "authors": [
       "Neeraj Mathur",
       "Sai Anirudh Karre",
@@ -1130,6 +1213,7 @@
     "url": "https://doi.org/10.18293/SEKE2019-166"
   },
   {
+    "id": "fact-fine-grained-assessment-of-web-page-credibility-2019",
     "authors": [
       "Shriyansh Agrawal",
       "Lalit Mohan Sanagavarapu",
@@ -1143,6 +1227,7 @@
     "url": "https://doi.org/10.1109/TENCON.2019.8929515"
   },
   {
+    "id": "enhancing-virtual-labs-usage-in-colleges-2019",
     "authors": [
       "Ravi Shankar Pillutla",
       "Venkatesh Choppella",
@@ -1157,6 +1242,7 @@
     "url": "https://doi.org/10.1109/T4E.2019.00-31"
   },
   {
+    "id": "archlearner-leveraging-machine-learning-techniques-for-proactive-architectural-adaptation-2019",
     "authors": [
       "Henry Muccini",
       "Karthik Vaidhyanathan"
@@ -1169,6 +1255,7 @@
     "url": "https://doi.org/10.1145/3344948.3344962"
   },
   {
+    "id": "a-report-on-1st-software-engineering-research-in-india-update-meeting-seri-2019-2019",
     "authors": [
       "Sai Anirudh Karre",
       "Y. Raghu Reddy",
@@ -1185,6 +1272,7 @@
     "url": "https://doi.org/10.1145/3356773.3356805"
   },
   {
+    "id": "a-machine-learning-driven-approach-for-proactive-decision-making-in-adaptive-architectures-2019",
     "authors": [
       "Henry Muccini",
       "Karthik Vaidhyanathan"
@@ -1197,6 +1285,7 @@
     "url": "https://doi.org/10.1109/ICSA-C.2019.00050"
   },
   {
+    "id": "a-learnable-by-design-lead-model-for-designing-experiments-for-computer-science-labs-2019",
     "authors": [
       "Mrityunjay Kumar",
       "Venkatesh Choppella",
@@ -1211,6 +1300,7 @@
     "url": "https://doi.org/10.1109/T4E.2019.00050"
   },
   {
+    "id": "a-knowledge-centric-approach-to-conceptualizing-robotic-solutions-2019",
     "authors": [
       "Subhrojyoti Roy Chaudhuri",
       "Amar Banerjee",
@@ -1227,6 +1317,7 @@
     "url": "https://doi.org/10.1145/3299771.3299782"
   },
   {
+    "id": "usability-evaluation-framework-for-mobile-apps-using-code-analysis-2018",
     "authors": [
       "Neeraj Mathur",
       "Sai Anirudh Karre",
@@ -1240,6 +1331,7 @@
     "url": "https://doi.org/10.1145/3210459.3210480"
   },
   {
+    "id": "usability-analysis-of-virtual-labs-2018",
     "authors": [
       "Mrityunjay Kumar",
       "Jessica Emory",
@@ -1253,6 +1345,7 @@
     "url": "https://doi.org/10.1109/ICALT.2018.00061"
   },
   {
+    "id": "towards-word-embeddings-for-improved-duplicate-bug-report-retrieval-in-software-repositories-2018",
     "authors": [
       "Amar Budhiraja",
       "Kartik Dutta",
@@ -1267,6 +1360,7 @@
     "url": "https://doi.org/10.1145/3234944.3234949"
   },
   {
+    "id": "towards-a-domain-specific-language-for-the-renarration-of-web-pages-2018",
     "authors": [
       "Gollapudi V. R. J. Sai Prasad",
       "Sridhar Chimalakonda",
@@ -1280,6 +1374,7 @@
     "url": "https://doi.org/10.1145/3172871.3172873"
   },
   {
+    "id": "siren-security-information-retrieval-and-extraction-engine-2018",
     "authors": [
       "Lalit Mohan Sanagavarapu",
       "Neeraj Mathur",
@@ -1294,6 +1389,7 @@
     "url": "https://doi.org/10.1007/978-3-319-76941-7_81"
   },
   {
+    "id": "rank-aggregation-approach-for-identifying-critical-information-infrastructure-2018",
     "authors": [
       "Shadab Ahmad",
       "Lalit Mohan Sanagavarapu",
@@ -1308,6 +1404,7 @@
     "url": "https://doi.org/10.1109/ICACCI.2018.8554880"
   },
   {
+    "id": "proceedings-of-the-11th-innovations-in-software-engineering-conference-isec-2018-hyderabad-india-february-09-11-2018-201",
     "authors": [
       "Y. Raghu Reddy",
       "Vasudeva Varma",
@@ -1327,6 +1424,7 @@
     "url": "https://doi.org/10.1145/3172871"
   },
   {
+    "id": "model-driven-approach-for-virtual-lab-authoring-chemical-sciences-labs-2018",
     "authors": [
       "Lalit Mohan Sanagavarapu",
       "Venkatesh Choppella",
@@ -1340,6 +1438,7 @@
     "url": "https://doi.org/10.1109/ICALT.2018.00062"
   },
   {
+    "id": "lwe-lda-refined-word-embeddings-for-duplicate-bug-report-detection-2018",
     "authors": [
       "Amar Budhiraja",
       "Raghu Reddy",
@@ -1353,6 +1452,7 @@
     "url": "https://doi.org/10.1145/3183440.3195078"
   },
   {
+    "id": "kiet-framework-for-cloud-adoption-indian-banking-case-study-2018",
     "authors": [
       "Lalit Mohan Sanagavarapu",
       "G. R. Gangadharan",
@@ -1366,6 +1466,7 @@
     "url": "https://doi.org/10.4018/IJCAC.2018100105"
   },
   {
+    "id": "generalised-dining-philosophers-as-feedback-control-2018",
     "authors": [
       "Venkatesh Choppella",
       "Viswanath Kasturi",
@@ -1379,6 +1480,7 @@
     "doi": ""
   },
   {
+    "id": "fine-grained-approach-for-domain-specific-seed-url-extraction-2018",
     "authors": [
       "Lalit Mohan Sanagavarapu",
       "Sourav Sarangi",
@@ -1393,6 +1495,7 @@
     "doi": ""
   },
   {
+    "id": "dwen-deep-word-embedding-network-for-duplicate-bug-report-detection-in-software-repositories-2018",
     "authors": [
       "Amar Budhiraja",
       "Kartik Dutta",
@@ -1407,6 +1510,7 @@
     "url": "https://doi.org/10.1145/3183440.3195092"
   },
   {
+    "id": "crowdsourcing-security-opportunities-and-challenges-2018",
     "authors": [
       "Lalit Mohan Sanagavarapu",
       "Y. Raghu Reddy"
@@ -1419,6 +1523,7 @@
     "url": "https://doi.org/10.1145/3195836.3195862"
   },
   {
+    "id": "automated-credibility-assessment-of-web-page-based-on-genre-2018",
     "authors": [
       "Shriyansh Agrawal",
       "Y. Raghu Reddy"
@@ -1431,6 +1536,7 @@
     "url": "https://doi.org/10.1007/978-3-030-04780-1_11"
   },
   {
+    "id": "an-attempt-at-explicating-the-relationship-between-knowledge-systems-and-engineering-2018",
     "authors": [
       "Amar Banerjee",
       "Venkatesh Choppella",
@@ -1447,6 +1553,7 @@
     "url": "https://doi.org/10.1145/3172871.3172875"
   },
   {
+    "id": "a-style-sheets-based-approach-for-semantic-transformation-of-web-pages-2018",
     "authors": [
       "Gollapudi V. R. J. Sai Prasad",
       "Venkatesh Choppella",
@@ -1460,6 +1567,7 @@
     "url": "https://doi.org/10.1007/978-3-319-72344-0_20"
   },
   {
+    "id": "special-issue-on-software-reuse-2017",
     "authors": [
       "Dae-Kyoo Kim",
       "Eunjee Song",
@@ -1474,6 +1582,7 @@
     "url": "https://doi.org/10.1002/spe.2504"
   },
   {
+    "id": "renarrating-web-pages-for-improving-information-accessibility-2017",
     "authors": [
       "Gollapudi V. R. J. Sai Prasad",
       "Maddala Saraswati Soumya",
@@ -1487,6 +1596,7 @@
     "url": "https://doi.org/10.1109/ISKE.2017.8258772"
   },
   {
+    "id": "notion-of-semantics-in-computer-science-a-systematic-literature-review-2017",
     "authors": [
       "Gollapudi V. R. J. Sai Prasad",
       "Venkatesh Choppella"
@@ -1499,6 +1609,7 @@
     "doi": ""
   },
   {
+    "id": "modelling-symposium-modsym-2017",
     "authors": [
       "Y. Raghu Reddy",
       "Vinay Kulkarni"
@@ -1510,6 +1621,7 @@
     "doi": ""
   },
   {
+    "id": "modelling-and-mitigation-of-cross-origin-request-attacks-on-federated-identity-management-using-cross-origin-request-pol",
     "authors": [
       "Akash Agrawall",
       "Shubh Maheshwari",
@@ -1524,6 +1636,7 @@
     "url": "https://doi.org/10.1007/978-3-319-72598-7_16"
   },
   {
+    "id": "mitigating-browser-based-ddos-attacks-using-corp-2017",
     "authors": [
       "Akash Agrawall",
       "Krishna Chaitanya",
@@ -1538,6 +1651,7 @@
     "doi": ""
   },
   {
+    "id": "impact-of-gamification-on-code-review-process-an-experimental-study-2017",
     "authors": [
       "Shivam Khandelwal",
       "Saikrishna Sripada",
@@ -1551,6 +1665,7 @@
     "doi": ""
   },
   {
+    "id": "does-your-bug-tracking-tool-suit-your-needs-a-study-on-open-source-bug-tracking-tools-2017",
     "authors": [
       "Sai Anirudh Karre",
       "Anveshi Shukla",
@@ -1564,6 +1679,7 @@
     "doi": ""
   },
   {
+    "id": "compac-a-pricing-model-for-community-cloud-2017",
     "authors": [
       "Y. Raghu Reddy",
       "G. R. Gangadharan"
@@ -1576,6 +1692,7 @@
     "url": "https://doi.org/10.1109/ICACCI.2017.8126144"
   },
   {
+    "id": "an-aspect-oriented-approach-for-renarrating-web-content-2017",
     "authors": [
       "Gollapudi V. R. J. Sai Prasad",
       "Sridhar Chimalakonda",
@@ -1590,6 +1707,7 @@
     "doi": ""
   },
   {
+    "id": "abc-algorithm-for-url-extraction-2017",
     "authors": [
       "Lalit Mohan Sanagavarapu",
       "Sourav Sarangi",
@@ -1603,6 +1721,7 @@
     "url": "https://doi.org/10.1007/978-3-319-74433-9_12"
   },
   {
+    "id": "a-study-on-migrating-flash-files-to-html5-javascript-2017",
     "authors": [
       "Yogesh Maheshwari",
       "Y. Raghu Reddy"
@@ -1615,6 +1734,7 @@
     "doi": ""
   },
   {
+    "id": "a-lightweight-approach-for-evaluating-sufficiency-of-ontologies-2017",
     "authors": [
       "Lalit Sanagavarapu",
       "Sai Gollapudi",
@@ -1630,6 +1750,7 @@
     "url": "https://doi.org/10.18293/SEKE2017-185"
   },
   {
+    "id": "a-formal-model-of-web-security-showing-malicious-cross-origin-requests-and-its-mitigation-using-corp-2017",
     "authors": [
       "Krishna Chaitanya Telikicherla",
       "Akash Agrawall",
@@ -1643,6 +1764,7 @@
     "url": "https://doi.org/10.5220/0006261105160523"
   },
   {
+    "id": "a-crowdsourcing-approach-for-quality-enhancement-of-elearning-systems-2017",
     "authors": [
       "Priya Raman",
       "Venkatesh Choppella",
@@ -1656,6 +1778,7 @@
     "doi": ""
   },
   {
+    "id": "joint-proceedings-of-the-2nd-modelling-symposium-modsym-and-the-workshop-on-software-architectures-for-adaptive-autonomo",
     "authors": [
       "Atul Kumar",
       "Vinay Kulkarni",
@@ -1672,6 +1795,7 @@
     "doi": ""
   },
   {
+    "id": "how-does-a-program-run-a-visual-model-based-on-annotating-abstract-syntax-trees-2016",
     "authors": [
       "Venkatesh Choppella",
       "Garima Ahuja",
@@ -1685,6 +1809,7 @@
     "url": "https://doi.org/10.1109/LaTiCE.2016.40"
   },
   {
+    "id": "fast-point-to-point-dyck-constrained-shortest-paths-on-a-dag-extended-abstract-2016",
     "authors": [
       "Phillip G. Bradford",
       "Venkatesh Choppella"
@@ -1697,6 +1822,7 @@
     "url": "https://doi.org/10.1109/UEMCON.2016.7777894"
   },
   {
+    "id": "distributed-safety-verification-using-vertex-centric-programming-model-2016",
     "authors": [
       "Adhish Singla",
       "Krishnaji Desai",
@@ -1711,6 +1837,7 @@
     "url": "https://doi.org/10.1109/ISPDC.2016.23"
   },
   {
+    "id": "architecting-an-extensible-framework-for-gamifying-software-engineering-concepts-2016",
     "authors": [
       "Saikrishna Sripada",
       "Y. Raghu Reddy",
@@ -1724,6 +1851,7 @@
     "url": "https://doi.org/10.1145/2856636.2856649"
   },
   {
+    "id": "transformation-of-flash-files-to-html5-and-javascript-2015",
     "authors": [
       "Yogesh Maheshwari",
       "Y. Raghu Reddy"
@@ -1736,6 +1864,7 @@
     "url": "https://doi.org/10.1145/2811681.2811686"
   },
   {
+    "id": "seventh-ieee-international-conference-on-technology-for-education-t4e-2015-warangal-india-december-10-12-2015-2015",
     "authors": [
       "Venkatesh Choppella",
       "Sridhar Iyer",
@@ -1749,6 +1878,7 @@
     "doi": ""
   },
   {
+    "id": "sangeetkosh-an-open-web-platform-for-music-education-2015",
     "authors": [
       "Tejaswinee Kelkar",
       "Anon Ray",
@@ -1762,6 +1892,7 @@
     "url": "https://doi.org/10.1109/ICALT.2015.102"
   },
   {
+    "id": "reengineering-enterprise-wide-legacy-bfsi-systems-industrial-case-study-2015",
     "authors": [
       "Prabhakar Cherukupalli",
       "Y. Raghu Reddy"
@@ -1774,6 +1905,7 @@
     "url": "https://doi.org/10.1145/2723742.2723746"
   },
   {
+    "id": "moving-beyond-insights-from-1st-international-workshop-on-software-engineering-research-and-industrial-practices-ser-ips",
     "authors": [
       "Sridhar Chimalakonda",
       "Y. Raghu Reddy",
@@ -1787,6 +1919,7 @@
     "url": "https://doi.org/10.1145/2735399.2735418"
   },
   {
+    "id": "mobile-app-usability-index-maui-for-improving-mobile-banking-adoption-2015",
     "authors": [
       "Neeraj Mathur",
       "Y. Raghu Reddy"
@@ -1799,6 +1932,7 @@
     "url": "https://doi.org/10.5220/0005363003130320"
   },
   {
+    "id": "incremental-aspect-weaving-an-approach-for-faster-aop-learning-2015",
     "authors": [
       "Y. Raghu Reddy",
       "Anish Shankar",
@@ -1812,6 +1946,7 @@
     "url": "https://doi.org/10.1145/2695664.2695688"
   },
   {
+    "id": "in-support-of-peer-code-review-and-inspection-in-an-undergraduate-software-engineering-course-2015",
     "authors": [
       "Saikrishna Sripada",
       "Y. Raghu Reddy",
@@ -1825,6 +1960,7 @@
     "url": "https://doi.org/10.1109/CSEET.2015.8"
   },
   {
+    "id": "improving-mobile-banking-usability-based-on-sentiments-2015",
     "authors": [
       "Neeraj Mathur",
       "Y. Raghu Reddy"
@@ -1837,6 +1973,7 @@
     "url": "https://doi.org/10.1007/978-3-319-30243-0_10"
   },
   {
+    "id": "heuristic-approaches-to-improve-product-quality-in-large-scale-integrated-software-products-2015",
     "authors": [
       "Sai Anirudh Karre",
       "Y. Raghu Reddy"
@@ -1849,6 +1986,7 @@
     "url": "https://doi.org/10.1007/978-3-319-30243-0_5"
   },
   {
+    "id": "generation-of-quizzes-and-solutions-based-on-ontologies-a-case-for-a-music-problem-generator-2015",
     "authors": [
       "Aditi Mavalankar",
       "Tejaswinee Kelkar",
@@ -1862,6 +2000,7 @@
     "url": "https://doi.org/10.1109/T4E.2015.16"
   },
   {
+    "id": "correctness-of-semantic-code-smell-detection-tools-2015",
     "authors": [
       "Neeraj Mathur",
       "Y. Raghu Reddy"
@@ -1874,6 +2013,7 @@
     "url": ""
   },
   {
+    "id": "code-comprehension-activities-in-undergraduate-software-engineering-course-a-case-study-2015",
     "authors": [
       "Saikrishna Sripada",
       "Y. Raghu Reddy"
@@ -1886,6 +2026,7 @@
     "url": "https://doi.org/10.1109/ASWEC.2015.18"
   },
   {
+    "id": "assessing-the-impact-of-virtual-labs-a-case-study-with-the-lab-on-advanced-vlsi-2015",
     "authors": [
       "Garima Ahuja",
       "Anubha Gupta",
@@ -1900,6 +2041,7 @@
     "url": "https://doi.org/10.1109/ICALT.2015.41"
   },
   {
+    "id": "an-industrial-case-study-on-improving-quality-in-integrated-software-product-using-defect-dependency-2015",
     "authors": [
       "Sai Anirudh Karre",
       "Y. Raghu Reddy"
@@ -1912,6 +2054,7 @@
     "url": ""
   },
   {
+    "id": "a-report-on-software-engineering-education-workshop-seew-2014-co-located-with-asia-pacific-software-engineering-conferen",
     "authors": [
       "Ashish Sureka",
       "Y. Raghu Reddy",
@@ -1926,6 +2069,7 @@
     "url": "https://doi.org/10.1145/2693208.2693250"
   },
   {
+    "id": "a-report-on-modelling-symposium-modsym-2015",
     "authors": [
       "Y. Raghu Reddy",
       "Vinay Kulkarni"
@@ -1938,6 +2082,7 @@
     "url": "https://doi.org/10.1145/2723742.2723770"
   },
   {
+    "id": "a-defect-dependency-based-approach-to-improve-software-quality-in-integrated-software-products-2015",
     "authors": [
       "Sai Anirudh Karre",
       "Y. Raghu Reddy"
@@ -1950,6 +2095,7 @@
     "url": "https://doi.org/10.5220/0005368801100117"
   },
   {
+    "id": "2015-asia-pacific-software-engineering-conference-apsec-2015-new-delhi-india-december-1-4-2015-2015",
     "authors": [
       "Jing Sun",
       "Raghu Reddy",
@@ -1964,6 +2110,7 @@
     "doi": ""
   },
   {
+    "id": "teaching-software-product-engineering-in-undergraduate-computing-curriculum-2014",
     "authors": [
       "Y. Raghu Reddy",
       "Kesav V. Nori"
@@ -1976,6 +2123,7 @@
     "url": "https://doi.org/10.1109/CSEET.2014.6816798"
   },
   {
+    "id": "providing-web-credibility-assessment-support-2014",
     "authors": [
       "Sonal Aggarwal",
       "Herre van Oostendorp",
@@ -1990,6 +2138,7 @@
     "url": "https://doi.org/10.1145/2637248.2637260"
   },
   {
+    "id": "overcoming-the-new-accessibility-challenges-using-the-sweet-framework-2014",
     "authors": [
       "Gollapudi V. R. J. Sai Prasad",
       "T. B. Dinesh",
@@ -2003,6 +2152,7 @@
     "url": "https://doi.org/10.1145/2596695.2596711"
   },
   {
+    "id": "large-scale-web-page-optimization-of-virtual-labs-2014",
     "authors": [
       "Jatin Agarwal",
       "Utkarsh Rastogiy",
@@ -2019,6 +2169,7 @@
     "url": "https://doi.org/10.1109/T4E.2014.51"
   },
   {
+    "id": "enabling-the-development-of-safer-mashups-for-open-data-2014",
     "authors": [
       "Krishna Chaitanya Telikicherla",
       "Venkatesh Choppella"
@@ -2031,6 +2182,7 @@
     "url": "https://doi.org/10.1145/2593761.2593764"
   },
   {
+    "id": "edit-distance-modulo-bisimulation-a-quantitative-measure-to-study-evolution-of-user-models-2014",
     "authors": [
       "Himanshu Zade",
       "Santosh Arvind Adimoolam",
@@ -2046,6 +2198,7 @@
     "url": "https://doi.org/10.1145/2556288.2557191"
   },
   {
+    "id": "corp-a-browser-policy-to-mitigate-web-infiltration-attacks-2014",
     "authors": [
       "Krishna Chaitanya Telikicherla",
       "Venkatesh Choppella",
@@ -2059,6 +2212,7 @@
     "url": "https://doi.org/10.1007/978-3-319-13841-1_16"
   },
   {
+    "id": "any-time-virtual-labs-on-portable-media-and-as-debian-packages-2014",
     "authors": [
       "Nurendra Choudhary",
       "Venkatesh Choppella",
@@ -2073,6 +2227,7 @@
     "url": "https://doi.org/10.1109/T4E.2014.9"
   },
   {
+    "id": "viewing-algorithms-as-iterative-systems-and-plotting-their-dynamic-behaviour-2013",
     "authors": [
       "Venkatesh Choppella",
       "Viswanath Kasturi",
@@ -2086,6 +2241,7 @@
     "url": "https://doi.org/10.1109/T4E.2013.56"
   },
   {
+    "id": "state-based-access-control-for-open-e-governance-2013",
     "authors": [
       "Ankur Goel",
       "Venkatesh Choppella"
@@ -2098,6 +2254,7 @@
     "url": "https://doi.org/10.1145/2591888.2591892"
   },
   {
+    "id": "power-of-friends-when-friends-guess-about-their-friends-guess-2013",
     "authors": [
       "Deepti Aggarwal",
       "Rohit Ashok Khot",
@@ -2111,6 +2268,7 @@
     "url": "https://doi.org/10.1145/2468356.2468518"
   },
   {
+    "id": "jiffy-a-framework-for-encompassing-aspects-in-testing-and-debugging-software-2013",
     "authors": [
       "Mohammad Asif",
       "Y. Raghu Reddy"
@@ -2123,6 +2281,7 @@
     "url": "https://doi.org/10.1109/IWAST.2013.6595806"
   },
   {
+    "id": "descriptive-study-of-college-bound-rural-youth-of-ap-india-2013",
     "authors": [
       "Gollapudi V. R. J. Sai Prasad",
       "Venkatesh Choppella"
@@ -2135,6 +2294,7 @@
     "url": "https://doi.org/10.1109/T4E.2013.27"
   },
   {
+    "id": "using-org-mode-and-subversion-for-managing-and-publishing-content-in-computer-science-courses-2012",
     "authors": [
       "Sankalp Khare",
       "Yishan Misra",
@@ -2148,6 +2308,7 @@
     "url": "https://doi.org/10.1109/T4E.2012.58"
   },
   {
+    "id": "functionality-or-user-interface-which-is-easier-to-learn-when-changed-2012",
     "authors": [
       "Himanshu Zade",
       "Venkatesh Choppella"
@@ -2160,6 +2321,7 @@
     "url": "https://doi.org/10.1109/IHCI.2012.6481829"
   },
   {
+    "id": "from-high-school-algebra-to-computing-through-functional-programming-2012",
     "authors": [
       "Venkatesh Choppella",
       "Hitesh Kumar",
@@ -2174,6 +2336,7 @@
     "url": "https://doi.org/10.1109/T4E.2012.42"
   },
   {
+    "id": "alipi-tools-for-a-re-narration-web-2012",
     "authors": [
       "T. B. Dinesh",
       "Venkatesh Choppella"
@@ -2186,6 +2349,7 @@
     "url": "https://doi.org/10.1145/2207016.2207038"
   },
   {
+    "id": "alipi-a-framework-for-re-narrating-web-pages-2012",
     "authors": [
       "T. B. Dinesh",
       "Susan M. Üsküdarli",
@@ -2201,6 +2365,7 @@
     "url": "https://doi.org/10.1145/2207016.2207030"
   },
   {
+    "id": "algebraic-modelling-of-educational-workflows-2012",
     "authors": [
       "Ankur Goel",
       "Venkatesh Choppella"
@@ -2213,6 +2378,7 @@
     "url": "https://doi.org/10.1109/T4E.2012.60"
   },
   {
+    "id": "process-models-for-virtual-lab-development-deployment-and-distribution-2011",
     "authors": [
       "Venkatesh Choppella",
       "Vamsi Krishna Brahmajosyula",
@@ -2227,6 +2393,7 @@
     "url": "https://doi.org/10.1109/T4E.2011.61"
   },
   {
+    "id": "discovir-a-framework-for-designing-interfaces-and-structuring-content-for-virtual-labs-2011",
     "authors": [
       "Rohit Ashok Khot",
       "Venkatesh Choppella"
@@ -2239,6 +2406,7 @@
     "url": "https://doi.org/10.1109/T4E.2011.27"
   },
   {
+    "id": "a-virtual-laboratory-for-teaching-linux-on-the-web-2011",
     "authors": [
       "Krishna Chaitanya Bandi",
       "Aditya Kiran Nori",
@@ -2253,6 +2421,7 @@
     "url": "https://doi.org/10.1109/T4E.2011.41"
   },
   {
+    "id": "a-hybrid-mpi-openmp-scheme-for-scalable-parallel-pseudospectral-computations-for-fluid-turbulence-2011",
     "authors": [
       "Pablo D. Mininni",
       "Duane Rosenberg",
@@ -2267,6 +2436,7 @@
     "url": "https://doi.org/10.1016/j.parco.2011.05.004"
   },
   {
+    "id": "synthesizing-customizable-learning-environments-2010",
     "authors": [
       "Thulasi Ram Naidu",
       "Manisha Verma",
@@ -2281,6 +2451,7 @@
     "url": "https://doi.org/10.1109/T4E.2010.5550047"
   },
   {
+    "id": "role-of-early-aspects-in-software-maintenance-projects-2009",
     "authors": [
       "Varsha Rathod",
       "Y. Raghu Reddy"
@@ -2293,6 +2464,7 @@
     "url": ""
   },
   {
+    "id": "fostering-community-interaction-through-the-trivandrum-city-police-portal-2009",
     "authors": [
       "Venkatesh Choppella",
       "K. R. Srivathsan"
@@ -2305,6 +2477,7 @@
     "url": "https://doi.org/10.1145/1693042.1693119"
   },
   {
+    "id": "a-comparison-of-aspect-oriented-approaches-to-model-driven-engineering-2009",
     "authors": [
       "Devon M. Simmonds",
       "Y. Raghu Reddy",
@@ -2319,6 +2492,7 @@
     "url": ""
   },
   {
+    "id": "providing-support-for-model-composition-in-metamodels-2007",
     "authors": [
       "Robert B. France",
       "Franck Fleurey",
@@ -2334,6 +2508,7 @@
     "url": "https://doi.org/10.1109/EDOC.2007.55"
   },
   {
+    "id": "a-method-engineering-approach-to-developing-aspect-oriented-modelling-processes-based-on-the-open-process-framework-2007",
     "authors": [
       "Brian Henderson-Sellers",
       "Robert B. France",
@@ -2348,6 +2523,7 @@
     "url": "https://doi.org/10.1016/j.infsof.2006.08.003"
   },
   {
+    "id": "identifying-cost-effective-common-subexpressions-to-reduce-operation-count-in-tensor-contraction-evaluations-2006",
     "authors": [
       "Albert Hartono",
       "Qingda Lu",
@@ -2370,6 +2546,7 @@
     "url": "https://doi.org/10.1007/11758501_39"
   },
   {
+    "id": "efficient-synthesis-of-out-of-core-algorithms-using-a-nonlinear-optimization-solver-2006",
     "authors": [
       "Sandhya Krishnan",
       "Sriram Krishnamoorthy",
@@ -2387,6 +2564,7 @@
     "url": "https://doi.org/10.1016/j.jpdc.2005.06.017"
   },
   {
+    "id": "directives-for-composing-aspect-oriented-design-class-models-2006",
     "authors": [
       "Y. Raghu Reddy",
       "Sudipto Ghosh",
@@ -2405,6 +2583,7 @@
     "url": "https://doi.org/10.1007/11687061_3"
   },
   {
+    "id": "developing-distributed-services-using-an-aspect-oriented-model-driven-framework-2006",
     "authors": [
       "Arnor Solberg",
       "Devon M. Simmonds",
@@ -2421,6 +2600,7 @@
     "url": "https://doi.org/10.1142/S0218843006001487"
   },
   {
+    "id": "verifiable-composition-of-access-control-and-application-features-2005",
     "authors": [
       "Eunjee Song",
       "Raghu Reddy",
@@ -2437,6 +2617,7 @@
     "url": "https://doi.org/10.1145/1063979.1064001"
   },
   {
+    "id": "using-aspect-oriented-techniques-to-support-separation-of-concerns-in-model-driven-development-2005",
     "authors": [
       "Arnor Solberg",
       "Devon M. Simmonds",
@@ -2452,6 +2633,7 @@
     "url": "https://doi.org/10.1109/COMPSAC.2005.168"
   },
   {
+    "id": "synthesis-of-high-performance-parallel-programs-for-a-class-of-ab-initio-quantum-chemistry-models-2005",
     "authors": [
       "Gerald Baumgartner",
       "Alexander A. Auer",
@@ -2480,6 +2662,7 @@
     "url": "https://doi.org/10.1109/JPROC.2004.840311"
   },
   {
+    "id": "source-tracking-unification-2005",
     "authors": [
       "Venkatesh Choppella",
       "Christopher T. Haynes"
@@ -2492,6 +2675,7 @@
     "url": "https://doi.org/10.1016/j.ic.2004.10.013"
   },
   {
+    "id": "an-aspect-oriented-model-driven-framework-2005",
     "authors": [
       "Devon M. Simmonds",
       "Raghu Reddy",
@@ -2507,6 +2691,7 @@
     "url": "https://doi.org/10.1109/EDOC.2005.5"
   },
   {
+    "id": "specifying-cross-cutting-requirement-concerns-2004",
     "authors": [
       "Geri Georg",
       "Raghu Reddy",
@@ -2520,6 +2705,7 @@
     "url": "https://doi.org/10.1007/978-3-540-30187-5_9"
   },
   {
+    "id": "efficient-synthesis-of-out-of-core-algorithms-using-a-nonlinear-optimization-solver-2004",
     "authors": [
       "Sandhya Krishnan",
       "Sriram Krishnamoorthy",
@@ -2537,6 +2723,7 @@
     "url": "https://doi.org/10.1109/IPDPS.2004.1302948"
   },
   {
+    "id": "web100-extended-tcp-instrumentation-for-research-education-and-diagnosis-2003",
     "authors": [
       "Matthew Mathis",
       "John Heffner",
@@ -2550,6 +2737,7 @@
     "url": "https://doi.org/10.1145/956993.957002"
   },
   {
+    "id": "source-tracking-unification-2003",
     "authors": [
       "Venkatesh Choppella",
       "Christopher T. Haynes"
@@ -2562,6 +2750,7 @@
     "url": "https://doi.org/10.1007/978-3-540-45085-6_39"
   },
   {
+    "id": "polymorphic-type-reconstruction-using-type-equations-2003",
     "authors": [
       "Venkatesh Choppella"
     ],
@@ -2573,6 +2762,7 @@
     "url": "https://doi.org/10.1007/978-3-540-27861-0_4"
   },
   {
+    "id": "memory-constrained-data-locality-optimization-for-tensor-contractions-2003",
     "authors": [
       "Alina Bibireata",
       "Sandhya Krishnan",
@@ -2592,6 +2782,7 @@
     "url": "https://doi.org/10.1007/978-3-540-24644-2_7"
   },
   {
+    "id": "data-locality-optimization-for-synthesis-of-efficient-out-of-core-algorithms-2003",
     "authors": [
       "Sandhya Krishnan",
       "Sriram Krishnamoorthy",
@@ -2611,6 +2802,7 @@
     "url": "https://doi.org/10.1007/978-3-540-24596-4_44"
   },
   {
+    "id": "validating-run-time-interactions-in-distributed-java-applications-2002",
     "authors": [
       "Sudipto Ghosh",
       "Nishant Bawa",
@@ -2625,6 +2817,7 @@
     "url": "https://doi.org/10.1109/ICECCS.2002.1181493"
   },
   {
+    "id": "requirements-for-and-evaluation-of-rmi-protocols-for-scientific-computing-2000",
     "authors": [
       "Madhusudhan Govindaraju",
       "Aleksander Slominski",
@@ -2640,6 +2833,7 @@
     "url": "https://doi.org/10.1109/SC.2000.10060"
   },
   {
+    "id": "a-tutorial-on-digital-design-derivation-using-drs-1996",
     "authors": [
       "Bhaskar Bose",
       "M. Esen Tuna",
@@ -2653,6 +2847,7 @@
     "url": "https://doi.org/10.1007/BFb0031815"
   },
   {
+    "id": "lower-bounds-for-the-matrix-chain-ordering-problem-extended-bstract-1995",
     "authors": [
       "Phillip G. Bradford",
       "Venkatesh Choppella",
@@ -2666,6 +2861,7 @@
     "url": "https://doi.org/10.1007/3-540-59175-3_85"
   },
   {
+    "id": "decomposition-of-sequential-behavior-using-interface-specification-and-complementation-1995",
     "authors": [
       "Kamlesh Rath",
       "Venkatesh Choppella",

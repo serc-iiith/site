@@ -1,238 +1,155 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
+import { readData, writeData } from '@/lib/adminData';
+import { slugify, uniqueSlug } from '@/lib/slug';
+import {
+    blogPostSchema,
+    blogPutSchema,
+    blogReorderSchema,
+    formatIssues,
+} from '@/lib/adminSchemas';
+import { z } from 'zod';
 
-// Dev-only: this route is stripped from the static export at build time.
-// force-static keeps `next build --output export` happy; POST/PUT/DELETE still
-// run under `NEXT_DISABLE_EXPORT=1 next dev`.
+// Dev-only tool: this route is stripped from the static export at build time.
+// force-static keeps `next build` (output: 'export') happy; the mutating methods
+// still run under `NEXT_DISABLE_EXPORT=1 next dev`.
 export const dynamic = 'force-static';
 
-const blogsFilePath = path.join(process.cwd(), 'public', 'data', 'blogs.json');
+const FILE = 'blogs.json';
 const blogsImagesDir = path.join(process.cwd(), 'public', 'images', 'blogs');
 
-// Helper function to read the blogs data
-function readBlogsData() {
-  try {
-    const fileContents = fs.readFileSync(blogsFilePath, 'utf8');
-    return JSON.parse(fileContents);
-  } catch (error) {
-    console.error('Error reading blogs data:', error);
-    return [];
-  }
+type Blog = Record<string, unknown> & { id?: number; slug?: string; title?: string; coverImage?: string };
+
+async function renameImageFile(oldImageURL: string, newSlug: string): Promise<string | null> {
+    try {
+        if (!oldImageURL || !oldImageURL.includes('/images/blogs/')) return null;
+        const oldFilename = oldImageURL.split('/').pop();
+        if (!oldFilename) return null;
+        const fileExt = path.extname(oldFilename);
+        let newFilename = `${newSlug}${fileExt}`;
+        if (oldFilename === newFilename) return null;
+        const oldFilePath = path.join(blogsImagesDir, oldFilename);
+        if (!fs.existsSync(oldFilePath)) return null;
+        let newFilePath = path.join(blogsImagesDir, newFilename);
+        if (fs.existsSync(newFilePath)) {
+            newFilename = `${newSlug}-${Date.now()}${fileExt}`;
+            newFilePath = path.join(blogsImagesDir, newFilename);
+        }
+        fs.renameSync(oldFilePath, newFilePath);
+        return `/images/blogs/${newFilename}`;
+    } catch (error) {
+        console.error('Error renaming blog image file:', error);
+        return null;
+    }
 }
 
-// Helper function to write the blogs data
-function writeBlogsData(data: any) {
-  fs.writeFileSync(blogsFilePath, JSON.stringify(data, null, 2), 'utf8');
-}
-
-// Helper function to generate slug from title
-function generateSlug(title: string): string {
-  return title
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/(^-|-$)/g, '');
-}
-
-// Helper function to rename an image file when slug changes
-async function renameImageFile(oldImageURL: string, oldSlug: string, newSlug: string): Promise<string | null> {
-  try {
-    // Skip if no image or if the image isn't in the blogs directory
-    if (!oldImageURL || !oldImageURL.includes('/images/blogs/')) {
-      return null;
-    }
-
-    // Extract old filename from URL
-    const oldFilename = oldImageURL.split('/').pop();
-
-    // Skip if we can't parse the filename
-    if (!oldFilename) {
-      return null;
-    }
-
-    // Get file extension
-    const fileExt = path.extname(oldFilename);
-    const newFilename = `${newSlug}${fileExt}`;
-
-    // Skip if the filename is already correctly named
-    if (oldFilename === newFilename) {
-      return null;
-    }
-
-    const oldFilePath = path.join(blogsImagesDir, oldFilename);
-    const newFilePath = path.join(blogsImagesDir, newFilename);
-
-    // Check if old file exists
-    if (!fs.existsSync(oldFilePath)) {
-      return null;
-    }
-
-    // Check if new file path already exists, avoid overwrite
-    if (fs.existsSync(newFilePath)) {
-      // Generate unique name with timestamp to avoid conflicts
-      const timestamp = Date.now();
-      const newUniqueFilename = `${newSlug}-${timestamp}${fileExt}`;
-      const newUniqueFilePath = path.join(blogsImagesDir, newUniqueFilename);
-      fs.renameSync(oldFilePath, newUniqueFilePath);
-      return `/images/blogs/${newUniqueFilename}`;
-    }
-
-    // Rename the file
-    fs.renameSync(oldFilePath, newFilePath);
-
-    // Return the new URL
-    return `/images/blogs/${newFilename}`;
-  } catch (error) {
-    console.error('Error renaming blog image file:', error);
-    return null;
-  }
-}
-
-// GET: Fetch all blogs
 export async function GET() {
-  try {
-    const data = readBlogsData();
-    return NextResponse.json(data);
-  } catch (error) {
-    console.error('Error reading blogs data:', error);
-    return NextResponse.json({ error: 'Failed to read blogs data' }, { status: 500 });
-  }
+    try {
+        return NextResponse.json(await readData<Blog[]>(FILE));
+    } catch (error) {
+        console.error('Error reading blogs data:', error);
+        return NextResponse.json({ error: 'Failed to read blogs data' }, { status: 500 });
+    }
 }
 
-// POST: Add a new blog
 export async function POST(request: NextRequest) {
-  try {
-    const blog = await request.json();
+    try {
+        const parsed = blogPostSchema.safeParse(await request.json());
+        if (!parsed.success) {
+            return NextResponse.json(
+                { error: 'Validation failed', issues: formatIssues(parsed.error) },
+                { status: 400 },
+            );
+        }
+        const blog = parsed.data as Blog;
+        const blogs = await readData<Blog[]>(FILE);
 
-    if (!blog || !blog.title || !blog.author || !blog.content) {
-      return NextResponse.json(
-        { error: 'Required blog data is missing' },
-        { status: 400 }
-      );
+        blog.id = Math.max(0, ...blogs.map((b) => Number(b.id) || 0)) + 1;
+        blog.slug = uniqueSlug(
+            blog.slug || slugify(String(blog.title)),
+            blogs.map((b) => b.slug ?? ''),
+        );
+
+        blogs.unshift(blog);
+        await writeData(FILE, blogs);
+
+        return NextResponse.json({ success: true, id: blog.id, slug: blog.slug });
+    } catch (error) {
+        console.error('Error adding blog:', error);
+        return NextResponse.json({ error: 'Failed to add blog' }, { status: 500 });
     }
-
-    const blogs = readBlogsData();
-    const newId = blogs.length + 1;
-    blog.id = newId;
-
-    // Generate slug if not provided
-    if (!blog.slug) {
-      blog.slug = generateSlug(blog.title);
-    }
-
-    // Set date if not provided
-    if (!blog.date) {
-      const now = new Date();
-      const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
-      blog.date = now.toLocaleDateString('en-US', options);
-    }
-
-    // Remove any generate flag that might have been passed
-    if (blog.generateNewSlug !== undefined) {
-      delete blog.generateNewSlug;
-    }
-
-    // Add the new blog to the beginning of the array (most recent first)
-    blogs.unshift(blog);
-
-    writeBlogsData(blogs);
-
-    return NextResponse.json({ success: true, id: newId, slug: blog.slug });
-  } catch (error) {
-    console.error('Error adding blog:', error);
-    return NextResponse.json({ error: 'Failed to add blog' }, { status: 500 });
-  }
 }
 
-// PUT: Update an existing blog
 export async function PUT(request: NextRequest) {
-  try {
-    const updatedBlog = await request.json();
+    try {
+        const body = await request.json();
 
-    if (!updatedBlog || !updatedBlog.id) {
-      return NextResponse.json(
-        { error: 'Blog ID is required' },
-        { status: 400 }
-      );
+        const reorder = blogReorderSchema.safeParse(body);
+        if (reorder.success) {
+            const blogs = await readData<Blog[]>(FILE);
+            const byId = new Map(blogs.map((b) => [Number(b.id), b]));
+            const ordered = reorder.data.ids.map((id) => byId.get(id)).filter(Boolean) as Blog[];
+            for (const b of blogs) if (!reorder.data.ids.includes(Number(b.id))) ordered.push(b);
+            await writeData(FILE, ordered);
+            return NextResponse.json({ success: true });
+        }
+
+        const parsed = blogPutSchema.safeParse(body);
+        if (!parsed.success) {
+            return NextResponse.json(
+                { error: 'Validation failed', issues: formatIssues(parsed.error) },
+                { status: 400 },
+            );
+        }
+        const blog = parsed.data as Blog;
+        const blogs = await readData<Blog[]>(FILE);
+
+        const index = blogs.findIndex((b) => Number(b.id) === Number(blog.id));
+        if (index === -1) {
+            return NextResponse.json({ error: 'Blog not found' }, { status: 404 });
+        }
+
+        const oldSlug = blogs[index].slug ?? '';
+        blog.slug = uniqueSlug(
+            blog.slug || slugify(String(blog.title)),
+            blogs.filter((_, i) => i !== index).map((b) => b.slug ?? ''),
+        );
+
+        if (blog.slug !== oldSlug && blog.coverImage) {
+            const renamed = await renameImageFile(blog.coverImage, blog.slug);
+            if (renamed) blog.coverImage = renamed;
+        }
+
+        blogs[index] = blog;
+        await writeData(FILE, blogs);
+
+        return NextResponse.json({ success: true, id: blog.id, slug: blog.slug });
+    } catch (error) {
+        console.error('Error updating blog:', error);
+        return NextResponse.json({ error: 'Failed to update blog' }, { status: 500 });
     }
-
-    const blogs = readBlogsData();
-
-    // Find the index of the blog to update
-    const index = blogs.findIndex((b: any) => b.id === updatedBlog.id);
-
-    if (index === -1) {
-      return NextResponse.json(
-        { error: 'Blog not found' },
-        { status: 404 }
-      );
-    }
-
-    // Generate slug if title changed
-    const oldSlug = blogs[index].slug;
-    let slugChanged = false;
-
-    if (blogs[index].title !== updatedBlog.title && updatedBlog.generateNewSlug) {
-      updatedBlog.slug = generateSlug(updatedBlog.title);
-      slugChanged = true;
-    }
-
-    // Remove the generateNewSlug property before saving
-    if (updatedBlog.generateNewSlug !== undefined) {
-      delete updatedBlog.generateNewSlug;
-    }
-
-    // Rename image file if slug changed
-    if (slugChanged && updatedBlog.coverImage) {
-      const newImageURL = await renameImageFile(updatedBlog.coverImage, oldSlug, updatedBlog.slug);
-      if (newImageURL) {
-        updatedBlog.coverImage = newImageURL;
-      }
-    }
-
-    // Update the blog
-    blogs[index] = updatedBlog;
-
-    writeBlogsData(blogs);
-
-    return NextResponse.json({ success: true, slug: updatedBlog.slug });
-  } catch (error) {
-    console.error('Error updating blog:', error);
-    return NextResponse.json({ error: 'Failed to update blog' }, { status: 500 });
-  }
 }
 
-// DELETE: Remove a blog
 export async function DELETE(request: NextRequest) {
-  try {
-    const { searchParams } = new URL(request.url);
-    const id = searchParams.get('id');
+    try {
+        const { searchParams } = new URL(request.url);
+        const id = z.coerce.number().int().safeParse(searchParams.get('id'));
+        if (!id.success) {
+            return NextResponse.json({ error: 'Blog ID is required' }, { status: 400 });
+        }
 
-    if (!id) {
-      return NextResponse.json(
-        { error: 'Blog ID is required' },
-        { status: 400 }
-      );
+        const blogs = await readData<Blog[]>(FILE);
+        const index = blogs.findIndex((b) => Number(b.id) === id.data);
+        if (index === -1) {
+            return NextResponse.json({ error: 'Blog not found' }, { status: 404 });
+        }
+        blogs.splice(index, 1);
+        await writeData(FILE, blogs);
+
+        return NextResponse.json({ success: true });
+    } catch (error) {
+        console.error('Error deleting blog:', error);
+        return NextResponse.json({ error: 'Failed to delete blog' }, { status: 500 });
     }
-
-    const blogs = readBlogsData();
-
-    // Filter out the blog to delete
-    const filteredBlogs = blogs.filter((b: any) => b.id !== parseInt(id));
-
-    if (filteredBlogs.length === blogs.length) {
-      return NextResponse.json(
-        { error: 'Blog not found' },
-        { status: 404 }
-      );
-    }
-
-    writeBlogsData(filteredBlogs);
-
-    return NextResponse.json({ success: true });
-  } catch (error) {
-    console.error('Error deleting blog:', error);
-    return NextResponse.json({ error: 'Failed to delete blog' }, { status: 500 });
-  }
 }

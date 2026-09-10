@@ -398,14 +398,14 @@ const EditProjects: React.FC = () => {
                                 </label>
                                 <select
                                     name="category"
-                                    value={formData.category}
+                                    value={categories.find(c => c.toLowerCase() === (formData.category || '').toLowerCase()) || ''}
                                     onChange={handleInputChange}
                                     className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
                                     disabled={isLoading}
                                 >
                                     <option value="">Select a category</option>
-                                    {categories.map((category, index) => (
-                                        <option key={index} value={category.toLowerCase()}>
+                                    {categories.map((category) => (
+                                        <option key={category} value={category}>
                                             {category}
                                         </option>
                                     ))}
