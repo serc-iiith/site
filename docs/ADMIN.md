@@ -40,6 +40,12 @@ ssh deploy@server 'sudo nginx -t && sudo systemctl reload nginx'
 - `bun run validate-data` checks every record in `public/data/*.json`.
 - `bun run test` runs the unit tests for the slug / data / schema helpers.
 
+## Reordering
+
+Projects, Blog posts, and People (per category) have a **Reorder** toggle above
+the list — drag to set the order they appear in on the public site. Changes save
+automatically. News stays sorted by date; Papers by year; Collaborators by name.
+
 ## Data model notes (authoritative — the schemas, not README)
 
 | File | Shape | Identity |
