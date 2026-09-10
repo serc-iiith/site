@@ -21,6 +21,10 @@ const nextConfig: NextConfig = {
   // (POST/PUT/DELETE) run. The dashboard is dev-only and `npm run build`
   // strips it from the export regardless.
   output: process.env.NEXT_DISABLE_EXPORT ? undefined : 'export',
+  // Admin dev server uses its own build dir so it never collides with a
+  // concurrent `bun run build` (which would corrupt a shared .next and throw
+  // ENOENT `_buildManifest.js.tmp` / `app-build-manifest.json` errors).
+  distDir: process.env.NEXT_DISABLE_EXPORT ? '.next-admin' : '.next',
   trailingSlash: true,
 
   // Performance optimizations

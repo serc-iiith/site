@@ -326,8 +326,10 @@ const EditBlogs: React.FC = () => {
         setIsLoading(true);
 
         try {
-            const response = await fetch(`/api/blogs?id=${deleteModal.blogId}`, {
-                method: 'DELETE'
+            const response = await fetch('/api/blogs', {
+                method: 'DELETE',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id: deleteModal.blogId }),
             });
 
             if (!response.ok) {

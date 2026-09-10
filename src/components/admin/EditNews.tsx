@@ -358,8 +358,10 @@ const EditNews: React.FC = () => {
         setIsLoading(true);
 
         try {
-            const response = await fetch(`/api/news?slug=${encodeURIComponent(String(deleteModal.eventId))}`, {
-                method: 'DELETE'
+            const response = await fetch('/api/news', {
+                method: 'DELETE',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ slug: String(deleteModal.eventId) }),
             });
 
             if (!response.ok) {

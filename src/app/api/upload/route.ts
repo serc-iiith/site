@@ -4,8 +4,8 @@ import path from 'path';
 import { sanitizeFilenameSlug, slugify } from '@/lib/slug';
 
 // Dev-only tool: this route is stripped from the static export at build time.
-// force-static keeps `next build` (output: 'export') happy; POST still runs
-// under `NEXT_DISABLE_EXPORT=1 next dev`.
+// force-static is required for `next build` (output: 'export'); POST still runs
+// under `bun run dev:admin`.
 export const dynamic = 'force-static';
 
 /** Upload target folders, keyed by the `type` form field. */

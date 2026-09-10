@@ -645,10 +645,11 @@ const EditPeople: React.FC = () => {
         setIsLoading(true);
 
         try {
-            const response = await fetch(
-                `/api/people?slug=${encodeURIComponent(slug)}&category=${encodeURIComponent(category)}`,
-                { method: 'DELETE' },
-            );
+            const response = await fetch('/api/people', {
+                method: 'DELETE',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ slug, category }),
+            });
 
             if (!response.ok) {
                 throw new Error('Failed to delete person');

@@ -8,13 +8,13 @@ production site is a static export with no server, and `npm run build` strips
 ## Running it
 
 ```bash
-NEXT_DISABLE_EXPORT=1 bun run dev
+bun run dev:admin
 ```
 
-Then open <http://localhost:3000/admin>. `NEXT_DISABLE_EXPORT=1` turns off
-`output: 'export'` for the dev server so the API route handlers
-(`POST`/`PUT`/`DELETE`, `/api/upload`) actually run. You no longer need to edit
-`next.config.ts` by hand.
+Then open <http://localhost:3000/admin>. This sets `NEXT_DISABLE_EXPORT=1`, which
+turns off `output: 'export'` so the API route handlers (`POST`/`PUT`/`DELETE`,
+`/api/upload`) actually run, and points the build output at `.next-admin/` so it
+never collides with a `bun run build` running in another terminal.
 
 ## Publishing changes
 

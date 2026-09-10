@@ -45,3 +45,6 @@ yarn-error.log*
 next-env.d.ts
 
 /src/.next/
+
+# admin dev server build dir (see next.config.ts)
+.next-admin/

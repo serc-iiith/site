@@ -194,8 +194,10 @@ const EditPapers: React.FC = () => {
         try {
             const paper = deleteModal.paper;
             if (!paper.id) throw new Error('Paper has no id');
-            const response = await fetch(`/api/papers?id=${encodeURIComponent(paper.id)}`, {
-                method: 'DELETE'
+            const response = await fetch('/api/papers', {
+                method: 'DELETE',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id: paper.id }),
             });
 
             if (!response.ok) {

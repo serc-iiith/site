@@ -117,6 +117,16 @@ const EditProjects: React.FC = () => {
         });
     };
 
+    const moveCollaborator = (index: number, dir: -1 | 1) => {
+        setFormData(prev => {
+            const next = [...prev.collaborators];
+            const t = index + dir;
+            if (t < 0 || t >= next.length) return prev;
+            [next[index], next[t]] = [next[t], next[index]];
+            return { ...prev, collaborators: next };
+        });
+    };
+
     const addLink = () => {
         if (!newLink.label || !newLink.url) return;
 
@@ -140,6 +150,16 @@ const EditProjects: React.FC = () => {
         setFormData(prev => {
             const next = [...prev.links];
             next[index] = { ...next[index], [field]: value };
+            return { ...prev, links: next };
+        });
+    };
+
+    const moveLink = (index: number, dir: -1 | 1) => {
+        setFormData(prev => {
+            const next = [...prev.links];
+            const t = index + dir;
+            if (t < 0 || t >= next.length) return prev;
+            [next[index], next[t]] = [next[t], next[index]];
             return { ...prev, links: next };
         });
     };
@@ -245,8 +265,10 @@ const EditProjects: React.FC = () => {
         setIsLoading(true);
 
         try {
-            const response = await fetch(`/api/projects?id=${deleteModal.projectId}`, {
-                method: 'DELETE'
+            const response = await fetch('/api/projects', {
+                method: 'DELETE',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id: deleteModal.projectId }),
             });
 
             if (!response.ok) {
@@ -502,14 +524,20 @@ const EditProjects: React.FC = () => {
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mb-3">
                             {formData.collaborators.map((collaborator, index) => (
                                 <div key={index} className="flex flex-col gap-1 bg-[color:var(--background)] p-3 rounded-md relative">
-                                    <button
-                                        type="button"
-                                        onClick={() => removeCollaborator(index)}
-                                        className="absolute top-2 right-2 text-[color:var(--error-color)] hover:text-red-700"
-                                        disabled={isLoading}
-                                    >
-                                        <X size={16} />
-                                    </button>
+                                    <div className="absolute top-2 right-2 flex items-center gap-1">
+                                        <button type="button" onClick={() => moveCollaborator(index, -1)} disabled={isLoading || index === 0}
+                                            className="text-[color:var(--secondary-color)] disabled:opacity-30" aria-label="Move up">↑</button>
+                                        <button type="button" onClick={() => moveCollaborator(index, 1)} disabled={isLoading || index === formData.collaborators.length - 1}
+                                            className="text-[color:var(--secondary-color)] disabled:opacity-30" aria-label="Move down">↓</button>
+                                        <button
+                                            type="button"
+                                            onClick={() => removeCollaborator(index)}
+                                            className="text-[color:var(--error-color)] hover:text-red-700"
+                                            disabled={isLoading}
+                                        >
+                                            <X size={16} />
+                                        </button>
+                                    </div>
                                     <input
                                         type="text"
                                         value={collaborator.name}
@@ -604,6 +632,10 @@ const EditProjects: React.FC = () => {
                                         disabled={isLoading}
                                         className="flex-1 px-2 py-1 text-xs border border-[color:var(--border-color)] rounded bg-[color:var(--background)] text-[color:var(--text-color)]"
                                     />
+                                    <button type="button" onClick={() => moveLink(index, -1)} disabled={isLoading || index === 0}
+                                        className="text-[color:var(--secondary-color)] disabled:opacity-30 flex-shrink-0" aria-label="Move up">↑</button>
+                                    <button type="button" onClick={() => moveLink(index, 1)} disabled={isLoading || index === formData.links.length - 1}
+                                        className="text-[color:var(--secondary-color)] disabled:opacity-30 flex-shrink-0" aria-label="Move down">↓</button>
                                     <button
                                         type="button"
                                         onClick={() => removeLink(index)}

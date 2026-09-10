@@ -179,6 +179,11 @@ export const collaboratorSchema = z.object({
 export const collaboratorPostSchema = collaboratorSchema;
 export const collaboratorPutSchema = collaboratorSchema.extend({ id: z.string().max(200) });
 
+export const collaboratorReorderSchema = z.object({
+    reorder: z.literal(true),
+    ids: z.array(z.string().max(200)).min(1),
+});
+
 /* ------------------------------------------------------------------ news */
 
 const otherUrlBag = z

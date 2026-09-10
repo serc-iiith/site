@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "dev:admin": "NEXT_DISABLE_EXPORT=1 next dev --turbopack",
     "build": "bun scripts/generate-llms-txt.ts && next build && cd out && grep -rl '/_next' * | xargs sed -i 's|/_next|/next|g' && mv _next next && rm -rf admin",
     "start": "next start",
     "lint": "next lint",

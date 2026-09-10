@@ -12,8 +12,9 @@ import {
 import { z } from 'zod';
 
 // Dev-only tool: this route is stripped from the static export at build time.
-// force-static keeps `next build` (output: 'export') happy; the mutating methods
-// still run under `NEXT_DISABLE_EXPORT=1 next dev`.
+// force-static is required for `next build` (output: 'export'); the mutating
+// handlers still run under `bun run dev:admin`. DELETE takes its id in the
+// request body, not query params, which force-static strips in dev.
 export const dynamic = 'force-static';
 
 const FILE = 'people.json';
@@ -173,9 +174,10 @@ export async function PUT(request: NextRequest) {
 
 export async function DELETE(request: NextRequest) {
     try {
-        const { searchParams } = new URL(request.url);
-        const slug = z.string().min(1).safeParse(searchParams.get('slug'));
-        const category = z.string().min(1).safeParse(searchParams.get('category'));
+        // Identifiers come in the body: force-static strips query params in dev.
+        const body = await request.json().catch(() => ({}));
+        const slug = z.string().min(1).safeParse(body?.slug);
+        const category = z.string().min(1).safeParse(body?.category);
         if (!slug.success || !category.success) {
             return NextResponse.json(
                 { error: 'Slug and category are required' },

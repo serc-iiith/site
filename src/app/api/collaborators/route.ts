@@ -6,13 +6,15 @@ import { slugify, uniqueSlug } from '@/lib/slug';
 import {
     collaboratorPostSchema,
     collaboratorPutSchema,
+    collaboratorReorderSchema,
     formatIssues,
 } from '@/lib/adminSchemas';
 import { z } from 'zod';
 
 // Dev-only tool: this route is stripped from the static export at build time.
-// force-static keeps `next build` (output: 'export') happy; the mutating methods
-// still run under `NEXT_DISABLE_EXPORT=1 next dev`.
+// force-static is required for `next build` (output: 'export'); the mutating
+// handlers still run under `bun run dev:admin`. DELETE takes its id in the
+// request body, not query params, which force-static strips in dev.
 export const dynamic = 'force-static';
 
 const FILE = 'collaborators.json';
@@ -43,9 +45,6 @@ async function renameImageFile(oldImageURL: string, newId: string): Promise<stri
     }
 }
 
-const byName = (a: Collaborator, b: Collaborator) =>
-    String(a.name ?? '').localeCompare(String(b.name ?? ''));
-
 export async function GET() {
     try {
         return NextResponse.json(await readData<Collaborator[]>(FILE));
@@ -73,7 +72,6 @@ export async function POST(request: NextRequest) {
         );
 
         collaborators.push(collaborator);
-        collaborators.sort(byName);
         await writeData(FILE, collaborators);
 
         return NextResponse.json({ success: true, id: collaborator.id });
@@ -85,7 +83,19 @@ export async function POST(request: NextRequest) {
 
 export async function PUT(request: NextRequest) {
     try {
-        const parsed = collaboratorPutSchema.safeParse(await request.json());
+        const body = await request.json();
+
+        const reorder = collaboratorReorderSchema.safeParse(body);
+        if (reorder.success) {
+            const collaborators = await readData<Collaborator[]>(FILE);
+            const byId = new Map(collaborators.map((c) => [c.id, c]));
+            const ordered = reorder.data.ids.map((id) => byId.get(id)).filter(Boolean) as Collaborator[];
+            for (const c of collaborators) if (!reorder.data.ids.includes(c.id ?? '')) ordered.push(c);
+            await writeData(FILE, ordered);
+            return NextResponse.json({ success: true });
+        }
+
+        const parsed = collaboratorPutSchema.safeParse(body);
         if (!parsed.success) {
             return NextResponse.json(
                 { error: 'Validation failed', issues: formatIssues(parsed.error) },
@@ -107,7 +117,6 @@ export async function PUT(request: NextRequest) {
         }
 
         collaborators[index] = collaborator;
-        collaborators.sort(byName);
         await writeData(FILE, collaborators);
 
         return NextResponse.json({ success: true, id: collaborator.id });
@@ -119,8 +128,9 @@ export async function PUT(request: NextRequest) {
 
 export async function DELETE(request: NextRequest) {
     try {
-        const { searchParams } = new URL(request.url);
-        const id = z.string().min(1).safeParse(searchParams.get('id'));
+        // Identifier comes in the body: force-static strips query params in dev.
+        const body = await request.json().catch(() => ({}));
+        const id = z.string().min(1).safeParse(body?.id);
         if (!id.success) {
             return NextResponse.json({ error: 'Collaborator ID is required' }, { status: 400 });
         }

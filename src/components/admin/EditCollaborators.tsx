@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Plus, Edit, X, Save, Search, Trash2, Building, Tag } from 'lucide-react';
+import { Plus, Edit, X, Save, Search, Trash2, Building, Tag, ArrowUpDown } from 'lucide-react';
 import Image from 'next/image';
 import { toast } from 'react-hot-toast';
 import DeleteConfirmationModal from '@/components/common/DeleteConfirmationModal';
+import SortableList from '@/components/admin/SortableList';
 import { useUnsavedChanges } from '@/hooks/useUnsavedChanges';
 import ImageDropzone from '@/components/common/ImageDropzone';
 
@@ -19,6 +20,7 @@ const EditCollaborators: React.FC = () => {
     const [collaborators, setCollaborators] = useState<Collaborator[]>([]);
     const [editingId, setEditingId] = useState<string | null>(null);
     const [searchTerm, setSearchTerm] = useState<string>('');
+    const [reorderMode, setReorderMode] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [isUploading, setIsUploading] = useState(false);
     const confirmDiscard = useUnsavedChanges(editingId !== null);
@@ -163,8 +165,10 @@ const EditCollaborators: React.FC = () => {
         setIsLoading(true);
 
         try {
-            const response = await fetch(`/api/collaborators?id=${deleteModal.collaboratorId}`, {
-                method: 'DELETE'
+            const response = await fetch('/api/collaborators', {
+                method: 'DELETE',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id: deleteModal.collaboratorId }),
             });
 
             if (!response.ok) {
@@ -236,6 +240,24 @@ const EditCollaborators: React.FC = () => {
     };
 
     // Get collaborators filtered by search term
+    const handleReorder = async (orderedIds: string[]) => {
+        const prev = collaborators;
+        const byId = new Map(collaborators.map(c => [c.id, c]));
+        setCollaborators(orderedIds.map(id => byId.get(id)!).filter(Boolean));
+        try {
+            const res = await fetch('/api/collaborators', {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ reorder: true, ids: orderedIds }),
+            });
+            if (!res.ok) throw new Error('reorder failed');
+        } catch (error) {
+            console.error('Error reordering collaborators:', error);
+            toast.error('Failed to save the new order');
+            setCollaborators(prev);
+        }
+    };
+
     const filteredCollaborators = collaborators.filter(collaborator =>
         collaborator.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         collaborator.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -434,19 +456,48 @@ const EditCollaborators: React.FC = () => {
             )}
 
             <div className="mb-4">
-                <div className="flex items-center mb-4">
-                    <Search size={18} className="text-[color:var(--secondary-color)] mr-2" />
-                    <input
-                        type="text"
-                        placeholder="Search collaborators..."
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                        className="px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)] w-full"
-                    />
+                <div className="flex items-center gap-2 mb-4">
+                    {!reorderMode && (
+                        <>
+                            <Search size={18} className="text-[color:var(--secondary-color)] mr-2" />
+                            <input
+                                type="text"
+                                placeholder="Search collaborators..."
+                                value={searchTerm}
+                                onChange={(e) => setSearchTerm(e.target.value)}
+                                className="px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)] w-full"
+                            />
+                        </>
+                    )}
+                    <button
+                        type="button"
+                        onClick={() => { setReorderMode(v => !v); setSearchTerm(''); }}
+                        disabled={editingId !== null}
+                        className={`ml-auto flex-shrink-0 px-3 py-2 rounded-md border text-sm flex items-center gap-1 disabled:opacity-50 ${reorderMode ? 'bg-[color:var(--primary-color)] text-white border-transparent' : 'border-[color:var(--border-color)] text-[color:var(--text-color)] hover:bg-[color:var(--hover-bg)]'}`}
+                    >
+                        <ArrowUpDown size={16} /> {reorderMode ? 'Done reordering' : 'Reorder'}
+                    </button>
                 </div>
             </div>
 
-            {isLoading && !editingId ? (
+            {reorderMode ? (
+                <div>
+                    <p className="text-xs text-[color:var(--secondary-color)] mb-2">
+                        Drag to set the order collaborators appear in on the public site. Saved automatically.
+                    </p>
+                    <SortableList
+                        items={collaborators}
+                        getId={(c) => c.id}
+                        onReorder={handleReorder}
+                        renderItem={(c) => (
+                            <div className="flex items-center gap-2 bg-[color:var(--background)] border border-[color:var(--border-color)] rounded-md px-3 py-2">
+                                <span className="text-sm text-[color:var(--text-color)] truncate">{c.name}</span>
+                                <span className="ml-auto text-xs text-[color:var(--secondary-color)] capitalize flex-shrink-0">{c.category}</span>
+                            </div>
+                        )}
+                    />
+                </div>
+            ) : isLoading && !editingId ? (
                 <div className="text-center py-8 text-[color:var(--secondary-color)]">
                     Loading collaborators...
                 </div>
