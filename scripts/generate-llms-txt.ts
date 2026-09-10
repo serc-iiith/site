@@ -66,7 +66,7 @@ try {
 
   content += `## Faculty & Key Members\n`;
   for (const [category, people] of Object.entries(peopleData)) {
-    if (category === 'Faculty' || category === 'PhD Students' || category === 'PhD Scholars') {
+    if (category === 'Faculty' || category === 'Affiliate Faculty' || category === 'PhD Students' || category === 'PhD Scholars') {
       content += `### ${category}\n`;
       people.forEach(p => {
         content += `- [${p.name}](https://serc.iiit.ac.in/people/${p.slug}): ${p.title}\n`;

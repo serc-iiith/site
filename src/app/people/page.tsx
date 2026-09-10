@@ -124,6 +124,8 @@ export default function PeoplePage() {
     switch (category) {
       case "Faculty":
         return "bg-blue-600";
+      case "Affiliate Faculty":
+        return "bg-sky-600";
       case "PhD Students":
         return "bg-green-600";
       case "MS by Research":

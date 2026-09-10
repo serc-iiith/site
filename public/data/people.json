@@ -146,6 +146,41 @@
             "bio": "Prof. Raman Saxena currently serves as a Professor at the Software Engineering Research Center (SERC) at IIIT Hy- derabad. Additionally, he holds the position of Adjunct Professor at Department of Design -IIT Kanpur, where he em- barked on his academic journey in 2013. He is an alumnus of the Indian Institute of Technology Guwahati where he completed his PhD. Prior to joining academia, He accumulated over 25 years of industry experience across various do- mains, including design, innovation, technology, and product management. As an academician and researcher, he has worked on 20+ consulting projects with Industry and development organisations including Govt. Of India, Govt. Of UP, Bill and Melinda Gates Foundation (BMGF), Contraceptive Technologies Lab at Family Health Incorporation-USA etc.\n\nHe is also a Co-founder & Curator of USID Foundation (<www.usidfoundation.org>) a non- profit platform to promote design and its social impact and has organised several design and innovation conferences, seminars, workshops and gurukul workshops in partnership with industry and academic institutions since 2007. - did not match any documents."
         },
         {
+            "name": "Abhishek Kumar Singh",
+            "title": "Assistant Professor",
+            "email": "abhishek.singh@iiit.ac.in",
+            "imageURL": "/images/people/abhishek-kumar-singh.png",
+            "slug": "abhishek-kumar-singh",
+            "social_links": {},
+            "interests": [
+                "Formal Methods",
+                "Semantics of Programming Languages",
+                "Shared Memory Concurrency and Weak Memory Models",
+                "Software Engineering and Program Synthesis",
+                "Trustworthy AI"
+            ],
+            "education": [
+                {
+                    "degree": "PhD in Computer Science",
+                    "institution": "TIFR Mumbai, India.",
+                    "year": 2020
+                },
+                {
+                    "degree": "MTech in Media and Sound Engineering",
+                    "institution": "IIT Kharagpur, India.",
+                    "year": 2009
+                },
+                {
+                    "degree": "BTech Computer Science and Engineering",
+                    "institution": "Govt. College of Engineering and Textile Technology, Berhampore.",
+                    "year": 2007
+                }
+            ],
+            "bio": "Dr. Abhishek Kr Singh is currently an Assistant Professor in the SERC group at the International Institute of Information Technology (IIIT) Hyderabad. His research primarily focuses on Formal Methods, Programming Languages, Software Engineering, and Trustworthy AI. His current research efforts are aimed at establishing a formal foundation for Trustworthy Autonomy, striving to contribute to a future where technology enhances safety and security in autonomous applications.\n\nDr. Singh earned his PhD in Computer Science from the Tata Institute of Fundamental Research (TIFR) Mumbai in 2020, where he had the privilege of working under the esteemed supervision of Professor Raja Natarajan. Following the completion of his PhD, Dr. Singh served as an Assistant Professor in the Department of Computer Science and Information Systems (CSIS) at BITS Pilani, Goa Campus, for two years (2020-2022). He then transitioned to a postdoctoral researcher role at Tel Aviv University in Israel from 2022 to 2024, collaborating with Professor Ori Lahav. Subsequently, he took on the position of Senior Research Fellow for a year at the School of Computing at the National University of Singapore, hosted by Professor Abhik Roychoudhury."
+        }
+    ],
+    "Affiliate Faculty": [
+        {
             "name": "Vasudeva Varma",
             "title": "Professor",
             "email": "vv@iiit.ac.in",
@@ -251,39 +286,6 @@
                 }
             ],
             "bio": "Prof. Veera Prakash Yalla has joined Technology Transfer Office (TTO) and Centre for Innovation and Entrepreneurship (CIE) as Professor of Practice. His research interests are in New incubations and innovations. Prof. Yalla received his B.Tech from SVU College of Engineering, Tirupati. Prof. Prakash heads the technology transfer office and product labs, and runs the EIR (Entrepreneur in Residence Program) to pre-incubate startups. He teaches Technology Product Entrepreneurship & Product Management at the institute.\n\nPrior to joining IIITH he was the investor and founding member of Wooqer a Bangalore based startup; Vice President, R&D, Acme Telepower; Director, Research and Technology at Honeywell India , Bangalore where he had set up the research labs and innovation system. He had also worked on open innovation and India market innovation programs. His career started as an Electronics engineer for the Light Combat Aircraft (LCA) program at Hindustan Aeronautics Limited (HAL) Hyderabad."
-        },
-        {
-            "name": "Abhishek Kumar Singh",
-            "title": "Assistant Professor",
-            "email": "abhishek.singh@iiit.ac.in",
-            "imageURL": "/images/people/abhishek-kumar-singh.png",
-            "slug": "abhishek-kumar-singh",
-            "social_links": {},
-            "interests": [
-                "Formal Methods",
-                "Semantics of Programming Languages",
-                "Shared Memory Concurrency and Weak Memory Models",
-                "Software Engineering and Program Synthesis",
-                "Trustworthy AI"
-            ],
-            "education": [
-                {
-                    "degree": "PhD in Computer Science",
-                    "institution": "TIFR Mumbai, India.",
-                    "year": 2020
-                },
-                {
-                    "degree": "MTech in Media and Sound Engineering",
-                    "institution": "IIT Kharagpur, India.",
-                    "year": 2009
-                },
-                {
-                    "degree": "BTech Computer Science and Engineering",
-                    "institution": "Govt. College of Engineering and Textile Technology, Berhampore.",
-                    "year": 2007
-                }
-            ],
-            "bio": "Dr. Abhishek Kr Singh is currently an Assistant Professor in the SERC group at the International Institute of Information Technology (IIIT) Hyderabad. His research primarily focuses on Formal Methods, Programming Languages, Software Engineering, and Trustworthy AI. His current research efforts are aimed at establishing a formal foundation for Trustworthy Autonomy, striving to contribute to a future where technology enhances safety and security in autonomous applications.\n\nDr. Singh earned his PhD in Computer Science from the Tata Institute of Fundamental Research (TIFR) Mumbai in 2020, where he had the privilege of working under the esteemed supervision of Professor Raja Natarajan. Following the completion of his PhD, Dr. Singh served as an Assistant Professor in the Department of Computer Science and Information Systems (CSIS) at BITS Pilani, Goa Campus, for two years (2020-2022). He then transitioned to a postdoctoral researcher role at Tel Aviv University in Israel from 2022 to 2024, collaborating with Professor Ori Lahav. Subsequently, he took on the position of Senior Research Fellow for a year at the School of Computing at the National University of Singapore, hosted by Professor Abhik Roychoudhury."
         }
     ],
     "PhD Students": [
