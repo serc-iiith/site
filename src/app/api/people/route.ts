@@ -1,275 +1,203 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
+import { readData, writeData } from '@/lib/adminData';
+import { slugify, uniqueSlug } from '@/lib/slug';
+import {
+    personPostSchema,
+    personPutSchema,
+    peopleReorderSchema,
+    formatIssues,
+} from '@/lib/adminSchemas';
+import { z } from 'zod';
 
-export const dynamic = "force-static";
+// Dev-only tool: this route is stripped from the static export at build time.
+// force-static keeps `next build` (output: 'export') happy; the mutating methods
+// still run under `NEXT_DISABLE_EXPORT=1 next dev`.
+export const dynamic = 'force-static';
 
-const peopleFilePath = path.join(process.cwd(), 'public', 'data', 'people.json');
+const FILE = 'people.json';
 const peopleImagesDir = path.join(process.cwd(), 'public', 'images', 'people');
 
-// Helper function to read the people data
-function readPeopleData() {
-  const fileContents = fs.readFileSync(peopleFilePath, 'utf8');
-  return JSON.parse(fileContents);
-}
+type Person = Record<string, unknown> & { slug?: string; imageURL?: string };
+type PeopleData = Record<string, Person[]>;
 
-// Helper function to write the people data
-function writePeopleData(data: any) {
-  fs.writeFileSync(peopleFilePath, JSON.stringify(data, null, 4), 'utf8');
-}
+/** Rename a people image on disk when a person's slug changes. Returns the new
+ *  image URL, or null when nothing was renamed. */
+async function renameImageFile(
+    oldImageURL: string | undefined,
+    newSlug: string,
+): Promise<string | null> {
+    try {
+        if (!oldImageURL || !oldImageURL.includes('/images/people/')) return null;
+        const oldFilename = oldImageURL.split('/').pop();
+        if (!oldFilename) return null;
 
-// Helper function to generate a slug from a name
-function generateSlug(name: string): string {
-  return name
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '');
-}
+        const fileExt = path.extname(oldFilename);
+        let newFilename = `${newSlug}${fileExt}`;
+        if (oldFilename === newFilename) return null;
 
-// Helper function to rename an image file when slug changes
-async function renameImageFile(oldImageURL: string, oldSlug: string, newSlug: string): Promise<string | null> {
-  try {
-    // Skip if no image or if the image isn't in the people directory
-    if (!oldImageURL || !oldImageURL.includes('/images/people/')) {
-      return null;
+        const oldFilePath = path.join(peopleImagesDir, oldFilename);
+        if (!fs.existsSync(oldFilePath)) return null;
+
+        let newFilePath = path.join(peopleImagesDir, newFilename);
+        if (fs.existsSync(newFilePath)) {
+            newFilename = `${newSlug}-${Date.now()}${fileExt}`;
+            newFilePath = path.join(peopleImagesDir, newFilename);
+        }
+        fs.renameSync(oldFilePath, newFilePath);
+        return `/images/people/${newFilename}`;
+    } catch (error) {
+        console.error('Error renaming image file:', error);
+        return null;
     }
-
-    // Extract old filename from URL
-    const oldFilename = oldImageURL.split('/').pop();
-
-    // Skip if we can't parse the filename
-    if (!oldFilename) {
-      return null;
-    }
-
-    // Get file extension
-    const fileExt = path.extname(oldFilename);
-    const newFilename = `${newSlug}${fileExt}`;
-
-    // Skip if the filename is already correctly named
-    if (oldFilename === newFilename) {
-      return null;
-    }
-
-    const oldFilePath = path.join(peopleImagesDir, oldFilename);
-    const newFilePath = path.join(peopleImagesDir, newFilename);
-
-    // Check if old file exists
-    if (!fs.existsSync(oldFilePath)) {
-      return null;
-    }
-
-    // Check if new file path already exists, avoid overwrite
-    if (fs.existsSync(newFilePath)) {
-      // Generate unique name with timestamp to avoid conflicts
-      const timestamp = Date.now();
-      const newUniqueFilename = `${newSlug}-${timestamp}${fileExt}`;
-      const newUniqueFilePath = path.join(peopleImagesDir, newUniqueFilename);
-      fs.renameSync(oldFilePath, newUniqueFilePath);
-      return `/images/people/${newUniqueFilename}`;
-    }
-
-    // Rename the file
-    fs.renameSync(oldFilePath, newFilePath);
-
-    // Return the new URL
-    return `/images/people/${newFilename}`;
-  } catch (error) {
-    console.error('Error renaming image file:', error);
-    return null;
-  }
 }
 
 export async function GET() {
-  try {
-    const data = readPeopleData();
-
-    // Sort people alphabetically within each category
-    for (const category in data) {
-      if (Array.isArray(data[category])) {
-        data[category].sort((a: any, b: any) => {
-          return (a.name || '').localeCompare(b.name || '');
-        });
-      }
+    try {
+        // Serve stored order (the admin UI can reorder within a category).
+        return NextResponse.json(await readData<PeopleData>(FILE));
+    } catch (error) {
+        console.error('Error reading people data:', error);
+        return NextResponse.json({ error: 'Failed to read people data' }, { status: 500 });
     }
-
-    return NextResponse.json(data);
-  } catch (error) {
-    console.error('Error reading people data:', error);
-    return NextResponse.json({ error: 'Failed to read people data' }, { status: 500 });
-  }
 }
 
 export async function POST(request: NextRequest) {
-  try {
-    const { person, category } = await request.json();
+    try {
+        const body = await request.json();
+        const parsed = personPostSchema.safeParse(body);
+        if (!parsed.success) {
+            return NextResponse.json(
+                { error: 'Validation failed', issues: formatIssues(parsed.error) },
+                { status: 400 },
+            );
+        }
+        const { person, category } = parsed.data;
 
-    if (!person || !category) {
-      return NextResponse.json(
-        { error: 'Person data and category are required' },
-        { status: 400 }
-      );
+        const data = await readData<PeopleData>(FILE);
+        if (!data[category]) data[category] = [];
+
+        const base = person.slug || slugify(person.name);
+        const slug = uniqueSlug(base, data[category].map((p) => p.slug ?? ''));
+        const record = { ...person, slug };
+
+        data[category].push(record as unknown as Person);
+        await writeData(FILE, data);
+
+        return NextResponse.json({ success: true, slug });
+    } catch (error) {
+        console.error('Error adding person:', error);
+        return NextResponse.json({ error: 'Failed to add person' }, { status: 500 });
     }
-
-    // If no slug is provided, generate one from the name
-    if (!person.slug && person.name) {
-      person.slug = generateSlug(person.name);
-    }
-
-    const data = readPeopleData();
-
-    // Ensure the category exists
-    if (!data[category]) {
-      data[category] = [];
-    }
-
-    // Check if slug already exists
-    if (data[category].some((p: any) => p.slug === person.slug)) {
-      // Add a unique suffix if needed
-      const baseSlug = person.slug;
-      let count = 1;
-      while (data[category].some((p: any) => p.slug === `${baseSlug}-${count}`)) {
-        count++;
-      }
-      person.slug = `${baseSlug}-${count}`;
-    }
-
-    // Add the new person to the category
-    data[category].push(person);
-
-    writePeopleData(data);
-
-    return NextResponse.json({ success: true, slug: person.slug });
-  } catch (error) {
-    console.error('Error adding person:', error);
-    return NextResponse.json({ error: 'Failed to add person' }, { status: 500 });
-  }
 }
 
 export async function PUT(request: NextRequest) {
-  try {
-    const { person, category, oldCategory, oldSlug } = await request.json();
+    try {
+        const body = await request.json();
 
-    if (!person || !category || !oldSlug) {
-      return NextResponse.json(
-        { error: 'Person data, category, and oldSlug are required' },
-        { status: 400 }
-      );
+        // Reorder payload takes a different shape.
+        const reorder = peopleReorderSchema.safeParse(body);
+        if (reorder.success) {
+            const { category, slugs } = reorder.data;
+            const data = await readData<PeopleData>(FILE);
+            const list = data[category];
+            if (!Array.isArray(list)) {
+                return NextResponse.json({ error: 'Category not found' }, { status: 404 });
+            }
+            const bySlug = new Map(list.map((p) => [p.slug, p]));
+            const reordered = slugs.map((s) => bySlug.get(s)).filter(Boolean) as Person[];
+            // Keep any records the client did not mention, at the end.
+            for (const p of list) if (!slugs.includes(p.slug ?? '')) reordered.push(p);
+            data[category] = reordered;
+            await writeData(FILE, data);
+            return NextResponse.json({ success: true });
+        }
+
+        const parsed = personPutSchema.safeParse(body);
+        if (!parsed.success) {
+            return NextResponse.json(
+                { error: 'Validation failed', issues: formatIssues(parsed.error) },
+                { status: 400 },
+            );
+        }
+        const { person, category } = parsed.data;
+        const oldCategory = parsed.data.oldCategory ?? category;
+        const oldSlug = parsed.data.oldSlug ?? person.slug ?? '';
+        if (!oldSlug) {
+            return NextResponse.json({ error: 'Missing editingSlug' }, { status: 400 });
+        }
+
+        const data = await readData<PeopleData>(FILE);
+        if (!Array.isArray(data[oldCategory])) {
+            return NextResponse.json({ error: 'Person not found' }, { status: 404 });
+        }
+
+        const oldIndex = data[oldCategory].findIndex((p) => p.slug === oldSlug);
+        if (oldIndex === -1) {
+            return NextResponse.json({ error: 'Person not found' }, { status: 404 });
+        }
+        const oldPerson = data[oldCategory][oldIndex];
+
+        if (!data[category]) data[category] = [];
+
+        // Resolve the target slug, keeping it unique within the target category.
+        let slug = person.slug || slugify(person.name);
+        const takenInTarget = data[category]
+            .filter((_p, i) => !(category === oldCategory && i === oldIndex))
+            .map((p) => p.slug ?? '');
+        slug = uniqueSlug(slug, takenInTarget);
+
+        let imageURL = person.imageURL;
+        if (slug !== oldSlug) {
+            const renamed = await renameImageFile(oldPerson.imageURL, slug);
+            if (renamed) imageURL = renamed;
+        }
+
+        const record = { ...person, slug, imageURL } as unknown as Person;
+
+        if (category === oldCategory) {
+            data[category][oldIndex] = record;
+        } else {
+            data[oldCategory].splice(oldIndex, 1);
+            data[category].push(record);
+        }
+
+        await writeData(FILE, data);
+        return NextResponse.json({ success: true, slug });
+    } catch (error) {
+        console.error('Error updating person:', error);
+        return NextResponse.json({ error: 'Failed to update person' }, { status: 500 });
     }
-
-    // If no slug is provided, generate one from the name
-    if (!person.slug && person.name) {
-      person.slug = generateSlug(person.name);
-    }
-
-    const data = readPeopleData();
-
-    // Handle category change
-    if (oldCategory && oldCategory !== category) {
-      // Find the person in old category to get access to the current imageURL
-      const oldPerson = data[oldCategory].find((p: any) => p.slug === oldSlug);
-
-      // Remove from old category
-      data[oldCategory] = data[oldCategory].filter((p: any) => p.slug !== oldSlug);
-
-      // Ensure the new category exists
-      if (!data[category]) {
-        data[category] = [];
-      }
-
-      // Check if slug already exists in new category (only if slug changed)
-      if (person.slug !== oldSlug && data[category].some((p: any) => p.slug === person.slug)) {
-        const baseSlug = person.slug;
-        let count = 1;
-        while (data[category].some((p: any) => p.slug === `${baseSlug}-${count}`)) {
-          count++;
-        }
-        person.slug = `${baseSlug}-${count}`;
-      }
-
-      // Rename image file if slug changed
-      if (oldPerson && oldPerson.imageURL && person.slug !== oldSlug) {
-        const newImageURL = await renameImageFile(oldPerson.imageURL, oldSlug, person.slug);
-        if (newImageURL) {
-          person.imageURL = newImageURL;
-        }
-      }
-
-      // Add to new category
-      data[category].push(person);
-    } else {
-      // Update in the same category
-      const index = data[category].findIndex((p: any) => p.slug === oldSlug);
-      if (index !== -1) {
-        // Check if new slug already exists (if changed and not the current item)
-        if (person.slug !== oldSlug &&
-          data[category].some((p: any, i: number) => i !== index && p.slug === person.slug)) {
-          const baseSlug = person.slug;
-          let count = 1;
-          while (data[category].some((p: any, i: number) =>
-            i !== index && p.slug === `${baseSlug}-${count}`)) {
-            count++;
-          }
-          person.slug = `${baseSlug}-${count}`;
-        }
-
-        // Rename image file if slug changed
-        if (person.imageURL && person.slug !== oldSlug) {
-          const newImageURL = await renameImageFile(person.imageURL, oldSlug, person.slug);
-          if (newImageURL) {
-            person.imageURL = newImageURL;
-          }
-        }
-
-        data[category][index] = person;
-      } else {
-        return NextResponse.json(
-          { error: 'Person not found' },
-          { status: 404 }
-        );
-      }
-    }
-
-    writePeopleData(data);
-
-    return NextResponse.json({ success: true, slug: person.slug });
-  } catch (error) {
-    console.error('Error updating person:', error);
-    return NextResponse.json({ error: 'Failed to update person' }, { status: 500 });
-  }
 }
 
 export async function DELETE(request: NextRequest) {
-  try {
-    const { searchParams } = new URL(request.url);
-    const slug = searchParams.get('slug');
-    const category = searchParams.get('category');
+    try {
+        const { searchParams } = new URL(request.url);
+        const slug = z.string().min(1).safeParse(searchParams.get('slug'));
+        const category = z.string().min(1).safeParse(searchParams.get('category'));
+        if (!slug.success || !category.success) {
+            return NextResponse.json(
+                { error: 'Slug and category are required' },
+                { status: 400 },
+            );
+        }
 
-    if (!slug || !category) {
-      return NextResponse.json(
-        { error: 'Slug and category are required' },
-        { status: 400 }
-      );
+        const data = await readData<PeopleData>(FILE);
+        const list = data[category.data];
+        if (!Array.isArray(list)) {
+            return NextResponse.json({ error: 'Category not found' }, { status: 404 });
+        }
+        const index = list.findIndex((p) => p.slug === slug.data);
+        if (index === -1) {
+            return NextResponse.json({ error: 'Person not found' }, { status: 404 });
+        }
+        list.splice(index, 1);
+        await writeData(FILE, data);
+
+        return NextResponse.json({ success: true });
+    } catch (error) {
+        console.error('Error deleting person:', error);
+        return NextResponse.json({ error: 'Failed to delete person' }, { status: 500 });
     }
-
-    const data = readPeopleData();
-
-    if (!data[category]) {
-      return NextResponse.json(
-        { error: 'Category not found' },
-        { status: 404 }
-      );
-    }
-
-    // Remove person from the category
-    data[category] = data[category].filter((p: any) => p.slug !== slug);
-
-    writePeopleData(data);
-
-    return NextResponse.json({ success: true });
-  } catch (error) {
-    console.error('Error deleting person:', error);
-    return NextResponse.json({ error: 'Failed to delete person' }, { status: 500 });
-  }
 }

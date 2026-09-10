@@ -25,11 +25,13 @@ This is the directory of resources for the Software Engineering Research Center 
 - [Venkatesh Choppella](https://serc.iiit.ac.in/people/venkatesh-choppella): Associate Professor
 - [Karthik Vaidhyanathan](https://serc.iiit.ac.in/people/karthik): Assistant Professor
 - [Raman Saxena](https://serc.iiit.ac.in/people/raman): Professor
+- [Abhishek Kumar Singh](https://serc.iiit.ac.in/people/abhishek-kumar-singh): Assistant Professor
+
+### Affiliate Faculty
 - [Vasudeva Varma](https://serc.iiit.ac.in/people/vasu): Professor
 - [Viswanath Kasturi](https://serc.iiit.ac.in/people/viswanath-kasturi): Research Professor of Eminence
 - [Ramesh Loganathan](https://serc.iiit.ac.in/people/ramesh-loganathan): Professor of Practice
 - [Prakash Yalla](https://serc.iiit.ac.in/people/prakash_yalla): Professor of Practice
-- [Abhishek Kumar Singh](https://serc.iiit.ac.in/people/abhishek-kumar-singh): Assistant Professor
 
 ### PhD Students
 - [Mrityunjay Kumar](https://serc.iiit.ac.in/people/mrityunjay_kumar): PhD CSE

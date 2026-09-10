@@ -3,7 +3,10 @@ import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
-export const dynamic = "force-static";
+// Dev-only: this route is stripped from the static export at build time.
+// force-static keeps `next build --output export` happy; POST/PUT/DELETE still
+// run under `NEXT_DISABLE_EXPORT=1 next dev`.
+export const dynamic = 'force-static';
 
 const blogsFilePath = path.join(process.cwd(), 'public', 'data', 'blogs.json');
 const blogsImagesDir = path.join(process.cwd(), 'public', 'images', 'blogs');

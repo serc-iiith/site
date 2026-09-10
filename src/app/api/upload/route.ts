@@ -1,87 +1,133 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { promises as fs } from 'fs';
 import path from 'path';
+import { sanitizeFilenameSlug, slugify } from '@/lib/slug';
 
-export const config = {
-  api: {
-    bodyParser: false,
-  },
+// Dev-only tool: this route is stripped from the static export at build time.
+// force-static keeps `next build` (output: 'export') happy; POST still runs
+// under `NEXT_DISABLE_EXPORT=1 next dev`.
+export const dynamic = 'force-static';
+
+/** Upload target folders, keyed by the `type` form field. */
+const TYPE_FOLDERS: Record<string, string> = {
+    people: 'people',
+    news: 'news',
+    projects: 'projects',
+    blogs: 'blogs',
+    collaborators: 'collaborators',
 };
 
-export async function POST(request: NextRequest) {
-  if (!request.body) {
-    return NextResponse.json({ error: 'No file provided' }, { status: 400 });
-  }
+/** MIME -> canonical extension. The extension is derived from the *detected*
+ *  type, never from the client-supplied filename. */
+const MIME_EXT: Record<string, string> = {
+    'image/jpeg': '.jpg',
+    'image/png': '.png',
+    'image/webp': '.webp',
+};
 
-  try {
-    // Get content type from request
+const MAX_BYTES = 5 * 1024 * 1024;
+
+/** Sniff the real image type from the leading bytes. Returns a MIME key of
+ *  MIME_EXT, or null if the buffer is not one of the allowed formats. */
+function sniffImageMime(buf: Buffer): string | null {
+    if (buf.length >= 3 && buf[0] === 0xff && buf[1] === 0xd8 && buf[2] === 0xff) {
+        return 'image/jpeg';
+    }
+    if (
+        buf.length >= 8 &&
+        buf[0] === 0x89 &&
+        buf[1] === 0x50 &&
+        buf[2] === 0x4e &&
+        buf[3] === 0x47 &&
+        buf[4] === 0x0d &&
+        buf[5] === 0x0a &&
+        buf[6] === 0x1a &&
+        buf[7] === 0x0a
+    ) {
+        return 'image/png';
+    }
+    if (
+        buf.length >= 12 &&
+        buf.toString('ascii', 0, 4) === 'RIFF' &&
+        buf.toString('ascii', 8, 12) === 'WEBP'
+    ) {
+        return 'image/webp';
+    }
+    return null;
+}
+
+export async function POST(request: NextRequest) {
     const contentType = request.headers.get('content-type');
     if (!contentType || !contentType.includes('multipart/form-data')) {
-      return NextResponse.json({ error: 'Content type must be multipart/form-data' }, { status: 400 });
+        return NextResponse.json(
+            { error: 'Content type must be multipart/form-data' },
+            { status: 400 },
+        );
     }
 
-    const formData = await request.formData();
-    const file = formData.get('file') as File | null;
-    const type = formData.get('type') as string | null;
-    const slug = formData.get('slug') as string | null;
+    try {
+        const formData = await request.formData();
+        const file = formData.get('file');
+        const type = formData.get('type');
+        const rawSlug = formData.get('slug');
 
-    if (!file || !type) {
-      return NextResponse.json({ error: 'File and type are required' }, { status: 400 });
+        if (!(file instanceof File) || typeof type !== 'string') {
+            return NextResponse.json({ error: 'File and type are required' }, { status: 400 });
+        }
+
+        const folder = TYPE_FOLDERS[type];
+        if (!folder) {
+            return NextResponse.json({ error: 'Invalid type' }, { status: 400 });
+        }
+
+        const bytes = await file.arrayBuffer();
+        if (bytes.byteLength > MAX_BYTES) {
+            return NextResponse.json(
+                { error: `File exceeds the ${MAX_BYTES / 1024 / 1024} MB limit` },
+                { status: 413 },
+            );
+        }
+        const buffer = Buffer.from(bytes);
+
+        const mime = sniffImageMime(buffer);
+        if (!mime) {
+            return NextResponse.json(
+                { error: 'File is not a valid JPEG, PNG or WebP image' },
+                { status: 400 },
+            );
+        }
+        const ext = MIME_EXT[mime];
+
+        // Filename: sanitised slug, else a slugified original basename, else a
+        // timestamp. Never trusts caller-controlled path separators.
+        let base = sanitizeFilenameSlug(typeof rawSlug === 'string' ? rawSlug : '');
+        if (!base) {
+            base =
+                slugify(path.basename(file.name || '', path.extname(file.name || ''))) ||
+                `upload-${Date.now()}`;
+        }
+        const filename = `${base}${ext}`;
+
+        const destFolder = path.join(process.cwd(), 'public', 'images', folder);
+        const filepath = path.join(destFolder, filename);
+
+        // Defence in depth: the resolved path must stay inside destFolder.
+        const resolvedDir = path.resolve(destFolder);
+        if (
+            path.dirname(path.resolve(filepath)) !== resolvedDir
+        ) {
+            return NextResponse.json({ error: 'Invalid filename' }, { status: 400 });
+        }
+
+        await fs.mkdir(destFolder, { recursive: true });
+        await fs.writeFile(filepath, buffer);
+
+        return NextResponse.json({
+            success: true,
+            filePath: `/images/${folder}/${filename}`,
+        });
+    } catch (error) {
+        console.error('Error uploading file:', error);
+        return NextResponse.json({ error: 'Failed to upload file' }, { status: 500 });
     }
-
-    // Validate file type
-    const allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/jpg'];
-    if (!allowedTypes.includes(file.type)) {
-      return NextResponse.json({ error: 'File type not supported' }, { status: 400 });
-    }
-
-    // Determine destination folder based on type
-    let destFolder = '';
-    if (type === 'people') {
-      destFolder = path.join(process.cwd(), 'public', 'images', 'people');
-    } else if (type === 'news') {
-      destFolder = path.join(process.cwd(), 'public', 'images', 'news');
-    } else if (type === 'projects') {
-      destFolder = path.join(process.cwd(), 'public', 'images', 'projects');
-    } else if (type === 'blogs') {
-      destFolder = path.join(process.cwd(), 'public', 'images', 'blogs');
-    } else if (type === 'collaborators') {
-      destFolder = path.join(process.cwd(), 'public', 'images', 'collaborators');
-    } else {
-      return NextResponse.json({ error: 'Invalid type' }, { status: 400 });
-    }
-
-    // Ensure folder exists
-    await fs.mkdir(destFolder, { recursive: true });
-
-    // Generate filename - use slug if available, otherwise use original name with timestamp
-    let filename = '';
-    if (slug) {
-      // Get file extension from original filename
-      const ext = path.extname(file.name);
-      filename = `${slug}${ext}`;
-    } else {
-      // Create unique name with timestamp if no slug
-      const timestamp = Date.now();
-      const ext = path.extname(file.name);
-      const base = path.basename(file.name, ext);
-      filename = `${base}-${timestamp}${ext}`;
-    }
-
-    // Convert File to ArrayBuffer
-    const bytes = await file.arrayBuffer();
-    const buffer = Buffer.from(bytes);
-
-    // Write to file
-    const filepath = path.join(destFolder, filename);
-    await fs.writeFile(filepath, buffer);
-
-    // Return the relative path for use in the frontend
-    const relativePath = `/images/${type}/${filename}`;
-
-    return NextResponse.json({ success: true, filePath: relativePath });
-  } catch (error) {
-    console.error('Error uploading file:', error);
-    return NextResponse.json({ error: 'Failed to upload file' }, { status: 500 });
-  }
 }

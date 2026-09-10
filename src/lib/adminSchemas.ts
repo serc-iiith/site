@@ -55,7 +55,7 @@ export const personPutSchema = z.object({
     person: personSchema,
     category: z.enum(PEOPLE_CATEGORIES),
     oldCategory: z.enum(PEOPLE_CATEGORIES).optional(),
-    editingSlug: z.string().max(200).optional(),
+    oldSlug: z.string().max(200).optional(),
 });
 
 export const personPostSchema = z.object({

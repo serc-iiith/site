@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Plus, Edit, X, Save, Search, Trash2, Upload, AlertTriangle } from 'lucide-react';
 import Image from 'next/image';
 import { toast } from 'react-hot-toast';
+import { slugify } from '@/lib/slug';
 
 interface SocialLinks {
     [key: string]: string;
@@ -212,8 +213,12 @@ const EditPeople: React.FC = () => {
     const [people, setPeople] = useState<Person[]>([]);
     const [categories, setCategories] = useState<string[]>([]);
     const [editingSlug, setEditingSlug] = useState<string | null>(null);
+    // Category of the record currently being edited — slugs are only unique
+    // within a category, so PUT/DELETE must be scoped by both.
+    const [editingCategory, setEditingCategory] = useState<string>('');
     const [searchTerm, setSearchTerm] = useState<string>('');
     const [isLoading, setIsLoading] = useState(false);
+    const [isInitialLoading, setIsInitialLoading] = useState(true);
     const [isUploading, setIsUploading] = useState(false);
     const [newSocialPlatform, setNewSocialPlatform] = useState<string>('');
     const [newSocialLink, setNewSocialLink] = useState<string>('');
@@ -237,16 +242,20 @@ const EditPeople: React.FC = () => {
     });
     // New state for unique titles
     const [uniqueTitles, setUniqueTitles] = useState<string[]>([]);
+    // Free-text value backing the "custom" option of the title dropdown.
+    const [customTitle, setCustomTitle] = useState<string>('');
 
     // New state for deletion modal
     const [deleteModal, setDeleteModal] = useState<{
         isOpen: boolean;
         slug: string;
         name: string;
+        category: string;
     }>({
         isOpen: false,
         slug: '',
         name: '',
+        category: '',
     });
 
     useEffect(() => {
@@ -254,9 +263,14 @@ const EditPeople: React.FC = () => {
     }, []);
 
     const fetchPeople = async () => {
+        setIsInitialLoading(true);
         try {
             const response = await fetch('/api/people');
+            if (!response.ok) throw new Error(`Request failed: ${response.status}`);
             const data = await response.json();
+            if (!data || typeof data !== 'object' || Array.isArray(data)) {
+                throw new Error('Unexpected people payload');
+            }
 
             // Flatten the people data from all categories
             const allCategories = Object.keys(data);
@@ -286,16 +300,13 @@ const EditPeople: React.FC = () => {
         } catch (error) {
             console.error('Error fetching people data:', error);
             toast.error('Failed to load people data');
+        } finally {
+            setIsInitialLoading(false);
         }
     };
 
     // Generate a slug from name
-    const generateSlug = (name: string): string => {
-        return name
-            .toLowerCase()
-            .replace(/[^a-z0-9]+/g, '-')
-            .replace(/^-|-$/g, '');
-    };
+    const generateSlug = (name: string): string => slugify(name);
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -469,6 +480,7 @@ const EditPeople: React.FC = () => {
 
     const startEditing = (person: Person) => {
         setEditingSlug(person.slug);
+        setEditingCategory(person.category || '');
         setFormData({
             ...person,
             interests: person.interests || [],
@@ -501,6 +513,7 @@ const EditPeople: React.FC = () => {
 
     const cancelEditing = () => {
         setEditingSlug(null);
+        setEditingCategory('');
         setFormData({
             name: '',
             title: '',
@@ -531,17 +544,16 @@ const EditPeople: React.FC = () => {
             return;
         }
 
-        // Generate slug if not provided
-        if (!formData.slug) {
-            formData.slug = generateSlug(formData.name);
-        }
-
         setIsLoading(true);
 
         try {
             // Remove the category field from the person object as it's not stored in the JSON structure
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            const { category: _category, ...personData } = formData;
+            const { category: _category, ...rest } = formData;
+            const personData = {
+                ...rest,
+                slug: formData.slug || generateSlug(formData.name),
+            };
 
             if (editingSlug === 'new') {
                 // Add new person
@@ -567,7 +579,7 @@ const EditPeople: React.FC = () => {
                     body: JSON.stringify({
                         person: personData,
                         category: formData.category,
-                        oldCategory: people.find(p => p.slug === editingSlug)?.category,
+                        oldCategory: editingCategory,
                         oldSlug: editingSlug
                     })
                 });
@@ -595,6 +607,7 @@ const EditPeople: React.FC = () => {
             isOpen: true,
             slug: person.slug,
             name: person.name,
+            category: person.category || '',
         });
     };
 
@@ -603,14 +616,14 @@ const EditPeople: React.FC = () => {
             isOpen: false,
             slug: '',
             name: '',
+            category: '',
         });
     };
 
     const confirmDelete = async () => {
-        const slug = deleteModal.slug;
-        const person = people.find(p => p.slug === slug);
+        const { slug, category } = deleteModal;
 
-        if (!person || !person.category) {
+        if (!slug || !category) {
             toast.error('Person not found');
             closeDeleteModal();
             return;
@@ -619,9 +632,10 @@ const EditPeople: React.FC = () => {
         setIsLoading(true);
 
         try {
-            const response = await fetch(`/api/people?slug=${slug}&category=${person.category}`, {
-                method: 'DELETE'
-            });
+            const response = await fetch(
+                `/api/people?slug=${encodeURIComponent(slug)}&category=${encodeURIComponent(category)}`,
+                { method: 'DELETE' },
+            );
 
             if (!response.ok) {
                 throw new Error('Failed to delete person');
@@ -718,7 +732,7 @@ const EditPeople: React.FC = () => {
                                         {!uniqueTitles.includes(formData.title) && (
                                             <input
                                                 type="text"
-                                                value={formData.title}
+                                                value={customTitle}
                                                 onChange={handleCustomTitleChange}
                                                 placeholder="Enter custom title"
                                                 className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
@@ -1042,8 +1056,22 @@ const EditPeople: React.FC = () => {
                                 </tr>
                             </thead>
                             <tbody className="bg-[color:var(--background)] divide-y divide-[color:var(--border-color)]">
+                                {isInitialLoading && people.length === 0 && (
+                                    <tr>
+                                        <td colSpan={4} className="px-6 py-8 text-center text-[color:var(--secondary-color)]">
+                                            Loading people…
+                                        </td>
+                                    </tr>
+                                )}
+                                {!isInitialLoading && filteredPeople.length === 0 && (
+                                    <tr>
+                                        <td colSpan={4} className="px-6 py-8 text-center text-[color:var(--secondary-color)]">
+                                            No people found.
+                                        </td>
+                                    </tr>
+                                )}
                                 {filteredPeople.map((person) => (
-                                    <tr key={person.slug}>
+                                    <tr key={`${person.category}/${person.slug}`}>
                                         <td className="px-3 sm:px-6 py-4 whitespace-nowrap">
                                             <div className="flex items-center">
                                                 <div className="flex-shrink-0 h-8 w-8 sm:h-10 sm:w-10 rounded-full overflow-hidden bg-gray-100">

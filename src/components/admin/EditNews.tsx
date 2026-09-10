@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { Toaster, toast } from 'react-hot-toast';
 import DeleteConfirmationModal from '@/components/common/DeleteConfirmationModal';
 import ImageDropzone from '@/components/common/ImageDropzone';
+import { slugify } from '@/lib/slug';
 
 interface Event {
     id?: number;
@@ -38,8 +39,12 @@ interface Event {
 const EditNews: React.FC = () => {
     const [news, setNews] = useState<Event[]>([]);
     const [editingId, setEditingId] = useState<number | string | null>(null);
+    // Slug of the event being edited — its identity for the PUT request, so a
+    // rename (slug change) still targets the right record.
+    const [originalSlug, setOriginalSlug] = useState<string>('');
     const [searchTerm, setSearchTerm] = useState<string>('');
     const [isLoading, setIsLoading] = useState(false);
+    const [isInitialLoading, setIsInitialLoading] = useState(true);
     const [newPresenter, setNewPresenter] = useState('');
     const [deleteModal, setDeleteModal] = useState<{
         isOpen: boolean;
@@ -86,13 +91,18 @@ const EditNews: React.FC = () => {
     }, []);
 
     const fetchNews = async () => {
+        setIsInitialLoading(true);
         try {
             const response = await fetch('/api/news');
+            if (!response.ok) throw new Error(`Request failed: ${response.status}`);
             const data = await response.json();
+            if (!Array.isArray(data)) throw new Error('Unexpected news payload');
             setNews(data);
         } catch (error) {
             console.error('Error fetching news data:', error);
             toast.error('Failed to load news data');
+        } finally {
+            setIsInitialLoading(false);
         }
     };
 
@@ -126,8 +136,10 @@ const EditNews: React.FC = () => {
             setFormData(prev => ({ ...prev, [name]: value }));
         }
 
-        // Auto-generate slug if name is being edited and slug is empty or auto-generated
-        if (name === 'name' && (!formData.slug || formData.slug === generateSlug(formData.name))) {
+        // Auto-generate the slug from the name only while adding a new event.
+        // For an existing event the slug is its identity; renaming is explicit
+        // via the (now editable) slug field.
+        if (name === 'name' && editingId === 'new') {
             setFormData(prev => ({
                 ...prev,
                 slug: generateSlug(value)
@@ -135,14 +147,7 @@ const EditNews: React.FC = () => {
         }
     };
 
-    const generateSlug = (name: string): string => {
-        return name
-            .toLowerCase()
-            .replace(/[^\w\s-]/g, '')  // Remove special characters
-            .replace(/\s+/g, '-')      // Replace spaces with hyphens
-            .replace(/-+/g, '-')       // Replace multiple hyphens with single hyphen
-            .trim();
-    };
+    const generateSlug = (name: string): string => slugify(name);
 
     const addPresenter = () => {
         if (!newPresenter) return;
@@ -183,11 +188,10 @@ const EditNews: React.FC = () => {
     };
 
     const startEditing = (event: Event) => {
-        if (event.id) {
-            setEditingId(event.id);
-        } else {
-            setEditingId('unknown');
-        }
+        setEditingId(event.id ?? 'unknown');
+        setOriginalSlug(event.slug);
+        setNewImageURL('');
+        setNewPresenter('');
 
         setFormData({
             ...event,
@@ -211,6 +215,9 @@ const EditNews: React.FC = () => {
         const nextHour = new Date(Date.now() + 60 * 60 * 1000).toISOString().slice(0, 16);
 
         setEditingId('new'); // Use 'new' to indicate new event
+        setOriginalSlug('');
+        setNewImageURL('');
+        setNewPresenter('');
         setFormData({
             slug: '',
             name: '',
@@ -243,6 +250,7 @@ const EditNews: React.FC = () => {
 
     const cancelEditing = () => {
         setEditingId(null);
+        setOriginalSlug('');
         setNewPresenter('');
         setNewImageURL('');
     };
@@ -277,11 +285,12 @@ const EditNews: React.FC = () => {
 
                 toast.success('Event added successfully');
             } else {
-                // Update existing event
+                // Update existing event (originalSlug identifies it, so the slug
+                // itself may change = rename)
                 const response = await fetch('/api/news', {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(formData)
+                    body: JSON.stringify({ ...formData, originalSlug })
                 });
 
                 if (!response.ok) {
@@ -324,7 +333,7 @@ const EditNews: React.FC = () => {
         setIsLoading(true);
 
         try {
-            const response = await fetch(`/api/news?slug=${deleteModal.eventId}`, {
+            const response = await fetch(`/api/news?slug=${encodeURIComponent(String(deleteModal.eventId))}`, {
                 method: 'DELETE'
             });
 
@@ -499,14 +508,21 @@ const EditNews: React.FC = () => {
                             </div>
                             <div>
                                 <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1">
-                                    Slug* (URL-friendly name) <span className="text-xs ml-2 text-[color:var(--info-color)]">(Auto-generated, not editable)</span>
+                                    Slug* (URL-friendly name)
+                                    <span className="text-xs ml-2 text-[color:var(--info-color)]">
+                                        {editingId === 'new'
+                                            ? '(auto-generated from name; editable)'
+                                            : '(editing this renames the event and its images)'}
+                                    </span>
                                 </label>
                                 <input
                                     type="text"
                                     name="slug"
                                     value={formData.slug}
-                                    readOnly
-                                    className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)] opacity-70"
+                                    onChange={handleInputChange}
+                                    onBlur={(e) => setFormData(prev => ({ ...prev, slug: generateSlug(e.target.value) }))}
+                                    disabled={isLoading}
+                                    className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
                                     placeholder="event-name-slug"
                                 />
                             </div>
@@ -895,10 +911,10 @@ const EditNews: React.FC = () => {
                         </button>
                         <button
                             onClick={saveEvent}
-                            disabled={isLoading}
+                            disabled={isLoading || isUploading}
                             className="px-3 py-1.5 sm:px-4 sm:py-2 bg-[color:var(--primary-color)] text-white rounded-md hover:bg-opacity-90 flex items-center disabled:opacity-50"
                         >
-                            {isLoading ? 'Saving...' : <><Save size={16} className="mr-1" /> Save</>}
+                            {isLoading ? 'Saving...' : isUploading ? 'Uploading…' : <><Save size={16} className="mr-1" /> Save</>}
                         </button>
                     </div>
                 </div>
@@ -935,6 +951,12 @@ const EditNews: React.FC = () => {
                                 </tr>
                             </thead>
                             <tbody className="bg-[color:var(--background)] divide-y divide-[color:var(--border-color)]">
+                                {isInitialLoading && news.length === 0 && (
+                                    <tr><td colSpan={4} className="px-6 py-8 text-center text-[color:var(--secondary-color)]">Loading events…</td></tr>
+                                )}
+                                {!isInitialLoading && filteredNews.length === 0 && (
+                                    <tr><td colSpan={4} className="px-6 py-8 text-center text-[color:var(--secondary-color)]">No events found.</td></tr>
+                                )}
                                 {filteredNews.map((event) => (
                                     <tr key={event.slug}>
                                         <td className="px-3 sm:px-6 py-4">

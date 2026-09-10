@@ -16,7 +16,11 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  output: 'export',
+  // Static export for production (rsync'd to nginx). Set NEXT_DISABLE_EXPORT=1
+  // for `next dev` when using the /admin dashboard, so the API route handlers
+  // (POST/PUT/DELETE) run. The dashboard is dev-only and `npm run build`
+  // strips it from the export regardless.
+  output: process.env.NEXT_DISABLE_EXPORT ? undefined : 'export',
   trailingSlash: true,
 
   // Performance optimizations
