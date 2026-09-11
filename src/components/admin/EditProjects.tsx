@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Plus, Edit, X, Save, Search, Trash2, Tag } from 'lucide-react';
+import { Plus, Edit, X, Save, Search, Trash2, Tag, ArrowUpDown } from 'lucide-react';
 import Image from 'next/image';
-import { Toaster, toast } from 'react-hot-toast';
+import { toast } from 'react-hot-toast';
 import DeleteConfirmationModal from '@/components/common/DeleteConfirmationModal';
+import { useUnsavedChanges } from '@/hooks/useUnsavedChanges';
 import ImageDropzone from '@/components/common/ImageDropzone';
+import SortableList from '@/components/admin/SortableList';
 
 interface Collaborator {
     name: string;
@@ -33,6 +35,8 @@ const EditProjects: React.FC = () => {
     const [searchTerm, setSearchTerm] = useState<string>('');
     const [isLoading, setIsLoading] = useState(false);
     const [isUploading, setIsUploading] = useState(false);
+    const [reorderMode, setReorderMode] = useState(false);
+    const confirmDiscard = useUnsavedChanges(editingId !== null);
     const [newCollaborator, setNewCollaborator] = useState<Collaborator>({ name: '', logo: '', url: '' });
     const [newLink, setNewLink] = useState<Link>({ label: '', url: '' });
     const [deleteModal, setDeleteModal] = useState<{
@@ -61,7 +65,9 @@ const EditProjects: React.FC = () => {
     const fetchProjects = async () => {
         try {
             const response = await fetch('/api/projects');
+            if (!response.ok) throw new Error(`Request failed: ${response.status}`);
             const data = await response.json();
+            if (!Array.isArray(data)) throw new Error('Unexpected projects payload');
             setProjects(data);
         } catch (error) {
             console.error('Error fetching projects data:', error);
@@ -103,6 +109,24 @@ const EditProjects: React.FC = () => {
         });
     };
 
+    const updateCollaborator = (index: number, field: keyof Collaborator, value: string) => {
+        setFormData(prev => {
+            const next = [...prev.collaborators];
+            next[index] = { ...next[index], [field]: value };
+            return { ...prev, collaborators: next };
+        });
+    };
+
+    const moveCollaborator = (index: number, dir: -1 | 1) => {
+        setFormData(prev => {
+            const next = [...prev.collaborators];
+            const t = index + dir;
+            if (t < 0 || t >= next.length) return prev;
+            [next[index], next[t]] = [next[t], next[index]];
+            return { ...prev, collaborators: next };
+        });
+    };
+
     const addLink = () => {
         if (!newLink.label || !newLink.url) return;
 
@@ -122,7 +146,26 @@ const EditProjects: React.FC = () => {
         });
     };
 
+    const updateLink = (index: number, field: keyof Link, value: string) => {
+        setFormData(prev => {
+            const next = [...prev.links];
+            next[index] = { ...next[index], [field]: value };
+            return { ...prev, links: next };
+        });
+    };
+
+    const moveLink = (index: number, dir: -1 | 1) => {
+        setFormData(prev => {
+            const next = [...prev.links];
+            const t = index + dir;
+            if (t < 0 || t >= next.length) return prev;
+            [next[index], next[t]] = [next[t], next[index]];
+            return { ...prev, links: next };
+        });
+    };
+
     const startEditing = (project: Project) => {
+        if (!confirmDiscard()) return;
         setEditingId(project.id);
         setFormData({
             ...project
@@ -133,6 +176,7 @@ const EditProjects: React.FC = () => {
     };
 
     const startAdding = () => {
+        if (!confirmDiscard()) return;
         setEditingId('new');
         setFormData({
             id: '',
@@ -221,8 +265,10 @@ const EditProjects: React.FC = () => {
         setIsLoading(true);
 
         try {
-            const response = await fetch(`/api/projects?id=${deleteModal.projectId}`, {
-                method: 'DELETE'
+            const response = await fetch('/api/projects', {
+                method: 'DELETE',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id: deleteModal.projectId }),
             });
 
             if (!response.ok) {
@@ -299,6 +345,25 @@ const EditProjects: React.FC = () => {
         project.category.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
+    // Persist a new order. Optimistic: reflect it locally, revert on failure.
+    const handleReorder = async (orderedIds: string[]) => {
+        const prev = projects;
+        const byId = new Map(projects.map(p => [p.id, p]));
+        setProjects(orderedIds.map(id => byId.get(id)!).filter(Boolean));
+        try {
+            const res = await fetch('/api/projects', {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ reorder: true, ids: orderedIds }),
+            });
+            if (!res.ok) throw new Error('reorder failed');
+        } catch (error) {
+            console.error('Error reordering projects:', error);
+            toast.error('Failed to save the new order');
+            setProjects(prev);
+        }
+    };
+
     // Available categories for the dropdown
     const categories = [
         'AI',
@@ -313,23 +378,6 @@ const EditProjects: React.FC = () => {
 
     return (
         <div className="bg-[color:var(--background)] rounded-lg shadow-lg p-4 sm:p-6 border border-[color:var(--border-color)]">
-            <Toaster
-                position="top-right"
-                toastOptions={{
-                    duration: 3000,
-                    style: {
-                        background: 'var(--background)',
-                        color: 'var(--text-color)',
-                        border: '1px solid var(--border-color)'
-                    },
-                    success: {
-                        icon: '✅',
-                    },
-                    error: {
-                        icon: '❌',
-                    }
-                }}
-            />
 
             <DeleteConfirmationModal
                 isOpen={deleteModal.isOpen}
@@ -398,14 +446,14 @@ const EditProjects: React.FC = () => {
                                 </label>
                                 <select
                                     name="category"
-                                    value={formData.category}
+                                    value={categories.find(c => c.toLowerCase() === (formData.category || '').toLowerCase()) || ''}
                                     onChange={handleInputChange}
                                     className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
                                     disabled={isLoading}
                                 >
                                     <option value="">Select a category</option>
-                                    {categories.map((category, index) => (
-                                        <option key={index} value={category.toLowerCase()}>
+                                    {categories.map((category) => (
+                                        <option key={category} value={category}>
                                             {category}
                                         </option>
                                     ))}
@@ -475,20 +523,45 @@ const EditProjects: React.FC = () => {
                         <h4 className="text-md font-semibold mb-3 text-[color:var(--text-color)]">Collaborators</h4>
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mb-3">
                             {formData.collaborators.map((collaborator, index) => (
-                                <div key={index} className="flex flex-col bg-[color:var(--background)] p-3 rounded-md relative">
-                                    <button
-                                        type="button"
-                                        onClick={() => removeCollaborator(index)}
-                                        className="absolute top-2 right-2 text-[color:var(--error-color)] hover:text-red-700"
+                                <div key={index} className="flex flex-col gap-1 bg-[color:var(--background)] p-3 rounded-md relative">
+                                    <div className="absolute top-2 right-2 flex items-center gap-1">
+                                        <button type="button" onClick={() => moveCollaborator(index, -1)} disabled={isLoading || index === 0}
+                                            className="text-[color:var(--secondary-color)] disabled:opacity-30" aria-label="Move up">↑</button>
+                                        <button type="button" onClick={() => moveCollaborator(index, 1)} disabled={isLoading || index === formData.collaborators.length - 1}
+                                            className="text-[color:var(--secondary-color)] disabled:opacity-30" aria-label="Move down">↓</button>
+                                        <button
+                                            type="button"
+                                            onClick={() => removeCollaborator(index)}
+                                            className="text-[color:var(--error-color)] hover:text-red-700"
+                                            disabled={isLoading}
+                                        >
+                                            <X size={16} />
+                                        </button>
+                                    </div>
+                                    <input
+                                        type="text"
+                                        value={collaborator.name}
+                                        onChange={(e) => updateCollaborator(index, 'name', e.target.value)}
+                                        placeholder="Name"
                                         disabled={isLoading}
-                                    >
-                                        <X size={16} />
-                                    </button>
-                                    <div className="font-medium text-[color:var(--text-color)]">{collaborator.name}</div>
-                                    <div className="text-xs text-[color:var(--secondary-color)] truncate">{collaborator.url}</div>
-                                    {collaborator.logo && (
-                                        <div className="text-xs text-[color:var(--secondary-color)] truncate mt-1">Has logo</div>
-                                    )}
+                                        className="w-full px-2 py-1 text-sm font-medium border border-[color:var(--border-color)] rounded bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                    />
+                                    <input
+                                        type="text"
+                                        value={collaborator.url}
+                                        onChange={(e) => updateCollaborator(index, 'url', e.target.value)}
+                                        placeholder="Website URL"
+                                        disabled={isLoading}
+                                        className="w-full px-2 py-1 text-xs border border-[color:var(--border-color)] rounded bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                    />
+                                    <input
+                                        type="text"
+                                        value={collaborator.logo}
+                                        onChange={(e) => updateCollaborator(index, 'logo', e.target.value)}
+                                        placeholder="Logo URL"
+                                        disabled={isLoading}
+                                        className="w-full px-2 py-1 text-xs border border-[color:var(--border-color)] rounded bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                    />
                                 </div>
                             ))}
                         </div>
@@ -542,15 +615,31 @@ const EditProjects: React.FC = () => {
                         <h4 className="text-md font-semibold mb-3 text-[color:var(--text-color)]">Links</h4>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-3">
                             {formData.links.map((link, index) => (
-                                <div key={index} className="flex items-center justify-between bg-[color:var(--background)] p-3 rounded-md">
-                                    <div>
-                                        <div className="font-medium text-[color:var(--text-color)]">{link.label}</div>
-                                        <div className="text-xs text-[color:var(--secondary-color)] truncate">{link.url}</div>
-                                    </div>
+                                <div key={index} className="flex items-center gap-2 bg-[color:var(--background)] p-3 rounded-md">
+                                    <input
+                                        type="text"
+                                        value={link.label}
+                                        onChange={(e) => updateLink(index, 'label', e.target.value)}
+                                        placeholder="Label"
+                                        disabled={isLoading}
+                                        className="w-1/3 px-2 py-1 text-sm border border-[color:var(--border-color)] rounded bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                    />
+                                    <input
+                                        type="text"
+                                        value={link.url}
+                                        onChange={(e) => updateLink(index, 'url', e.target.value)}
+                                        placeholder="URL"
+                                        disabled={isLoading}
+                                        className="flex-1 px-2 py-1 text-xs border border-[color:var(--border-color)] rounded bg-[color:var(--background)] text-[color:var(--text-color)]"
+                                    />
+                                    <button type="button" onClick={() => moveLink(index, -1)} disabled={isLoading || index === 0}
+                                        className="text-[color:var(--secondary-color)] disabled:opacity-30 flex-shrink-0" aria-label="Move up">↑</button>
+                                    <button type="button" onClick={() => moveLink(index, 1)} disabled={isLoading || index === formData.links.length - 1}
+                                        className="text-[color:var(--secondary-color)] disabled:opacity-30 flex-shrink-0" aria-label="Move down">↓</button>
                                     <button
                                         type="button"
                                         onClick={() => removeLink(index)}
-                                        className="text-[color:var(--error-color)] hover:text-red-700"
+                                        className="text-[color:var(--error-color)] hover:text-red-700 flex-shrink-0"
                                         disabled={isLoading}
                                     >
                                         <X size={16} />
@@ -594,7 +683,7 @@ const EditProjects: React.FC = () => {
 
                     <div className="flex justify-end gap-2 mt-6">
                         <button
-                            onClick={cancelEditing}
+                            onClick={() => { if (confirmDiscard()) cancelEditing(); }}
                             disabled={isLoading}
                             className="px-3 py-1.5 sm:px-4 sm:py-2 border border-[color:var(--border-color)] rounded-md text-[color:var(--text-color)] hover:bg-[color:var(--hover-bg)] flex items-center disabled:opacity-50"
                         >
@@ -602,7 +691,7 @@ const EditProjects: React.FC = () => {
                         </button>
                         <button
                             onClick={saveProject}
-                            disabled={isLoading}
+                            disabled={isLoading || isUploading}
                             className="px-3 py-1.5 sm:px-4 sm:py-2 bg-[color:var(--primary-color)] text-white rounded-md hover:bg-opacity-90 flex items-center disabled:opacity-50"
                         >
                             {isLoading ? 'Saving...' : <><Save size={16} className="mr-1" /> Save</>}
@@ -612,16 +701,52 @@ const EditProjects: React.FC = () => {
             )}
 
             <div className="overflow-x-auto -mx-4 sm:mx-0">
-                <div className="flex items-center mb-4 px-4 sm:px-0">
-                    <Search size={18} className="text-[color:var(--secondary-color)] mr-2" />
-                    <input
-                        type="text"
-                        placeholder="Search projects..."
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                        className="px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)] w-full sm:w-64"
-                    />
+                <div className="flex flex-wrap items-center gap-2 mb-4 px-4 sm:px-0">
+                    {!reorderMode && (
+                        <div className="flex items-center flex-1 min-w-[12rem]">
+                            <Search size={18} className="text-[color:var(--secondary-color)] mr-2" />
+                            <input
+                                type="text"
+                                placeholder="Search projects..."
+                                value={searchTerm}
+                                onChange={(e) => setSearchTerm(e.target.value)}
+                                className="px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)] w-full sm:w-64"
+                            />
+                        </div>
+                    )}
+                    <button
+                        type="button"
+                        onClick={() => { setReorderMode(v => !v); setSearchTerm(''); }}
+                        disabled={editingId !== null}
+                        className={`ml-auto px-3 py-2 rounded-md border text-sm flex items-center gap-1 disabled:opacity-50 ${reorderMode ? 'bg-[color:var(--primary-color)] text-white border-transparent' : 'border-[color:var(--border-color)] text-[color:var(--text-color)] hover:bg-[color:var(--hover-bg)]'}`}
+                    >
+                        <ArrowUpDown size={16} /> {reorderMode ? 'Done reordering' : 'Reorder'}
+                    </button>
                 </div>
+
+                {reorderMode ? (
+                    <div className="px-4 sm:px-0">
+                        <p className="text-xs text-[color:var(--secondary-color)] mb-2">
+                            Drag to set the order projects appear in on the public site. Saved automatically.
+                        </p>
+                        <SortableList
+                            items={projects}
+                            getId={(p) => p.id}
+                            onReorder={handleReorder}
+                            renderItem={(p) => (
+                                <div className="flex items-center gap-2 bg-[color:var(--background)] border border-[color:var(--border-color)] rounded-md px-3 py-2">
+                                    {p.image && (
+                                        <Image width={28} height={28} src={p.image} alt="" unoptimized
+                                            className="h-7 w-7 rounded object-cover flex-shrink-0"
+                                            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
+                                    )}
+                                    <span className="text-sm text-[color:var(--text-color)] truncate">{p.title}</span>
+                                    <span className="ml-auto text-xs text-[color:var(--secondary-color)] capitalize">{p.category}</span>
+                                </div>
+                            )}
+                        />
+                    </div>
+                ) : (
                 <div className="min-w-full inline-block align-middle">
                     <div className="overflow-hidden">
                         <table className="min-w-full divide-y divide-[color:var(--border-color)]">
@@ -715,6 +840,7 @@ const EditProjects: React.FC = () => {
                         </table>
                     </div>
                 </div>
+                )}
             </div>
         </div>
     );

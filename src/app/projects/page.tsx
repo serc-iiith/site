@@ -125,7 +125,7 @@ export default function ProjectsPage() {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-bl from-[var(--foreground)] via-[var(--foreground)] to-[var(--foreground)] pt-32 pb-20">
+    <div className="min-h-screen pt-32 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section with animation */}
         <motion.div

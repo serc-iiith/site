@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Plus, Edit, X, Save, Search, Trash2, Calendar, Clock, Tag, User } from 'lucide-react';
+import { Plus, Edit, X, Save, Search, Trash2, Calendar, Clock, Tag, User, ArrowUpDown } from 'lucide-react';
 import Image from 'next/image';
-import { Toaster, toast } from 'react-hot-toast';
+import { toast } from 'react-hot-toast';
 import DeleteConfirmationModal from '@/components/common/DeleteConfirmationModal';
+import { useUnsavedChanges } from '@/hooks/useUnsavedChanges';
 import ImageDropzone from '@/components/common/ImageDropzone';
+import MarkdownContent from '@/components/common/MarkdownContent';
+import SortableList from '@/components/admin/SortableList';
 
 interface Blog {
     id: number;
@@ -31,20 +34,16 @@ interface Person {
     bio?: string;
 }
 
-interface PeopleData {
-    Faculty: Person[];
-    'PhD Students': Person[];
-    'MS by Research': Person[];
-    'Dual Degree': Person[];
-    'Honors': Person[];
-    'Alumni': Person[];
-    'Research Associates': Person[];
-}
+// people.json is an object keyed by category name (Faculty, Affiliate Faculty,
+// PhD Students, ...). Keep this open so every category's members are searched
+// for the author role, not a hard-coded subset.
+type PeopleData = Record<string, Person[]>;
 
 const EditBlogs: React.FC = () => {
     const [blogs, setBlogs] = useState<Blog[]>([]);
     const [editingId, setEditingId] = useState<number | null>(null);
     const [searchTerm, setSearchTerm] = useState<string>('');
+    const [reorderMode, setReorderMode] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [isPeopleLoading, setIsPeopleLoading] = useState(true);
     const [isPreviewMode, setIsPreviewMode] = useState(false);
@@ -74,6 +73,7 @@ const EditBlogs: React.FC = () => {
         generateNewSlug: false
     });
     const [isUploading, setIsUploading] = useState(false);
+    const confirmDiscard = useUnsavedChanges(editingId !== null);
 
     const categories = [
         'Software Architecture',
@@ -161,7 +161,7 @@ const EditBlogs: React.FC = () => {
 
         try {
             for (const category in peopleData) {
-                const person = peopleData[category as keyof PeopleData]?.find(p => p.name === authorName);
+                const person = peopleData[category]?.find(p => p.name === authorName);
                 if (person) {
                     return person.title || '';
                 }
@@ -198,12 +198,16 @@ const EditBlogs: React.FC = () => {
                 setFormData(prev => ({ ...prev, [name]: value }));
             }
         }
+        else if (name === 'readTime') {
+            setFormData(prev => ({ ...prev, readTime: Number(value) || 0 }));
+        }
         else {
             setFormData(prev => ({ ...prev, [name]: value }));
         }
     };
 
     const startEditing = (blog: Blog) => {
+        if (!confirmDiscard()) return;
         setEditingId(blog.id);
         setFormData({
             ...blog,
@@ -216,6 +220,7 @@ const EditBlogs: React.FC = () => {
     };
 
     const startAdding = () => {
+        if (!confirmDiscard()) return;
         const today = new Date();
         const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
 
@@ -321,8 +326,10 @@ const EditBlogs: React.FC = () => {
         setIsLoading(true);
 
         try {
-            const response = await fetch(`/api/blogs?id=${deleteModal.blogId}`, {
-                method: 'DELETE'
+            const response = await fetch('/api/blogs', {
+                method: 'DELETE',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id: deleteModal.blogId }),
             });
 
             if (!response.ok) {
@@ -397,6 +404,24 @@ const EditBlogs: React.FC = () => {
         }
     };
 
+    const handleReorder = async (orderedIds: string[]) => {
+        const prev = blogs;
+        const byId = new Map(blogs.map(b => [String(b.id), b]));
+        setBlogs(orderedIds.map(id => byId.get(id)!).filter(Boolean));
+        try {
+            const res = await fetch('/api/blogs', {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ reorder: true, ids: orderedIds.map(Number) }),
+            });
+            if (!res.ok) throw new Error('reorder failed');
+        } catch (error) {
+            console.error('Error reordering blogs:', error);
+            toast.error('Failed to save the new order');
+            setBlogs(prev);
+        }
+    };
+
     const filteredBlogs = blogs.filter(blog =>
         blog.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         blog.author.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -407,23 +432,6 @@ const EditBlogs: React.FC = () => {
 
     return (
         <div className="bg-[color:var(--background)] rounded-lg shadow-lg p-4 sm:p-6 border border-[color:var(--border-color)]">
-            <Toaster
-                position="top-right"
-                toastOptions={{
-                    duration: 3000,
-                    style: {
-                        background: 'var(--background)',
-                        color: 'var(--text-color)',
-                        border: '1px solid var(--border-color)'
-                    },
-                    success: {
-                        icon: '✅',
-                    },
-                    error: {
-                        icon: '❌',
-                    }
-                }}
-            />
 
             <DeleteConfirmationModal
                 isOpen={deleteModal.isOpen}
@@ -496,9 +504,7 @@ const EditBlogs: React.FC = () => {
                                     {formData.excerpt}
                                 </div>
 
-                                <div className="markdown-content whitespace-pre-wrap">
-                                    {formData.content}
-                                </div>
+                                <MarkdownContent>{formData.content}</MarkdownContent>
                             </div>
                         </div>
                     ) : (
@@ -691,7 +697,7 @@ const EditBlogs: React.FC = () => {
 
                             <div className="flex justify-end gap-2 mt-6">
                                 <button
-                                    onClick={cancelEditing}
+                                    onClick={() => { if (confirmDiscard()) cancelEditing(); }}
                                     disabled={isLoading}
                                     className="px-3 py-1.5 sm:px-4 sm:py-2 border border-[color:var(--border-color)] rounded-md text-[color:var(--text-color)] hover:bg-[color:var(--hover-bg)] flex items-center disabled:opacity-50"
                                 >
@@ -699,7 +705,7 @@ const EditBlogs: React.FC = () => {
                                 </button>
                                 <button
                                     onClick={saveBlog}
-                                    disabled={isLoading}
+                                    disabled={isLoading || isUploading}
                                     className="px-3 py-1.5 sm:px-4 sm:py-2 bg-[color:var(--primary-color)] text-white rounded-md hover:bg-opacity-90 flex items-center disabled:opacity-50"
                                 >
                                     {isLoading ? 'Saving...' : <><Save size={16} className="mr-1" /> Save</>}
@@ -711,19 +717,48 @@ const EditBlogs: React.FC = () => {
             )}
 
             <div className="mb-4">
-                <div className="flex items-center mb-4">
-                    <Search size={18} className="text-[color:var(--secondary-color)] mr-2" />
-                    <input
-                        type="text"
-                        placeholder="Search blog posts..."
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                        className="px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)] w-full"
-                    />
+                <div className="flex items-center gap-2 mb-4">
+                    {!reorderMode && (
+                        <>
+                            <Search size={18} className="text-[color:var(--secondary-color)] mr-2" />
+                            <input
+                                type="text"
+                                placeholder="Search blog posts..."
+                                value={searchTerm}
+                                onChange={(e) => setSearchTerm(e.target.value)}
+                                className="px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)] w-full"
+                            />
+                        </>
+                    )}
+                    <button
+                        type="button"
+                        onClick={() => { setReorderMode(v => !v); setSearchTerm(''); }}
+                        disabled={editingId !== null}
+                        className={`ml-auto flex-shrink-0 px-3 py-2 rounded-md border text-sm flex items-center gap-1 disabled:opacity-50 ${reorderMode ? 'bg-[color:var(--primary-color)] text-white border-transparent' : 'border-[color:var(--border-color)] text-[color:var(--text-color)] hover:bg-[color:var(--hover-bg)]'}`}
+                    >
+                        <ArrowUpDown size={16} /> {reorderMode ? 'Done reordering' : 'Reorder'}
+                    </button>
                 </div>
             </div>
 
-            {isLoading && !editingId ? (
+            {reorderMode ? (
+                <div>
+                    <p className="text-xs text-[color:var(--secondary-color)] mb-2">
+                        Drag to set the order posts appear in on the blog page. Saved automatically.
+                    </p>
+                    <SortableList
+                        items={blogs}
+                        getId={(b) => String(b.id)}
+                        onReorder={handleReorder}
+                        renderItem={(b) => (
+                            <div className="flex items-center gap-2 bg-[color:var(--background)] border border-[color:var(--border-color)] rounded-md px-3 py-2">
+                                <span className="text-sm text-[color:var(--text-color)] truncate">{b.title}</span>
+                                <span className="ml-auto text-xs text-[color:var(--secondary-color)] flex-shrink-0">{b.author}</span>
+                            </div>
+                        )}
+                    />
+                </div>
+            ) : isLoading && !editingId ? (
                 <div className="text-center py-8 text-[color:var(--secondary-color)]">
                     Loading blog posts...
                 </div>

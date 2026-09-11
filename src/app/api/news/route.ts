@@ -1,207 +1,151 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
+import { readData, writeData } from '@/lib/adminData';
+import { slugify, uniqueSlug } from '@/lib/slug';
+import { newsPostSchema, newsPutSchema, formatIssues } from '@/lib/adminSchemas';
+import { z } from 'zod';
 
-export const dynamic = "force-static";
+// Dev-only tool: this route is stripped from the static export at build time.
+// force-static is required for `next build` (output: 'export'); the mutating
+// handlers still run under `bun run dev:admin`. DELETE takes its id in the
+// request body, not query params, which force-static strips in dev.
+export const dynamic = 'force-static';
 
-const newsFilePath = path.join(process.cwd(), 'public', 'data', 'news.json');
+const FILE = 'news.json';
 const newsImagesDir = path.join(process.cwd(), 'public', 'images', 'news');
 
-// Helper function to read the news data
-function readNewsData() {
-  const fileContents = fs.readFileSync(newsFilePath, 'utf8');
-  return JSON.parse(fileContents);
+type Event = Record<string, unknown> & { slug?: string; imageURLs?: string[]; startTime?: string };
+
+/** Newest-first, keeping insertion order for entries with an unparseable date. */
+function sortByStartTime(list: Event[]): Event[] {
+    return [...list]
+        .map((e, i) => ({ e, i, t: Date.parse(String(e.startTime ?? '')) }))
+        .sort((a, b) => {
+            const av = Number.isNaN(a.t) ? -Infinity : a.t;
+            const bv = Number.isNaN(b.t) ? -Infinity : b.t;
+            return bv - av || a.i - b.i;
+        })
+        .map((x) => x.e);
 }
 
-// Helper function to write the news data
-function writeNewsData(data: any) {
-  fs.writeFileSync(newsFilePath, JSON.stringify(data, null, 4), 'utf8');
+async function renameImageFile(oldImageURL: string, newSlug: string): Promise<string | null> {
+    try {
+        if (!oldImageURL || !oldImageURL.includes('/images/news/')) return null;
+        const oldFilename = oldImageURL.split('/').pop();
+        if (!oldFilename) return null;
+        const fileExt = path.extname(oldFilename);
+        const newFilename = `${newSlug}-${Date.now()}${fileExt}`;
+        const oldFilePath = path.join(newsImagesDir, oldFilename);
+        if (!fs.existsSync(oldFilePath)) return null;
+        fs.renameSync(oldFilePath, path.join(newsImagesDir, newFilename));
+        return `/images/news/${newFilename}`;
+    } catch (error) {
+        console.error('Error renaming event image file:', error);
+        return null;
+    }
 }
 
-// Helper function to rename an event image file when slug changes
-async function renameImageFile(oldImageURL: string, oldSlug: string, newSlug: string): Promise<string | null> {
-  try {
-    // Skip if no image or if the image isn't in the news directory
-    if (!oldImageURL || !oldImageURL.includes('/images/news/')) {
-      return null;
+async function renameEventImages(imageURLs: string[] | undefined, newSlug: string): Promise<string[]> {
+    if (!Array.isArray(imageURLs)) return [];
+    const out = [...imageURLs];
+    for (let i = 0; i < imageURLs.length; i++) {
+        const renamed = await renameImageFile(imageURLs[i], newSlug);
+        if (renamed) out[i] = renamed;
     }
-
-    // Extract old filename from URL
-    const oldFilename = oldImageURL.split('/').pop();
-
-    // Skip if we can't parse the filename
-    if (!oldFilename) {
-      return null;
-    }
-
-    // Get file extension
-    const fileExt = path.extname(oldFilename);
-
-    // Generate new filename with slug as prefix
-    // Use a timestamp suffix to avoid naming conflicts for multiple event images
-    const timestamp = Date.now();
-    const newFilename = `${newSlug}-${timestamp}${fileExt}`;
-
-    const oldFilePath = path.join(newsImagesDir, oldFilename);
-    const newFilePath = path.join(newsImagesDir, newFilename);
-
-    // Check if old file exists
-    if (!fs.existsSync(oldFilePath)) {
-      return null;
-    }
-
-    // Rename the file
-    fs.renameSync(oldFilePath, newFilePath);
-
-    // Return the new URL
-    return `/images/news/${newFilename}`;
-  } catch (error) {
-    console.error('Error renaming event image file:', error);
-    return null;
-  }
+    return out;
 }
 
-// Helper function to rename all images in an event's imageURLs array
-async function renameEventImages(imageURLs: string[], oldSlug: string, newSlug: string): Promise<string[]> {
-  if (!imageURLs || !Array.isArray(imageURLs)) {
-    return [];
-  }
-
-  const newImageURLs = [...imageURLs];
-
-  for (let i = 0; i < imageURLs.length; i++) {
-    const newImageURL = await renameImageFile(imageURLs[i], oldSlug, newSlug);
-    if (newImageURL) {
-      newImageURLs[i] = newImageURL;
-    }
-  }
-
-  return newImageURLs;
-}
-
-// GET: Fetch all news
 export async function GET() {
-  try {
-    const data = readNewsData();
-    return NextResponse.json(data);
-  } catch (error) {
-    console.error('Error reading news data:', error);
-    return NextResponse.json({ error: 'Failed to read news data' }, { status: 500 });
-  }
+    try {
+        return NextResponse.json(await readData<Event[]>(FILE));
+    } catch (error) {
+        console.error('Error reading news data:', error);
+        return NextResponse.json({ error: 'Failed to read news data' }, { status: 500 });
+    }
 }
 
-// POST: Add a new event
 export async function POST(request: NextRequest) {
-  try {
-    const event = await request.json();
+    try {
+        const parsed = newsPostSchema.safeParse(await request.json());
+        if (!parsed.success) {
+            return NextResponse.json(
+                { error: 'Validation failed', issues: formatIssues(parsed.error) },
+                { status: 400 },
+            );
+        }
+        const event = parsed.data as Event;
+        const news = await readData<Event[]>(FILE);
 
-    if (!event || !event.name || !event.startTime || !event.location || !event.slug) {
-      return NextResponse.json(
-        { error: 'Required event data is missing' },
-        { status: 400 }
-      );
+        const base = event.slug || slugify(String(event.name));
+        event.slug = uniqueSlug(base, news.map((e) => e.slug ?? ''));
+
+        news.push(event);
+        await writeData(FILE, sortByStartTime(news));
+
+        return NextResponse.json({ success: true, slug: event.slug });
+    } catch (error) {
+        console.error('Error adding event:', error);
+        return NextResponse.json({ error: 'Failed to add event' }, { status: 500 });
     }
-
-    const news = readNewsData();
-
-    // Check for unique slug
-    if (news.some((e: any) => e.slug === event.slug)) {
-      return NextResponse.json(
-        { error: 'An event with this slug already exists' },
-        { status: 400 }
-      );
-    }
-
-    // Add the new event
-    news.push(event);
-
-    // Sort news by date (newest first)
-    news.sort((a: any, b: any) => new Date(b.startTime).getTime() - new Date(a.startTime).getTime());
-
-    writeNewsData(news);
-
-    return NextResponse.json({ success: true, slug: event.slug });
-  } catch (error) {
-    console.error('Error adding event:', error);
-    return NextResponse.json({ error: 'Failed to add event' }, { status: 500 });
-  }
 }
 
-// PUT: Update an existing event
 export async function PUT(request: NextRequest) {
-  try {
-    const updatedEvent = await request.json();
+    try {
+        const parsed = newsPutSchema.safeParse(await request.json());
+        if (!parsed.success) {
+            return NextResponse.json(
+                { error: 'Validation failed', issues: formatIssues(parsed.error) },
+                { status: 400 },
+            );
+        }
+        const { originalSlug, ...event } = parsed.data as Event & { originalSlug: string };
+        const news = await readData<Event[]>(FILE);
 
-    if (!updatedEvent || !updatedEvent.slug) {
-      return NextResponse.json(
-        { error: 'Event slug is required' },
-        { status: 400 }
-      );
+        const index = news.findIndex((e) => e.slug === originalSlug);
+        if (index === -1) {
+            return NextResponse.json({ error: 'Event not found' }, { status: 404 });
+        }
+
+        // Resolve the (possibly changed) slug, unique against the other events.
+        let slug = (event.slug as string) || slugify(String(event.name));
+        if (slug !== originalSlug) {
+            const others = news.filter((_, i) => i !== index).map((e) => e.slug ?? '');
+            slug = uniqueSlug(slug, others);
+            event.imageURLs = await renameEventImages(news[index].imageURLs, slug);
+        }
+        event.slug = slug;
+
+        news[index] = event;
+        await writeData(FILE, sortByStartTime(news));
+
+        return NextResponse.json({ success: true, slug });
+    } catch (error) {
+        console.error('Error updating event:', error);
+        return NextResponse.json({ error: 'Failed to update event' }, { status: 500 });
     }
-
-    const news = readNewsData();
-
-    // Find the index of the event to update
-    const index = news.findIndex((e: any) => e.slug === updatedEvent.slug);
-
-    if (index === -1) {
-      return NextResponse.json(
-        { error: 'Event not found' },
-        { status: 404 }
-      );
-    }
-
-    // Rename event images if slug has changed
-    if (updatedEvent.slug !== news[index].slug) {
-      updatedEvent.imageURLs = await renameEventImages(news[index].imageURLs, news[index].slug, updatedEvent.slug);
-    }
-
-    // Update the event
-    news[index] = updatedEvent;
-
-    // Sort news by date (newest first)
-    news.sort((a: any, b: any) => new Date(b.startTime).getTime() - new Date(a.startTime).getTime());
-
-    writeNewsData(news);
-
-    return NextResponse.json({ success: true });
-  } catch (error) {
-    console.error('Error updating event:', error);
-    return NextResponse.json({ error: 'Failed to update event' }, { status: 500 });
-  }
 }
 
-// DELETE: Remove an event
 export async function DELETE(request: NextRequest) {
-  try {
-    const { searchParams } = new URL(request.url);
-    const slug = searchParams.get('slug');
+    try {
+        // Identifier comes in the body: force-static strips query params in dev.
+        const body = await request.json().catch(() => ({}));
+        const slug = z.string().min(1).safeParse(body?.slug);
+        if (!slug.success) {
+            return NextResponse.json({ error: 'Event slug is required' }, { status: 400 });
+        }
 
-    if (!slug) {
-      return NextResponse.json(
-        { error: 'Event slug is required' },
-        { status: 400 }
-      );
+        const news = await readData<Event[]>(FILE);
+        const index = news.findIndex((e) => e.slug === slug.data);
+        if (index === -1) {
+            return NextResponse.json({ error: 'Event not found' }, { status: 404 });
+        }
+        news.splice(index, 1);
+        await writeData(FILE, news);
+
+        return NextResponse.json({ success: true });
+    } catch (error) {
+        console.error('Error deleting event:', error);
+        return NextResponse.json({ error: 'Failed to delete event' }, { status: 500 });
     }
-
-    const news = readNewsData();
-
-    // Filter out the event to delete
-    const filteredNews = news.filter((e: any) => e.slug !== slug);
-
-    if (filteredNews.length === news.length) {
-      return NextResponse.json(
-        { error: 'Event not found' },
-        { status: 404 }
-      );
-    }
-
-    writeNewsData(filteredNews);
-
-    return NextResponse.json({ success: true });
-  } catch (error) {
-    console.error('Error deleting event:', error);
-    return NextResponse.json({ error: 'Failed to delete event' }, { status: 500 });
-  }
 }

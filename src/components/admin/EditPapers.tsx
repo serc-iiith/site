@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Plus, Edit, X, Save, Search, Trash2, BookOpen, Link as LinkIcon, User } from 'lucide-react';
-import { Toaster, toast } from 'react-hot-toast';
+import { toast } from 'react-hot-toast';
 import DeleteConfirmationModal from '@/components/common/DeleteConfirmationModal';
+import { useUnsavedChanges } from '@/hooks/useUnsavedChanges';
 
 interface Paper {
     authors: string[];
@@ -29,7 +30,7 @@ const EditPapers: React.FC = () => {
         isOpen: false,
         paper: null,
     });
-    const [formData, setFormData] = useState<Paper & { originalTitle?: string; originalYear?: string; originalAuthors?: string[] }>({
+    const [formData, setFormData] = useState<Paper>({
         authors: [],
         year: '',
         title: '',
@@ -38,6 +39,7 @@ const EditPapers: React.FC = () => {
         doi: '',
         url: '',
     });
+    const confirmDiscard = useUnsavedChanges(isEditing);
 
     useEffect(() => {
         fetchPapers();
@@ -83,12 +85,8 @@ const EditPapers: React.FC = () => {
     };
 
     const startEditing = (paper: Paper) => {
-        setFormData({
-            ...paper,
-            originalTitle: paper.title,
-            originalYear: paper.year,
-            originalAuthors: [...paper.authors],
-        });
+        if (!confirmDiscard()) return;
+        setFormData({ ...paper });
         setCurrentAuthors([...paper.authors]);
         setIsEditing(true);
         setIsNew(false);
@@ -98,6 +96,7 @@ const EditPapers: React.FC = () => {
     };
 
     const startAdding = () => {
+        if (!confirmDiscard()) return;
         setFormData({
             authors: [],
             year: new Date().getFullYear().toString(),
@@ -194,14 +193,11 @@ const EditPapers: React.FC = () => {
 
         try {
             const paper = deleteModal.paper;
-            const queryParams = new URLSearchParams({
-                title: paper.title,
-                year: paper.year,
-                authors: JSON.stringify(paper.authors)
-            });
-
-            const response = await fetch(`/api/papers?${queryParams}`, {
-                method: 'DELETE'
+            if (!paper.id) throw new Error('Paper has no id');
+            const response = await fetch('/api/papers', {
+                method: 'DELETE',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id: paper.id }),
             });
 
             if (!response.ok) {
@@ -228,23 +224,6 @@ const EditPapers: React.FC = () => {
 
     return (
         <div className="bg-[color:var(--background)] rounded-lg shadow-lg p-4 sm:p-6 border border-[color:var(--border-color)]">
-            <Toaster
-                position="top-right"
-                toastOptions={{
-                    duration: 3000,
-                    style: {
-                        background: 'var(--background)',
-                        color: 'var(--text-color)',
-                        border: '1px solid var(--border-color)'
-                    },
-                    success: {
-                        icon: '✅',
-                    },
-                    error: {
-                        icon: '❌',
-                    }
-                }}
-            />
 
             <DeleteConfirmationModal
                 isOpen={deleteModal.isOpen}
@@ -410,7 +389,7 @@ const EditPapers: React.FC = () => {
 
                     <div className="flex justify-end gap-2 mt-6">
                         <button
-                            onClick={cancelEditing}
+                            onClick={() => { if (confirmDiscard()) cancelEditing(); }}
                             disabled={isLoading}
                             className="px-3 py-1.5 sm:px-4 sm:py-2 border border-[color:var(--border-color)] rounded-md text-[color:var(--text-color)] hover:bg-[color:var(--hover-bg)] flex items-center disabled:opacity-50"
                         >
@@ -456,7 +435,7 @@ const EditPapers: React.FC = () => {
                     <div className="grid grid-cols-1 gap-4">
                         {filteredPapers.map((paper, index) => (
                             <div
-                                key={index}
+                                key={paper.id ?? `${paper.title}-${index}`}
                                 className="p-4 bg-[color:var(--foreground)] rounded-lg border border-[color:var(--border-color)]"
                             >
                                 <div className="flex justify-between items-start">

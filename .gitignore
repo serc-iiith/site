@@ -13,6 +13,9 @@
 # testing
 /coverage
 
+# admin dashboard: pre-write backups of the data files
+public/data/*.json.bak
+
 # next.js
 .next/
 src/.next/
@@ -42,3 +45,6 @@ yarn-error.log*
 next-env.d.ts
 
 /src/.next/
+
+# admin dev server build dir (see next.config.ts)
+.next-admin/

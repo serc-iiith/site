@@ -1,160 +1,108 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextRequest, NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
+import { readData, writeData } from '@/lib/adminData';
+import { slugify, uniqueSlug } from '@/lib/slug';
+import { paperPostSchema, paperPutSchema, formatIssues } from '@/lib/adminSchemas';
+import { z } from 'zod';
 
-export const dynamic = "force-static";
+// Dev-only tool: this route is stripped from the static export at build time.
+// force-static is required for `next build` (output: 'export'); the mutating
+// handlers still run under `bun run dev:admin`. DELETE takes its id in the
+// request body, not query params, which force-static strips in dev.
+export const dynamic = 'force-static';
 
-const papersFilePath = path.join(process.cwd(), 'public', 'data', 'papers.json');
+const FILE = 'papers.json';
 
-// Helper function to read the papers data
-function readPapersData() {
-  try {
-    const fileContents = fs.readFileSync(papersFilePath, 'utf8');
-    return JSON.parse(fileContents);
-  } catch (error) {
-    console.error('Error reading papers data:', error);
-    return [];
-  }
+type Paper = Record<string, unknown> & { id?: string; title?: string; year?: string };
+
+/** Newest-year first, stable within a year. */
+function sortByYear(list: Paper[]): Paper[] {
+    return [...list]
+        .map((p, i) => ({ p, i, y: parseInt(String(p.year ?? ''), 10) || 0 }))
+        .sort((a, b) => b.y - a.y || a.i - b.i)
+        .map((x) => x.p);
 }
 
-// Helper function to write the papers data
-function writePapersData(data: any) {
-  fs.writeFileSync(papersFilePath, JSON.stringify(data, null, 2), 'utf8');
-}
-
-// GET: Fetch all papers
 export async function GET() {
-  try {
-    const data = readPapersData();
-    return NextResponse.json(data);
-  } catch (error) {
-    console.error('Error reading papers data:', error);
-    return NextResponse.json({ error: 'Failed to read papers data' }, { status: 500 });
-  }
+    try {
+        return NextResponse.json(sortByYear(await readData<Paper[]>(FILE)));
+    } catch (error) {
+        console.error('Error reading papers data:', error);
+        return NextResponse.json({ error: 'Failed to read papers data' }, { status: 500 });
+    }
 }
 
-// POST: Add a new paper
 export async function POST(request: NextRequest) {
-  try {
-    const paper = await request.json();
+    try {
+        const parsed = paperPostSchema.safeParse(await request.json());
+        if (!parsed.success) {
+            return NextResponse.json(
+                { error: 'Validation failed', issues: formatIssues(parsed.error) },
+                { status: 400 },
+            );
+        }
+        const papers = await readData<Paper[]>(FILE);
+        const paper = parsed.data as Paper;
 
-    // Validate required fields
-    if (!paper || !paper.title || !paper.authors || !paper.year || !paper.venue) {
-      return NextResponse.json(
-        { error: 'Required paper data is missing' },
-        { status: 400 }
-      );
+        const base = slugify(`${paper.title}-${paper.year}`) || 'paper';
+        paper.id = uniqueSlug(base, papers.map((p) => p.id ?? ''));
+
+        papers.unshift(paper);
+        await writeData(FILE, sortByYear(papers));
+
+        return NextResponse.json({ success: true, id: paper.id });
+    } catch (error) {
+        console.error('Error adding paper:', error);
+        return NextResponse.json({ error: 'Failed to add paper' }, { status: 500 });
     }
-
-    // Ensure authors is an array
-    if (!Array.isArray(paper.authors)) {
-      paper.authors = [paper.authors];
-    }
-
-    const papers = readPapersData();
-
-    // Add the new paper to the beginning of the array (most recent first)
-    papers.unshift(paper);
-
-    writePapersData(papers);
-
-    return NextResponse.json({ success: true });
-  } catch (error) {
-    console.error('Error adding paper:', error);
-    return NextResponse.json({ error: 'Failed to add paper' }, { status: 500 });
-  }
 }
 
-// PUT: Update an existing paper
 export async function PUT(request: NextRequest) {
-  try {
-    const updatedPaper = await request.json();
+    try {
+        const parsed = paperPutSchema.safeParse(await request.json());
+        if (!parsed.success) {
+            return NextResponse.json(
+                { error: 'Validation failed', issues: formatIssues(parsed.error) },
+                { status: 400 },
+            );
+        }
+        const paper = parsed.data as Paper;
+        const papers = await readData<Paper[]>(FILE);
 
-    // Validate required fields
-    if (!updatedPaper || !updatedPaper.title || !updatedPaper.authors || !updatedPaper.year || !updatedPaper.venue) {
-      return NextResponse.json(
-        { error: 'Required paper data is missing' },
-        { status: 400 }
-      );
+        const index = papers.findIndex((p) => p.id === paper.id);
+        if (index === -1) {
+            return NextResponse.json({ error: 'Paper not found' }, { status: 404 });
+        }
+
+        papers[index] = paper;
+        await writeData(FILE, sortByYear(papers));
+
+        return NextResponse.json({ success: true, id: paper.id });
+    } catch (error) {
+        console.error('Error updating paper:', error);
+        return NextResponse.json({ error: 'Failed to update paper' }, { status: 500 });
     }
-
-    // Ensure authors is an array
-    if (!Array.isArray(updatedPaper.authors)) {
-      updatedPaper.authors = [updatedPaper.authors];
-    }
-
-    const papers = readPapersData();
-
-    // Find the index of the paper to update (we're using title, year, authors as a composite key)
-    const index = papers.findIndex((p: any) =>
-      p.title === updatedPaper.originalTitle &&
-      p.year === updatedPaper.originalYear &&
-      JSON.stringify(p.authors) === JSON.stringify(updatedPaper.originalAuthors)
-    );
-
-    if (index === -1) {
-      return NextResponse.json(
-        { error: 'Paper not found' },
-        { status: 404 }
-      );
-    }
-
-    // Remove metadata fields used for identification
-    delete updatedPaper.originalTitle;
-    delete updatedPaper.originalYear;
-    delete updatedPaper.originalAuthors;
-
-    // Update the paper
-    papers[index] = updatedPaper;
-
-    writePapersData(papers);
-
-    return NextResponse.json({ success: true });
-  } catch (error) {
-    console.error('Error updating paper:', error);
-    return NextResponse.json({ error: 'Failed to update paper' }, { status: 500 });
-  }
 }
 
-// DELETE: Remove a paper
 export async function DELETE(request: NextRequest) {
-  try {
-    const { searchParams } = new URL(request.url);
-    const title = searchParams.get('title');
-    const year = searchParams.get('year');
-    const authorsString = searchParams.get('authors');
+    try {
+        // Identifier comes in the body: force-static strips query params in dev.
+        const body = await request.json().catch(() => ({}));
+        const id = z.string().min(1).safeParse(body?.id);
+        if (!id.success) {
+            return NextResponse.json({ error: 'Paper id is required' }, { status: 400 });
+        }
 
-    if (!title || !year || !authorsString) {
-      return NextResponse.json(
-        { error: 'Paper identification data is required' },
-        { status: 400 }
-      );
+        const papers = await readData<Paper[]>(FILE);
+        const index = papers.findIndex((p) => p.id === id.data);
+        if (index === -1) {
+            return NextResponse.json({ error: 'Paper not found' }, { status: 404 });
+        }
+        papers.splice(index, 1);
+        await writeData(FILE, sortByYear(papers));
+
+        return NextResponse.json({ success: true });
+    } catch (error) {
+        console.error('Error deleting paper:', error);
+        return NextResponse.json({ error: 'Failed to delete paper' }, { status: 500 });
     }
-
-    const authors = JSON.parse(decodeURIComponent(authorsString));
-
-    const papers = readPapersData();
-
-    // Filter out the paper to delete
-    const filteredPapers = papers.filter((p: any) =>
-      !(p.title === title &&
-        p.year === year &&
-        JSON.stringify(p.authors) === JSON.stringify(authors))
-    );
-
-    if (filteredPapers.length === papers.length) {
-      return NextResponse.json(
-        { error: 'Paper not found' },
-        { status: 404 }
-      );
-    }
-
-    writePapersData(filteredPapers);
-
-    return NextResponse.json({ success: true });
-  } catch (error) {
-    console.error('Error deleting paper:', error);
-    return NextResponse.json({ error: 'Failed to delete paper' }, { status: 500 });
-  }
 }

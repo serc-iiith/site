@@ -2,6 +2,10 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Plus, Edit, X, Save, Search, Trash2, Upload, AlertTriangle } from 'lucide-react';
 import Image from 'next/image';
 import { toast } from 'react-hot-toast';
+import { slugify } from '@/lib/slug';
+import { useUnsavedChanges } from '@/hooks/useUnsavedChanges';
+import SortableList from '@/components/admin/SortableList';
+import { ArrowUpDown } from 'lucide-react';
 
 interface SocialLinks {
     [key: string]: string;
@@ -212,8 +216,13 @@ const EditPeople: React.FC = () => {
     const [people, setPeople] = useState<Person[]>([]);
     const [categories, setCategories] = useState<string[]>([]);
     const [editingSlug, setEditingSlug] = useState<string | null>(null);
+    // Category of the record currently being edited — slugs are only unique
+    // within a category, so PUT/DELETE must be scoped by both.
+    const [editingCategory, setEditingCategory] = useState<string>('');
     const [searchTerm, setSearchTerm] = useState<string>('');
+    const [reorderCategory, setReorderCategory] = useState<string>('');
     const [isLoading, setIsLoading] = useState(false);
+    const [isInitialLoading, setIsInitialLoading] = useState(true);
     const [isUploading, setIsUploading] = useState(false);
     const [newSocialPlatform, setNewSocialPlatform] = useState<string>('');
     const [newSocialLink, setNewSocialLink] = useState<string>('');
@@ -237,16 +246,21 @@ const EditPeople: React.FC = () => {
     });
     // New state for unique titles
     const [uniqueTitles, setUniqueTitles] = useState<string[]>([]);
+    // Free-text value backing the "custom" option of the title dropdown.
+    const [customTitle, setCustomTitle] = useState<string>('');
+    const confirmDiscard = useUnsavedChanges(editingSlug !== null);
 
     // New state for deletion modal
     const [deleteModal, setDeleteModal] = useState<{
         isOpen: boolean;
         slug: string;
         name: string;
+        category: string;
     }>({
         isOpen: false,
         slug: '',
         name: '',
+        category: '',
     });
 
     useEffect(() => {
@@ -254,9 +268,14 @@ const EditPeople: React.FC = () => {
     }, []);
 
     const fetchPeople = async () => {
+        setIsInitialLoading(true);
         try {
             const response = await fetch('/api/people');
+            if (!response.ok) throw new Error(`Request failed: ${response.status}`);
             const data = await response.json();
+            if (!data || typeof data !== 'object' || Array.isArray(data)) {
+                throw new Error('Unexpected people payload');
+            }
 
             // Flatten the people data from all categories
             const allCategories = Object.keys(data);
@@ -286,16 +305,13 @@ const EditPeople: React.FC = () => {
         } catch (error) {
             console.error('Error fetching people data:', error);
             toast.error('Failed to load people data');
+        } finally {
+            setIsInitialLoading(false);
         }
     };
 
     // Generate a slug from name
-    const generateSlug = (name: string): string => {
-        return name
-            .toLowerCase()
-            .replace(/[^a-z0-9]+/g, '-')
-            .replace(/^-|-$/g, '');
-    };
+    const generateSlug = (name: string): string => slugify(name);
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -468,7 +484,9 @@ const EditPeople: React.FC = () => {
     };
 
     const startEditing = (person: Person) => {
+        if (!confirmDiscard()) return;
         setEditingSlug(person.slug);
+        setEditingCategory(person.category || '');
         setFormData({
             ...person,
             interests: person.interests || [],
@@ -483,6 +501,7 @@ const EditPeople: React.FC = () => {
     };
 
     const startAdding = () => {
+        if (!confirmDiscard()) return;
         setEditingSlug('new');
         setFormData({
             name: '',
@@ -499,8 +518,9 @@ const EditPeople: React.FC = () => {
         setCustomTitle('');
     };
 
-    const cancelEditing = () => {
+    const closeForm = () => {
         setEditingSlug(null);
+        setEditingCategory('');
         setFormData({
             name: '',
             title: '',
@@ -524,6 +544,12 @@ const EditPeople: React.FC = () => {
         setCustomTitle('');
     };
 
+    // User-initiated cancel — guarded against losing unsaved edits.
+    const cancelEditing = () => {
+        if (!confirmDiscard()) return;
+        closeForm();
+    };
+
     const savePerson = async () => {
         if (!formData.name || !formData.title || !formData.category) {
             // Simple validation - note that slug is no longer required
@@ -531,17 +557,16 @@ const EditPeople: React.FC = () => {
             return;
         }
 
-        // Generate slug if not provided
-        if (!formData.slug) {
-            formData.slug = generateSlug(formData.name);
-        }
-
         setIsLoading(true);
 
         try {
             // Remove the category field from the person object as it's not stored in the JSON structure
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            const { category: _category, ...personData } = formData;
+            const { category: _category, ...rest } = formData;
+            const personData = {
+                ...rest,
+                slug: formData.slug || generateSlug(formData.name),
+            };
 
             if (editingSlug === 'new') {
                 // Add new person
@@ -567,7 +592,7 @@ const EditPeople: React.FC = () => {
                     body: JSON.stringify({
                         person: personData,
                         category: formData.category,
-                        oldCategory: people.find(p => p.slug === editingSlug)?.category,
+                        oldCategory: editingCategory,
                         oldSlug: editingSlug
                     })
                 });
@@ -581,7 +606,7 @@ const EditPeople: React.FC = () => {
 
             // Refresh the data
             await fetchPeople();
-            cancelEditing();
+            closeForm();
         } catch (error) {
             console.error('Error saving person:', error);
             toast.error('Failed to save. Please try again.');
@@ -595,6 +620,7 @@ const EditPeople: React.FC = () => {
             isOpen: true,
             slug: person.slug,
             name: person.name,
+            category: person.category || '',
         });
     };
 
@@ -603,14 +629,14 @@ const EditPeople: React.FC = () => {
             isOpen: false,
             slug: '',
             name: '',
+            category: '',
         });
     };
 
     const confirmDelete = async () => {
-        const slug = deleteModal.slug;
-        const person = people.find(p => p.slug === slug);
+        const { slug, category } = deleteModal;
 
-        if (!person || !person.category) {
+        if (!slug || !category) {
             toast.error('Person not found');
             closeDeleteModal();
             return;
@@ -619,8 +645,10 @@ const EditPeople: React.FC = () => {
         setIsLoading(true);
 
         try {
-            const response = await fetch(`/api/people?slug=${slug}&category=${person.category}`, {
-                method: 'DELETE'
+            const response = await fetch('/api/people', {
+                method: 'DELETE',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ slug, category }),
             });
 
             if (!response.ok) {
@@ -641,6 +669,28 @@ const EditPeople: React.FC = () => {
     // Replace the deletePerson function
     const deletePerson = (person: Person) => {
         openDeleteModal(person);
+    };
+
+    const reorderPeople = people.filter((p) => p.category === reorderCategory);
+
+    const handleReorder = async (orderedSlugs: string[]) => {
+        const prev = people;
+        const others = people.filter((p) => p.category !== reorderCategory);
+        const bySlug = new Map(reorderPeople.map((p) => [p.slug, p]));
+        const reordered = orderedSlugs.map((s) => bySlug.get(s)!).filter(Boolean);
+        setPeople([...others, ...reordered]);
+        try {
+            const res = await fetch('/api/people', {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ reorder: true, category: reorderCategory, slugs: orderedSlugs }),
+            });
+            if (!res.ok) throw new Error('reorder failed');
+        } catch (error) {
+            console.error('Error reordering people:', error);
+            toast.error('Failed to save the new order');
+            setPeople(prev);
+        }
     };
 
     const filteredPeople = people.filter(person =>
@@ -718,7 +768,7 @@ const EditPeople: React.FC = () => {
                                         {!uniqueTitles.includes(formData.title) && (
                                             <input
                                                 type="text"
-                                                value={formData.title}
+                                                value={customTitle}
                                                 onChange={handleCustomTitleChange}
                                                 placeholder="Enter custom title"
                                                 className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
@@ -1012,16 +1062,56 @@ const EditPeople: React.FC = () => {
             )}
 
             <div className="overflow-x-auto -mx-4 sm:mx-0">
-                <div className="flex items-center mb-4 px-4 sm:px-0">
-                    <Search size={18} className="text-[color:var(--secondary-color)] mr-2" />
-                    <input
-                        type="text"
-                        placeholder="Search people..."
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                        className="px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)] w-full sm:w-64"
-                    />
+                <div className="flex flex-wrap items-center gap-2 mb-4 px-4 sm:px-0">
+                    {!reorderCategory && (
+                        <div className="flex items-center flex-1 min-w-[12rem]">
+                            <Search size={18} className="text-[color:var(--secondary-color)] mr-2" />
+                            <input
+                                type="text"
+                                placeholder="Search people..."
+                                value={searchTerm}
+                                onChange={(e) => setSearchTerm(e.target.value)}
+                                className="px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)] w-full sm:w-64"
+                            />
+                        </div>
+                    )}
+                    <div className="ml-auto flex items-center gap-2">
+                        <ArrowUpDown size={16} className="text-[color:var(--secondary-color)]" />
+                        <select
+                            value={reorderCategory}
+                            onChange={(e) => { setReorderCategory(e.target.value); setSearchTerm(''); }}
+                            disabled={editingSlug !== null}
+                            className="px-2 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)] text-sm disabled:opacity-50"
+                        >
+                            <option value="">Reorder a category…</option>
+                            {categories.map((c) => (
+                                <option key={c} value={c}>{c}</option>
+                            ))}
+                        </select>
+                    </div>
                 </div>
+
+                {reorderCategory ? (
+                    <div className="px-4 sm:px-0">
+                        <p className="text-xs text-[color:var(--secondary-color)] mb-2">
+                            Drag to set the order of <strong>{reorderCategory}</strong> on the People page. Saved automatically.
+                        </p>
+                        <SortableList
+                            items={reorderPeople}
+                            getId={(p) => p.slug}
+                            onReorder={handleReorder}
+                            renderItem={(p) => (
+                                <div className="flex items-center gap-2 bg-[color:var(--background)] border border-[color:var(--border-color)] rounded-md px-3 py-2">
+                                    <span className="text-sm text-[color:var(--text-color)] truncate">{p.name}</span>
+                                    <span className="ml-auto text-xs text-[color:var(--secondary-color)] truncate flex-shrink-0">{p.title}</span>
+                                </div>
+                            )}
+                        />
+                        {reorderPeople.length === 0 && (
+                            <p className="text-sm text-[color:var(--secondary-color)] py-4">No people in this category.</p>
+                        )}
+                    </div>
+                ) : (
                 <div className="min-w-full inline-block align-middle">
                     <div className="overflow-hidden">
                         <table className="min-w-full divide-y divide-[color:var(--border-color)]">
@@ -1042,8 +1132,22 @@ const EditPeople: React.FC = () => {
                                 </tr>
                             </thead>
                             <tbody className="bg-[color:var(--background)] divide-y divide-[color:var(--border-color)]">
+                                {isInitialLoading && people.length === 0 && (
+                                    <tr>
+                                        <td colSpan={4} className="px-6 py-8 text-center text-[color:var(--secondary-color)]">
+                                            Loading people…
+                                        </td>
+                                    </tr>
+                                )}
+                                {!isInitialLoading && filteredPeople.length === 0 && (
+                                    <tr>
+                                        <td colSpan={4} className="px-6 py-8 text-center text-[color:var(--secondary-color)]">
+                                            No people found.
+                                        </td>
+                                    </tr>
+                                )}
                                 {filteredPeople.map((person) => (
-                                    <tr key={person.slug}>
+                                    <tr key={`${person.category}/${person.slug}`}>
                                         <td className="px-3 sm:px-6 py-4 whitespace-nowrap">
                                             <div className="flex items-center">
                                                 <div className="flex-shrink-0 h-8 w-8 sm:h-10 sm:w-10 rounded-full overflow-hidden bg-gray-100">
@@ -1054,9 +1158,9 @@ const EditPeople: React.FC = () => {
                                                         alt={person.name}
                                                         className="object-cover transition-transform duration-500 hover:scale-110"
                                                         unoptimized={true}
-                                                        onError={() => {
-                                                            const img = document.querySelector(`img[alt="${person.name}"]`) as HTMLImageElement;
-                                                            if (img && img.src !== window.location.origin + '/images/person_fallback.png') {
+                                                        onError={(e) => {
+                                                            const img = e.currentTarget;
+                                                            if (!img.src.endsWith('/images/person_fallback.png')) {
                                                                 img.src = '/images/person_fallback.png';
                                                             }
                                                         }}
@@ -1098,6 +1202,7 @@ const EditPeople: React.FC = () => {
                         </table>
                     </div>
                 </div>
+                )}
             </div>
         </div>
     );

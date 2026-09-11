@@ -44,8 +44,12 @@ export default function ResearchPapers() {
       try {
         // TODO: follow basePath in next.config.js
         const response = await fetch('/data/papers.json');
-        const data = await response.json();
-        setPapers(data);
+        const data: Paper[] = await response.json();
+        // Defensive: keep newest-year-first even if the file drifts.
+        const sorted = [...data].sort(
+          (a, b) => (parseInt(b.year, 10) || 0) - (parseInt(a.year, 10) || 0),
+        );
+        setPapers(sorted);
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       } catch (_error) {
       } finally {
@@ -165,7 +169,7 @@ export default function ResearchPapers() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-foreground flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <div className="w-16 h-16 border-4 border-t-blue-600 border-b-blue-600 border-l-transparent border-r-transparent rounded-full animate-spin mx-auto mb-4"></div>
           <h2 className="text-xl font-semibold text-gray-700">Loading research papers...</h2>
@@ -175,7 +179,7 @@ export default function ResearchPapers() {
   }
 
   return (
-    <div className="min-h-screen bg-foreground">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <section className="pt-32 px-4 relative overflow-hidden">
         <motion.div

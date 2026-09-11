@@ -311,7 +311,7 @@ export default function News() {
     }, []);
 
     return (
-        <div className="min-h-screen pt-32 bg-[color:var(--foreground)] py-16 px-4 sm:px-6 lg:px-8">
+        <div className="min-h-screen pt-32 py-16 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
                 {/* Hero Section */}
                 <motion.div

@@ -53,7 +53,7 @@ export default function AboutUsContent({
   commitments,
 }: AboutUsContentProps) {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[color:var(--background)] to-[color:var(--foreground)] pt-32 py-16 px-4 sm:px-6 lg:px-8">
+    <main className="min-h-screen pt-32 py-16 px-4 sm:px-6 lg:px-8">
       <motion.div
         className="max-w-7xl mx-auto"
         variants={containerVariants}

@@ -24,9 +24,22 @@ import EditPapers from '@/components/admin/EditPapers';
 import EditCollaborators from '@/components/admin/EditCollaborators';
 import EditBlogs from '@/components/admin/EditBlogs';
 import SeoVerifier from '@/components/admin/SeoVerifier';
+import { AdminDirtyProvider, AdminDirtyContext } from '@/components/admin/AdminDirtyContext';
 
 export default function AdminPage() {
+  return (
+    <AdminDirtyProvider>
+      <AdminDashboard />
+    </AdminDirtyProvider>
+  );
+}
+
+function AdminDashboard() {
+  const dirty = React.useContext(AdminDirtyContext);
   const [activeSection, setActiveSection] = useState('people');
+  // Sections keep their component mounted once first visited, so switching tabs
+  // doesn't refetch data or drop an in-progress edit.
+  const [mountedSections, setMountedSections] = useState<string[]>(['people']);
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -46,26 +59,25 @@ export default function AdminPage() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const renderContent = () => {
-    switch (activeSection) {
-      case 'people':
-        return <EditPeople />
-      case 'news':
-        return <EditNews />
-      case 'projects':
-        return <EditProjects />
-      case 'research':
-        return <EditPapers />
-      case 'collaborators':
-        return <EditCollaborators />
-      case 'blog':
-        return <EditBlogs />
-      case 'seo':
-        return <SeoVerifier />
-      default:
-        return null;
-    }
+  const sectionComponents: Record<string, React.ReactNode> = {
+    people: <EditPeople />,
+    news: <EditNews />,
+    projects: <EditProjects />,
+    research: <EditPapers />,
+    collaborators: <EditCollaborators />,
+    blog: <EditBlogs />,
+    seo: <SeoVerifier />,
   };
+
+  const renderContent = () => (
+    <>
+      {mountedSections.map((id) => (
+        <div key={id} hidden={id !== activeSection}>
+          {sectionComponents[id]}
+        </div>
+      ))}
+    </>
+  );
 
   const sidebarItems = [
     { id: 'people', name: 'People', icon: <Users size={20} /> },
@@ -77,17 +89,31 @@ export default function AdminPage() {
     { id: 'seo', name: 'SEO Verifier', icon: <FileJson size={20} /> },
   ];
 
-  // Show toast notification when changing sections
   const changeSection = (sectionId: string) => {
+    if (sectionId === activeSection) return;
+    if (dirty && !dirty.confirmNavigation()) return;
+    setMountedSections((prev) => (prev.includes(sectionId) ? prev : [...prev, sectionId]));
     setActiveSection(sectionId);
-
     if (isMobile) setSidebarOpen(false);
   };
 
   return (
     <div className="min-h-screen pt-16 bg-[color:var(--foreground)]">
-      {/* Toast notifications container - positioned in bottom right */}
-      <Toaster position="bottom-right" />
+      {/* Single toast container for the whole dashboard (editors must not
+          render their own <Toaster> or toasts get duplicated). */}
+      <Toaster
+        position="bottom-right"
+        toastOptions={{
+          duration: 3000,
+          style: {
+            background: 'var(--background)',
+            color: 'var(--text-color)',
+            border: '1px solid var(--border-color)',
+          },
+          success: { icon: '✅' },
+          error: { icon: '❌' },
+        }}
+      />
 
       <div className="flex relative">
         {/* Sidebar - hidden on mobile */}
@@ -164,7 +190,6 @@ export default function AdminPage() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
-              key={activeSection} // Force re-render animation when section changes
             >
               {renderContent()}
             </motion.div>

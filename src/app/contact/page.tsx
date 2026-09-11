@@ -21,7 +21,7 @@ export default function ContactPage() {
   const position = [17.4457, 78.3488];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b pt-32 from-[color:var(--background)] to-[color:var(--foreground)] py-16 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen pt-32 py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Hero Section with animation */}
         <motion.div

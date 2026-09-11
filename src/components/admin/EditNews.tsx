@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Plus, Edit, X, Save, Search, Trash2, MapPin, Clock, Link } from 'lucide-react';
 import Image from 'next/image';
-import { Toaster, toast } from 'react-hot-toast';
+import { toast } from 'react-hot-toast';
 import DeleteConfirmationModal from '@/components/common/DeleteConfirmationModal';
 import ImageDropzone from '@/components/common/ImageDropzone';
+import { slugify } from '@/lib/slug';
+import { useUnsavedChanges } from '@/hooks/useUnsavedChanges';
 
 interface Event {
     id?: number;
@@ -38,8 +40,12 @@ interface Event {
 const EditNews: React.FC = () => {
     const [news, setNews] = useState<Event[]>([]);
     const [editingId, setEditingId] = useState<number | string | null>(null);
+    // Slug of the event being edited — its identity for the PUT request, so a
+    // rename (slug change) still targets the right record.
+    const [originalSlug, setOriginalSlug] = useState<string>('');
     const [searchTerm, setSearchTerm] = useState<string>('');
     const [isLoading, setIsLoading] = useState(false);
+    const [isInitialLoading, setIsInitialLoading] = useState(true);
     const [newPresenter, setNewPresenter] = useState('');
     const [deleteModal, setDeleteModal] = useState<{
         isOpen: boolean;
@@ -80,19 +86,25 @@ const EditNews: React.FC = () => {
     });
     const [newImageURL, setNewImageURL] = useState('');
     const [isUploading, setIsUploading] = useState(false);
+    const confirmDiscard = useUnsavedChanges(editingId !== null);
 
     useEffect(() => {
         fetchNews();
     }, []);
 
     const fetchNews = async () => {
+        setIsInitialLoading(true);
         try {
             const response = await fetch('/api/news');
+            if (!response.ok) throw new Error(`Request failed: ${response.status}`);
             const data = await response.json();
+            if (!Array.isArray(data)) throw new Error('Unexpected news payload');
             setNews(data);
         } catch (error) {
             console.error('Error fetching news data:', error);
             toast.error('Failed to load news data');
+        } finally {
+            setIsInitialLoading(false);
         }
     };
 
@@ -126,8 +138,10 @@ const EditNews: React.FC = () => {
             setFormData(prev => ({ ...prev, [name]: value }));
         }
 
-        // Auto-generate slug if name is being edited and slug is empty or auto-generated
-        if (name === 'name' && (!formData.slug || formData.slug === generateSlug(formData.name))) {
+        // Auto-generate the slug from the name only while adding a new event.
+        // For an existing event the slug is its identity; renaming is explicit
+        // via the (now editable) slug field.
+        if (name === 'name' && editingId === 'new') {
             setFormData(prev => ({
                 ...prev,
                 slug: generateSlug(value)
@@ -135,14 +149,7 @@ const EditNews: React.FC = () => {
         }
     };
 
-    const generateSlug = (name: string): string => {
-        return name
-            .toLowerCase()
-            .replace(/[^\w\s-]/g, '')  // Remove special characters
-            .replace(/\s+/g, '-')      // Replace spaces with hyphens
-            .replace(/-+/g, '-')       // Replace multiple hyphens with single hyphen
-            .trim();
-    };
+    const generateSlug = (name: string): string => slugify(name);
 
     const addPresenter = () => {
         if (!newPresenter) return;
@@ -182,12 +189,33 @@ const EditNews: React.FC = () => {
         });
     };
 
+    // imageURLs[0] is the primary image (used on the news list and cards).
+    const moveImage = (index: number, dir: -1 | 1) => {
+        setFormData(prev => {
+            const next = [...prev.imageURLs];
+            const target = index + dir;
+            if (target < 0 || target >= next.length) return prev;
+            [next[index], next[target]] = [next[target], next[index]];
+            return { ...prev, imageURLs: next };
+        });
+    };
+
+    const makePrimary = (index: number) => {
+        setFormData(prev => {
+            if (index === 0) return prev;
+            const next = [...prev.imageURLs];
+            const [picked] = next.splice(index, 1);
+            next.unshift(picked);
+            return { ...prev, imageURLs: next };
+        });
+    };
+
     const startEditing = (event: Event) => {
-        if (event.id) {
-            setEditingId(event.id);
-        } else {
-            setEditingId('unknown');
-        }
+        if (!confirmDiscard()) return;
+        setEditingId(event.id ?? 'unknown');
+        setOriginalSlug(event.slug);
+        setNewImageURL('');
+        setNewPresenter('');
 
         setFormData({
             ...event,
@@ -210,7 +238,11 @@ const EditNews: React.FC = () => {
         const now = new Date().toISOString().slice(0, 16);
         const nextHour = new Date(Date.now() + 60 * 60 * 1000).toISOString().slice(0, 16);
 
+        if (!confirmDiscard()) return;
         setEditingId('new'); // Use 'new' to indicate new event
+        setOriginalSlug('');
+        setNewImageURL('');
+        setNewPresenter('');
         setFormData({
             slug: '',
             name: '',
@@ -243,6 +275,7 @@ const EditNews: React.FC = () => {
 
     const cancelEditing = () => {
         setEditingId(null);
+        setOriginalSlug('');
         setNewPresenter('');
         setNewImageURL('');
     };
@@ -277,11 +310,12 @@ const EditNews: React.FC = () => {
 
                 toast.success('Event added successfully');
             } else {
-                // Update existing event
+                // Update existing event (originalSlug identifies it, so the slug
+                // itself may change = rename)
                 const response = await fetch('/api/news', {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(formData)
+                    body: JSON.stringify({ ...formData, originalSlug })
                 });
 
                 if (!response.ok) {
@@ -324,8 +358,10 @@ const EditNews: React.FC = () => {
         setIsLoading(true);
 
         try {
-            const response = await fetch(`/api/news?slug=${deleteModal.eventId}`, {
-                method: 'DELETE'
+            const response = await fetch('/api/news', {
+                method: 'DELETE',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ slug: String(deleteModal.eventId) }),
             });
 
             if (!response.ok) {
@@ -434,23 +470,6 @@ const EditNews: React.FC = () => {
 
     return (
         <div className="bg-[color:var(--background)] rounded-lg shadow-lg p-4 sm:p-6 border border-[color:var(--border-color)]">
-            <Toaster
-                position="top-right"
-                toastOptions={{
-                    duration: 3000,
-                    style: {
-                        background: 'var(--background)',
-                        color: 'var(--text-color)',
-                        border: '1px solid var(--border-color)'
-                    },
-                    success: {
-                        icon: '✅',
-                    },
-                    error: {
-                        icon: '❌',
-                    }
-                }}
-            />
 
             <DeleteConfirmationModal
                 isOpen={deleteModal.isOpen}
@@ -499,14 +518,21 @@ const EditNews: React.FC = () => {
                             </div>
                             <div>
                                 <label className="block text-sm font-medium text-[color:var(--secondary-color)] mb-1">
-                                    Slug* (URL-friendly name) <span className="text-xs ml-2 text-[color:var(--info-color)]">(Auto-generated, not editable)</span>
+                                    Slug* (URL-friendly name)
+                                    <span className="text-xs ml-2 text-[color:var(--info-color)]">
+                                        {editingId === 'new'
+                                            ? '(auto-generated from name; editable)'
+                                            : '(editing this renames the event and its images)'}
+                                    </span>
                                 </label>
                                 <input
                                     type="text"
                                     name="slug"
                                     value={formData.slug}
-                                    readOnly
-                                    className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)] opacity-70"
+                                    onChange={handleInputChange}
+                                    onBlur={(e) => setFormData(prev => ({ ...prev, slug: generateSlug(e.target.value) }))}
+                                    disabled={isLoading}
+                                    className="w-full px-3 py-2 border border-[color:var(--border-color)] rounded-md bg-[color:var(--background)] text-[color:var(--text-color)]"
                                     placeholder="event-name-slug"
                                 />
                             </div>
@@ -804,15 +830,28 @@ const EditNews: React.FC = () => {
                             </div>
                             <div>
                                 <div className="mb-3">
-                                    <h5 className="text-sm font-medium mb-2 text-[color:var(--secondary-color)]">Current Images</h5>
-                                    <div className="flex flex-wrap gap-2">
+                                    <h5 className="text-sm font-medium mb-2 text-[color:var(--secondary-color)]">
+                                        Current Images <span className="font-normal">(the first is the primary image)</span>
+                                    </h5>
+                                    <div className="flex flex-col gap-2">
                                         {(formData.imageURLs || []).map((url, index) => (
-                                            <div key={index} className="flex items-center bg-[color:var(--background)] p-2 rounded-md max-w-full text-[color:var(--tertiary-color)]">
-                                                <span className="text-sm mr-2 truncate max-w-xs">{url.split('/').pop()}</span>
+                                            <div key={url} className="flex items-center bg-[color:var(--background)] p-2 rounded-md max-w-full text-[color:var(--tertiary-color)]">
+                                                <span className="text-sm mr-2 truncate flex-1">
+                                                    {index === 0 && <span className="text-xs font-semibold text-[color:var(--primary-color)] mr-1">PRIMARY</span>}
+                                                    {url.split('/').pop()}
+                                                </span>
+                                                <button type="button" onClick={() => moveImage(index, -1)} disabled={isLoading || index === 0}
+                                                    className="px-1 disabled:opacity-30" aria-label="Move up">↑</button>
+                                                <button type="button" onClick={() => moveImage(index, 1)} disabled={isLoading || index === formData.imageURLs.length - 1}
+                                                    className="px-1 disabled:opacity-30" aria-label="Move down">↓</button>
+                                                {index !== 0 && (
+                                                    <button type="button" onClick={() => makePrimary(index)} disabled={isLoading}
+                                                        className="text-xs px-1 text-[color:var(--primary-color)] hover:underline">Make primary</button>
+                                                )}
                                                 <button
                                                     type="button"
                                                     onClick={() => removeImageURL(index)}
-                                                    className="text-[color:var(--error-color)] hover:text-red-700 flex-shrink-0"
+                                                    className="text-[color:var(--error-color)] hover:text-red-700 flex-shrink-0 ml-1"
                                                     disabled={isLoading}
                                                 >
                                                     <X size={16} />
@@ -887,7 +926,7 @@ const EditNews: React.FC = () => {
 
                     <div className="flex justify-end gap-2 mt-6">
                         <button
-                            onClick={cancelEditing}
+                            onClick={() => { if (confirmDiscard()) cancelEditing(); }}
                             disabled={isLoading}
                             className="px-3 py-1.5 sm:px-4 sm:py-2 border border-[color:var(--border-color)] rounded-md text-[color:var(--text-color)] hover:bg-[color:var(--hover-bg)] flex items-center disabled:opacity-50"
                         >
@@ -895,10 +934,10 @@ const EditNews: React.FC = () => {
                         </button>
                         <button
                             onClick={saveEvent}
-                            disabled={isLoading}
+                            disabled={isLoading || isUploading}
                             className="px-3 py-1.5 sm:px-4 sm:py-2 bg-[color:var(--primary-color)] text-white rounded-md hover:bg-opacity-90 flex items-center disabled:opacity-50"
                         >
-                            {isLoading ? 'Saving...' : <><Save size={16} className="mr-1" /> Save</>}
+                            {isLoading ? 'Saving...' : isUploading ? 'Uploading…' : <><Save size={16} className="mr-1" /> Save</>}
                         </button>
                     </div>
                 </div>
@@ -935,6 +974,12 @@ const EditNews: React.FC = () => {
                                 </tr>
                             </thead>
                             <tbody className="bg-[color:var(--background)] divide-y divide-[color:var(--border-color)]">
+                                {isInitialLoading && news.length === 0 && (
+                                    <tr><td colSpan={4} className="px-6 py-8 text-center text-[color:var(--secondary-color)]">Loading events…</td></tr>
+                                )}
+                                {!isInitialLoading && filteredNews.length === 0 && (
+                                    <tr><td colSpan={4} className="px-6 py-8 text-center text-[color:var(--secondary-color)]">No events found.</td></tr>
+                                )}
                                 {filteredNews.map((event) => (
                                     <tr key={event.slug}>
                                         <td className="px-3 sm:px-6 py-4">
