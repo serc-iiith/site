@@ -1421,6 +1421,26 @@
             "interests": [],
             "education": [],
             "bio": "Aneetta is a former Assistant Professor and Software Developer who blends academic insight with industry experience. Her interests include cloud concepts, software engineering, and sustainable computing. She is driven by a passion for technology, teaching, and innovation."
+        },
+        {
+            "name": "Pranav Reddy Muttannagaru ",
+            "title": "Research Engineer",
+            "email": "pranav.reddy@research.iiit.ac.in",
+            "imageURL": "/images/people/pranav-reddy-muttannagaru.jpeg",
+            "slug": "pranav-reddy-muttannagaru",
+            "social_links": {
+                "LinkedIn": "www.linkedin.com/in/pranav-red912",
+                "GitHub": "https://github.com/pranav-reds"
+            },
+            "interests": [],
+            "education": [
+                {
+                    "degree": "B.Tech",
+                    "institution": "VNR Vignana Jyothi Institute of Engineering and Technology (VNRVJIET)",
+                    "year": 2025
+                }
+            ],
+            "bio": "M. Pranav Reddy is a Research Engineer at the Software Engineering Research Center (SERC) at IIIT-Hyderabad, focusing on software architecture for agentic systems and autonomous CloudOps. Previously, he served as a Junior Research Fellow at VNRVJIET, where he developed and deployed end-to-end machine learning and deep learning models for real-world product applications."
         }
     ]
 }
