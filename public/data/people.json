@@ -1427,18 +1427,6 @@
             "interests": [],
             "education": [],
             "bio": "My primary focus is building LEAF-Cloud, an analytical framework that models and estimates the carbon footprint of cloud infrastructure using Terraform code. This project combines my interests in building full-stack systems and applying data-driven methods to solve practical software engineering challenges.\nThis work fuels my passion for the broader intersection of AI and Software Engineering. I am particularly excited about the potential of Large Language Models (LLMs) and autonomous agents to automate complex CloudOps, improve architectural decisions, and create more efficient, intelligent systems.\nI have a strong background in building a variety of applications, from high-performance AI video analysis tools to full-stack web platforms using both .NET/SQL and MERN stacks. My real passion is simply building new things, and I'm always looking for the next interesting problem to solve with technology. I'm eager to collaborate on innovative projects in this space."
-<<<<<<< HEAD
-        },
-        {
-            "name": "Aneetta Sara",
-            "title": "Research Engineer",
-            "email": "aneetta.sara@research.iiit.ac.in",
-            "imageURL": "/images/people/aneetta-sara.jpg",
-            "slug": "aneetta-sara",
-            "social_links": {},
-            "interests": [],
-            "education": [],
-            "bio": "Aneetta is a former Assistant Professor and Software Developer who blends academic insight with industry experience. Her interests include cloud concepts, software engineering, and sustainable computing. She is driven by a passion for technology, teaching, and innovation."
         },
         {
             "name": "Pranav Reddy Muttannagaru ",
@@ -1459,8 +1447,6 @@
                 }
             ],
             "bio": "M. Pranav Reddy is a Research Engineer at the Software Engineering Research Center (SERC) at IIIT-Hyderabad, focusing on software architecture for agentic systems and autonomous CloudOps. Previously, he served as a Junior Research Fellow at VNRVJIET, where he developed and deployed end-to-end machine learning and deep learning models for real-world product applications."
-=======
->>>>>>> f591ea92b1703d8f50a833a628050f4aa150cafe
         }
     ]
 }
