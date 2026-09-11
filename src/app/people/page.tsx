@@ -278,28 +278,38 @@ export default function PeoplePage() {
         </motion.div>
 
         {/* Team Stats */}
-        <div className="flex flex-wrap justify-center gap-4 sm:gap-8 mt-4 sm:mt-8 mb-8 sm:mb-16 px-2 sm:px-4">
-          <div className="bg-[color:var(--background)] rounded-lg shadow-md p-2 sm:p-3 text-center w-[calc(50%-0.5rem)] sm:w-60 md:w-72 h-24 sm:h-32 flex flex-col justify-center animate-bounce-slow hover:animate-jiggle transform transition-all duration-300 border border-[color:var(--border-color)]">
-            <h3 className="text-2xl sm:text-3xl font-bold text-[color:var(--primary-color)]">
+        <div className="mt-4 sm:mt-8 mb-8 sm:mb-16 px-2 sm:px-4">
+          {/* Hero: total members */}
+          <div className="mx-auto max-w-xs bg-[color:var(--background)] rounded-lg shadow-md p-4 sm:p-5 text-center animate-bounce-slow hover:animate-jiggle transform transition-all duration-300 border border-[color:var(--border-color)]">
+            <h3 className="text-4xl sm:text-5xl font-bold text-[color:var(--primary-color)] leading-none">
               {stats.total}
             </h3>
-            <p className="text-sm sm:text-base text-[color:var(--secondary-color)]">
+            <p className="mt-1 text-sm sm:text-base text-[color:var(--secondary-color)]">
               Total Members
             </p>
           </div>
-          {stats.categories.map((cat) => (
-            <div
-              key={cat.name}
-              className="bg-[color:var(--background)] rounded-lg shadow-md p-2 sm:p-3 text-center w-[calc(50%-0.5rem)] sm:w-60 md:w-72 h-24 sm:h-32 flex flex-col justify-center animate-bounce-slow hover:animate-jiggle transform transition-all duration-300 border border-[color:var(--border-color)]"
-            >
-              <h3 className="text-2xl sm:text-3xl font-bold text-[color:var(--primary-color)]">
-                {cat.count}
-              </h3>
-              <p className="text-sm sm:text-base text-[color:var(--secondary-color)]">
-                {cat.name}
-              </p>
-            </div>
-          ))}
+
+          {/* Per-category breakdown — even grid so it never leaves an orphan tile */}
+          <div className="mt-4 sm:mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+            {stats.categories.map((cat) => (
+              <button
+                key={cat.name}
+                type="button"
+                onClick={() => setActiveCategory(cat.name)}
+                className={`rounded-lg shadow-sm p-2 sm:p-3 text-center transform transition-all duration-300 border hover:-translate-y-0.5 hover:shadow-md
+                  ${activeCategory === cat.name
+                    ? "bg-[color:var(--primary-color)]/10 border-[color:var(--primary-color)]"
+                    : "bg-[color:var(--background)] border-[color:var(--border-color)]"}`}
+              >
+                <span className="block text-xl sm:text-2xl font-bold text-[color:var(--primary-color)] leading-none">
+                  {cat.count}
+                </span>
+                <span className="mt-1 block text-xs sm:text-sm text-[color:var(--secondary-color)]">
+                  {cat.name}
+                </span>
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Category Navigation */}
@@ -308,7 +318,7 @@ export default function PeoplePage() {
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors 
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors
                 ${activeCategory === category
                   ? "bg-[color:var(--primary-color)] text-white"
                   : "bg-[color:var(--background)] text-[color:var(--text-color)] hover:bg-[color:var(--hover-bg)] border border-[color:var(--border-color)]"
