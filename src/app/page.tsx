@@ -732,20 +732,38 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <SectionTransition delay={0.1}>
               <div className="md:pr-6">
-                <h2 className="text-3xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[color:var(--primary-color)] to-[color:var(--info-color)] text-center md:text-left">
-                  Our Vision
+                <p className="text-xs uppercase tracking-[0.2em] font-semibold text-[color:var(--primary-color)] mb-2 text-center md:text-left">
+                  Software Engineering Research Center • IIIT Hyderabad
+                </p>
+                <h2 className="text-3xl md:text-5xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-[color:var(--primary-color)] to-[color:var(--info-color)] text-center md:text-left">
+                  Vision & Mission
                 </h2>
-                <div className="w-24 h-1 bg-[color:var(--primary-color)] mb-6 mx-auto md:mx-0"></div>
-                <p className="text-base md:text-lg text-[color:var(--text-color)] leading-relaxed text-center md:text-justify">
-                  To be a globally respected software research center that addresses Indian challenges while creating worldwide impact through intelligent, reliable, human-centered software. We envision a future where our research advances not just technology, but the broader understanding of how computation can augment human capabilities.
-                </p>
-                <p className="text-base md:text-lg text-[color:var(--text-color)] mt-4 leading-relaxed text-center md:text-justify">
-                  We study how human intelligence and autonomous computation can come together to build software that is functional, efficient, trustworthy, and understandable. Through rigorous research, education, and collaboration, we strive to create a positive impact on society.
-                </p>
-                <div className="mt-6 flex justify-center md:justify-start">
-                  <Link href="/about-us" className="relative inline-flex items-center gap-2 text-[color:var(--primary-color)] font-medium transition-all duration-300 group">
+                <div className="w-20 h-1 bg-[color:var(--primary-color)] mb-5 mx-auto md:mx-0"></div>
+                
+                <div className="space-y-4">
+                  <div>
+                    <h3 className="text-xs uppercase tracking-wider font-bold text-[color:var(--primary-color)] mb-1 text-center md:text-left">
+                      Vision
+                    </h3>
+                    <p className="text-sm md:text-base text-[color:var(--text-color)] leading-relaxed text-center md:text-justify">
+                      To be a globally respected Software Engineering research centre that addresses India&apos;s challenges while creating worldwide impact by advancing the design, development, and sustainability of intelligent, reliable, human-centered, and responsible software through deep academia-industry collaboration.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xs uppercase tracking-wider font-bold text-[color:var(--primary-color)] mb-1 text-center md:text-left">
+                      Mission
+                    </h3>
+                    <p className="text-sm md:text-base text-[color:var(--text-color)] leading-relaxed text-center md:text-justify">
+                      As software systems become increasingly intelligent and deeply embedded in society, building them well—and understanding who we build them for and why—is essential. Our mission is to understand how human intelligence and autonomous computation can work together to create software that is human-centered, functional, efficient, trustworthy, and understandable.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-5 flex justify-center md:justify-start">
+                  <Link href="/about-us" className="relative inline-flex items-center gap-2 text-[color:var(--primary-color)] font-medium transition-all duration-300 group text-sm md:text-base">
                     <span className="relative">
-                      Learn more about our mission
+                      Learn more about our core commitments
                       <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[color:var(--primary-color)] to-[color:var(--info-color)] group-hover:w-full transition-all duration-300"></span>
                     </span>
                     <ArrowRight size={16} className="group-hover:translate-x-1 group-hover:text-[color:var(--info-color)] transition-all duration-300" />
