@@ -947,6 +947,26 @@
             ],
             "education": [],
             "bio": "I am a B.Tech and M.S dual-degree student in Computer Science and Engineering at the International Institute of Information Technology, Hyderabad (IIIT Hyderabad). I am currently conducting research at the Software Engineering Research Center (SERC) under the guidance of Prof. Abhishek Kr Singh.\n\nMy research lies at the intersection of Formal Methods, Program Verification, and Programming Languages, with a current focus on fuzzing and model checking for concurrency under weak memory models. I am also exploring directions in Trustworthy Automated Programming, which aims to enhance the reliability of AI-generated code by aligning natural language intent with formal specifications through synthesis and verification techniques such as Syntax-Guided Synthesis (SyGuS).\n\nI am originally from Jalandhar, Punjab, where I completed my schooling at Innocent Hearts School, Green Model Town. Beyond academics, I have represented my state at the National Level in Table Tennis and remain deeply interested in science, technology, and space exploration."
+        },
+        {
+            "name": "Pranav Swarup Kumar",
+            "title": "CSD",
+            "email": "pranavswarup.kumar@research.iiit.ac.in",
+            "imageURL": "/images/people/pranav-swarup-kumar.png",
+            "slug": "pranav-swarup-kumar",
+            "social_links": {
+                "LinkedIn": " https://www.linkedin.com/in/pranav-swarup-kumar",
+                "GitHub": "https://github.com/Pranav-Swarup",
+                "Google Scholar": "https://scholar.google.com/citations?hl=en&user=L7XN5AsAAAAJ"
+            },
+            "interests": [
+                "Agentic Systems",
+                "Agentic Memory",
+                "AI for Code Generation",
+                "Sustainability"
+            ],
+            "education": [],
+            "bio": "Hey there! I'm Pranav, a researcher at SERC, IIIT Hyderabad. My work is currently based on agentic systems and the architecture that makes them more efficient, sustainable and accurate. I dabble in AI for code generation, memory for agentic systems, and the broader question of how to build systems that improve themselves. I am drawn to hard, still open questions in these areas, and love solving problems from the ground up. "
         }
     ],
     "Honors": [
