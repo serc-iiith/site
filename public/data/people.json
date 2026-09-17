@@ -70,6 +70,40 @@
             "bio": "Dr. Venkatesh Choppella is Associate Professor of Software Engineering at the International Institute of Information Technology Hyderabad, India. He was also associated with Indian Institute of Information Technology and Management – Kerala, Trivandrum (2003-2009) and the IIIT Bangalore (2009-2010).\n\nVenkatesh holds a PhD. degree in Computer Science from Indiana University, Bloomington, USA, and Bachelors and Masters degrees from the Indian Institutes of Technology, Kanpur and Madras, respectively. He has held research and engineering positions in Hewlett Packard, Xerox Palo Alto Research Centre, Oak Ridge National Laboratory, and the Ohio State University in the United States.\n\nVenkatesh's current research interests are in formal methods and software architectures. In addition, he has an interest in computer science education and FOSS-based educational technology. He has published over 75 research papers and technical reports in the areas of computer science, software engineering, educational technology and computer science pedagogy."
         },
         {
+            "name": "Raman Saxena",
+            "title": "Professor",
+            "email": "raman.saxena@iiit.ac.in",
+            "imageURL": "/images/people/raman-saxena.png",
+            "slug": "raman",
+            "social_links": {
+                "Google Scholar": "https://scholar.google.co.in/citations?user=ah1DhecAAAAJ",
+                "LinkedIn": "https://www.linkedin.com/in/dr-raman-saxena-697838/"
+            },
+            "interests": [
+                "Human-Behaviour Research",
+                "Cognitive Ergonomics",
+                "Intersection of Tech & Design"
+            ],
+            "education": [
+                {
+                    "degree": "PhD in Computer Science",
+                    "institution": "IIT Guwahati, India",
+                    "year": 2020
+                },
+                {
+                    "degree": "Master of Design",
+                    "institution": "National Institute of Design, India",
+                    "year": 1996
+                },
+                {
+                    "degree": "BTech Electronics and Communication Engineering",
+                    "institution": "Delhi University",
+                    "year": 1987
+                }
+            ],
+            "bio": "Prof. Raman Saxena currently serves as a Professor at the Software Engineering Research Center (SERC) at IIIT Hy- derabad. Additionally, he holds the position of Adjunct Professor at Department of Design -IIT Kanpur, where he em- barked on his academic journey in 2013. He is an alumnus of the Indian Institute of Technology Guwahati where he completed his PhD. Prior to joining academia, He accumulated over 25 years of industry experience across various do- mains, including design, innovation, technology, and product management. As an academician and researcher, he has worked on 20+ consulting projects with Industry and development organisations including Govt. Of India, Govt. Of UP, Bill and Melinda Gates Foundation (BMGF), Contraceptive Technologies Lab at Family Health Incorporation-USA etc.\n\nHe is also a Co-founder & Curator of USID Foundation (<www.usidfoundation.org>) a non- profit platform to promote design and its social impact and has organised several design and innovation conferences, seminars, workshops and gurukul workshops in partnership with industry and academic institutions since 2007. - did not match any documents."
+        },
+        {
             "name": "Karthik Vaidhyanathan",
             "title": "Assistant Professor",
             "email": "karthik.vaidhyanathan@iiit.ac.in",
@@ -110,40 +144,6 @@
                 }
             ],
             "bio": "Karthik Vaidhyanathan is an Assistant Professor at the Software Engineering Research Center, IIIT-Hyderabad, India where he is also associated with the leadership team of smart city living lab. He obtained his Ph.D. from the Gran Sasso Science Institute, Italy and did his postdoc at the University of L'Aquila, Italy. His main research interests lie in the intersection of software architecture and machine learning with a specific focus on building sustainable software systems. His research focuses on how machine learning techniques can be leveraged to better architect self-adaptive systems and further how to better define architecting practices for developing Machine Learning-enabled software systems. As a part of his research activities, he serves as a reviewer/organizing committee member in various workshops, conferences, and journals. He is also an editorial board member (SE Radio) of IEEE Software.\n\nKarthik also poses more than 5 years of industrial experience as an employee and as a consultant in building and deploying ML products/services."
-        },
-        {
-            "name": "Raman Saxena",
-            "title": "Professor",
-            "email": "raman.saxena@iiit.ac.in",
-            "imageURL": "/images/people/raman-saxena.png",
-            "slug": "raman",
-            "social_links": {
-                "Google Scholar": "https://scholar.google.co.in/citations?user=ah1DhecAAAAJ",
-                "LinkedIn": "https://www.linkedin.com/in/dr-raman-saxena-697838/"
-            },
-            "interests": [
-                "Human-Behaviour Research",
-                "Cognitive Ergonomics",
-                "Intersection of Tech & Design"
-            ],
-            "education": [
-                {
-                    "degree": "PhD in Computer Science",
-                    "institution": "IIT Guwahati, India",
-                    "year": 2020
-                },
-                {
-                    "degree": "Master of Design",
-                    "institution": "National Institute of Design, India",
-                    "year": 1996
-                },
-                {
-                    "degree": "BTech Electronics and Communication Engineering",
-                    "institution": "Delhi University",
-                    "year": 1987
-                }
-            ],
-            "bio": "Prof. Raman Saxena currently serves as a Professor at the Software Engineering Research Center (SERC) at IIIT Hy- derabad. Additionally, he holds the position of Adjunct Professor at Department of Design -IIT Kanpur, where he em- barked on his academic journey in 2013. He is an alumnus of the Indian Institute of Technology Guwahati where he completed his PhD. Prior to joining academia, He accumulated over 25 years of industry experience across various do- mains, including design, innovation, technology, and product management. As an academician and researcher, he has worked on 20+ consulting projects with Industry and development organisations including Govt. Of India, Govt. Of UP, Bill and Melinda Gates Foundation (BMGF), Contraceptive Technologies Lab at Family Health Incorporation-USA etc.\n\nHe is also a Co-founder & Curator of USID Foundation (<www.usidfoundation.org>) a non- profit platform to promote design and its social impact and has organised several design and innovation conferences, seminars, workshops and gurukul workshops in partnership with industry and academic institutions since 2007. - did not match any documents."
         },
         {
             "name": "Abhishek Kumar Singh",
@@ -1117,6 +1117,26 @@
             ],
             "education": [],
             "bio": "I am a dedicated Computer Science engineer with a strong passion for immersive technologies and software development. My current research focuses on AR-based Indoor Navigation Systems, supervised by Prof. Raghu Reddy, where I aim to bridge real and digital spaces through intuitive AR interfaces. Alongside my academic pursuits, I am an enthusiastic web developer, always eager to learn and adopt emerging technologies to build innovative and scalable digital solutions."
+        },
+        {
+            "name": "Parekh Meet Vikrambhai",
+            "title": "CSE",
+            "email": "meet.parekh@students.iiit.ac.in",
+            "imageURL": "/images/people/parekh-meet-vikrambhai.jpg",
+            "slug": "parekh-meet-vikrambhai",
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/meet-parekh-60521a23a",
+                "GitHub": "https://github.com/meet2701"
+            },
+            "interests": [
+                "Trustworthy Automated Programming",
+                "Program Verification",
+                "Property-Based Testing",
+                "AI/ML",
+                "LLMs and AI Agents"
+            ],
+            "education": [],
+            "bio": "I am a B.Tech. CSE student at IIIT Hyderabad, currently working as an undergraduate researcher at SERC on Trustworthy Automated Programming. My interests lie in building reliable AI systems, program verification, property-based testing, and AI-assisted software development."
         }
     ],
     "Alumni": [
