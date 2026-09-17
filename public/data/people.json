@@ -967,6 +967,25 @@
             ],
             "education": [],
             "bio": "Hey there! I'm Pranav, a researcher at SERC, IIIT Hyderabad. My work is currently based on agentic systems and the architecture that makes them more efficient, sustainable and accurate. I dabble in AI for code generation, memory for agentic systems, and the broader question of how to build systems that improve themselves. I am drawn to hard, still open questions in these areas, and love solving problems from the ground up. "
+        },
+        {
+            "name": "Shreyash Chandak",
+            "title": "LCD",
+            "email": "shreyash.chandak@research.iiit.ac.in",
+            "imageURL": "/images/people/shreyash-chandak.jpg",
+            "slug": "shreyash-chandak",
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/shreyash-chandak/",
+                "GitHub": "https://github.com/shreyash-chandak/",
+                "ResearchWeb": "https://researchweb.iiit.ac.in/~shreyash.chandak/"
+            },
+            "interests": [
+                "Software Sustainability",
+                "Self Adaptation",
+                "AI4SE"
+            ],
+            "education": [],
+            "bio": " [removed by moderator]"
         }
     ],
     "Honors": [
