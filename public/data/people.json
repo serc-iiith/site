@@ -1046,25 +1046,6 @@
             "advisor": "Dr. Karthik Vaidhyanathan"
         },
         {
-            "name": "Kritin Maddireddy",
-            "title": "CSE",
-            "email": "kritin.maddireddy@students.iiit.ac.in",
-            "imageURL": "/images/people/kritin-maddireddy.png",
-            "slug": "kritin-maddireddy",
-            "social_links": {
-                "GitHub": "https://github.com/how2kritin"
-            },
-            "interests": [
-                "Software Architecture",
-                "Machine Learning",
-                "Model Driven Engineering",
-                "Generative AI",
-                "Systems Design"
-            ],
-            "advisor": "Dr. Karthik Vaidhyanathan",
-            "bio": "Hi there! I'm Kritin, and I love computers and everything that they can do. I like architecting software, and I like machine learning, so I decided to research the intersection of the two!\n\nCurrently, I'm researching Model Driven Engineering and how we can create Low-Code or No-Code systems, to make it easier for people to achieve a specific goal without having to learn programming.\n\nFeel free to message me if you'd like to chat more about these!"
-        },
-        {
             "name": "Moida Praneeth Jain",
             "title": "CSE",
             "email": "moida.praneeth@students.iiit.ac.in",
@@ -1444,6 +1425,25 @@
             "advisor": "Dr. Karthik Vaidhyanathan",
             "bio": "I'm an MS by Research student in Computer Science and Engineering, working under the guidance of Dr. Karthik Vaidhyanathan. My research focuses on developing sustainable self-adaptive machine learning-enabled systems that can efficiently manage changing environments and resource constraints. I’m also exploring how these systems can be integrated with digital twins to enhance real-time monitoring, analysis, and decision-making in dynamic scenarios. Alongside my academic work, I enjoy singing.",
             "education": []
+        },
+        {
+            "name": "Kritin Maddireddy",
+            "title": "CSE",
+            "email": "kritin.maddireddy@students.iiit.ac.in",
+            "imageURL": "/images/people/kritin-maddireddy.png",
+            "slug": "kritin-maddireddy",
+            "social_links": {
+                "GitHub": "https://github.com/how2kritin"
+            },
+            "interests": [
+                "Software Architecture",
+                "Machine Learning",
+                "Model Driven Engineering",
+                "Generative AI",
+                "Systems Design"
+            ],
+            "education": [],
+            "bio": "Hi there! I'm Kritin, and I love computers and everything that they can do. I like architecting software, and I like machine learning, so I decided to research the intersection of the two!\n\nCurrently, I'm researching Model Driven Engineering and how we can create Low-Code or No-Code systems, to make it easier for people to achieve a specific goal without having to learn programming.\n\nFeel free to message me if you'd like to chat more about these!"
         }
     ],
     "Research Associates": [
