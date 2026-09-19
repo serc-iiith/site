@@ -1004,6 +1004,24 @@
             ],
             "education": [],
             "bio": "My research interests are formal methods, automated theorem proving, and proof assistants such as Lean and Rocq. Passionate about building reliable and mathematically verified systems through logic, verification, and program correctness. My Additional interests include astronomy, robotics, physics, and quantum computing."
+        },
+        {
+            "name": "Smruti Biswal",
+            "title": "ECD",
+            "email": "smruti.biswal@research.iiit.ac.in",
+            "imageURL": "/images/people/smruti-biswal.jpg",
+            "slug": "smruti-biswal",
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/smruti-biswal-21856425a/",
+                "GitHub": "https://github.com/SBiswal02"
+            },
+            "interests": [
+                "Calm Technology",
+                "Ubiquitous Computing",
+                "Human-Computer Interaction"
+            ],
+            "education": [],
+            "bio": "I am an Undergrad Researcher working on Human-Computer Interaction and application of design philosophy of calm technology in ubiquitous computing contexts. We are working on the subjective contexts of calm technology and the reduction of cognitive load in multimodal cues"
         }
     ],
     "Honors": [
