@@ -986,6 +986,24 @@
             ],
             "education": [],
             "bio": " [removed by moderator]"
+        },
+        {
+            "name": "Akshith Kandagatla",
+            "title": "CSD",
+            "email": "kandagatla.akshith@research.iiit.ac.in",
+            "imageURL": "/images/people/akshith-kandagatla.jpg",
+            "slug": "akshith-kandagatla",
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/kandagatla-akshith-4b9a5131b/",
+                "GitHub": "https://github.com/Ohshit-ak"
+            },
+            "interests": [
+                "Auto Formalization",
+                "Formal Methods",
+                "AI for Maths"
+            ],
+            "education": [],
+            "bio": "My research interests are formal methods, automated theorem proving, and proof assistants such as Lean and Rocq. Passionate about building reliable and mathematically verified systems through logic, verification, and program correctness. My Additional interests include astronomy, robotics, physics, and quantum computing."
         }
     ],
     "Honors": [
