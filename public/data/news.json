@@ -1,5 +1,37 @@
 [
     {
+        "slug": "ecsa-2026-casa-workshop-bolzano-italy",
+        "name": "ECSA 2026 / CASA Workshop - Bolzano, Italy",
+        "eventURL": "https://conf.researchr.org/home/ecsa-2026",
+        "location": "Bolzano, Italy",
+        "locationURL": "https://maps.app.goo.gl/cjPEq9wBUDoSNk5A7",
+        "summary": "Dr. Karthik Vaidhyanathan received the Best Reviewer Award and delivered the keynote at the CASA Workshop at ECSA 2026 in Bolzano, Italy.",
+        "detail": "Dr. Karthik Vaidhyanathan, Assistant Professor at IIIT Hyderabad and faculty member of the Software Engineering Research Center (SERC), received the Best Reviewer Award in recognition of his contributions to the peer-review process in the software architecture research community.\n\nDr. Vaidhyanathan also delivered the keynote “When Adaptation Becomes Agentic: Architecting Autonomy under Uncertainty” at the CASA Workshop held as part of the European Conference on Software Architecture (ECSA) 2026 in Bolzano, Italy.\n\nThe keynote explored the evolution of self-adaptive systems from rule-based adaptation towards learning, reasoning, and agentic adaptation. It examined how agentic AI can enable systems to reason about and generate adaptations at runtime, while also introducing new sources of uncertainty through autonomous behaviour and interactions. The talk further discussed whether autonomy itself could be considered an adaptation variable in the architecture of self-adaptive systems.\n\nThe keynote drew on Dr. Vaidhyanathan’s research in software engineering for AI (SE4AI), AI for software engineering (AI4SE), agentic AI, self-adaptive systems, and uncertainty in GenAI-based systems.",
+        "startTime": "2026-09-07T08:31",
+        "endTime": "2026-09-11T09:31",
+        "hasTime": true,
+        "eventType": "conference",
+        "schemaType": "Event",
+        "imageURLs": [
+            "/images/news/ecsa-2026-casa-workshop.png"
+        ],
+        "presenters": [
+            "Dr. Karthik Vaidhyanathan"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "https://www.dropbox.com/scl/fi/zsswjj0z4yevtd1ba4rz0/Keynote_CASA_Agentic_Adaptation_2026.pdf?rlkey=c441bv9r9ifbwmxgo4rl6e1cm&st=n6lv10vi&dl=0",
+            "video": ""
+        },
+        "otherURLLabels": {
+            "code": "",
+            "pdf": "",
+            "slides": "Keynote_CASA_Agentic_Adaptation_2026",
+            "video": ""
+        }
+    },
+    {
         "slug": "dr-karthik-vaidhyanathan-discusses-trustworthy-agentic-ai-at-finai-confluence-2026",
         "name": "Dr. Karthik Vaidhyanathan Discusses Trustworthy Agentic AI at FinAI Confluence 2026",
         "eventURL": "https://nasscom.in/ai/FinAIConfluence/",
