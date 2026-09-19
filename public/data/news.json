@@ -1,5 +1,38 @@
 [
     {
+        "slug": "dr-karthik-vaidhyanathan-teaches-agentic-ai-at-sustainai-summer-school-in-denmark",
+        "name": "Dr. Karthik Vaidhyanathan Teaches Agentic AI at SustainAI Summer School in Denmark",
+        "eventURL": "",
+        "location": "SDU Vejle, University of Southern Denmark.",
+        "locationURL": "https://maps.app.goo.gl/u86ba1J8nae2sxnbA",
+        "summary": "Dr. Karthik Vaidhyanathan of IIIT Hyderabad served as an instructor at the SustainAI Summer School on Engineering Agentic AI in Denmark.",
+        "detail": "Dr. Karthik Vaidhyanathan, Assistant Professor at IIIT Hyderabad, participated as an instructor at the SustainAI Summer School on “Engineering Agentic AI: From Lab to Land” at SDU Vejle, University of Southern Denmark. The five-day programme brought together around 20 PhD students from different countries for lectures and hands-on sessions on developing Agentic AI systems across areas including healthcare, robotics, software engineering, and personal agents. Dr. KarthikVaidhyanathan, along with his PhD student Rudra Dhar, contributed to the lectures and hands-on tutorials.",
+        "startTime": "2026-09-14T09:08",
+        "endTime": "2026-09-18T10:08",
+        "hasTime": true,
+        "eventType": "workshop",
+        "schemaType": "Event",
+        "imageURLs": [
+            "/images/news/dr-karthik-vaidhyanathan-teaches-agentic-ai-at-sustainai-summer-school-in-denmark.png"
+        ],
+        "presenters": [
+            "Dr. Karthik Vaidhyanathan",
+            "Rudra Dhar"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        },
+        "otherURLLabels": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
         "slug": "ecsa-2026-casa-workshop-bolzano-italy",
         "name": "ECSA 2026 / CASA Workshop - Bolzano, Italy",
         "eventURL": "https://conf.researchr.org/home/ecsa-2026",
