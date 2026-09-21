@@ -1038,6 +1038,24 @@
             ],
             "education": [],
             "bio": "If you see this, please remind me to update it."
+        },
+        {
+            "name": "Arushi Tandon",
+            "title": "CSD",
+            "email": "arushi.tandon@research.iiit.ac.in",
+            "imageURL": "/images/people/arushi-tandon.png",
+            "slug": "arushi-tandon",
+            "social_links": {
+                "LinkedIn": "www.linkedin.com/in/arushi-tandon-5139982a0",
+                "GitHub": "https://github.com/itstandon"
+            },
+            "interests": [
+                "Software testing",
+                "AI for software testing",
+                "AI evaluation and reliability"
+            ],
+            "education": [],
+            "bio": "I am a dual degree student and researcher at IIIT Hyderabad, working at the intersection of Software Systems, Software Quality and Testing, and Artificial Intelligence. Currently, my work focuses on building reliable, well-tested software and exploring how AI can make the testing process smarter and more efficient."
         }
     ],
     "Honors": [
