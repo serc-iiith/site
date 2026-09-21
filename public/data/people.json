@@ -1363,10 +1363,16 @@
         {
             "name": "Lalit Mohan S",
             "title": "PhD CSE",
+            "email": "",
+            "imageURL": "/images/people/lalit_mohan_s.jpg",
             "slug": "lalit_mohan_s",
-            "imageURL": "/images/people/lalit-mohan-s.png",
-            "social_links": {},
-            "advisor": "Dr. Y. Raghu Reddy"
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/slalitm/",
+                "Googel Scholar": "https://scholar.google.com/citations?user=D0W1ODkAAAAJ&hl=en"
+            },
+            "interests": [],
+            "education": [],
+            "bio": "Researcher, Product Manager and technologist with experience in leading high performing teams in industry, startups and research. Skilled in Product Management, Engineering, Technology Management, Pre-sales and Business Development including in mission critical and large systems"
         },
         {
             "name": "Vivek Iyer",
