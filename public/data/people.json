@@ -1056,6 +1056,23 @@
             ],
             "education": [],
             "bio": "I am a dual degree student and researcher at IIIT Hyderabad, working at the intersection of Software Systems, Software Quality and Testing, and Artificial Intelligence. Currently, my work focuses on building reliable, well-tested software and exploring how AI can make the testing process smarter and more efficient."
+        },
+        {
+            "name": "Gursahib Singh",
+            "title": "LCD",
+            "email": "gursahib.singh@research.iiit.ac.in",
+            "imageURL": "/images/people/gursahib-singh.jpg",
+            "slug": "gursahib-singh",
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/gursahib-singh-18392736a",
+                "GitHub": "https://github.com/GursahibSingh07"
+            },
+            "interests": [
+                "Software Engineering",
+                "Game Development"
+            ],
+            "education": [],
+            "bio": "Part-time Procrastinator "
         }
     ],
     "Honors": [
