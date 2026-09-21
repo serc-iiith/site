@@ -1265,12 +1265,15 @@
             "advisor": "Dr. Venkatesh Choppella"
         },
         {
-            "name": "Zade himanshu Pramod",
+            "name": "Zade Himanshu Pramod",
             "title": "CSD",
+            "email": "",
             "imageURL": "/images/people/zade-himanshu-pramod.png",
             "slug": "z_himanshu_pramod",
             "social_links": {},
-            "advisor": "Dr. Venkatesh Choppella"
+            "interests": [],
+            "education": [],
+            "bio": ""
         },
         {
             "name": "Neeraj Mathur",
