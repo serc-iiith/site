@@ -1022,6 +1022,22 @@
             ],
             "education": [],
             "bio": "I am an Undergrad Researcher working on Human-Computer Interaction and application of design philosophy of calm technology in ubiquitous computing contexts. We are working on the subjective contexts of calm technology and the reduction of cognitive load in multimodal cues"
+        },
+        {
+            "name": "Samarth Jain",
+            "title": "CSD",
+            "email": "samarth.jain@research.iiit.ac.in",
+            "imageURL": "/images/people/samarth-jain.jpg",
+            "slug": "samarth-jain",
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/samarth-jain-518271341/",
+                "GitHub": "https://github.com/SamarthJain08"
+            },
+            "interests": [
+                "Virtual Reality"
+            ],
+            "education": [],
+            "bio": "If you see this, please remind me to update it."
         }
     ],
     "Honors": [
