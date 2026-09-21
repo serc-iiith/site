@@ -1073,6 +1073,24 @@
             ],
             "education": [],
             "bio": "Part-time Procrastinator "
+        },
+        {
+            "name": "Karthik Venkat Malavathula",
+            "title": "CSD",
+            "email": "karthikvenkat.m@research.iiit.ac.in",
+            "imageURL": "/images/people/karthik-venkat-malavathula.jpg",
+            "slug": "karthik-venkat-malavathula",
+            "social_links": {
+                "LinkedIn": " https://www.linkedin.com/in/karthik-venkat-malavathula-7057722a2/",
+                "GitHub": " https://github.com/Karthikvmalav"
+            },
+            "interests": [
+                "Human Computer Interaction (HCI)",
+                "Artificial Intelligence",
+                "Agentic AI"
+            ],
+            "education": [],
+            "bio": "I'm a dual degree student diving into the world of Computer Science with a real passion for programming and Artificial Intelligence/Machine Learning. Right now, I've focused on the world of software development, sharpening my skills across languages like C, C++, JavaScript, HTML, CSS, and Python.\n\nThrough my studies, I've built a solid foundation in computer science that lets me tackle tough problems. Always up for learning more, I'm eager to keep pushing my boundaries to deepen my understanding.  I'm committed to make a positive impact in the landscape of tech."
         }
     ],
     "Honors": [
@@ -1560,6 +1578,19 @@
             ],
             "education": [],
             "bio": "Hi there! I'm Kritin, and I love computers and everything that they can do. I like architecting software, and I like machine learning, so I decided to research the intersection of the two!\n\nCurrently, I'm researching Model Driven Engineering and how we can create Low-Code or No-Code systems, to make it easier for people to achieve a specific goal without having to learn programming.\n\nFeel free to message me if you'd like to chat more about these!"
+        },
+        {
+            "name": "Kulkarni Shubham Shantanu",
+            "title": "MS (CSE)",
+            "email": "shubham.kulkarni@alumni.iiit.ac.in",
+            "imageURL": "/images/people/kulkarni-shubham-shantanu.jpg",
+            "slug": "kulkarni-shubham-shantanu",
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/shubham-kulkarni-061732123/"
+            },
+            "interests": [],
+            "education": [],
+            "bio": "I am an MS by Research candidate at SERC, IIIT Hyderabad. I’m guided by Prof. Dr. Karthik Vaidyanathan.\nMy research interest lies in self-adaptation, intersection of machine learning and software architecture and AI engineering. \nPrior to IIIT-H, I was working at Kantar Analytics, Bangalore as a business analyst. My primary work was to perform sales and marketing analytics, moniter & maintain ETL pipelines and help client and team with data insights. \n\nPreviously in 2019, I worked at NET-ZEDi laboratory, IIT Roorkee with Prof. Dr. E. Rajasekar in the area of smart buildings and IoT. Also have hands-on experience in building management systems while working at Johnson Controls Pune. There I contribued in developing BMS control logic and documentation for JCI's upcoming pune branch office. I previously completed my B.Tech in Electronics & telecommunication Engineering from Government College of Engineering, Karad.\n\nMy goal is to contribute to the development of modern self-adaptive systems, capable to heal, adapt, control, manage and intelligent like human being. I truely believe that moden AI techniques can help in achieveing this challenge of fully autonomus self adaptive systems. My work introduced novel concept in Self adaptation which \"Machine Learning Model Balancer\" which got accepted in 38th IEEE/ACM International Conference on Automated Software Engineering (ASE 2023) - Core A* Conference.\n\nI'm an inquisitive person, always willing to learn about fields including, but not limited to, science technology, travelling and Indian culture."
         }
     ],
     "Research Associates": [
