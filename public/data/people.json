@@ -1091,6 +1091,22 @@
             ],
             "education": [],
             "bio": "I'm a dual degree student diving into the world of Computer Science with a real passion for programming and Artificial Intelligence/Machine Learning. Right now, I've focused on the world of software development, sharpening my skills across languages like C, C++, JavaScript, HTML, CSS, and Python.\n\nThrough my studies, I've built a solid foundation in computer science that lets me tackle tough problems. Always up for learning more, I'm eager to keep pushing my boundaries to deepen my understanding.  I'm committed to make a positive impact in the landscape of tech."
+        },
+        {
+            "name": "Laveena Jain",
+            "title": "CSD",
+            "email": "laveena.jain@research.iiit.ac.in",
+            "imageURL": "/images/people/laveena-jain.jpg",
+            "slug": "laveena-jain",
+            "social_links": {},
+            "interests": [
+                "Machine Learning",
+                "Software Engineering",
+                "Testing and Validation",
+                "ML Code Smells"
+            ],
+            "education": [],
+            "bio": ""
         }
     ],
     "Honors": [
@@ -1242,6 +1258,44 @@
             ],
             "education": [],
             "bio": "I am a B.Tech. CSE student at IIIT Hyderabad, currently working as an undergraduate researcher at SERC on Trustworthy Automated Programming. My interests lie in building reliable AI systems, program verification, property-based testing, and AI-assisted software development."
+        },
+        {
+            "name": "Poojitha J",
+            "title": "CSE",
+            "email": "poojitha.j@students.iiit.ac.in",
+            "imageURL": "/images/people/poojitha-j.jpg",
+            "slug": "poojitha-j",
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/poojitha-jagadeesh/",
+                "GitHub": "https://github.com/poojitha376"
+            },
+            "interests": [
+                "Testing",
+                "Formal Methods",
+                "Quantitative Finance",
+                "Machine Learning"
+            ],
+            "education": [],
+            "bio": "Hey there! I'm Poojitha. My research interests sit at the intersection of software verification, formal methods, and quantitative finance. Outside of research, I dabble in music, painting, crafting, and dance... along with being a certified expert at wasting time. I love solving logical, open questions from the ground up."
+        },
+        {
+            "name": "Neha Prabhu",
+            "title": "CSE",
+            "email": "neha.prabhu@students.iiit.ac.in",
+            "imageURL": "/images/people/neha-prabhu.jpg",
+            "slug": "neha-prabhu",
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/neha-prabhu-7a774538a/",
+                "Github": "https://github.com/NehaP1706"
+            },
+            "interests": [
+                "Agentic AI",
+                "Code Generation",
+                "Sustainability",
+                "SLMs for coding"
+            ],
+            "education": [],
+            "bio": "Neha Prabhu is an Undergraduate researcher in the AI for SE domain where she currently explores and tinkers around with existing coding benchmarks and frameworks, while attempting to analyze and optimize certain aspects of the same."
         }
     ],
     "Alumni": [
