@@ -1107,6 +1107,23 @@
             ],
             "education": [],
             "bio": ""
+        },
+        {
+            "name": "Nandini Chakaravarthy",
+            "title": "CSD",
+            "email": "nandini.c@research.iiit.ac.in",
+            "imageURL": "/images/people/nandini-chakaravarthy.jpg",
+            "slug": "nandini-chakaravarthy",
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/nandini-chakaravarthy",
+                "GitHub": "https://github.com/nanchan1912"
+            },
+            "interests": [
+                "Concurrency",
+                "GPU Semantics and Verification"
+            ],
+            "education": [],
+            "bio": ""
         }
     ],
     "Honors": [
