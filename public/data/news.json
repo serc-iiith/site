@@ -1,5 +1,41 @@
 [
     {
+        "slug": "harmonica-by-sa4s-presented-at-nasscom-agentic-ai-confluence-2026",
+        "name": "Harmonica by SA4S Presented at NASSCOM Agentic AI Confluence 2026",
+        "eventURL": "https://nasscom.in/ai/research/shortlisted.html",
+        "location": "Radisson Blu Hotel, Marathahalli, Bengaluru, India",
+        "locationURL": "https://maps.app.goo.gl/YXGe9Z2ADmDTwiK17",
+        "summary": "Harmonica by SA4S Presented at NASSCOM Agentic AI Confluence 2026",
+        "detail": "The research work “Harmonica: A Self-Adaptation Exemplar for Sustainable MLOps” from IIIT Hyderabad was presented by Shaunak Biswas at the NASSCOM Agentic AI Confluence 2026 in Bengaluru. The work was shortlisted among 200+ submissions for presentation at the event.\nHarmonica is part of the SustAInd project, supported by the Anusandhan National Research Foundation (ANRF) under the PMECRG programme, focusing on engineering sustainable AI-enabled systems. The work was developed by Ananya Halgatti, Shaunak Biswas, Hiya Bhatt, and Srinivasan Rakhunathan, and was published as an artefact at SEAMS 2026.\nThe presentation showcased the research on sustainable MLOps and self-adaptation to an industry and research audience at the NASSCOM Agentic AI Confluence 2026.",
+        "startTime": "2026-09-28T10:18",
+        "endTime": "2026-09-28T11:18",
+        "hasTime": true,
+        "eventType": "seminar",
+        "schemaType": "Event",
+        "imageURLs": [
+            "/images/news/harmonica-by-sa4s-presented-at-nasscom-agentic-ai-confluence-2026.jpg"
+        ],
+        "presenters": [
+            "Karthik Vaidhyanathan",
+            "Srinivasan Rakhunathan",
+            "Ananya Halgatti",
+            "Shaunak Biswas",
+            "Hiya Bhatt"
+        ],
+        "otherURLs": {
+            "code": "https://arxiv.org/html/2601.11926v2",
+            "pdf": "https://arxiv.org/pdf/2601.11926",
+            "slides": "",
+            "video": ""
+        },
+        "otherURLLabels": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
         "slug": "prof-y-raghu-reddy-delivers-masterclass-on-ai-testing-at-ficci-telangana-hyderabad",
         "name": "Prof. Y. Raghu Reddy Delivers Masterclass on AI Testing at FICCI Telangana, Hyderabad",
         "eventURL": "https://ficci.in/state/telangana-ficci",
