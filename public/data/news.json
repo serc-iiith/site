@@ -36,6 +36,39 @@
         }
     },
     {
+        "slug": "dr-karthik-vaidhyanathan-featured-in-the-new-indian-express",
+        "name": "Dr. Karthik Vaidhyanathan Featured in The New Indian Express",
+        "eventURL": "https://www.newindianexpress.com/lifestyle/science/2026/Sep/22/rogue-ai-more-about-man-than-machine",
+        "location": "SERC, IIIT Hyderabad",
+        "locationURL": "",
+        "summary": "Dr. Karthik Vaidhyanathan Featured in The New Indian Express",
+        "detail": "Dr. Karthik Vaidhyanathan, Assistant Professor at IIIT Hyderabad, was featured in The New Indian Express article “Rogue AI? Experts say the real risk is human”, published on 22 September 2026. He discussed the growing capabilities of Agentic AI, the importance of bounded autonomy, and the need for appropriate safeguards and human oversight as AI systems gain greater ability to perform actions independently.\nRead more: https://www.newindianexpress.com/lifestyle/science/2026/Sep/22/rogue-ai-more-about-man-than-machine",
+        "startTime": "2026-09-22T10:35",
+        "endTime": "2026-09-22T11:35",
+        "hasTime": true,
+        "eventType": "other",
+        "schemaType": "NewsArticle",
+        "imageURLs": [
+            "/images/news/dr-karthik-vaidhyanathan-featured-in-the-new-indian-express.jpg",
+            "/images/news/dr-karthik-vaidhyanathan-featured-in-the-new-indian-express.jpg"
+        ],
+        "presenters": [
+            "Dr. Karthik Vaidyanathan"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        },
+        "otherURLLabels": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
         "slug": "prof-y-raghu-reddy-delivers-masterclass-on-ai-testing-at-ficci-telangana-hyderabad",
         "name": "Prof. Y. Raghu Reddy Delivers Masterclass on AI Testing at FICCI Telangana, Hyderabad",
         "eventURL": "https://ficci.in/state/telangana-ficci",
