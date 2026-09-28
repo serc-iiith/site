@@ -1,5 +1,37 @@
 [
     {
+        "slug": "prof-y-raghu-reddy-delivers-masterclass-on-ai-testing-at-ficci-telangana-hyderabad",
+        "name": "Prof. Y. Raghu Reddy Delivers Masterclass on AI Testing at FICCI Telangana, Hyderabad",
+        "eventURL": "https://ficci.in/state/telangana-ficci",
+        "location": "ASCI, Banjara Hills, Hyderabad",
+        "locationURL": "https://maps.app.goo.gl/gweoiBVaDqk24DR86",
+        "summary": "FICCI Telangana Masterclass & Workshop Series – Building Future-Ready Leaders",
+        "detail": "Prof. Y. Raghu Reddy, Associate Professor and Head of the Software Engineering Research Center (SERC), IIIT Hyderabad, delivered a masterclass titled “The AI Testing Crisis: What, Why & How” on September 18, 2026, at ASCI, Banjara Hills, Hyderabad, as part of the FICCI Telangana Masterclass & Workshop Series – “Building Future-Ready Leaders.”\nThe session focused on the emerging challenges of testing AI-based systems and the need to rethink conventional software testing approaches in the context of Artificial Intelligence. Through discussions and interactive activities, participants explored different AI failure modes and considered how appropriate testing techniques could identify such failures before systems are released into production.\nThe masterclass was part of FICCI Telangana’s September–October 2026 series, which brings together experts from technology, education and professional development to discuss AI, leadership, learning and institutional transformation.\nThe session provided participants with an opportunity to engage with practical aspects of AI testing and understand the importance of systematic testing for building more reliable AI-enabled systems.\nEvent: FICCI Telangana Masterclass & Workshop Series – Building Future-Ready Leaders\nSession: The AI Testing Crisis: What, Why & How\nSpeaker: Prof. Y. Raghu Reddy, Associate Professor & Head, SERC, IIIT Hyderabad\nDate: September 18, 2026\nVenue: ASCI, Banjara Hills, Hyderabad",
+        "startTime": "2026-09-18T09:53",
+        "endTime": "2026-09-18T17:00",
+        "hasTime": true,
+        "eventType": "workshop",
+        "schemaType": "Event",
+        "imageURLs": [
+            "/images/news/prof-y-raghu-reddy-delivers-masterclass-on-ai-testing-at-ficci-telangana-hyderabad.png"
+        ],
+        "presenters": [
+            "Prof. Y. Raghu Reddy"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        },
+        "otherURLLabels": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
         "slug": "dr-karthik-vaidhyanathan-teaches-agentic-ai-at-sustainai-summer-school-in-denmark",
         "name": "Dr. Karthik Vaidhyanathan Teaches Agentic AI at SustainAI Summer School in Denmark",
         "eventURL": "",
@@ -61,6 +93,42 @@
             "code": "",
             "pdf": "",
             "slides": "Keynote_CASA_Agentic_Adaptation_2026",
+            "video": ""
+        }
+    },
+    {
+        "slug": "serc-researchers-presented-two-papers-at-euromicro-seaa-2026-in-krakow-poland",
+        "name": "SERC Researchers Presented Two Papers at Euromicro SEAA 2026 in Kraków, Poland",
+        "eventURL": "https://dsd-seaa.com/seaa2026/",
+        "location": "AGH University of Kraków, Kraków, Poland",
+        "locationURL": "https://maps.app.goo.gl/4PtSJdt8x69PXp6M6",
+        "summary": "Researchers from SERC Presented Two Papers at Euromicro SEAA 2026 in Kraków, Poland",
+        "detail": "Researchers from the Software Engineering Research Center (SERC) at IIIT Hyderabad presented two papers at the Euromicro Conference on Software Engineering and Advanced Applications (SEAA 2026), held in Kraków, Poland.\nThe first paper, “HARP-ML Framework: A Hybrid Assisted Refactoring Pipeline for ML Code Smell,” was presented by Gargie Tambie and co-authored with Prof. Y. Raghu Reddy. The paper focuses on improving the maintainability of machine learning code. Machine learning projects can accumulate technical debt in the form of code smells, and while existing tools can identify such issues, addressing them often remains a manual task for developers. The HARP-ML framework explores an automated approach that combines reliable rule-based fixes for straightforward issues with a small language model to handle cases requiring contextual understanding of the surrounding code.\nThe second paper, \"From Newcomers to Long-Term Users: Shifts in Intrinsic, Extrinsic, and Task-Related Factors Driving GHCP Adoption\", co-authored by Prof. Y. Raghu Reddy, Payel Das, Sandip Potdar, and Himanshu Warudkar, in collaboration with HSBC, examines how developers’ motivations for using AI-assisted programming tools evolve over time. Based on responses from more than 500 developers, the study explores changing patterns in the use of GitHub Copilot, highlighting differences between newcomers, who tend to value support and learning, and experienced users, who primarily seek improved productivity.\nThe conference provided valuable opportunities to exchange ideas and engage with researchers and practitioners working in related areas of software engineering and AI-assisted development.",
+        "startTime": "2026-09-02T07:30",
+        "endTime": "2026-09-04T18:03",
+        "hasTime": true,
+        "eventType": "conference",
+        "schemaType": "Event",
+        "imageURLs": [
+            "/images/news/serc-researchers-presented-two-papers-at-euromicro-seaa-2026-in-krakow-poland.png"
+        ],
+        "presenters": [
+            "Prof. Y. Raghu Reddy",
+            "Gargie Tambie",
+            "Payel Das",
+            "Sandip Potdar",
+            "Himanshu Warudkar"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "https://dsd-seaa.com/wp-content/uploads/2026/09/Program_SEAA_2026_final.pdf",
+            "slides": "https://link.springer.com/chapter/10.1007/978-3-032-36587-3_27 ",
+            "video": ""
+        },
+        "otherURLLabels": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
             "video": ""
         }
     },
