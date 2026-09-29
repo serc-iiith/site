@@ -1124,6 +1124,31 @@
             ],
             "education": [],
             "bio": ""
+        },
+        {
+            "name": "Pinninti Pavitra",
+            "title": "CSD",
+            "email": "pavitra.pinninti@research.iiit.ac.in",
+            "imageURL": "/images/people/pinninti-pavitra.jpg",
+            "slug": "pinninti-pavitra",
+            "social_links": {
+                "LinkedIn": "www.linkedin.com/in/pavitra-pinninti-8331412a8 ",
+                "GitHub": "https://github.com/Pavitra"
+            },
+            "interests": [
+                "Automation",
+                "Conformance",
+                "Human-in-the-loop",
+                "Ambiguity"
+            ],
+            "education": [
+                {
+                    "degree": "CSD",
+                    "institution": "IIITH",
+                    "year": 2026
+                }
+            ],
+            "bio": "Undergrad researcher @SERC diving into conformance, ambiguity detection and test automation. Off the clock: birding, reading books and manga, watching anime, and listening to music.\n\nPublications: Test Case Generation for Requirements in Natural Language - An LLM Comparison Study https://dl.acm.org/doi/full/10.1145/3717383.3717389"
         }
     ],
     "Honors": [
