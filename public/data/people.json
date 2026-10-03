@@ -1190,6 +1190,28 @@
                 }
             ],
             "bio": "Undergrad researcher @SERC diving into conformance, ambiguity detection and test automation. Off the clock: birding, reading books and manga, watching anime, and listening to music.\n\nPublications: Test Case Generation for Requirements in Natural Language - An LLM Comparison Study https://dl.acm.org/doi/full/10.1145/3717383.3717389"
+        },
+        {
+            "name": "Tanishi Tyagi",
+            "title": "CSD",
+            "email": "tanishi.tyagi@research.iiit.ac.in",
+            "imageURL": "/images/people/tanishi-tyagi.png",
+            "slug": "tanishi-tyagi",
+            "social_links": {
+                "LinkedIn": " https://in.linkedin.com/in/tanishi-tyagi-113372333",
+                "GitHub": "https://github.com/Tanishi26/"
+            },
+            "interests": [
+                "Human-Computer Interaction (HCI)",
+                "Human-Centered Design (HCD)",
+                "Human-Centered AI",
+                "User Experience (UX)",
+                "Design Interventions",
+                "Social Computing",
+                "AI-driven interactive systems"
+            ],
+            "education": [],
+            "bio": "Tanishi is a CSD dual-degree student at IIIT Hyderabad and a research student at the Software Engineering Research Center (SERC) under Dr. Raman Saxena. Her interests lie at the intersection of Human-Computer Interaction, Artificial Intelligence, and social computing. She is particularly interested in understanding user needs and designing technology-driven interventions that improve user experiences, decision-making, and interactions with digital systems. Alongside academics and research, she is actively involved in student leadership and cultural activities at IIIT Hyderabad.\n"
         }
     ],
     "Honors": [
