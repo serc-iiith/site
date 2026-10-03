@@ -459,6 +459,26 @@
             ],
             "education": [],
             "bio": "Srinivasan Rakhunathan is a Principal Product Manager at Microsoft and a doctoral researcher at IIIT Hyderabad investigating the foundations of Green AI and sustainable software engineering. His research focuses on self-adaptive systems, automated compliance for energy-efficient design patterns, and operationalizing trade-offs between predictive performance and runtime carbon costs in production ML pipelines. His academic work has appeared in leading venues including ICSE (GREENS) and ECSA.\n\nPublications: \nHarmonica: A Self-Adaptation Exemplar for Sustainable MLOps\nA. V. Halgatti, S. Biswas, H. Bhatt, S. Rakhunathan, K. Vaidhyanathan. Journal of Systems and Software (JSS) / IIIT Hyderabad R&D Showcase.\n\nHarmonE: A Self-Adaptive Approach to Architecting Sustainable MLOps\nH. Bhatt, S. Biswas, S. Rakhunathan, K. Vaidhyanathan. European Conference on Software Architecture (ECSA 2025) / arXiv:2505.13693.\n\nAutomatically Assessing Software Architecture Compliance With Green Software Patterns\nN. Ahuja, S. Rakhunathan, F. Sarro. IEEE/ACM 9th International Workshop on Green and Sustainable Software (GREENS @ ICSE 2025).\n\nContextual Self-attentive Temporal Point Process for Physical Decommissioning Prediction of Cloud Assets\nF. Yang, J. Zhang, L. Wang, B. Qiao, D. Weng, X. Qin, G. Weber, D. N. Das, S. Rakhunathan, R. Srikanth, Q. Lin, D. Zhang. ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD '23)"
+        },
+        {
+            "name": "Haala Deeba Abbas",
+            "title": "PhD CSE",
+            "email": "haala.a@research.iiit.ac.in",
+            "imageURL": "/images/people/haala-deeba-abbas.jpg",
+            "slug": "haala-deeba-abbas",
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/haala-deeba-abbas-ba62211b5/",
+                "GitHub": "https://github.com/Haaladeeba"
+            },
+            "interests": [
+                "Human–Computer Interaction (HCI)",
+                "Human-Centered Design",
+                "Motherhood and Technology",
+                "Inclusive Design",
+                "Digital Motherhood"
+            ],
+            "education": [],
+            "bio": "Haala is a PhD researcher in Computer Science, working in the area of Human–Computer Interaction (HCI). Her current research explores Motherhood through the lens of HCI, with a focus on understanding mothers’ lived experiences and their interactions with digital technologies across different stages of motherhood. Her broader research interests include  maternal wellbeing, human-centered and inclusive design, sociotechnical systems and the social and cultural dimensions of technology use.\nShe also serves as an EU–India Student Ambassador, contributing to academic and cultural exchange and promoting opportunities for international collaboration and student mobility.\nBeyond research, Haala enjoys singing, sketching, and calligraphy. She is also passionate about sports, particularly badminton, and enjoys playing table tennis and cricket.\n\nPublications: https://ieeexplore.ieee.org/abstract/document/9054682"
         }
     ],
     "MS by Research": [
