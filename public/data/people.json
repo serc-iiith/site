@@ -1359,6 +1359,23 @@
             ],
             "education": [],
             "bio": "Neha Prabhu is an Undergraduate researcher in the AI for SE domain where she currently explores and tinkers around with existing coding benchmarks and frameworks, while attempting to analyze and optimize certain aspects of the same."
+        },
+        {
+            "name": "Priyanka Agarwal",
+            "title": "CSE",
+            "email": "priyanka.agarwal@students.iiit.ac.in",
+            "imageURL": "/images/people/priyanka-agarwal.png",
+            "slug": "priyanka-agarwal",
+            "social_links": {
+                "LinkedIn": "www.linkedin.com/in/priyanka-agarwal-8a0898306",
+                "GitHub": " https://github.com/dawnbliss-coder"
+            },
+            "interests": [
+                "Autoformalization",
+                "Formal Methods"
+            ],
+            "education": [],
+            "bio": "I am a Computer Science and Engineering undergraduate at IIIT Hyderabad with interests in machine learning, formal methods, distributed systems, and database systems. Currently, I am conducting research at the Software Engineering Research Center (SERC), IIIT Hyderabad, on applying machine learning techniques to automated theorem proving. I enjoy building systems-oriented and AI-driven projects, ranging from database engines and distributed storage systems to NLP and quantitative finance applications. I am particularly interested in the intersection of research and software engineering, where theoretical ideas can be translated into practical tools and systems."
         }
     ],
     "Alumni": [
