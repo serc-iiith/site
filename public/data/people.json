@@ -438,6 +438,27 @@
             "imageURL": "/images/people/abhinav-guptha.png",
             "social_links": {},
             "advisor": "Dr. Y. Raghu Reddy"
+        },
+        {
+            "name": "Srinivasan Rakhunathan",
+            "title": "PhD CSE (Part-Time)",
+            "email": "srinivasan.r@research.iiit.ac.in",
+            "imageURL": "/images/people/srinivasan-rakhunathan.jpg",
+            "slug": "srinivasan-rakhunathan",
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/srinivasanrakhunathan/",
+                "GitHub": "https://github.com/srini1978",
+                "Google Scholar": "https://scholar.google.com/citations?user=QmDR9bYAAAAJ&hl=en"
+            },
+            "interests": [
+                "Green AI",
+                "Sustainable Software Engineering",
+                "Self-Adaptive MLOps",
+                "Architectural Pattern Compliance",
+                "Quality-Attribute Trade-off Analysis"
+            ],
+            "education": [],
+            "bio": "Srinivasan Rakhunathan is a Principal Product Manager at Microsoft and a doctoral researcher at IIIT Hyderabad investigating the foundations of Green AI and sustainable software engineering. His research focuses on self-adaptive systems, automated compliance for energy-efficient design patterns, and operationalizing trade-offs between predictive performance and runtime carbon costs in production ML pipelines. His academic work has appeared in leading venues including ICSE (GREENS) and ECSA.\n\nPublications: \nHarmonica: A Self-Adaptation Exemplar for Sustainable MLOps\nA. V. Halgatti, S. Biswas, H. Bhatt, S. Rakhunathan, K. Vaidhyanathan. Journal of Systems and Software (JSS) / IIIT Hyderabad R&D Showcase.\n\nHarmonE: A Self-Adaptive Approach to Architecting Sustainable MLOps\nH. Bhatt, S. Biswas, S. Rakhunathan, K. Vaidhyanathan. European Conference on Software Architecture (ECSA 2025) / arXiv:2505.13693.\n\nAutomatically Assessing Software Architecture Compliance With Green Software Patterns\nN. Ahuja, S. Rakhunathan, F. Sarro. IEEE/ACM 9th International Workshop on Green and Sustainable Software (GREENS @ ICSE 2025).\n\nContextual Self-attentive Temporal Point Process for Physical Decommissioning Prediction of Cloud Assets\nF. Yang, J. Zhang, L. Wang, B. Qiao, D. Weng, X. Qin, G. Weber, D. N. Das, S. Rakhunathan, R. Srikanth, Q. Lin, D. Zhang. ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD '23)"
         }
     ],
     "MS by Research": [
