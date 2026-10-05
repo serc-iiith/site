@@ -601,6 +601,23 @@
             ],
             "education": [],
             "bio": "Pursuing M.S. by Research, with interests in software engineering, developer infrastructure, automation, and AI-assisted software systems by focus on exploring, improving and building reliable and practical software systems, particularly across cloud-native technologies, DevOps, and LLM-based tools."
+        },
+        {
+            "name": "Yogesh Chandrasekharuni",
+            "title": "MS (CSE)",
+            "email": "yogesh.c@research.iiit.ac.in",
+            "imageURL": "/images/people/yogesh-chandrasekharuni.jpg",
+            "slug": "yogesh-chandrasekharuni",
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/yogeshchandrasekharuni",
+                "GitHub": "https://github.com/yogeshchandrasekharuni"
+            },
+            "interests": [
+                "Agentic AI",
+                "Software Testing"
+            ],
+            "education": [],
+            "bio": "Yogesh Chandrasekharuni is pursuing an Industry-Sponsored Master of Science by Research at IIIT Hyderabad under the guidance of Professor Raghu Reddy. His research interests lie at the intersection of Agentic AI and software testing, focusing on understanding and evaluating the behaviour of AI agents in enterprise applications. Drawing on his experience building AI systems, he aims to translate research into reliable production solutions, particularly where non-deterministic behaviour presents challenges for testing and validation."
         }
     ],
     "Dual Degree": [
