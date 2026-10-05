@@ -583,6 +583,24 @@
             "interests": [],
             "education": [],
             "bio": "I am Vidhi Jain, a first year MS by Research student. I like social networking and having talks about random stuff."
+        },
+        {
+            "name": "Mohammad Abdul Muqtadir",
+            "title": "MS (CSE)",
+            "email": "abdulmuqtadir.m@research.iiit.ac.in",
+            "imageURL": "/images/people/mohammad-abdul-muqtadir.jpg",
+            "slug": "mohammad-abdul-muqtadir",
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/muqtadirs",
+                "GitHub": "https://github.com/muqtxdir",
+                "Blog": "https://muqtxdir.com"
+            },
+            "interests": [
+                "Containers & Orchestration",
+                "Cloud Native Systems"
+            ],
+            "education": [],
+            "bio": "Pursuing M.S. by Research, with interests in software engineering, developer infrastructure, automation, and AI-assisted software systems by focus on exploring, improving and building reliable and practical software systems, particularly across cloud-native technologies, DevOps, and LLM-based tools."
         }
     ],
     "Dual Degree": [
