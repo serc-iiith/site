@@ -799,21 +799,6 @@
             "bio": "My research lies at the intersection of Software Architecture (SA) and Artificial Intelligence (AI), exploring how AI can be applied to software architecture. Currently, I am focused on modeling and creating architectural views, using AI to generate these views from inputs such as descriptions, code, and other relevant data. Outside of my research, I enjoy reading books, cooking, and in my leisure time, I love watching movies and web series."
         },
         {
-            "name": "Pavitra Pinninti",
-            "title": "CSD",
-            "email": "pavitra.pinninti@research.iiit.ac.in",
-            "imageURL": "/images/people/pavitra-pinninti.png",
-            "slug": "pavitra-pinninti",
-            "social_links": {},
-            "interests": [
-                "Software testing",
-                "LLMs",
-                "GenAI"
-            ],
-            "advisor": "Dr. Y. Raghu Reddy",
-            "bio": "Interested in use of gen AI in software testing"
-        },
-        {
             "name": "Prabhav Shetty",
             "title": "CSD",
             "email": "prabhav.shetty@research.iiit.ac.in",
