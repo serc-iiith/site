@@ -26,9 +26,16 @@ import {
   Newspaper
 } from "lucide-react";
 
+const STORAGE_KEY = "serc_phd_announcement_minimized";
+const PDF_URL = "/assets/Advt_JD_SERC_Ph.d.pdf";
+const POSTER_IMAGE_URL = "/images/PhD. Posting.png";
+const DEFAULT_DEADLINE = "2026-09-15T23:59";
+
 export default function PhdAdmissionsWidget() {
   const phdEvent = newsData.find(event => event.slug === "phd-admissions-serc-2026");
   const hasTime = (phdEvent as any)?.hasTime !== false;
+  const deadline = new Date(phdEvent?.endTime || DEFAULT_DEADLINE);
+  const isPastDeadline = Date.now() > deadline.getTime();
   const [isMinimized, setIsMinimized] = useState(false); // Widget minimized to badge
   const [showPosterModal, setShowPosterModal] = useState(false); // Lightbox modal for poster image
   const [zoomScale, setZoomScale] = useState(1); // Zoom scale for poster (1.0 to 4.0)
@@ -37,19 +44,19 @@ export default function PhdAdmissionsWidget() {
 
   useEffect(() => {
     setHasMounted(true);
-    const minimized = localStorage.getItem("serc_phd_announcement_minimized");
+    const minimized = localStorage.getItem(STORAGE_KEY);
     if (minimized === "true") {
       setIsMinimized(true);
     }
   }, []);
 
-  if (!hasMounted) return null;
+  if (!hasMounted || isPastDeadline) return null;
 
   const handleMinimize = (e: React.MouseEvent) => {
     e.stopPropagation();
     const nextMinimized = !isMinimized;
     setIsMinimized(nextMinimized);
-    localStorage.setItem("serc_phd_announcement_minimized", nextMinimized ? "true" : "false");
+    localStorage.setItem(STORAGE_KEY, nextMinimized ? "true" : "false");
   };
 
   // Prefilled email parameters
@@ -72,7 +79,7 @@ export default function PhdAdmissionsWidget() {
             whileHover={{ scale: 1.05 }}
             onClick={() => {
               setIsMinimized(false);
-              localStorage.setItem("serc_phd_announcement_minimized", "false");
+              localStorage.setItem(STORAGE_KEY, "false");
             }}
             className="fixed bottom-6 right-6 left-6 sm:left-auto justify-center sm:justify-start z-[999] flex items-center gap-2 px-4 py-3 rounded-full cursor-pointer bg-[color:var(--primary-color)] text-white shadow-xl hover:shadow-2xl border border-white/20 transition-all group font-medium text-sm md:text-base"
           >
@@ -154,15 +161,13 @@ export default function PhdAdmissionsWidget() {
                 <span className="text-[color:var(--secondary-color)] font-medium">Deadline:</span>
                 <span className="font-bold text-[color:var(--warning-color)] bg-[color:var(--warning-color)]/10 px-2 py-0.5 rounded-md border border-[color:var(--warning-color)]/20">
                   {(() => {
-                    const endTimeStr = phdEvent?.endTime || "2026-09-15T23:59";
-                    const date = new Date(endTimeStr);
-                    const formattedDate = date.toLocaleDateString("en-US", {
+                    const formattedDate = deadline.toLocaleDateString("en-US", {
                       month: "short",
                       day: "numeric",
                       year: "numeric"
                     });
                     if (hasTime) {
-                      const formattedTime = date.toLocaleTimeString("en-US", {
+                      const formattedTime = deadline.toLocaleTimeString("en-US", {
                         hour: "2-digit",
                         minute: "2-digit"
                       });
@@ -190,7 +195,7 @@ export default function PhdAdmissionsWidget() {
                   href="/news/phd-admissions-serc-2026"
                   onClick={() => {
                     setIsMinimized(true);
-                    localStorage.setItem("serc_phd_announcement_minimized", "true");
+                    localStorage.setItem(STORAGE_KEY, "true");
                   }}
                   className="flex items-center justify-center gap-2 w-full py-2 px-4 rounded-xl border border-[color:var(--border-color)] bg-[color:var(--background)] hover:bg-[color:var(--hover-bg)] text-[color:var(--text-color)] hover:border-[color:var(--primary-color)]/50 font-semibold text-xs transition-all group"
                 >
@@ -210,7 +215,7 @@ export default function PhdAdmissionsWidget() {
                   </button>
 
                   <a
-                    href="/assets/Advt_JD_SERC_Ph.d.pdf"
+                    href={PDF_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg border border-[color:var(--border-color)] bg-[color:var(--background)] hover:bg-[color:var(--hover-bg)] text-[color:var(--text-color)] text-xs font-semibold transition-colors"
@@ -282,8 +287,8 @@ export default function PhdAdmissionsWidget() {
                   </button>
                   <div className="w-px h-5 bg-white/10 mx-1"></div>
                   <a
-                    href="/images/PhD. Posting.png"
-                    download="PhD. Posting.png"
+                    href={POSTER_IMAGE_URL}
+                    download={POSTER_IMAGE_URL.split("/").pop()}
                     title="Download Poster Image"
                     className="p-1.5 rounded-lg hover:bg-white/10 text-white/80 hover:text-white transition-colors"
                   >
@@ -308,7 +313,7 @@ export default function PhdAdmissionsWidget() {
                 className="flex-1 w-full h-full overflow-hidden flex items-center justify-center relative bg-neutral-950 select-none"
               >
                 <motion.img
-                  src="/images/PhD. Posting.png"
+                  src={POSTER_IMAGE_URL}
                   alt="Ph.D. Admission Opportunities 2026 - SERC"
                   drag={zoomScale > 1}
                   dragConstraints={containerRef}
@@ -337,7 +342,7 @@ export default function PhdAdmissionsWidget() {
                     <span>Apply via Email</span>
                   </a>
                   <a
-                    href="/assets/Advt_JD_SERC_Ph.d.pdf"
+                    href={PDF_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex-1 sm:flex-none flex items-center justify-center gap-1.5 py-1.5 px-4 rounded-lg border border-white/15 bg-white/10 hover:bg-white/20 text-white text-xs font-semibold transition-colors"
