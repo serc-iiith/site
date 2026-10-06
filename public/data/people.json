@@ -1268,6 +1268,24 @@
             ],
             "education": [],
             "bio": "Tanishi is a CSD dual-degree student at IIIT Hyderabad and a research student at the Software Engineering Research Center (SERC) under Dr. Raman Saxena. Her interests lie at the intersection of Human-Computer Interaction, Artificial Intelligence, and social computing. She is particularly interested in understanding user needs and designing technology-driven interventions that improve user experiences, decision-making, and interactions with digital systems. Alongside academics and research, she is actively involved in student leadership and cultural activities at IIIT Hyderabad.\n"
+        },
+        {
+            "name": "A. V. Aditya",
+            "title": "CSD",
+            "email": "av.aditya@research.iiit.ac.in",
+            "imageURL": "/images/people/a-v-aditya.jpg",
+            "slug": "a-v-aditya",
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/a-v-aditya/",
+                "GitHub": "https://github.com/AvAdiii"
+            },
+            "interests": [
+                "AI4SE",
+                "Software Architecture",
+                "Autonomous SE"
+            ],
+            "education": [],
+            "bio": "Hello! I'm A. V. Aditya, a third-year student pursuing a Dual Degree (B.Tech + MS by Research) in Computer Science and Engineering at IIIT Hyderabad. My research centres on AI for Software Engineering, with a focus on how large language models can help developers understand, design, and maintain software systems. I enjoy building developer tools and systems projects, and I work primarily in Python and C. Beyond research, I am deeply interested in startups and entrepreneurship."
         }
     ],
     "Honors": [
