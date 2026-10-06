@@ -636,6 +636,24 @@
             ],
             "education": [],
             "bio": "Bavya Sri Kilari is pursuing a Master of Science by Research at IIIT Hyderabad under the guidance of Professor Y. Raghu Reddy.\n\nPublications:\nVRSpecML: A Profile for Realizing Domain Specific Virtual Reality Systems, MODELS 2026: ACM/IEEE 29th International Conference on Model Driven Engineering Languages and Systems, October 4 - 9, 2026, Málaga, Spain"
+        },
+        {
+            "name": "Shantanu Sudhakar Mande",
+            "title": "MS (CSE)",
+            "email": "shantanu.mande@research.iiit.ac.in",
+            "imageURL": "/images/people/shantanu-sudhakar-mande.jpg",
+            "slug": "shantanu-sudhakar-mande",
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/shantanu-mande-11b04b285/",
+                "GitHub": "https://github.com/shantanumande"
+            },
+            "interests": [
+                "1. Large language models for software engineering",
+                "2. Formal methods and program verification",
+                "3. Trustworthy, verifiable AI-generated code"
+            ],
+            "education": [],
+            "bio": "Off the clock music on loop, video games, and sketching things that look better in my head"
         }
     ],
     "Dual Degree": [
