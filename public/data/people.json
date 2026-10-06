@@ -618,6 +618,24 @@
             ],
             "education": [],
             "bio": "Yogesh Chandrasekharuni is pursuing an Industry-Sponsored Master of Science by Research at IIIT Hyderabad under the guidance of Professor Raghu Reddy. His research interests lie at the intersection of Agentic AI and software testing, focusing on understanding and evaluating the behaviour of AI agents in enterprise applications. Drawing on his experience building AI systems, he aims to translate research into reliable production solutions, particularly where non-deterministic behaviour presents challenges for testing and validation."
+        },
+        {
+            "name": "Bavya Sri Kilari",
+            "title": "MS (CSE)",
+            "email": "bavyasri.kilari@research.iiit.ac.in",
+            "imageURL": "/images/people/bavya-sri-kilari.jpg",
+            "slug": "bavya-sri-kilari",
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/bavyasri",
+                "GitHub": "https://github.com/Bavya-1"
+            },
+            "interests": [
+                "Software Engineering",
+                "Software Testing",
+                "Virtual Reality Systems"
+            ],
+            "education": [],
+            "bio": "Bavya Sri Kilari is pursuing Master of Science by Research at IIIT Hyderabad under the guidance of Professor Y Raghu Reddy. \n\nPublications:\nVRSpecML: A Profile for Realizing Domain Specific Virtual Reality Systems, MODELS 2026: ACM/IEEE 29th International Conference on Model Driven Engineering Languages and Systems, October 4 - 9, 2026, Málaga, Spain"
         }
     ],
     "Dual Degree": [
