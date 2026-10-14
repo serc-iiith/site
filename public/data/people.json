@@ -705,7 +705,7 @@
         },
         {
             "name": "Aneesh Sambu",
-            "title": "CSD",
+            "title": "LCD",
             "email": "sambu.aneesh@research.iiit.ac.in",
             "imageURL": "",
             "slug": "sambuaneesh",
@@ -718,7 +718,7 @@
                 "Green Software",
                 "Self Sustaining systems and architecture"
             ],
-            "advisor": "Dr. Karthik Vaidhyanathan",
+            "education": [],
             "bio": "Hi! You can reach out to me through SERC and SCRC. I like building, breaking, and fixing systems-keeps things interesting."
         },
         {
