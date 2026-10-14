@@ -659,6 +659,17 @@
             ],
             "education": [],
             "bio": "Off the clock music on loop, video games, and sketching things that look better in my head."
+        },
+        {
+            "name": "Pavan Harshit Chinta",
+            "title": "MS (CSE)",
+            "email": "pavan.harshit@research.iiit.ac.in",
+            "imageURL": "/images/people/pavan-harshit-chinta.jpg",
+            "slug": "pavan-harshit-chinta",
+            "social_links": {},
+            "interests": [],
+            "education": [],
+            "bio": "My primary focus is building LEAF-Cloud, an analytical framework that models and estimates the carbon footprint of cloud infrastructure using Terraform code. This project combines my interests in building full-stack systems and applying data-driven methods to solve practical software engineering challenges.\nThis work fuels my passion for the broader intersection of AI and Software Engineering. I am particularly excited about the potential of Large Language Models (LLMs) and autonomous agents to automate complex CloudOps, improve architectural decisions, and create more efficient, intelligent systems.\nI have a strong background in building a variety of applications, from high-performance AI video analysis tools to full-stack web platforms using both .NET/SQL and MERN stacks. My real passion is simply building new things, and I'm always looking for the next interesting problem to solve with technology. I'm eager to collaborate on innovative projects in this space."
         }
     ],
     "Dual Degree": [
@@ -1879,17 +1890,6 @@
             "interests": [],
             "education": [],
             "bio": "I am currently a Research Associate at the Software Engineering Research Center (SERC), IIIT Hyderabad, working under the guidance of Professor Raghu Reddy. My current research concentrates on leveraging Large Language Models for ontological analysis, requirements engineering, test case development, and also streamlining generative AI adoption across industry. Beyond my academic pursuits, I'm deeply interested in software development and continuously explore emerging technological domains. In my leisure hours, I find joy in painting and spending time with my cats."
-        },
-        {
-            "name": "Pavan Harshit Chinta",
-            "title": "Research Engineer",
-            "email": "pavan.harshit@research.iiit.ac.in",
-            "imageURL": "/images/people/pavan-harshit-chinta.jpg",
-            "slug": "pavan-harshit-chinta",
-            "social_links": {},
-            "interests": [],
-            "education": [],
-            "bio": "My primary focus is building LEAF-Cloud, an analytical framework that models and estimates the carbon footprint of cloud infrastructure using Terraform code. This project combines my interests in building full-stack systems and applying data-driven methods to solve practical software engineering challenges.\nThis work fuels my passion for the broader intersection of AI and Software Engineering. I am particularly excited about the potential of Large Language Models (LLMs) and autonomous agents to automate complex CloudOps, improve architectural decisions, and create more efficient, intelligent systems.\nI have a strong background in building a variety of applications, from high-performance AI video analysis tools to full-stack web platforms using both .NET/SQL and MERN stacks. My real passion is simply building new things, and I'm always looking for the next interesting problem to solve with technology. I'm eager to collaborate on innovative projects in this space."
         },
         {
             "name": "Pranav Reddy Muttannagaru ",
