@@ -519,22 +519,6 @@
             "bio": "I am always curious about new frontiers where technology enables groundbreaking innovations. My work primarily revolves around Digital Twins, DevOps, and ML. I am pursuing an MS by Research in Computer Science under the guidance of Dr. Karthik Vaidhyanathan, focusing on developing Digital Twins for Smart Cities to optimize infrastructure and urban planning. Beyond my core research, I am actively exploring the integration of AR/VR with smart city ecosystems and enhancing simulation frameworks. I aspire to be an achiever—someone whose contributions leave a lasting impact and inspire others. I am passionate about expanding my expertise into space technologies"
         },
         {
-            "name": "Puru Ojha",
-            "title": "MS (CSE)",
-            "email": "puru.ojha@research.iiit.ac.in",
-            "imageURL": "/images/people/puru-ojha.png",
-            "slug": "puru_ojha",
-            "social_links": {
-                "GitHub": "https://github.com/puru-ojha"
-            },
-            "interests": [
-                "Virtual Reality",
-                "Redirected Walking"
-            ],
-            "advisor": "Dr. Y. Raghu Reddy",
-            "bio": "Puru has always been fascinated by the way humans interact with intelligent systems—and how those systems, in turn, interact with each other. With a background in mechanical engineering and a growing expertise in artificial intelligence and robotics, his journey has been anything but conventional. He began his career in the banking sector, where he honed his problem-solving skills in a fast-paced environment, but his passion for innovation led him back to research and development. He’s interested in making technology feel more intuitive, whether it’s a robot learning from experience or a virtual environment that responds naturally to human movement.\n\nOver the years, he’s explored different facets of this idea. He’s worked on AI-driven applications, multilingual text analysis, and immersive virtual reality experiences. One of his recent projects involved designing dynamic, infinitely branching mazes in VR that adapt to users’ movements, creating a seamless exploration experience. But his real passion lies in robotics—specifically, how intelligent systems can transfer learned behaviors across different embodiments and interact more naturally with both humans and other machines.\n\nAt the heart of his work is a simple but powerful idea: the future of technology isn’t just about making smarter systems, but about making them work together—and with us—in more meaningful ways. He hopes to continue his research in this space, pushing the boundaries of how we build and interact with intelligent systems in the real and virtual worlds"
-        },
-        {
             "name": "Sreemaee Akshathala",
             "title": "MS (CSE)",
             "email": "sreemaee.akshathala@research.iiit.ac.in",
@@ -1862,6 +1846,22 @@
             "interests": [],
             "education": [],
             "bio": "I am an MS by Research candidate at SERC, IIIT Hyderabad. I’m guided by Prof. Dr. Karthik Vaidyanathan.\nMy research interest lies in self-adaptation, intersection of machine learning and software architecture and AI engineering. \nPrior to IIIT-H, I was working at Kantar Analytics, Bangalore as a business analyst. My primary work was to perform sales and marketing analytics, moniter & maintain ETL pipelines and help client and team with data insights. \n\nPreviously in 2019, I worked at NET-ZEDi laboratory, IIT Roorkee with Prof. Dr. E. Rajasekar in the area of smart buildings and IoT. Also have hands-on experience in building management systems while working at Johnson Controls Pune. There I contribued in developing BMS control logic and documentation for JCI's upcoming pune branch office. I previously completed my B.Tech in Electronics & telecommunication Engineering from Government College of Engineering, Karad.\n\nMy goal is to contribute to the development of modern self-adaptive systems, capable to heal, adapt, control, manage and intelligent like human being. I truely believe that moden AI techniques can help in achieveing this challenge of fully autonomus self adaptive systems. My work introduced novel concept in Self adaptation which \"Machine Learning Model Balancer\" which got accepted in 38th IEEE/ACM International Conference on Automated Software Engineering (ASE 2023) - Core A* Conference.\n\nI'm an inquisitive person, always willing to learn about fields including, but not limited to, science technology, travelling and Indian culture."
+        },
+        {
+            "name": "Puru Ojha",
+            "title": "MS (CSE)",
+            "email": "puru.ojha@research.iiit.ac.in",
+            "imageURL": "/images/people/puru-ojha.png",
+            "slug": "puru_ojha",
+            "social_links": {
+                "GitHub": "https://github.com/puru-ojha"
+            },
+            "interests": [
+                "Virtual Reality",
+                "Redirected Walking"
+            ],
+            "education": [],
+            "bio": "Puru has always been fascinated by the way humans interact with intelligent systems—and how those systems, in turn, interact with each other. With a background in mechanical engineering and a growing expertise in artificial intelligence and robotics, his journey has been anything but conventional. He began his career in the banking sector, where he honed his problem-solving skills in a fast-paced environment, but his passion for innovation led him back to research and development. He’s interested in making technology feel more intuitive, whether it’s a robot learning from experience or a virtual environment that responds naturally to human movement.\n\nOver the years, he’s explored different facets of this idea. He’s worked on AI-driven applications, multilingual text analysis, and immersive virtual reality experiences. One of his recent projects involved designing dynamic, infinitely branching mazes in VR that adapt to users’ movements, creating a seamless exploration experience. But his real passion lies in robotics—specifically, how intelligent systems can transfer learned behaviors across different embodiments and interact more naturally with both humans and other machines.\n\nAt the heart of his work is a simple but powerful idea: the future of technology isn’t just about making smarter systems, but about making them work together—and with us—in more meaningful ways. He hopes to continue his research in this space, pushing the boundaries of how we build and interact with intelligent systems in the real and virtual worlds"
         }
     ],
     "Research Associates": [
