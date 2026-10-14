@@ -1281,18 +1281,6 @@
             "bio": "I like building cool stuff!"
         },
         {
-            "name": "Moida Praneeth Jain",
-            "title": "CSE",
-            "email": "moida.praneeth@students.iiit.ac.in",
-            "imageURL": "/images/people/moida-praneeth-jain.png",
-            "slug": "praneeth_jain",
-            "social_links": {
-                "GitHub": "https://github.com/PraneethJain/"
-            },
-            "advisor": "Dr. Venkatesh Choppella",
-            "bio": "Interested in low level development and systems"
-        },
-        {
             "name": "Vyakhya Gupta",
             "title": "CSE",
             "email": "vyakhya.gupta@students.iiit.ac.in",
@@ -1864,6 +1852,19 @@
             "interests": [],
             "education": [],
             "bio": ""
+        },
+        {
+            "name": "Moida Praneeth Jain",
+            "title": "CSE",
+            "email": "moida.praneeth@students.iiit.ac.in",
+            "imageURL": "/images/people/moida-praneeth-jain.png",
+            "slug": "praneeth_jain",
+            "social_links": {
+                "GitHub": "https://github.com/PraneethJain/"
+            },
+            "interests": [],
+            "education": [],
+            "bio": "Interested in low level development and systems"
         }
     ],
     "Research Associates": [
