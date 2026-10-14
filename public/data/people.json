@@ -681,23 +681,6 @@
             "bio": "I am a researcher and developer with a keen interest in AR/VR, Human-Computer Interaction (HCI), and Gamification. My work focuses on creating immersive and engaging digital experiences that bridge the gap between virtual and real-world interactions. Additionally, I explore Software Engineering, Web Development, and Game Design to enhance digital interfaces and interactive environments."
         },
         {
-            "name": "Adyansh Kakran",
-            "title": "CSD",
-            "email": "adyansh.kakran@research.iiit.ac.in",
-            "imageURL": "/images/people/adyansh-kakran.jpg",
-            "slug": "adyansh-kakran",
-            "social_links": {
-                "GitHub": "https://github.com/adyanshkakran"
-            },
-            "interests": [
-                "GenAI for Self Adaption",
-                "Self Adaptive MLOps"
-            ],
-            "advisor": "Dr. Karthik Vaidhyanathan",
-            "bio": "Hi there! I’m Adyansh, a dual degree student at the Software Engineering Research Centre, IIIT Hyderabad. I am fortunate to be advised by Dr. Karthik Vaidhyanathan, and my research lies at the intersection of Natural Language Processing (NLP) and Software Engineering. My work primarily focuses on leveraging artificial intelligence to enhance software quality, development processes, and engineering practices.\n\nBeyond research, I have a strong passion for building impactful software products and exploring the world of finance. I enjoy applying both analytical and creative thinking to solve real-world problems, whether through academic work or practical software solutions.\n\nI’m always open to meaningful collaborations, interesting conversations, or new connections. If our interests align or you'd simply like to chat, feel free to reach out — I’d love to hear from you!",
-            "education": []
-        },
-        {
             "name": "Amey Karan",
             "title": "CSD",
             "email": "amey.karan@research.iiit.ac.in",
@@ -1863,6 +1846,22 @@
             "interests": [],
             "education": [],
             "bio": "My research interests include Self-Adaptation, GenAI for Self-Adaptation, Reinforcement Learning for Self-Adaptation"
+        },
+        {
+            "name": "Adyansh Kakran",
+            "title": "CSD",
+            "email": "adyansh.kakran@research.iiit.ac.in",
+            "imageURL": "/images/people/adyansh-kakran.jpg",
+            "slug": "adyansh-kakran",
+            "social_links": {
+                "GitHub": "https://github.com/adyanshkakran"
+            },
+            "interests": [
+                "GenAI for Self Adaption",
+                "Self Adaptive MLOps"
+            ],
+            "education": [],
+            "bio": "Hi there! I’m Adyansh, a dual degree student at the Software Engineering Research Centre, IIIT Hyderabad. I am fortunate to be advised by Dr. Karthik Vaidhyanathan, and my research lies at the intersection of Natural Language Processing (NLP) and Software Engineering. My work primarily focuses on leveraging artificial intelligence to enhance software quality, development processes, and engineering practices.\n\nBeyond research, I have a strong passion for building impactful software products and exploring the world of finance. I enjoy applying both analytical and creative thinking to solve real-world problems, whether through academic work or practical software solutions.\n\nI’m always open to meaningful collaborations, interesting conversations, or new connections. If our interests align or you'd simply like to chat, feel free to reach out — I’d love to hear from you!"
         }
     ],
     "Research Associates": [
