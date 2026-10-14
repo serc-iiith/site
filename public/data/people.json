@@ -818,17 +818,6 @@
             "bio": "I am an undergrad researcher pursuing BTech+MS(Hons.)"
         },
         {
-            "name": "Shambhavi Jahagirdar",
-            "title": "CSD",
-            "email": "shambhavi.jahagirdar@research.iiit.ac.in",
-            "imageURL": "/images/people/shambhavi-jahagirdar.png",
-            "slug": "shambhavi_jahagirdar",
-            "social_links": {
-                "GitHub": "https://github.com/Shambhaviiiit"
-            },
-            "advisor": "Dr. Y. Raghu Reddy"
-        },
-        {
             "name": "Shaunak Biswas",
             "title": "CSD",
             "email": "shaunak.biswas@research.iiit.ac.in",
@@ -1864,6 +1853,19 @@
             ],
             "education": [],
             "bio": "I am Vyakhya Gupta, a CSE student pursuing honors with Professor Karthik Vaidyanathan. My research focuses on certifying ML-enabled systems for safety-critical applications, ensuring their reliability and compliance with industry standards. I am also exploring using Gen AI for self adaption. Accepted works include: https://arxiv.org/abs/2501."
+        },
+        {
+            "name": "Shambhavi Jahagirdar",
+            "title": "CSD",
+            "email": "shambhavi.jahagirdar@research.iiit.ac.in",
+            "imageURL": "/images/people/shambhavi-jahagirdar.png",
+            "slug": "shambhavi_jahagirdar",
+            "social_links": {
+                "GitHub": "https://github.com/Shambhaviiiit"
+            },
+            "interests": [],
+            "education": [],
+            "bio": ""
         }
     ],
     "Research Associates": [
