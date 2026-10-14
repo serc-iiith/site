@@ -1266,21 +1266,6 @@
     ],
     "Honors": [
         {
-            "name": "Agrim Mittal",
-            "title": "CSE",
-            "email": "agrim.mittal@students.iiit.ac.in",
-            "imageURL": "/images/people/agrim-mittal.png",
-            "slug": "agrim-mittal",
-            "social_links": {
-                "GitHub": "https://github.com/agrimmmm"
-            },
-            "interests": [
-                "Software Development in the field of Extended Reality (VR/MR)"
-            ],
-            "advisor": "Dr. Y. Raghu Reddy",
-            "bio": "Undergraduate Researcher at SERC"
-        },
-        {
             "name": "Dileep Kumar Adari",
             "title": "CSE",
             "email": "dileepkumar.adari@research.iiit.ac.in",
@@ -1862,6 +1847,21 @@
             ],
             "education": [],
             "bio": "Hi there! I’m Adyansh, a dual degree student at the Software Engineering Research Centre, IIIT Hyderabad. I am fortunate to be advised by Dr. Karthik Vaidhyanathan, and my research lies at the intersection of Natural Language Processing (NLP) and Software Engineering. My work primarily focuses on leveraging artificial intelligence to enhance software quality, development processes, and engineering practices.\n\nBeyond research, I have a strong passion for building impactful software products and exploring the world of finance. I enjoy applying both analytical and creative thinking to solve real-world problems, whether through academic work or practical software solutions.\n\nI’m always open to meaningful collaborations, interesting conversations, or new connections. If our interests align or you'd simply like to chat, feel free to reach out — I’d love to hear from you!"
+        },
+        {
+            "name": "Agrim Mittal",
+            "title": "CSE",
+            "email": "agrim.mittal@students.iiit.ac.in",
+            "imageURL": "/images/people/agrim-mittal.png",
+            "slug": "agrim-mittal",
+            "social_links": {
+                "GitHub": "https://github.com/agrimmmm"
+            },
+            "interests": [
+                "Software Development in the field of Extended Reality (VR/MR)"
+            ],
+            "education": [],
+            "bio": "Undergraduate Researcher at SERC"
         }
     ],
     "Research Associates": [
