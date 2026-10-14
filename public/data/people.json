@@ -723,7 +723,7 @@
         },
         {
             "name": "Bassam Adnan",
-            "title": "CSD",
+            "title": "LCD",
             "email": "bassam.adnan@research.iiit.ac.in",
             "imageURL": "/images/people/bassam-adnan.png",
             "slug": "bassam_adnan",
@@ -737,7 +737,7 @@
                 "Distributed Systems",
                 "Edge Computing"
             ],
-            "advisor": "Dr. Karthik Vaidhyanathan",
+            "education": [],
             "bio": "Hey everyone! I'm currently in my 3rd year, learning things as I go along on my time here at SERC. My research interests include software architectures, particularly for IoT systems, making them autonomous. Do come by and meet me at SERC!"
         },
         {
