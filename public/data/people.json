@@ -1281,25 +1281,6 @@
             "bio": "I like building cool stuff!"
         },
         {
-            "name": "Vyakhya Gupta",
-            "title": "CSE",
-            "email": "vyakhya.gupta@students.iiit.ac.in",
-            "imageURL": "/images/people/vyakhya-guptha.png",
-            "slug": "vyakhya_guptha",
-            "social_links": {},
-            "interests": [
-                "SE4ML",
-                "ML certification",
-                "LLM agents",
-                "GenAI",
-                "Painting",
-                "Reading novels"
-            ],
-            "advisor": "Dr. Karthik Vaidhyanathan",
-            "bio": "I am Vyakhya Gupta, a CSE student pursuing honors with Professor Karthik Vaidyanathan. My research focuses on certifying ML-enabled systems for safety-critical applications, ensuring their reliability and compliance with industry standards. I am also exploring using Gen AI for self adaption. Accepted works include: https://arxiv.org/abs/2501.",
-            "education": []
-        },
-        {
             "name": "Ananya Vishal Halgatti",
             "title": "CSE",
             "email": "ananya.halgatti@students.iiit.ac.in",
@@ -1865,6 +1846,24 @@
             "interests": [],
             "education": [],
             "bio": "Interested in low level development and systems"
+        },
+        {
+            "name": "Vyakhya Gupta",
+            "title": "CSE",
+            "email": "vyakhya.gupta@students.iiit.ac.in",
+            "imageURL": "/images/people/vyakhya-guptha.png",
+            "slug": "vyakhya_guptha",
+            "social_links": {},
+            "interests": [
+                "SE4ML",
+                "ML certification",
+                "LLM agents",
+                "GenAI",
+                "Painting",
+                "Reading novels"
+            ],
+            "education": [],
+            "bio": "I am Vyakhya Gupta, a CSE student pursuing honors with Professor Karthik Vaidyanathan. My research focuses on certifying ML-enabled systems for safety-critical applications, ensuring their reliability and compliance with industry standards. I am also exploring using Gen AI for self adaption. Accepted works include: https://arxiv.org/abs/2501."
         }
     ],
     "Research Associates": [
