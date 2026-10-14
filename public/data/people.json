@@ -1906,6 +1906,28 @@
                 }
             ],
             "bio": "M. Pranav Reddy is a Research Engineer at the Software Engineering Research Center (SERC) at IIIT-Hyderabad, focusing on software architecture for agentic systems and autonomous CloudOps. Previously, he served as a Junior Research Fellow at VNRVJIET, where he developed and deployed end-to-end machine learning and deep learning models for real-world product applications."
+        },
+        {
+            "name": "Hareesh Kumar Mitta",
+            "title": "Staff / Executive Assistant",
+            "email": "serc.admin@iiit.ac.in",
+            "imageURL": "/images/people/hareesh-kumar-mitta.jpg",
+            "slug": "hareesh-kumar-mitta",
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/hareesh-kumar-mitta/",
+                "GitHub": "https://github.com/hareeshmitta"
+            },
+            "interests": [
+                "Operations",
+                "Admin",
+                "Back Office Operations",
+                "Academics",
+                "Admissions",
+                "New Technologies",
+                "Coordination"
+            ],
+            "education": [],
+            "bio": "Hareesh Kumar Mitta is a Project Administrative Personnel – Executive Assistant at IIIT Hyderabad, supporting the administration of the Software Engineering Research Center (SERC). He has professional experience in administration, coordination, placement s,office management, and executive support.\nPrior to joining IIIT Hyderabad, he worked at the Central Institute of Tool Design(CITD), Edelweiss, Religare, and Karvy. His experience includes administrative coordination, office management, communication, event coordination, finance-related administrative support, and coordination with faculty, researchers, students, and external organizations.\nHe is currently pursuing an MBA through Osmania University and holds a degree in Office Management."
         }
     ]
 }
