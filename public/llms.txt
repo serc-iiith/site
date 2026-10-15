@@ -22,8 +22,8 @@ This is the directory of resources for the Software Engineering Research Center 
 ## Faculty & Key Members
 ### Faculty
 - [Raghu Reddy](https://serc.iiit.ac.in/people/raghu-reddy): Associate Professor and Center Head
-- [Venkatesh Choppella](https://serc.iiit.ac.in/people/venkatesh-choppella): Associate Professor
 - [Raman Saxena](https://serc.iiit.ac.in/people/raman): Professor
+- [Venkatesh Choppella](https://serc.iiit.ac.in/people/venkatesh-choppella): Associate Professor
 - [Karthik Vaidhyanathan](https://serc.iiit.ac.in/people/karthik): Assistant Professor
 - [Abhishek Kumar Singh](https://serc.iiit.ac.in/people/abhishek-kumar-singh): Assistant Professor
 
@@ -48,6 +48,8 @@ This is the directory of resources for the Software Engineering Research Center 
 - [Radha Krishna B](https://serc.iiit.ac.in/people/radha-krishna-b): PhD CSE
 - [Rudra Dhar](https://serc.iiit.ac.in/people/rudra-dhar): PhD CSE
 - [Abhinav Guptha](https://serc.iiit.ac.in/people/abhinav_guptha): PhD CSE
+- [Srinivasan Rakhunathan](https://serc.iiit.ac.in/people/srinivasan-rakhunathan): PhD CSE (Part-Time)
+- [Haala Deeba Abbas](https://serc.iiit.ac.in/people/haala-deeba-abbas): PhD CSE
 
 ### MS by Research
 - [Likhith Kanigolla](https://serc.iiit.ac.in/people/likhith_k): MS (CSE)
@@ -57,6 +59,8 @@ This is the directory of resources for the Software Engineering Research Center 
 - [Paridhi Mittal](https://serc.iiit.ac.in/people/paridhi-mittal): MS (CSE)
 - [Aduri Karthikeya](https://serc.iiit.ac.in/people/aduri-karthikeya): MS (ECE)
 - [Vidhi Jain](https://serc.iiit.ac.in/people/vidhi-jain): MS (CSE)
+- [Mohammad Abdul Muqtadir](https://serc.iiit.ac.in/people/mohammad-abdul-muqtadir): MS (CSE)
+- [Yogesh Chandrasekharuni](https://serc.iiit.ac.in/people/yogesh-chandrasekharuni): MS (CSE)
 
 ### Dual Degree
 - [Prakhar Jain](https://serc.iiit.ac.in/people/prakhar_jain): LCD
@@ -92,6 +96,10 @@ This is the directory of resources for the Software Engineering Research Center 
 - [Arushi Tandon](https://serc.iiit.ac.in/people/arushi-tandon): CSD
 - [Gursahib Singh](https://serc.iiit.ac.in/people/gursahib-singh): LCD
 - [Karthik Venkat Malavathula](https://serc.iiit.ac.in/people/karthik-venkat-malavathula): CSD
+- [Laveena Jain](https://serc.iiit.ac.in/people/laveena-jain): CSD
+- [Nandini Chakaravarthy](https://serc.iiit.ac.in/people/nandini-chakaravarthy): CSD
+- [Pinninti Pavitra](https://serc.iiit.ac.in/people/pinninti-pavitra): CSD
+- [Tanishi Tyagi](https://serc.iiit.ac.in/people/tanishi-tyagi): CSD
 
 ### Honors
 - [Agrim Mittal](https://serc.iiit.ac.in/people/agrim-mittal): CSE
@@ -104,6 +112,9 @@ This is the directory of resources for the Software Engineering Research Center 
 - [Anvithraj Reddy Basani](https://serc.iiit.ac.in/people/anvithraj-reddy-basani): CSE
 - [Nikhilesh tiruveedula ](https://serc.iiit.ac.in/people/nikhilesh-tiruveedula): CSE
 - [Parekh Meet Vikrambhai](https://serc.iiit.ac.in/people/parekh-meet-vikrambhai): CSE
+- [Poojitha J](https://serc.iiit.ac.in/people/poojitha-j): CSE
+- [Neha Prabhu](https://serc.iiit.ac.in/people/neha-prabhu): CSE
+- [Priyanka Agarwal](https://serc.iiit.ac.in/people/priyanka-agarwal): CSE
 
 ## Projects Showcase
 - **Autonomous CloudOps using GenAI**: The aim is to simplify the complex multi-dimensional space of CloudOps with the help of Generative AI.
@@ -152,14 +163,14 @@ This is the directory of resources for the Software Engineering Research Center 
 - [Enhancing Sustainability of Modern Software Systems through Self-adaptive Architectures](https://serc.iiit.ac.in/blog/self-adaptive-architectures-sustainability): Dr. Karthik Vaidhyanathan explains the concept of software sustainability and how his group's research on self-adaptation is contributing towards greener and sustainable software. (January 17, 2025)
 
 ## News & Events (Top 10)
+- [Harmonica by SA4S Presented at NASSCOM Agentic AI Confluence 2026](https://serc.iiit.ac.in/news/harmonica-by-sa4s-presented-at-nasscom-agentic-ai-confluence-2026): Harmonica by SA4S Presented at NASSCOM Agentic AI Confluence 2026 (9/28/2026)
+- [Dr. Karthik Vaidhyanathan Featured in The New Indian Express](https://serc.iiit.ac.in/news/dr-karthik-vaidhyanathan-featured-in-the-new-indian-express): Dr. Karthik Vaidhyanathan Featured in The New Indian Express (9/22/2026)
+- [Prof. Y. Raghu Reddy Delivers Masterclass on AI Testing at FICCI Telangana, Hyderabad](https://serc.iiit.ac.in/news/prof-y-raghu-reddy-delivers-masterclass-on-ai-testing-at-ficci-telangana-hyderabad): FICCI Telangana Masterclass & Workshop Series – Building Future-Ready Leaders (9/18/2026)
 - [Dr. Karthik Vaidhyanathan Teaches Agentic AI at SustainAI Summer School in Denmark](https://serc.iiit.ac.in/news/dr-karthik-vaidhyanathan-teaches-agentic-ai-at-sustainai-summer-school-in-denmark): Dr. Karthik Vaidhyanathan of IIIT Hyderabad served as an instructor at the SustainAI Summer School on Engineering Agentic AI in Denmark. (9/14/2026)
 - [ECSA 2026 / CASA Workshop - Bolzano, Italy](https://serc.iiit.ac.in/news/ecsa-2026-casa-workshop-bolzano-italy): Dr. Karthik Vaidhyanathan received the Best Reviewer Award and delivered the keynote at the CASA Workshop at ECSA 2026 in Bolzano, Italy. (9/7/2026)
+- [SERC Researchers Presented Two Papers at Euromicro SEAA 2026 in Kraków, Poland](https://serc.iiit.ac.in/news/serc-researchers-presented-two-papers-at-euromicro-seaa-2026-in-krakow-poland): Researchers from SERC Presented Two Papers at Euromicro SEAA 2026 in Kraków, Poland (9/2/2026)
 - [Dr. Karthik Vaidhyanathan Discusses Trustworthy Agentic AI at FinAI Confluence 2026](https://serc.iiit.ac.in/news/dr-karthik-vaidhyanathan-discusses-trustworthy-agentic-ai-at-finai-confluence-2026): Dr. Karthik Vaidhyanathan Participates in FinAI Confluence 2026 Panel on Trustworthy Agentic AI (8/18/2026)
 - [EMNLP 2026](https://serc.iiit.ac.in/news/emnlp-2026): "Dissecting Transformers": SERC Students' Paper on Sustainable AI Accepted at EMNLP 2026 (8/14/2026)
 - [ Embedded Safety and Security Summit 2026 (ESSS 2026)](https://serc.iiit.ac.in/news/-embedded-safety-and-security-summit-2026-esss-2026):  Embedded Safety and Security Summit 2026 (ESSS 2026) (8/11/2026)
 - [MODELS 2026](https://serc.iiit.ac.in/news/models-2026): SERC Researchers' Paper on VR Systems Accepted at MODELS 2026 (7/30/2026)
-- [Ph.D. Opportunities at SERC, IIIT Hyderabad](https://serc.iiit.ac.in/news/phd-admissions-serc-2026): Applications are invited for Ph.D. positions at Software Engineering Research Centre (SERC), IIIT Hyderabad in Agentic AI, HCI/VR, Parallel Computing, and Software Engineering. Apply by September 15, 2026. (7/22/2026)
-- [SERI 2026 (July 16–18, 2026)](https://serc.iiit.ac.in/news/seri-2026-july-1618-2026): SERI 2026 is a three-day conference at IIIT Hyderabad that brings together academia and industry to share cutting-edge software engineering research. The event features invited talks, research presentations, and a dedicated Industry Day. (7/16/2026)
-- [SERI 2026 Concludes Successfully at IIIT Hyderabad](https://serc.iiit.ac.in/news/seri-2026-concludes-successfully-at-iiit-hyderabad): SERI 2026 Successfully Concludes with Strong Academia–Industry Participation (7/16/2026)
-- [Research Paper Accepted at ACM ICMI 2026](https://serc.iiit.ac.in/news/research-paper-accepted-at-acm-icmi-2026): Aaditya Vardhan Narain's Paper Accepted at ACM ICMI 2026 (7/2/2026)
 
