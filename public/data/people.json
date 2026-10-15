@@ -177,27 +177,6 @@
                 }
             ],
             "bio": "Dr. Abhishek Kr Singh is currently an Assistant Professor in the SERC group at the International Institute of Information Technology (IIIT) Hyderabad. His research primarily focuses on Formal Methods, Programming Languages, Software Engineering, and Trustworthy AI. His current research efforts are aimed at establishing a formal foundation for Trustworthy Autonomy, striving to contribute to a future where technology enhances safety and security in autonomous applications.\n\nDr. Singh earned his PhD in Computer Science from the Tata Institute of Fundamental Research (TIFR) Mumbai in 2020, where he had the privilege of working under the esteemed supervision of Professor Raja Natarajan. Following the completion of his PhD, Dr. Singh served as an Assistant Professor in the Department of Computer Science and Information Systems (CSIS) at BITS Pilani, Goa Campus, for two years (2020-2022). He then transitioned to a postdoctoral researcher role at Tel Aviv University in Israel from 2022 to 2024, collaborating with Professor Ori Lahav. Subsequently, he took on the position of Senior Research Fellow for a year at the School of Computing at the National University of Singapore, hosted by Professor Abhik Roychoudhury."
-        },
-        {
-            "name": "Atul Kumar",
-            "title": "Adjunct Faculty",
-            "email": "atulkumar@gmail.com",
-            "imageURL": "/images/people/atul-kumar.jpg",
-            "slug": "atul-kumar",
-            "social_links": {
-                "LinkedIn": "https://www.linkedin.com/in/atul-kumar-0ba442/",
-                "Research Profile": "https://research.ibm.com/people/atul-kumar",
-                "Google Scholar": "https://scholar.google.com/citations?user=kd7HkTcAAAAJ&hl=en"
-            },
-            "interests": [
-                "AI",
-                "Software Testing",
-                "Software Engineering",
-                "Distributed Systems",
-                "Natural Language Processing"
-            ],
-            "education": [],
-            "bio": "Atul Kumar is a Senior Research Scientist and Manager at IBM Research India, Bengaluru, where he leads research at the intersection of artificial intelligence and software engineering. His work uses foundation models, AI agents and program analysis for code generation, code translation, testing and validation, with a particular focus on modernising enterprise mainframe applications. Recent contributions include symbolic-execution-driven test generation, automated testing and validation of COBOL-to-Java transformation, and knowledge-graph-based discovery of functionality in legacy applications; this work contributes to IBM Bob, Watsonx Code Assistant and IBM Z software products. Over a 23-year career in industrial research, he has also held research leadership roles at Siemens Corporate Research, ABB Corporate Research, Accenture Technology Labs and Microsoft India R&D. He has more than 40 peer-reviewed publications and over 20 patents filed or granted, and holds an MTech (1996) and a PhD (2003) in Computer Science and Engineering from IIT Kanpur.\n\nDr Kumar is active in building India’s computing research community. He chairs ACM SIGSOFT India (iSoft), serves on the Executive Committee of IKDD, the India chapter of ACM SIGKDD, and is a member of the Academic Council of Gati Shakti Vishwavidyalaya, Vadodara. He is the lead organiser from IKDD for the Indian National AI Olympiad (INAIO), which ACM India runs to select India’s team for the International Olympiad in Artificial Intelligence. He has held organising roles at ISEC, CODS-COMAD, CCGRID, AsiaCCS and many other conferences, and is a Senior Member of both ACM and IEEE."
         }
     ],
     "Affiliate Faculty": [
@@ -307,6 +286,29 @@
                 }
             ],
             "bio": "Prof. Veera Prakash Yalla has joined Technology Transfer Office (TTO) and Centre for Innovation and Entrepreneurship (CIE) as Professor of Practice. His research interests are in New incubations and innovations. Prof. Yalla received his B.Tech from SVU College of Engineering, Tirupati. Prof. Prakash heads the technology transfer office and product labs, and runs the EIR (Entrepreneur in Residence Program) to pre-incubate startups. He teaches Technology Product Entrepreneurship & Product Management at the institute.\n\nPrior to joining IIITH he was the investor and founding member of Wooqer a Bangalore based startup; Vice President, R&D, Acme Telepower; Director, Research and Technology at Honeywell India , Bangalore where he had set up the research labs and innovation system. He had also worked on open innovation and India market innovation programs. His career started as an Electronics engineer for the Light Combat Aircraft (LCA) program at Hindustan Aeronautics Limited (HAL) Hyderabad."
+        }
+    ],
+    "Adjunct Faculty": [
+        {
+            "name": "Atul Kumar",
+            "title": "Adjunct Faculty",
+            "email": "atulkumar@gmail.com",
+            "imageURL": "/images/people/atul-kumar.jpg",
+            "slug": "atul-kumar",
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/atul-kumar-0ba442/",
+                "Research Profile": "https://research.ibm.com/people/atul-kumar",
+                "Google Scholar": "https://scholar.google.com/citations?user=kd7HkTcAAAAJ&hl=en"
+            },
+            "interests": [
+                "AI",
+                "Software Testing",
+                "Software Engineering",
+                "Distributed Systems",
+                "Natural Language Processing"
+            ],
+            "education": [],
+            "bio": "Atul Kumar is a Senior Research Scientist and Manager at IBM Research India, Bengaluru, where he leads research at the intersection of artificial intelligence and software engineering. His work uses foundation models, AI agents and program analysis for code generation, code translation, testing and validation, with a particular focus on modernising enterprise mainframe applications. Recent contributions include symbolic-execution-driven test generation, automated testing and validation of COBOL-to-Java transformation, and knowledge-graph-based discovery of functionality in legacy applications; this work contributes to IBM Bob, Watsonx Code Assistant and IBM Z software products. Over a 23-year career in industrial research, he has also held research leadership roles at Siemens Corporate Research, ABB Corporate Research, Accenture Technology Labs and Microsoft India R&D. He has more than 40 peer-reviewed publications and over 20 patents filed or granted, and holds an MTech (1996) and a PhD (2003) in Computer Science and Engineering from IIT Kanpur.\n\nDr Kumar is active in building India’s computing research community. He chairs ACM SIGSOFT India (iSoft), serves on the Executive Committee of IKDD, the India chapter of ACM SIGKDD, and is a member of the Academic Council of Gati Shakti Vishwavidyalaya, Vadodara. He is the lead organiser from IKDD for the Indian National AI Olympiad (INAIO), which ACM India runs to select India’s team for the International Olympiad in Artificial Intelligence. He has held organising roles at ISEC, CODS-COMAD, CCGRID, AsiaCCS and many other conferences, and is a Senior Member of both ACM and IEEE."
         }
     ],
     "PhD Students": [

@@ -34,7 +34,7 @@ interface Person {
     bio?: string;
 }
 
-// people.json is an object keyed by category name (Faculty, Affiliate Faculty,
+// people.json is an object keyed by category name (Faculty, Affiliate Faculty, Adjunct Faculty,
 // PhD Students, ...). Keep this open so every category's members are searched
 // for the author role, not a hard-coded subset.
 type PeopleData = Record<string, Person[]>;

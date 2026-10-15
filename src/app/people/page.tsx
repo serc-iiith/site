@@ -126,6 +126,8 @@ export default function PeoplePage() {
         return "bg-blue-600";
       case "Affiliate Faculty":
         return "bg-sky-600";
+      case "Adjunct Faculty":
+        return "bg-cyan-600";
       case "PhD Students":
         return "bg-green-600";
       case "MS by Research":
@@ -290,7 +292,7 @@ export default function PeoplePage() {
           </div>
 
           {/* Per-category breakdown — even grid so it never leaves an orphan tile */}
-          <div className="mt-4 sm:mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+          <div className="mt-4 sm:mt-6 grid grid-cols-3 gap-3 sm:gap-4">
             {stats.categories.map((cat) => (
               <button
                 key={cat.name}

@@ -78,6 +78,7 @@ try {
   const llmsPeopleCategories = [
     'Faculty',
     'Affiliate Faculty',
+    'Adjunct Faculty',
     'Research Associates',
     'PhD Students',
     'MS by Research',

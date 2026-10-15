@@ -10,6 +10,7 @@
 export const PEOPLE_CATEGORIES = [
     'Faculty',
     'Affiliate Faculty',
+    'Adjunct Faculty',
     'Research Associates',
     'PhD Students',
     'MS by Research',
@@ -24,6 +25,7 @@ export type PeopleCategory = (typeof PEOPLE_CATEGORIES)[number];
 export const LLMS_PEOPLE_CATEGORIES: readonly string[] = [
     'Faculty',
     'Affiliate Faculty',
+    'Adjunct Faculty',
     'Research Associates',
     'PhD Students',
     'MS by Research',
