@@ -676,6 +676,39 @@
         }
     },
     {
+        "slug": "prof-karthik-vaidhyanathan-co-authors-paper-on-software-architecture-for-agentic-ai",
+        "name": "Prof. Karthik Vaidhyanathan Co-Authors Paper on Software Architecture for Agentic AI",
+        "eventURL": "https://conf.researchr.org/home/ecsa-2026",
+        "location": "Bolzano, Italy",
+        "locationURL": "",
+        "summary": "Prof. Karthik Vaidhyanathan Co-Authors Paper on Software Architecture for Agentic AI",
+        "detail": "Prof. Karthik Vaidhyanathan of the Software Engineering Research Center (SERC), IIIT Hyderabad, co-authored a research paper titled “Software Architecture for Agentic AI: Challenges and Way Ahead” with Prof. Henry Muccini of the University of L’Aquila, Italy.\n\nPresented at the CASA@ECSA 2026 workshop, the paper examines the architectural challenges posed by autonomous AI agents and identifies future research directions for designing, developing, and evaluating reliable Agentic AI systems.",
+        "startTime": "2026-06-18T09:51",
+        "endTime": "2026-06-18T10:51",
+        "hasTime": true,
+        "eventType": "paper",
+        "schemaType": "NewsArticle",
+        "imageURLs": [
+            "/images/news/prof-karthik-vaidhyanathan-co-authors-paper-on-software-architecture-for-agentic-ai.jpg"
+        ],
+        "presenters": [
+            "Dr. Karthik Vaidhyanathan",
+            "Dr. Henry Muccini"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "https://www.researchgate.net/publication/408621884_Software_Architecture_for_Agentic_AI_Challenges_and_Way_Ahead",
+            "video": ""
+        },
+        "otherURLLabels": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
         "slug": "dr-karthik-vaidhyanathan-delivered-a-talk",
         "name": "Dr. Karthik Vaidhyanathan delivered a talk",
         "eventURL": "",
