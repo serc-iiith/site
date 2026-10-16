@@ -103,6 +103,40 @@
         }
     },
     {
+        "slug": "prof-y-raghu-reddy-discusses-ai-s-future-at-servicenow-s-converge-2-0",
+        "name": "Prof. Y. Raghu Reddy Discusses AI’s Future at ServiceNow’s Converge 2.0",
+        "eventURL": "https://rsvp.servicenow.com/ConvergeHyderabad2026",
+        "location": "HITEX Exhibition Center, Hyderabad",
+        "locationURL": "https://share.google/b5gnJpxL9qCGmCbkz",
+        "summary": "Prof. Y. Raghu Reddy Discusses AI’s Future at ServiceNow’s Converge 2.0",
+        "detail": "Prof. Y. Raghu Reddy, Head of the Software Engineering Research Center (SERC), IIIT Hyderabad, participated in ServiceNow’s Converge 2.0 event in Hyderabad, joining Sumeet Mathur and Pat Casey for a discussion on the evolving role of Artificial Intelligence (AI) in India.\n\nThe discussion explored AI adoption across enterprises, startups, and education, including the development of applications using foundational models and the growth of India’s AI ecosystem. Prof. Raghu Reddy also highlighted the changing role of engineers, emphasising the importance of critical judgement as AI transforms software development and the future of work.\n\nThe interaction provided an opportunity to exchange academic, research, and industry perspectives on the opportunities and challenges of AI adoption.",
+        "startTime": "2026-09-23T08:57",
+        "endTime": "2026-09-23T20:00",
+        "hasTime": true,
+        "eventType": "showcase",
+        "schemaType": "Event",
+        "imageURLs": [
+            "/images/news/prof-y-raghu-reddy-discusses-ai-s-future-at-servicenow-s-converge-2-0.jpg"
+        ],
+        "presenters": [
+            "Dr. Y. Raghu Reddy",
+            "Pat Casey",
+            "Sumeet Mathur"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        },
+        "otherURLLabels": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
         "slug": "dr-karthik-vaidhyanathan-featured-in-the-new-indian-express",
         "name": "Dr. Karthik Vaidhyanathan Featured in The New Indian Express",
         "eventURL": "https://www.newindianexpress.com/lifestyle/science/2026/Sep/22/rogue-ai-more-about-man-than-machine",
