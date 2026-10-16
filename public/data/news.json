@@ -1,5 +1,39 @@
 [
     {
+        "slug": "prof-y-raghu-reddy-presents-research-on-model-driven-virtual-reality-systems-at-models-2026",
+        "name": "Prof. Y. Raghu Reddy Presents Research on Model-Driven Virtual Reality Systems at MODELS 2026",
+        "eventURL": "https://conf.researchr.org/home/models-2026",
+        "location": "Malaga, Spain",
+        "locationURL": "https://maps.app.goo.gl/Fe69B1s7ektx2Nre7",
+        "summary": "Prof. Y. Raghu Reddy, Head of SERC, IIIT Hyderabad, co-authored a paper on model-driven Virtual Reality system development presented at MODELS 2026 in Spain.",
+        "detail": "Prof. Y. Raghu Reddy, Head of the Software Engineering Research Center (SERC), IIIT Hyderabad, co-authored a research paper titled “VRSpecML: A Profile for Realizing Domain-Specific Virtual Reality Systems,” presented at MODELS 2026 – the International Conference on Model Driven Engineering Languages and Systems, held in Málaga, Spain, from 4–9 October 2026.\n\nThe paper, co-authored with Bavya Sri Kilari and Sai Anirudh Karre, was presented on 8 October 2026 in the New Ideas and Emerging Results (NIER) track.\n\nThe research introduces VRSpecML, a model-driven approach to specifying and validating domain-specific Virtual Reality (VR) systems. It supports structured modelling of domain-specific requirements and automated validation, helping improve the consistency and reliability of VR application development.\n\nhttps://dl.acm.org/doi/10.1145/3822455.3838779",
+        "startTime": "2026-10-08T08:00",
+        "endTime": "2026-10-08T18:00",
+        "hasTime": true,
+        "eventType": "conference",
+        "schemaType": "Event",
+        "imageURLs": [
+            "/images/news/prof-y-raghu-reddy-presents-research-on-model-driven-virtual-reality-systems-at-models-2026.jpg"
+        ],
+        "presenters": [
+            "Dr. Y Raghu Reddy",
+            "Sai Anirudh Karre",
+            "Bavya Sri Kilari"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "https://dl.acm.org/doi/10.1145/3822455.3838779",
+            "video": ""
+        },
+        "otherURLLabels": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
         "slug": "harmonica-by-sa4s-presented-at-nasscom-agentic-ai-confluence-2026",
         "name": "Harmonica by SA4S Presented at NASSCOM Agentic AI Confluence 2026",
         "eventURL": "https://nasscom.in/ai/research/shortlisted.html",
