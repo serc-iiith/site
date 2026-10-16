@@ -34,6 +34,39 @@
         }
     },
     {
+        "slug": "prof-y-raghu-reddy-and-prof-karthik-vaidhyanathan-share-ai-research-insights-at-hysea",
+        "name": "Prof. Y. Raghu Reddy and Prof. Karthik Vaidhyanathan Share AI Research Insights at HYSEA",
+        "eventURL": "https://hysea.in/",
+        "location": "Hyderabad",
+        "locationURL": "",
+        "summary": "Prof. Y. Raghu Reddy and Prof. Karthik Vaidhyanathan shared AI research insights at a HYSEA leadership event.",
+        "detail": "Prof. Y. Raghu Reddy, Head of the Software Engineering Research Center (SERC), IIIT Hyderabad, along with Prof. Karthik Vaidhyanathan, shared insights into their research on Agentic Software Development and AI-assisted software engineering at a HYSEA leadership event.\n\nThe engagement brought together academic research and industry perspectives on building reliable, scalable, and trustworthy AI-driven software systems. Prof. Raghu Reddy presented SERC’s work on generating system-level tests from requirements and detecting and repairing machine-learning-specific code smells, while discussions also explored the role of AI agents in software architecture, system modernization, and engineering workflows.\n\nThe interaction highlighted the importance of collaboration between academia and industry in developing effective approaches to adopting agentic AI systems. The ongoing collaboration between IIIT Hyderabad and HYSEA aims to translate research into practical engineering frameworks, benchmarking approaches, and solutions to real-world industry challenges.",
+        "startTime": "2026-09-29T07:35",
+        "endTime": "2026-09-29T18:35",
+        "hasTime": true,
+        "eventType": "workshop",
+        "schemaType": "Event",
+        "imageURLs": [
+            "/images/news/prof-y-raghu-reddy-and-prof-karthik-vaidhyanathan-share-ai-research-insights-at-hysea.jpg"
+        ],
+        "presenters": [
+            "Dr. Y. Raghu Reddy",
+            "Dr. Karthik Vaidhyanathan"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "https://lnkd.in/p/dKmuxN5r",
+            "video": ""
+        },
+        "otherURLLabels": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
         "slug": "harmonica-by-sa4s-presented-at-nasscom-agentic-ai-confluence-2026",
         "name": "Harmonica by SA4S Presented at NASSCOM Agentic AI Confluence 2026",
         "eventURL": "https://nasscom.in/ai/research/shortlisted.html",
