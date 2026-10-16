@@ -1,5 +1,18 @@
 [
   {
+    "title": "Software Architecture for Agentic AI: Challenges and Way Ahead",
+    "year": "2026",
+    "authors": [
+      "Prof. Karthik Vaidhyanathan",
+      "Prof. Henry Muccini"
+    ],
+    "venue": "CASA@ECSA 2026 Workshop, European Conference on Software Architecture (ECSA 2026).",
+    "cite": "@inproceedings{inproceedings,\nauthor = {Vaidhyanathan, Karthik and Muccini, Henry},\nyear = {2026},\nmonth = {06},\ntitle = {Software Architecture for Agentic AI: Challenges and Way Ahead}\n}\nbooktitle = {CASA@ECSA 2026 Workshop},\n  url = {https://conf.researchr.org/details/ecsa-2026/casa-2026/9/Software-Architecture-for-Agentic-AI-Challenges-and-Way-Ahead}\n}",
+    "doi": "https://doi.org/10.48550/arXiv.2103.07950",
+    "url": "https://arxiv.org/abs/2103.07950",
+    "id": "software-architecture-for-agentic-ai-challenges-and-way-ahead-2026"
+  },
+  {
     "id": "can-ai-agents-generate-microservices-how-far-are-we-2026",
     "authors": [
       "Bassam Adnan",
