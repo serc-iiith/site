@@ -1,5 +1,19 @@
 [
   {
+    "title": "Inferring Openness to Experience from Behavioral Signals in a Virtual Reality Art Gallery",
+    "year": "2026",
+    "authors": [
+      "Aaditya Vardhan Narain",
+      "Dr. Y. Raghu Reddy",
+      "Dr. Raman Saxena"
+    ],
+    "venue": "ICMI2026 Conference, Napoli, Italy",
+    "cite": "TY  - BOOK\nAU  - Narain, Aaditya\nAU  - Saxena, Raman\nAU  - Reddy, Y.\nPY  - 2026/10/04\nSP  - 576\nEP  - 585\nT1  - Inferring Openness to Experience from Behavioral Signals in a Virtual Reality Art Gallery\nVL  - \nDO  - 10.1145/3776574.3831169\nER  - ",
+    "doi": "10.1145/3776574.3831169",
+    "url": "https://doi.org/10.1145/3776574.3831169",
+    "id": "inferring-openness-to-experience-from-behavioral-signals-in-a-virtual-reality-art-gallery-2026"
+  },
+  {
     "title": "Software Architecture for Agentic AI: Challenges and Way Ahead",
     "year": "2026",
     "authors": [
