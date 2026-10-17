@@ -303,6 +303,45 @@
         }
     },
     {
+        "slug": "prof-karthik-vaidhyanathan-presents-research-on-genai-based-adaptive-systems-at-acsos-2026",
+        "name": "Prof. Karthik Vaidhyanathan Presents Research on GenAI-Based Adaptive Systems at ACSOS 2026",
+        "eventURL": "https://2026.acsos.org/",
+        "location": "University of Bologna, Cesena Campus, Italy",
+        "locationURL": "https://2026.acsos.org/venue/acsos-2026-venue",
+        "summary": "Prof. Karthik Vaidhyanathan Presents Research on Mitigating Uncertainties in GenAI-based Software Systems: Visions, Challenges and Preliminary Guidelines",
+        "detail": "Prof. Karthik Vaidhyanathan Presents Research on GenAI-Based Adaptive Systems at ACSOS 2026\n\nProf. Karthik Vaidhyanathan of IIIT Hyderabad’s Software Engineering Research Center (SERC) presented the paper “Mitigating Uncertainty Interactions in GenAI-based Adaptive Systems: Vision, Challenges and Preliminary Guidelines” at the IEEE International Conference on Autonomic Computing and Self-Organizing Systems (ACSOS 2026), held in Cesena, Italy, on 9 September 2026. The paper was co-authored with researchers from international institutions.\n\nAs software-intensive systems increasingly integrate Generative AI (GenAI), large language models (LLMs), and agentic components, they face new and interacting sources of uncertainty, including unpredictable outputs, hallucinations, context-window limitations, and outdated memory. These uncertainties can affect system reliability, quality, and runtime behaviour.\n\nThe paper proposes a conceptual framework and preliminary guidelines for identifying and mitigating interactions among uncertainties throughout the software lifecycle, from requirements and architectural design to runtime monitoring and adaptation. It also illustrates the approach through three use cases: LLM serving, AI-driven software operations, and agentic cloud management.\n\nThe work contributes to research on dependable GenAI-based adaptive systems by highlighting the need to address interacting uncertainties as part of software design and runtime adaptation.",
+        "startTime": "2026-09-09T15:00",
+        "endTime": "2026-09-09T15:30",
+        "hasTime": true,
+        "eventType": "conference",
+        "schemaType": "Event",
+        "imageURLs": [
+            "/images/news/prof-karthik-vaidhyanathan-presents-research-on-genai-based-adaptive-systems-at-acsos-2026.jpg"
+        ],
+        "presenters": [
+            "Karthik Vaidhyanathan",
+            "Norha Villegas",
+            "Raffaela Mirandola",
+            "Nicolás Cardozo",
+            "Ivana Dusparic",
+            "Marin Litoiu",
+            "Ralf Reussner",
+            "Gabriel Tamura"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "https://arxiv.org/abs/2610.08881",
+            "slides": "https://www.researchgate.net/publication/415373613_Mitigating_Uncertainty_Interactions_in_GenAI-based_Adaptive_Systems_Vision_Challenges_and_Preliminary_Guidelines",
+            "video": ""
+        },
+        "otherURLLabels": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
         "slug": "ecsa-2026-casa-workshop-bolzano-italy",
         "name": "ECSA 2026 / CASA Workshop - Bolzano, Italy",
         "eventURL": "https://conf.researchr.org/home/ecsa-2026",
