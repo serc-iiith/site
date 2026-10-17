@@ -1,5 +1,39 @@
 [
     {
+        "slug": "aneetta-sara-shany-presents-research-on-agentic-ai-sustainability-at-esem-2026-in-germany",
+        "name": "Aneetta Sara Shany Presents Research on Agentic AI Sustainability at ESEM 2026 in Germany",
+        "eventURL": "https://conf.researchr.org/home/eseiw-2026",
+        "location": "ESEM Conference 2026, Munich, Germany",
+        "locationURL": "https://conf.researchr.org/venue/eseiw-2026/science-congress-center-munich",
+        "summary": "Aneetta Sara Shany Presents Co-Authored Research with Chandrasekar S and Prof. Karthik Vaidhyanathan at ESEM 2026 in Germany",
+        "detail": "Aneetta Sara Shany of IIIT Hyderabad’s Software Engineering Research Center (SERC) presented the paper “Watts and Debts of Agentic Frameworks: An Empirical Study (Registered Report)” at the ESEM 2026 Registered Reports Track during ESEIW 2026 in Munich, Germany, on 8 October 2026. The paper was co-authored with Chandrasekar S and Prof. Karthik Vaidhyanathan.\n\nThe research investigates the relationship between technical debt in agentic AI frameworks and their runtime energy consumption. As autonomous AI agents increasingly rely on software frameworks to reason, use tools, and execute complex tasks, understanding the energy implications of these frameworks is becoming increasingly important.\n\nThe study outlines an empirical evaluation of five open-source agentic frameworks under controlled conditions, examining software quality, technical debt indicators, and energy usage. It aims to explore whether technical debt metrics can help developers make more informed decisions when selecting frameworks for energy-efficient agentic AI applications.\n\nThe work contributes to sustainable software engineering research by highlighting the importance of considering both software quality and energy efficiency in the development of agentic AI systems.",
+        "startTime": "2026-10-08T15:00",
+        "endTime": "2026-10-08T15:30",
+        "hasTime": true,
+        "eventType": "conference",
+        "schemaType": "Event",
+        "imageURLs": [
+            "/images/news/aneetta-sara-shany-presents-research-on-agentic-ai-sustainability-at-esem-2026-in-germany.jpg"
+        ],
+        "presenters": [
+            "Aneetta Sara Shany",
+            "Chandrasekar S",
+            "Karthik Vaidhyanathan"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "https://www.researchgate.net/publication/406874525_Watts_and_Debts_of_Agentic_Frameworks_An_Empirical_Study_Registered_Report",
+            "slides": "https://arxiv.org/abs/2606.10702",
+            "video": ""
+        },
+        "otherURLLabels": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
         "slug": "aaditya-vardhan-narain-presents-a-research-paper-co-authored-with-dr-raman-saxena-and-prof-y-raghu-reddy-at-icmi-2026",
         "name": "Aaditya Vardhan Narain Presents a Research Paper Co-Authored with Dr. Raman Saxena and Prof. Y. Raghu Reddy at ICMI 2026",
         "eventURL": "https://icmi.acm.org/2026/",
