@@ -1,5 +1,39 @@
 [
     {
+        "slug": "aaditya-vardhan-narain-presents-a-research-paper-co-authored-with-dr-raman-saxena-and-prof-y-raghu-reddy-at-icmi-2026",
+        "name": "Aaditya Vardhan Narain Presents a Research Paper Co-Authored with Dr. Raman Saxena and Prof. Y. Raghu Reddy at ICMI 2026",
+        "eventURL": "https://icmi.acm.org/2026/",
+        "location": "Naples (Napoli), Italy",
+        "locationURL": "https://icmi.acm.org/2026/accommodation/",
+        "summary": "Aaditya Vardhan Narain Presents a Research Paper Co-Authored with Dr. Raman Saxena and Prof. Y. Raghu Reddy at ICMI 2026",
+        "detail": "Aaditya Vardhan Narain, a student at IIIT Hyderabad’s Software Engineering Research Center (SERC), presented the paper “Inferring Openness to Experience from Behavioral Signals in a Virtual Reality Art Gallery” at the 28th ACM International Conference on Multimodal Interaction (ICMI 2026), held in Naples, Italy, from 5–9 October 2026. The paper was co-authored with his advisor, Dr. Raman Saxena, and co-advisor, Prof. Y. Raghu Reddy.\n\nThe research explores how behavioral signals in a virtual reality art gallery can help infer the personality trait of openness to experience. By analyzing participants’ movement, eye-gaze, and interaction patterns, the study highlights the potential of immersive virtual environments for personality recognition.",
+        "startTime": "2026-10-08T08:40",
+        "endTime": "2026-10-17T11:40",
+        "hasTime": true,
+        "eventType": "conference",
+        "schemaType": "Event",
+        "imageURLs": [
+            "/images/news/aaditya-vardhan-narain-presents-a-research-paper-co-authored-with-dr-raman-saxena-and-prof-y-raghu-reddy-at-icmi-2026.jpg"
+        ],
+        "presenters": [
+            "Aaditya Vardhan Narain",
+            "Dr. Raman Saxena",
+            "Prof. Y. Raghu Reddy"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": " https://www.researchgate.net/publication/415204253_Inferring_Openness_to_Experience_from_Behavioral_Signals_in_a_Virtual_Reality_Art_Gallery",
+            "slides": "https://icmi.acm.org/2026/sessions/#poster-session-4",
+            "video": ""
+        },
+        "otherURLLabels": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
         "slug": "prof-y-raghu-reddy-presents-research-on-model-driven-virtual-reality-systems-at-models-2026",
         "name": "Prof. Y. Raghu Reddy Presents Research on Model-Driven Virtual Reality Systems at MODELS 2026",
         "eventURL": "https://conf.researchr.org/home/models-2026",
