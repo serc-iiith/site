@@ -1,5 +1,24 @@
 [
   {
+    "title": "Mitigating Uncertainty Interactions in GenAI-based Adaptive Systems: Vision, Challenges and Preliminary Guidelines",
+    "year": "2026",
+    "authors": [
+      "Dr.  Karthik Vaidhyanathan",
+      "Norha Villegas",
+      "Raffaela Mirandola",
+      "Nicolás Cardozo",
+      "Ivana Dusparic",
+      "Marin Litoiu",
+      "Ralf Reussner",
+      "Gabriel Tamura"
+    ],
+    "venue": "IEEE International Conference on Autonomic Computing and Self-Organizing Systems (ACSOS 2026), Cesena, Italy",
+    "cite": "@misc{vaidhyanathan2026mitigatinguncertaintyinteractionsgenaibased,\n      title={Mitigating Uncertainty Interactions in GenAI-based Adaptive Systems: Vision, Challenges and Preliminary Guidelines}, \n      author={Karthik Vaidhyanathan and Norha Villegas and Raffaela Mirandola and Nicolás Cardozo and Ivana Dusparic and Marin Litoiu and Ralf Reussner and Gabriel Tamura},\n      year={2026},\n      eprint={2610.08881},\n      archivePrefix={arXiv},\n      primaryClass={cs.SE},\n      url={https://arxiv.org/abs/2610.08881}, \n}",
+    "doi": "10.48550/arXiv.2610.08881",
+    "url": "https://arxiv.org/abs/2610.08881",
+    "id": "mitigating-uncertainty-interactions-in-genai-based-adaptive-systems-vision-challenges-and-preliminary-guidelines-2026"
+  },
+  {
     "title": "Aneetta Sara Shany Presents Co-Authored Research with Chandrasekar S and Prof. Karthik Vaidhyanathan at ESEM 2026 in Germany",
     "year": "2026",
     "authors": [
