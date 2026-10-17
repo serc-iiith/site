@@ -1,5 +1,19 @@
 [
   {
+    "title": "Aneetta Sara Shany Presents Co-Authored Research with Chandrasekar S and Prof. Karthik Vaidhyanathan at ESEM 2026 in Germany",
+    "year": "2026",
+    "authors": [
+      "Aneetta Sara Shany",
+      "Chandrasekar S",
+      "Dr. Karthik Vaidhyanathan"
+    ],
+    "venue": "Watts and Debts of Agentic Frameworks: An Empirical Study (Registered Report)",
+    "cite": "@misc{shany2026wattsdebtsagenticframeworks,\n      title={Watts and Debts of Agentic Frameworks: An Empirical Study (Registered Report)}, \n      author={Aneetta Sara Shany and Chandrasekar S and Karthik Vaidhyanathan},\n      year={2026},\n      eprint={2606.10702},\n      archivePrefix={arXiv},\n      primaryClass={cs.SE},\n      url={https://arxiv.org/abs/2606.10702}, \n}",
+    "doi": "10.48550/arXiv.2606.10702",
+    "url": " https://doi.org/10.48550/arXiv.2606.10702",
+    "id": "aneetta-sara-shany-presents-co-authored-research-with-chandrasekar-s-and-prof-karthik-vaidhyanathan-at-esem-2026-in-germany-2026"
+  },
+  {
     "title": "Inferring Openness to Experience from Behavioral Signals in a Virtual Reality Art Gallery",
     "year": "2026",
     "authors": [
