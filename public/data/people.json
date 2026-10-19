@@ -1264,6 +1264,24 @@
             ],
             "education": [],
             "bio": "Hello! I'm A. V. Aditya, a third-year student pursuing a Dual Degree (B.Tech + MS by Research) in Computer Science and Engineering at IIIT Hyderabad. My research centres on AI for Software Engineering, with a focus on how large language models can help developers understand, design, and maintain software systems. I enjoy building developer tools and systems projects, and I work primarily in Python and C. Beyond research, I am deeply interested in startups and entrepreneurship."
+        },
+        {
+            "name": "Harshil Soni",
+            "title": "CSD",
+            "email": "harshil.soni@research.iiit.ac.in",
+            "imageURL": "/images/people/harshil-soni.jpg",
+            "slug": "harshil-soni",
+            "social_links": {
+                "LinkedIn": "www.linkedin.com/in/harshil--soni"
+            },
+            "interests": [
+                "Software Engineering",
+                "HCI/HCD",
+                "UX Design",
+                "Extented Reality"
+            ],
+            "education": [],
+            "bio": "Scientists reveal the Hi"
         }
     ],
     "Honors": [
