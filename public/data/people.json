@@ -850,17 +850,18 @@
             "name": "Yashaswinee Dharmineni",
             "title": "CSD",
             "email": "dharmineni.y@research.iiit.ac.in",
-            "imageURL": "/images/people/yashaswinee-dharmineni.png",
+            "imageURL": "/images/people/yashaswinee.jpg",
             "slug": "yashaswinee",
             "social_links": {
-                "GitHub": "https://github.com/yashaswinee"
+                "GitHub": "https://github.com/yashaswinee",
+                "LinkedIn": "https://www.linkedin.com/in/yashaswinee/"
             },
             "interests": [
                 "Software Engineering",
                 "Digital Twin",
                 "Mixed Reality"
             ],
-            "advisor": "Dr. Y. Raghu Reddy",
+            "education": [],
             "bio": "Undergrad Researcher under Prof Raghu Reddy.\n\nField of work -- VR and Digital Twin\n\nI love watching anime."
         },
         {
