@@ -374,6 +374,38 @@
         }
     },
     {
+        "slug": "prof-karthik-vaidhyanathan-receives-outstanding-reviewer-award-at-ecsa-2026",
+        "name": "Prof. Karthik Vaidhyanathan Receives Outstanding Reviewer Award at ECSA 2026",
+        "eventURL": "https://conf.researchr.org/home/ecsa-2026",
+        "location": "Bolzano, Italy",
+        "locationURL": "https://share.google/xZK12ElCwXUFzgp8P",
+        "summary": "Prof. Karthik Vaidhyanathan Receives Outstanding Reviewer Award at ECSA 2026",
+        "detail": "Prof. Karthik Vaidhyanathan of IIIT Hyderabad’s Software Engineering Research Center (SERC) received the Outstanding Reviewer Award at the 20th European Conference on Software Architecture (ECSA 2026), held in Bolzano, Italy, from 7 to 11 September 2026. The award recognises his exceptional service to the ECSA 2026 community.\n\nThis recognition highlights his contribution to the research community through peer review and his continued engagement in advancing software architecture research. Prof. Vaidhyanathan’s work at SERC focuses on software architecture, self-adaptive systems, and emerging challenges in Agentic AI.",
+        "startTime": "2026-09-07T05:46",
+        "endTime": "2026-09-11T06:46",
+        "hasTime": true,
+        "eventType": "conference",
+        "schemaType": "Event",
+        "imageURLs": [
+            "/images/news/prof-karthik-vaidhyanathan-receives-outstanding-reviewer-award-at-ecsa-2026.jpg"
+        ],
+        "presenters": [
+            "Prof. Karthik Vaidhyanathan"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        },
+        "otherURLLabels": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
         "slug": "serc-researchers-presented-two-papers-at-euromicro-seaa-2026-in-krakow-poland",
         "name": "SERC Researchers Presented Two Papers at Euromicro SEAA 2026 in Kraków, Poland",
         "eventURL": "https://dsd-seaa.com/seaa2026/",
