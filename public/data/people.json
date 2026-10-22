@@ -1740,6 +1740,11 @@
                     "degree": "B.Tech Honors",
                     "institution": "IIITH",
                     "year": 2025
+                },
+                {
+                    "degree": "B.Tech. (Honors)",
+                    "institution": "IIITH",
+                    "year": 2025
                 }
             ],
             "bio": "Divij D is an alumnus of the International Institute of Information Technology Hyderabad (IIIT Hyderabad), where he completed his undergraduate studies in Computer Science from 2021 to 2025. He is currently a Software Engineer at Microsoft, working on secure release and deployment systems."
