@@ -755,7 +755,7 @@
             "name": "Gnaneswar Kulindala",
             "title": "ECD",
             "email": "gnaneswar.kulindala@research.iiit.ac.in",
-            "imageURL": "/images/people/gnaneswar-kulindala.png",
+            "imageURL": "/images/people/gnaneswar_kulindala.jpg",
             "slug": "gnaneswar_kulindala",
             "social_links": {
                 "GitHub": "https://github.com/gnaneswar-k",
@@ -767,7 +767,13 @@
                 "Compilers",
                 "Digital Electronics"
             ],
-            "advisor": "Dr. Venkatesh Choppella",
+            "education": [
+                {
+                    "degree": "B.Tech (Dual Degree)",
+                    "institution": "IIITH",
+                    "year": 2026
+                }
+            ],
             "bio": "Gnaneswar Kulindala is an undergraduate dual-degree student studying in the Electronics and Communications stream at the International Institute of Information Technology, Hyderabad. He is pursuing research at the Software Engineering Research Center under Dr. Venkatesh Choppella. His main academic interests are Digital Electronics, Computer Architecture, Hardware-Software Interface, System Modelling and Algorithm Exploration.\n\nGnaneswar's research area includes Compilers, Algorithm Exploration, and Modelling Algorithmic Systems using Feedback Control. His research focuses on building better tools and techniques for teaching algorithms to students using no-code strategies, evaluating students' understanding of algorithms and exploring Verilog from a hardware-software interface perspective."
         },
         {
