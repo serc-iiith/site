@@ -1926,13 +1926,20 @@
             "name": "Shambhavi Jahagirdar",
             "title": "CSD",
             "email": "shambhavi.jahagirdar@research.iiit.ac.in",
-            "imageURL": "/images/people/shambhavi-jahagirdar.png",
+            "imageURL": "/images/people/shambhavi_jahagirdar.jpg",
             "slug": "shambhavi_jahagirdar",
             "social_links": {
-                "GitHub": "https://github.com/Shambhaviiiit"
+                "GitHub": "https://github.com/Shambhaviiiit",
+                "LinkedIn": "https://www.linkedin.com/in/jshambhavi/"
             },
             "interests": [],
-            "education": [],
+            "education": [
+                {
+                    "degree": "B.Tech & M.S by Research, Comp. Sc.",
+                    "institution": "IIITH",
+                    "year": 2025
+                }
+            ],
             "bio": ""
         },
         {
