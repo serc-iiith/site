@@ -1645,10 +1645,15 @@
         {
             "name": "Vivek Iyer",
             "title": "CSD",
+            "email": "vivek.iyer@alumni.iiit.ac.in",
+            "imageURL": "/images/people/vivek_iyer.jpg",
             "slug": "vivek_iyer",
-            "imageURL": "/images/people/vivek-iyer.png",
-            "social_links": {},
-            "advisor": "Dr. Y. Raghu Reddy"
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/vivekiyer98/"
+            },
+            "interests": [],
+            "education": [],
+            "bio": ""
         },
         {
             "name": "Deepthi Agarwal",
