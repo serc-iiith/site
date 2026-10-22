@@ -1290,15 +1290,23 @@
             "name": "Divyansh Pandey",
             "title": "CSE",
             "email": "divyanshp1136@gmail.com",
-            "imageURL": "/images/people/divyansh-pandey.png",
+            "imageURL": "/images/people/divyansh_pandey.jpg",
             "slug": "divyansh_pandey",
-            "social_links": {},
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/divyansh-pandey-41821a254/"
+            },
             "interests": [
                 "Generative AI",
                 "Reinforcement Learning",
                 "Self-Adaptation"
             ],
-            "advisor": "Dr. Karthik Vaidhyanathan",
+            "education": [
+                {
+                    "degree": "B.Tech. (Honors)",
+                    "institution": "IIITH",
+                    "year": 2026
+                }
+            ],
             "bio": "I like building cool stuff!"
         },
         {
