@@ -1523,10 +1523,13 @@
         {
             "name": "Neeraj Mathur",
             "title": "MS (CSE)",
+            "email": "",
+            "imageURL": "/images/people/neeraj_mathur.jpg",
             "slug": "neeraj_mathur",
-            "imageURL": "/images/people/neeraj-mathur.png",
             "social_links": {},
-            "advisor": "Dr. Y. Raghu Reddy"
+            "interests": [],
+            "education": [],
+            "bio": ""
         },
         {
             "name": "Garapati Prashanth",
