@@ -426,7 +426,7 @@
             "name": "Radha Krishna B",
             "title": "PhD CSE",
             "email": "radha.krishna@research.iiit.ac.in",
-            "imageURL": "/images/people/radha-krishna-b.png",
+            "imageURL": "/images/people/radha-krishna-b.jpg",
             "slug": "radha-krishna-b",
             "social_links": {
                 "GitHub": "https://github.com/radha-krishna-b"
@@ -434,7 +434,7 @@
             "interests": [
                 "Augmented Reality Systems for Navigation"
             ],
-            "advisor": "Dr. Y. Raghu Reddy",
+            "education": [],
             "bio": "My research interests include Augmented Reality Systems for navigation"
         },
         {
