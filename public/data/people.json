@@ -1903,14 +1903,20 @@
             "slug": "dileep_kumar_adari",
             "social_links": {
                 "GitHub": "https://github.com/dileepadari",
-                "LinkedIn": "https://linkedin.com/in/dileep-kumar-adari-298169252/"
+                "LinkedIn": "https://www.linkedin.com/in/a-dk/"
             },
             "interests": [
                 "Full Stack Development",
                 "Design Thinking"
             ],
-            "education": [],
-            "bio": "As a computer science engineering student, I am dedicated to acquiring a strong foundation in programming languages, algorithms, and software development methodologies. Eager to explore various domains within the field, I am actively engaged in coursework, projects, and self-directed learning to enhance my skills. I am particularly interested in Full Stack development with design thinking actively applied."
+            "education": [
+                {
+                    "degree": "B.Tech. (Honors)",
+                    "institution": "IIITH",
+                    "year": 2026
+                }
+            ],
+            "bio": "Dileep Kumar Adari is an alumnus of the International Institute of Information Technology Hyderabad (IIIT Hyderabad). With a strong foundation in computer science, Dileep is interested in programming, algorithms, and software development. His interests include full-stack development and applying design thinking to create user-centric software solutions."
         },
         {
             "name": "Kotekal Methukula Santhosh",
