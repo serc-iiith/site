@@ -1898,6 +1898,25 @@
             "interests": [],
             "education": [],
             "bio": ""
+        },
+        {
+            "name": "Anish Shankar",
+            "title": "CSE",
+            "email": "anish.shankar@alumni.iiit.ac.in",
+            "imageURL": "/images/people/anish-shankar.jpg",
+            "slug": "anish-shankar",
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/anish-shankar-3290573a/"
+            },
+            "interests": [],
+            "education": [
+                {
+                    "degree": "B.Tech (CSE)",
+                    "institution": "IIITH",
+                    "year": 2014
+                }
+            ],
+            "bio": "Anish Shankar is an alumnus of the International Institute of Information Technology Hyderabad (IIIT Hyderabad), where he completed his B.Tech. (Honours) in Computer Science and Engineering from 2010 to 2014. He is an experienced software engineer with an interest in exploring new systems and technologies. He is an experienced software engineering professional who has worked at Google and is currently associated with Databricks, contributing to the technology industry through his expertise in software engineering and systems."
         }
     ],
     "Research Associates": [
