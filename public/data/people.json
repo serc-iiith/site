@@ -1773,16 +1773,17 @@
             "name": "Hiya Bhatt",
             "title": "MS (CSE)",
             "email": "hiya.bhatt@research.iiiit.ac.in",
-            "imageURL": "/images/people/hiya-bhatt.jpeg",
+            "imageURL": "/images/people/hiya-bhatt.jpg",
             "slug": "hiya-bhatt",
-            "social_links": {},
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/hiya-bhatt-a465251a6/"
+            },
             "interests": [
                 "Social/Academic Networking",
                 "Singing"
             ],
-            "advisor": "Dr. Karthik Vaidhyanathan",
-            "bio": "I'm an MS by Research student in Computer Science and Engineering, working under the guidance of Dr. Karthik Vaidhyanathan. My research focuses on developing sustainable self-adaptive machine learning-enabled systems that can efficiently manage changing environments and resource constraints. I’m also exploring how these systems can be integrated with digital twins to enhance real-time monitoring, analysis, and decision-making in dynamic scenarios. Alongside my academic work, I enjoy singing.",
-            "education": []
+            "education": [],
+            "bio": "**Hiya Bhatt**\n\nHiya Bhatt is a researcher whose academic journey includes an MS by Research in Computer Science and Engineering at the International Institute of Information Technology Hyderabad (IIIT Hyderabad), where she worked under the guidance of Dr. Karthik Vaidhyanathan at the Software Engineering Research Center (SERC). Her research focuses on sustainable, self-adaptive machine learning-enabled systems that efficiently manage changing environments and resource constraints, as well as their integration with digital twins for real-time monitoring, analysis, and decision-making. She is currently pursuing her Ph.D. at Vrije Universiteit Amsterdam (VU Amsterdam), the Netherlands. Beyond research, she enjoys singing."
         },
         {
             "name": "Kritin Maddireddy",
