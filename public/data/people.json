@@ -1550,10 +1550,21 @@
         {
             "name": "Raghav Mittal",
             "title": "MS (CSE)",
+            "email": "raghav.mittal@alumni.iiit.ac.in",
+            "imageURL": "/images/people/raghav_mittal.jpg",
             "slug": "raghav_mittal",
-            "imageURL": "/images/people/raghav-mittal.png",
-            "social_links": {},
-            "advisor": "Dr. Y. Raghu Reddy"
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/raghavmittal101/"
+            },
+            "interests": [],
+            "education": [
+                {
+                    "degree": "MS, CSE",
+                    "institution": "IIITH",
+                    "year": 2022
+                }
+            ],
+            "bio": ""
         },
         {
             "name": "Maddala Saraswathi Sowmya",
