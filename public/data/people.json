@@ -1620,10 +1620,13 @@
         {
             "name": "Yogesh Maheshwari",
             "title": "CSD",
+            "email": "yogesh.maheshwari@alumni.iiit.ac.in",
+            "imageURL": "/images/people/yogesh_maheshwari.jpg",
             "slug": "yogesh_maheshwari",
-            "imageURL": "/images/people/yogesh-maheshwari.png",
             "social_links": {},
-            "advisor": "Dr. Y. Raghu Reddy"
+            "interests": [],
+            "education": [],
+            "bio": ""
         },
         {
             "name": "Lalit Mohan S",
