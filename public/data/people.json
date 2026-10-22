@@ -1942,7 +1942,9 @@
             "email": "vyakhya.gupta@students.iiit.ac.in",
             "imageURL": "/images/people/vyakhya-guptha.png",
             "slug": "vyakhya_guptha",
-            "social_links": {},
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/vyakhya-gupta-195479289/"
+            },
             "interests": [
                 "SE4ML",
                 "ML certification",
@@ -1951,8 +1953,14 @@
                 "Painting",
                 "Reading novels"
             ],
-            "education": [],
-            "bio": "I am Vyakhya Gupta, a CSE student pursuing honors with Professor Karthik Vaidyanathan. My research focuses on certifying ML-enabled systems for safety-critical applications, ensuring their reliability and compliance with industry standards. I am also exploring using Gen AI for self adaption. Accepted works include: https://arxiv.org/abs/2501."
+            "education": [
+                {
+                    "degree": "B.Tech. (Honors)",
+                    "institution": "IIITH",
+                    "year": 2026
+                }
+            ],
+            "bio": "**Vyakhya Gupta**\n\nVyakhya Gupta is an alumnus of the International Institute of Information Technology Hyderabad (IIIT Hyderabad), where Vyakhya pursued a B.Tech. in Computer Science and Engineering with Honours under the guidance of Professor Karthik Vaidhyanathan at the Software Engineering Research Center (SERC). Vyakhya's research focuses on certifying machine learning-enabled systems for safety-critical applications, ensuring their reliability and compliance with industry standards. Vyakhya has also explored the use of Generative AI for self-adaptive systems."
         },
         {
             "name": "Shambhavi Jahagirdar",
