@@ -1472,17 +1472,18 @@
             "name": "Mohammad Waqas Wani",
             "title": "MS (ECE)",
             "email": "mohammad.wani@research.iiit.ac.in",
-            "imageURL": "/images/people/mohammad-waqas-wani.png",
+            "imageURL": "/images/people/mohammad_waqas_wani.jpg",
             "slug": "mohammad_waqas_wani",
             "social_links": {
-                "GitHub": "https://github.com/waqaswani"
+                "GitHub": "https://github.com/waqaswani",
+                "Google Scholar": "https://scholar.google.com/citations?user=tF5qXPYAAAAJ&hl=en"
             },
             "interests": [
                 "Embedded Systems",
                 "Pressure Sensing mats",
                 "Virtual Reality for Medical applications"
             ],
-            "advisor": "Dr. Y. Raghu Reddy",
+            "education": [],
             "bio": "My research interests include Embedded Systems, Pressure Sensing mats and Virtual Reality for Medical applications"
         },
         {
