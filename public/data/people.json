@@ -1577,10 +1577,13 @@
         {
             "name": "Venkata SaiKrishna Sripada",
             "title": "CSE",
+            "email": "saikrishna.sripada@alumni.iiit.ac.in",
+            "imageURL": "/images/people/sripada_venkatasai_krishna.jpg",
             "slug": "Sripada_venkatasai_krishna",
-            "imageURL": "/images/people/venkata-saikrishna-sripada.png",
             "social_links": {},
-            "advisor": "Dr. Y. Raghu Reddy"
+            "interests": [],
+            "education": [],
+            "bio": ""
         },
         {
             "name": "Ankur Goel",
