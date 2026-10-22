@@ -1707,16 +1707,22 @@
         {
             "name": "Divij D",
             "title": "CSE",
-            "email": "divij.d@students.iiit.ac.in",
-            "imageURL": "/images/people/divij.png",
+            "email": "divij.d@alumni.iiit.ac.in",
+            "imageURL": "/images/people/divij.jpg",
             "slug": "divij",
             "social_links": {
-                "GitHub": "https://github.com/divijd012"
+                "GitHub": "https://github.com/divijd012",
+                "LinkedIn": "https://www.linkedin.com/in/divij-d-84077323b/"
             },
-            "advisor": "Dr. Y. Raghu Reddy",
             "interests": [],
-            "education": [],
-            "bio": ""
+            "education": [
+                {
+                    "degree": "B.Tech Honors",
+                    "institution": "IIITH",
+                    "year": 2025
+                }
+            ],
+            "bio": "Divij D is an alumnus of the International Institute of Information Technology Hyderabad (IIIT Hyderabad), where he completed his undergraduate studies in Computer Science from 2021 to 2025. He is currently a Software Engineer at Microsoft, working on secure release and deployment systems."
         },
         {
             "name": "Arya Marda",
