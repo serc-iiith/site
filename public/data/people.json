@@ -1917,6 +1917,25 @@
                 }
             ],
             "bio": "Anish Shankar is an alumnus of the International Institute of Information Technology Hyderabad (IIIT Hyderabad), where he completed his B.Tech. (Honours) in Computer Science and Engineering from 2010 to 2014. He is an experienced software engineer with an interest in exploring new systems and technologies. He is an experienced software engineering professional who has worked at Google and is currently associated with Databricks, contributing to the technology industry through his expertise in software engineering and systems."
+        },
+        {
+            "name": "Madhavan Malolan",
+            "title": "CSE",
+            "email": "madhavan.chetlur@alumni.iiit.ac.in",
+            "imageURL": "/images/people/madhavan-malolan.jpg",
+            "slug": "madhavan-malolan",
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/madhavanmalolan/"
+            },
+            "interests": [],
+            "education": [
+                {
+                    "degree": "B.Tech (CSE)",
+                    "institution": "IIITH",
+                    "year": 2014
+                }
+            ],
+            "bio": "Madhavan Malolan is an alumnus of the International Institute of Information Technology Hyderabad (IIIT Hyderabad), where he completed his Bachelor's degree in Computer Software Engineering (2010–2014) and received the Gold Medal for all-round performance. He previously worked as a Software Engineer at Microsoft and Samosa Labs and contributed to Questbook. He is the Co-founder and CEO of Reclaim Protocol, a technology company developing privacy-preserving verification solutions using cryptography and AI. His work focuses on product development, engineering, research, and building secure and scalable technology solutions."
         }
     ],
     "Research Associates": [
