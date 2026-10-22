@@ -1712,10 +1712,13 @@
         {
             "name": "Venkata Padmalata Nistala",
             "title": "PhD CSE",
+            "email": "padmalata.nistala@alumni.iiit.ac.in",
+            "imageURL": "/images/people/venkata_padmalata_nistala.jpg",
             "slug": "venkata_padmalata_nistala",
-            "imageURL": "/images/people/venkata-padmalata-nistala.png",
-            "social_links": {},
-            "advisor": "Dr. Y. Raghu Reddy",
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/padmalata-nistala-76827311/",
+                "Google Scholar": "https://scholar.google.com/citations?user=e-rhHWgAAAAJ&hl=en"
+            },
             "interests": [],
             "education": [],
             "bio": ""
