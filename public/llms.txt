@@ -102,6 +102,7 @@ This is the directory of resources for the Software Engineering Research Center 
 - [Pinninti Pavitra](https://serc.iiit.ac.in/people/pinninti-pavitra): CSD
 - [Tanishi Tyagi](https://serc.iiit.ac.in/people/tanishi-tyagi): CSD
 - [A. V. Aditya](https://serc.iiit.ac.in/people/a-v-aditya): CSD
+- [Harshil Soni](https://serc.iiit.ac.in/people/harshil-soni): CSD
 
 ### Honors
 - [Divyansh Pandey](https://serc.iiit.ac.in/people/divyansh_pandey): CSE
@@ -129,6 +130,10 @@ This is the directory of resources for the Software Engineering Research Center 
 - **ANRF**:  The SustAInd project under ANRF PM ECRG aims to build a software-centric framework for enhancing the sustainability of AI-enabled systems. 
 
 ## Recent Publications (Top 25)
+- **Mitigating Uncertainty Interactions in GenAI-based Adaptive Systems: Vision, Challenges and Preliminary Guidelines** (2026) - Dr.  Karthik Vaidhyanathan, Norha Villegas, Raffaela Mirandola, Nicolás Cardozo, Ivana Dusparic, Marin Litoiu, Ralf Reussner, Gabriel Tamura. [Resource](https://arxiv.org/abs/2610.08881)
+- **Aneetta Sara Shany Presents Co-Authored Research with Chandrasekar S and Prof. Karthik Vaidhyanathan at ESEM 2026 in Germany** (2026) - Aneetta Sara Shany, Chandrasekar S, Dr. Karthik Vaidhyanathan. [Resource]( https://doi.org/10.48550/arXiv.2606.10702)
+- **Inferring Openness to Experience from Behavioral Signals in a Virtual Reality Art Gallery** (2026) - Aaditya Vardhan Narain, Dr. Y. Raghu Reddy, Dr. Raman Saxena. [Resource](https://doi.org/10.1145/3776574.3831169)
+- **Software Architecture for Agentic AI: Challenges and Way Ahead** (2026) - Prof. Karthik Vaidhyanathan, Prof. Henry Muccini. [Resource](https://arxiv.org/abs/2103.07950)
 - **Can AI Agents Generate Microservices? How Far are We?** (2026) - Bassam Adnan, Matteo Esposito, Davide Taibi, Karthik Vaidhyanathan. [Resource](https://doi.org/10.1109/ICSA66085.2026.00008)
 - **LLM-based Automated Architecture View Generation: Where Are We Now?** (2026) - Miryala Sathvika, Rudra Dhar, Karthik Vaidhyanathan. [Resource](https://doi.org/10.1109/ICSA66085.2026.00031)
 - **LLMs for Architectural Refactoring: An Exploratory Study on Monoliths to Microservices** (2026) - Aneesh Sambu, Roberta Capuano, Eoan O'Dea, Karthik Vaidhyanathan, Henry Muccini. [Resource](https://doi.org/10.1109/ICSA66085.2026.00033)
@@ -150,24 +155,20 @@ This is the directory of resources for the Software Engineering Research Center 
 - **Context Matters: Evaluating Context Strategies for Automated ADR Generation Using LLMs** (2026) - Aviral Gupta, Rudra Dhar, Daniel Feitosa, Karthik Vaidhyanathan. [Resource](https://arxiv.org/abs/2604.03826)
 - **Watts and Debts of Agentic Frameworks: An Empirical Study (Registered Report)** (2026) - Aneetta Sara Shany, Chandrasekar Sridhar, Karthik Vaidhyanathan. [Resource](https://arxiv.org/abs/2606.10702)
 - **Architecting AgentOps Needs CHANGE** (2026) - Shaunak Biswas, Hiya Bhatt, Karthik Vaidhyanathan. [Resource](https://arxiv.org/abs/2601.06456)
-- **AgenticAKM: Enroute to Agentic Architecture Knowledge Management** (2026) - Rudra Dhar, Karthik Vaidhyanathan, Vasudeva Varma. [Resource](https://arxiv.org/abs/2602.04445)
-- **A Research Agenda on Agents and Software Engineering: Outcomes from the Rio A2SE Seminar** (2026) - Davide Taibi, Henry Muccini, Karthik Vaidhyanathan, Marcos Kalinowski, Michele Albano, Antonio Pedro Santos Alves, Renato Cerqueira, Mateus Devino, Matteo Esposito, Rodrigo Falcao, Vinicius Henning, Foutse Khomh, Valentina Lenarduzzi, Qinghua Lu, Matias Martinez, Henrique Mello, Daniel Mendez, Lucas Cordeiro Romao. [Resource](https://arxiv.org/abs/2605.11720)
-- **Can LLMs Extract Architectural Design Decisions from Source Code Commits? -- A Preliminary Exploratory Study** (2026) - Amey Karan, Rudra Dhar, Mohamed Soliman, Karthik Vaidhyanathan. [Resource](https://arxiv.org/abs/2609.03721)
-- **Engineering LLM Powered Multi-Agent Framework for Autonomous CloudOps** (2025) - Kannan Parthasarathy, Karthik Vaidhyanathan, Rudra Dhar, Venkat Krishnamachari, Adyansh Kakran, Sreemaee Akshathala, Shrikara Arun, Amey Karan, Basil Muhammed, Sumant Dubey, Mohan Veerubhotla. [Resource](https://ieeexplore.ieee.org/abstract/document/11030040)
 
 ## Latest Blog Posts
 - [SERC Students presented their work in ICSA 2025](https://serc.iiit.ac.in/blog/LLMs-for-Generation-of-Architectural-Components-An-Exploratory-Empirical-Study-in-th): SERC students under guidance of Prof. Karthik Vaidhyanathan has presented their papers in ICSA 2025 - Odense, Denmark (April 14, 2025)
 - [Enhancing Sustainability of Modern Software Systems through Self-adaptive Architectures](https://serc.iiit.ac.in/blog/self-adaptive-architectures-sustainability): Dr. Karthik Vaidhyanathan explains the concept of software sustainability and how his group's research on self-adaptation is contributing towards greener and sustainable software. (January 17, 2025)
 
 ## News & Events (Top 10)
+- [Aneetta Sara Shany Presents Research on Agentic AI Sustainability at ESEM 2026 in Germany](https://serc.iiit.ac.in/news/aneetta-sara-shany-presents-research-on-agentic-ai-sustainability-at-esem-2026-in-germany): Aneetta Sara Shany Presents Co-Authored Research with Chandrasekar S and Prof. Karthik Vaidhyanathan at ESEM 2026 in Germany (10/8/2026)
+- [Aaditya Vardhan Narain Presents a Research Paper Co-Authored with Dr. Raman Saxena and Prof. Y. Raghu Reddy at ICMI 2026](https://serc.iiit.ac.in/news/aaditya-vardhan-narain-presents-a-research-paper-co-authored-with-dr-raman-saxena-and-prof-y-raghu-reddy-at-icmi-2026): Aaditya Vardhan Narain Presents a Research Paper Co-Authored with Dr. Raman Saxena and Prof. Y. Raghu Reddy at ICMI 2026 (10/8/2026)
+- [Prof. Y. Raghu Reddy Presents Research on Model-Driven Virtual Reality Systems at MODELS 2026](https://serc.iiit.ac.in/news/prof-y-raghu-reddy-presents-research-on-model-driven-virtual-reality-systems-at-models-2026): Prof. Y. Raghu Reddy, Head of SERC, IIIT Hyderabad, co-authored a paper on model-driven Virtual Reality system development presented at MODELS 2026 in Spain. (10/8/2026)
+- [Prof. Y. Raghu Reddy and Prof. Karthik Vaidhyanathan Share AI Research Insights at HYSEA](https://serc.iiit.ac.in/news/prof-y-raghu-reddy-and-prof-karthik-vaidhyanathan-share-ai-research-insights-at-hysea): Prof. Y. Raghu Reddy and Prof. Karthik Vaidhyanathan shared AI research insights at a HYSEA leadership event. (9/29/2026)
 - [Harmonica by SA4S Presented at NASSCOM Agentic AI Confluence 2026](https://serc.iiit.ac.in/news/harmonica-by-sa4s-presented-at-nasscom-agentic-ai-confluence-2026): Harmonica by SA4S Presented at NASSCOM Agentic AI Confluence 2026 (9/28/2026)
+- [Prof. Y. Raghu Reddy Discusses AI’s Future at ServiceNow’s Converge 2.0](https://serc.iiit.ac.in/news/prof-y-raghu-reddy-discusses-ai-s-future-at-servicenow-s-converge-2-0): Prof. Y. Raghu Reddy Discusses AI’s Future at ServiceNow’s Converge 2.0 (9/23/2026)
 - [Dr. Karthik Vaidhyanathan Featured in The New Indian Express](https://serc.iiit.ac.in/news/dr-karthik-vaidhyanathan-featured-in-the-new-indian-express): Dr. Karthik Vaidhyanathan Featured in The New Indian Express (9/22/2026)
 - [Prof. Y. Raghu Reddy Delivers Masterclass on AI Testing at FICCI Telangana, Hyderabad](https://serc.iiit.ac.in/news/prof-y-raghu-reddy-delivers-masterclass-on-ai-testing-at-ficci-telangana-hyderabad): FICCI Telangana Masterclass & Workshop Series – Building Future-Ready Leaders (9/18/2026)
 - [Dr. Karthik Vaidhyanathan Teaches Agentic AI at SustainAI Summer School in Denmark](https://serc.iiit.ac.in/news/dr-karthik-vaidhyanathan-teaches-agentic-ai-at-sustainai-summer-school-in-denmark): Dr. Karthik Vaidhyanathan of IIIT Hyderabad served as an instructor at the SustainAI Summer School on Engineering Agentic AI in Denmark. (9/14/2026)
-- [ECSA 2026 / CASA Workshop - Bolzano, Italy](https://serc.iiit.ac.in/news/ecsa-2026-casa-workshop-bolzano-italy): Dr. Karthik Vaidhyanathan received the Best Reviewer Award and delivered the keynote at the CASA Workshop at ECSA 2026 in Bolzano, Italy. (9/7/2026)
-- [SERC Researchers Presented Two Papers at Euromicro SEAA 2026 in Kraków, Poland](https://serc.iiit.ac.in/news/serc-researchers-presented-two-papers-at-euromicro-seaa-2026-in-krakow-poland): Researchers from SERC Presented Two Papers at Euromicro SEAA 2026 in Kraków, Poland (9/2/2026)
-- [Dr. Karthik Vaidhyanathan Discusses Trustworthy Agentic AI at FinAI Confluence 2026](https://serc.iiit.ac.in/news/dr-karthik-vaidhyanathan-discusses-trustworthy-agentic-ai-at-finai-confluence-2026): Dr. Karthik Vaidhyanathan Participates in FinAI Confluence 2026 Panel on Trustworthy Agentic AI (8/18/2026)
-- [EMNLP 2026](https://serc.iiit.ac.in/news/emnlp-2026): "Dissecting Transformers": SERC Students' Paper on Sustainable AI Accepted at EMNLP 2026 (8/14/2026)
-- [ Embedded Safety and Security Summit 2026 (ESSS 2026)](https://serc.iiit.ac.in/news/-embedded-safety-and-security-summit-2026-esss-2026):  Embedded Safety and Security Summit 2026 (ESSS 2026) (8/11/2026)
-- [MODELS 2026](https://serc.iiit.ac.in/news/models-2026): SERC Researchers' Paper on VR Systems Accepted at MODELS 2026 (7/30/2026)
+- [Prof. Karthik Vaidhyanathan Presents Research on GenAI-Based Adaptive Systems at ACSOS 2026](https://serc.iiit.ac.in/news/prof-karthik-vaidhyanathan-presents-research-on-genai-based-adaptive-systems-at-acsos-2026): Prof. Karthik Vaidhyanathan Presents Research on Mitigating Uncertainties in GenAI-based Software Systems: Visions, Challenges and Preliminary Guidelines (9/9/2026)
 

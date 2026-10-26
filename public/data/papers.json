@@ -1,5 +1,173 @@
 [
   {
+    "id": "ai-assisted-semantic-modeling-of-languages-for-symbolic-execution-driven-unit-test-generation-2026",
+    "authors": [
+      "Mokshith Reddy Tanguturi",
+      "Atul Kumar",
+      "Nandakishore Menon",
+      "Sridhar Chimalakonda"
+    ],
+    "year": "2026",
+    "title": "AI-Assisted Semantic Modeling of Languages for Symbolic Execution Driven Unit Test Generation",
+    "cite": "@inproceedings{Tanguturi_2026, title={AI-Assisted Semantic Modeling of Languages for Symbolic Execution Driven Unit Test Generation}, url={http://dx.doi.org/10.1109/saner67736.2026.00020}, DOI={10.1109/saner67736.2026.00020}, booktitle={2026 IEEE International Conference on Software Analysis, Evolution and Reengineering (SANER)}, publisher={IEEE}, author={Tanguturi, Mokshith Reddy and Kumar, Atul and Menon, Nandakishore and Chimalakonda, Sridhar}, year={2026}, month=Mar, pages={98–102} }\n",
+    "venue": "2026 IEEE International Conference on Software Analysis, Evolution and Reengineering (SANER)",
+    "url": "https://doi.org/10.1109/saner67736.2026.00020",
+    "doi": "10.1109/saner67736.2026.00020"
+  },
+  {
+    "id": "static-analysis-assisted-knowledge-graph-based-automatic-functionality-discovery-for-mainframe-applications-2026",
+    "authors": [
+      "Sasaank Janapati",
+      "Atul Kumar",
+      "Nandakishore Menon",
+      "Sridhar Chimalakonda"
+    ],
+    "year": "2026",
+    "title": "Static Analysis Assisted Knowledge Graph Based Automatic Functionality Discovery for Mainframe Applications",
+    "cite": "@inproceedings{Janapati_2026, title={Static Analysis Assisted Knowledge Graph Based Automatic Functionality Discovery for Mainframe Applications}, url={http://dx.doi.org/10.1109/saner67736.2026.00070}, DOI={10.1109/saner67736.2026.00070}, booktitle={2026 IEEE International Conference on Software Analysis, Evolution and Reengineering (SANER)}, publisher={IEEE}, author={Janapati, Sasaank and Kumar, Atul and Menon, Nandakishore and Chimalakonda, Sridhar}, year={2026}, month=Mar, pages={602–606} }\n",
+    "venue": "2026 IEEE International Conference on Software Analysis, Evolution and Reengineering (SANER)",
+    "url": "https://doi.org/10.1109/saner67736.2026.00070",
+    "doi": "10.1109/saner67736.2026.00070"
+  },
+  {
+    "id": "automated-testing-of-cobol-to-java-transformation-2025",
+    "authors": [
+      "Sandeep Hans",
+      "Atul Kumar",
+      "Toshiaki Yasue",
+      "Kouichi Ono",
+      "Saravanan Krishnan",
+      "Devika Sondhi",
+      "Fumiko Satoh",
+      "Gerald Mitchell",
+      "Sachin Kumar",
+      "Diptikalyan Saha"
+    ],
+    "year": "2025",
+    "title": "Automated Testing of COBOL to Java Transformation",
+    "cite": "@inproceedings{Hans_2025, series={FSE Companion ’25}, title={Automated Testing of COBOL to Java Transformation}, url={http://dx.doi.org/10.1145/3696630.3728548}, DOI={10.1145/3696630.3728548}, booktitle={Proceedings of the 33rd ACM International Conference on the Foundations of Software Engineering}, publisher={ACM}, author={Hans, Sandeep and Kumar, Atul and Yasue, Toshiaki and Ono, Kouichi and Krishnan, Saravanan and Sondhi, Devika and Satoh, Fumiko and Mitchell, Gerald and Kumar, Sachin and Saha, Diptikalyan}, year={2025}, month=June, pages={227–237}, collection={FSE Companion ’25} }\n",
+    "venue": "Proceedings of the 33rd ACM International Conference on the Foundations of Software Engineering",
+    "url": "https://doi.org/10.1145/3696630.3728548",
+    "doi": "10.1145/3696630.3728548"
+  },
+  {
+    "id": "automated-validation-of-cobol-to-java-transformation-2024",
+    "authors": [
+      "Atul Kumar",
+      "Diptikalyan Saha",
+      "Toshiaki Yasue",
+      "Kohichi Ono",
+      "Saravanan Krishnan",
+      "Sandeep Hans",
+      "Fumiko Satoh",
+      "Gerald Mitchell",
+      "Sachin Kumar"
+    ],
+    "year": "2024",
+    "title": "Automated Validation of COBOL to Java Transformation",
+    "cite": "@inproceedings{Kumar_2024, series={ASE ’24}, title={Automated Validation of COBOL to Java Transformation}, url={http://dx.doi.org/10.1145/3691620.3695365}, DOI={10.1145/3691620.3695365}, booktitle={Proceedings of the 39th IEEE/ACM International Conference on Automated Software Engineering}, publisher={ACM}, author={Kumar, Atul and Saha, Diptikalyan and Yasue, Toshiaki and Ono, Kohichi and Krishnan, Saravanan and Hans, Sandeep and Satoh, Fumiko and Mitchell, Gerald and Kumar, Sachin}, year={2024}, month=Oct, pages={2415–2418}, collection={ASE ’24} }\n",
+    "venue": "Proceedings of the 39th IEEE/ACM International Conference on Automated Software Engineering",
+    "url": "https://doi.org/10.1145/3691620.3695365",
+    "doi": "10.1145/3691620.3695365"
+  },
+  {
+    "id": "comex-a-tool-for-generating-customized-source-code-representations-2023",
+    "authors": [
+      "Debeshee Das",
+      "Noble Saji Mathews",
+      "Alex Mathai",
+      "Srikanth Tamilselvam",
+      "Kranthi Sedamaki",
+      "Sridhar Chimalakonda",
+      "Atul Kumar"
+    ],
+    "year": "2023",
+    "title": "COMEX: A Tool for Generating Customized Source Code Representations",
+    "cite": "@inproceedings{Das_2023, title={COMEX: A Tool for Generating Customized Source Code Representations}, url={http://dx.doi.org/10.1109/ase56229.2023.00010}, DOI={10.1109/ase56229.2023.00010}, booktitle={2023 38th IEEE/ACM International Conference on Automated Software Engineering (ASE)}, publisher={IEEE}, author={Das, Debeshee and Mathews, Noble Saji and Mathai, Alex and Tamilselvam, Srikanth and Sedamaki, Kranthi and Chimalakonda, Sridhar and Kumar, Atul}, year={2023}, month=Sept, pages={2054–2057} }\n",
+    "venue": "2023 38th IEEE/ACM International Conference on Automated Software Engineering (ASE)",
+    "url": "https://doi.org/10.1109/ase56229.2023.00010",
+    "doi": "10.1109/ase56229.2023.00010"
+  },
+  {
+    "id": "the-landscape-of-source-code-representation-learning-in-ai-driven-software-engineering-tasks-2023",
+    "authors": [
+      "Sridhar Chimalakonda",
+      "Debeshee Das",
+      "Alex Mathai",
+      "Srikanth Tamilselvam",
+      "Atul Kumar"
+    ],
+    "year": "2023",
+    "title": "The Landscape of Source Code Representation Learning in AI-Driven Software Engineering Tasks",
+    "cite": "@inproceedings{Chimalakonda_2023, title={The Landscape of Source Code Representation Learning in AI-Driven Software Engineering Tasks}, url={http://dx.doi.org/10.1109/icse-companion58688.2023.00098}, DOI={10.1109/icse-companion58688.2023.00098}, booktitle={2023 IEEE/ACM 45th International Conference on Software Engineering: Companion Proceedings (ICSE-Companion)}, publisher={IEEE}, author={Chimalakonda, Sridhar and Das, Debeshee and Mathai, Alex and Tamilselvam, Srikanth and Kumar, Atul}, year={2023}, month=May, pages={342–343} }\n",
+    "venue": "2023 IEEE/ACM 45th International Conference on Software Engineering: Companion Proceedings (ICSE-Companion)",
+    "url": "https://doi.org/10.1109/icse-companion58688.2023.00098",
+    "doi": "10.1109/icse-companion58688.2023.00098"
+  },
+  {
+    "id": "domain-specific-ontologies-from-linked-open-data-lod-2022",
+    "authors": [
+      "Rosario Uceda-Sosa",
+      "Nandana Mihindukulasooriya",
+      "Atul Kumar",
+      "Sahil Bansal",
+      "Seema Nagar"
+    ],
+    "year": "2022",
+    "title": "Domain specific ontologies from Linked Open Data (LOD)",
+    "cite": "@inproceedings{Uceda_Sosa_2022, series={CODS-COMAD 2022}, title={Domain specific ontologies from Linked Open Data (LOD)}, url={http://dx.doi.org/10.1145/3493700.3493703}, DOI={10.1145/3493700.3493703}, booktitle={Proceedings of the 5th Joint International Conference on Data Science &amp; Management of Data (9th ACM IKDD CODS and 27th COMAD)}, publisher={ACM}, author={Uceda-Sosa, Rosario and Mihindukulasooriya, Nandana and Kumar, Atul and Bansal, Sahil and Nagar, Seema}, year={2022}, month=Jan, pages={105–109}, collection={CODS-COMAD 2022} }\n",
+    "venue": "Proceedings of the 5th Joint International Conference on Data Science & Management of Data (9th ACM IKDD CODS and 27th COMAD)",
+    "url": "https://doi.org/10.1145/3493700.3493703",
+    "doi": "10.1145/3493700.3493703"
+  },
+  {
+    "id": "incremental-analysis-of-legacy-applications-using-knowledge-graphs-for-application-modernization-2022",
+    "authors": [
+      "Saravanan Krishnan",
+      "Alex Mathai",
+      "Amith Singhee",
+      "Atul Kumar",
+      "Shivali Agarwal",
+      "Keerthi Narayan Raghunath",
+      "David Wenk"
+    ],
+    "year": "2022",
+    "title": "Incremental Analysis of Legacy Applications Using Knowledge Graphs for Application Modernization",
+    "cite": "@inproceedings{Krishnan_2022, series={CODS-COMAD 2022}, title={Incremental Analysis of Legacy Applications Using Knowledge Graphs for Application Modernization}, url={http://dx.doi.org/10.1145/3493700.3493735}, DOI={10.1145/3493700.3493735}, booktitle={Proceedings of the 5th Joint International Conference on Data Science &amp; Management of Data (9th ACM IKDD CODS and 27th COMAD)}, publisher={ACM}, author={Krishnan, Saravanan and Mathai, Alex and Singhee, Amith and Kumar, Atul and Agarwal, Shivali and Raghunath, Keerthi Narayan and Wenk, David}, year={2022}, month=Jan, pages={250–254}, collection={CODS-COMAD 2022} }\n",
+    "venue": "Proceedings of the 5th Joint International Conference on Data Science & Management of Data (9th ACM IKDD CODS and 27th COMAD)",
+    "url": "https://doi.org/10.1145/3493700.3493735",
+    "doi": "10.1145/3493700.3493735"
+  },
+  {
+    "id": "constructing-micro-knowledge-graphs-from-technical-support-documents-2021",
+    "authors": [
+      "Atul Kumar",
+      "Nisha Gupta",
+      "Saswati Dana"
+    ],
+    "year": "2021",
+    "title": "Constructing Micro Knowledge Graphs from Technical Support Documents",
+    "cite": "@inbook{Kumar_2021, title={Constructing Micro Knowledge Graphs from Technical Support Documents}, ISBN={9783030804183}, ISSN={1611-3349}, url={http://dx.doi.org/10.1007/978-3-030-80418-3_37}, DOI={10.1007/978-3-030-80418-3_37}, booktitle={The Semantic Web: ESWC 2021 Satellite Events}, publisher={Springer International Publishing}, author={Kumar, Atul and Gupta, Nisha and Dana, Saswati}, year={2021}, pages={249–253} }\n",
+    "venue": "Lecture Notes in Computer Science",
+    "url": "https://doi.org/10.1007/978-3-030-80418-3_37",
+    "doi": "10.1007/978-3-030-80418-3_37"
+  },
+  {
+    "id": "mining-domain-specific-component-action-links-for-technical-support-documents-2021",
+    "authors": [
+      "Pooja Aggarwal",
+      "Sahil Bansal",
+      "Prateeti Mohapatra",
+      "Atul Kumar"
+    ],
+    "year": "2021",
+    "title": "Mining Domain-specific Component-Action Links for Technical Support Documents",
+    "cite": "@inproceedings{Aggarwal_2021, series={CODS COMAD 2021}, title={Mining Domain-specific Component-Action Links for Technical Support Documents}, url={http://dx.doi.org/10.1145/3430984.3431000}, DOI={10.1145/3430984.3431000}, booktitle={Proceedings of the 3rd ACM India Joint International Conference on Data Science &amp; Management of Data (8th ACM IKDD CODS &amp; 26th COMAD)}, publisher={ACM}, author={Aggarwal, Pooja and Bansal, Sahil and Mohapatra, Prateeti and Kumar, Atul}, year={2021}, month=Jan, pages={323–331}, collection={CODS COMAD 2021} }\n",
+    "venue": "Proceedings of the 3rd ACM India Joint International Conference on Data Science & Management of Data (8th ACM IKDD CODS & 26th COMAD)",
+    "url": "https://doi.org/10.1145/3430984.3431000",
+    "doi": "10.1145/3430984.3431000"
+  },
+  {
     "title": "Mitigating Uncertainty Interactions in GenAI-based Adaptive Systems: Vision, Challenges and Preliminary Guidelines",
     "year": "2026",
     "authors": [
@@ -2894,7 +3062,6 @@
   {
     "id": "joint-proceedings-of-the-2nd-modelling-symposium-modsym-and-the-workshop-on-software-architectures-for-adaptive-autonomo",
     "authors": [
-      "Atul Kumar",
       "Vinay Kulkarni",
       "Y Raghu Reddy",
       "Meenakshi D'Souza",
