@@ -27,6 +27,23 @@ describe('personSchema', () => {
     });
 });
 
+describe('personSchema selectedRecentPublications', () => {
+    const base = { name: 'Jane Doe', title: 'Professor' };
+    it('defaults to false when omitted', () => {
+        expect(personSchema.parse(base).selectedRecentPublications).toBe(false);
+    });
+    it('keeps a true flag', () => {
+        expect(
+            personSchema.parse({ ...base, selectedRecentPublications: true }).selectedRecentPublications,
+        ).toBe(true);
+    });
+    it('rejects a non-boolean value', () => {
+        expect(
+            personSchema.safeParse({ ...base, selectedRecentPublications: 'yes' }).success,
+        ).toBe(false);
+    });
+});
+
 describe('paperSchema', () => {
     it('rejects a non-4-digit year', () => {
         expect(

@@ -49,6 +49,7 @@ export const personSchema = z.object({
     interests: z.array(TRIMMED(200)).max(100).optional().default([]),
     education: z.array(educationSchema).max(50).optional().default([]),
     bio: TEXT(20000).optional().default(''),
+    selectedRecentPublications: z.boolean().optional().default(false),
 });
 
 export const personPutSchema = z.object({

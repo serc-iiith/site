@@ -27,6 +27,7 @@ interface Person {
     interests?: string[];
     education?: Education[];
     bio?: string;
+    selectedRecentPublications?: boolean; // Profile shows "Selected Recent Publications" instead of "Publications"
     category?: string; // To track which category this person belongs to
     internStatus?: 'current' | 'past'; // To track if intern is current or past
 }
@@ -242,6 +243,7 @@ const EditPeople: React.FC = () => {
         interests: [],
         education: [],
         bio: '',
+        selectedRecentPublications: false,
         category: '',
     });
     // New state for unique titles
@@ -513,6 +515,7 @@ const EditPeople: React.FC = () => {
             interests: [],
             education: [],
             bio: '',
+            selectedRecentPublications: false,
             category: categories[0] || '',
         });
         setCustomTitle('');
@@ -531,6 +534,7 @@ const EditPeople: React.FC = () => {
             interests: [],
             education: [],
             bio: '',
+            selectedRecentPublications: false,
             category: '',
         });
         setNewSocialPlatform('');
@@ -882,6 +886,21 @@ const EditPeople: React.FC = () => {
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    {/* Publications heading option */}
+                    <div className="mb-6">
+                        <label className="flex items-center gap-2 text-sm text-[color:var(--text-color)]">
+                            <input
+                                type="checkbox"
+                                name="selectedRecentPublications"
+                                checked={!!formData.selectedRecentPublications}
+                                onChange={(e) => setFormData((prev) => ({ ...prev, selectedRecentPublications: e.target.checked }))}
+                                disabled={isLoading}
+                                className="h-4 w-4"
+                            />
+                            Show &quot;Selected Recent Publications&quot; as the publications heading on this profile
+                        </label>
                     </div>
 
                     {/* Biography Section */}
