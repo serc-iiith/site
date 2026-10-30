@@ -828,11 +828,16 @@
         {
             "name": "Prakhar Singhal",
             "title": "CSD",
-            "email": "",
-            "imageURL": "/images/people/prakhar-singhal.png",
+            "email": "prakhar.singhal@research.iiit.ac.in",
+            "imageURL": "/images/people/prakhar_singhal.jpg",
             "slug": "prakhar_singhal",
-            "social_links": {},
-            "advisor": "Dr. Karthik Vaidhyanathan"
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/prakhar-singhal-a9437b26b/"
+            },
+            "interests": [],
+            "education": [],
+            "bio": "",
+            "selectedRecentPublications": true
         },
         {
             "name": "Shailender Goyal",
