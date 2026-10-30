@@ -710,10 +710,11 @@
             "name": "Aneesh Sambu",
             "title": "LCD",
             "email": "sambu.aneesh@research.iiit.ac.in",
-            "imageURL": "",
+            "imageURL": "/images/people/sambuaneesh.jpg",
             "slug": "sambuaneesh",
             "social_links": {
-                "GitHub": "https://github.com/sambuaneesh"
+                "GitHub": "https://github.com/sambuaneesh",
+                "LinkedIn": "https://www.linkedin.com/in/aneesh-sambu/"
             },
             "interests": [
                 "Software Architecture",
@@ -722,7 +723,8 @@
                 "Self Sustaining systems and architecture"
             ],
             "education": [],
-            "bio": "Hi! You can reach out to me through SERC and SCRC. I like building, breaking, and fixing systems-keeps things interesting."
+            "bio": "Hi! You can reach out to me through SERC and SCRC. I like building, breaking, and fixing systems-keeps things interesting.",
+            "selectedRecentPublications": true
         },
         {
             "name": "Bassam Adnan",
