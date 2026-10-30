@@ -745,11 +745,17 @@
         {
             "name": "Gargie Tambe",
             "title": "CSD",
-            "email": "",
-            "imageURL": "/images/people/gargie-tambe.png",
+            "email": "gargie.tambe@research.iiit.ac.in",
+            "imageURL": "/images/people/gargie-tambe.jpg",
             "slug": "gargie-tambe",
-            "social_links": {},
-            "advisor": "Dr. Y. Raghu Reddy"
+            "social_links": {
+                "LinkedIn": "https://www.linkedin.com/in/gargie-tambe-12745a269/"
+            },
+            "interests": [
+                "coding"
+            ],
+            "education": [],
+            "bio": ""
         },
         {
             "name": "Gnaneswar Kulindala",
