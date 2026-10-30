@@ -728,10 +728,11 @@
             "name": "Bassam Adnan",
             "title": "LCD",
             "email": "bassam.adnan@research.iiit.ac.in",
-            "imageURL": "/images/people/bassam-adnan.png",
+            "imageURL": "/images/people/bassam_adnan.jpg",
             "slug": "bassam_adnan",
             "social_links": {
-                "GitHub": "https://github.com/bassamadnan/"
+                "GitHub": "https://github.com/bassamadnan/",
+                "LinkedIn": "https://www.linkedin.com/in/bassam-adnan/"
             },
             "interests": [
                 "Systems Design",
@@ -741,7 +742,8 @@
                 "Edge Computing"
             ],
             "education": [],
-            "bio": "Hey everyone! I'm currently in my 3rd year, learning things as I go along on my time here at SERC. My research interests include software architectures, particularly for IoT systems, making them autonomous. Do come by and meet me at SERC!"
+            "bio": "Hey everyone! I'm currently in my 3rd year, learning things as I go along on my time here at SERC. My research interests include software architectures, particularly for IoT systems, making them autonomous. Do come by and meet me at SERC!",
+            "selectedRecentPublications": true
         },
         {
             "name": "Gargie Tambe",
