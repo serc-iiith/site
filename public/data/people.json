@@ -787,10 +787,11 @@
             "name": "Miryala Sathvika",
             "title": "LCD",
             "email": "miryala.sathvika@research.iiit.ac.in",
-            "imageURL": "/images/people/miryala-sathvika.png",
+            "imageURL": "/images/people/miryala-sathvika.jpg",
             "slug": "miryala-sathvika",
             "social_links": {
-                "GitHub": "https://github.com/miryala10sathvika"
+                "GitHub": "https://github.com/miryala10sathvika",
+                "LinkedIn": "https://www.linkedin.com/in/sathvika-miryala-366b02243/"
             },
             "interests": [
                 "Software Architecture",
@@ -798,7 +799,8 @@
                 "Large Language Models"
             ],
             "education": [],
-            "bio": "My research lies at the intersection of Software Architecture (SA) and Artificial Intelligence (AI), exploring how AI can be applied to software architecture. Currently, I am focused on modeling and creating architectural views, using AI to generate these views from inputs such as descriptions, code, and other relevant data. Outside of my research, I enjoy reading books, cooking, and in my leisure time, I love watching movies and web series."
+            "bio": "My research lies at the intersection of Software Architecture (SA) and Artificial Intelligence (AI), exploring how AI can be applied to software architecture. Currently, I am focused on modeling and creating architectural views, using AI to generate these views from inputs such as descriptions, code, and other relevant data. Outside of my research, I enjoy reading books, cooking, and in my leisure time, I love watching movies and web series.",
+            "selectedRecentPublications": true
         },
         {
             "name": "Prabhav Shetty",
