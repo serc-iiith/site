@@ -566,7 +566,7 @@
         },
         {
             "name": "Aduri Karthikeya",
-            "title": "MS (ECE)",
+            "title": "CSE",
             "email": "karthikeya.aduri@research.iiit.ac.in",
             "imageURL": "/images/people/aduri-karthikeya.jpg",
             "slug": "aduri-karthikeya",
@@ -574,9 +574,15 @@
                 "Linked In": " https://www.linkedin.com/in/karthikeya-aduri/",
                 "GitHub ": "https://github.com/4dotk"
             },
-            "interests": [],
+            "interests": [
+                "Software Engineering",
+                "Distributed Systems",
+                "DevOps",
+                "Cloud Computing"
+            ],
             "education": [],
-            "bio": "Aduri Karthikeya is an MS by Research student at SERC, IIIT Hyderabad. Prior to joining IIIT Hyderabad, he completed his undergraduate studies at Osmania University and worked as a software developer at OSI Digital. He is interested in building reliable software systems."
+            "bio": "Aduri Karthikeya is an MS by Research student at SERC, IIIT Hyderabad. Prior to joining IIIT Hyderabad, he completed his undergraduate studies at Osmania University and worked as a software developer at OSI Digital. He is interested in building reliable software systems.",
+            "selectedRecentPublications": true
         },
         {
             "name": "Vidhi Jain",
