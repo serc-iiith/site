@@ -679,6 +679,31 @@
             "interests": [],
             "education": [],
             "bio": "My primary focus is building LEAF-Cloud, an analytical framework that models and estimates the carbon footprint of cloud infrastructure using Terraform code. This project combines my interests in building full-stack systems and applying data-driven methods to solve practical software engineering challenges.\nThis work fuels my passion for the broader intersection of AI and Software Engineering. I am particularly excited about the potential of Large Language Models (LLMs) and autonomous agents to automate complex CloudOps, improve architectural decisions, and create more efficient, intelligent systems.\nI have a strong background in building a variety of applications, from high-performance AI video analysis tools to full-stack web platforms using both .NET/SQL and MERN stacks. My real passion is simply building new things, and I'm always looking for the next interesting problem to solve with technology. I'm eager to collaborate on innovative projects in this space."
+        },
+        {
+            "name": "Pranav Reddy Muttannagaru",
+            "title": "MS (CSE)",
+            "email": "pranav.reddy@research.iiit.ac.in",
+            "imageURL": "/images/people/pranav-reddy-muttannagaru.jpeg",
+            "slug": "pranav-reddy-muttannagaru",
+            "social_links": {
+                "LinkedIn": "www.linkedin.com/in/pranav-red912",
+                "GitHub": "https://github.com/pranav-reds"
+            },
+            "interests": [
+                "Software Architecture",
+                "Agentic Systems",
+                "CloudOps"
+            ],
+            "education": [
+                {
+                    "degree": "B.Tech",
+                    "institution": "VNR Vignana Jyothi Institute of Engineering and Technology (VNRVJIET)",
+                    "year": 2025
+                }
+            ],
+            "bio": "M. Pranav Reddy is a MS student at the Software Engineering Research Center (SERC) at IIIT-Hyderabad, focusing on software architecture for agentic systems and autonomous CloudOps. Previously, he served as a Junior Research Fellow at VNRVJIET, where he developed and deployed end-to-end machine learning and deep learning models for real-world product applications.",
+            "selectedRecentPublications": true
         }
     ],
     "Dual Degree": [
@@ -2053,26 +2078,6 @@
             "interests": [],
             "education": [],
             "bio": "I am currently a Research Associate at the Software Engineering Research Center (SERC), IIIT Hyderabad, working under the guidance of Professor Raghu Reddy. My current research concentrates on leveraging Large Language Models for ontological analysis, requirements engineering, test case development, and also streamlining generative AI adoption across industry. Beyond my academic pursuits, I'm deeply interested in software development and continuously explore emerging technological domains. In my leisure hours, I find joy in painting and spending time with my cats."
-        },
-        {
-            "name": "Pranav Reddy Muttannagaru ",
-            "title": "Research Engineer",
-            "email": "pranav.reddy@research.iiit.ac.in",
-            "imageURL": "/images/people/pranav-reddy-muttannagaru.jpeg",
-            "slug": "pranav-reddy-muttannagaru",
-            "social_links": {
-                "LinkedIn": "www.linkedin.com/in/pranav-red912",
-                "GitHub": "https://github.com/pranav-reds"
-            },
-            "interests": [],
-            "education": [
-                {
-                    "degree": "B.Tech",
-                    "institution": "VNR Vignana Jyothi Institute of Engineering and Technology (VNRVJIET)",
-                    "year": 2025
-                }
-            ],
-            "bio": "M. Pranav Reddy is a Research Engineer at the Software Engineering Research Center (SERC) at IIIT-Hyderabad, focusing on software architecture for agentic systems and autonomous CloudOps. Previously, he served as a Junior Research Fellow at VNRVJIET, where he developed and deployed end-to-end machine learning and deep learning models for real-world product applications."
         },
         {
             "name": "Hareesh Kumar Mitta",
