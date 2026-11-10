@@ -1,5 +1,37 @@
 [
     {
+        "slug": "workshop-on-engineering-sustainable-agentic-ai-systems",
+        "name": "Workshop on Engineering Sustainable Agentic AI Systems",
+        "eventURL": "https://serc.iiit.ac.in/",
+        "location": "IIIT Hyderabad",
+        "locationURL": "https://maps.app.goo.gl/asApDKB5mk3fibpR9",
+        "summary": "One-Day Hands-on Workshop on Engineering Sustainable Agentic AI Systems",
+        "detail": "The Software Engineering Research Center (SERC), IIIT Hyderabad, is organizing a one-day hands-on workshop on Engineering Sustainable Agentic AI Systems on December 4, 2026, as part of the ANRF-funded SustAInd project.\n\nThe workshop will introduce participants to Agentic AI and sustainability, with practical sessions on energy consumption measurement, agent optimization, technical debt assessment, and runtime adaptations.\n\nThe workshop is open to undergraduate, postgraduate, and PhD students. Registration is free, with only 30 seats available. Selected participants will be notified separately, and participation certificates will be provided.\n\nRegistration: https://tinyurl.com/yc5mdr65",
+        "startTime": "2026-12-04T09:00",
+        "endTime": "2026-12-04T18:00",
+        "hasTime": true,
+        "eventType": "workshop",
+        "schemaType": "Event",
+        "imageURLs": [
+            "/images/news/workshop-on-engineering-sustainable-agentic-ai-systems.jpg"
+        ],
+        "presenters": [
+            "Dr. Karthik Vaidhyanathan"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        },
+        "otherURLLabels": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
         "slug": "aneetta-sara-shany-presents-research-on-agentic-ai-sustainability-at-esem-2026-in-germany",
         "name": "Aneetta Sara Shany Presents Research on Agentic AI Sustainability at ESEM 2026 in Germany",
         "eventURL": "https://conf.researchr.org/home/eseiw-2026",
