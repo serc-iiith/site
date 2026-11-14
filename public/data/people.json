@@ -1339,6 +1339,28 @@
             ],
             "education": [],
             "bio": "Scientists reveal the Hi"
+        },
+        {
+            "name": "Satya Mayank Tadala",
+            "title": "LCD",
+            "email": "mayank.tadala@research.iiit.ac.in",
+            "imageURL": "/images/people/satya-mayank-tadala.png",
+            "slug": "satya-mayank-tadala",
+            "social_links": {
+                "LinkedIn": " https://www.linkedin.com/in/mayank-ts-92b9031b6/",
+                "GitHub": "https://github.com/mayank3135432"
+            },
+            "interests": [
+                "Formal Methods",
+                "Type Theory",
+                "Autoformalization",
+                "PL and theorem provers",
+                "Rocq",
+                "Agda"
+            ],
+            "education": [],
+            "bio": "I am a B.Tech and M.S dual-degree student in Computer Science and Engineering at the International Institute of Information Technology, Hyderabad (IIIT Hyderabad).\nMy interests are Formal Methods, PL, and theorem provers such Lean4, Agda and Rocq. I am passionate about auto-formalization, verification and procrastination.",
+            "selectedRecentPublications": true
         }
     ],
     "Honors": [
