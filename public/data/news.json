@@ -32,6 +32,39 @@
         }
     },
     {
+        "slug": "serc-research-paper-accepted-at-isec-2027-length-is-not-quality",
+        "name": "SERC Research Paper Accepted at ISEC 2027: Length Is Not Quality",
+        "eventURL": "https://conf.researchr.org/home/isec-2027",
+        "location": "Mumbai, India",
+        "locationURL": "https://conf.researchr.org/venue/isec-2027/isec-2027-venue",
+        "summary": "SERC Research Paper Accepted at ISEC 2027: Length Is Not Quality",
+        "detail": "A research paper titled “Length Is Not Quality: How a Complexity Heuristic Silently Excludes an Ambiguity Category from Synthetic Training Data”, co-authored by Prof. Y. Raghu Reddy and Pavitra Pinninti, has been accepted at the 20th Innovations in Software Engineering Conference (ISEC 2027).\n\nThe paper explores the challenges associated with synthetic training data generation for ambiguity detection in governance documents. It highlights how complexity-based filtering heuristics can unintentionally exclude certain categories of ambiguity, potentially affecting the quality and diversity of training datasets.\n\nThis research contributes to ongoing work in software engineering, particularly in improving the reliability and effectiveness of automated ambiguity detection.\n\nSERC congratulates the authors on this achievement.",
+        "startTime": "2026-11-17T06:25",
+        "endTime": "2026-11-17T07:25",
+        "hasTime": true,
+        "eventType": "conference",
+        "schemaType": "Event",
+        "imageURLs": [
+            "/images/news/serc-research-paper-accepted-at-isec-2027-length-is-not-quality.jpg"
+        ],
+        "presenters": [
+            "Prof. Y. Raghu Reddy",
+            "Pavitra Pinninti"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        },
+        "otherURLLabels": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
         "slug": "aneetta-sara-shany-presents-research-on-agentic-ai-sustainability-at-esem-2026-in-germany",
         "name": "Aneetta Sara Shany Presents Research on Agentic AI Sustainability at ESEM 2026 in Germany",
         "eventURL": "https://conf.researchr.org/home/eseiw-2026",
