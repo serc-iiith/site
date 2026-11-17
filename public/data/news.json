@@ -32,6 +32,39 @@
         }
     },
     {
+        "slug": "serc-research-paper-accepted-at-isec-2027-measuring-host-language-overhead-in-onnx-inference",
+        "name": "SERC Research Paper Accepted at ISEC 2027: Measuring Host Language Overhead in ONNX Inference",
+        "eventURL": "https://conf.researchr.org/home/isec-2027",
+        "location": "Mumbai, India",
+        "locationURL": "https://conf.researchr.org/venue/isec-2027/isec-2027-venue",
+        "summary": "SERC Research Paper Accepted at ISEC 2027: Measuring Host Language Overhead in ONNX Inference",
+        "detail": "A research paper titled “Measuring Host Language Overhead in ONNX Inference: An Empirical Study”, co-authored by Prof. Karthik Vaidhyanathan and Arihant Tripathy, has been accepted at the 20th Innovations in Software Engineering Conference (ISEC 2027).\n\nThe paper presents an empirical investigation of host language overhead in ONNX inference, focusing on the performance implications of the host programming environment when executing machine learning models using the Open Neural Network Exchange (ONNX) framework.\n\nThe study contributes to understanding performance considerations in machine learning inference and deployment.\n\nSERC congratulates the authors on this achievement.",
+        "startTime": "2026-11-17T06:32",
+        "endTime": "2026-11-17T07:32",
+        "hasTime": true,
+        "eventType": "conference",
+        "schemaType": "Event",
+        "imageURLs": [
+            "/images/news/serc-research-paper-accepted-at-isec-2027-measuring-host-language-overhead-in-onnx-inference.jpg"
+        ],
+        "presenters": [
+            "Prof. Karthik Vaidhyanathan",
+            "Arihant Tripathy"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        },
+        "otherURLLabels": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
         "slug": "serc-research-paper-accepted-at-isec-2027-length-is-not-quality",
         "name": "SERC Research Paper Accepted at ISEC 2027: Length Is Not Quality",
         "eventURL": "https://conf.researchr.org/home/isec-2027",
