@@ -98,6 +98,38 @@
         }
     },
     {
+        "slug": "dr-karthik-vaidhyanathan-delivers-ieee-organised-guest-lecture-at-tkm-college-of-engineering",
+        "name": "Dr. Karthik Vaidhyanathan Delivers IEEE-Organised Guest Lecture at TKM College of Engineering",
+        "eventURL": "",
+        "location": "TKM College of Engineering, Karicode, Kollam, Keralam",
+        "locationURL": "https://maps.app.goo.gl/XrGr4jUcnsJsQzyZA",
+        "summary": "Dr. Karthik Vaidhyanathan Delivers IEEE-Organised Guest Lecture at TKM College of Engineering",
+        "detail": "Dr. Karthik Vaidhyanathan, Assistant Professor at IIIT Hyderabad, delivered an invited lecture titled “Beyond Vibe Coding: Why Software Engineering Matters Now More Than Ever” at TKM College of Engineering on 29 October 2026.\n\nThe session focused on the evolving role of software engineering in the age of AI-assisted coding, highlighting the shift towards specification- and design-centric development and the importance of building reliable and scalable software systems.\n\nThe talk was organised by the IEEE Computer Society Student Branch Chapter, TKMCE, and concluded with an engaging interaction with students.\n\nThe session offered valuable insights into the continuing relevance of software engineering in an increasingly AI-driven world.",
+        "startTime": "2026-10-29T09:24",
+        "endTime": "2026-10-29T17:00",
+        "hasTime": true,
+        "eventType": "other",
+        "schemaType": "Event",
+        "imageURLs": [
+            "/images/news/dr-karthik-vaidhyanathan-delivers-ieee-organised-guest-lecture-at-tkm-college-of-engineering.jpg"
+        ],
+        "presenters": [
+            "Dr. Karthik Vaidhyanathan"
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "https://www.dropbox.com/scl/fi/pr60nb3xt58qsykjq8cah/TKM_Talk_29Oct2026.pdf?rlkey=elrswr94ijti0f84vcejzzcfc&st=qjnq9kwf&e=1&dl=0",
+            "video": ""
+        },
+        "otherURLLabels": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
         "slug": "aneetta-sara-shany-presents-research-on-agentic-ai-sustainability-at-esem-2026-in-germany",
         "name": "Aneetta Sara Shany Presents Research on Agentic AI Sustainability at ESEM 2026 in Germany",
         "eventURL": "https://conf.researchr.org/home/eseiw-2026",
