@@ -232,6 +232,43 @@
         }
     },
     {
+        "slug": "serc-studets-launches-autose-an-open-source-platform-for-autonomous-software-engineering",
+        "name": "SERC Studets Launches AutoSE – An Open-Source Platform for Autonomous Software Engineering",
+        "eventURL": "",
+        "location": "SERC, IIIT Hyderabad",
+        "locationURL": "",
+        "summary": "SERC Students Launches AutoSE, an Open-Source Platform for Autonomous Software Engineering",
+        "detail": "The Software Engineering Research Center (SERC), IIIT Hyderabad, has launched AutoSE, a local-first, open-source agentic harness for autonomous software engineering.\n\nDeveloped as part of the SustAInd research project, supported by the Anusandhan National Research Foundation (ANRF) under its PMECRG programme, AutoSE aims to make autonomous software engineering more accessible, sustainable and sovereign. It enables developers to explore AI-assisted software engineering without depending entirely on large cloud-hosted models and expensive subscriptions.\n\nThe project has evolved from a research initiative into a working product, with an Indian patent application filed covering some of its core innovations.\n\nAutoSE Free Edition is now available, while AutoSE Pro offers additional capabilities for organisations, including support for their coding standards, architectural decisions, engineering practices and organisational memory.                                                                            🌐 Try AutoSE: https://autose.dev/\n💻 GitHub: https://github.com/AutoSE-Labs/autose\nQuick 40-second video about AutoSE!: https://lnkd.in/p/deE6JCWF",
+        "startTime": "2026-10-05T09:40",
+        "endTime": "2026-10-05T15:40",
+        "hasTime": true,
+        "eventType": "other",
+        "schemaType": "NewsArticle",
+        "imageURLs": [
+            "/images/news/serc-launches-autose-an-open-source-platform-for-autonomous-software-engineering.jpg"
+        ],
+        "presenters": [
+            "Aviral",
+            "Arihant",
+            "Pavan",
+            "Pranav Swarup",
+            "Neha Prabhu",
+            "Aneesh S."
+        ],
+        "otherURLs": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        },
+        "otherURLLabels": {
+            "code": "",
+            "pdf": "",
+            "slides": "",
+            "video": ""
+        }
+    },
+    {
         "slug": "prof-y-raghu-reddy-and-prof-karthik-vaidhyanathan-share-ai-research-insights-at-hysea",
         "name": "Prof. Y. Raghu Reddy and Prof. Karthik Vaidhyanathan Share AI Research Insights at HYSEA",
         "eventURL": "https://hysea.in/",
