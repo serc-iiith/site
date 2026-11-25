@@ -2,7 +2,7 @@
     "Faculty": [
         {
             "name": "Raghu Reddy",
-            "title": "Associate Professor and Center Head",
+            "title": "Professor",
             "email": "raghu.reddy@iiit.ac.in",
             "imageURL": "/images/people/raghu-reddy.png",
             "slug": "raghu-reddy",
@@ -32,7 +32,8 @@
                     "year": 1999
                 }
             ],
-            "bio": "Dr. Y. Raghu Reddy currently works as an Associate Professor at International Institute of Information Technolgoy (IIIT Hyderabad), India. His primary research interests are in Software Engineering, HCI and Knowledge Engineering.\n\nHis primary research interests are in design and construction of complex software systems. He has published a number of peer reviewed publications in these areas. He is currently the Head of the Software Engineering Research Center (SERC) at IIIT Hyderabad."
+            "bio": "Dr. Y. Raghu Reddy is currently a Professor at the International Institute of Information Technology, Hyderabad (IIIT Hyderabad), India.\n\nHis primary research interests include Software Engineering, Human-Computer Interaction (HCI), Knowledge Engineering, and the design and construction of complex software systems. He has published several peer-reviewed research papers in these areas. \n\nHe is currently the Head of the Software Engineering Research Center (SERC) at IIIT Hyderabad.",
+            "selectedRecentPublications": true
         },
         {
             "name": "Raman Saxena",
